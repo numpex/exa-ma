@@ -17,7 +17,7 @@ This dashboard summarizes recent scientific and technical outcomes across Exa-MA
 ====
 [.text-center]
 ____
-icon:file-alt[size=3x,role=text-primary] *59*
+icon:file-alt[size=3x,role=text-primary] *36*
 
 Publications
 ____
@@ -162,7 +162,7 @@ ____
 |Resource |Description
 
 |xref:publications-hal.adoc[icon:book[] Publications]
-|Browse all 59 publications from HAL (ANR-22-EXNU-0002)
+|Browse all 36 publications from HAL (ANR-22-EXNU-0002)
 
 |xref:workpackages.adoc[icon:tasks[] Work Packages]
 |View WP-specific progress and deliverables

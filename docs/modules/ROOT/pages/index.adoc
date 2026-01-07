@@ -104,7 +104,7 @@ xref:results.adoc#highlights-2025[View detailed 2025 results →]
 ====
 [.text-center]
 ____
-icon:file-alt[size=2x,role=text-primary] *59* Publications
+icon:file-alt[size=2x,role=text-primary] *36* Publications
 ____
 
 [.text-center]

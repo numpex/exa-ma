@@ -31,7 +31,9 @@ HAL_API_URL = "https://api.archives-ouvertes.fr/search/"
 
 # Default search parameters matching the Exa-MA deliverables query
 # ANR-22-EXNU-0002 is the official ANR project identifier for Exa-MA
-DEFAULT_QUERY = "ANR-22-EXNU-0002"
+# Using anrProjectReference_s field for precise matching (not general text search)
+DEFAULT_ANR_PROJECT = "ANR-22-EXNU-0002"
+DEFAULT_QUERY = f"anrProjectReference_s:{DEFAULT_ANR_PROJECT}"
 DEFAULT_DOMAINS = ["math", "info", "stat", "phys"]
 DEFAULT_YEARS = [2024, 2025]
 DEFAULT_ROWS = 100  # Max results per request
@@ -189,6 +191,7 @@ def output_json(publications: list[dict], output_file: str = None):
         "metadata": {
             "source": "HAL - Hyper Articles en Ligne",
             "project": "Exa-MA (ANR-22-EXNU-0002)",
+            "anr_project_id": DEFAULT_ANR_PROJECT,
             "query": DEFAULT_QUERY,
             "harvested_at": datetime.now().isoformat(),
             "total_count": len(formatted),

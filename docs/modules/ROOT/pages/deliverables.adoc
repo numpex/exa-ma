@@ -21,7 +21,7 @@ Demonstrators::
 --
 [.no-panel]
 ====
-icon:book[size=2x,role=text-primary] *59 Publications on HAL*
+icon:book[size=2x,role=text-primary] *36 Publications on HAL*
 
 Browse all peer-reviewed publications acknowledging Exa-MA (ANR-22-EXNU-0002), organized by year with direct links to PDFs.
 
@@ -34,7 +34,7 @@ icon:external-link-alt[size=2x,role=text-info] *Search on HAL*
 
 Access the live HAL archive search for real-time publication updates.
 
-https://hal.science/search/index/?q=ANR-22-EXNU-0002&rows=30&level0_domain_s=math+OR+info+OR+stat+OR+phys[Search HAL archive →]
+https://hal.science/search/index/?q=anrProjectReference_s:ANR-22-EXNU-0002[Search HAL archive →]
 ====
 --
 
