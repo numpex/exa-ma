@@ -3,19 +3,123 @@
 :parent-catalogs: exama-home
 :page-illustration: fa-solid fa-envelope
 :description: How to reach the Exa-MA team for inquiries and collaboration.
+:icons: font
 
-For further information or inquiries about the Exa-MA project, please contact our team:
+[.lead]
+Get in touch with the Exa-MA team for inquiries, collaboration opportunities, or project information.
 
-Project Coordinators::
-Christophe Prud'homme - Université de Strasbourg  - Cemosis, IRMA UMR 7501
-Email: christophe.prudhomme@cemosisƒr
-+
-Hélène Barucq - Inria Bordeaux Sud-Ouest
-Email: helene.barucq@inria.fr
+[.section-gray]
+--
+[discrete]
+== Project Coordinators
 
-Project Officer::
-  Lucas Pernollets - CEA
-  Email:
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-246.jpg[Hélène Barucq,120,120]
 
+*Hélène Barucq*
 
-You can also follow us on our social media channels and check our xref:news.adoc[News and Events] page for updates.
+_Project Coordinator_
+
+INRIA Bordeaux Sud-Ouest
+
+icon:envelope[] helene.barucq@inria.fr
+____
+
+[.text-center]
+____
+image::wp0/ga2025-242.jpg[Christophe Prud'homme,120,120]
+
+*Christophe Prud'homme*
+
+_Project Coordinator_
+
+Université de Strasbourg, Cemosis
+
+icon:envelope[] christophe.prudhomme@cemosis.fr
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Project Office
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-254.jpg[Lucas Pernollet,100,100]
+
+*Lucas Pernollet*
+
+_Project Manager_
+
+CEA
+
+icon:envelope[] lucas.pernollet@cea.fr
+____
+
+[.text-center]
+____
+icon:user[size=4x,role=text-muted]
+
+*Jimmy James*
+
+_Management Support_
+
+CEA
+
+icon:envelope[] jimmy.james@cea.fr
+____
+
+[.text-center]
+____
+image::wp0/ga2025-256.png[Juliette Antonczak,100,100]
+
+*Juliette Antonczak*
+
+_Management Support & Valorization_
+
+Université de Strasbourg, Cemosis
+
+icon:envelope[] juliette.antonczak@cemosis.fr
+____
+====
+--
+
+[.section-gray]
+--
+[discrete]
+== Connect With Us
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:globe[size=2x,role=text-primary] *Website*
+
+https://exama.numpex.org[exama.numpex.org]
+____
+
+____
+icon:github[size=2x,role=text-dark] *GitHub*
+
+https://github.com/numpex/exama[github.com/numpex/exama]
+____
+
+____
+icon:newspaper[size=2x,role=text-info] *News & Events*
+
+xref:news.adoc[Latest announcements and upcoming activities]
+____
+
+____
+icon:users[size=2x,role=text-success] *Full Team*
+
+xref:team.adoc[Meet all team members and WP leaders]
+____
+====
+--

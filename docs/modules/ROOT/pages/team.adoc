@@ -21,7 +21,7 @@ image::wp0/ga2025-246.jpg[Hélène Barucq,120,120]
 
 *Hélène Barucq*
 
-_Scientific Coordinator_
+_Project Coordinator_
 
 INRIA Bordeaux
 ____
@@ -32,7 +32,7 @@ image::wp0/ga2025-242.jpg[Christophe Prud'homme,120,120]
 
 *Christophe Prud'homme*
 
-_Scientific Coordinator_
+_Project Coordinator_
 
 Université de Strasbourg, Cemosis
 ____
@@ -67,7 +67,7 @@ ____
 
 [.text-center]
 ____
-icon:user[size=4x,role=text-muted]
+image::wp0/ga2025-256.png[Juliette Antonczak,100,100]
 
 *Juliette Antonczak*
 

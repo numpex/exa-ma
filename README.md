@@ -9,15 +9,15 @@ Documentation site for the **Exa-MA** (Methods and Algorithms for Exascale Compu
 
 ## Overview
 
-Exa-MA develops advanced numerical methods and software for exascale computing across six scientific work packages:
+Exa-MA develops advanced numerical methods and software for exascale computing across seven scientific work packages:
 
-- **WP1** - Discretization Methods
-- **WP2** - Model Reduction
-- **WP3** - Linear & Nonlinear Solvers
-- **WP4** - Inverse Problems
-- **WP5** - Optimization
+- **WP1** - Discretization (meshing, adaptivity, high-order schemes)
+- **WP2** - Model Reduction & Scientific ML (ROMs, PINNs, neural operators)
+- **WP3** - Solvers (domain decomposition, preconditioners, multiphysics)
+- **WP4** - Inverse Problems & Data Assimilation
+- **WP5** - Optimization (Bayesian, shape/topology)
 - **WP6** - Uncertainty Quantification
-- **WP7** - Software Integration & Benchmarking
+- **WP7** - Showroom & Benchmarking (CI/CD, co-design)
 
 The documentation is built using [Antora](https://antora.org/) with the [Feel++ Antora UI](https://github.com/feelpp/antora-ui) card catalog system.
 

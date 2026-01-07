@@ -123,30 +123,32 @@ ____
 [discrete]
 == Work Packages Overview
 
-Exa-MA is organized into six complementary work packages, each addressing critical aspects of exascale computing:
+Exa-MA is organized into seven scientific work packages plus project management:
 
 [discrete]
-=== Core Methods & Algorithms
+=== Numerical Methods
 [cols="1,4"]
 |===
-|xref:workpackages/wp1.adoc[WP1] | *Advanced Discretizations* – High-order methods, adaptivity, parallel solvers
-|xref:workpackages/wp2.adoc[WP2] | *Scalable Linear Algebra* – Domain decomposition, preconditioning, eigensolvers
-|xref:workpackages/wp3.adoc[WP3] | *Optimization & UQ* – Large-scale optimization, uncertainty quantification
-|===
-
-[discrete]
-=== AI & Applications
-[cols="1,4"]
-|===
-|xref:workpackages/wp4.adoc[WP4] | *Scientific Machine Learning* – Neural operators, PINNs, hybrid models
-|xref:workpackages/wp5.adoc[WP5] | *Application Demonstrators* – Real-world validation across science and engineering
+|xref:workpackages/wp1.adoc[WP1] | *Discretization* – Meshing, adaptive refinement, high-order schemes
+|xref:workpackages/wp2.adoc[WP2] | *Model Reduction & Scientific ML* – ROMs, PINNs, neural operators
+|xref:workpackages/wp3.adoc[WP3] | *Solvers* – Domain decomposition, preconditioners, multiphysics
 |===
 
 [discrete]
-=== Software & Integration
+=== Data & Decision
 [cols="1,4"]
 |===
-|xref:workpackages/wp6.adoc[WP6] | *Software Stack & CI/CD* – Packaging, deployment, continuous integration
+|xref:workpackages/wp4.adoc[WP4] | *Inverse Problems & Data Assimilation* – Merging observations with simulations
+|xref:workpackages/wp5.adoc[WP5] | *Optimization* – Bayesian optimization, shape and topology optimization
+|xref:workpackages/wp6.adoc[WP6] | *Uncertainty Quantification* – Sensitivity analysis, surrogate-based UQ
+|===
+
+[discrete]
+=== Integration & Coordination
+[cols="1,4"]
+|===
+|xref:workpackages/wp7.adoc[WP7] | *Showroom & Benchmarking* – CI/CD, demonstrators, co-design with ExaDIP
+|xref:workpackages/wp0.adoc[WP0] | *Project Management* – Governance, coordination, reporting
 |===
 
 [.text-right]
