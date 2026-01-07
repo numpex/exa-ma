@@ -84,8 +84,14 @@ ____
 
 [.text-center]
 ____
-icon:cube[size=2x,role=text-warning] *EuroHPC Meshing* +
-Feature-preserving alpha wrapping (CGAL 6.0) and urban-scale mesh generation
+icon:city[size=2x,role=text-warning] *Urban Meshing* +
+Feature-preserving alpha wrapping (CGAL 6.0) and urban-scale mesh generation (Ktirio-Geom)
+____
+
+[.text-center]
+____
+icon:gauge-high[size=2x,role=text-danger] *HPC Benchmarking* +
+Automated CI/CD pipeline: code → EuroHPC runs in < 24h
 ____
 ====
 

@@ -84,9 +84,9 @@ This breakthrough enables:
 
 * Conference presentations at domain decomposition workshops
 * Integration in production solvers (Feel++, FreeFEM)
-* Available through xref:../software/index.adoc[Exa-MA software stack]
+* Available through xref:software:index.adoc[Exa-MA software stack]
 
 [.text-center]
 --
-xref:../results.adoc[← Back to Results] | xref:../workpackages.adoc[View Work Packages] | xref:scale.adoc[Next: Exascale Computing →]
+xref:results.adoc[← Back to Results] | xref:workpackages.adoc[View Work Packages] | xref:highlights/scale.adoc[Next: Exascale Computing →]
 --

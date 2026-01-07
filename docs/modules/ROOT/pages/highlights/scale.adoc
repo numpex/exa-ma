@@ -98,5 +98,5 @@ Successfully applied to:
 
 [.text-center]
 --
-xref:speedups.adoc[← Previous: Speedups] | xref:../results.adoc[Back to Results] | xref:neural-acceleration.adoc[Next: Neural Operators →]
+xref:highlights/speedups.adoc[← Previous: Speedups] | xref:results.adoc[Back to Results] | xref:highlights/neural-acceleration.adoc[Next: Neural Operators →]
 --

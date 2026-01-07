@@ -1,0 +1,181 @@
+= Continuous Benchmarking on HPC Systems
+:page-layout: default
+:page-tags: highlight
+:parent-catalogs: highlights-2025
+:page-illustration: fa-solid fa-gauge-high
+:description: From Git repository to massive runs: Exa-MA industrializes HPC application deployment compliant with NumPEx guidelines.
+:icons: font
+
+[.lead]
+From Git repository to massive runs: Exa-MA industrializes HPC application deployment compliant with NumPEx guidelines — *HPC as a Service*.
+
+[.section-gray]
+--
+[discrete]
+== Identity Card
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:users[size=2x,role=text-primary] *Authors*
+
+* Christophe Prud'homme _(Unistra–Cemosis)_
+* Vincent Chabannes _(Unistra–Cemosis)_
+* Javier Cladellas _(Unistra–Cemosis)_
+* Exa-MA WP7 Team
+____
+
+____
+icon:handshake[size=2x,role=text-success] *Collaboration*
+
+* CoE HiDALGO2
+* PEPR NumPEx / Exa-MA
+* National & EuroHPC centers (Karolina, LUMI, MeluXina, Discoverer)
+
+_Date: September 2025_
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Context and Objective
+
+HPC applications require *reproducibility, portability, and large-scale testing*, but the path from code to supercomputer remains long and heterogeneous across sites.
+
+*Objective*: Unify the Exa-MA application framework and automate build, tests, and deployments in compliance with *NumPEx guidelines*.
+--
+
+[.section-gray]
+--
+[discrete]
+== Key Result and Innovation
+
+Development of an *Exa-MA application framework* and *HPC CI/CD pipeline*:
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:cogs[size=2x,role=text-primary] *Framework Components*
+
+* *Templates*: Standardized application structure
+* *Metadata*: Machine-readable configuration
+* *V&V*: Verification & Validation tests
+* *Packaging*: Spack + Apptainer/Singularity
+____
+
+____
+icon:bolt[size=2x,role=text-success] *Performance Gains*
+
+* Code → large-scale execution: *days → < 24h*
+* *Zero manual intervention* on target site
+* Automated non-regression tests (strong/weak scaling)
+* Future: profiling artifacts
+____
+====
+
+*Pipeline*: GitHub Actions → Reframe/SLURM submission → French & EuroHPC supercomputers
+--
+
+[.section-white]
+--
+[discrete]
+== Benchmarking Platform
+
+The platform provides three main entry points for exploring benchmark results: *Applications*, *Supercomputers*, and *Use Cases*.
+
+.Benchmarking dashboard with toolboxes for Applications, Supercomputers, and Use Cases
+image::highlights/feelpp-benchmarking/1-dashboard.jpg[Benchmarking Dashboard,600]
+--
+
+[.section-gray]
+--
+[discrete]
+== Multi-Site Deployment
+
+Benchmarks are automatically deployed across multiple EuroHPC and national HPC centers: Discoverer (Sofia), Gaya (Strasbourg), Karolina (Ostrava), LUMI (Kajaani), MeluXina (Bissen), and more.
+
+.Auto-generated page providing access to benchmark reports by machine
+image::highlights/feelpp-benchmarking/2-automated-views-per-machine.jpg[Machine Views,600]
+
+*Hundreds of benchmarks* deployed automatically with performance tracking across all sites.
+
+.Benchmark reports on EuroHPC/Karolina with performance graphs and scaling analysis
+image::highlights/feelpp-benchmarking/3-automated-benchs.jpg[Automated Benchmarks,600]
+--
+
+[.section-white]
+--
+[discrete]
+== Deployment Workflow
+
+.Feel++ application deployment workflow on EuroHPC systems
+image::highlights/feelpp-benchmarking/4-deploy-workflow.jpg[Deployment Workflow,600]
+
+The workflow automates the entire pipeline from new Apptainer images through GitHub Actions to benchmark execution on multiple HPC systems, with results feeding into the dashboard website.
+--
+
+[.section-gray]
+--
+[discrete]
+== Impact and Next Steps
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:bullseye[size=2x,role=text-primary] *Current Impact*
+
+* Accelerated onboarding of Exa-MA applications
+* Quality improvement through systematic testing
+* Full traceability of builds and runs
+____
+
+____
+icon:road[size=2x,role=text-success] *Next Steps*
+
+* Publication of all Exa-MA applications
+* Multi-site *performance dashboard*
+* Extension to additional EuroHPC centers
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Valorization
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:book[size=2x,role=text-primary] *Documentation*
+
+* Exa-MA Guides (WP7)
+* Multi-site demonstration materials
+* NumPEx compliance checklists
+____
+
+____
+icon:globe[size=2x,role=text-info] *Resources*
+
+* https://bench.feelpp.org/benchmarking/index.html[Benchmarking Dashboard]
+* GitHub CI/CD templates
+* Reframe test configurations
+____
+====
+--
+
+[.section-gray]
+--
+[discrete]
+== Related Work Packages
+
+[cols="1,3"]
+|===
+|xref:../workpackages/wp7.adoc[WP7] |*Showroom & Benchmarking* — CI/CD, demonstrators, co-design
+|===
+
+[.text-center]
+xref:highlights/urban-meshing.adoc[← Urban Meshing] | xref:results.adoc[Back to Results] | xref:highlights/speedups.adoc[GenEO Speedups →]
+--

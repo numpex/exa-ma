@@ -196,5 +196,5 @@ ____
 |===
 
 [.text-center]
-xref:neural-acceleration.adoc[← Neural Operators] | xref:../results.adoc[Back to Results] | xref:speedups.adoc[GenEO Speedups →]
+xref:highlights/neural-acceleration.adoc[← Neural Operators] | xref:results.adoc[Back to Results] | xref:highlights/feelpp-benchmarking.adoc[HPC Benchmarking →]
 --

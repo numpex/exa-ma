@@ -82,9 +82,18 @@ ____
 ____
 icon:city[size=3x,role=text-warning]
 
-*xref:highlights/urban-meshing.adoc[EuroHPC Meshing]*
+*xref:highlights/urban-meshing.adoc[Urban Meshing]*
 
-Feature-preserving alpha wrapping (CGAL 6.0) and urban-scale mesh generation
+From GIS data to watertight meshes for city-scale energy simulation
+____
+
+[.text-center]
+____
+icon:gauge-high[size=3x,role=text-danger]
+
+*xref:highlights/feelpp-benchmarking.adoc[HPC Benchmarking]*
+
+Automated CI/CD pipeline: code → EuroHPC runs in < 24h
 ____
 ====
 

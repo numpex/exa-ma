@@ -113,5 +113,5 @@ This breakthrough enables:
 
 [.text-center]
 --
-xref:scale.adoc[← Previous: Exascale Scale] | xref:../results.adoc[Back to Results] | xref:urban-meshing.adoc[Next: Urban Meshing →]
+xref:highlights/scale.adoc[← Previous: Exascale Scale] | xref:results.adoc[Back to Results] | xref:highlights/urban-meshing.adoc[Next: Urban Meshing →]
 --
