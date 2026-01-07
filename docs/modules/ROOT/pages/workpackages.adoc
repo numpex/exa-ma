@@ -1,99 +1,33 @@
 = Work Packages
+:page-layout: manuals
+:page-tags: wp-catalog,catalog
+:page-cards-tag: wp
+:page-cards-within-module: true
+:page-cards-wp-title: Work Packages Overview
+:page-cards-order: 1
+:page-illustration: fa-solid fa-sitemap
+:parent-catalogs: exama-home
+:sectnum!:
 
-This section summarizes the Exa-MA project’s work packages. Each work package (WP) addresses key aspects of developing methods, algorithms, and software for exascale computing.
+Each work package (WP) tackles a critical part of the Exa-MA roadmap for exascale methods and software. Explore the overview below and dive into the dedicated pages for details and recent highlights.
 
-== WP0: Project Management
+[.section-gray]
+--
+[discrete]
+== Structure
 
-Objective:: Oversee overall project coordination, scientific and technical management, and administrative tasks.
-Key Topics::
-- Communication and coordination
-- Risk and conflict management
-- Financial and administrative monitoring
-- Governance and compliance
-Lead:: Université de Strasbourg
-Duration:: Months 1–60
-Description:: WP0 establishes the project’s governance structure and ensures smooth operation by integrating contributions from all other work packages. It is responsible for maintaining communication within the consortium, handling administrative duties, and ensuring compliance with funding agreements.
+[.grid.grid-2.gap-2]
+====
+____
+icon:cogs[size=2x,role=text-primary] *Methods (WP1-WP6)*
 
-== WP1: Discretization
+Six scientific work packages develop advanced numerical methods: discretization, model reduction, solvers, inverse problems, optimization, and uncertainty quantification.
+____
 
-Objective:: Develop robust techniques for mesh generation, adaptive refinement, high-order discretization, and efficient time integration for multiphysics simulations.
-Key Topics::
-- Mesh generation (including nonconforming methods)
-- Adaptive mesh refinement strategies
-- High-order and spectral discretization
-- Parallel-in-time and asynchronous time-integration methods
-Lead:: CEA
-Duration:: Months 1–60
-Description:: WP1 focuses on the creation and adaptation of mesh representations and discretization techniques that reduce communication overhead and increase computational intensity—crucial features for exascale applications.
+____
+icon:rocket[size=2x,role=text-success] *Integration (WP7)*
 
-== WP2: Model Order Reduction, Surrogates & Scientific Machine Learning
-
-Objective:: Develop fast surrogate models and reduced-order methods by integrating data-driven and physics-based machine learning techniques.
-Key Topics::
-- Neural Galerkin methods
-- Physics-Informed Neural Networks (PINNs)
-- Non-intrusive reduced basis approaches
-- Multi-fidelity modeling
-Lead:: Inria
-Duration:: Months 1–60
-Description:: WP2 aims to accelerate simulations by reducing computational complexity while preserving essential features of the physical models. Advanced machine learning tools are leveraged to develop effective surrogate models and reduction techniques.
-
-== WP3: Solvers for Linear Algebra & Multiphysics
-
-Objective:: Design scalable solvers for large sparse linear systems and coupled multiphysics problems on exascale architectures.
-Key Topics::
-- Domain decomposition methods
-- Mixed precision arithmetic and error control
-- Adaptive solver strategies
-- Robust multiphysics coupling techniques
-Lead:: Inria
-Duration:: Months 1–60
-Description:: WP3 focuses on developing robust and efficient solver technologies. The goal is to handle the computational challenges of both mono-physics and coupled multiphysics simulations on modern exascale hardware.
-
-== WP4: Inverse Problems & Data Assimilation
-
-Objective:: Integrate observational data with physical models to solve inverse problems through deterministic and stochastic methods.
-Key Topics::
-- Variational and ensemble-based data assimilation
-- Stochastic differential equations (SDEs/SPDEs)
-- Multi-fidelity strategies for inverse problems
-- Optimized observation error models
-Lead:: Université de Strasbourg
-Duration:: Months 1–60
-Description:: WP4 addresses the challenge of blending simulation data with real-world observations. Its goal is to improve model predictions and enable enhanced decision-making through advanced data assimilation and inverse problem methodologies.
-
-== WP5: Optimization
-
-Objective:: Develop exascale optimization algorithms for tackling combinatorial, continuous, and mixed optimization challenges, including shape optimization and AutoML.
-Key Topics::
-- Decomposition-based optimization strategies
-- Surrogate-based and multi-fidelity optimization
-- Shape optimization techniques
-- Optimization for AI (AutoML)
-Lead:: Inria
-Duration:: Months 1–60
-Description:: WP5 is dedicated to designing innovative optimization methods that leverage exascale computational capabilities. These methods will facilitate faster and more accurate solutions for complex design, control, and decision-making problems.
-
-== WP6: Uncertainty Quantification
-
-Objective:: Quantify uncertainties in complex multiscale simulations and understand their impact on predictive modeling.
-Key Topics::
-- Kernel-based sensitivity analysis
-- Surrogate modeling for uncertainty quantification
-- High-dimensional integration and uncertainty propagation
-- Multi-arithmetic and multi-fidelity approaches
-Lead:: École Polytechnique
-Duration:: Months 1–60
-Description:: WP6 develops techniques to assess and manage uncertainties within simulation models. This work is essential for ensuring that predictions are reliable and for guiding improvements in model fidelity.
-
-== WP7: Showroom, Benchmarking & Co-Design Coordination
-
-Objective:: Coordinate the integration, testing, and benchmarking of methods and software developed across the Exa-MA project, ensuring interoperability and high performance.
-Key Topics::
-- Development of benchmarking frameworks and non-regression tests
-- Creation of demonstrators, mini-apps, and proxy-apps
-- Training and dissemination activities
-- Agile co-design and continuous integration
-Lead:: Université de Strasbourg
-Duration:: Months 1–60
-Description:: WP7 acts as the central hub for evaluating and validating the project’s outputs. It provides a structured environment for testing, benchmarking, and training, ensuring that all developed components work cohesively on exascale architectures.
+WP7 integrates methods into production software, coordinates benchmarking on EuroHPC systems, and ensures co-design with hardware evolution.
+____
+====
+--

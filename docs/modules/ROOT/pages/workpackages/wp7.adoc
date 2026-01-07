@@ -1,0 +1,26 @@
+= WP7: Showroom, Benchmarking, and Co-Design Coordination
+:page-tags: manual,wp
+:parent-catalogs: wp-catalog
+:page-illustration: fa-solid fa-display
+
+WP7 integrates, tests, and benchmarks methods and software from all WPs, and runs the showroom, CI/CD, and co-design activities with ExaDIP.
+
+== Objectives
+- Benchmarking frameworks and non-regression tests
+- Demonstrators, mini-apps, and proxy apps
+- Training material and dissemination
+- Agile co-design and continuous integration
+
+== Leads & Timeline
+- Lead: Université de Strasbourg
+- Duration: Months 1-60
+
+== Recent Highlights
+- CI/CD pipelines validating new methods and software deliveries
+- Showroom content updated with meshing, solver, and ML workflows
+- Containers and packages published for rapid deployment (Spack, Guix, Docker, Apptainer)
+
+== Next Steps
+- Add automated performance dashboards for key demonstrators
+- Expand benchmarking coverage to new EuroHPC systems
+- Publish training modules on CI/CD and benchmarking best practices

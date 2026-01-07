@@ -1,0 +1,25 @@
+= WP6: Uncertainty Quantification
+:page-tags: manual,wp
+:parent-catalogs: wp-catalog
+:page-illustration: fa-solid fa-wave-square
+
+WP6 quantifies uncertainties in complex multiscale simulations and propagates them through the prediction pipeline.
+
+== Objectives
+- Kernel-based sensitivity analysis
+- Surrogate modeling for UQ and high-dimensional integration
+- Multi-arithmetic and multi-fidelity approaches
+
+== Leads & Timeline
+- Lead: École Polytechnique
+- Duration: Months 1-60
+
+== Recent Highlights
+- Sensitivity analyses linked with WP3 solvers and WP2 surrogates
+- Initial UQ pipelines exercised on EuroHPC resources
+- Shared UQ components prepared for WP7 benchmarking
+
+== Next Steps
+- Expand UQ benchmarks with additional industrial test cases
+- Provide ready-to-run sensitivity examples in the showroom
+- Align UQ metrics with WP0 reporting for impact tracking

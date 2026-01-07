@@ -1,0 +1,135 @@
+= Exa-MA 2026 General Assembly
+:page-tags: resource,news2026
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-users
+:description: Annual consortium meeting with all WP leaders at Arts et Métiers ParisTech, Aix-en-Provence.
+
+[.lead]
+The Exa-MA 2026 General Assembly took place from January 19-21, 2026, at Arts et Métiers ParisTech in Aix-en-Provence. This three-day event brought together the entire consortium for comprehensive progress reviews, framework presentations, and strategic planning.
+
+== Overview
+
+The General Assembly featured:
+
+* **WP Progress Reviews**: All six work packages (WP1-WP6) presented scientific highlights and next steps
+* **Framework Presentations**: Deep dives into Feel++, Scimba, Composyx, and Uranie frameworks
+* **Breakout Sessions**: Focused collaboration sessions connecting frameworks with work packages
+* **AI & HPC Integration**: Presentations on Sage-HPC (AI for HPC) and Daimos (HPC for AI)
+* **Scientific Board Meeting**: Strategic discussions with board members, project leaders, and WP leaders
+
+== Event Details
+
+*Location*: Arts et Métiers ParisTech, 2 Cour des Arts et Métiers, 13617 Aix-en-Provence, France
+
+*Duration*: Monday, January 19 – Wednesday, January 21, 2026
+
+*Format*: In-person with remote access available
+
+== Day 1: Monday, January 19
+
+=== Welcome & WP Progress Reviews
+
+The first day opened with a welcome lunch followed by:
+
+* **NumPEx & ExaMA Refresher** (mandatory for newcomers)
+* **Introductory Words**: Hélène Barucq and Christophe Prud'homme
+* **WP1 - Discretization**: Pierre Alliez and Isabelle Ramière
+* **WP2 - Model Order Reduction & Scientific ML**: Stéphane Lanteri and Emmanuel Franck
+* **WP3 - Solvers for Linear Algebra**: Vincent Faucher, Luc Giraud, and Frédéric Nataf
+* **WP4 - Data-Model Integration**: Mark Asch and Arthur Vidard
+* **WP5 - Optimization**: El Ghazali Talbi
+* **WP6 - Uncertainty Quantification**: Josselin Garnier and Clément Gauchy
+
+=== Intra-WP Meetings
+
+The afternoon concluded with parallel intra-WP meetings (16:30-18:00) followed by a consortium dinner.
+
+== Day 2: Tuesday, January 20
+
+=== Framework Presentations
+
+Morning sessions featured detailed presentations of the project's core computational frameworks:
+
+* **Feel++ Framework**: Christophe Prud'homme and Javier Cladellas
+* **Scimba Framework**: Emmanuel Franck and Victor Michel-Dansac
+* **Composyx Framework**: Luc Giraud and Arthur Gouinguenet
+* **Uranie Framework**: Clément Gauchy
+
+=== Breakout Sessions
+
+Three rounds of targeted breakout sessions connected frameworks with relevant work packages:
+
+**Round 1 (10:30-12:00)**:
+
+* Feel++ × WP1 × WP2
+* Composyx × WP3
+* Scimba × WP5
+
+**Round 2 (13:45-15:15)**:
+
+* Scimba × WP1 × WP2
+* Feel++ × WP4 × WP6
+* Uranie × WP5
+
+**Round 3 (15:45-17:15)**:
+
+* Composyx × WP1 × WP2 × WP4
+* Feel++ × WP3
+* Uranie × WP2 × WP6
+
+=== Scientific Board Meeting
+
+The day concluded with a scientific board meeting (17:30-18:30) bringing together board members, project leaders, and WP leaders for strategic discussions.
+
+== Day 3: Wednesday, January 21
+
+=== AI-HPC Integration
+
+Morning sessions explored the intersection of AI and HPC:
+
+* **Sage-HPC**: AI for HPC presented by Laetitia Giraldi
+* **Daimos**: HPC for AI presented by Julien Herrmann
+
+=== Feedback & Work Planning
+
+Each WP leader presented feedback from breakout sessions and outlined work plans:
+
+* **WP1 Work Plan**: Pierre Alliez and Isabelle Ramière
+* **WP2 Work Plan**: Stéphane Lanteri and Emmanuel Franck
+* **WP3 Work Plan**: Vincent Faucher, Luc Giraud, and Frédéric Nataf
+* **WP4 Work Plan**: Mark Asch and Arthur Vidard
+* **WP5 Work Plan**: El Ghazali Talbi
+* **WP6 Work Plan**: Josselin Garnier and Clément Gauchy
+
+=== Closing Remarks
+
+The assembly concluded with general closing remarks from Hélène Barucq and Christophe Prud'homme, followed by a packed lunch.
+
+== Key Themes
+
+=== Framework-WP Integration
+
+The breakout sessions successfully connected computational frameworks with relevant work packages, identifying concrete collaboration opportunities and integration points.
+
+=== AI-HPC Convergence
+
+The Sage-HPC and Daimos presentations highlighted the bidirectional synergy between artificial intelligence and high-performance computing, a key focus for Exa-MA's evolution.
+
+=== Cross-WP Collaboration
+
+Multiple sessions featured collaboration across work packages (e.g., WP1 × WP2 × WP4), fostering interdisciplinary approaches to complex scientific challenges.
+
+== Resources
+
+* **Full Agenda PDF**: xref:attachment$news/2026/exa-ma-2026-ga-agenda.pdf[Download complete agenda with schedule and room details]
+* **Slides**: Available in the project repository
+* **Meeting Minutes**: Comprehensive notes from all sessions
+* **Photos**: Event documentation and team photos
+
+== Next Steps
+
+Following the General Assembly, work packages are implementing the agreed-upon action items and continuing the collaborations initiated during breakout sessions. The next major consortium gathering is planned for mid-2026.
+
+---
+
+For questions about the General Assembly or to access additional materials, please xref:contact.adoc[contact the project coordinators].

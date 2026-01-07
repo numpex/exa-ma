@@ -1,4 +1,7 @@
 = Samurai Package
+:page-tags: software
+:page-illustration: fa-solid fa-border-none
+:description: Adaptive mesh refinement library for scientific computing.
 
 == Description
 

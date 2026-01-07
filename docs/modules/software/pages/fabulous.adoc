@@ -1,4 +1,7 @@
 = Fabulous Package
+:page-tags: software
+:page-illustration: fa-solid fa-vector-square
+:description: Fast Accurate Block Linear krylOv Solver.
 
 == Description
 

@@ -1,4 +1,7 @@
 = MUMPS Package
+:page-tags: software
+:page-illustration: fa-solid fa-calculator
+:description: Multifrontal Massively Parallel Sparse direct solver.
 
 == Description
 

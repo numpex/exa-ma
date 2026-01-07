@@ -1,4 +1,7 @@
 = qr_mumps Package
+:page-tags: software
+:page-illustration: fa-solid fa-table
+:description: Multifrontal QR factorization for sparse matrices.
 
 == Description
 

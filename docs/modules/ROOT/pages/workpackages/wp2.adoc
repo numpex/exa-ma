@@ -1,0 +1,25 @@
+= WP2: Model Order Reduction, Surrogates, and Scientific ML
+:page-tags: manual,wp
+:parent-catalogs: wp-catalog
+:page-illustration: fa-solid fa-brain
+
+WP2 accelerates simulations using reduced-order models and data-driven surrogates that remain faithful to physics.
+
+== Objectives
+- Neural Galerkin and physics-informed neural networks
+- Non-intrusive reduced basis and multi-fidelity surrogates
+- Hybrid data- and physics-driven approaches for complex PDEs
+
+== Leads & Timeline
+- Lead: Inria
+- Duration: Months 1-60
+
+== Recent Highlights
+- Domain-decomposed PINNs with perfectly matched layers for high-dimensional advection-diffusion
+- Neural operators (FNO) accelerating Newton solvers by 80-200% CPU savings
+- Mesh-adaptation and preconditioning gains through ML-guided models
+
+== Next Steps
+- Expand PINN benchmarks to larger geometries from WP1
+- Package surrogate models for WP7 CI/CD benches
+- Publish reference notebooks in the showroom

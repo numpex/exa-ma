@@ -1,0 +1,26 @@
+= WP1: Discretization
+:page-tags: manual,wp
+:parent-catalogs: wp-catalog
+:page-illustration: fa-solid fa-draw-polygon
+
+WP1 develops robust mesh generation, adaptive refinement, and high-order discretizations that minimize communication and exploit exascale hardware.
+
+== Objectives
+- Reliable meshing from imperfect or CAD-heavy geometries
+- Adaptive mesh refinement and anisotropy at scale
+- High-order and spectral discretizations
+- Parallel and asynchronous time integration
+
+== Leads & Timeline
+- Lead: CEA
+- Duration: Months 1-60
+
+== Recent Highlights
+- Feature-preserving alpha wrapping integrated in CGAL 6.0
+- Ktirio-geom pipeline for city-scale watertight meshes deployed on EuroHPC systems
+- Thermal-bridge and ParMMG benchmarks validating large-scale adaptivity
+
+== Next Steps
+- Broaden urban meshing benchmarks across additional EuroHPC sites
+- Integrate meshing outputs into WP3 solver pipelines
+- Publish reproducible meshing recipes in the showroom

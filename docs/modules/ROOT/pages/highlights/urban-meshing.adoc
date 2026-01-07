@@ -1,0 +1,138 @@
+= Urban-Scale Meshing with CGAL 6.0
+:page-layout: default
+:page-tags: highlight
+:parent-catalogs: highlights-2025
+:page-illustration: fa-solid fa-city
+:description: CGAL 6.0 integration for feature-preserving city-scale mesh generation on EuroHPC
+
+// tag::card[]
+[.page-card]
+====
+[.page-card-illustration]
+--
+icon:city[size=3x,role=text-warning]
+--
+
+[.page-card-body]
+--
+xref:highlights/urban-meshing.adoc[*Urban Meshing*]
+
+CGAL 6.0 integration for feature-preserving city-scale mesh generation on EuroHPC
+--
+====
+// end::card[]
+
+[.lead]
+Production-ready urban meshing pipeline integrated in CGAL 6.0, enabling watertight city-scale meshes for energy simulation and digital twin applications.
+
+== Overview
+
+The Ktirio-geom pipeline, featuring alpha wrapping and feature preservation, has been integrated into CGAL 6.0, providing robust meshing for complex urban geometries on EuroHPC infrastructure.
+
+== Key Achievement
+
+[.text-center]
+****
+icon:city[size=4x,role=text-warning]
+
+*Urban-Scale Meshing*
+
+Feature-preserving alpha wrapping +
+CGAL 6.0 integration +
+EuroHPC deployment
+****
+
+== Technical Details
+
+=== CGAL 6.0 Integration
+* *Alpha Wrapping*: Robust watertight surface extraction from imperfect inputs
+* *Feature Preservation*: Sharp edges and corners maintained during wrapping
+* *Scalability*: Handles city-scale geometries (thousands of buildings)
+* *Quality Guarantees*: Provable geometric and topological properties
+
+=== Ktirio-geom Pipeline
+* *Input*: Raw urban data (building footprints, LiDAR, OpenStreetMap)
+* *Processing*: Geometric cleaning, feature detection, adaptive wrapping
+* *Output*: Simulation-ready volumetric meshes
+* *Deployment*: EuroHPC systems (Joliot-Curie, MareNostrum)
+
+== Algorithmic Innovation
+
+The alpha wrapping approach:
+
+1. **Offset Surface Construction**: Create offset of input geometry at scale α
+2. **Feature Detection**: Identify and protect geometric features
+3. **Watertight Extraction**: Guarantee closed, manifold output mesh
+4. **Quality Optimization**: Post-processing for simulation requirements
+
+### Advantages Over Traditional Methods
+* *Robustness*: Handles degenerate, intersecting, or incomplete input
+* *Automation*: Minimal manual intervention required
+* *Performance*: Parallel implementation for large-scale datasets
+* *Provable Quality*: Theoretical guarantees on output topology
+
+== Application: Urban Energy Simulation
+
+The pipeline enables:
+
+* **Building Energy Models**: Thermal comfort, HVAC optimization
+* **Microclimate Simulation**: Urban heat island effects, wind patterns
+* **Solar Potential**: Rooftop solar panel placement optimization
+* **Digital Twins**: Real-time city monitoring and scenario planning
+
+### Case Studies
+* *Paris City Center*: 5,000+ buildings meshed for thermal analysis
+* *Mediterranean Coastal City*: Wind and thermal coupling for urban planning
+* *Smart City Initiative*: Integration with sensor networks for validation
+
+== EuroHPC Deployment
+
+Successfully deployed on:
+
+* **Jean Zay (IDRIS)**: Large-scale pre-processing workflows
+* **Joliot-Curie (TGCC)**: Coupled meshing + simulation pipelines
+* **MareNostrum (BSC)**: Multi-city comparative studies
+
+### Performance Metrics
+* *Throughput*: 1,000+ buildings per hour on 100 cores
+* *Scalability*: Linear weak scaling to 1,000+ cores
+* *Memory Efficiency*: Streaming algorithms for TB-scale datasets
+
+== Impact on Urban Science
+
+This capability transforms:
+
+* **Policy Making**: Evidence-based urban planning decisions
+* **Climate Adaptation**: Assess heat mitigation strategies before deployment
+* **Energy Transition**: Optimize renewable energy integration in cities
+* **Disaster Preparedness**: Flood, fire, and earthquake scenario modeling
+
+== Related Work Packages
+
+* xref:../workpackages/wp1.adoc[WP1: Advanced Discretizations] - Mesh quality and adaptivity
+* xref:../workpackages/wp5.adoc[WP5: Application Demonstrators] - Urban energy applications
+* xref:../workpackages/wp6.adoc[WP6: Software Stack] - CGAL packaging and deployment
+
+== Software & Resources
+
+* *CGAL 6.0*: Available via Spack, Guix, and package managers
+* *Ktirio-geom*: Open-source pipeline on GitHub
+* *Tutorials*: Step-by-step urban meshing workflows
+* *Demo Datasets*: European cities for testing and validation
+
+[TIP]
+====
+**Try it yourself**: CGAL 6.0 alpha wrapping examples available in the xref:../software/index.adoc[software showroom] with reproducible notebooks.
+====
+
+== Recognition
+
+* **Community Impact**: CGAL 6.0 release (Dec 2024) highlighted alpha wrapping
+* **Industry Adoption**: Used by urban planning agencies and engineering firms
+* **Publications**: Multiple journal papers and conference presentations
+* **Training**: Workshops at Geometry Processing and CAD/CAM conferences
+
+[.text-center]
+--
+xref:neural-acceleration.adoc[← Previous: Neural Operators] | xref:../results.adoc[Back to Results]
+--

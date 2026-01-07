@@ -1,0 +1,25 @@
+= WP4: Inverse Problems and Data Assimilation
+:page-tags: manual,wp
+:parent-catalogs: wp-catalog
+:page-illustration: fa-solid fa-satellite-dish
+
+WP4 merges observational data with physics-based models to improve predictions and decision making.
+
+== Objectives
+- Variational and ensemble-based data assimilation
+- Stochastic modeling (SDEs/SPDEs) and multi-fidelity strategies
+- Optimized observation error models for high-dimensional problems
+
+== Leads & Timeline
+- Lead: Université de Strasbourg
+- Duration: Months 1-60
+
+== Recent Highlights
+- Demonstrated scalable assimilation workflows on EuroHPC targets
+- Improved error models feeding downstream UQ and optimization tasks
+- Prepared benchmarks to couple with WP3 solvers and WP6 UQ cases
+
+== Next Steps
+- Add reproducible assimilation pipelines to the showroom
+- Tighten integration with WP6 sensitivity analyses
+- Document best practices for heterogeneous observation data

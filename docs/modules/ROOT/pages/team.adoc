@@ -1,53 +1,320 @@
 = The Exa-MA Team
+:page-tags: info
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-users
+:description: Leadership, work package contacts, and recruited staff.
+:icons: font
 
-Our success is driven by a diverse and talented team of researchers, engineers, and PhD students from leading institutions.
+[.lead]
+Our success is driven by a diverse and talented team of researchers, engineers, and PhD students from leading institutions across France.
 
+[.section-gray]
+--
+[discrete]
+== Project Coordination
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-246.jpg[Hélène Barucq,120,120]
+
+*Hélène Barucq*
+
+_Scientific Coordinator_
+
+INRIA Bordeaux
+____
+
+[.text-center]
+____
+image::wp0/ga2025-242.jpg[Christophe Prud'homme,120,120]
+
+*Christophe Prud'homme*
+
+_Scientific Coordinator_
+
+Université de Strasbourg, Cemosis
+____
+====
+
+[discrete]
+== Project Office
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-254.jpg[Lucas Pernollet,100,100]
+
+*Lucas Pernollet*
+
+_Project Manager_
+
+CEA
+____
+
+[.text-center]
+____
+icon:user[size=4x,role=text-muted]
+
+*Jimmy James*
+
+_Management Support_
+
+CEA
+____
+
+[.text-center]
+____
+icon:user[size=4x,role=text-muted]
+
+*Juliette Antonczak*
+
+_Management Support & Valorization_
+
+Université de Strasbourg, Cemosis
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
 == Work Package Leaders
-* **WP0:** Coordination - Hélène Barucq (INRIA), Christophe Prud'homme(UNISTRA)
-* **WP1:** Discretization - Pierre Alliez (INRIA), Isabelle Ramière (CEA)
-* **WP2:** SciML, ROM - Stéphane Lanteri (INRIA), Emmanuel Franck (INRIA)
-* **WP3:** Solvers - Vincent Faucher (CEA), Luc Giraud (INRIA), Frédéric Nataf (CNRS)
-* **WP4:** Inverse Problems Mark Asch (U Picardie), Hélène Barucq (INRIA), Arthur Vidard (INRIA)
-* **WP5:** Optimisation - El-Ghazzali Talbi (U Lille)
-* **WP6:** Uncertainty Quantification - Josselin Garnier (EP), Clément Gauchy (CEA)
-* **WP7:** Software - Christophe Prud'homme (UNISTRA)
 
+[discrete]
+=== WP1: Discretization
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-244.jpg[Pierre Alliez,100,100]
+
+*Pierre Alliez*
+
+INRIA Sophia Antipolis
+____
+
+[.text-center]
+____
+image::wp0/ga2025-248.jpg[Isabelle Ramière,100,100]
+
+*Isabelle Ramière*
+
+CEA
+____
+====
+
+[discrete]
+=== WP2: Model Order Reduction & SciML
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-250.jpg[Stéphane Lanteri,100,100]
+
+*Stéphane Lanteri*
+
+INRIA Sophia Antipolis
+____
+
+[.text-center]
+____
+image::wp0/ga2025-243.jpg[Emmanuel Franck,100,100]
+
+*Emmanuel Franck*
+
+INRIA Strasbourg
+____
+====
+
+[discrete]
+=== WP3: Solvers
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-240.jpg[Vincent Faucher,100,100]
+
+*Vincent Faucher*
+
+CEA
+____
+
+[.text-center]
+____
+image::wp0/ga2025-247.jpg[Luc Giraud,100,100]
+
+*Luc Giraud*
+
+INRIA Bordeaux
+____
+
+[.text-center]
+____
+image::wp0/ga2025-249.jpg[Frédéric Nataf,100,100]
+
+*Frédéric Nataf*
+
+CNRS / Sorbonne
+____
+====
+
+[discrete]
+=== WP4: Inverse Problems & Data Assimilation
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-239.jpg[Mark Asch,100,100]
+
+*Mark Asch*
+
+Université de Picardie
+____
+
+[.text-center]
+____
+image::wp0/ga2025-246.jpg[Hélène Barucq,100,100]
+
+*Hélène Barucq*
+
+INRIA Bordeaux
+____
+
+[.text-center]
+____
+image::wp0/ga2025-252.jpg[Arthur Vidard,100,100]
+
+*Arthur Vidard*
+
+INRIA Grenoble
+____
+====
+
+[discrete]
+=== WP5: Optimization
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-241.jpg[El-Ghazzali Talbi,100,100]
+
+*El-Ghazzali Talbi*
+
+Université de Lille
+____
+====
+
+[discrete]
+=== WP6: Uncertainty Quantification
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-245.jpg[Josselin Garnier,100,100]
+
+*Josselin Garnier*
+
+École Polytechnique
+____
+
+[.text-center]
+____
+image::wp0/ga2025-251.jpg[Clément Gauchy,100,100]
+
+*Clément Gauchy*
+
+CEA
+____
+====
+
+[discrete]
+=== WP7: Software, Benchmarking & Co-Design
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::wp0/ga2025-242.jpg[Christophe Prud'homme,100,100]
+
+*Christophe Prud'homme*
+
+Université de Strasbourg
+____
+
+[.text-center]
+____
+image::wp0/ga2025-255.png[Ansar Calloo,100,100]
+
+*Ansar Calloo*
+
+CEA
+____
+====
+--
+
+[.section-gray]
+--
+[discrete]
 == Recruited Personnel
 
-=== WP1
+[.grid.grid-2.gap-2]
+====
+____
+*WP1: Discretization*
 
-- Pierre Dubois (PhD student)
-- Christos Georgiadis (post-doc)
+- Pierre Dubois _(PhD student)_
+- Christos Georgiadis _(Postdoc)_
+____
 
-=== WP2
+____
+*WP2: SciML & ROM*
 
-- Hassan Ballout (PhD student)
-- Daria Hrebenshchykova (PhD student)
-- Alexandre Pugin (PhD student)
-- Hung Truong (post-doc)
+- Hassan Ballout _(PhD student)_
+- Daria Hrebenshchykova _(PhD student)_
+- Alexandre Pugin _(PhD student)_
+- Hung Truong _(Postdoc)_
+____
 
-=== WP3
-- Antoine Simon (PhD student WP1-WP3)
+____
+*WP3: Solvers*
 
-=== WP4
+- Antoine Simon _(PhD student, WP1-WP3)_
+____
 
-- Hélène Hénon (PhD student WP4)
+____
+*WP4: Inverse Problems*
 
-=== WP5
+- Hélène Hénon _(PhD student)_
+____
 
-- Amaury Bélières (PhD student WP5)
+____
+*WP5: Optimization*
 
-=== WP6
+- Amaury Bélières _(PhD student)_
+____
 
-- Mahamat Nassouradine (PhD student WP6)
+____
+*WP6: Uncertainty Quantification*
 
-=== WP7
+- Mahamat Nassouradine _(PhD student)_
+____
 
-- Sébastien Dubois (Research Engineer WP7-WP1)
-- Alexandre Hoffmann (Research Engineer WP7-WP1)
-- Thomas Saigre (Research Engineer WP7-WP1)
-- Raphael Zanella (Research Engineer WP7-WP3)
+____
+*WP7: Software & Benchmarking*
 
-
-== YoungPEx
-Our new group, YoungPEx, is dedicated to early-career researchers and fosters collaboration and innovation across the consortium.
+- Sébastien Dubois _(Research Engineer, WP7-WP1)_
+- Alexandre Hoffmann _(Research Engineer, WP7-WP1)_
+- Thomas Saigre _(Research Engineer, WP7-WP1)_
+- Raphael Zanella _(Research Engineer, WP7-WP3)_
+____
+====
+--

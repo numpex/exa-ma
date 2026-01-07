@@ -1,4 +1,7 @@
 = PETSc Package
+:page-tags: software
+:page-illustration: fa-solid fa-server
+:description: Portable Extensible Toolkit for Scientific Computation.
 
 == Description
 

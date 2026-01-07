@@ -1,4 +1,7 @@
 = Uranie Package
+:page-tags: software
+:page-illustration: fa-solid fa-chart-area
+:description: Uncertainty and sensitivity analysis platform.
 
 == Description
 

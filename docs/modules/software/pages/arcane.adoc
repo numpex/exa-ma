@@ -1,4 +1,7 @@
 = Arcane Package
+:page-tags: software
+:page-illustration: fa-solid fa-cube
+:description: High-performance simulation framework for multi-physics applications.
 
 == Description
 

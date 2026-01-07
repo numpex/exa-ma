@@ -1,4 +1,7 @@
 = TRUST Platform Package
+:page-tags: software
+:page-illustration: fa-solid fa-temperature-high
+:description: Thermohydraulic code for CFD simulations.
 
 == Description
 

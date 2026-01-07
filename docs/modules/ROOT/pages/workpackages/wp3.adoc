@@ -1,0 +1,25 @@
+= WP3: Solvers for Linear Algebra and Multiphysics
+:page-tags: manual,wp
+:parent-catalogs: wp-catalog
+:page-illustration: fa-solid fa-gears
+
+WP3 designs scalable solvers for sparse linear systems and coupled multiphysics, tuned for exascale architectures.
+
+== Objectives
+- Domain decomposition and multilevel preconditioners
+- Mixed-precision and error-controlled solvers
+- Adaptive strategies for coupled multiphysics
+
+== Leads & Timeline
+- Lead: Inria
+- Duration: Months 1-60
+
+== Recent Highlights
+- GenEO preconditioner delivering up to 50x speedup on large Cobra cavity cases (45M DoFs, 2916 cores)
+- Robust multiphysics coupling strategies validated with WP1 meshes and WP6 UQ cases
+- Solver kernels prepared for heterogeneous GPU/CPU targets
+
+== Next Steps
+- Extend GenEO scaling studies to additional EuroHPC systems
+- Integrate mixed-precision pathways into WP7 benchmarking
+- Publish solver playbooks for application teams

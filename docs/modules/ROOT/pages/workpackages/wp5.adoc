@@ -1,0 +1,25 @@
+= WP5: Optimization
+:page-tags: manual,wp
+:parent-catalogs: wp-catalog
+:page-illustration: fa-solid fa-sliders
+
+WP5 advances exascale-ready optimization methods for continuous, combinatorial, and mixed problems, including AI-driven pipelines.
+
+== Objectives
+- Decomposition-based and surrogate-assisted optimization
+- Shape and topology optimization at scale
+- Optimization for AI (AutoML) and hybrid workflows
+
+== Leads & Timeline
+- Lead: Inria
+- Duration: Months 1-60
+
+== Recent Highlights
+- Bayesian optimization at scale, exercised on 8000 GPUs (LUMI) with fractal decomposition
+- Surrogate-based workflows coupled with WP2 ML models and WP6 UQ
+- Early AutoML experiments on HPC software parameter tuning
+
+== Next Steps
+- Broaden large-scale Bayesian optimization benchmarks
+- Integrate optimization loops with WP7 CI/CD runners
+- Publish reproducible optimization notebooks and parameter studies
