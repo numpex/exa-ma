@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>NumPEx Transversal Workgroups :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
     <link rel="canonical" href="https://numpex.github.io/exama/exama/workgroups.html">
+    <meta name="description" content="Overview of NumPEx transversal workgroups and Exa-MA representatives.">
     <meta name="generator" content="Antora 3.1.3">
 <link rel="stylesheet" href="../_/css/site.css">
 
@@ -141,28 +142,73 @@ MathJax.Hub.Config({
     <a class="nav-link" href="index.html">Home</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="about.html">About</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="workpackages.html">Work Packages</a>
-  </li>
-  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="team.html">Team</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="deliverables.html">Deliverables &amp; Publications</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="partners.html">Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="contact.html">Contact</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="news.html">News &amp; Events</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Work Packages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp0.html">WP0: Project Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp1.html">WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp2.html">WP2: Model Order Reduction and SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp3.html">WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp4.html">WP4: Inverse Problems and Data Assimilation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp5.html">WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp6.html">WP6: Uncertainty Quantification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp7.html">WP7: Showroom, Benchmarking, and Co-Design</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="results.html">Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deliverables and Publications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="deliverables.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="publications-hal.html">Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="news.html">News and Events</a>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="workgroups.html">NumPEx Work Groups</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="partners.html">Partners</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="contact.html">Contact</a>
   </li>
 </ul>
   </li>
@@ -286,333 +332,243 @@ MathJax.Hub.Config({
 </aside>
 <article class="doc">
 <h1 class="page">NumPEx Transversal Workgroups</h1>
-<div id="preamble">
-<div class="sectionbody">
+<div class="paragraph lead">
+<p>The NumPEx program organizes cross-cutting workgroups that span all constituent projects, fostering collaboration and addressing broad challenges relevant to exascale computing.</p>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_technical_workgroups" class="discrete">Technical Workgroups</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock text-center">
+<blockquote>
 <div class="paragraph">
-<p>The NumPEx program organizes multiple cross-cutting workgroups (WG) that span all of its constituent projects, including Exa-MA.
-These workgroups foster collaboration, share expertise, and address broad challenges that are relevant to exascale computing as a whole.</p>
-</div>
-<div class="paragraph">
-<p>Below is an overview of the key NumPEx workgroups, their leads, and the representatives from Exa-MA.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_accelerated_architectures_and_programming_models"><a class="anchor" href="#_accelerated_architectures_and_programming_models"></a>1. Accelerated Architectures and Programming Models</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Leads</dt>
-<dd>
-<p>S. Thibault, M. Pérache</p>
-</dd>
-</dl>
+<p><span class="icon text-primary"><i class="fa fa-microchip fa-2x"></i></span> <strong>Accelerated Architectures</strong><br>
+<em>Leads: S. Thibault, M. Pérache</em></p>
 </div>
 <div class="paragraph">
-<p>Focuses on harnessing accelerators (such as GPUs and specialized hardware) and exploring programming models suited for heterogeneous, high-performance architectures. Key objectives include:
-- Evaluating performance and portability across CPU-GPU-FPGA platforms
-- Developing best practices for programming models (MPI+X, OpenMP, etc.)
-- Addressing code modernization and tooling for accelerated computing</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Exa-MA Representatives</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Philippe Helluy (<a href="mailto:helluy@unistra.fr">helluy@unistra.fr</a>)</p>
-</li>
-<li>
-<p>Pierre Jolivet (<a href="mailto:pierre@joliv.et">pierre@joliv.et</a>)</p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_ai"><a class="anchor" href="#_ai"></a>2. AI</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Leads</dt>
-<dd>
-<p>T. Moreau, E. Franck, J. Bobin</p>
-</dd>
-</dl>
+<p>GPU/FPGA platforms, programming models (MPI+X, OpenMP), code modernization</p>
 </div>
 <div class="paragraph">
-<p>Addresses the intersection of Artificial Intelligence (AI) and High-Performance Computing (HPC), encompassing:
-- AI for HPC: leveraging ML/AI techniques to enhance HPC workflows (e.g., surrogate modeling, code auto-tuning)
-- HPC for AI: accelerating large-scale AI tasks and deep learning workloads
-- Cross-pollination of methods and shared infrastructure among NumPEx projects</p>
+<p><strong>Exa-MA:</strong> P. Helluy, P. Jolivet</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Exa-MA Representatives</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Emmanuel Franck (<a href="mailto:emmanuel.franck@inria.fr">emmanuel.franck@inria.fr</a>)</p>
-</li>
-<li>
-<p>Philippe Helluy (<a href="mailto:helluy@unistra.fr">helluy@unistra.fr</a>)</p>
-</li>
-<li>
-<p>Marianne Clausel (<a href="mailto:marianne.clausel@univ-lorraine.fr">marianne.clausel@univ-lorraine.fr</a>)</p>
-</li>
-</ul>
+</blockquote>
 </div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_computing_centers"><a class="anchor" href="#_computing_centers"></a>3. Computing Centers</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Leads</dt>
-<dd>
-<p>F. Bodin, N. Lardjanne</p>
-</dd>
-</dl>
+<div class="quoteblock text-center">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-brain fa-2x"></i></span> <strong>AI</strong><br>
+<em>Leads: T. Moreau, E. Franck, J. Bobin</em></p>
 </div>
 <div class="paragraph">
-<p>Focuses on the coordination and optimization of national and regional computing centers, aiming to:
-- Streamline resource allocation for large-scale NumPEx simulations
-- Foster infrastructure interoperability and distributed job scheduling
-- Develop joint strategies for data management and transfer</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Exa-MA Representatives</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Christophe Prud’homme (<a href="mailto:christophe.prudhomme@cemosis.fr">christophe.prudhomme@cemosis.fr</a>)</p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_energy_management_and_optimization"><a class="anchor" href="#_energy_management_and_optimization"></a>4. Energy Management and Optimization</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Leads</dt>
-<dd>
-<p>A. Guermouche, G. Da Costa</p>
-</dd>
-</dl>
+<p>AI for HPC, surrogate modeling, deep learning acceleration</p>
 </div>
 <div class="paragraph">
-<p>Investigates methodologies to measure, optimize, and reduce energy consumption in HPC:
-- Metrics and models for energy usage
-- Energy-aware runtime scheduling and resource allocation
-- Hardware-software co-design to improve energy efficiency</p>
+<p><strong>Exa-MA:</strong> E. Franck, P. Helluy, M. Clausel</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Exa-MA Representatives</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Ansar Calloo (<a href="mailto:ansar.calloo@cea.fr">ansar.calloo@cea.fr</a>)</p>
-</li>
-</ul>
+</blockquote>
 </div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_resilience"><a class="anchor" href="#_resilience"></a>5. Resilience</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Lead</dt>
-<dd>
-<p>L. Morin</p>
-</dd>
-</dl>
+<div class="quoteblock text-center">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-warning"><i class="fa fa-bolt fa-2x"></i></span> <strong>Energy Management</strong><br>
+<em>Leads: A. Guermouche, G. Da Costa</em></p>
 </div>
 <div class="paragraph">
-<p>Aims to ensure reliability and fault tolerance on emerging exascale systems:
-- Checkpoint/restart strategies and advanced fault-tolerant techniques
-- Silent error detection and correction
-- Redundancy and rollback mechanisms</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Exa-MA Representative</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Yves Robert (<a href="mailto:Yves.Robert@inria.fr">Yves.Robert@inria.fr</a>)</p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_training"><a class="anchor" href="#_training"></a>6. Training</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Lead</dt>
-<dd>
-<p>M. Krajewski</p>
-</dd>
-</dl>
+<p>Energy metrics, runtime scheduling, hardware-software co-design</p>
 </div>
 <div class="paragraph">
-<p>Coordinates NumPEx’s educational initiatives, including:
-- Courses, tutorials, and workshops on HPC, exascale methods, and specialized topics
-- Dissemination of best practices in software development
-- Fostering the next generation of HPC professionals</p>
+<p><strong>Exa-MA:</strong> A. Calloo</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Exa-MA Representatives</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Sébastien Tordeux (<a href="mailto:sebastien.tordeux@inria.fr">sebastien.tordeux@inria.fr</a>)</p>
-</li>
-<li>
-<p>Christophe Prud’homme (<a href="mailto:christophe.prudhomme@cemosis.fr">christophe.prudhomme@cemosis.fr</a>)</p>
-</li>
-</ul>
+</blockquote>
 </div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_software_production_and_integration"><a class="anchor" href="#_software_production_and_integration"></a>7. Software Production and Integration</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Lead</dt>
-<dd>
-<p>B. Raffin</p>
-</dd>
-</dl>
+<div class="quoteblock text-center">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-danger"><i class="fa fa-shield-alt fa-2x"></i></span> <strong>Resilience</strong><br>
+<em>Lead: L. Morin</em></p>
 </div>
 <div class="paragraph">
-<p>Focuses on building robust software engineering practices across NumPEx:
-- Continuous integration/continuous deployment (CI/CD) pipelines
-- Shared libraries, packaging systems, and deployment strategies
-- Ensuring interoperability among various HPC components</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Exa-MA Representatives</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Christophe Prud’homme (<a href="mailto:christophe.prudhomme@cemosis.fr">christophe.prudhomme@cemosis.fr</a>)</p>
-</li>
-<li>
-<p>Loïc Gouarin (<a href="mailto:loic.gouarin@polytechnique.edu">loic.gouarin@polytechnique.edu</a>)</p>
-</li>
-<li>
-<p>Pierre Jolivet (<a href="mailto:pierre@joliv.et">pierre@joliv.et</a>)</p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_genderequitydiversity"><a class="anchor" href="#_genderequitydiversity"></a>8. Gender/Equity/Diversity</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Leads</dt>
-<dd>
-<p>A.-L. Pelé, V. Grandgirard</p>
-</dd>
-</dl>
+<p>Checkpoint/restart, fault tolerance, silent error detection</p>
 </div>
 <div class="paragraph">
-<p>Ensures diversity and inclusion principles are integrated throughout NumPEx:
-- Developing policies and guidelines for equitable collaboration
-- Organizing events and discussions that promote diversity in the HPC community
-- Tracking and improving representation metrics within projects</p>
+<p><strong>Exa-MA:</strong> Y. Robert</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Exa-MA Representative</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Arthur Vidard (<a href="mailto:Arthur.Vidard@inria.fr">Arthur.Vidard@inria.fr</a>)</p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
+</blockquote>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_international_collaborations"><a class="anchor" href="#_international_collaborations"></a>9. International Collaborations</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Lead</dt>
-<dd>
-<p>J.-Y. Berthou</p>
-</dd>
-</dl>
+</div>
+</div>
+<div class="openblock section-white">
+<div class="content">
+<h2 id="_infrastructure_software" class="discrete">Infrastructure &amp; Software</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock text-center">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-server fa-2x"></i></span> <strong>Computing Centers</strong><br>
+<em>Leads: F. Bodin, N. Lardjanne</em></p>
 </div>
 <div class="paragraph">
-<p>Strengthens ties with global HPC initiatives and research partners:
-- Identifying key international joint projects or calls
-- Facilitating researcher exchanges and shared resources
-- Aligning NumPEx with worldwide exascale strategies</p>
+<p>Resource allocation, infrastructure interoperability, data management</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Exa-MA Representatives</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Hélène Barucq (<a href="mailto:helene.barucq@inria.fr">helene.barucq@inria.fr</a>)</p>
-</li>
-<li>
-<p>Christophe Prud’homme (<a href="mailto:christophe.prudhomme@cemosis.fr">christophe.prudhomme@cemosis.fr</a>)</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Exa-MA:</strong> C. Prud&#8217;homme</p>
 </div>
-</dd>
-</dl>
+</blockquote>
 </div>
+<div class="quoteblock text-center">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-primary"><i class="fa fa-code-branch fa-2x"></i></span> <strong>Software Production</strong><br>
+<em>Lead: B. Raffin</em></p>
+</div>
+<div class="paragraph">
+<p>CI/CD pipelines, packaging, deployment, interoperability</p>
+</div>
+<div class="paragraph">
+<p><strong>Exa-MA:</strong> C. Prud&#8217;homme, L. Gouarin, P. Jolivet</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_community_outreach" class="discrete">Community &amp; Outreach</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock text-center">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-graduation-cap fa-2x"></i></span> <strong>Training</strong><br>
+<em>Lead: M. Krajewski</em></p>
+</div>
+<div class="paragraph">
+<p>Courses, tutorials, workshops, next-gen HPC professionals</p>
+</div>
+<div class="paragraph">
+<p><strong>Exa-MA:</strong> S. Tordeux, C. Prud&#8217;homme</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock text-center">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-globe fa-2x"></i></span> <strong>International Collaborations</strong><br>
+<em>Lead: J.-Y. Berthou</em></p>
+</div>
+<div class="paragraph">
+<p>Global partnerships, researcher exchanges, worldwide exascale strategies</p>
+</div>
+<div class="paragraph">
+<p><strong>Exa-MA:</strong> H. Barucq, C. Prud&#8217;homme</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock text-center">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-warning"><i class="fa fa-users fa-2x"></i></span> <strong>Gender/Equity/Diversity</strong><br>
+<em>Leads: A.-L. Pelé, V. Grandgirard</em></p>
+</div>
+<div class="paragraph">
+<p>Inclusion policies, diversity events, representation metrics</p>
+</div>
+<div class="paragraph">
+<p><strong>Exa-MA:</strong> A. Vidard</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock text-center">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-primary"><i class="fa fa-user-graduate fa-2x"></i></span> <strong>YoungPEx</strong><br>
+<em>Early-Career Network</em></p>
+</div>
+<div class="paragraph">
+<p>Dedicated group for PhD students and postdocs, fostering collaboration across the NumPEx consortium through workshops, seminars, and networking events.</p>
+</div>
+<div class="paragraph">
+<p><strong>Exa-MA:</strong> T. Saigre</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock section-white">
+<div class="content">
+<h2 id="_contact_representatives" class="discrete">Contact Representatives</h2>
+<div class="paragraph">
+<p>For questions about Exa-MA participation in NumPEx workgroups, contact our primary representatives:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 42.8571%;">
+<col style="width: 28.5715%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Workgroup</th>
+<th class="tableblock halign-left valign-top">Representative</th>
+<th class="tableblock halign-left valign-top">Email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accelerated Architectures</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Philippe Helluy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:helluy@unistra.fr"><span class="icon"><i class="fa fa-envelope"></i></span> <a href="mailto:helluy@unistra.fr">helluy@unistra.fr</a></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Emmanuel Franck</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:emmanuel.franck@inria.fr"><span class="icon"><i class="fa fa-envelope"></i></span> <a href="mailto:emmanuel.franck@inria.fr">emmanuel.franck@inria.fr</a></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computing Centers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:christophe.prudhomme@cemosis.fr"><span class="icon"><i class="fa fa-envelope"></i></span> <a href="mailto:christophe.prudhomme@cemosis.fr">christophe.prudhomme@cemosis.fr</a></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Energy Management</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ansar Calloo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:ansar.calloo@cea.fr"><span class="icon"><i class="fa fa-envelope"></i></span> <a href="mailto:ansar.calloo@cea.fr">ansar.calloo@cea.fr</a></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resilience</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yves Robert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:Yves.Robert@inria.fr"><span class="icon"><i class="fa fa-envelope"></i></span> <a href="mailto:Yves.Robert@inria.fr">Yves.Robert@inria.fr</a></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Training</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sébastien Tordeux</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:sebastien.tordeux@inria.fr"><span class="icon"><i class="fa fa-envelope"></i></span> <a href="mailto:sebastien.tordeux@inria.fr">sebastien.tordeux@inria.fr</a></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Software Production</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:christophe.prudhomme@cemosis.fr"><span class="icon"><i class="fa fa-envelope"></i></span> <a href="mailto:christophe.prudhomme@cemosis.fr">christophe.prudhomme@cemosis.fr</a></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gender/Equity/Diversity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arthur Vidard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:Arthur.Vidard@inria.fr"><span class="icon"><i class="fa fa-envelope"></i></span> <a href="mailto:Arthur.Vidard@inria.fr">Arthur.Vidard@inria.fr</a></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">International</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hélène Barucq</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:helene.barucq@inria.fr"><span class="icon"><i class="fa fa-envelope"></i></span> <a href="mailto:helene.barucq@inria.fr">helene.barucq@inria.fr</a></a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </article>

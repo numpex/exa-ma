@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Exascale Computing on 8000 GPUs :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exama/exama/highlights/scale.html">
+    <meta name="description" content="8000 GPUs on LUMI supercomputer with fractal decomposition for Bayesian optimization">
+    <meta name="generator" content="Antora 3.1.3">
+<link rel="stylesheet" href="../../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = '../../_'</script>
+
+  </head>
+  <body class="article">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exama">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo"  src="../../_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="exama" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../team.html">Team</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../partners.html">Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../contact.html">Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Work Packages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp0.html">WP0: Project Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp1.html">WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp2.html">WP2: Model Order Reduction and SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp3.html">WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp4.html">WP4: Inverse Problems and Data Assimilation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp5.html">WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp6.html">WP6: Uncertainty Quantification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp7.html">WP7: Showroom, Benchmarking, and Co-Design</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../results.html">Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deliverables and Publications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../deliverables.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../publications-hal.html">Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../news.html">News and Events</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workgroups.html">NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Software</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/index.html">WP7</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Software List</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/fabulous.html">Fabulous</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/mumps.html">MUMPS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/pastix.html">PaStiX</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/petsc.html">PETSc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/qr_mumps.html">qr_mumps</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../software/uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="../index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="../index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Exa-MA</a></li>
+    <li><a href="scale.html">Exascale Computing on 8000 GPUs</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/41-web-site/docs/modules/ROOT/pages/highlights/scale.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="../../_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Exascale Computing on 8000 GPUs</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="exampleblock page-card">
+<div class="content">
+<div class="openblock page-card-illustration">
+<div class="content">
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-microchip fa-3x"></i></span></p>
+</div>
+</div>
+</div>
+<div class="openblock page-card-body">
+<div class="content">
+<div class="paragraph">
+<p><a href="#"><strong>Exascale Computing</strong></a></p>
+</div>
+<div class="paragraph">
+<p>8000 GPUs on LUMI supercomputer with fractal decomposition for Bayesian optimization</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph lead">
+<p>Pushing the boundaries of optimization at scale with successful deployment on 8,000 GPUs of the LUMI supercomputer, demonstrating true exascale readiness.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>1. Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Our Bayesian optimization framework has been successfully deployed on LUMI (Finland), one of Europe&#8217;s most powerful supercomputers, achieving unprecedented scale for uncertainty quantification and optimization workflows.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_achievement"><a class="anchor" href="#_key_achievement"></a>2. Key Achievement</h2>
+<div class="sectionbody">
+<div class="sidebarblock text-center">
+<div class="content">
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-microchip fa-4x"></i></span></p>
+</div>
+<div class="paragraph">
+<p><strong>8,000 GPU Scale</strong></p>
+</div>
+<div class="paragraph">
+<p>LUMI Supercomputer (Finland)<br>
+Fractal domain decomposition<br>
+Bayesian optimization workflows</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_technical_details"><a class="anchor" href="#_technical_details"></a>3. Technical Details</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_computing_infrastructure"><a class="anchor" href="#_computing_infrastructure"></a>3.1. Computing Infrastructure</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>System</strong>: LUMI (Large Unified Modern Infrastructure)</p>
+</li>
+<li>
+<p><strong>Location</strong>: CSC Data Center, Kajaani, Finland</p>
+</li>
+<li>
+<p><strong>Resources Utilized</strong>: 8,000 AMD MI250X GPUs</p>
+</li>
+<li>
+<p><strong>Peak Performance</strong>: Multi-petaflop range for optimization campaigns</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_algorithmic_innovation"><a class="anchor" href="#_algorithmic_innovation"></a>3.2. Algorithmic Innovation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Method</strong>: Fractal domain decomposition for parallel Bayesian optimization</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: Near-linear weak scaling to thousands of GPUs</p>
+</li>
+<li>
+<p><strong>Efficiency</strong>: Load balancing across heterogeneous search spaces</p>
+</li>
+<li>
+<p><strong>Integration</strong>: Coupled with WP1 discretizations and WP3 solvers</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fractal_decomposition_strategy"><a class="anchor" href="#_fractal_decomposition_strategy"></a>4. Fractal Decomposition Strategy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The fractal approach enables:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Hierarchical Partitioning</strong>: Recursive subdivision of parameter space</p>
+</li>
+<li>
+<p><strong>Adaptive Refinement</strong>: Focus computational effort on promising regions</p>
+</li>
+<li>
+<p><strong>Asynchronous Execution</strong>: Minimize idle time across GPU nodes</p>
+</li>
+<li>
+<p><strong>Memory Efficiency</strong>: Distributed model storage and evaluation</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_impact_on_scientific_computing"><a class="anchor" href="#_impact_on_scientific_computing"></a>5. Impact on Scientific Computing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This achievement demonstrates:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Exascale Readiness</strong>: Methods proven at realistic exascale dimensions</p>
+</li>
+<li>
+<p><strong>Uncertainty Quantification</strong>: UQ now feasible for complex, expensive models</p>
+</li>
+<li>
+<p><strong>Design Optimization</strong>: Thousands of design parameters simultaneously explored</p>
+</li>
+<li>
+<p><strong>EuroHPC Integration</strong>: Workflows validated on production European infrastructure</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_application_domains"><a class="anchor" href="#_application_domains"></a>6. Application Domains</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Successfully applied to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Material Science</strong>: High-dimensional parameter searches for material properties</p>
+</li>
+<li>
+<p><strong>Climate Modeling</strong>: Ensemble-based uncertainty quantification</p>
+</li>
+<li>
+<p><strong>Engineering Design</strong>: Multi-objective optimization of complex systems</p>
+</li>
+<li>
+<p><strong>Drug Discovery</strong>: Molecular configuration space exploration</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_related_work_packages"><a class="anchor" href="#_related_work_packages"></a>7. Related Work Packages</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../workpackages/wp3.html" class="xref page">WP3: Optimization &amp; UQ</a> - Core optimization methods</p>
+</li>
+<li>
+<p><a href="../workpackages/wp4.html" class="xref page">WP4: Scientific Machine Learning</a> - Surrogate model integration</p>
+</li>
+<li>
+<p><a href="../workpackages/wp6.html" class="xref page">WP6: Software Stack</a> - Deployment and portability</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_software_resources"><a class="anchor" href="#_software_resources"></a>8. Software &amp; Resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Open-source Bayesian optimization libraries</p>
+</li>
+<li>
+<p>LUMI deployment recipes and tutorials</p>
+</li>
+<li>
+<p>Integration with EuroHPC software stack</p>
+</li>
+<li>
+<p>Performance benchmarking dashboards</p>
+</li>
+</ul>
+</div>
+<div class="openblock text-center">
+<div class="content">
+<div class="paragraph">
+<p><a href="#speedups.adoc" class="xref unresolved">← Previous: Speedups</a> | <a href="../results.html" class="xref page">Back to Results</a> | <a href="#neural-acceleration.adoc" class="xref unresolved">Next: Neural Operators →</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="../../_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+    </div>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="../../_/js/vendor/highlight.js"></script>
+
+<script src="../../_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>
