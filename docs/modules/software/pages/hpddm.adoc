@@ -1,4 +1,7 @@
 = HPDDM Package
+:page-tags: software
+:page-illustration: fa-solid fa-project-diagram
+:description: High-performance unified framework for domain decomposition methods.
 
 == Description
 

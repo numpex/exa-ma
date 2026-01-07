@@ -1,4 +1,7 @@
 = Composyx Package
+:page-tags: software
+:page-illustration: fa-solid fa-layer-group
+:description: Parallel hybrid direct/iterative solver for sparse linear systems.
 
 == Description
 

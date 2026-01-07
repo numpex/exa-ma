@@ -1,27 +1,74 @@
-= News & Events
-:toc: macro
-:toclevels: 2
+= News and Events
+:page-tags: resource
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-calendar-days
+:description: Updates on assemblies, webinars, trainings, and milestones.
+:sectnum!:
 
+[.lead]
 Stay up-to-date with the latest happenings in the Exa-MA project.
 
-== Recent Events
-
-* **General Assembly – January 14–15, 2025**  The Exa-MA consortium gathered at the Université de Strasbourg to review progress, welcome new team members, and discuss future directions. Highlights included updates on WP4 and WP7, along with interactive discussions about cross-work-package collaborations.  
-  more details available  xref:news/2025/20250114-15-ag.adoc[> here].
-
-* **Webinar Recap – Packaging HPC Software - Dec 3, 2025 **  E. Agullo (INRIA) led a webinar on modern packaging strategies using Spack and Guix-HPC, and J. Cladellas (UNISTRA) provided a preview of https://github.com/feelpp/benchmarking/[*feelpp.benchmarking*], a new tool for benchmarking HPC software on EuroHPC systems, see for example https://bench.feelpp.org[bench.feelpp.org] website generated using the tool for the toolboxes of Feel++
-
+[discrete]
 == Upcoming Events
 
-* **SciML'25 - March 24-25-26 **   Several colleagues from the Exa-MA project are set to attend the SCIML25 conference at Politecnico di Milano. Notably, our colleague Emmanuel Franck – leader of WP2 – is invited speaker. The conference, organized by Politecnico di Milano, promises to be a stimulating forum for discussing cutting-edge research in scientific machine learning, including both academia and industry. It will provide an excellent platform for exchanging ideas on topics such as optimal transport, AI, and high-performance computing, all of which are central to our project’s objectives. For more details about the event, please visit the  https://www.mate.polimi.it/events/EMS-TAG-SciML-25/[> official website].
+[.grid.grid-2.gap-2.items-start]
+--
+[.card]
+====
+icon:users[size=2x,role=text-primary] *General Assembly 2026*
 
+*January 19-21, 2026* | Arts et Métiers ParisTech, Aix-en-Provence
 
-* **Training Session on CI/CD & Benchmarking - March 24,25,26 **   
-  In collaboration with CoE Hidalgo2, we will soon host a training session focused on CI/CD best practices and advanced benchmarking for HPC software. Here is the https://events.it4i.cz/event/308/overview[training page].
+Three-day annual meeting with all WP leaders presenting progress and scientific highlights. Includes breakout sessions with Feel++, Scimba, Composyx, and Uranie frameworks, plus presentations on Sage-HPC and Daimos.
 
-* **Workshops & Seminars**  
-  We have a series of upcoming workshops and seminars to foster collaboration and share advances within the Exa-MA and broader NumPEx communities. More details will be announced shortly.
+xref:news/2026/20260119-21-ag.adoc[View full agenda and download PDF →]
+====
 
+[.card]
+====
+icon:network-wired[size=2x,role=text-info] *Trans-Numériques 2026*
+
+*February 2-5, 2026* | Couvent des Jacobins, Rennes
+
+First edition bringing together France's academic community around digital continuum challenges. NumPEx will be represented with presentations on performance, sustainability, and HPC. Exa-MA participants include project coordinators and WP leaders.
+
+https://inria.invityou.com/trans-numeriques2026[Event details and registration →]
+====
+--
+
+[discrete]
+== Recent Events
+
+[cols="1,5",frame=none,stripes=even]
+|===
+|icon:building[size=2x] *Nov 4, 2025*
+|**HiDALGO2 Clustering Event** – HLRS, Stuttgart +
+Christophe Prud'homme presented the Ktirio Urban Building pilot for city energy modeling. The pilot, co-funded 50% by NumPEx for EuroHPC, showcased the Ktirio Geom library developed jointly through CoE Hidalgo2 and Exa-MA (WP1 Geometry, Unistra-Inria CA collaboration). +
+https://www.hidalgo2.eu/clustering-event/\[Event details and presentations]
+
+|icon:chalkboard-teacher[size=2x] *Mar 24-26, 2025* 
+|**SciML'25 Conference** – Politecnico di Milano +
+Emmanuel Franck (WP2 leader) delivered invited talk on scientific machine learning. +
+https://www.mate.polimi.it/events/EMS-TAG-SciML-25/\[Conference details]
+
+|icon:laptop-code[size=2x] *Mar 24-26, 2025*
+|**CI/CD & Benchmarking Training** – In collaboration with CoE Hidalgo2 +
+Hands-on training on CI/CD best practices and advanced benchmarking for HPC software. +
+https://events.it4i.cz/event/308/overview\[Training materials]
+
+|icon:users[size=2x] *Jan 14-15, 2025* 
+|**General Assembly** – Université de Strasbourg +
+Consortium review of progress, WP4 and WP7 updates, cross-work-package collaborations. +
+xref:news/2025/20250114-15-ag.adoc[Read full recap →]
+
+|icon:box[size=2x] *Dec 3, 2024*
+|**Packaging HPC Software Webinar** +
+E. Agullo (INRIA): Modern packaging with Spack and Guix-HPC +
+J. Cladellas (UNISTRA): Preview of https://github.com/feelpp/benchmarking\[feelpp.benchmarking\] tool +
+See results: https://bench.feelpp.org\[bench.feelpp.org\]
+|===
+
+[discrete]
 == Archive
 
-For a complete list of past events and detailed recaps, please visit our archive section on the xref:news.adoc[News & Events] page or contact us for further information.
+For complete event history and detailed recaps, visit our xref:news/archive.adoc[archive page] or xref:contact.adoc[contact us].

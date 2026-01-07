@@ -1,42 +1,205 @@
-= Exa-MA Project Website
-:toc: macro
-:toclevels: 2
+= Exa-MA: Methods and Algorithms for Exascale
+:page-layout: manuals
+:page-tags: exama-home
+:page-cards-tag: catalog,info,resource,highlights
+:page-cards-within-module: true
+:page-cards-catalog-title: Main Navigation
+:page-cards-info-title: About Exa-MA
+:page-cards-resource-title: Resources and Updates
+:page-illustration: fa-solid fa-diagram-project
 :icons: font
 :source-highlighter: highlight.js
+:description: Developing cutting-edge numerical methods, algorithms, and software for exascale computing within the NumPEx initiative.
+:!sectnums:
 
-Welcome to the Exa-MA Project website—part of the PEPR NumPEx initiative dedicated to advancing methods and algorithms for exascale computing. Our work spans cutting-edge numerical methods, open-source software libraries, AI integration, and demonstrators that validate our approach to exascale performance.
+[.lead.lead-75]
+Building the future of exascale computing through advanced numerical methods, AI-enhanced algorithms, and production-ready open-source software.
 
-== Overview
+[discrete]
+== Our Mission
 
-Exa-MA is focused on:
+The Exa-MA project is part of France's PEPR NumPEx initiative, dedicated to pushing the frontiers of exascale computing. We develop and deploy:
 
-* Developing robust algorithms and methods tailored for exascale architectures.
-* Contributing to software libraries that abstract hardware complexity.
-* Integrating AI-driven techniques in simulation, model reduction, and optimization.
-* Delivering demonstrators, mini-apps, and proxy apps to showcase our progress.
+[.grid.grid-2.gap-2.items-start]
+--
+[.no-panel]
+====
+icon:microscope[size=2x] *Advanced Methods*
 
-Learn more about our project on the xref:about.adoc[About] page.
+Novel discretizations, solvers, and algorithms optimized for exascale architectures
+====
 
-== Explore Exa-MA
+[.no-panel]
+====
+icon:brain[size=2x] *AI Integration*
 
-For further details, please use the navigation links below:
+Scientific machine learning for simulation, model reduction, and optimization
+====
 
-* xref:workpackages.adoc[Work Packages] – A comprehensive description of our work packages, including WP0 through WP7.
-* xref:team.adoc[Team] – Meet our dedicated researchers, engineers, and PhD students.
-* xref:deliverables.adoc[Deliverables & Publications] – Our key outputs, software toolboxes, and publications.
-* xref:news.adoc[News & Events] – Stay updated on our latest events and announcements.
-* xref:partners.adoc[Partners] – Information on our consortium and external collaborators.
-* xref:contact.adoc[Contact] – How to get in touch with us.
+[.no-panel]
+====
+icon:code[size=2x] *Open Software*
 
-== Latest News
+Production-ready libraries that abstract hardware complexity and enable seamless portability
+====
 
-Check out our xref:news.adoc[News & Events] section for updates on recent activities, including our General Assembly and webinar recaps.
+[.no-panel]
+====
+icon:chart-line[size=2x] *Validated Impact*
 
-== Quick Links
+Demonstrators, benchmarks, and real-world applications across scientific domains
+====
+--
 
-* xref:about.adoc[About Exa-MA]
-* xref:workpackages.adoc[Our Work Packages]
-* xref:team.adoc[Meet the Team]
-* xref:deliverables.adoc[Deliverables & Publications]
+[.lead.lead-75]
+Exa-MA brings together leading French institutions (CEA, École Polytechnique, Inria, Sorbonne Université, Université de Strasbourg) with a budget of 6.255 M€ over the project duration.
 
-We invite you to explore the site and learn more about our contributions to exascale computing.
+[.section-gray]
+--
+[discrete]
+== Recent Achievements
+
+[discrete]
+=== 2025 Highlights
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:rocket[size=2x,role=text-primary] *Up to 50× Speedup* +
+GenEO preconditioning on large-scale problems (45M DoFs, 2916 cores)
+____
+
+[.text-center]
+____
+icon:microchip[size=2x,role=text-success] *8000 GPU Scale* +
+Bayesian optimization on LUMI supercomputer with fractal decomposition
+____
+
+[.text-center]
+____
+icon:brain[size=2x,role=text-info] *80-200% CPU Savings* +
+Neural operators accelerating Newton iterations, domain-decomposed PINNs
+____
+
+[.text-center]
+____
+icon:cube[size=2x,role=text-warning] *EuroHPC Meshing* +
+Feature-preserving alpha wrapping (CGAL 6.0) and urban-scale mesh generation
+____
+====
+
+xref:results.adoc#highlights-2025[View detailed 2025 results →]
+
+[discrete]
+=== Impact at a Glance
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:file-alt[size=2x,role=text-primary] *59* Publications
+____
+
+[.text-center]
+____
+icon:cube[size=2x,role=text-success] *16* Software Packages
+____
+
+[.text-center]
+____
+icon:network-wired[size=2x,role=text-info] *18* Frameworks
+____
+
+[.text-center]
+____
+icon:users[size=2x,role=text-warning] *55* Person-Years
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Work Packages Overview
+
+Exa-MA is organized into six complementary work packages, each addressing critical aspects of exascale computing:
+
+[discrete]
+=== Core Methods & Algorithms
+[cols="1,4"]
+|===
+|xref:workpackages/wp1.adoc[WP1] | *Advanced Discretizations* – High-order methods, adaptivity, parallel solvers
+|xref:workpackages/wp2.adoc[WP2] | *Scalable Linear Algebra* – Domain decomposition, preconditioning, eigensolvers
+|xref:workpackages/wp3.adoc[WP3] | *Optimization & UQ* – Large-scale optimization, uncertainty quantification
+|===
+
+[discrete]
+=== AI & Applications
+[cols="1,4"]
+|===
+|xref:workpackages/wp4.adoc[WP4] | *Scientific Machine Learning* – Neural operators, PINNs, hybrid models
+|xref:workpackages/wp5.adoc[WP5] | *Application Demonstrators* – Real-world validation across science and engineering
+|===
+
+[discrete]
+=== Software & Integration
+[cols="1,4"]
+|===
+|xref:workpackages/wp6.adoc[WP6] | *Software Stack & CI/CD* – Packaging, deployment, continuous integration
+|===
+
+[.text-right]
+xref:workpackages.adoc[View detailed work packages →]
+--
+
+[.section-gray]
+--
+[discrete]
+== Latest News & Updates
+
+[discrete]
+=== Upcoming Events
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:calendar[size=2x,role=text-primary] *January 2026* +
+General Assembly and Progress Review
+____
+
+[.text-center]
+____
+icon:chalkboard-teacher[size=2x,role=text-success] *Q1 2026* +
+Training workshops on neural operators and HPC integration
+____
+====
+
+Stay informed about project milestones, publications, and community events:
+
+* xref:news.adoc[News and Events] – Latest announcements and upcoming activities
+* xref:deliverables.adoc[Deliverables] – Reports, documentation, and public outputs
+* xref:results.adoc[Results & Impact] – Detailed metrics and scientific achievements
+--
+
+[.section-white]
+--
+[discrete]
+== Getting Started
+
+Whether you're a researcher, developer, or end user, find your entry point:
+
+[cols="1,3"]
+|===
+|icon:book[] For Researchers | Start with xref:results.adoc[Results and Impact] to see our latest publications and scientific contributions
+|icon:terminal[] For Developers | Visit the xref:software/index.adoc[Software Stack] to explore packages, APIs, and CI/CD status
+|icon:graduation-cap[] For Students | Check xref:news.adoc[Training & Events] for workshops and educational resources
+|icon:handshake[] For Partners | Learn about xref:partners.adoc[Consortium Partners] and collaboration opportunities
+|===
+
+[.text-center]
+====
+xref:about.adoc[Learn more about Exa-MA] | xref:contact.adoc[Get in touch] | xref:team.adoc[Meet the team]
+====
+--

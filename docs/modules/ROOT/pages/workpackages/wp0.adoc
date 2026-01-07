@@ -1,0 +1,28 @@
+= WP0: Project Management
+:page-layout: default
+:page-tags: manual,wp
+:page-cards-tag: manual
+:parent-catalogs: wp-catalog
+:page-illustration: fa-solid fa-clipboard-check
+
+WP0 keeps Exa-MA moving smoothly: governance, coordination, risk tracking, and reporting across all seven technical work packages.
+
+== Scope
+- Coordinate scientific and technical roadmaps
+- Track risks, conflicts, and mitigation actions
+- Monitor budget, milestones, and deliverables
+- Ensure compliance with funding and governance rules
+
+== Leads & Timeline
+- Lead: Université de Strasbourg
+- Duration: Months 1-60
+
+== Key Interfaces
+- Works with all WPs to align milestones and dependencies
+- Synchronizes with NumPEx board reporting and audits
+- Provides communication templates for internal and external updates
+
+== Current Focus
+- Synchronizing WP milestones with upcoming reviews
+- Keeping deliverable cadence predictable
+- Publishing lightweight status snapshots for all WPs

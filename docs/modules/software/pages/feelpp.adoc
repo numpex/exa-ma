@@ -1,4 +1,7 @@
 = Feel++ Package
+:page-tags: software
+:page-illustration: fa-solid fa-cube
+:description: High-performance C++ framework for PDEs using Galerkin methods and reduced-order modeling.
 
 == Description
 

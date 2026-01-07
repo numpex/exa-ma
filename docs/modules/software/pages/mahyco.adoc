@@ -1,4 +1,7 @@
 = MaHyCo Package
+:page-tags: software
+:page-illustration: fa-solid fa-compress-arrows-alt
+:description: Multi-material Arbitrary-Lagrangian-Eulerian Hydrodynamics Code.
 
 == Description
 

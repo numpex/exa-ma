@@ -1,4 +1,7 @@
 = Hawen Package
+:page-tags: software
+:page-illustration: fa-solid fa-wave-square
+:description: Helmholtz solver using discontinuous Galerkin methods.
 
 == Description
 

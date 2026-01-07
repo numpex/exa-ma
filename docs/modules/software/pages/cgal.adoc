@@ -1,4 +1,7 @@
 = CGAL Package
+:page-tags: software
+:page-illustration: fa-solid fa-draw-polygon
+:description: Computational Geometry Algorithms Library for geometric computing.
 
 == Description
 

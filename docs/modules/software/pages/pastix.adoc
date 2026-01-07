@@ -1,4 +1,7 @@
 = PaStiX Package
+:page-tags: software
+:page-illustration: fa-solid fa-th
+:description: Parallel Sparse matriX package for direct solving.
 
 == Description
 

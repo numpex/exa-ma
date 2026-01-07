@@ -1,4 +1,7 @@
 = Freefem++ Package
+:page-tags: software
+:page-illustration: fa-solid fa-cube
+:description: High-level language and IDE for solving PDEs with finite element methods.
 
 == Description
 

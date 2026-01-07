@@ -1,4 +1,8 @@
-= Deliverables & Publications
+= Deliverables and Publications
+:page-tags: resource
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-file-lines
+:description: Key deliverables, reports, and publication links for Exa-MA.
 
 Exa-MA delivers a wide range of outputs, from software toolboxes and demonstrators to high-impact publications.
 
@@ -12,5 +16,26 @@ Demonstrators::
   Mini-apps and proxy-apps that validate our methodologies at scale.
   
 == Publications
-So far, Exa-MA has produced 13 publications on HAL. Additional publications and reports will be released as the project progresses.
-you can find them xref:https://hal.science/search/index/?q=Exa-MA&rows=30&level0_domain_s=math+OR+info+OR+stat+OR+phys&publicationDateY_i=2025+OR+2024[> here].
+
+[.grid.grid-2.gap-2]
+--
+[.no-panel]
+====
+icon:book[size=2x,role=text-primary] *59 Publications on HAL*
+
+Browse all peer-reviewed publications acknowledging Exa-MA (ANR-22-EXNU-0002), organized by year with direct links to PDFs.
+
+xref:publications-hal.adoc[View full publication list →]
+====
+
+[.no-panel]
+====
+icon:external-link-alt[size=2x,role=text-info] *Search on HAL*
+
+Access the live HAL archive search for real-time publication updates.
+
+https://hal.science/search/index/?q=ANR-22-EXNU-0002&rows=30&level0_domain_s=math+OR+info+OR+stat+OR+phys[Search HAL archive →]
+====
+--
+
+Publications are automatically harvested from HAL using the ANR project identifier. The list is regenerated periodically to capture new submissions.

@@ -1,4 +1,8 @@
 = Contact Us
+:page-tags: info
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-envelope
+:description: How to reach the Exa-MA team for inquiries and collaboration.
 
 For further information or inquiries about the Exa-MA project, please contact our team:
 
@@ -14,4 +18,4 @@ Project Officer::
   Email:
 
 
-You can also follow us on our social media channels and check our [News & Events xref:news.adoc] page for updates.
+You can also follow us on our social media channels and check our xref:news.adoc[News and Events] page for updates.
