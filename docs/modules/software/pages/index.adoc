@@ -86,7 +86,8 @@ ____
 [discrete]
 == Software Development Workflow
 
-image::wp7-workflow.png[Exa-MA software development workflow]
+.Exa-MA software development workflow
+image::wp7-workflow.png[role="img-fluid img-shadow img-rounded w-70 justify-self-center",alt="Exa-MA software development workflow"]
 
 The workflow builds on the CI/CD framework with automated builds, testing, and deployment.
 --

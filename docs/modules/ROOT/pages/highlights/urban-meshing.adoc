@@ -1,138 +1,200 @@
-= Urban-Scale Meshing with CGAL 6.0
+= Urban-Scale Meshing for City Energy Simulation
 :page-layout: default
 :page-tags: highlight
 :parent-catalogs: highlights-2025
 :page-illustration: fa-solid fa-city
-:description: CGAL 6.0 integration for feature-preserving city-scale mesh generation on EuroHPC
-
-// tag::card[]
-[.page-card]
-====
-[.page-card-illustration]
---
-icon:city[size=3x,role=text-warning]
---
-
-[.page-card-body]
---
-xref:highlights/urban-meshing.adoc[*Urban Meshing*]
-
-CGAL 6.0 integration for feature-preserving city-scale mesh generation on EuroHPC
---
-====
-// end::card[]
+:description: From urban data to multi-level watertight meshes, ready for building energy simulation at city scale and beyond.
+:icons: font
 
 [.lead]
-Production-ready urban meshing pipeline integrated in CGAL 6.0, enabling watertight city-scale meshes for energy simulation and digital twin applications.
+From urban data to multi-level watertight meshes, ready for building energy simulation at city scale and beyond.
 
-== Overview
+[.section-gray]
+--
+[discrete]
+== Identity Card
 
-The Ktirio-geom pipeline, featuring alpha wrapping and feature preservation, has been integrated into CGAL 6.0, providing robust meshing for complex urban geometries on EuroHPC infrastructure.
+[.grid.grid-2.gap-2]
+====
+____
+icon:users[size=2x,role=text-primary] *Authors*
 
-== Key Achievement
+* Christophe Prud'homme _(Unistra–Cemosis)_
+* Vincent Chabannes _(Unistra–Cemosis)_
+* Javier Cladellas _(Unistra–Cemosis)_
+* Pierre Alliez _(INRIA Sophia Antipolis)_ + Geometry Factory
+____
+
+____
+icon:handshake[size=2x,role=text-success] *Collaboration*
+
+* CoE HiDALGO2
+* ExaMA/NumPEx (UNISTRA, INRIA-CA)
+* Ktirio & CGAL projects
+
+_Date: September 2025_
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Context and Objective
+
+Urban energy, wind, and heat modeling requires *closed and coherent geometries*, while input data (buildings, roads, terrain, hydrology, vegetation) are heterogeneous and often non-watertight.
+
+*Objective*: Reconstruct *watertight urban meshes* at LoD-0/1, interoperable and enriched with physical model attributes for simulation.
+--
+
+[.section-gray]
+--
+[discrete]
+== Key Result and Innovation
+
+Development of a complete *GIS → Mesh* processing pipeline:
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:cogs[size=2x,role=text-primary] *Pipeline Components*
+
+* *Ingestion*: Mapbox data integration
+* *Robust Operations*: Ktirio-Geom with CGAL
+* *Boolean Operations*: Multi-layer processing
+* *Topological Control*: Closure verification
+____
+
+____
+icon:bolt[size=2x,role=text-success] *Performance Gains*
+
+* Multi-km² scenes → closed LoD-1/2 solids
+* Buildings, roads, terrain, rivers, vegetation, roofs
+* Preparation: *weeks → minutes*
+* Numerical stability improvements
+____
+====
+
+*Outputs compatible with*: Urban Building Model (Ktirio-UBM) and energy/CFD solvers.
+--
+
+[.section-white]
+--
+[discrete]
+== Grenoble City Reconstruction
+
+Reconstruction of the city of Grenoble over a 10 km radius with roads, rivers, water bodies, buildings with roofs, and topography — *with a single click*.
+--
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+.Ktirio application interface for urban data selection
+image::highlights/ktirio-geom/1-location-grenoble.png[Ktirio Interface,400]
+____
 
 [.text-center]
-****
-icon:city[size=4x,role=text-warning]
+____
+.Bird's eye view of Grenoble 10km mesh
+image::highlights/ktirio-geom/2-overview-grenoble.png[Grenoble Overview,400]
+____
+====
 
-*Urban-Scale Meshing*
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+.City center with buildings, roads and vegetation
+image::highlights/ktirio-geom/3-zoom-grenoble.png[Grenoble City Center,400]
+____
 
-Feature-preserving alpha wrapping +
-CGAL 6.0 integration +
-EuroHPC deployment
-****
+[.text-center]
+____
+.Mountain terrain with urban area
+image::highlights/ktirio-geom/4-zoom-grenoble.png[Grenoble Mountains,400]
+____
+====
 
-== Technical Details
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+.Detailed view: buildings and infrastructure
+image::highlights/ktirio-geom/5-zoom-grenoble.png[Grenoble Detailed View,400]
+____
 
-=== CGAL 6.0 Integration
-* *Alpha Wrapping*: Robust watertight surface extraction from imperfect inputs
-* *Feature Preservation*: Sharp edges and corners maintained during wrapping
-* *Scalability*: Handles city-scale geometries (thousands of buildings)
-* *Quality Guarantees*: Provable geometric and topological properties
+[.text-center]
+____
+.Close-up: river and urban structures
+image::highlights/ktirio-geom/6-zoom-grenoble.jpg[Grenoble River Detail,400]
+____
+====
 
-=== Ktirio-geom Pipeline
-* *Input*: Raw urban data (building footprints, LiDAR, OpenStreetMap)
-* *Processing*: Geometric cleaning, feature detection, adaptive wrapping
-* *Output*: Simulation-ready volumetric meshes
-* *Deployment*: EuroHPC systems (Joliot-Curie, MareNostrum)
+[.section-white]
+--
+Construction of a *watertight (conformal) mesh* ready for HPC (EuroHPC) for building energy simulation.
+--
 
-== Algorithmic Innovation
+[.section-gray]
+--
+[discrete]
+== Impact and Next Steps
 
-The alpha wrapping approach:
+[.grid.grid-2.gap-2]
+====
+____
+icon:bullseye[size=2x,role=text-primary] *Current Impact*
 
-1. **Offset Surface Construction**: Create offset of input geometry at scale α
-2. **Feature Detection**: Identify and protect geometric features
-3. **Watertight Extraction**: Guarantee closed, manifold output mesh
-4. **Quality Optimization**: Post-processing for simulation requirements
+* Quick access to urban use cases faithful to energy/microclimate modeling
+* Dataset sharing in CoE HiDALGO2 ecosystem
+* Tools for urban heat island analysis
+____
 
-### Advantages Over Traditional Methods
-* *Robustness*: Handles degenerate, intersecting, or incomplete input
-* *Automation*: Minimal manual intervention required
-* *Performance*: Parallel implementation for large-scale datasets
-* *Provable Quality*: Theoretical guarantees on output topology
+____
+icon:road[size=2x,role=text-success] *Next Steps*
 
-== Application: Urban Energy Simulation
+* Publication of *reference datasets* (watertight + scripts) via https://ckan.hidalgo2.eu[CKAN]
+* CFD & energy simulation coupling
+* Extended urban heat island studies
+____
+====
+--
 
-The pipeline enables:
+[.section-white]
+--
+[discrete]
+== Valorization
 
-* **Building Energy Models**: Thermal comfort, HVAC optimization
-* **Microclimate Simulation**: Urban heat island effects, wind patterns
-* **Solar Potential**: Rooftop solar panel placement optimization
-* **Digital Twins**: Real-time city monitoring and scenario planning
+[.grid.grid-2.gap-2]
+====
+____
+icon:calendar-check[size=2x,role=text-primary] *Demonstrations*
 
-### Case Studies
-* *Paris City Center*: 5,000+ buildings meshed for thermal analysis
-* *Mediterranean Coastal City*: Wind and thermal coupling for urban planning
-* *Smart City Initiative*: Integration with sensor networks for validation
+* CoE HiDALGO2 Review Demo _(September 18, 2025)_
+* https://hidalgo2.eu[Clustering Event at HLRS Stuttgart] _(November 4, 2025)_ — *Presented*
+____
 
-== EuroHPC Deployment
+____
+icon:cloud[size=2x,role=text-info] *Deployment*
 
-Successfully deployed on:
+* Cloud deployment of graphical application _(coming soon)_
+* Valorization via SATT Conectus
+____
+====
+--
 
-* **Jean Zay (IDRIS)**: Large-scale pre-processing workflows
-* **Joliot-Curie (TGCC)**: Coupled meshing + simulation pipelines
-* **MareNostrum (BSC)**: Multi-city comparative studies
-
-### Performance Metrics
-* *Throughput*: 1,000+ buildings per hour on 100 cores
-* *Scalability*: Linear weak scaling to 1,000+ cores
-* *Memory Efficiency*: Streaming algorithms for TB-scale datasets
-
-== Impact on Urban Science
-
-This capability transforms:
-
-* **Policy Making**: Evidence-based urban planning decisions
-* **Climate Adaptation**: Assess heat mitigation strategies before deployment
-* **Energy Transition**: Optimize renewable energy integration in cities
-* **Disaster Preparedness**: Flood, fire, and earthquake scenario modeling
-
+[.section-gray]
+--
+[discrete]
 == Related Work Packages
 
-* xref:../workpackages/wp1.adoc[WP1: Advanced Discretizations] - Mesh quality and adaptivity
-* xref:../workpackages/wp5.adoc[WP5: Application Demonstrators] - Urban energy applications
-* xref:../workpackages/wp6.adoc[WP6: Software Stack] - CGAL packaging and deployment
-
-== Software & Resources
-
-* *CGAL 6.0*: Available via Spack, Guix, and package managers
-* *Ktirio-geom*: Open-source pipeline on GitHub
-* *Tutorials*: Step-by-step urban meshing workflows
-* *Demo Datasets*: European cities for testing and validation
-
-[TIP]
-====
-**Try it yourself**: CGAL 6.0 alpha wrapping examples available in the xref:../software/index.adoc[software showroom] with reproducible notebooks.
-====
-
-== Recognition
-
-* **Community Impact**: CGAL 6.0 release (Dec 2024) highlighted alpha wrapping
-* **Industry Adoption**: Used by urban planning agencies and engineering firms
-* **Publications**: Multiple journal papers and conference presentations
-* **Training**: Workshops at Geometry Processing and CAD/CAM conferences
+[cols="1,3"]
+|===
+|xref:../workpackages/wp1.adoc[WP1] |*Discretization* — Mesh quality and adaptivity
+|xref:../workpackages/wp7.adoc[WP7] |*Showroom & Benchmarking* — Software deployment and integration
+|===
 
 [.text-center]
---
-xref:neural-acceleration.adoc[← Previous: Neural Operators] | xref:../results.adoc[Back to Results]
+xref:neural-acceleration.adoc[← Neural Operators] | xref:../results.adoc[Back to Results] | xref:speedups.adoc[GenEO Speedups →]
 --

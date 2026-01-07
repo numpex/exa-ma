@@ -1,15 +1,9 @@
 = Results and Impact
-:page-layout: manuals
-:page-tags: catalog
-:page-cards-order: 2
+:page-tags: info
 :parent-catalogs: exama-home
-:page-cards-tag: highlight
-:page-cards-within-module: true
-:page-cards-highlights-title: 2025 Highlights
 :page-illustration: fa-solid fa-chart-line
 :description: Metrics, speedups, scale runs, packaging status, and milestones from the latest board review.
 :icons: font
-:sectnum!:
 
 [.lead]
 This dashboard summarizes recent scientific and technical outcomes across Exa-MA. Metrics reflect the latest board presentation (December 2025) and are updated regularly.
@@ -52,17 +46,52 @@ ____
 --
 
 [[highlights-2025]]
-[.docs-cards-layout]
+[discrete]
 == 2025 Highlights
 
-[.highlights]
---
---
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:rocket[size=3x,role=text-primary]
+
+*xref:highlights/speedups.adoc[50× Speedup with GenEO]*
+
+GenEO preconditioning on large-scale problems (45M DoFs, 2916 cores)
+____
+
+[.text-center]
+____
+icon:microchip[size=3x,role=text-success]
+
+*xref:highlights/scale.adoc[8000 GPU Scale]*
+
+Bayesian optimization on LUMI supercomputer with fractal decomposition
+____
+
+[.text-center]
+____
+icon:brain[size=3x,role=text-info]
+
+*xref:highlights/neural-acceleration.adoc[80-200% CPU Savings]*
+
+Neural operators accelerating Newton iterations, domain-decomposed PINNs
+____
+
+[.text-center]
+____
+icon:city[size=3x,role=text-warning]
+
+*xref:highlights/urban-meshing.adoc[EuroHPC Meshing]*
+
+Feature-preserving alpha wrapping (CGAL 6.0) and urban-scale mesh generation
+____
+====
 
 [.section-gray]
 --
 [discrete]
-== Software and Packaging Status
+== Software and Packaging Objectives
 
 [.grid.grid-2.gap-2]
 ====
