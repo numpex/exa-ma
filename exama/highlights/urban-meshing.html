@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Urban-Scale Meshing with CGAL 6.0 :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <title>Urban-Scale Meshing for City Energy Simulation :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
     <link rel="canonical" href="https://numpex.github.io/exama/exama/highlights/urban-meshing.html">
-    <meta name="description" content="CGAL 6.0 integration for feature-preserving city-scale mesh generation on EuroHPC">
+    <meta name="description" content="From urban data to multi-level watertight meshes, ready for building energy simulation at city scale and beyond.">
     <meta name="generator" content="Antora 3.1.3">
 <link rel="stylesheet" href="../../_/css/site.css">
 
@@ -306,7 +306,7 @@ MathJax.Hub.Config({
   <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Exa-MA</a></li>
-    <li><a href="urban-meshing.html">Urban-Scale Meshing with CGAL 6.0</a></li>
+    <li><a href="urban-meshing.html">Urban-Scale Meshing for City Energy Simulation</a></li>
   </ul>
 </nav>
 
@@ -331,328 +331,337 @@ MathJax.Hub.Config({
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Urban-Scale Meshing with CGAL 6.0</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="exampleblock page-card">
-<div class="content">
-<div class="openblock page-card-illustration">
-<div class="content">
-<div class="paragraph">
-<p><span class="icon text-warning"><i class="fa fa-city fa-3x"></i></span></p>
-</div>
-</div>
-</div>
-<div class="openblock page-card-body">
-<div class="content">
-<div class="paragraph">
-<p><a href="#"><strong>Urban Meshing</strong></a></p>
-</div>
-<div class="paragraph">
-<p>CGAL 6.0 integration for feature-preserving city-scale mesh generation on EuroHPC</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<h1 class="page">Urban-Scale Meshing for City Energy Simulation</h1>
 <div class="paragraph lead">
-<p>Production-ready urban meshing pipeline integrated in CGAL 6.0, enabling watertight city-scale meshes for energy simulation and digital twin applications.</p>
+<p>From urban data to multi-level watertight meshes, ready for building energy simulation at city scale and beyond.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_overview"><a class="anchor" href="#_overview"></a>1. Overview</h2>
-<div class="sectionbody">
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_identity_card" class="discrete">Identity Card</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>The Ktirio-geom pipeline, featuring alpha wrapping and feature preservation, has been integrated into CGAL 6.0, providing robust meshing for complex urban geometries on EuroHPC infrastructure.</p>
+<p><span class="icon text-primary"><i class="fa fa-users fa-2x"></i></span> <strong>Authors</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Christophe Prud&#8217;homme <em>(Unistra–Cemosis)</em></p>
+</li>
+<li>
+<p>Vincent Chabannes <em>(Unistra–Cemosis)</em></p>
+</li>
+<li>
+<p>Javier Cladellas <em>(Unistra–Cemosis)</em></p>
+</li>
+<li>
+<p>Pierre Alliez <em>(INRIA Sophia Antipolis)</em> + Geometry Factory</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-handshake fa-2x"></i></span> <strong>Collaboration</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CoE HiDALGO2</p>
+</li>
+<li>
+<p>ExaMA/NumPEx (UNISTRA, INRIA-CA)</p>
+</li>
+<li>
+<p>Ktirio &amp; CGAL projects</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Date: September 2025</em></p>
+</div>
+</blockquote>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_key_achievement"><a class="anchor" href="#_key_achievement"></a>2. Key Achievement</h2>
-<div class="sectionbody">
-<div class="sidebarblock text-center">
+</div>
+</div>
+<div class="openblock section-white">
+<div class="content">
+<h2 id="_context_and_objective" class="discrete">Context and Objective</h2>
+<div class="paragraph">
+<p>Urban energy, wind, and heat modeling requires <strong>closed and coherent geometries</strong>, while input data (buildings, roads, terrain, hydrology, vegetation) are heterogeneous and often non-watertight.</p>
+</div>
+<div class="paragraph">
+<p><strong>Objective</strong>: Reconstruct <strong>watertight urban meshes</strong> at LoD-0/1, interoperable and enriched with physical model attributes for simulation.</p>
+</div>
+</div>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_key_result_and_innovation" class="discrete">Key Result and Innovation</h2>
+<div class="paragraph">
+<p>Development of a complete <strong>GIS → Mesh</strong> processing pipeline:</p>
+</div>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-primary"><i class="fa fa-cogs fa-2x"></i></span> <strong>Pipeline Components</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Ingestion</strong>: Mapbox data integration</p>
+</li>
+<li>
+<p><strong>Robust Operations</strong>: Ktirio-Geom with CGAL</p>
+</li>
+<li>
+<p><strong>Boolean Operations</strong>: Multi-layer processing</p>
+</li>
+<li>
+<p><strong>Topological Control</strong>: Closure verification</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-bolt fa-2x"></i></span> <strong>Performance Gains</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Multi-km² scenes → closed LoD-1/2 solids</p>
+</li>
+<li>
+<p>Buildings, roads, terrain, rivers, vegetation, roofs</p>
+</li>
+<li>
+<p>Preparation: <strong>weeks → minutes</strong></p>
+</li>
+<li>
+<p>Numerical stability improvements</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Outputs compatible with</strong>: Urban Building Model (Ktirio-UBM) and energy/CFD solvers.</p>
+</div>
+</div>
+</div>
+<div class="openblock section-white">
+<div class="content">
+<h2 id="_grenoble_city_reconstruction" class="discrete">Grenoble City Reconstruction</h2>
+<div class="paragraph">
+<p>Reconstruction of the city of Grenoble over a 10 km radius with roads, rivers, water bodies, buildings with roofs, and topography — <strong>with a single click</strong>.</p>
+</div>
+</div>
+</div>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock text-center">
+<blockquote>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/highlights/ktirio-geom/1-location-grenoble.png" alt="Ktirio Interface" width="400">
+</div>
+<div class="title">Figure 1. Ktirio application interface for urban data selection</div>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock text-center">
+<blockquote>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/highlights/ktirio-geom/2-overview-grenoble.png" alt="Grenoble Overview" width="400">
+</div>
+<div class="title">Figure 2. Bird&#8217;s eye view of Grenoble 10km mesh</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock text-center">
+<blockquote>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/highlights/ktirio-geom/3-zoom-grenoble.png" alt="Grenoble City Center" width="400">
+</div>
+<div class="title">Figure 3. City center with buildings, roads and vegetation</div>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock text-center">
+<blockquote>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/highlights/ktirio-geom/4-zoom-grenoble.png" alt="Grenoble Mountains" width="400">
+</div>
+<div class="title">Figure 4. Mountain terrain with urban area</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock text-center">
+<blockquote>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/highlights/ktirio-geom/5-zoom-grenoble.png" alt="Grenoble Detailed View" width="400">
+</div>
+<div class="title">Figure 5. Detailed view: buildings and infrastructure</div>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock text-center">
+<blockquote>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/highlights/ktirio-geom/6-zoom-grenoble.jpg" alt="Grenoble River Detail" width="400">
+</div>
+<div class="title">Figure 6. Close-up: river and urban structures</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="openblock section-white">
 <div class="content">
 <div class="paragraph">
-<p><span class="icon text-warning"><i class="fa fa-city fa-4x"></i></span></p>
+<p>Construction of a <strong>watertight (conformal) mesh</strong> ready for HPC (EuroHPC) for building energy simulation.</p>
 </div>
+</div>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_impact_and_next_steps" class="discrete">Impact and Next Steps</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p><strong>Urban-Scale Meshing</strong></p>
+<p><span class="icon text-primary"><i class="fa fa-bullseye fa-2x"></i></span> <strong>Current Impact</strong></p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Quick access to urban use cases faithful to energy/microclimate modeling</p>
+</li>
+<li>
+<p>Dataset sharing in CoE HiDALGO2 ecosystem</p>
+</li>
+<li>
+<p>Tools for urban heat island analysis</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>Feature-preserving alpha wrapping<br>
-CGAL 6.0 integration<br>
-EuroHPC deployment</p>
+<p><span class="icon text-success"><i class="fa fa-road fa-2x"></i></span> <strong>Next Steps</strong></p>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_technical_details"><a class="anchor" href="#_technical_details"></a>3. Technical Details</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_cgal_6_0_integration"><a class="anchor" href="#_cgal_6_0_integration"></a>3.1. CGAL 6.0 Integration</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alpha Wrapping</strong>: Robust watertight surface extraction from imperfect inputs</p>
+<p>Publication of <strong>reference datasets</strong> (watertight + scripts) via <a href="https://ckan.hidalgo2.eu">CKAN</a></p>
 </li>
 <li>
-<p><strong>Feature Preservation</strong>: Sharp edges and corners maintained during wrapping</p>
+<p>CFD &amp; energy simulation coupling</p>
 </li>
 <li>
-<p><strong>Scalability</strong>: Handles city-scale geometries (thousands of buildings)</p>
-</li>
-<li>
-<p><strong>Quality Guarantees</strong>: Provable geometric and topological properties</p>
+<p>Extended urban heat island studies</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_ktirio_geom_pipeline"><a class="anchor" href="#_ktirio_geom_pipeline"></a>3.2. Ktirio-geom Pipeline</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Input</strong>: Raw urban data (building footprints, LiDAR, OpenStreetMap)</p>
-</li>
-<li>
-<p><strong>Processing</strong>: Geometric cleaning, feature detection, adaptive wrapping</p>
-</li>
-<li>
-<p><strong>Output</strong>: Simulation-ready volumetric meshes</p>
-</li>
-<li>
-<p><strong>Deployment</strong>: EuroHPC systems (Joliot-Curie, MareNostrum)</p>
-</li>
-</ul>
+</blockquote>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_algorithmic_innovation"><a class="anchor" href="#_algorithmic_innovation"></a>4. Algorithmic Innovation</h2>
-<div class="sectionbody">
+</div>
+<div class="openblock section-white">
+<div class="content">
+<h2 id="_valorization" class="discrete">Valorization</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>The alpha wrapping approach:</p>
+<p><span class="icon text-primary"><i class="fa fa-calendar-check fa-2x"></i></span> <strong>Demonstrations</strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>Offset Surface Construction</strong>: Create offset of input geometry at scale α</p>
-</li>
-<li>
-<p><strong>Feature Detection</strong>: Identify and protect geometric features</p>
-</li>
-<li>
-<p><strong>Watertight Extraction</strong>: Guarantee closed, manifold output mesh</p>
-</li>
-<li>
-<p><strong>Quality Optimization</strong>: Post-processing for simulation requirements</p>
-</li>
-</ol>
-</div>
-<div class="sect2">
-<h3 id="_advantages_over_traditional_methods"><a class="anchor" href="#_advantages_over_traditional_methods"></a>4.1. Advantages Over Traditional Methods</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Robustness</strong>: Handles degenerate, intersecting, or incomplete input</p>
+<p>CoE HiDALGO2 Review Demo <em>(September 18, 2025)</em></p>
 </li>
 <li>
-<p><strong>Automation</strong>: Minimal manual intervention required</p>
-</li>
-<li>
-<p><strong>Performance</strong>: Parallel implementation for large-scale datasets</p>
-</li>
-<li>
-<p><strong>Provable Quality</strong>: Theoretical guarantees on output topology</p>
+<p><a href="https://hidalgo2.eu">Clustering Event at HLRS Stuttgart</a> <em>(November 4, 2025)</em> — <strong>Presented</strong></p>
 </li>
 </ul>
 </div>
+</blockquote>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_application_urban_energy_simulation"><a class="anchor" href="#_application_urban_energy_simulation"></a>5. Application: Urban Energy Simulation</h2>
-<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>The pipeline enables:</p>
+<p><span class="icon text-info"><i class="fa fa-cloud fa-2x"></i></span> <strong>Deployment</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Building Energy Models</strong>: Thermal comfort, HVAC optimization</p>
+<p>Cloud deployment of graphical application <em>(coming soon)</em></p>
 </li>
 <li>
-<p><strong>Microclimate Simulation</strong>: Urban heat island effects, wind patterns</p>
-</li>
-<li>
-<p><strong>Solar Potential</strong>: Rooftop solar panel placement optimization</p>
-</li>
-<li>
-<p><strong>Digital Twins</strong>: Real-time city monitoring and scenario planning</p>
+<p>Valorization via SATT Conectus</p>
 </li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="_case_studies"><a class="anchor" href="#_case_studies"></a>5.1. Case Studies</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Paris City Center</strong>: 5,000+ buildings meshed for thermal analysis</p>
-</li>
-<li>
-<p><strong>Mediterranean Coastal City</strong>: Wind and thermal coupling for urban planning</p>
-</li>
-<li>
-<p><strong>Smart City Initiative</strong>: Integration with sensor networks for validation</p>
-</li>
-</ul>
+</blockquote>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_eurohpc_deployment"><a class="anchor" href="#_eurohpc_deployment"></a>6. EuroHPC Deployment</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Successfully deployed on:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Jean Zay (IDRIS)</strong>: Large-scale pre-processing workflows</p>
-</li>
-<li>
-<p><strong>Joliot-Curie (TGCC)</strong>: Coupled meshing + simulation pipelines</p>
-</li>
-<li>
-<p><strong>MareNostrum (BSC)</strong>: Multi-city comparative studies</p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="_performance_metrics"><a class="anchor" href="#_performance_metrics"></a>6.1. Performance Metrics</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Throughput</strong>: 1,000+ buildings per hour on 100 cores</p>
-</li>
-<li>
-<p><strong>Scalability</strong>: Linear weak scaling to 1,000+ cores</p>
-</li>
-<li>
-<p><strong>Memory Efficiency</strong>: Streaming algorithms for TB-scale datasets</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_impact_on_urban_science"><a class="anchor" href="#_impact_on_urban_science"></a>7. Impact on Urban Science</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This capability transforms:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Policy Making</strong>: Evidence-based urban planning decisions</p>
-</li>
-<li>
-<p><strong>Climate Adaptation</strong>: Assess heat mitigation strategies before deployment</p>
-</li>
-<li>
-<p><strong>Energy Transition</strong>: Optimize renewable energy integration in cities</p>
-</li>
-<li>
-<p><strong>Disaster Preparedness</strong>: Flood, fire, and earthquake scenario modeling</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_related_work_packages"><a class="anchor" href="#_related_work_packages"></a>8. Related Work Packages</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../workpackages/wp1.html" class="xref page">WP1: Advanced Discretizations</a> - Mesh quality and adaptivity</p>
-</li>
-<li>
-<p><a href="../workpackages/wp5.html" class="xref page">WP5: Application Demonstrators</a> - Urban energy applications</p>
-</li>
-<li>
-<p><a href="../workpackages/wp6.html" class="xref page">WP6: Software Stack</a> - CGAL packaging and deployment</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_software_resources"><a class="anchor" href="#_software_resources"></a>9. Software &amp; Resources</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>CGAL 6.0</strong>: Available via Spack, Guix, and package managers</p>
-</li>
-<li>
-<p><strong>Ktirio-geom</strong>: Open-source pipeline on GitHub</p>
-</li>
-<li>
-<p><strong>Tutorials</strong>: Step-by-step urban meshing workflows</p>
-</li>
-<li>
-<p><strong>Demo Datasets</strong>: European cities for testing and validation</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock tip">
-<table>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_related_work_packages" class="discrete">Related Work Packages</h2>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p><strong>Try it yourself</strong>: CGAL 6.0 alpha wrapping examples available in the <a href="#../software/index.adoc" class="xref unresolved">software showroom</a> with reproducible notebooks.</p>
-</div>
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../workpackages/wp1.html" class="xref page">WP1</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Discretization</strong> — Mesh quality and adaptivity</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../workpackages/wp7.html" class="xref page">WP7</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Showroom &amp; Benchmarking</strong> — Software deployment and integration</p></td>
+</tr>
+</tbody>
 </table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_recognition"><a class="anchor" href="#_recognition"></a>10. Recognition</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Community Impact</strong>: CGAL 6.0 release (Dec 2024) highlighted alpha wrapping</p>
-</li>
-<li>
-<p><strong>Industry Adoption</strong>: Used by urban planning agencies and engineering firms</p>
-</li>
-<li>
-<p><strong>Publications</strong>: Multiple journal papers and conference presentations</p>
-</li>
-<li>
-<p><strong>Training</strong>: Workshops at Geometry Processing and CAD/CAM conferences</p>
-</li>
-</ul>
-</div>
-<div class="openblock text-center">
-<div class="content">
-<div class="paragraph">
-<p><a href="#neural-acceleration.adoc" class="xref unresolved">← Previous: Neural Operators</a> | <a href="../results.html" class="xref page">Back to Results</a></p>
-</div>
-</div>
+<div class="paragraph text-center">
+<p><a href="#neural-acceleration.adoc" class="xref unresolved">← Neural Operators</a> | <a href="../results.html" class="xref page">Back to Results</a> | <a href="#speedups.adoc" class="xref unresolved">GenEO Speedups →</a></p>
 </div>
 </div>
 </div>
