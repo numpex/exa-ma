@@ -1,0 +1,28 @@
+// Generated: 2026-01-08 08:28:45
+// Events: 2 upcoming
+
+[.grid.grid-2.gap-2.items-start]
+--
+[.card]
+====
+icon:users[size=2x,role=text-primary] *General Assembly 2026*
+
+*Jan 19-21, 2026* | Arts et Métiers ParisTech, Aix-en-Provence
+
+Three-day annual meeting with all WP leaders presenting progress and scientific highlights. Includes breakout sessions with Feel++, Scimba, Composyx, and Uranie frameworks, plus presentations on Sage-HPC and Daimos.
+
+xref:news/2026/20260119-21-ag.adoc[View full agenda and details →]
+====
+
+[.card]
+====
+icon:network-wired[size=2x,role=text-info] *Trans-Numériques 2026*
+
+*Feb 02-05, 2026* | Couvent des Jacobins, Rennes
+
+First edition bringing together France's academic community around digital continuum challenges. NumPEx will be represented with presentations on performance, sustainability, and HPC. Exa-MA participants include project coordinators and WP leaders.
+
+https://inria.invityou.com/trans-numeriques2026[Event details and registration →]
+====
+
+--

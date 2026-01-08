@@ -23,6 +23,7 @@ dev = [
 [project.scripts]
 exa-ma-harvest-hal = "harvest.hal:main"
 exa-ma-harvest-releases = "harvest.releases:main"
+exa-ma-harvest-news = "harvest.news:main"
 exa-ma-harvest-all = "harvest.cli:main"
 
 [build-system]

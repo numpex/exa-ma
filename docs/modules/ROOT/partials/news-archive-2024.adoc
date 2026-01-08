@@ -1,0 +1,16 @@
+// Generated: 2026-01-08 08:28:45
+// Year: 2024, Events: 2
+
+[.year-even,cols="1,5",frame=none,grid=rows]
+|===
+|icon:box[size=2x] *Dec 03, 2024*
+|**Packaging HPC Software Webinar** +
+E. Agullo (INRIA): Modern packaging with Spack and Guix-HPC. J. Cladellas (UNISTRA): Preview of feelpp.benchmarking tool. See results at bench.feelpp.org +
+https://bench.feelpp.org[Event details and presentations]
+
+|icon:users[size=2x] *Jan 16-17, 2024*
+|**General Assembly 2024** – Inria, Paris +
+First annual consortium meeting with WP presentations, technical discussions, and planning for Year 2 activities. Establishment of cross-WP collaborations. +
+xref:news/2024/20240116-17-ag.adoc[Read full recap →]
+
+|===

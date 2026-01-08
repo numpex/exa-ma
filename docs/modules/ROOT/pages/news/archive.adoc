@@ -1,0 +1,22 @@
+= Event Archive
+:page-tags: resource
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-archive
+:description: Archive of past Exa-MA events organized by year.
+:sectnum!:
+
+[.lead]
+Complete history of Exa-MA events and activities.
+
+This page contains archives of past events, organized chronologically by year.
+For current and upcoming events, visit the xref:news.adoc[News and Events] page.
+
+[#year-2024]
+== 2024
+
+include::partial$news-archive-2024.adoc[]
+
+[#year-2023]
+== 2023
+
+include::partial$news-archive-2023.adoc[]

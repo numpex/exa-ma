@@ -1,0 +1,39 @@
+// Generated: 2026-01-08 08:28:45
+// Events: 7 recent
+
+[cols="1,5",frame=none,grid=rows]
+|===
+|icon:clipboard-list[size=2x] *Dec 09, 2025*
+|**Scientific Advisory Board Meeting** – Virtual (Zoom) +
+Presentation of Exa-MA advances and 2025 highlights to the NumPEx Scientific Advisory Board. Topics included the 50× GenEO speedup, 8000-GPU LUMI deployment, neural operator acceleration (80-200% CPU savings), and CGAL 6.0 urban meshing achievements. Joint session with other NumPEx projects showcasing program-wide progress. Interactive session with board members providing feedback on project direction and scientific impact. +
+
+|icon:users[size=2x] *Nov 12-14, 2025*
+|**First YoungPEx General Meeting** – ENSEEIHT, Toulouse +
+Three-day workshop bringing together young researchers to discuss the future of HPC and open science. Topics included sustainable computing with Georges Da Costa (Exa-SoFT), Grid'5000 tutorials, energy measurement, and workshops on social and gender equality in science. Organized by Thomas Saigre (Exa-MA), Karmijn Hoogveld (Exa-SofT), and other NumPEx members. +
+https://numpex.org/the-first-youngpex-general-meeting/[Event details and presentations]
+
+|icon:building[size=2x] *Nov 04, 2025*
+|**HiDALGO2 Clustering Event** – HLRS, Stuttgart +
+Christophe Prud'homme presented the Ktirio Urban Building pilot for city energy modeling. The pilot, co-funded 50% by NumPEx for EuroHPC, showcased the Ktirio Geom library developed jointly through CoE Hidalgo2 and Exa-MA (WP1 Geometry, Unistra-Inria CA collaboration). +
+https://www.hidalgo2.eu/clustering-event/[Event details and presentations]
+
+|icon:landmark[size=2x] *Sep 03, 2025*
+|**NumPEx/ANR Meeting** – Siège de l'ANR, Paris +
+Presentation of Exa-MA advances and 2025 highlights to ANR (Agence Nationale de la Recherche) alongside other NumPEx projects. Joint session with all NumPEx project coordinators demonstrating the program's scientific impact and progress towards exascale computing goals. +
+
+|icon:chalkboard-teacher[size=2x] *Mar 24-26, 2025*
+|**SciML'25 Conference** – Politecnico di Milano +
+Emmanuel Franck (WP2 leader) delivered invited talk on scientific machine learning. +
+https://www.mate.polimi.it/events/EMS-TAG-SciML-25/[Event details and presentations]
+
+|icon:laptop-code[size=2x] *Mar 24-26, 2025*
+|**CI/CD & Benchmarking Training** – In collaboration with CoE Hidalgo2 +
+Hands-on training on CI/CD best practices and advanced benchmarking for HPC software. +
+https://events.it4i.cz/event/308/overview[Event details and presentations]
+
+|icon:users[size=2x] *Jan 14-15, 2025*
+|**General Assembly 2025** – Université de Strasbourg +
+Consortium review of progress, WP4 and WP7 updates, cross-work-package collaborations. +
+xref:news/2025/20250114-15-ag.adoc[Read full recap →]
+
+|===
