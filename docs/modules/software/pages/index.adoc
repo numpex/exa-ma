@@ -8,7 +8,7 @@
 :page-illustration: fa-solid fa-boxes-stacked
 :description: WP7 software stack, packaging, CI/CD, and showroom resources for Exa-MA.
 :icons: font
-:sectnum!:
+:sectnums!:
 
 [.lead]
 Work Package 7 focuses on software development, benchmarking, co-design activities, and training material to deliver production-ready exascale software following the CI/CD framework proposed by ExaDIP.
@@ -237,10 +237,6 @@ Limited by data transfer delays. Optimize network, disk I/O, and use asynchronou
 ____
 ====
 --
-
-[[software-stack]]
-[.docs-cards-layout]
-== Software Stack
 
 [.softwares]
 --
