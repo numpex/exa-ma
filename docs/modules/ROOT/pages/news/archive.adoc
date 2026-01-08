@@ -3,7 +3,6 @@
 :parent-catalogs: exama-home
 :page-illustration: fa-solid fa-archive
 :description: Archive of past Exa-MA events organized by year.
-:sectnum!:
 
 [.lead]
 Complete history of Exa-MA events and activities.
@@ -11,12 +10,18 @@ Complete history of Exa-MA events and activities.
 This page contains archives of past events, organized chronologically by year.
 For current and upcoming events, visit the xref:news.adoc[News and Events] page.
 
-[#year-2024]
+[.section-gray]
+--
+[discrete]
 == 2024
 
 include::partial$news-archive-2024.adoc[]
+--
 
-[#year-2023]
+[.section-white]
+--
+[discrete]
 == 2023
 
 include::partial$news-archive-2023.adoc[]
+--
