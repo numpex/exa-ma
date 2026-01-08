@@ -1,4 +1,3 @@
-// Generated: 2026-01-08 08:18:27
 // Deliverable: D7.3
 
 [.striped,cols="1,2,1,2",options="header"]
