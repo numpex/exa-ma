@@ -41,15 +41,15 @@ https://inria.invityou.com/trans-numeriques2026[Event details and registration �
 
 [cols="1,5",frame=none,stripes=even]
 |===
-|icon:building[size=2x] *Nov 4, 2025*
-|**HiDALGO2 Clustering Event** – HLRS, Stuttgart +
-Christophe Prud'homme presented the Ktirio Urban Building pilot for city energy modeling. The pilot, co-funded 50% by NumPEx for EuroHPC, showcased the Ktirio Geom library developed jointly through CoE Hidalgo2 and Exa-MA (WP1 Geometry, Unistra-Inria CA collaboration). +
-https://www.hidalgo2.eu/clustering-event/\[Event details and presentations]
-
 |icon:users[size=2x] *Nov 12-14, 2025*
 |**First YoungPEx General Meeting** – ENSEEIHT, Toulouse +
 Three-day workshop bringing together young researchers to discuss the future of HPC and open science. Topics included sustainable computing with Georges Da Costa (Exa-SoFT), Grid'5000 tutorials, energy measurement, and workshops on social and gender equality in science. Organized by Thomas Saigre (Exa-MA), Karmijn Hoogveld (Exa-SofT), and other NumPEx members. +
 https://numpex.org/the-first-youngpex-general-meeting/\[Event details and presentations]
+
+|icon:building[size=2x] *Nov 4, 2025*
+|**HiDALGO2 Clustering Event** – HLRS, Stuttgart +
+Christophe Prud'homme presented the Ktirio Urban Building pilot for city energy modeling. The pilot, co-funded 50% by NumPEx for EuroHPC, showcased the Ktirio Geom library developed jointly through CoE Hidalgo2 and Exa-MA (WP1 Geometry, Unistra-Inria CA collaboration). +
+https://www.hidalgo2.eu/clustering-event/\[Event details and presentations]
 
 |icon:chalkboard-teacher[size=2x] *Mar 24-26, 2025* 
 |**SciML'25 Conference** – Politecnico di Milano +
