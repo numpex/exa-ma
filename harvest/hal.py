@@ -288,7 +288,6 @@ def output_asciidoc(
         ])
     else:
         # Add generation comment for partials
-        lines.append(f"// Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         lines.append(f"// Total publications: {len(formatted)}")
         lines.append("")
 

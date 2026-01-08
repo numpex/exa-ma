@@ -1,4 +1,3 @@
-// Generated: 2026-01-08 08:18:27
 // Events: 7 recent
 
 [cols="1,5",frame=none,grid=rows]

@@ -394,7 +394,6 @@ def output_partials(
         rels = data["releases"]
 
         lines = [
-            f"// Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
             f"// Deliverable: {did}",
             "",
             '[.striped,cols="1,2,1,2",options="header"]',

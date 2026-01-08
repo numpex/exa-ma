@@ -1,4 +1,3 @@
-// Generated: 2026-01-08 08:18:27
 // Events: 2 upcoming
 
 [.grid.grid-2.gap-2.items-start]

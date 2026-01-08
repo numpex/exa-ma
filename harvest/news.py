@@ -200,7 +200,6 @@ def generate_archive_by_year(events: list[dict]) -> dict[int, list[str]]:
         # Alternate between year-even and year-odd for styling
         table_class = "year-even" if idx % 2 == 0 else "year-odd"
         lines = [
-            f"// Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
             f"// Year: {year}, Events: {len(year_events)}",
             "",
         ]
@@ -219,7 +218,6 @@ def output_partials(config: dict, output_dir: Path) -> dict[str, str]:
 
     # Generate upcoming events partial
     upcoming_lines = [
-        f"// Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
         f"// Events: {len([e for e in events if e.get('status') == 'upcoming'])} upcoming",
         "",
     ]
@@ -233,7 +231,6 @@ def output_partials(config: dict, output_dir: Path) -> dict[str, str]:
 
     # Generate recent events partial
     recent_lines = [
-        f"// Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
         f"// Events: {len([e for e in events if e.get('status') == 'recent'])} recent",
         "",
     ]
@@ -257,7 +254,6 @@ def output_partials(config: dict, output_dir: Path) -> dict[str, str]:
     # Generate archive index partial (list of years with event counts)
     if archive_by_year:
         index_lines = [
-            f"// Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
             f"// Archive years: {len(archive_by_year)}",
             "",
         ]
