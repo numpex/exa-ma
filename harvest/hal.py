@@ -1,18 +1,8 @@
-#!/usr/bin/env python3
 """
 Harvest Exa-MA publications from HAL (Hyper Articles en Ligne) archive.
 
-This script queries the HAL API to retrieve publications related to the Exa-MA project,
+This module queries the HAL API to retrieve publications related to the Exa-MA project,
 filtering by scientific domains and publication years.
-
-Usage:
-    python harvest_hal.py [--output OUTPUT] [--format FORMAT] [--years YEARS]
-
-Examples:
-    python harvest_hal.py
-    python harvest_hal.py --output publications.json --format json
-    python harvest_hal.py --output publications.csv --format csv
-    python harvest_hal.py --years 2023,2024,2025
 """
 
 import argparse
@@ -20,11 +10,11 @@ import csv
 import json
 import sys
 from datetime import datetime
+from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
-from urllib.request import urlopen, Request
-from urllib.error import URLError, HTTPError
-
+from urllib.request import Request, urlopen
 
 # HAL API endpoint
 HAL_API_URL = "https://api.archives-ouvertes.fr/search/"
@@ -35,7 +25,7 @@ HAL_API_URL = "https://api.archives-ouvertes.fr/search/"
 DEFAULT_ANR_PROJECT = "ANR-22-EXNU-0002"
 DEFAULT_QUERY = f"anrProjectReference_s:{DEFAULT_ANR_PROJECT}"
 DEFAULT_DOMAINS = ["math", "info", "stat", "phys"]
-DEFAULT_YEARS = [2024, 2025]
+DEFAULT_YEARS = [2023, 2024, 2025]
 DEFAULT_ROWS = 100  # Max results per request
 
 # Fields to retrieve from HAL
@@ -61,11 +51,11 @@ FIELDS = [
 
 def build_query_params(
     query: str = DEFAULT_QUERY,
-    domains: list[str] = None,
-    years: list[int] = None,
+    domains: list[str] | None = None,
+    years: list[int] | None = None,
     rows: int = DEFAULT_ROWS,
     start: int = 0,
-) -> dict[str, str]:
+) -> dict[str, Any]:
     """Build HAL API query parameters."""
     if domains is None:
         domains = DEFAULT_DOMAINS
@@ -96,18 +86,20 @@ def build_query_params(
 
 def fetch_publications(
     query: str = DEFAULT_QUERY,
-    domains: list[str] = None,
-    years: list[int] = None,
+    domains: list[str] | None = None,
+    years: list[int] | None = None,
+    verbose: bool = True,
 ) -> list[dict[str, Any]]:
     """Fetch all publications matching the query from HAL API."""
     all_publications = []
     start = 0
     total = None
 
-    print(f"Searching HAL for: {query}")
-    print(f"Domains: {domains or DEFAULT_DOMAINS}")
-    print(f"Years: {years or DEFAULT_YEARS}")
-    print()
+    if verbose:
+        print(f"Searching HAL for: {query}")
+        print(f"Domains: {domains or DEFAULT_DOMAINS}")
+        print(f"Years: {years or DEFAULT_YEARS}")
+        print()
 
     while True:
         params = build_query_params(
@@ -140,7 +132,8 @@ def fetch_publications(
         response_data = data.get("response", {})
         if total is None:
             total = response_data.get("numFound", 0)
-            print(f"Found {total} publications")
+            if verbose:
+                print(f"Found {total} publications")
 
         docs = response_data.get("docs", [])
         if not docs:
@@ -149,7 +142,8 @@ def fetch_publications(
         all_publications.extend(docs)
         start += len(docs)
 
-        print(f"  Fetched {len(all_publications)}/{total} publications...")
+        if verbose:
+            print(f"  Fetched {len(all_publications)}/{total} publications...")
 
         if start >= total:
             break
@@ -160,7 +154,11 @@ def fetch_publications(
 def format_publication(pub: dict[str, Any]) -> dict[str, Any]:
     """Format a publication record for output."""
     # Handle fields that may be lists or single values
-    title = pub.get("title_s", [""])[0] if isinstance(pub.get("title_s"), list) else pub.get("title_s", "")
+    title = (
+        pub.get("title_s", [""])[0]
+        if isinstance(pub.get("title_s"), list)
+        else pub.get("title_s", "")
+    )
     authors = pub.get("authFullName_s", [])
     if isinstance(authors, str):
         authors = [authors]
@@ -175,7 +173,11 @@ def format_publication(pub: dict[str, Any]) -> dict[str, Any]:
         "type": pub.get("docType_s", ""),
         "journal": pub.get("journalTitle_s", ""),
         "conference": pub.get("conferenceTitle_s", ""),
-        "abstract": pub.get("abstract_s", [""])[0] if isinstance(pub.get("abstract_s"), list) else pub.get("abstract_s", ""),
+        "abstract": (
+            pub.get("abstract_s", [""])[0]
+            if isinstance(pub.get("abstract_s"), list)
+            else pub.get("abstract_s", "")
+        ),
         "keywords": pub.get("keyword_s", []),
         "domains": pub.get("domain_s", []),
         "open_access": pub.get("openAccess_bool", False),
@@ -184,7 +186,7 @@ def format_publication(pub: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def output_json(publications: list[dict], output_file: str = None):
+def output_json(publications: list[dict], output_file: str | Path | None = None) -> str:
     """Output publications as JSON."""
     formatted = [format_publication(p) for p in publications]
     result = {
@@ -199,50 +201,65 @@ def output_json(publications: list[dict], output_file: str = None):
         "publications": formatted,
     }
 
+    content = json.dumps(result, indent=2, ensure_ascii=False)
+
     if output_file:
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(result, f, indent=2, ensure_ascii=False)
+        Path(output_file).write_text(content, encoding="utf-8")
         print(f"\nSaved to {output_file}")
     else:
-        print(json.dumps(result, indent=2, ensure_ascii=False))
+        print(content)
+
+    return content
 
 
-def output_csv(publications: list[dict], output_file: str = None):
+def output_csv(publications: list[dict], output_file: str | Path | None = None) -> str:
     """Output publications as CSV."""
     formatted = [format_publication(p) for p in publications]
 
     fieldnames = [
-        "hal_id", "title", "authors", "year", "type",
-        "journal", "conference", "url", "pdf_url", "open_access"
+        "hal_id",
+        "title",
+        "authors",
+        "year",
+        "type",
+        "journal",
+        "conference",
+        "url",
+        "pdf_url",
+        "open_access",
     ]
 
-    def write_csv(writer):
-        writer.writeheader()
-        for pub in formatted:
-            row = {
-                **pub,
-                "authors": "; ".join(pub["authors"]),
-            }
-            writer.writerow(row)
+    import io
+
+    output = io.StringIO()
+    writer = csv.DictWriter(output, fieldnames=fieldnames, extrasaction="ignore")
+    writer.writeheader()
+    for pub in formatted:
+        row = {
+            **pub,
+            "authors": "; ".join(pub["authors"]),
+        }
+        writer.writerow(row)
+
+    content = output.getvalue()
 
     if output_file:
-        with open(output_file, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
-            write_csv(writer)
+        Path(output_file).write_text(content, encoding="utf-8")
         print(f"\nSaved to {output_file}")
     else:
-        writer = csv.DictWriter(sys.stdout, fieldnames=fieldnames, extrasaction="ignore")
-        write_csv(writer)
+        print(content)
+
+    return content
 
 
-def output_asciidoc(publications: list[dict], output_file: str = None):
+def output_asciidoc(publications: list[dict], output_file: str | Path | None = None) -> str:
     """Output publications as AsciiDoc with tables grouped by year."""
     formatted = [format_publication(p) for p in publications]
 
     # Sort by date (newest first) then group by year
     formatted.sort(key=lambda x: x.get("date", ""), reverse=True)
 
-    by_year = {}
+    by_year: dict[int | str, list] = {}
     for pub in formatted:
         year = pub.get("year", "Unknown")
         by_year.setdefault(year, []).append(pub)
@@ -254,7 +271,8 @@ def output_asciidoc(publications: list[dict], output_file: str = None):
         ":icons: font",
         "",
         "[.lead]",
-        f"Publications acknowledging the Exa-MA project (ANR-22-EXNU-0002). Total: *{len(formatted)}* publications.",
+        f"Publications acknowledging the Exa-MA project (ANR-22-EXNU-0002). "
+        f"Total: *{len(formatted)}* publications.",
         "",
     ]
 
@@ -296,14 +314,15 @@ def output_asciidoc(publications: list[dict], output_file: str = None):
     content = "\n".join(lines)
 
     if output_file:
-        with open(output_file, "w", encoding="utf-8") as f:
-            f.write(content)
+        Path(output_file).write_text(content, encoding="utf-8")
         print(f"\nSaved to {output_file}")
     else:
         print(content)
 
+    return content
 
-def output_bibtex(publications: list[dict], output_file: str = None):
+
+def output_bibtex(publications: list[dict], output_file: str | Path | None = None) -> str:
     """Output publications as BibTeX."""
     formatted = [format_publication(p) for p in publications]
     entries = []
@@ -325,8 +344,8 @@ def output_bibtex(publications: list[dict], output_file: str = None):
         title = pub["title"].replace("{", "\\{").replace("}", "\\}")
 
         entry = [f"@{entry_type}{{{hal_id},"]
-        entry.append(f'  author = {{{authors}}},')
-        entry.append(f'  title = {{{{{title}}}}},')
+        entry.append(f"  author = {{{authors}}},")
+        entry.append(f"  title = {{{{{title}}}}},")
         entry.append(f'  year = {{{pub["year"]}}},')
 
         if pub["journal"]:
@@ -343,46 +362,46 @@ def output_bibtex(publications: list[dict], output_file: str = None):
     content = "\n\n".join(entries)
 
     if output_file:
-        with open(output_file, "w", encoding="utf-8") as f:
-            f.write(content)
+        Path(output_file).write_text(content, encoding="utf-8")
         print(f"\nSaved to {output_file}")
     else:
         print(content)
 
+    return content
+
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Harvest Exa-MA publications from HAL archive"
-    )
+    """Main entry point for HAL harvesting."""
+    parser = argparse.ArgumentParser(description="Harvest Exa-MA publications from HAL archive")
+    parser.add_argument("-o", "--output", help="Output file path (prints to stdout if not specified)")
     parser.add_argument(
-        "-o", "--output",
-        help="Output file path (prints to stdout if not specified)"
-    )
-    parser.add_argument(
-        "-f", "--format",
+        "-f",
+        "--format",
         choices=["json", "csv", "asciidoc", "bibtex"],
         default="json",
-        help="Output format (default: json)"
+        help="Output format (default: json)",
     )
     parser.add_argument(
-        "-q", "--query",
+        "-q",
+        "--query",
         default=DEFAULT_QUERY,
-        help=f"Search query (default: {DEFAULT_QUERY})"
+        help=f"Search query (default: {DEFAULT_QUERY})",
     )
     parser.add_argument(
-        "-y", "--years",
-        help="Comma-separated years to filter (default: 2024,2025)"
+        "-y",
+        "--years",
+        default="2023,2024,2025",
+        help="Comma-separated years to filter (default: 2023,2024,2025)",
     )
     parser.add_argument(
-        "-d", "--domains",
-        help="Comma-separated domains (default: math,info,stat,phys)"
+        "-d",
+        "--domains",
+        help="Comma-separated domains (default: math,info,stat,phys)",
     )
 
     args = parser.parse_args()
 
-    years = None
-    if args.years:
-        years = [int(y.strip()) for y in args.years.split(",")]
+    years = [int(y.strip()) for y in args.years.split(",")]
 
     domains = None
     if args.domains:

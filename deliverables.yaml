@@ -1,0 +1,37 @@
+# Exa-MA Deliverables Configuration
+# This file defines the deliverable repositories and display settings
+
+settings:
+  # Number of releases to show per deliverable (0 = all)
+  max_releases: 5
+  # Include pre-release versions
+  include_prereleases: false
+  # Show only latest release per deliverable
+  latest_only: false
+
+deliverables:
+  - id: "D7.1"
+    repo: "numpex/exa-ma-d7.1"
+    title: "Research, Software Development & Benchmarking"
+    description: "Mega-deliverable consolidating Dx.1 reports from WP1 to WP7"
+    workpackages:
+      - WP1
+      - WP2
+      - WP3
+      - WP4
+      - WP5
+      - WP6
+      - WP7
+    # Featured releases to always show (in addition to latest)
+    featured_versions:
+      - "v2.0.0"   # Major release - Year 2 complete report
+      - "v1.1.1"   # Initial Main release - Year 1 report
+
+  - id: "D7.3"
+    repo: "numpex/exa-ma-d7.3"
+    title: "Training Materials"
+    description: "Educational resources, tutorials, and workshop materials"
+    workpackages:
+      - WP7
+    featured_versions:
+      - "v1.0.1"   # Latest stable release
