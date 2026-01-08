@@ -10,8 +10,7 @@ content:
 ui:
   supplemental_files: ./docs/antora/supplemental-ui
   bundle:
-    url: /Users/prudhomm/Devel/Antora/antora-ui/build/ui-bundle.zip
-    #url: https://github.com/feelpp/antora-ui/releases/download/v0.48/ui-bundle.zip
+    url: https://github.com/feelpp/antora-ui/releases/download/v0.48/ui-bundle.zip
     snapshot: true
 output:
   clean: true
