@@ -19,4 +19,5 @@
 ** xref:deliverables.adoc[Overview]
 ** xref:publications-hal.adoc[Publications (HAL)]
 * xref:news.adoc[News and Events]
+** xref:news/archive.adoc[Archive]
 * xref:workgroups.adoc[NumPEx Work Groups]
