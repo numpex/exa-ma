@@ -179,8 +179,8 @@ ____
 
 [.text-center]
 ____
-icon:chalkboard-teacher[size=2x,role=text-success] *Q1 2026* +
-Training workshops on neural operators and HPC integration
+icon:network-wired[size=2x,role=text-success] *February 2026* +
+https://inria.invityou.com/trans-numeriques2026[Trans-Numériques 2026] – France's digital continuum conference
 ____
 ====
 
