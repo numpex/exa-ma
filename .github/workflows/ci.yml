@@ -1,8 +1,8 @@
 name: CI
 
-on: 
+on:
   push:
-    branches: 
+    branches:
       - '**' # Push events on all branches
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10 including semver
@@ -15,10 +15,37 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'docs skip')"
     steps:
     - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.CR_PAT_WORKFLOW }}
     - name: Install credentials
       run: echo https://$GITHUB_OAUTH:@github.com > $HOME/.git-credentials
       env:
         GITHUB_OAUTH: ${{ secrets.CR_PAT_WORKFLOW }}
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Install uv
+      uses: astral-sh/setup-uv@v4
+    - name: Harvest publications and releases
+      run: |
+        uv venv .venv
+        source .venv/bin/activate
+        uv pip install -e .
+        # Generate partials for Antora includes
+        exa-ma-harvest-hal --partials-dir docs/modules/ROOT/partials/
+        exa-ma-harvest-releases --partials-dir docs/modules/ROOT/partials/
+    - name: Commit updated partials
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add docs/modules/ROOT/partials/
+        if git diff --staged --quiet; then
+          echo "No changes to partials"
+        else
+          git commit -m "chore: update harvested partials [docs skip]"
+          git push
+        fi
     - name: Build
       run: |
         npm install
@@ -28,7 +55,6 @@ jobs:
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: public # The folder the action should deploy.
-
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: public

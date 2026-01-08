@@ -252,8 +252,16 @@ def output_csv(publications: list[dict], output_file: str | Path | None = None) 
     return content
 
 
-def output_asciidoc(publications: list[dict], output_file: str | Path | None = None) -> str:
-    """Output publications as AsciiDoc with tables grouped by year."""
+def output_asciidoc(
+    publications: list[dict], output_file: str | Path | None = None, partial: bool = False
+) -> str:
+    """Output publications as AsciiDoc with tables grouped by year.
+
+    Args:
+        publications: List of publication records from HAL
+        output_file: Optional file path to write output
+        partial: If True, output only the tables (for Antora partials)
+    """
     formatted = [format_publication(p) for p in publications]
 
     # Sort by date (newest first) then group by year
@@ -264,17 +272,25 @@ def output_asciidoc(publications: list[dict], output_file: str | Path | None = N
         year = pub.get("year", "Unknown")
         by_year.setdefault(year, []).append(pub)
 
-    lines = [
-        "= Exa-MA Publications",
-        ":page-layout: default",
-        f":generated: {datetime.now().strftime('%Y-%m-%d')}",
-        ":icons: font",
-        "",
-        "[.lead]",
-        f"Publications acknowledging the Exa-MA project (ANR-22-EXNU-0002). "
-        f"Total: *{len(formatted)}* publications.",
-        "",
-    ]
+    lines = []
+
+    if not partial:
+        lines.extend([
+            "= Exa-MA Publications",
+            ":page-layout: default",
+            f":generated: {datetime.now().strftime('%Y-%m-%d')}",
+            ":icons: font",
+            "",
+            "[.lead]",
+            f"Publications acknowledging the Exa-MA project (ANR-22-EXNU-0002). "
+            f"Total: *{len(formatted)}* publications.",
+            "",
+        ])
+    else:
+        # Add generation comment for partials
+        lines.append(f"// Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        lines.append(f"// Total publications: {len(formatted)}")
+        lines.append("")
 
     for year in sorted(by_year.keys(), reverse=True):
         pubs = by_year[year]
@@ -398,6 +414,11 @@ def main():
         "--domains",
         help="Comma-separated domains (default: math,info,stat,phys)",
     )
+    parser.add_argument(
+        "--partials-dir",
+        type=Path,
+        help="Output directory for Antora partial file (publications-hal.adoc)",
+    )
 
     args = parser.parse_args()
 
@@ -419,14 +440,19 @@ def main():
 
     print(f"\nTotal publications retrieved: {len(publications)}")
 
-    output_funcs = {
-        "json": output_json,
-        "csv": output_csv,
-        "asciidoc": output_asciidoc,
-        "bibtex": output_bibtex,
-    }
-
-    output_funcs[args.format](publications, args.output)
+    if args.partials_dir:
+        args.partials_dir.mkdir(parents=True, exist_ok=True)
+        output_file = args.partials_dir / "publications-hal.adoc"
+        output_asciidoc(publications, output_file, partial=True)
+    elif args.format == "asciidoc":
+        output_asciidoc(publications, args.output, partial=False)
+    else:
+        output_funcs = {
+            "json": output_json,
+            "csv": output_csv,
+            "bibtex": output_bibtex,
+        }
+        output_funcs[args.format](publications, args.output)
 
 
 if __name__ == "__main__":

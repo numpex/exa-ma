@@ -356,6 +356,95 @@ def output_asciidoc(
     return content
 
 
+def output_partials(
+    releases: list[dict], config: dict, output_dir: str | Path
+) -> dict[str, str]:
+    """Output releases as individual partial files per deliverable.
+
+    Each partial contains just the table rows for that deliverable,
+    suitable for inclusion in Antora pages.
+    """
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Group by deliverable ID
+    by_deliverable: dict[str, dict] = {}
+    for release in releases:
+        did = release["deliverable_id"]
+        if did not in by_deliverable:
+            by_deliverable[did] = {
+                "info": {
+                    "title": release["title"],
+                    "description": release["description"],
+                    "workpackages": release["workpackages"],
+                    "repo": release["repo"],
+                },
+                "releases": [],
+            }
+        by_deliverable[did]["releases"].append(release)
+
+    results = {}
+
+    for deliverable in config.get("deliverables", []):
+        did = deliverable["id"]
+        if did not in by_deliverable:
+            continue
+
+        data = by_deliverable[did]
+        rels = data["releases"]
+
+        lines = [
+            f"// Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+            f"// Deliverable: {did}",
+            "",
+            '[.striped,cols="1,2,1,2",options="header"]',
+            "|===",
+            "|Version |Release |Date |Downloads",
+            "",
+        ]
+
+        for rel in rels:
+            version = rel["version"]
+            name = rel["name"] or version
+            date = rel["date"]
+            html_url = rel["html_url"]
+
+            badges = []
+            if rel.get("is_latest"):
+                badges.append("icon:star[role=text-warning,title=Latest]")
+            if rel.get("is_featured") and not rel.get("is_latest"):
+                badges.append("icon:bookmark[role=text-info,title=ANR Submission]")
+            badge_str = " ".join(badges)
+            if badge_str:
+                badge_str = " " + badge_str
+
+            downloads = []
+            downloads.append(f"link:{html_url}[icon:tag[title=Release]]")
+            for pdf in rel["pdfs"]:
+                downloads.append(f"link:{pdf['url']}[icon:file-pdf[title=PDF,role=text-danger]]")
+
+            name = name.replace("|", "\\|")
+
+            lines.append(f"|*{version}*{badge_str}")
+            lines.append(f"|{name}")
+            lines.append(f"|{date}")
+            lines.append(f"|{' '.join(downloads)}")
+            lines.append("")
+
+        lines.append("|===")
+
+        content = "\n".join(lines)
+
+        # Use sanitized deliverable ID for filename (D7.1 -> releases-d7-1.adoc)
+        filename = f"releases-{did.lower().replace('.', '-')}.adoc"
+        output_path = output_dir / filename
+        output_path.write_text(content, encoding="utf-8")
+        print(f"  Saved partial: {output_path}")
+        results[did] = content
+
+    return results
+
+
 def main():
     """Main entry point for GitHub releases harvesting."""
     parser = argparse.ArgumentParser(
@@ -383,6 +472,11 @@ def main():
         action="store_true",
         help="Show only the latest release per deliverable",
     )
+    parser.add_argument(
+        "--partials-dir",
+        type=Path,
+        help="Output directory for Antora partial files (one per deliverable)",
+    )
 
     args = parser.parse_args()
 
@@ -395,7 +489,9 @@ def main():
 
     print(f"\nTotal releases retrieved: {len(releases)}")
 
-    if args.format == "json":
+    if args.partials_dir:
+        output_partials(releases, config, args.partials_dir)
+    elif args.format == "json":
         output_json(releases, config, args.output)
     else:
         output_asciidoc(releases, config, args.output)
