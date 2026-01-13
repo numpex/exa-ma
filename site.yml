@@ -1,7 +1,7 @@
 site:
   title: Exa-MA -- Methods and Algorithms for Exascale Computing
   url: https://numpex.github.io/exa-ma/
-  start_page: exama::index.adoc
+  start_page: ROOT::index.adoc
 content:
   sources:
   - url: .
