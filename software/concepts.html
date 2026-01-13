@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>WP7 : HPC Resources for Exa-MA :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/software/concepts.html">
+    <meta name="description" content="WP7">
+    <meta name="generator" content="Antora 3.1.3">
+<link rel="stylesheet" href="../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = '../_'</script>
+
+  </head>
+  <body class="article">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo"  src="../_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../team.html">Team</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../partners.html">Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../contact.html">Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Work Packages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp0.html">WP0: Project Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp1.html">WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp2.html">WP2: Model Order Reduction and SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp3.html">WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp4.html">WP4: Inverse Problems and Data Assimilation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp5.html">WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp6.html">WP6: Uncertainty Quantification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp7.html">WP7: Showroom, Benchmarking, and Co-Design</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../results.html">Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deliverables and Publications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../deliverables.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../publications-hal.html">Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../news.html">News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../news/archive.html">Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workgroups.html">NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Software</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Software List</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="fabulous.html">Fabulous</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="mumps.html">MUMPS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pastix.html">PaStiX</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="petsc.html">PETSc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="qr_mumps.html">qr_mumps</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="../index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="../index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Exa-MA</a></li>
+    <li><a href="index.html">Software</a></li>
+    <li><a href="concepts.html">Concepts</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/41-web-site/docs/modules/software/pages/concepts.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="../_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">WP7 : HPC Resources for Exa-MA</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_work_package_7">1. Work Package 7</a>
+<ul class="sectlevel2">
+<li><a href="#_testing_process_sub_objectives">1.1. Testing Process sub objectives</a></li>
+<li><a href="#_demonstrator">1.2. Demonstrator</a></li>
+</ul>
+</li>
+<li><a href="#_estimates">2. Estimates</a>
+<ul class="sectlevel2">
+<li><a href="#_level_1_demonstrators">2.1. Level 1 demonstrators</a></li>
+</ul>
+</li>
+<li><a href="#_concepts_for_hpc">3. Concepts for HPC</a>
+<ul class="sectlevel2">
+<li><a href="#cicd">3.1. CI/CD</a></li>
+<li><a href="#_containers">3.2. Containers</a></li>
+<li><a href="#miniapp-proxyapp">3.3. Mini Apps and Proxy Apps</a></li>
+<li><a href="#_bottlenecks_in_parallel_computing">3.4. Bottlenecks in parallel computing</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph metadata">
+<p>Lydie Grospellier, Christophe Prud&#8217;homme&#8201;&#8212;&#8201;version 1.0, 2023-06-19</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_work_package_7"><a class="anchor" href="#_work_package_7"></a>1. Work Package 7</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Work Package 7 (WP7) in the Exa-MA project focuses on several key objectives. Firstly, it involves software development ranging from basic to advanced testing, including benchmarking, to verify the capabilities of exascale computing and address identified challenges. The aim is to deliver software packages following the continuous integration/continuous delivery (CI/CD) framework proposed by ExaDIP.</p>
+</div>
+<div class="paragraph">
+<p>Secondly, WP7 coordinates co-design activities within Exa-MA, working closely with the ExaDIP project. This collaboration ensures effective communication and synergy between the projects to drive advancements in exascale computing.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, WP7 aims to establish a showroom to showcase the results achieved through Exa-MA. This showroom will serve as a platform to present and highlight the outcomes and achievements of the project.</p>
+</div>
+<div class="paragraph">
+<p>Lastly, WP7 contributes to the creation of training material based on the results of Exa-MA. The insights gained from the project will be leveraged to develop educational resources and materials, facilitating knowledge transfer and dissemination.</p>
+</div>
+<div class="paragraph">
+<p>To accomplish these objectives, WP7 relies on the principles of non-regression, verification, and validation. The various studies and developments conducted across different work packages within Exa-MA will undergo rigorous testing and evaluation before integration into a demonstrator.</p>
+</div>
+<div class="paragraph">
+<p>WP7 is staffed by a dedicated team of engineers who work at the intersection of Exa-MA and other projects, particularly ExaDIP. The management of WP7 follows an Agile approach, aligning with the project management plan established in WP0 to ensure efficient and effective progress towards the set goals.</p>
+</div>
+<div class="sect2">
+<h3 id="_testing_process_sub_objectives"><a class="anchor" href="#_testing_process_sub_objectives"></a>1.1. Testing Process sub objectives</h3>
+<div class="paragraph">
+<p>Here are the objectives for the testing process of  software in the Exa-MA Project, "Methods and Algorithms for Exascale Computing":</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Build a Global Testing Process</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Define a coherent structure for all demonstrators within Work Package 1 (WPto ensure consistency and alignment.</p>
+</li>
+<li>
+<p>Establish a common measurement system to enable standardized evaluation and comparison of different demonstrator components.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Ensure Demonstrator Non-Regression</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Maintain a consolidated solution over time, unless there is a unanimously accepted justification for making changes.</p>
+</li>
+<li>
+<p>Guarantee that the existing demonstrator functionalities do not regress or deteriorate during updates or modifications.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Ensure Non-Regression of New Developments</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Guarantee that new developments integrated into the demonstrator do not introduce regression or adverse effects.</p>
+</li>
+<li>
+<p>Test and validate new developments to ensure they maintain or enhance the existing functionality and performance of the demonstrator.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Validate Method Applicability in a Wider Context</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Ensure that the developed method is not only effective on its own but also works well within a broader context of use.</p>
+</li>
+<li>
+<p>Evaluate the method&#8217;s performance and compatibility when coupled with other functionalities or integrated into a larger system.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Ensure Long-Term Contribution of the New Method</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Guarantee the sustainability and continuous improvement of the new method over time.</p>
+</li>
+<li>
+<p>Monitor its performance, reliability, and relevance to ensure it remains valuable and beneficial in the evolving landscape of exascale computing.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Provide Interpretable Benefits of New Methods</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Establish a simple and intuitive way of interpreting and quantifying the advantages and benefits of the newly developed methods.</p>
+</li>
+<li>
+<p>Develop metrics or measures that clearly demonstrate the positive impact and value of the new methods compared to previous approaches.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>By aligning our software development and testing processes with these objectives, we can ensure the reliability, non-regression, and continuous improvement of the demonstrator while providing meaningful insights into the benefits and contributions of the new methods in the context of exascale computing.</p>
+</div>
+<div class="paragraph">
+<p>Here are the process tests that we want to set up for the Exa-MA Project:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Non-Regression Process</dt>
+<dt class="hdlist1">- Objective</dt>
+<dd>
+<p>We want to guarantee that the result obtained remains identical to the original result, in a bit-by-bit sense, for options unaffected by proposed software evolutions.</p>
+</dd>
+<dt class="hdlist1">- Test Case</dt>
+<dd>
+<p>Our focus will be on a simple part of the software sources, falling into the category of elementary tests.</p>
+</dd>
+<dt class="hdlist1">- Purpose</dt>
+<dd>
+<p>We aim to ensure that the proposed software changes do not introduce any unintended regressions or alterations in the expected results.</p>
+</dd>
+<dt class="hdlist1">Verification Process</dt>
+<dt class="hdlist1">- Objective</dt>
+<dd>
+<p>We aim to measure the absence of drift in consolidated solutions at a specific time (t), resulting from algorithmic optimization or improvement.</p>
+</dd>
+<dt class="hdlist1">- Test Case</dt>
+<dd>
+<p>The test case can be either elementary or integrated of order impacting a few additional software sources.</p>
+</dd>
+<dt class="hdlist1">- Acceptance Criteria</dt>
+<dd>
+<p>We will define acceptable relative variation thresholds for the solution obtained.</p>
+</dd>
+<dt class="hdlist1">- Purpose</dt>
+<dd>
+<p>Our goal is to verify that the algorithmic changes or optimizations do not cause unintended drift or significant changes in the consolidated solutions.</p>
+</dd>
+<dt class="hdlist1">Validation Process</dt>
+<dt class="hdlist1">- Objective</dt>
+<dd>
+<p>We want to evaluate the performance of the proposed algorithm in a real-life configuration.</p>
+</dd>
+<dt class="hdlist1">- Test Case</dt>
+<dd>
+<p>The test case will be representative of the objective physics of the demonstrator or a mathematical equivalent if the demonstrator is not available.</p>
+</dd>
+<dt class="hdlist1">- Integrated Validation Cases</dt>
+<dd>
+<p>We will develop and implement validation cases that closely mimic the expected use cases and scenarios.</p>
+</dd>
+<dt class="hdlist1">- Criteria for Measurement</dt>
+<dd>
+<p>We will define criteria and metrics for measuring the method&#8217;s contribution and effectiveness.</p>
+</dd>
+<dt class="hdlist1">- Purpose</dt>
+<dd>
+<p>Our aim is to assess the algorithm&#8217;s performance and validate its suitability in real-life scenarios, ensuring it contributes meaningfully to the overall objectives of the demonstrator.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>These process tests cover different aspects of testing and verification, ranging from ensuring non-regression and absence of drift to evaluating the algorithm&#8217;s performance in representative scenarios. By implementing these tests, we can validate the software changes, maintain stability, and measure the effectiveness of the proposed algorithms within the Exa-MA Project.</p>
+</div>
+<div class="paragraph">
+<p>We propose the following workflow building on the <a href="#cicd">CI/CD framework</a>.
+This workflow is based on the following principles:</p>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="wp7-workflow.png" alt="wp7 workflow">
+</div>
+<div class="title">Figure 1. Exa-MA software development workflow</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_demonstrator"><a class="anchor" href="#_demonstrator"></a>1.2. Demonstrator</h3>
+<div class="paragraph">
+<p>For the Exa-MA Project, we have defined three levels of demonstrators.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Demonstrator Overview</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Each relevant demonstrator should be listed in the demonstrator table.</p>
+</li>
+<li>
+<p>The table should include the demonstrator&#8217;s name, brief description, scientific barriers that exascale could overcome, any embedded software, challenges faced by the demonstrator, and the "bottlenecks" identified (such as memory, algorithms, data management, etc.). It should also specify the associated Work Package(s) (WP) for each demonstrator.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Tests for Demonstrators</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Each demonstrator must define its own list of tests.</p>
+</li>
+<li>
+<p>The test list should include the name of the test, the type of test (non-regression, verification, or validation), the type of computer used (CPU, GPU, etc.), and the definition of test outputs.</p>
+</li>
+<li>
+<p>Standards should be established for deviations from expected outputs.</p>
+</li>
+<li>
+<p>Test execution should provide observables indicating whether the test passed or failed.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Mini-Apps and Proxy-Apps as Demonstrators</dt>
+<dt class="hdlist1">- Level 1 Demonstrator</dt>
+<dd>
+<p>A mini-app that covers one or two Exa-MA Work Packages. It focuses on specific objectives within those Work Packages.</p>
+</dd>
+<dt class="hdlist1">- Level 2 Demonstrator</dt>
+<dd>
+<p>A mini-app that covers two or more Exa-MA Work Packages. It demonstrates cross-collaboration and integration between multiple Work Packages.</p>
+</dd>
+<dt class="hdlist1">- Level 3 Demonstrator</dt>
+<dd>
+<p>A proxy-app that covers at least three Work Packages, potentially encompassing all Work Packages within Exa-MA. It serves as a representative workload for evaluating and optimizing the performance of high-performance computing systems.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+mini-apps and proxy-apps are defined <a href="#miniapp-proxyapp">here</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>By categorizing the demonstrators into different levels and considering Level 3 as proxy-apps, we can effectively track and evaluate their progress, ensuring they contribute to the objectives of the Exa-MA Project.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Demonstrator Table</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Demonstrator Name</th>
+<th class="tableblock halign-left valign-top">Brief Description</th>
+<th class="tableblock halign-left valign-top">Scientific Barriers</th>
+<th class="tableblock halign-left valign-top">Embedded Software</th>
+<th class="tableblock halign-left valign-top">Challenges</th>
+<th class="tableblock halign-left valign-top">Bottlenecks</th>
+<th class="tableblock halign-left valign-top">WP Concerned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level 1 Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level 2 Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level 3 Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For each demonstrator, we will define a list of tests with the following information:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Demonstrator Tests</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Test Name</th>
+<th class="tableblock halign-left valign-top">Test Type</th>
+<th class="tableblock halign-left valign-top">Computer Type</th>
+<th class="tableblock halign-left valign-top">Test Outputs</th>
+<th class="tableblock halign-left valign-top">Standards</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level 1 Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level 2 Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level 3 Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Please fill in the table with the relevant information for each demonstrator and its associated tests.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_estimates"><a class="anchor" href="#_estimates"></a>2. Estimates</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_level_1_demonstrators"><a class="anchor" href="#_level_1_demonstrators"></a>2.1. Level 1 demonstrators</h3>
+<div class="paragraph">
+<p>A computing ressources form is available <a href="https://forms.gle/iBs6YNgb8ZXCLk8L6">here</a>.
+We are gathering requests to get first estimates of our needs.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Work Package Estimates (Level 1)</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Work Package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core Hours Estimate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discretization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model Order Reduction and ML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Solvers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">750,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inverse Problems and Data Assim.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,500,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optimization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">600,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uncertainty Quantification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">900,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Total</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,250,000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concepts_for_hpc"><a class="anchor" href="#_concepts_for_hpc"></a>3. Concepts for HPC</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="cicd"><a class="anchor" href="#cicd"></a>3.1. CI/CD</h3>
+<div class="paragraph">
+<p>Continuous Integration/Continuous Delivery/Continuous Deployment (CI/CD/CD or simply CI/CD) strategies can be adapted and applied to high-performance computing (HPC) projects, including our project targeting exascale computing. While CI/CD is traditionally associated with software development and deployment, it can also be beneficial in managing the software and workflows associated with our HPC applications. Here are some considerations for implementing a CI/CD strategy for HPC exascale computing:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Version Control</dt>
+<dd>
+<p>We will utilize a version control system (e.g., Git) to manage our HPC application&#8217;s source code, scripts, and configuration files. This enables collaboration, tracks changes, and provides a history of our project.</p>
+</dd>
+<dt class="hdlist1">Automated Builds</dt>
+<dd>
+<p>We will implement automated build processes to compile and build our HPC application from source code. This ensures that the application is built consistently and reproducibly across different environments.</p>
+</dd>
+<dt class="hdlist1">Testing and Validation</dt>
+<dd>
+<p>We will develop a suite of automated tests to validate the correctness and functionality of our HPC application. This can include unit tests, integration tests, and performance tests. The tests should cover critical components and functionalities, and their execution should be automated as part of our CI/CD pipeline.</p>
+</dd>
+<dt class="hdlist1">Continuous Integration</dt>
+<dd>
+<p>We will set up a CI server (e.g., Jenkins, GitLab CI) that automatically builds, tests, and validates our HPC application whenever changes are pushed to the version control system. This allows us to catch errors and issues early in the development process.</p>
+</dd>
+<dt class="hdlist1">Artifact Management</dt>
+<dd>
+<p>We will store build artifacts, such as executables and libraries, in a central repository. This facilitates the deployment and distribution of our HPC application to different systems and environments.</p>
+</dd>
+<dt class="hdlist1">Configuration Management</dt>
+<dd>
+<p>We will use configuration management tools (e.g., Ansible, Puppet) to manage the configuration and deployment of our HPC application on various computing resources. This includes managing dependencies, environment variables, and system configurations.</p>
+</dd>
+<dt class="hdlist1">Continuous Deployment</dt>
+<dd>
+<p>We will automate the deployment of our HPC application to target systems, such as supercomputers or HPC clusters, as part of our CI/CD pipeline. This ensures that the latest version of our application is readily available for execution.</p>
+</dd>
+<dt class="hdlist1">Monitoring and Logging</dt>
+<dd>
+<p>We will incorporate monitoring and logging mechanisms into our HPC application to collect performance metrics, diagnose issues, and track execution progress. This helps in identifying performance bottlenecks and troubleshooting any problems that arise during runtime.</p>
+</dd>
+<dt class="hdlist1">Rollback and Rollforward</dt>
+<dd>
+<p>We will establish mechanisms for rolling back to a previous version of our HPC application in case of issues or failures. Additionally, we will enable the ability to roll forward to newer versions seamlessly, ensuring smooth upgrades and updates.</p>
+</dd>
+<dt class="hdlist1">Collaboration and Documentation</dt>
+<dd>
+<p>We will encourage collaboration within the development team by providing clear documentation on the CI/CD processes, workflows, and best practices. This helps ensure consistency across the team and facilitates knowledge sharing.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>It&#8217;s worth noting that the implementation details of a CI/CD strategy for HPC exascale computing may vary based on the specific requirements and constraints of our project. Considerations such as scalability, performance optimizations, and job scheduling on large-scale systems will play a significant role.</p>
+</div>
+<div class="paragraph">
+<p>Adapting CI/CD practices to HPC can help streamline development, improve quality, and enhance the efficiency of our exascale computing project. It promotes automation, reproducibility, and collaboration, ultimately leading to more robust and reliable HPC applications.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_containers"><a class="anchor" href="#_containers"></a>3.2. Containers</h3>
+<div class="paragraph">
+<p>Containerization technologies like Docker and Singularity can play a valuable role in HPC environments, including exascale computing. They provide a way to package applications and their dependencies into portable and isolated containers, enabling consistent and reproducible execution across different computing systems. Here&#8217;s how we can utilize Docker and Singularity in our HPC CI/CD strategies:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Reproducible Environments</dt>
+<dd>
+<p>Containers allow us to create reproducible software environments by encapsulating the entire application stack, including the operating system, libraries, and dependencies. This ensures that our HPC applications run consistently regardless of the underlying host system.</p>
+</dd>
+<dt class="hdlist1">Dependency Management</dt>
+<dd>
+<p>With Docker and Singularity, we can define and manage dependencies for our HPC applications within the container. This simplifies the process of ensuring that all required software components and libraries are available and properly configured, reducing compatibility issues.</p>
+</dd>
+<dt class="hdlist1">Portability</dt>
+<dd>
+<p>Containers provide a portable execution environment that can be easily moved between different HPC systems, allowing our applications to run consistently across various computing resources. This is particularly useful in multi-site HPC environments or when collaborating with other researchers.</p>
+</dd>
+<dt class="hdlist1">Isolation and Security</dt>
+<dd>
+<p>Containers offer a level of isolation, sandboxing our HPC applications from the host system and other containers. This enhances security and prevents conflicts between different applications or libraries.</p>
+</dd>
+<dt class="hdlist1">Versioning and Rollback</dt>
+<dd>
+<p>Docker and Singularity enable versioning of containers, allowing us to maintain multiple versions of our HPC applications. This facilitates easy rollback to a previous version in case of issues, ensuring reproducibility and stability.</p>
+</dd>
+<dt class="hdlist1">Continuous Integration with Containers</dt>
+<dd>
+<p>We can incorporate containerization into our CI/CD pipeline by automating the creation, testing, and deployment of containers. This can include building containers from Dockerfiles or using Singularity build recipes. Containers can be built as part of the CI/CD process and automatically tested and deployed to the target HPC systems.</p>
+</dd>
+<dt class="hdlist1">Collaboration and Sharing</dt>
+<dd>
+<p>Docker Hub and Singularity Hub provide platforms for sharing and distributing containerized applications. We can leverage these platforms to share our HPC applications and their containers with collaborators or the broader community, facilitating collaboration and reproducibility.</p>
+</dd>
+<dt class="hdlist1">Singularity for HPC Environments</dt>
+<dd>
+<p>Singularity, in particular, is designed with HPC in mind and offers features specific to high-performance computing, such as seamless integration with resource managers (e.g., Slurm), support for GPU passthrough, and the ability to run containers as unprivileged users.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>When using container technologies in HPC environments, it&#8217;s important to consider certain factors, such as the performance impact of running within a container, data access and storage requirements, and specific security considerations relevant to our project and the target HPC system.</p>
+</div>
+<div class="paragraph">
+<p>By leveraging Docker and Singularity containers, we can enhance the portability, reproducibility, and manageability of our HPC applications in the context of a CI/CD strategy.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="miniapp-proxyapp"><a class="anchor" href="#miniapp-proxyapp"></a>3.3. Mini Apps and Proxy Apps</h3>
+<div class="paragraph">
+<p>Here are small definitions for mini apps and proxy apps:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Mini Apps</dt>
+<dd>
+<p>Mini apps, short for "miniature applications," are small-scale software programs or simulations that focus on specific aspects or components of a larger application or system. They are designed to capture the essential computational patterns and performance characteristics of the larger application while being more manageable and easier to understand. Mini apps are typically used for benchmarking, performance analysis, and optimization of specific computational kernels or algorithms. They serve as representative workloads that help evaluate and optimize the performance of high-performance computing systems.</p>
+</dd>
+<dt class="hdlist1">Proxy Apps</dt>
+<dd>
+<p>Proxy apps, also known as "proxy applications," are software programs or simulations that mimic the behavior and computational patterns of real-world applications, particularly those used in scientific and engineering domains. They are developed with the aim of providing a lightweight representation of the computational requirements and communication patterns found in full-scale applications. Proxy apps help assess and optimize the performance</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bottlenecks_in_parallel_computing"><a class="anchor" href="#_bottlenecks_in_parallel_computing"></a>3.4. Bottlenecks in parallel computing</h3>
+<div class="paragraph">
+<p>Limitations in parallel computing arise due to various factors such as CPU bound, latency bound, and memory bound scenarios. CPU bound limitations occur when the performance of a computation is restricted by the processing power of the CPU, hindering its ability to efficiently complete tasks. Latency bound limitations occur when delays in data transfer or communication between system components impact the overall performance. Memory bound limitations arise when the speed or capacity of the memory system becomes the bottleneck, resulting in slower execution of computations. Understanding these limitations is crucial for optimizing parallel computing systems and applications.</p>
+</div>
+<div class="sect3">
+<h4 id="_memory_bound"><a class="anchor" href="#_memory_bound"></a>3.4.1. Memory bound</h4>
+<div class="paragraph">
+<p>In the context of High-Performance Computing (HPC), "memory bound" refers to a situation where the performance of a computational task is limited by the speed or capacity of the computer&#8217;s memory system, rather than by the processing power of the central processing unit (CPU) or other computational resources.</p>
+</div>
+<div class="paragraph">
+<p>When a computation is memory bound, it means that the CPU spends a significant amount of time waiting for data to be fetched from or written to memory. This can occur when the amount of data being processed exceeds the available memory capacity, causing frequent transfers between the CPU and the main memory or other levels of cache. The data transfer latency and bandwidth limitations of the memory subsystem can become the bottleneck in the overall computation, resulting in slower performance.</p>
+</div>
+<div class="paragraph">
+<p>Several factors can contribute to a computation becoming memory bound:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data size</dt>
+<dd>
+<p>When working with large datasets or complex simulations, the amount of data being processed may exceed the available memory. As a result, the CPU needs to access data from main memory more frequently, leading to performance degradation.</p>
+</dd>
+<dt class="hdlist1">Data dependencies</dt>
+<dd>
+<p>In some computations, the order in which data is accessed or modified can create dependencies that limit parallelism. This can cause delays as the CPU must wait for the completion of memory operations before proceeding.</p>
+</dd>
+<dt class="hdlist1">Memory access patterns</dt>
+<dd>
+<p>Certain memory access patterns, such as irregular or non-contiguous memory accesses, can result in poor cache utilization and increased memory latency. This can negatively impact performance and make the computation memory bound.</p>
+</dd>
+<dt class="hdlist1">Memory bandwidth limitations</dt>
+<dd>
+<p>The memory subsystem has a finite bandwidth, which determines how quickly data can be transferred between the CPU and memory. If the computational task requires high data throughput, the memory bandwidth may become a limiting factor.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>To address memory-bound scenarios, several optimization techniques can be employed. These include data locality optimizations, such as improving cache utilization and reducing data movement between memory levels, as well as algorithmic optimizations that minimize unnecessary memory accesses. Additionally, utilizing techniques like data compression, data blocking, and parallel I/O can help mitigate the impact of memory-bound operations and improve overall performance in HPC applications.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_latency_bound"><a class="anchor" href="#_latency_bound"></a>3.4.2. Latency bound</h4>
+<div class="paragraph">
+<p>In High-Performance Computing (HPC), "latency bound" refers to a situation where the performance of a computation is primarily limited by the time it takes for data to travel between different system components or nodes, rather than by the processing power of the CPU or other resources.</p>
+</div>
+<div class="paragraph">
+<p>Latency refers to the delay or the amount of time it takes for data to travel from its source to its destination. In a latency-bound scenario, the overall performance of a computation is constrained by the time it takes to access or transfer data, resulting in delays and slower execution.</p>
+</div>
+<div class="paragraph">
+<p>Several factors can contribute to a computation becoming latency bound:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Network communication</dt>
+<dd>
+<p>In distributed computing environments, where computations are performed across multiple nodes, communication between these nodes becomes crucial. If the latency of network communication is high, it can lead to delays in data transfers and synchronization, limiting the overall performance of the computation.</p>
+</dd>
+<dt class="hdlist1">Disk I/O latency</dt>
+<dd>
+<p>When computations involve frequent reading from or writing to disk, the latency associated with disk I/O operations can become a limiting factor. High disk I/O latency can result in longer waiting times for data retrieval or storage, slowing down the computation.</p>
+</dd>
+<dt class="hdlist1">Memory latency</dt>
+<dd>
+<p>The time it takes for the CPU to access data from main memory or different levels of cache can also impact the overall performance. If the memory latency is high, it can introduce delays in data retrieval, reducing the efficiency of the computation.</p>
+</dd>
+<dt class="hdlist1">Synchronization and coordination</dt>
+<dd>
+<p>In parallel computing scenarios, where multiple threads or processes need to synchronize their operations or coordinate their activities, the latency associated with these synchronization mechanisms can affect the performance. If synchronization operations introduce significant delays, it can make the computation latency bound.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>To address latency-bound scenarios, several strategies can be employed:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Network optimization</dt>
+<dd>
+<p>Minimizing network latency by using high-speed, low-latency interconnects, optimizing network configurations, or utilizing network protocols that reduce communication overhead.</p>
+</dd>
+<dt class="hdlist1">Disk I/O optimization</dt>
+<dd>
+<p>Employing techniques such as buffering, caching, or using faster storage devices (e.g., solid-state drives) to reduce disk I/O latency and improve overall performance.</p>
+</dd>
+<dt class="hdlist1">Memory optimization</dt>
+<dd>
+<p>Optimizing data access patterns, improving cache utilization, and reducing unnecessary memory transfers to minimize memory latency and enhance performance.</p>
+</dd>
+<dt class="hdlist1">Asynchronous operations</dt>
+<dd>
+<p>Utilizing asynchronous programming models and techniques to overlap computation and communication, reducing the impact of latency on overall performance.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>It&#8217;s important to note that addressing latency-bound scenarios often involves a combination of hardware and software optimizations, as well as careful design considerations to minimize the impact of latency on the computation. The specific strategies employed will depend on the characteristics of the application, the communication patterns, and the underlying HPC system&#8217;s architecture.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cpu_bound"><a class="anchor" href="#_cpu_bound"></a>3.4.3. CPU bound</h4>
+<div class="paragraph">
+<p>In High-Performance Computing (HPC), "CPU bound" refers to a situation where the performance of a computational task is primarily limited by the processing power of the central processing unit (CPU), rather than by the speed or capacity of the memory system or other resources.</p>
+</div>
+<div class="paragraph">
+<p>When a computation is CPU bound, it means that the CPU is the bottleneck, and it is fully utilized or heavily loaded, while other system resources such as memory, disk I/O, or network are not limiting factors. In such cases, the CPU spends most of its time executing instructions and performing calculations, and the overall performance of the computation is constrained by the CPU&#8217;s processing capabilities.</p>
+</div>
+<div class="paragraph">
+<p>Several factors can contribute to a computation becoming CPU bound:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Computational complexity</dt>
+<dd>
+<p>If a computational task involves highly complex algorithms or calculations that require a significant amount of processing power, the CPU may become the limiting factor in achieving optimal performance.</p>
+</dd>
+<dt class="hdlist1">Single-threaded execution</dt>
+<dd>
+<p>In some cases, a computation may rely on a single-threaded code that cannot be parallelized effectively. This means that the workload cannot be distributed across multiple CPU cores, leading to a situation where the CPU utilization is high, but the overall performance is limited by the single-threaded nature of the code.</p>
+</dd>
+<dt class="hdlist1">Resource allocation</dt>
+<dd>
+<p>In multi-user or shared HPC environments, if multiple computational tasks are competing for CPU resources, it is possible for some tasks to be CPU bound if the available CPU capacity is insufficient to handle the workload effectively.</p>
+</dd>
+<dt class="hdlist1">Insufficient parallelism</dt>
+<dd>
+<p>Even in situations where a computation can be parallelized, if the level of parallelism is not properly exploited or if there are dependencies that limit parallel execution, the computation may become CPU bound. In such cases, the CPU may not be fully utilized due to synchronization requirements or inefficient load balancing.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>To address CPU-bound scenarios, various optimization techniques can be employed. These include:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Parallelization</dt>
+<dd>
+<p>Utilizing parallel programming models, such as Message Passing Interface (MPI) or OpenMP, to distribute the workload across multiple CPU cores or nodes, allowing for better utilization of available processing power.</p>
+</dd>
+<dt class="hdlist1">Code optimization</dt>
+<dd>
+<p>Analyzing and optimizing the computational code to improve the efficiency of CPU utilization, such as reducing unnecessary computations, optimizing data access patterns, and exploiting vectorization or instruction-level parallelism.</p>
+</dd>
+<dt class="hdlist1">Performance profiling</dt>
+<dd>
+<p>Profiling the application to identify performance bottlenecks and areas of the code where the CPU utilization can be improved. This can help identify areas for optimization and guide efforts to alleviate CPU-bound situations.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>By addressing CPU-bound scenarios and optimizing the code and resource utilization, researchers and developers can improve the overall performance and efficiency of HPC applications, allowing them to achieve faster computation times and higher throughput.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="../_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+    </div>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="../_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>

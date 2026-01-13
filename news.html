@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>News and Events :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/news.html">
+    <meta name="description" content="Updates on assemblies, webinars, trainings, and milestones.">
+    <meta name="generator" content="Antora 3.1.3">
+<link rel="stylesheet" href="./_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="icon" href="./_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="./_/js/vendor/tabs-block-extension.js"></script>
+<script src="./_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = './_'</script>
+
+  </head>
+  <body class="article">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo"  src="./_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="team.html">Team</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="partners.html">Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="contact.html">Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Work Packages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp0.html">WP0: Project Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp1.html">WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp2.html">WP2: Model Order Reduction and SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp3.html">WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp4.html">WP4: Inverse Problems and Data Assimilation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp5.html">WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp6.html">WP6: Uncertainty Quantification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp7.html">WP7: Showroom, Benchmarking, and Co-Design</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="results.html">Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deliverables and Publications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="deliverables.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="publications-hal.html">Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="news.html">News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="news/archive.html">Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="workgroups.html">NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="software/index.html">Software</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="software/concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Software List</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/fabulous.html">Fabulous</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/mumps.html">MUMPS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/pastix.html">PaStiX</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/petsc.html">PETSc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/qr_mumps.html">qr_mumps</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Exa-MA</a></li>
+    <li><a href="news.html">News and Events</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/41-web-site/docs/modules/ROOT/pages/news.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="./_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">News and Events</h1>
+<div class="paragraph lead">
+<p>Stay up-to-date with the latest happenings in the Exa-MA project.</p>
+</div>
+<h2 id="_upcoming_events" class="discrete">Upcoming Events</h2>
+<div class="openblock grid grid-2 gap-2 items-start">
+<div class="content">
+<div class="exampleblock card">
+<div class="content">
+<div class="paragraph">
+<p><span class="icon text-primary"><i class="fa fa-users fa-2x"></i></span> <strong>General Assembly 2026</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Jan 19-21, 2026</strong> | Arts et Métiers ParisTech, Aix-en-Provence</p>
+</div>
+<div class="paragraph">
+<p>Three-day annual meeting with all WP leaders presenting progress and scientific highlights. The General Assembly will include breakout sessions with Feel++, Scimba, Composyx, and Uranie frameworks, plus presentations on Sage-HPC and Daimos newly funded by NumPEx and strongly connected to Exa-MA.</p>
+</div>
+<div class="paragraph">
+<p><a href="news/2026/20260119-21-ag.html" class="xref page">View full agenda and details →</a></p>
+</div>
+</div>
+</div>
+<div class="exampleblock card">
+<div class="content">
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-network-wired fa-2x"></i></span> <strong>Trans-Numériques 2026</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Feb 02-05, 2026</strong> | Couvent des Jacobins, Rennes</p>
+</div>
+<div class="paragraph">
+<p>First edition bringing together France&#8217;s academic community around digital continuum challenges. NumPEx will be represented with presentations on performance, sustainability, and HPC. Exa-MA participants include project coordinators and WP leaders.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://inria.invityou.com/trans-numeriques2026">Event details and registration →</a></p>
+</div>
+</div>
+</div>
+<div class="exampleblock card">
+<div class="content">
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-brain fa-2x"></i></span> <strong>MAJSC 2026: ML &amp; Autodiff in JAX</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Jun 08-12, 2026</strong> | IRMA, Université de Strasbourg</p>
+</div>
+<div class="paragraph">
+<p>Workshop on Machine Learning and Automatic Differentiation in JAX for Scientific Computing. Five-day intensive program covering JAX fundamentals, neural networks (Equinox/Flax), automatic differentiation for PDEs (Diffrax), physics-informed neural networks, and neural operators. Organized by E. Franck (WP2 leader), V. Michel-Dansac, V. Vigon, and A. Musik from IRMA Strasbourg.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://majsc2026.pages.math.unistra.fr/">Event details and registration →</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="_recent_events" class="discrete">Recent Events</h2>
+<table class="tableblock frame-none grid-rows stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-clipboard-list fa-2x"></i></span> <strong>Dec 09, 2025</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scientific Advisory Board Meeting</strong> – Virtual (Zoom)<br>
+Presentation of Exa-MA advances and 2025 highlights to the NumPEx Scientific Advisory Board. Topics included the 50× GenEO speedup, 8000-GPU LUMI deployment, neural operator acceleration (80-200% CPU savings), and CGAL 6.0 urban meshing achievements. Joint session with other NumPEx projects showcasing program-wide progress. Interactive session with board members providing feedback on project direction and scientific impact.<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-users fa-2x"></i></span> <strong>Nov 12-14, 2025</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>First YoungPEx General Meeting</strong> – ENSEEIHT, Toulouse<br>
+Three-day workshop bringing together young researchers to discuss the future of HPC and open science. Topics included sustainable computing with Georges Da Costa (Exa-SoFT), Grid'5000 tutorials, energy measurement, and workshops on social and gender equality in science. Organized by Thomas Saigre (Exa-MA), Karmijn Hoogveld (Exa-SofT), and other NumPEx members.<br>
+<a href="https://numpex.org/the-first-youngpex-general-meeting/">Event details and presentations</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-building fa-2x"></i></span> <strong>Nov 04, 2025</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HiDALGO2 Clustering Event</strong> – HLRS, Stuttgart<br>
+Christophe Prud&#8217;homme presented the Ktirio Urban Building pilot for city energy modeling. The pilot, co-funded 50% by NumPEx for EuroHPC, showcased the Ktirio Geom library developed jointly through CoE Hidalgo2 and Exa-MA (WP1 Geometry, Unistra-Inria CA collaboration).<br>
+<a href="https://www.hidalgo2.eu/clustering-event/">Event details and presentations</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-landmark fa-2x"></i></span> <strong>Sep 03, 2025</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>NumPEx/ANR Meeting</strong> – Siège de l&#8217;ANR, Paris<br>
+Presentation of Exa-MA advances and 2025 highlights to ANR (Agence Nationale de la Recherche) alongside other NumPEx projects. Joint session with all NumPEx project coordinators demonstrating the program&#8217;s scientific impact and progress towards exascale computing goals.<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-chalkboard-teacher fa-2x"></i></span> <strong>Mar 24-26, 2025</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SciML'25 Conference</strong> – Politecnico di Milano<br>
+Emmanuel Franck (WP2 leader) delivered invited talk on scientific machine learning.<br>
+<a href="https://www.mate.polimi.it/events/EMS-TAG-SciML-25/">Event details and presentations</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-laptop-code fa-2x"></i></span> <strong>Mar 24-26, 2025</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CI/CD &amp; Benchmarking Training</strong> – In collaboration with CoE Hidalgo2<br>
+Hands-on training on CI/CD best practices and advanced benchmarking for HPC software.<br>
+<a href="https://events.it4i.cz/event/308/overview">Event details and presentations</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-users fa-2x"></i></span> <strong>Jan 14-15, 2025</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>General Assembly 2025</strong> – Université de Strasbourg<br>
+Consortium review of progress, WP4 and WP7 updates, cross-work-package collaborations.<br>
+<a href="news/2025/20250114-15-ag.html" class="xref page">Read full recap →</a></p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_archive" class="discrete">Archive</h2>
+<div class="paragraph">
+<p>For complete event history and detailed recaps, visit our <a href="news/archive.html" class="xref page">archive page</a> or <a href="contact.html" class="xref page">contact us</a>.</p>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="./_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+    </div>
+</footer>
+<script id="site-script" src="./_/js/site.js" data-ui-root-path="./_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="./_/js/vendor/highlight.js"></script>
+
+<script src="./_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Deliverables and Publications :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/deliverables.html">
+    <meta name="description" content="Key deliverables, reports, and publication links for Exa-MA.">
+    <meta name="generator" content="Antora 3.1.3">
+<link rel="stylesheet" href="./_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="icon" href="./_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="./_/js/vendor/tabs-block-extension.js"></script>
+<script src="./_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = './_'</script>
+
+  </head>
+  <body class="article">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo"  src="./_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="team.html">Team</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="partners.html">Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="contact.html">Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Work Packages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp0.html">WP0: Project Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp1.html">WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp2.html">WP2: Model Order Reduction and SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp3.html">WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp4.html">WP4: Inverse Problems and Data Assimilation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp5.html">WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp6.html">WP6: Uncertainty Quantification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workpackages/wp7.html">WP7: Showroom, Benchmarking, and Co-Design</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="results.html">Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deliverables and Publications</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="deliverables.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="publications-hal.html">Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="news.html">News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="news/archive.html">Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="workgroups.html">NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="software/index.html">Software</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="software/concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Software List</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/fabulous.html">Fabulous</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/mumps.html">MUMPS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/pastix.html">PaStiX</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/petsc.html">PETSc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/qr_mumps.html">qr_mumps</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="software/uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Exa-MA</a></li>
+    <li>Deliverables and Publications</li>
+    <li><a href="deliverables.html">Overview</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/41-web-site/docs/modules/ROOT/pages/deliverables.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="./_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Deliverables and Publications</h1>
+<div class="paragraph lead">
+<p>Exa-MA delivers a wide range of outputs, from software toolboxes and demonstrators to high-impact publications.</p>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_deliverable_reports" class="discrete">Deliverable Reports</h2>
+<div class="paragraph">
+<p>Official project deliverables are versioned and published on GitHub with PDF downloads. <span class="icon text-warning"><i class="fa fa-star"></i></span> marks the latest release, <span class="icon text-info"><i class="fa fa-bookmark"></i></span> marks versions submitted to ANR.</p>
+</div>
+</div>
+</div>
+<div class="openblock section-white">
+<div class="content">
+<h3 id="_d7_1_research_software_development_benchmarking" class="discrete">D7.1: Research, Software Development &amp; Benchmarking</h3>
+<div class="paragraph">
+<p><em>Mega-deliverable consolidating Dx.1 reports from WP1 to WP7</em></p>
+</div>
+<div class="paragraph">
+<p><strong>Work Packages</strong>: WP1, WP2, WP3, WP4, WP5, WP6, WP7</p>
+</div>
+<div class="paragraph">
+<p><strong>Repository</strong>: <a href="https://github.com/numpex/exa-ma-d7.1"><span class="icon"><i class="fa fa-code-branch"></i></span> numpex/exa-ma-d7.1</a></p>
+</div>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3335%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Version</th>
+<th class="tableblock halign-left valign-top">Release</th>
+<th class="tableblock halign-left valign-top">Date</th>
+<th class="tableblock halign-left valign-top">Downloads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>v2.0.0</strong> <span class="icon text-warning"><i class="fa fa-star" title="Latest"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release v2.0.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-11-12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/numpex/exa-ma-d7.1/releases/tag/v2.0.0"><span class="icon"><i class="fa fa-tag" title="Release"></i></span></a> <a href="https://github.com/numpex/exa-ma-d7.1/releases/download/v2.0.0/exa-ma-d7.1-v2.0.0.pdf"><span class="icon text-danger"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>v1.93.0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release v1.93.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-10-23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/numpex/exa-ma-d7.1/releases/tag/v1.93.0"><span class="icon"><i class="fa fa-tag" title="Release"></i></span></a> <a href="https://github.com/numpex/exa-ma-d7.1/releases/download/v1.93.0/exa-ma-d7.1-v1.93.0.pdf"><span class="icon text-danger"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>v1.92.0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release v1.92.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-10-22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/numpex/exa-ma-d7.1/releases/tag/v1.92.0"><span class="icon"><i class="fa fa-tag" title="Release"></i></span></a> <a href="https://github.com/numpex/exa-ma-d7.1/releases/download/v1.92.0/exa-ma-d7.1-v1.92.0.pdf"><span class="icon text-danger"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>v1.91.1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release v1.91.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-10-11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/numpex/exa-ma-d7.1/releases/tag/v1.91.1"><span class="icon"><i class="fa fa-tag" title="Release"></i></span></a> <a href="https://github.com/numpex/exa-ma-d7.1/releases/download/v1.91.1/exa-ma-d7.1-v1.91.1.pdf"><span class="icon text-danger"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>v1.1.1</strong> <span class="icon text-info"><i class="fa fa-bookmark" title="ANR Submission"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release v1.1.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-04-10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/numpex/exa-ma-d7.1/releases/tag/v1.1.1"><span class="icon"><i class="fa fa-tag" title="Release"></i></span></a> <a href="https://github.com/numpex/exa-ma-d7.1/releases/download/v1.1.1/exa-ma-d7.1-v1.1.1.pdf"><span class="icon text-danger"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h3 id="_d7_3_training_materials" class="discrete">D7.3: Training Materials</h3>
+<div class="paragraph">
+<p><em>Educational resources, tutorials, and workshop materials</em></p>
+</div>
+<div class="paragraph">
+<p><strong>Work Packages</strong>: WP7</p>
+</div>
+<div class="paragraph">
+<p><strong>Repository</strong>: <a href="https://github.com/numpex/exa-ma-d7.3"><span class="icon"><i class="fa fa-code-branch"></i></span> numpex/exa-ma-d7.3</a></p>
+</div>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3335%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Version</th>
+<th class="tableblock halign-left valign-top">Release</th>
+<th class="tableblock halign-left valign-top">Date</th>
+<th class="tableblock halign-left valign-top">Downloads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>v1.0.1</strong> <span class="icon text-warning"><i class="fa fa-star" title="Latest"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release v1.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-04-15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/numpex/exa-ma-d7.3/releases/tag/v1.0.1"><span class="icon"><i class="fa fa-tag" title="Release"></i></span></a> <a href="https://github.com/numpex/exa-ma-d7.3/releases/download/v1.0.1/exa-ma-d7.3-v1.0.1.pdf"><span class="icon text-danger"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>v1.0.0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release v1.0.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-04-15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/numpex/exa-ma-d7.3/releases/tag/v1.0.0"><span class="icon"><i class="fa fa-tag" title="Release"></i></span></a> <a href="https://github.com/numpex/exa-ma-d7.3/releases/download/v1.0.0/exa-ma-d7.3-v1.0.0.pdf"><span class="icon text-danger"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>v0.5.0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release v0.5.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-03-11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/numpex/exa-ma-d7.3/releases/tag/v0.5.0"><span class="icon"><i class="fa fa-tag" title="Release"></i></span></a> <a href="https://github.com/numpex/exa-ma-d7.3/releases/download/v0.5.0/exa-ma-d7.3-v0.5.0.pdf"><span class="icon text-danger"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>v0.4.0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release v0.4.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-03-02</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/numpex/exa-ma-d7.3/releases/tag/v0.4.0"><span class="icon"><i class="fa fa-tag" title="Release"></i></span></a> <a href="https://github.com/numpex/exa-ma-d7.3/releases/download/v0.4.0/exa-ma-d7.3-v0.4.0.pdf"><span class="icon text-danger"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>v0.3.0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release v0.3.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-02-28</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/numpex/exa-ma-d7.3/releases/tag/v0.3.0"><span class="icon"><i class="fa fa-tag" title="Release"></i></span></a> <a href="https://github.com/numpex/exa-ma-d7.3/releases/download/v0.3.0/exa-ma-d7.3-v0.3.0.pdf"><span class="icon text-danger"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock section-white">
+<div class="content">
+<h2 id="_publications" class="discrete">Publications</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-primary"><i class="fa fa-book fa-2x"></i></span> <strong>Publications on HAL</strong></p>
+</div>
+<div class="paragraph">
+<p>Browse all peer-reviewed publications acknowledging Exa-MA (ANR-22-EXNU-0002), organized by year with direct links to PDFs.</p>
+</div>
+<div class="paragraph">
+<p><a href="publications-hal.html" class="xref page">View full publication list →</a></p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-external-link-alt fa-2x"></i></span> <strong>Search on HAL</strong></p>
+</div>
+<div class="paragraph">
+<p>Access the live HAL archive search for real-time publication updates.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://hal.science/search/index/?q=anrProjectReference_s:ANR-22-EXNU-0002">Search HAL archive →</a></p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Publications are automatically harvested from HAL using the ANR project identifier. The list is regenerated periodically to capture new submissions.</p>
+</div>
+</div>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_key_outputs" class="discrete">Key Outputs</h2>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Software Toolboxes</dt>
+<dd>
+<p>Development of libraries for mesh generation, adaptive discretization, and solver components tailored for exascale computing.</p>
+</dd>
+<dt class="hdlist1">Benchmarking Reports</dt>
+<dd>
+<p>Comprehensive performance assessments of exascale software stacks, including a benchmarking framework developed under WP7.</p>
+</dd>
+<dt class="hdlist1">Demonstrators</dt>
+<dd>
+<p>Mini-apps and proxy-apps that validate our methodologies at scale.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="./_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+    </div>
+</footer>
+<script id="site-script" src="./_/js/site.js" data-ui-root-path="./_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="./_/js/vendor/highlight.js"></script>
+
+<script src="./_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>
