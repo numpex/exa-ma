@@ -25,9 +25,9 @@ Six scientific work packages develop advanced numerical methods: discretization,
 ____
 
 ____
-icon:rocket[size=2x,role=text-success] *Integration (WP7)*
+icon:rocket[size=2x,role=text-success] *Integration and Coordination (WP0 & WP7)*
 
-WP7 integrates methods into production software, coordinates benchmarking on EuroHPC systems, and ensures co-design with hardware evolution.
+WP0 keeps Exa-MA moving smoothly: governance, coordination, risk tracking, and reporting across all seven technical work packages. WP7 integrates methods into production software, coordinates benchmarking on EuroHPC systems, and ensures co-design with hardware evolution.
 ____
 ====
 --
