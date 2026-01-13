@@ -1,8 +1,8 @@
-// Total publications: 36
+// Total publications: 35
 
 == 2025
 
-_24 publications_
+_23 publications_
 
 [.striped.publications,cols="4,2,1",options="header"]
 |===
@@ -16,13 +16,13 @@ _24 publications_
 |Xinye Chen, Thibault Hilaire, Fabienne Jézéquel
 |link:https://hal.science/hal-05291790v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05291790/document[icon:file-pdf[title=PDF]]
 
-|*Neural network-driven domain decomposition for efficient solutions to the Helmholtz equation*
-|Victorita Dolean, Daria Hrebenshchykova, Stéphane Lanteri et al.
-|link:https://hal.science/hal-05373220v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05373220/document[icon:file-pdf[title=PDF]]
-
 |*Mixed Precision Strategies for Solving Sparse Linear Systems with BiCGStab*
 |Ani Anciaux-Sedrakian, Hugo Dorfsman, Thomas Guignon et al.
 |link:https://hal.science/hal-05326901v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05326901/document[icon:file-pdf[title=PDF]]
+
+|*Neural network-driven domain decomposition for efficient solutions to the Helmholtz equation*
+|Victorita Dolean, Daria Hrebenshchykova, Stéphane Lanteri et al.
+|link:https://hal.science/hal-05373220v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05373220/document[icon:file-pdf[title=PDF]]
 
 |*A reproducible comparative study of categorical kernels for Gaussian process regression, with new clustering-based nested kernels*
 |Raphaël Carpintero Perez, Sébastien Da Veiga, Josselin Garnier
@@ -83,10 +83,6 @@ _24 publications_
 |*Enriching continuous Lagrange finite element approximation spaces using neural networks*
 |Hélène Barucq, Michel Duprez, Florian Faucher et al.
 |link:https://hal.science/hal-04935072v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04935072/document[icon:file-pdf[title=PDF]]
-
-|*Multiword matrix multiplication over large finite fields in floating-point arithmetic*
-|Jérémy Berthomieu, Stef Graillat, Dimitri Lesnoff et al.
-|link:https://hal.science/hal-04917201v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04917201/document[icon:file-pdf[title=PDF]]
 
 |*Accelerating the convergence of Newton's method for nonlinear elliptic PDEs using Fourier neural operators*
 |Joubine Aghili, Romain Hild, Victor Michel-Dansac et al.
