@@ -41,6 +41,7 @@ WP5: Optimization
 |Université de Strasbourg
 |January 2023 - September 2026
 |Yannick Privat +
+Charles Dapogny +
 Victor Dansac +
 Christophe Prud'homme
 
