@@ -34,6 +34,10 @@ exa-ma-harvest-hal -f json -o publications.json
 exa-ma-harvest-hal -y 2024,2025
 ```
 
+HAL output now includes both the raw HAL document type (`type` / `hal_doc_type`) and a normalized, user-friendly publication type:
+- `publication_type` (e.g. `preprint`, `journal-article`, `conference-paper`, `report`)
+- `publication_type_label` (e.g. "Preprint / unpublished", "Article in journal", "Conference paper")
+
 ### Harvest GitHub Releases
 
 ```bash

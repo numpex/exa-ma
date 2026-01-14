@@ -3,6 +3,11 @@ Harvest Exa-MA publications from HAL (Hyper Articles en Ligne) archive.
 
 This module queries the HAL API to retrieve publications related to the Exa-MA project,
 filtering by scientific domains and publication years.
+
+Supports configuration from:
+- Command line arguments (highest priority)
+- Unified exama.yaml config file
+- Default values (fallback)
 """
 
 import argparse
@@ -15,6 +20,13 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+
+# Import is conditional to avoid circular imports and allow standalone usage
+try:
+    from .config import ExaMAConfig, load_config as load_exama_config
+    HAS_CONFIG = True
+except ImportError:
+    HAS_CONFIG = False
 
 # HAL API endpoint
 HAL_API_URL = "https://api.archives-ouvertes.fr/search/"
@@ -32,12 +44,15 @@ DEFAULT_ROWS = 100  # Max results per request
 FIELDS = [
     "docid",
     "halId_s",
+    "version_i",
     "uri_s",
+    "doiId_s",
     "title_s",
     "authFullName_s",
     "producedDate_s",
     "publicationDateY_i",
     "docType_s",
+    "docTypeLabel_s",
     "journalTitle_s",
     "conferenceTitle_s",
     "abstract_s",
@@ -47,6 +62,149 @@ FIELDS = [
     "citationFull_s",
     "fileMain_s",
 ]
+
+
+# HAL document type codes to normalized publication types.
+#
+# Notes:
+# - HAL uses short codes like ART/COMM/REPORT/etc.
+# - This mapping intentionally stays coarse and user-facing.
+HAL_DOC_TYPE_TO_PUBLICATION_TYPE: dict[str, tuple[str, str]] = {
+    # Peer-reviewed / scholarly
+    "ART": ("journal-article", "Article in journal"),
+    "COMM": ("conference-paper", "Conference paper"),
+    "COUV": ("book-chapter", "Book chapter"),
+    "OUV": ("book", "Book"),
+    # Grey literature / theses
+    "REPORT": ("report", "Report"),
+    "THESE": ("thesis", "Thesis"),
+    "HDR": ("thesis", "HDR"),
+    # Other scholarly outputs
+    "POSTER": ("poster", "Poster"),
+    "PATENT": ("patent", "Patent"),
+    "SOFTWARE": ("software", "Software"),
+    "DATA": ("dataset", "Dataset"),
+    # Catch-alls
+    "UNDEFINED": ("preprint", "Preprint / unpublished"),
+    "OTHER": ("other", "Other"),
+}
+
+
+def _first_str(value: Any) -> str:
+    if isinstance(value, list):
+        return str(value[0]) if value else ""
+    return str(value) if value is not None else ""
+
+
+def infer_publication_type(
+    doc_type_code: str,
+    *,
+    doc_type_label: str = "",
+    journal_title: str = "",
+    conference_title: str = "",
+    doi: str = "",
+) -> dict[str, str]:
+    """Infer a normalized publication type from HAL fields.
+
+    Returns a small dict with:
+      - publication_type: a stable, machine-friendly key
+      - publication_type_label: user-friendly English label
+      - hal_doc_type: raw HAL docType code
+      - hal_doc_type_label: raw HAL label if available
+    """
+
+    code = (doc_type_code or "").strip()
+    label = (doc_type_label or "").strip()
+
+    if code in HAL_DOC_TYPE_TO_PUBLICATION_TYPE:
+        normalized, normalized_label = HAL_DOC_TYPE_TO_PUBLICATION_TYPE[code]
+
+        # HAL sometimes keeps docType as UNDEFINED/OTHER across versions, while
+        # later versions gain journal/DOI metadata after validation/review.
+        # In that case, infer a more specific "published" type.
+        if normalized in {"preprint", "other"}:
+            if journal_title or doi:
+                normalized, normalized_label = ("journal-article", "Article in journal")
+            elif conference_title:
+                normalized, normalized_label = ("conference-paper", "Conference paper")
+
+        return {
+            "publication_type": normalized,
+            "publication_type_label": normalized_label,
+            "hal_doc_type": code,
+            "hal_doc_type_label": label,
+        }
+
+    # Heuristic fallback when docType is missing/unknown.
+    if journal_title or doi:
+        normalized, normalized_label = ("journal-article", "Article in journal")
+    elif conference_title:
+        normalized, normalized_label = ("conference-paper", "Conference paper")
+    else:
+        normalized, normalized_label = ("other", "Other")
+
+    return {
+        "publication_type": normalized,
+        "publication_type_label": normalized_label,
+        "hal_doc_type": code,
+        "hal_doc_type_label": label,
+    }
+
+
+def _score_publication_version(pub: dict[str, Any]) -> tuple[int, int, str]:
+    """Score HAL record for selecting best version for the same HAL id.
+
+    Higher is better.
+    Primary goal: prefer records that look 'published' (journal/DOI metadata)
+    over earlier preprint versions, then pick the highest version number.
+    """
+
+    doc_type_code = _first_str(pub.get("docType_s", "")).strip()
+    journal_title = _first_str(pub.get("journalTitle_s", "")).strip()
+    conference_title = _first_str(pub.get("conferenceTitle_s", "")).strip()
+    doi = _first_str(pub.get("doiId_s", "")).strip()
+
+    score = 0
+    if doc_type_code == "ART" or journal_title or doi:
+        score += 30
+    if doi:
+        score += 10
+    if doc_type_code == "COMM" or conference_title:
+        score += 20
+    if doc_type_code in {"COUV", "OUV", "REPORT", "THESE", "HDR"}:
+        score += 15
+
+    version = pub.get("version_i")
+    try:
+        version_i = int(version) if version is not None else 0
+    except (TypeError, ValueError):
+        version_i = 0
+
+    produced_date = _first_str(pub.get("producedDate_s", ""))
+    return (score, version_i, produced_date)
+
+
+def select_best_versions(publications: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Deduplicate publications by HAL id, selecting the best available version."""
+
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for pub in publications:
+        key = (
+            _first_str(pub.get("halId_s", "")).strip()
+            or _first_str(pub.get("uri_s", "")).strip()
+            or str(pub.get("docid", "")).strip()
+        )
+        grouped.setdefault(key, []).append(pub)
+
+    selected: list[dict[str, Any]] = []
+    for _, pubs in grouped.items():
+        best = max(pubs, key=_score_publication_version)
+        best_copy = dict(best)
+        best_copy["_hal_versions_found_i"] = len(pubs)
+        selected.append(best_copy)
+
+    selected.sort(key=lambda x: _first_str(x.get("producedDate_s", "")), reverse=True)
+    return selected
 
 
 def build_query_params(
@@ -148,31 +306,45 @@ def fetch_publications(
         if start >= total:
             break
 
-    return all_publications
+    return select_best_versions(all_publications)
 
 
 def format_publication(pub: dict[str, Any]) -> dict[str, Any]:
     """Format a publication record for output."""
     # Handle fields that may be lists or single values
-    title = (
-        pub.get("title_s", [""])[0]
-        if isinstance(pub.get("title_s"), list)
-        else pub.get("title_s", "")
-    )
+    title = _first_str(pub.get("title_s", ""))
     authors = pub.get("authFullName_s", [])
     if isinstance(authors, str):
         authors = [authors]
 
+    doc_type_code = _first_str(pub.get("docType_s", ""))
+    doc_type_label = _first_str(pub.get("docTypeLabel_s", ""))
+    journal_title = _first_str(pub.get("journalTitle_s", ""))
+    conference_title = _first_str(pub.get("conferenceTitle_s", ""))
+    doi = _first_str(pub.get("doiId_s", ""))
+    type_info = infer_publication_type(
+        doc_type_code,
+        doc_type_label=doc_type_label,
+        journal_title=journal_title,
+        conference_title=conference_title,
+        doi=doi,
+    )
+
     return {
+        **type_info,
         "hal_id": pub.get("halId_s", ""),
+        "hal_version": pub.get("version_i", ""),
+        "hal_versions_found": pub.get("_hal_versions_found_i", ""),
         "url": pub.get("uri_s", ""),
         "title": title,
         "authors": authors,
         "date": pub.get("producedDate_s", ""),
         "year": pub.get("publicationDateY_i", ""),
-        "type": pub.get("docType_s", ""),
-        "journal": pub.get("journalTitle_s", ""),
-        "conference": pub.get("conferenceTitle_s", ""),
+        # Backward-compatible raw HAL code (kept for existing consumers)
+        "type": doc_type_code,
+        "journal": journal_title,
+        "conference": conference_title,
+        "doi": doi,
         "abstract": (
             pub.get("abstract_s", [""])[0]
             if isinstance(pub.get("abstract_s"), list)
@@ -218,12 +390,17 @@ def output_csv(publications: list[dict], output_file: str | Path | None = None) 
 
     fieldnames = [
         "hal_id",
+        "hal_version",
+        "hal_versions_found",
         "title",
         "authors",
         "year",
         "type",
+        "publication_type",
+        "publication_type_label",
         "journal",
         "conference",
+        "doi",
         "url",
         "pdf_url",
         "open_access",
@@ -297,9 +474,9 @@ def output_asciidoc(
         lines.append("")
         lines.append(f"_{len(pubs)} publication{'s' if len(pubs) > 1 else ''}_")
         lines.append("")
-        lines.append('[.striped.publications,cols="4,2,1",options="header"]')
+        lines.append('[.striped.publications,cols="4,2,2,1",options="header"]')
         lines.append("|===")
-        lines.append("|Title |Authors |Links")
+        lines.append("|Title |Authors |Type |Links")
         lines.append("")
 
         for pub in pubs:
@@ -312,6 +489,15 @@ def output_asciidoc(
             # Escape pipe characters in title
             title = pub["title"].replace("|", "\\|")
 
+            # Prefer normalized label; fall back to HAL code.
+            pub_type = (
+                pub.get("publication_type_label")
+                or pub.get("hal_doc_type_label")
+                or pub.get("type")
+                or ""
+            )
+            pub_type = str(pub_type).replace("|", "\\|")
+
             # Build links
             links = []
             links.append(f"link:{pub['url']}[icon:external-link-alt[title=HAL]]")
@@ -320,6 +506,7 @@ def output_asciidoc(
 
             lines.append(f"|*{title}*")
             lines.append(f"|{author_str}")
+            lines.append(f"|{pub_type}")
             lines.append(f"|{' '.join(links)}")
             lines.append("")
 
@@ -397,15 +584,19 @@ def main():
         help="Output format (default: json)",
     )
     parser.add_argument(
+        "-c",
+        "--config",
+        type=Path,
+        help="Path to exama.yaml config file (uses defaults if not specified)",
+    )
+    parser.add_argument(
         "-q",
         "--query",
-        default=DEFAULT_QUERY,
         help=f"Search query (default: {DEFAULT_QUERY})",
     )
     parser.add_argument(
         "-y",
         "--years",
-        default="2023,2024,2025",
         help="Comma-separated years to filter (default: 2023,2024,2025)",
     )
     parser.add_argument(
@@ -421,14 +612,44 @@ def main():
 
     args = parser.parse_args()
 
-    years = [int(y.strip()) for y in args.years.split(",")]
+    # Load configuration from unified config file if available
+    query = DEFAULT_QUERY
+    years = DEFAULT_YEARS
+    domains = DEFAULT_DOMAINS
 
-    domains = None
+    if HAS_CONFIG and args.config:
+        try:
+            config = load_exama_config(args.config)
+            pub_config = config.get_publications_config()
+            query = pub_config.query
+            years = pub_config.years
+            domains = pub_config.domains
+            print(f"Loaded configuration from: {args.config}")
+        except FileNotFoundError:
+            print(f"Config file not found: {args.config}, using defaults", file=sys.stderr)
+        except Exception as e:
+            print(f"Error loading config: {e}, using defaults", file=sys.stderr)
+    elif HAS_CONFIG:
+        # Try to auto-discover config file
+        try:
+            config = load_exama_config()
+            pub_config = config.get_publications_config()
+            query = pub_config.query
+            years = pub_config.years
+            domains = pub_config.domains
+        except FileNotFoundError:
+            pass  # Use defaults
+
+    # CLI args override config
+    if args.query:
+        query = args.query
+    if args.years:
+        years = [int(y.strip()) for y in args.years.split(",")]
     if args.domains:
         domains = [d.strip() for d in args.domains.split(",")]
 
     publications = fetch_publications(
-        query=args.query,
+        query=query,
         domains=domains,
         years=years,
     )

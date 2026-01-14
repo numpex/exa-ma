@@ -1,0 +1,12 @@
+* xref:index.adoc[WP7: Software & Benchmarking]
+** xref:concepts.adoc[Concepts]
+
+* xref:frameworks.adoc[Frameworks]
+{% for pkg in frameworks %}
+** xref:frameworks/{{ pkg.slug }}.adoc[{{ pkg.name }}]
+{% endfor %}
+
+* xref:applications.adoc[Applications]
+{% for app in applications %}
+** xref:applications/{{ app.slug }}.adoc[{{ app.name }}]
+{% endfor %}

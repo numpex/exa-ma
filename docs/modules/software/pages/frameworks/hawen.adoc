@@ -1,0 +1,137 @@
+= Hawen
+:page-layout: default
+:page-tags: framework, software, hawen
+:page-illustration: fa-solid fa-cube
+:description: Hawen - Exa-MA Framework...
+:icons: font
+:page-work-packages: WP1, WP3, WP4, WP5, WP6, WP7
+
+[.lead]
+Hawen is a framework used in the Exa-MA project.
+
+[.section-gray]
+--
+[discrete]
+== Overview
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Repository*
+
+https://gitlab.com/ffaucher/hawen
+____
+
+____
+icon:file-contract[size=2x,role=text-success] *License*
+
+OSS:: GPL v*
+____
+
+____
+icon:book[size=2x,role=text-info] *Documentation*
+
+_Not yet available_
+____
+
+____
+icon:comments[size=2x,role=text-warning] *Discussion*
+
+_Not yet available_
+____
+====
+--
+
+== Criteria Evaluation
+
+=== Packaging
+
+Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
+
+* [x] Packages exist
+* [ ] Available in Spack
+* [x] Available in Guix-HPC
+* [ ] Docker image available
+* [ ] Apptainer/Singularity available
+
+
+=== Testing & CI/CD
+
+Software should include validation tests triggered through automated mechanisms.
+
+* [ ] Unit tests exist
+* [ ] Continuous Integration configured
+* [ ] CI runs on each release
+* [ ] Benchmarking tests exist
+
+=== Repository & Contributions
+
+* [x] Public source repository available
+* [x] Supports contributions via pull requests
+
+Repository: https://gitlab.com/ffaucher/hawen
+
+=== License
+
+Sources should be published under a clearly-identified free software license.
+
+* [x] License clearly stated
+* [x] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX identifiers used
+* [ ] REUSE compliant
+
+* GPL v*
+
+=== Documentation
+
+* [ ] Documentation exists
+* [ ] Easily browsable online
+
+
+=== API Compatibility
+
+* [ ] API changes documented
+* [ ] Semantic versioning used
+* [ ] Release policy defined
+
+== Work Packages
+
+This framework is involved in the following work packages:
+
+=== WP1 icon:check-circle[role=text-success]
+Topics: dG/hdG, multiphysics coupling
+_Benchmarked in this WP_
+
+=== WP3 icon:check-circle[role=text-success]
+Topics: "reuse of Krylov subspaces for multiple right-hand sides"
+_Benchmarked in this WP_
+
+=== WP4 icon:check-circle[role=text-success]
+Topics: deterministic inverse problem
+_Benchmarked in this WP_
+
+=== WP5
+Topics: iterative methods
+
+=== WP6
+Topics: sensitivity analysis
+
+=== WP7
+Topics: Geophysics, Energy, Astrophysics, mini-apps
+
+
+== Technical Details
+
+*Languages:* Fortran
+
+*Parallelism:* MPI, Multithread - OpenMP
+
+*Data Formats:* in-house format, VTK, Gmsh and asssociated formats
+
+
+== Partners
+
+*Lead Partner:* Inria BXSO
+
+*Consortium:* Inria
+

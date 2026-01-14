@@ -1,0 +1,132 @@
+= Nonlinear Compressive Reduced Basis
+:page-layout: default
+:page-tags: application, extended-mini-app, app-feelpp-nlcrb
+:page-illustration: fa-solid fa-cubes
+:description: Nonlinear Compressive Reduced Basis - Test nonlinear compressive reduced basis methods...
+:icons: font
+:page-status: planned
+:page-work-packages: WP2, WP1, WP3
+
+[.lead]
+Test nonlinear compressive reduced basis methods
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Extended Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP2, WP1, WP3
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Feel++, PETSc, pytorch
+____
+====
+--
+
+
+== Overview
+
+Test nonlinear compressive reduced basis methods
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+* **PETSc**
+* **pytorch**
+
+=== Parallel Frameworks
+
+* MPI
+* Kokkos
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* unstructured mesh
+* finite element
+* spectral element
+* cG
+
+=== WP2: Model Order Reduction & SciML
+
+* NLCRB
+
+=== WP3: Solvers
+
+* domain decomposition methods
+* preconditioning
+* krylov solver
+
+
+
+
+== Data Flow
+
+=== Inputs
+
+* JSON config
+* JSON small-data
+* Gmsh
+
+=== Outputs
+
+* JSON reports
+* JSON small-data
+* in-house
+
+== Benchmarking
+
+=== Metrics
+
+* Benchmark Verification
+* Basis Size
+* Online Speedup
+
+=== Benchmark Scope
+
+* Multi Node
+* Multi Gpu
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | 2025-06-15
+
+| Prototype Due | 2026-07-01
+|===
+
+== Team
+
+*Partners:* Unistra
+
+*Responsible:* C. Prud'homme, J Aghili
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+

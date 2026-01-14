@@ -3,7 +3,7 @@
 :parent-catalogs: exama-home
 :page-illustration: fa-solid fa-calendar-days
 :description: Updates on assemblies, webinars, trainings, and milestones.
-:sectnum!:
+:sectnums!:
 
 [.lead]
 Stay up-to-date with the latest happenings in the Exa-MA project.

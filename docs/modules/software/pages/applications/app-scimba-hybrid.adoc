@@ -1,0 +1,73 @@
+= Hybrid  numerics
+:page-layout: default
+:page-tags: application, demonstrator, app-scimba-hybrid
+:page-illustration: fa-solid fa-desktop
+:description: Hybrid  numerics - Test numerical hybrid methods on high dimensional physical and parametric PDE problems...
+:icons: font
+:page-status: planned
+:page-work-packages: WP2
+
+[.lead]
+Test numerical hybrid methods on high dimensional physical and parametric PDE problems
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Demonstrator
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP2
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+N/A
+____
+====
+--
+
+
+== Overview
+
+Test numerical hybrid methods on high dimensional physical and parametric PDE problems
+
+
+
+
+
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra
+
+*Responsible:* Emmanuel Franck
+
+

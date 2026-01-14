@@ -4,6 +4,7 @@
 :page-illustration: fa-solid fa-users
 :description: Leadership, work package contacts, and recruited staff.
 :icons: font
+:sectnums!:
 
 [.lead]
 Our success is driven by a diverse and talented team of researchers, engineers, and PhD students from leading institutions across France.
@@ -261,60 +262,9 @@ ____
 ====
 --
 
-[.section-gray]
---
-[discrete]
 == Recruited Personnel
 
-[.grid.grid-2.gap-2]
-====
-____
-*WP1: Discretization*
+[.lead]
+Personnel funded by the Exa-MA project, organized by position type.
 
-- Pierre Dubois _(PhD student)_
-- Christos Georgiadis _(Postdoc)_
-____
-
-____
-*WP2: SciML & ROM*
-
-- Hassan Ballout _(PhD student)_
-- Daria Hrebenshchykova _(PhD student)_
-- Alexandre Pugin _(PhD student)_
-- Hung Truong _(Postdoc)_
-____
-
-____
-*WP3: Solvers*
-
-- Antoine Simon _(PhD student, WP1-WP3)_
-____
-
-____
-*WP4: Inverse Problems*
-
-- Hélène Hénon _(PhD student)_
-____
-
-____
-*WP5: Optimization*
-
-- Amaury Bélières _(PhD student)_
-____
-
-____
-*WP6: Uncertainty Quantification*
-
-- Mahamat Nassouradine _(PhD student)_
-____
-
-____
-*WP7: Software & Benchmarking*
-
-- Sébastien Dubois _(Research Engineer, WP7-WP1)_
-- Alexandre Hoffmann _(Research Engineer, WP7-WP1)_
-- Thomas Saigre _(Research Engineer, WP7-WP1)_
-- Raphael Zanella _(Research Engineer, WP7-WP3)_
-____
-====
---
+include::partial$recruited-personnel.adoc[]

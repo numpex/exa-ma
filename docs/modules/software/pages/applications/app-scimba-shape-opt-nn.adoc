@@ -1,0 +1,93 @@
+= Shape Opt NN
+:page-layout: default
+:page-tags: application, mini-app, app-scimba-shape-opt-nn
+:page-illustration: fa-solid fa-cube
+:description: Shape Opt NN - Demonstrate new shape optimisation algorithm, volume preserving, nn formulation...
+:icons: font
+:page-status: planned
+:page-work-packages: WP5
+
+[.lead]
+Demonstrate new shape optimisation algorithm, volume preserving, nn formulation
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP5
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Scimba
+____
+====
+--
+
+
+== Overview
+
+Demonstrate new shape optimisation algorithm, volume preserving, nn formulation
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Scimba**
+
+=== Parallel Frameworks
+
+* GPU
+
+== Methods & Algorithms
+
+
+
+
+
+=== WP5: Optimization
+
+* Shape optimisation
+* Iterative methods
+
+
+
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra
+
+*Responsible:* Victor Dansac
+
+

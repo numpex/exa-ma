@@ -1,0 +1,73 @@
+= Zellij
+:page-layout: default
+:page-tags: application, mini-app, app-zellij
+:page-illustration: fa-solid fa-cube
+:description: Zellij - Solveur de problèmes d'optimisation continue...
+:icons: font
+:page-status: planned
+:page-work-packages: WP5
+
+[.lead]
+Solveur de problèmes d'optimisation continue
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP5
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+N/A
+____
+====
+--
+
+
+== Overview
+
+Solveur de problèmes d'optimisation continue
+
+
+
+
+
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Inria Lille
+
+*Responsible:* E-G. Talbi
+
+

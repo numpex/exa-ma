@@ -49,6 +49,21 @@ events:
     url: "https://majsc2026.pages.math.unistra.fr/"
 
   # Recent events (displayed as table)
+  - id: website-refresh-2026
+    type: announcement
+    status: recent
+    title: "Exa-MA Website Refresh"
+    date: "2026-01-14"
+    icon: "globe"
+    description: >
+      The Exa-MA project website has been refreshed with updated content and improved navigation.
+      New features include detailed work package pages, a comprehensive software stack catalog
+      with 16+ open-source packages, team directory with photos, 2025 scientific highlights
+      (50× GenEO speedups, 8000 GPU scale on LUMI, neural operator acceleration),
+      and streamlined access to deliverables and publications.
+    url: "https://numpex.github.io/exa-ma/"
+    link_text: "Visit Exa-MA website →"
+
   - id: sab-2025
     type: assembly
     status: recent

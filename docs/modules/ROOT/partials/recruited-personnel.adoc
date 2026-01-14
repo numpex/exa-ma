@@ -1,0 +1,251 @@
+// Total recruited personnel: 26
+
+[discrete]
+== icon:graduation-cap[] PhD Students
+
+_13 personnel_
+
+[.striped.recruited,cols="2,2,2,2,2,2",options="header"]
+|===
+|Last Name |First Name |Work Package |Institution |Period |Advisor(s)
+
+|*Dubois*
+|Pierre
+|WP1: Discretization
+|CEA
+|April 2024 - Present
+|Isabelle Ramière +
+Hélène Barucq
+
+|*Simon*
+|Antoine
+|WP1: Discretization +
+WP3: Solvers
+|École Polytechnique
+|December 2024 - Present
+|Marc Massot
+
+|*Ballout*
+|Hassan
+|WP2: Model Order Reduction & SciML
+|Université de Strasbourg
+|January 2024 - September 2027
+|Yvon Maday +
+Christophe Prud'homme +
+Joubine Aghili
+
+|*Belieres*
+|Amaury
+|WP2: Model Order Reduction & SciML +
+WP5: Optimization
+|Université de Strasbourg
+|January 2023 - September 2026
+|Yannick Privat +
+Victor Dansac +
+Christophe Prud'homme
+
+|*Hrebenshchykova*
+|Daria
+|WP2: Model Order Reduction & SciML
+|Université de Strasbourg
+|January 2024 - October 2027
+|Stéphane Lanteri
+
+|*Italiano*
+|Vincent
+|WP2: Model Order Reduction & SciML
+|Université de Strasbourg
+|October 2025 - Present
+|Emmanuel Franck +
+Stephane Cotin
+
+|*Antoine dit Urban*
+|Brieuc
+|WP3: Solvers
+|Inria
+|Project start - Present
+|Frédéric Nataf
+
+|*Caruso*
+|Tom
+|WP3: Solvers
+|Inria
+|Project start - Present
+|Frédéric Nataf
+
+|*Tabouret*
+|Alexandre
+|WP3: Solvers
+|Sorbonne Université
+|January 2025 - January 2028
+|Pierre Jolivet
+
+|*Doumbouya*
+|Mohamed
+|WP4: Inverse Problems & Data Assimilation
+|Inria
+|January 2025 - October 2028
+|Arthur Vidard
+
+|*Farba Seck*
+|Pape
+|WP4: Inverse Problems & Data Assimilation
+|Inria
+|October 2025 - Present
+|Hélène Barucq +
+Mark Asch
+
+|*El Khadiri*
+|Mahmoud El Mehdi
+|WP5: Optimization
+|Inria
+|January 2024 - Present
+|El-Ghazzali Talbi
+
+|*Nassouradine*
+|Mahamat
+|WP6: Uncertainty Quantification
+|CEA
+|November 2024 - Present
+|Clément Gauchy
+
+|===
+
+[discrete]
+== icon:flask[] Postdoctoral Researchers
+
+_5 personnel_
+
+[.striped.recruited,cols="2,2,2,2,2,2",options="header"]
+|===
+|Last Name |First Name |Work Package |Institution |Period |Advisor(s)
+
+|*Georgiadis*
+|Christos
+|WP1: Discretization +
+WP7: Software, Benchmarking & Co-Design
+|Inria
+|January 2024 - April 2025
+|Pierre Alliez
+
+|*Truong*
+|Dinh Hung T
+|WP2: Model Order Reduction & SciML
+|Université de Strasbourg
+|January 2023 - Present
+|Emmanuel Franck
+
+|*Chen*
+|Xinye
+|WP3: Solvers
+|Sorbonne Université
+|October 2024 - Present
+|Fabienne Jezequel
+
+|*Kiran*
+|Utpal
+|WP3: Solvers
+|CEA
+|March 2025 - Present
+|Vincent Faucher
+
+|*Spies*
+|Lukas
+|WP3: Solvers
+|Inria
+|January 2025 - February 2026
+|
+
+|===
+
+[discrete]
+== icon:cogs[] Research Engineers
+
+_8 personnel_
+
+[.striped.recruited,cols="2,2,2,2,2,2",options="header"]
+|===
+|Last Name |First Name |Work Package |Institution |Period |Advisor(s)
+
+|*Antonczak*
+|Juliette
+|WP0: Project Office +
+WP7: Software, Benchmarking & Co-Design
+|Université de Strasbourg
+|October 2025 - Present
+|Christophe Prud'homme
+
+|*Cladellas*
+|Javier
+|WP1: Discretization +
+WP7: Software, Benchmarking & Co-Design
+|Université de Strasbourg
+|October 2025 - Present
+|Christophe Prud'homme +
+Vincent Chabannes +
+Pierre Alliez +
+(Charles Dapogny)
+
+|*Dubois*
+|Sébastien
+|WP1: Discretization
+|École Polytechnique
+|November 2024 - November 2027
+|Loic Guarin
+
+|*Hoffmann*
+|Alexandre
+|WP1: Discretization
+|École Polytechnique
+|January 2025 - December 2028
+|Loic Gouarin
+
+|*Saigre*
+|Thomas
+|WP1: Discretization +
+WP2: Model Order Reduction & SciML +
+WP3: Solvers +
+WP7: Software, Benchmarking & Co-Design
+|Université de Strasbourg
+|October 2024 - September 2025
+|Christophe Prud'homme +
+Vincent Chabannes
+
+|*Fabrizzi*
+|Erik
+|WP3: Solvers
+|Sorbonne Université
+|October 2025 - Present
+|Pierre Jolivet
+
+|*Gouinguenet*
+|Arthur
+|WP3: Solvers +
+WP7: Software, Benchmarking & Co-Design
+|Inria
+|January 2025 - September 2027
+|Luc Giraud
+
+|*Zanella*
+|Raphaël
+|WP3: Solvers
+|Sorbonne Université
+|October 2024 - September 2025
+|Pierre Jolivet
+
+|===
+
+[discrete]
+== Key Indicators
+
+[.striped,cols="2,1",options="header"]
+|===
+|Indicator |Value
+
+|Total Recruited Personnel |*26*
+|PhD Students |13
+|Postdoctoral Researchers |5
+|Research Engineers |8
+|Women |2 (8%)
+|Men |24 (92%)
+|===

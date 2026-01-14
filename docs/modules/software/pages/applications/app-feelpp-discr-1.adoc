@@ -1,0 +1,138 @@
+= Discretization
+:page-layout: default
+:page-tags: application, extended-mini-app, app-feelpp-discr-1
+:page-illustration: fa-solid fa-cubes
+:description: Discretization - Solve a PDE (heat,solid mech) with different discretisation methods from low to high order...
+:icons: font
+:page-status: benchmark-ready
+:page-work-packages: WP1, WP3
+
+[.lead]
+Solve a PDE (heat,solid mech) with different discretisation methods from low to high order
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Extended Mini App
+____
+
+____
+icon:check-circle[size=2x,role=text-success] *Status*
+
+Benchmark Ready
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1, WP3
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Feel++, PETSc
+____
+====
+--
+
+[NOTE]
+====
+icon:check-circle[role=text-success] This application is **benchmark-ready** and can be used for performance evaluation.
+====
+
+== Overview
+
+Solve a PDE (heat,solid mech) with different discretisation methods from low to high order
+
+=== Repository
+
+icon:code-branch[] https://github.com/numpex/apps-feelpp
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+* **PETSc**
+
+=== Parallel Frameworks
+
+* MPI
+* Kokkos
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* unstructured mesh
+* finite element
+* dG/hdG
+* cG
+* spectral element
+
+
+=== WP3: Solvers
+
+* domain decomposition methods
+* krylov solver
+* preconditioning
+
+
+
+
+== Data Flow
+
+=== Inputs
+
+* Gmsh
+* JSON config
+
+=== Outputs
+
+* JSON small-data
+* JSON reports
+* in-house
+* Markdown or Asciidoc
+
+== Benchmarking
+
+=== Metrics
+
+* Benchmark Verification
+* Strong Scalability
+* Weak Scalability
+* Io Scaling
+
+=== Benchmark Scope
+
+* Full System
+* Method Verification
+* Solver Scaling
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | 2025-06-15
+
+| Prototype Due | 2025-07-01
+|===
+
+== Team
+
+*Partners:* Unistra
+
+*Responsible:* V. Chabannes; C. Prud'homme
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+

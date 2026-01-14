@@ -1,7 +1,12 @@
-// Events: 7 recent
+// Events: 8 recent
 
 [cols="1,5",frame=none,grid=rows]
 |===
+|icon:globe[size=2x] *Jan 14, 2026*
+|**Exa-MA Website Refresh** +
+The Exa-MA project website has been refreshed with updated content and improved navigation. New features include detailed work package pages, a comprehensive software stack catalog with 16+ open-source packages, team directory with photos, 2025 scientific highlights (50× GenEO speedups, 8000 GPU scale on LUMI, neural operator acceleration), and streamlined access to deliverables and publications. +
+https://numpex.github.io/exa-ma/[Visit Exa-MA website →]
+
 |icon:clipboard-list[size=2x] *Dec 09, 2025*
 |**Scientific Advisory Board Meeting** – Virtual (Zoom) +
 Presentation of Exa-MA advances and 2025 highlights to the NumPEx Scientific Advisory Board. Topics included the 50× GenEO speedup, 8000-GPU LUMI deployment, neural operator acceleration (80-200% CPU savings), and CGAL 6.0 urban meshing achievements. Joint session with other NumPEx projects showcasing program-wide progress. Interactive session with board members providing feedback on project direction and scientific impact. +

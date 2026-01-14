@@ -1,0 +1,131 @@
+= Arcane
+:page-layout: default
+:page-tags: framework, software, arcane
+:page-illustration: fa-solid fa-cube
+:description: Arcane - Exa-MA Framework...
+:icons: font
+:page-work-packages: WP1, WP3, WP7
+
+[.lead]
+Arcane is a framework used in the Exa-MA project.
+
+[.section-gray]
+--
+[discrete]
+== Overview
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Repository*
+
+https://github.com/arcaneframework/framework
+____
+
+____
+icon:file-contract[size=2x,role=text-success] *License*
+
+OSS: apache-2
+____
+
+____
+icon:book[size=2x,role=text-info] *Documentation*
+
+_Not yet available_
+____
+
+____
+icon:comments[size=2x,role=text-warning] *Discussion*
+
+_Not yet available_
+____
+====
+--
+
+== Criteria Evaluation
+
+=== Packaging
+
+Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
+
+* [ ] Packages exist
+* [ ] Available in Spack
+* [ ] Available in Guix-HPC
+* [ ] Docker image available
+* [ ] Apptainer/Singularity available
+
+* Spack: URL
+* Guix: URL
+* Docker: URL
+
+=== Testing & CI/CD
+
+Software should include validation tests triggered through automated mechanisms.
+
+* [x] Unit tests exist
+* [x] Continuous Integration configured
+* [ ] CI runs on each release
+* [ ] Benchmarking tests exist
+
+=== Repository & Contributions
+
+* [x] Public source repository available
+* [x] Supports contributions via pull requests
+
+Repository: https://github.com/arcaneframework/framework
+
+=== License
+
+Sources should be published under a clearly-identified free software license.
+
+* [x] License clearly stated
+* [x] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX identifiers used
+* [ ] REUSE compliant
+
+* OSS: apache-2
+
+=== Documentation
+
+* [ ] Documentation exists
+* [ ] Easily browsable online
+
+
+=== API Compatibility
+
+* [ ] API changes documented
+* [ ] Semantic versioning used
+* [ ] Release policy defined
+
+== Work Packages
+
+This framework is involved in the following work packages:
+
+=== WP1
+Topics: unstructured mesh, mesh adaptation, AMR, finite element, multiphysics coupling
+
+=== WP3 icon:check-circle[role=text-success]
+Topics: multiphysics coupling
+_Benchmarked in this WP_
+
+=== WP7 icon:check-circle[role=text-success]
+Topics: Environment, Energy, Physics
+_Benchmarked in this WP_
+
+
+== Technical Details
+
+*Languages:* C++, C#
+
+*Parallelism:* Multithread, MPI, GPU
+
+*Data Formats:* XML, HDF5, Json, Ensight
+
+*Resilience:* Checkpoint restart
+
+== Partners
+
+*Lead Partner:* CEA
+
+*Consortium:* CEA, IFPEN
+

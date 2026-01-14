@@ -1,0 +1,118 @@
+= Composyx
+:page-layout: default
+:page-tags: framework, software, composyx
+:page-illustration: fa-solid fa-cube
+:description: Composyx - Exa-MA Framework...
+:icons: font
+:page-work-packages: WP3
+
+[.lead]
+Composyx is a framework used in the Exa-MA project.
+
+[.section-gray]
+--
+[discrete]
+== Overview
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Repository*
+
+https://gitlab.inria.fr/composyx/composyx
+____
+
+____
+icon:file-contract[size=2x,role=text-success] *License*
+
+OSS: Cecill-*
+____
+
+____
+icon:book[size=2x,role=text-info] *Documentation*
+
+_Not yet available_
+____
+
+____
+icon:comments[size=2x,role=text-warning] *Discussion*
+
+_Not yet available_
+____
+====
+--
+
+== Criteria Evaluation
+
+=== Packaging
+
+Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
+
+* [x] Packages exist
+* [ ] Available in Spack
+* [x] Available in Guix-HPC
+* [ ] Docker image available
+* [x] Apptainer/Singularity available
+
+
+=== Testing & CI/CD
+
+Software should include validation tests triggered through automated mechanisms.
+
+* [ ] Unit tests exist
+* [x] Continuous Integration configured
+* [ ] CI runs on each release
+* [ ] Benchmarking tests exist
+
+=== Repository & Contributions
+
+* [x] Public source repository available
+* [x] Supports contributions via pull requests
+
+Repository: https://gitlab.inria.fr/composyx/composyx
+
+=== License
+
+Sources should be published under a clearly-identified free software license.
+
+* [x] License clearly stated
+* [x] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX identifiers used
+* [ ] REUSE compliant
+
+* OSS: Cecill-*
+
+=== Documentation
+
+* [ ] Documentation exists
+* [ ] Easily browsable online
+
+
+=== API Compatibility
+
+* [ ] API changes documented
+* [ ] Semantic versioning used
+* [ ] Release policy defined
+
+== Work Packages
+
+This framework is involved in the following work packages:
+
+=== WP3 icon:check-circle[role=text-success]
+Topics: direct solver, "singular value decomposition (SVD) and eigenvalue solver", krylov solver
+_Benchmarked in this WP_
+
+
+== Technical Details
+
+*Languages:* C++, C, Fortran
+
+*Parallelism:* MPI, Multithread, GPU
+
+
+
+== Partners
+
+*Lead Partner:* Inria BXSO
+
+

@@ -1,0 +1,133 @@
+= Scimba
+:page-layout: default
+:page-tags: framework, software, scimba
+:page-illustration: fa-solid fa-cube
+:description: Scimba - Exa-MA Framework...
+:icons: font
+:page-work-packages: WP2
+
+[.lead]
+Scimba is a framework used in the Exa-MA project.
+
+[.section-gray]
+--
+[discrete]
+== Overview
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Repository*
+
+https://gitlab.inria.fr/scimba/scimba
+____
+
+____
+icon:file-contract[size=2x,role=text-success] *License*
+
+OSS::MIT
+____
+
+____
+icon:book[size=2x,role=text-info] *Documentation*
+
+https://scimba.gitlabpages.inria.fr/scimba/
+____
+
+____
+icon:comments[size=2x,role=text-warning] *Discussion*
+
+https://gitlab.inria.fr/scimba/scimba/-/issues____
+====
+--
+
+== Criteria Evaluation
+
+=== Packaging
+
+Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
+
+* [ ] Packages exist
+* [ ] Available in Spack
+* [ ] Available in Guix-HPC
+* [ ] Docker image available
+* [ ] Apptainer/Singularity available
+
+
+=== Testing & CI/CD
+
+Software should include validation tests triggered through automated mechanisms.
+
+* [x] Unit tests exist
+* [x] Continuous Integration configured
+* [ ] CI runs on each release
+* [ ] Benchmarking tests exist
+
+=== Repository & Contributions
+
+* [x] Public source repository available
+* [x] Supports contributions via pull requests
+
+Repository: https://gitlab.inria.fr/scimba/scimba
+
+=== License
+
+Sources should be published under a clearly-identified free software license.
+
+* [x] License clearly stated
+* [x] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX identifiers used
+* [ ] REUSE compliant
+
+* MIT
+
+=== Documentation
+
+* [x] Documentation exists
+* [x] Easily browsable online
+
+Documentation: https://scimba.gitlabpages.inria.fr/scimba/
+
+=== API Compatibility
+
+* [x] API changes documented
+* [x] Semantic versioning used
+* [x] Release policy defined
+
+== Work Packages
+
+This framework is involved in the following work packages:
+
+=== WP2 icon:check-circle[role=text-success]
+Topics: NN/Autoencoder, PINN
+_Benchmarked in this WP_
+
+
+== Technical Details
+
+*Languages:* Python
+
+*Parallelism:* GPU
+
+*Data Formats:* in-house format
+
+
+== Partners
+
+*Lead Partner:* Unistra
+
+*Consortium:* UNISTRA, INRIA
+
+== Used by Applications
+
+The following Exa-MA applications use Scimba:
+
+[cols="2,2,1",options="header"]
+|===
+| Application | Type | Status
+
+| xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
+| Mini App
+| Planned
+
+|===

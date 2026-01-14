@@ -1,0 +1,103 @@
+# Exa-MA Unified Configuration
+# Single source of truth for all harvesting operations
+#
+# This file consolidates configuration for:
+# - HAL publications
+# - GitHub deliverable releases
+# - Software (frameworks & applications) from Google Sheets
+# - Team (recruited personnel) from Google Sheets
+# - News and events
+
+project:
+  name: "Exa-MA"
+  anr_id: "ANR-22-EXNU-0002"
+
+sources:
+  # ============================================================
+  # HAL Publications
+  # ============================================================
+  publications:
+    type: hal
+    query: "anrProjectReference_s:ANR-22-EXNU-0002"
+    domains:
+      - math
+      - info
+      - stat
+      - phys
+    years:
+      - 2023
+      - 2024
+      - 2025
+      - 2026
+
+  # ============================================================
+  # GitHub Deliverables
+  # ============================================================
+  deliverables:
+    type: github
+    settings:
+      max_releases: 5
+      include_prereleases: false
+      latest_only: false
+    items:
+      - id: "D7.1"
+        repo: "numpex/exa-ma-d7.1"
+        title: "Research, Software Development & Benchmarking"
+        description: "Mega-deliverable consolidating Dx.1 reports from WP1 to WP7"
+        workpackages:
+          - WP1
+          - WP2
+          - WP3
+          - WP4
+          - WP5
+          - WP6
+          - WP7
+        featured_versions:
+          - "v2.0.0"   # Major release - Year 2 complete report
+          - "v1.1.1"   # Initial Main release - Year 1 report
+
+      - id: "D7.3"
+        repo: "numpex/exa-ma-d7.3"
+        title: "Training Materials"
+        description: "Educational resources, tutorials, and workshop materials"
+        workpackages:
+          - WP7
+        featured_versions:
+          - "v1.0.1"   # Latest stable release
+
+  # ============================================================
+  # Software (Google Sheets)
+  # ============================================================
+  software:
+    type: google_sheets
+    sheet_id: "19v57jpek52nQV2V0tBBON5ivGCz7Bqf3Gw-fHroVHkA"
+    sheets:
+      frameworks: "Frameworks"
+      packaging: "Packaging"
+      applications: "Applications"
+
+  # ============================================================
+  # Team / Recruited Personnel (Google Sheets)
+  # ============================================================
+  team:
+    type: google_sheets
+    sheet_id: "1-QuexB1IiP2O1ebNhp1OrQb6hOx8BXA5"
+    sheet_name: "All Exa-MA"
+    filter:
+      funded_only: true
+      active_only: false
+
+  # ============================================================
+  # News & Events
+  # ============================================================
+  # Events are maintained in a separate file for easy editing
+  news:
+    type: yaml
+    file: "news.yaml"  # External file for easy maintenance
+
+# ============================================================
+# Output Configuration
+# ============================================================
+output:
+  partials_dir: "docs/modules/ROOT/partials"
+  software_pages_dir: "docs/modules/software/pages"

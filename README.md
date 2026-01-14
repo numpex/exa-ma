@@ -182,6 +182,91 @@ The site uses an automatic card catalog system. To create a catalog page:
 :description: Page description for card.
 ```
 
+## Harvest Tools
+
+The `harvest/` package provides tools to fetch and generate documentation from various sources. All sources can be configured via a unified `exama.yaml` file.
+
+### Installation
+
+```bash
+# Install the package in development mode
+pip install -e .
+
+# Or with development dependencies
+pip install -e ".[dev]"
+```
+
+### Configuration
+
+All data sources are configured in `exama.yaml`:
+
+```yaml
+project:
+  name: "Exa-MA"
+  anr_id: "ANR-22-EXNU-0002"
+
+sources:
+  publications:
+    type: hal
+    query: "anrProjectReference_s:ANR-22-EXNU-0002"
+    domains: [math, info, stat, phys]
+    years: [2023, 2024, 2025, 2026]
+
+  deliverables:
+    type: github
+    items:
+      - id: "D7.1"
+        repo: "numpex/exa-ma-d7.1"
+        title: "Research, Software Development & Benchmarking"
+
+  software:
+    type: google_sheets
+    sheet_id: "19v57jpek52nQV2V0tBBON5ivGCz7Bqf3Gw-fHroVHkA"
+
+  team:
+    type: google_sheets
+    sheet_id: "1-QuexB1IiP2O1ebNhp1OrQb6hOx8BXA5"
+    sheet_name: "All Exa-MA"
+
+  news:
+    type: yaml
+    file: "news.yaml"  # External file for easy maintenance
+```
+
+### Commands
+
+```bash
+# Harvest all sources at once (recommended)
+exa-ma-harvest all --output-dir docs/modules/ROOT/partials/
+
+# Individual subcommands
+exa-ma-harvest hal -o publications.adoc
+exa-ma-harvest releases -o deliverables.adoc
+exa-ma-harvest team --output recruited.adoc
+exa-ma-harvest news --partials-dir docs/modules/ROOT/partials/
+exa-ma-harvest-software generate -o docs/modules/software/pages
+```
+
+### Testing
+
+```bash
+# Run tests
+pytest tests/
+
+# With coverage
+pytest --cov=harvest tests/
+```
+
+### Data Sources
+
+| Source | Type | Description |
+|--------|------|-------------|
+| Publications | HAL API | Scientific publications from HAL archive |
+| Deliverables | GitHub | Release information from deliverable repositories |
+| Software | Google Sheets | Framework and application metadata |
+| Team | Google Sheets | Recruited personnel (PhD, postdoc, engineers) |
+| News | YAML | Events and announcements |
+
 ## Deployment
 
 The site is automatically deployed to GitHub Pages on push to the main branch via GitHub Actions.

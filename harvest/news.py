@@ -3,6 +3,11 @@ Generate Exa-MA news and events pages from YAML configuration.
 
 This module reads news/events from a YAML file and generates AsciiDoc partials
 for the Antora website.
+
+Supports configuration from:
+- Command line arguments (highest priority)
+- Unified exama.yaml config file
+- Legacy news.yaml (backward compatibility)
 """
 
 import argparse
@@ -17,9 +22,17 @@ try:
 except ImportError:
     HAS_YAML = False
 
+# Import unified config (conditional to avoid circular imports)
+try:
+    from .config import ExaMAConfig, load_config as load_exama_config, merge_with_legacy_news
+    HAS_UNIFIED_CONFIG = True
+except ImportError:
+    HAS_UNIFIED_CONFIG = False
+
 
 # Default config path (relative to this module)
 DEFAULT_CONFIG = Path(__file__).parent.parent / "news.yaml"
+DEFAULT_UNIFIED_CONFIG = Path(__file__).parent.parent / "exama.yaml"
 
 # Icon mapping for event types
 TYPE_ICONS = {
@@ -29,6 +42,7 @@ TYPE_ICONS = {
     "webinar": "box",
     "workshop": "users",
     "external": "building",
+    "announcement": "bullhorn",
 }
 
 # Icon roles for styling
@@ -39,6 +53,7 @@ TYPE_ROLES = {
     "webinar": "text-warning",
     "workshop": "text-primary",
     "external": "text-info",
+    "announcement": "text-success",
 }
 
 
@@ -96,11 +111,14 @@ def generate_upcoming_cards(events: list[dict]) -> list[str]:
         location = event.get("location", "")
         description = event.get("description", "").strip().replace("\n", " ")
 
-        # Build link
+        # Build link (support custom link_text)
+        custom_link_text = event.get("link_text")
         if event.get("page"):
-            link = f"xref:{event['page']}[View full agenda and details →]"
+            label = custom_link_text or "View full agenda and details →"
+            link = f"xref:{event['page']}[{label}]"
         elif event.get("url"):
-            link = f"{event['url']}[Event details and registration →]"
+            label = custom_link_text or "Event details and registration →"
+            link = f"{event['url']}[{label}]"
         else:
             link = ""
 
@@ -143,11 +161,14 @@ def generate_event_table(events: list[dict], table_class: str = "") -> list[str]
         location = event.get("location", "")
         description = event.get("description", "").strip().replace("\n", " ")
 
-        # Build link
+        # Build link (support custom link_text)
+        custom_link_text = event.get("link_text")
         if event.get("page"):
-            link_text = f"xref:{event['page']}[Read full recap →]"
+            label = custom_link_text or "Read full recap →"
+            link_text = f"xref:{event['page']}[{label}]"
         elif event.get("url"):
-            link_text = f"{event['url']}[Event details and presentations]"
+            label = custom_link_text or "Event details and presentations"
+            link_text = f"{event['url']}[{label}]"
         else:
             link_text = ""
 
@@ -270,6 +291,41 @@ def output_partials(config: dict, output_dir: Path) -> dict[str, str]:
     return results
 
 
+def load_config_with_fallback(config_path: Path | None = None) -> dict:
+    """Load configuration with fallback to unified config.
+
+    Tries in order:
+    1. Specified config path (if provided)
+    2. Unified exama.yaml (if available and has events or references news.yaml)
+    3. Legacy news.yaml
+
+    Args:
+        config_path: Optional explicit path to config file
+
+    Returns:
+        Configuration dict with 'events' key
+    """
+    # If explicit path provided, use it directly
+    if config_path and config_path.exists():
+        return load_config(config_path)
+
+    # Try unified config
+    if HAS_UNIFIED_CONFIG and DEFAULT_UNIFIED_CONFIG.exists():
+        try:
+            exama_config = load_exama_config(DEFAULT_UNIFIED_CONFIG)
+            # Use get_news_events which handles external file loading
+            events = exama_config.get_news_events()
+            if events:
+                # Convert to legacy format
+                return {"events": [e.model_dump() for e in events]}
+            # If no events from unified config, fall through to legacy
+        except Exception as e:
+            print(f"Warning: Could not load unified config: {e}")
+
+    # Fall back to legacy config
+    return load_config(DEFAULT_CONFIG)
+
+
 def main():
     """Main entry point for news generation."""
     parser = argparse.ArgumentParser(
@@ -279,8 +335,7 @@ def main():
         "-c",
         "--config",
         type=Path,
-        default=DEFAULT_CONFIG,
-        help=f"Path to news YAML file (default: {DEFAULT_CONFIG})",
+        help=f"Path to config file (default: exama.yaml or news.yaml)",
     )
     parser.add_argument(
         "--partials-dir",
@@ -290,10 +345,11 @@ def main():
 
     args = parser.parse_args()
 
-    config = load_config(args.config)
+    config = load_config_with_fallback(args.config)
     events = config.get("events", [])
 
-    print(f"Loaded {len(events)} events from {args.config}")
+    config_source = args.config or DEFAULT_UNIFIED_CONFIG if DEFAULT_UNIFIED_CONFIG.exists() else DEFAULT_CONFIG
+    print(f"Loaded {len(events)} events from {config_source}")
 
     if args.partials_dir:
         output_partials(config, args.partials_dir)

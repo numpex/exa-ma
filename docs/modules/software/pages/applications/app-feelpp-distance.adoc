@@ -1,0 +1,126 @@
+= Distance
+:page-layout: default
+:page-tags: application, mini-app, app-feelpp-distance
+:page-illustration: fa-solid fa-cube
+:description: Distance - Compute distance to a range of entities using FMM or BVH...
+:icons: font
+:page-status: benchmark-ready
+:page-work-packages: WP1
+
+[.lead]
+Compute distance to a range of entities using FMM or BVH
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:check-circle[size=2x,role=text-success] *Status*
+
+Benchmark Ready
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Feel++
+____
+====
+--
+
+[NOTE]
+====
+icon:check-circle[role=text-success] This application is **benchmark-ready** and can be used for performance evaluation.
+====
+
+== Overview
+
+Compute distance to a range of entities using FMM or BVH
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+
+=== Parallel Frameworks
+
+* MPI
+* Kokkos
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* unstructured mesh
+* finite element
+* FMM
+* Ray-Tracing-BVH
+
+
+
+
+
+
+== Data Flow
+
+=== Inputs
+
+* Gmsh
+* JSON config
+
+=== Outputs
+
+* in-house
+* JSON small-data
+* JSON reports
+
+== Benchmarking
+
+=== Metrics
+
+* Analytical Solution Match
+* Strong Scalability
+* Weak Scalability
+
+=== Benchmark Scope
+
+* Multi Node
+* Full System
+* Solver Scaling
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | 2025-06-15
+
+| Prototype Due | 2025-07-01
+|===
+
+== Team
+
+*Partners:* Unistra
+
+*Responsible:* V. Chabannes; C. Prud'homme
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+

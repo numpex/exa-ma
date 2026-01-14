@@ -1,29 +1,39 @@
 [project]
 name = "exa-ma-tools"
 version = "1.0.0"
-description = "Tools for Exa-MA project: harvesting publications and deliverables"
+description = "Tools for Exa-MA project: harvesting publications, deliverables, and software metadata"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
     { name = "Exa-MA Team", email = "christophe.prudhomme@cemosis.fr" }
 ]
-keywords = ["exama", "numpex", "hal", "github", "publications", "deliverables"]
+keywords = ["exama", "numpex", "hal", "github", "publications", "deliverables", "software"]
 
 dependencies = [
     "pyyaml>=6.0",
+    "pydantic>=2.0",
+    "pandas>=2.0",
+    "openpyxl>=3.1",
+    "jinja2>=3.0",
 ]
 
 [project.optional-dependencies]
 dev = [
     "ruff>=0.1.0",
     "mypy>=1.0.0",
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
 ]
 
 [project.scripts]
+# Unified CLI (preferred)
+exa-ma-harvest = "harvest.cli:main"
+# Individual commands (backward compatible)
 exa-ma-harvest-hal = "harvest.hal:main"
 exa-ma-harvest-releases = "harvest.releases:main"
 exa-ma-harvest-news = "harvest.news:main"
+exa-ma-harvest-software = "harvest.software.cli:main"
 exa-ma-harvest-all = "harvest.cli:main"
 
 [build-system]
@@ -44,3 +54,19 @@ select = ["E", "F", "I", "W"]
 python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["harvest"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+]

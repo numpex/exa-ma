@@ -2,7 +2,13 @@
 Harvest Exa-MA deliverable releases from GitHub repositories.
 
 This module queries the GitHub API to retrieve releases for Exa-MA deliverables,
-using configuration from deliverables.yaml.
+using configuration from exama.yaml or deliverables.yaml (legacy).
+
+Supports configuration from:
+- Command line arguments (highest priority)
+- Unified exama.yaml config file
+- Legacy deliverables.yaml (backward compatibility)
+- Default values (fallback)
 """
 
 import argparse
@@ -22,12 +28,19 @@ try:
 except ImportError:
     HAS_YAML = False
 
+# Import unified config (conditional to avoid circular imports)
+try:
+    from .config import ExaMAConfig, load_config as load_exama_config, merge_with_legacy_deliverables
+    HAS_UNIFIED_CONFIG = True
+except ImportError:
+    HAS_UNIFIED_CONFIG = False
 
 # GitHub API endpoint
 GITHUB_API_URL = "https://api.github.com"
 
 # Default config path (relative to this module)
 DEFAULT_CONFIG = Path(__file__).parent.parent / "deliverables.yaml"
+DEFAULT_UNIFIED_CONFIG = Path(__file__).parent.parent / "exama.yaml"
 
 
 def parse_basic_yaml(content: str) -> dict:
@@ -444,6 +457,39 @@ def output_partials(
     return results
 
 
+def load_config_with_fallback(config_path: Path | None = None) -> dict:
+    """Load configuration with fallback to unified config.
+
+    Tries in order:
+    1. Specified config path (if provided)
+    2. Unified exama.yaml (if available and has deliverables)
+    3. Legacy deliverables.yaml
+
+    Args:
+        config_path: Optional explicit path to config file
+
+    Returns:
+        Configuration dict in legacy format
+    """
+    # If explicit path provided, use it directly
+    if config_path and config_path.exists():
+        return load_config(config_path)
+
+    # Try unified config
+    if HAS_UNIFIED_CONFIG and DEFAULT_UNIFIED_CONFIG.exists():
+        try:
+            exama_config = load_exama_config(DEFAULT_UNIFIED_CONFIG)
+            # Merge with legacy if unified has no deliverables
+            exama_config = merge_with_legacy_deliverables(exama_config, DEFAULT_CONFIG)
+            # Convert to legacy format
+            return exama_config.get_deliverables_config().to_legacy_format()
+        except Exception as e:
+            print(f"Warning: Could not load unified config: {e}", file=sys.stderr)
+
+    # Fall back to legacy config
+    return load_config(DEFAULT_CONFIG)
+
+
 def main():
     """Main entry point for GitHub releases harvesting."""
     parser = argparse.ArgumentParser(
@@ -463,8 +509,7 @@ def main():
         "-c",
         "--config",
         type=Path,
-        default=DEFAULT_CONFIG,
-        help=f"Path to config YAML file (default: {DEFAULT_CONFIG})",
+        help=f"Path to config file (default: exama.yaml or deliverables.yaml)",
     )
     parser.add_argument(
         "--latest-only",
@@ -479,7 +524,7 @@ def main():
 
     args = parser.parse_args()
 
-    config = load_config(args.config)
+    config = load_config_with_fallback(args.config)
     releases = fetch_all_deliverables(config, latest_only=args.latest_only)
 
     if not releases:

@@ -1,0 +1,105 @@
+= Frameworks
+:page-layout: manuals
+:page-tags: manual, catalog, frameworks
+:page-cards-tag: framework
+:page-cards-within-module: true
+:page-cards-framework-title: Framework Catalog
+:page-illustration: fa-solid fa-boxes-stacked
+:description: Exa-MA software frameworks - the building blocks for exascale applications.
+:icons: font
+:sectnums!:
+
+[.lead]
+Exa-MA frameworks are production-ready software libraries and tools that serve as building blocks for developing exascale applications. Each framework follows rigorous quality criteria for packaging, testing, documentation, and licensing.
+
+[.section-gray]
+--
+[discrete]
+== At a Glance
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:cubes[size=2x,role=text-primary] *{{ stats.total }} Frameworks*
+
+{% if stats.eligible %}{{ stats.eligible }} eligible{% endif %} for production use in Exa-MA benchmarks.
+____
+
+____
+icon:box-open[size=2x,role=text-success] *Packaging*
+
+{{ stats.with_spack }} in Spack, {{ stats.with_guix }} in Guix-HPC
+____
+
+____
+icon:vial[size=2x,role=text-info] *Testing*
+
+{{ stats.with_ci }} with CI/CD, {{ stats.with_unit_tests }} with unit tests
+____
+
+____
+icon:file-contract[size=2x,role=text-warning] *Licensing*
+
+{{ stats.with_floss }} with FLOSS licenses
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Framework Catalog
+
+[.striped,cols="2,4,1,1,1",options="header"]
+|===
+| Framework | Description | License | CI | WPs
+
+{% for pkg in packages %}
+| xref:frameworks/{{ pkg.slug }}.adoc[*{{ pkg.name }}*]
+| {{ (pkg.description[:80] + '...') if pkg.description and pkg.description|length > 80 else (pkg.description or '_Exa-MA Framework_') }}
+| {% if pkg.has_floss_license %}icon:check[role=text-success]{% else %}icon:times[role=text-muted]{% endif %}
+| {% if pkg.has_ci %}icon:check[role=text-success]{% else %}icon:times[role=text-muted]{% endif %}
+| {% for wp in pkg.work_packages %}{{ wp.wp_number }}{% if not loop.last %},{% endif %}{% endfor %}
+
+{% endfor %}
+|===
+--
+
+{% if by_work_package %}
+[.section-gray]
+--
+[discrete]
+== Frameworks by Work Package
+
+{% for wp_num, wp_packages in by_work_package.items() %}
+=== WP{{ wp_num }}
+
+{% for pkg in wp_packages %}
+* xref:frameworks/{{ pkg.slug }}.adoc[{{ pkg.name }}]{% if pkg.work_packages %}{% for wp in pkg.work_packages if wp.wp_number == wp_num and wp.benchmarked %} icon:check-circle[role=text-success,title=Benchmarked]{% endfor %}{% endif %}
+
+{% endfor %}
+
+{% endfor %}
+--
+{% endif %}
+
+{% if framework_usage %}
+[.section-white]
+--
+[discrete]
+== Used by Applications
+
+These frameworks power the following Exa-MA applications:
+
+{% for slug, data in framework_usage.items() %}
+{% if data.apps %}
+*xref:frameworks/{{ slug }}.adoc[{{ data.package.name }}]:* {% for app in data.apps %}xref:applications/{{ app.slug }}.adoc[{{ app.name }}]{% if not loop.last %}, {% endif %}{% endfor %}
+
+{% endif %}
+{% endfor %}
+--
+{% endif %}
+
+[.frameworks]
+--
+--

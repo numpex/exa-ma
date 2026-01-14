@@ -1,0 +1,137 @@
+= Reduced Basis
+:page-layout: default
+:page-tags: application, extended-mini-app, app-feelpp-rb
+:page-illustration: fa-solid fa-cubes
+:description: Reduced Basis - Test reduced basis methods and empirical interpolation...
+:icons: font
+:page-status: benchmark-ready
+:page-work-packages: WP1, WP2, WP3
+
+[.lead]
+Test reduced basis methods and empirical interpolation
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Extended Mini App
+____
+
+____
+icon:check-circle[size=2x,role=text-success] *Status*
+
+Benchmark Ready
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1, WP2, WP3
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Feel++
+____
+====
+--
+
+[NOTE]
+====
+icon:check-circle[role=text-success] This application is **benchmark-ready** and can be used for performance evaluation.
+====
+
+== Overview
+
+Test reduced basis methods and empirical interpolation
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+
+=== Parallel Frameworks
+
+* MPI
+* Kokkos
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* unstructured mesh
+* finite element
+* cG
+
+=== WP2: Model Order Reduction & SciML
+
+* "ROM: RB
+* POD
+* ..."
+
+=== WP3: Solvers
+
+* domain decomposition methods
+* krylov solver
+* preconditioning
+
+
+
+
+== Data Flow
+
+=== Inputs
+
+* Gmsh
+* JSON config
+* JSON small-data
+
+=== Outputs
+
+* JSON reports
+* JSON small-data
+* Markdown or Asciidoc
+* in-house
+
+== Benchmarking
+
+=== Metrics
+
+* Benchmark Verification
+* Offline Cost
+* Online Speedup
+* Basis Size
+* Hyper Reduction Efficiency
+
+=== Benchmark Scope
+
+* Multi Node
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | 2025-06-15
+
+| Prototype Due | 2025-07-01
+|===
+
+== Team
+
+*Partners:* Unistra
+
+*Responsible:* C. Prud'homme
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+

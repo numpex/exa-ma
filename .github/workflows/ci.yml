@@ -32,10 +32,9 @@ jobs:
         uv venv .venv
         source .venv/bin/activate
         uv pip install -e .
-        # Generate partials for Antora includes
-        exa-ma-harvest-hal --partials-dir docs/modules/ROOT/partials/
-        exa-ma-harvest-releases --partials-dir docs/modules/ROOT/partials/
-        exa-ma-harvest-news --partials-dir docs/modules/ROOT/partials/
+        # Generate partials for Antora includes using unified harvest command
+        # Harvests: HAL publications, GitHub releases, team data, and news/events
+        exa-ma-harvest all --output-dir docs/modules/ROOT/partials/
     - name: Commit updated partials
       run: |
         git config user.name "github-actions[bot]"

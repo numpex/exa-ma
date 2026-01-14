@@ -1,0 +1,207 @@
+= {{ package.name }}
+:page-layout: default
+:page-tags: framework, software, {{ package.slug }}
+:page-illustration: fa-solid fa-cube
+:description: {{ package.name }} - {{ package.description[:150] if package.description else 'Exa-MA Framework' }}...
+:icons: font
+{% if package.work_packages %}
+:page-work-packages: {{ package.work_packages | map(attribute='wp_number') | join(', WP') | prepend('WP') }}
+{% endif %}
+
+[.lead]
+{% if package.description %}
+{{ package.description }}
+{% else %}
+{{ package.name }} is a framework used in the Exa-MA project.
+{% endif %}
+
+[.section-gray]
+--
+[discrete]
+== Overview
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Repository*
+
+{% if package.repository %}
+{{ package.repository }}
+{% else %}
+_Not yet available_
+{% endif %}
+____
+
+____
+icon:file-contract[size=2x,role=text-success] *License*
+
+{% if package.license %}
+{{ package.license }}
+{% else %}
+_Not specified_
+{% endif %}
+____
+
+____
+icon:book[size=2x,role=text-info] *Documentation*
+
+{% if package.docs_url %}
+{{ package.docs_url }}
+{% else %}
+_Not yet available_
+{% endif %}
+____
+
+____
+icon:comments[size=2x,role=text-warning] *Discussion*
+
+{% if package.channels %}
+{% for channel in package.channels[:2] %}
+{{ channel }}{% if not loop.last %}, {% endif %}
+{% endfor %}
+{% else %}
+_Not yet available_
+{% endif %}
+____
+====
+--
+
+== Criteria Evaluation
+
+=== Packaging
+
+Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
+
+* [{{ 'x' if package.has_packages else ' ' }}] Packages exist
+* [{{ 'x' if package.packaging and package.packaging.spack_available else ' ' }}] Available in Spack
+* [{{ 'x' if package.packaging and package.packaging.guix_available else ' ' }}] Available in Guix-HPC
+* [{{ 'x' if package.packaging and package.packaging.docker_available else ' ' }}] Docker image available
+* [{{ 'x' if package.packaging and package.packaging.apptainer_available else ' ' }}] Apptainer/Singularity available
+
+{% if package.packaging %}
+{% if package.packaging.spack_url %}
+* Spack: {{ package.packaging.spack_url }}
+{% endif %}
+{% if package.packaging.guix_url %}
+* Guix: {{ package.packaging.guix_url }}
+{% endif %}
+{% if package.packaging.docker_url %}
+* Docker: {{ package.packaging.docker_url }}
+{% endif %}
+{% endif %}
+
+=== Testing & CI/CD
+
+Software should include validation tests triggered through automated mechanisms.
+
+* [{{ 'x' if package.has_unit_tests else ' ' }}] Unit tests exist
+* [{{ 'x' if package.has_ci else ' ' }}] Continuous Integration configured
+* [{{ 'x' if 'Continuous Delivery' in package.devops else ' ' }}] CI runs on each release
+* [{{ 'x' if package.has_benchmarking else ' ' }}] Benchmarking tests exist
+
+=== Repository & Contributions
+
+* [{{ 'x' if package.has_public_repository else ' ' }}] Public source repository available
+* [{{ 'x' if package.supports_pull_requests else ' ' }}] Supports contributions via pull requests
+
+{% if package.repository %}
+Repository: {{ package.repository }}
+{% endif %}
+
+=== License
+
+Sources should be published under a clearly-identified free software license.
+
+* [{{ 'x' if package.license else ' ' }}] License clearly stated
+* [{{ 'x' if package.has_floss_license else ' ' }}] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX identifiers used
+* [ ] REUSE compliant
+
+{% if package.license %}
+{% for lic in package.get_license_list() %}
+* {{ lic }}
+{% endfor %}
+{% endif %}
+
+=== Documentation
+
+* [{{ 'x' if package.docs_url else ' ' }}] Documentation exists
+* [{{ 'x' if package.docs_url and package.docs_url.startswith('https://') else ' ' }}] Easily browsable online
+
+{% if package.docs_url %}
+Documentation: {{ package.docs_url }}
+{% endif %}
+
+=== API Compatibility
+
+* [{{ 'x' if package.api_info and 'documented' in package.api_info.lower() else ' ' }}] API changes documented
+* [{{ 'x' if package.api_info and 'semantic' in package.api_info.lower() else ' ' }}] Semantic versioning used
+* [{{ 'x' if package.api_info and 'release' in package.api_info.lower() else ' ' }}] Release policy defined
+
+{% if package.work_packages %}
+== Work Packages
+
+This framework is involved in the following work packages:
+
+{% for wp in package.work_packages %}
+=== WP{{ wp.wp_number }}{% if wp.benchmarked %} icon:check-circle[role=text-success]{% endif %}
+
+{% if wp.topics %}
+Topics: {{ wp.topics | join(', ') }}
+{% endif %}
+{% if wp.benchmarked %}
+_Benchmarked in this WP_
+{% endif %}
+
+{% endfor %}
+{% endif %}
+
+{% if package.languages or package.parallelism %}
+== Technical Details
+
+{% if package.languages %}
+*Languages:* {{ package.languages | join(', ') }}
+{% endif %}
+
+{% if package.parallelism %}
+*Parallelism:* {{ package.parallelism | join(', ') }}
+{% endif %}
+
+{% if package.data_formats %}
+*Data Formats:* {{ package.data_formats | join(', ') }}
+{% endif %}
+
+{% if package.resilience %}
+*Resilience:* {{ package.resilience }}
+{% endif %}
+{% endif %}
+
+{% if package.partner or package.consortium %}
+== Partners
+
+{% if package.partner %}
+*Lead Partner:* {{ package.partner }}
+{% endif %}
+
+{% if package.consortium %}
+*Consortium:* {{ package.consortium }}
+{% endif %}
+{% endif %}
+
+{% if used_by_applications %}
+== Used by Applications
+
+The following Exa-MA applications use {{ package.name }}:
+
+[cols="2,2,1",options="header"]
+|===
+| Application | Type | Status
+
+{% for app in used_by_applications %}
+| xref:applications/{{ app.slug }}.adoc[{{ app.name }}]
+| {{ app.application_type.value | replace('-', ' ') | title }}
+| {{ app.status.value | replace('-', ' ') | title }}
+
+{% endfor %}
+|===
+{% endif %}
