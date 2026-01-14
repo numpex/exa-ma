@@ -1,4 +1,4 @@
-// Total recruited personnel: 23
+// Total recruited personnel: 26
 :sectnums!:
 
 [discrete]
@@ -116,11 +116,19 @@ Mark Asch
 [discrete]
 == icon:flask[] Postdoctoral Researchers
 
-_4 personnel_
+_5 personnel_
 
 [.striped.recruited,cols="2,2,2,2,2,2",options="header"]
 |===
 |Last Name |First Name |Work Package |Institution |Period |Advisor(s)
+
+|*Georgiadis*
+|Christos
+|WP1: Discretization +
+WP7: Software, Benchmarking & Co-Design
+|Inria
+|January 2024 - April 2025
+|Pierre Alliez
 
 |*Truong*
 |Dinh Hung T
@@ -155,7 +163,7 @@ _4 personnel_
 [discrete]
 == icon:cogs[] Research Engineers
 
-_6 personnel_
+_8 personnel_
 
 [.striped.recruited,cols="2,2,2,2,2,2",options="header"]
 |===
@@ -194,6 +202,17 @@ Pierre Alliez +
 |January 2025 - December 2028
 |Loic Gouarin
 
+|*Saigre*
+|Thomas
+|WP1: Discretization +
+WP2: Model Order Reduction & SciML +
+WP3: Solvers +
+WP7: Software, Benchmarking & Co-Design
+|Université de Strasbourg
+|October 2024 - September 2025
+|Christophe Prud'homme +
+Vincent Chabannes
+
 |*Fabrizzi*
 |Erik
 |WP3: Solvers
@@ -209,6 +228,13 @@ WP7: Software, Benchmarking & Co-Design
 |January 2025 - September 2027
 |Luc Giraud
 
+|*Zanella*
+|Raphaël
+|WP3: Solvers
+|Sorbonne Université
+|October 2024 - September 2025
+|Pierre Jolivet
+
 |===
 
 [discrete]
@@ -218,10 +244,10 @@ WP7: Software, Benchmarking & Co-Design
 |===
 |Indicator |Value
 
-|Total Recruited Personnel |*23*
+|Total Recruited Personnel |*26*
 |PhD Students |13
-|Postdoctoral Researchers |4
-|Research Engineers |6
-|Women |2 (9%)
-|Men |21 (91%)
+|Postdoctoral Researchers |5
+|Research Engineers |8
+|Women |2 (8%)
+|Men |24 (92%)
 |===
