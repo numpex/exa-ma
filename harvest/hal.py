@@ -593,6 +593,7 @@ def output_asciidoc(
     else:
         # Add statistics comment for partials
         lines.append(f"// Total publications: {len(formatted)}")
+        lines.append(":sectnums!:")
         lines.append("")
         # Include statistics in partials too
         lines.extend(_format_statistics_asciidoc(stats))

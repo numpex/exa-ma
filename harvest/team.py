@@ -756,6 +756,7 @@ def generate_recruited_section(
 
     # Comment with total count
     lines.append(f"// Total recruited personnel: {total}")
+    lines.append(":sectnums!:")
     lines.append("")
 
     # Position type config
