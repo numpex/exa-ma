@@ -3,9 +3,9 @@
 <head>
       <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>WP7: Software, Benchmarking &amp; Co-Design :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
-    <link rel="canonical" href="https://numpex.github.io/exa-ma/software/index.html">
-    <meta name="description" content="WP7 software stack, packaging, CI/CD, and showroom resources for Exa-MA.">
+    <title>Frameworks :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/software/frameworks.html">
+    <meta name="description" content="Exa-MA software frameworks - the building blocks for exascale applications.">
     <meta name="generator" content="Antora 3.1.3">
 <link rel="stylesheet" href="../_/css/site.css">
 
@@ -221,14 +221,14 @@ MathJax.Hub.Config({
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">Software &amp; Benchmarking</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="concepts.html">Concepts</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="frameworks.html">Frameworks</a>
 <ul class="nav-list">
@@ -344,58 +344,59 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="../index.html">Exa-MA</a></li>
     <li><a href="index.html">Software &amp; Benchmarking</a></li>
+    <li><a href="frameworks.html">Frameworks</a></li>
   </ul>
 </nav>
     </div>
 
     <div class="content">
       <article class="doc">
-         <h1 class="page">WP7: Software, Benchmarking &amp; Co-Design</h1> 
+         <h1 class="page">Frameworks</h1> 
         <div class="paragraph lead">
-<p>Work Package 7 focuses on software development, benchmarking, co-design activities, and training material to deliver production-ready exascale software following the CI/CD framework proposed by ExaDIP.</p>
+<p>Exa-MA frameworks are production-ready software libraries and tools that serve as building blocks for developing exascale applications. Each framework follows rigorous quality criteria for packaging, testing, documentation, and licensing.</p>
 </div>
 <div class="openblock section-gray">
 <div class="content">
-<h2 id="_objectives" class="discrete">Objectives</h2>
+<h2 id="_at_a_glance" class="discrete">At a Glance</h2>
 <div class="exampleblock grid grid-2 gap-2">
 <div class="content">
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-code fa-2x"></i></span> <strong>Software Development</strong></p>
+<p><span class="icon text-primary"><i class="fa fa-cubes fa-2x"></i></span> <strong>44 Frameworks</strong></p>
 </div>
 <div class="paragraph">
-<p>From basic to advanced testing, including benchmarking, to verify the capabilities of exascale computing and address identified challenges.</p>
+<p>12 eligible for production use in Exa-MA benchmarks.</p>
 </div>
 </blockquote>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-success"><i class="fa fa-sync-alt fa-2x"></i></span> <strong>Co-Design Coordination</strong></p>
+<p><span class="icon text-success"><i class="fa fa-box-open fa-2x"></i></span> <strong>Packaging</strong></p>
 </div>
 <div class="paragraph">
-<p>Working closely with ExaDIP project to ensure effective communication and synergy for advancements in exascale computing.</p>
+<p>8 in Spack, 7 in Guix-HPC</p>
 </div>
 </blockquote>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-info"><i class="fa fa-desktop fa-2x"></i></span> <strong>Showroom</strong></p>
+<p><span class="icon text-info"><i class="fa fa-vial fa-2x"></i></span> <strong>Testing</strong></p>
 </div>
 <div class="paragraph">
-<p>Platform to present and highlight outcomes and achievements of the Exa-MA project to the community.</p>
+<p>26 with CI/CD, 17 with unit tests</p>
 </div>
 </blockquote>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-warning"><i class="fa fa-graduation-cap fa-2x"></i></span> <strong>Training Material</strong></p>
+<p><span class="icon text-warning"><i class="fa fa-file-contract fa-2x"></i></span> <strong>Licensing</strong></p>
 </div>
 <div class="paragraph">
-<p>Educational resources and materials based on project results, facilitating knowledge transfer and dissemination.</p>
+<p>27 with FLOSS licenses</p>
 </div>
 </blockquote>
 </div>
@@ -405,305 +406,134 @@ MathJax.Hub.Config({
 </div>
 <div class="openblock section-white">
 <div class="content">
-<h2 id="_testing_process" class="discrete">Testing Process</h2>
-<div class="paragraph">
-<p>WP7 relies on the principles of non-regression, verification, and validation. All developments undergo rigorous testing before integration into demonstrators.</p>
-</div>
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-success"><i class="fa fa-check-circle fa-2x"></i></span> <strong>Non-Regression</strong></p>
-</div>
-<div class="paragraph">
-<p>Guarantee that results remain identical (bit-by-bit) for options unaffected by software evolutions. Focus on elementary tests.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-balance-scale fa-2x"></i></span> <strong>Verification</strong></p>
-</div>
-<div class="paragraph">
-<p>Measure absence of drift in consolidated solutions. Define acceptable relative variation thresholds.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-info"><i class="fa fa-flask fa-2x"></i></span> <strong>Validation</strong></p>
-</div>
-<div class="paragraph">
-<p>Evaluate algorithm performance in real-life configurations with representative test cases.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-warning"><i class="fa fa-chart-line fa-2x"></i></span> <strong>Interpretable Benefits</strong></p>
-</div>
-<div class="paragraph">
-<p>Establish simple metrics that demonstrate positive impact compared to previous approaches.</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="openblock section-gray">
-<div class="content">
-<h2 id="_software_development_workflow" class="discrete">Software Development Workflow</h2>
-<div class="imageblock unresolved img-fluid img-shadow img-rounded w-70 justify-self-center">
-<div class="content">
-<img src="wp7-workflow.png" alt="Exa-MA software development workflow">
-</div>
-<div class="title">Figure 1. Exa-MA software development workflow</div>
-</div>
-<div class="paragraph">
-<p>The workflow builds on the CI/CD framework with automated builds, testing, and deployment.</p>
-</div>
-</div>
-</div>
-<div class="openblock section-white">
-<div class="content">
-<h2 id="_demonstrator_levels" class="discrete">Demonstrator Levels</h2>
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-cube fa-2x"></i></span> <strong>Level 1: Mini-App</strong></p>
-</div>
-<div class="paragraph">
-<p>Covers one or two Exa-MA Work Packages. Focuses on specific objectives within those WPs.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-success"><i class="fa fa-cubes fa-2x"></i></span> <strong>Level 2: Multi-WP Mini-App</strong></p>
-</div>
-<div class="paragraph">
-<p>Covers two or more Work Packages. Demonstrates cross-collaboration and integration.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-info"><i class="fa fa-server fa-2x"></i></span> <strong>Level 3: Proxy-App</strong></p>
-</div>
-<div class="paragraph">
-<p>Covers at least three Work Packages. Representative workload for evaluating HPC system performance.</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
+<h2 id="_framework_catalog" class="discrete">Framework Catalog</h2>
 <table class="tableblock frame-all grid-all stretch striped">
 <colgroup>
-<col style="width: 66.6666%;">
-<col style="width: 33.3334%;">
+<col style="width: 22.2222%;">
+<col style="width: 44.4444%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Work Package</th>
-<th class="tableblock halign-left valign-top">Core Hours Estimate (Level 1)</th>
+<th class="tableblock halign-left valign-top">Framework</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">License</th>
+<th class="tableblock halign-left valign-top">CI</th>
+<th class="tableblock halign-left valign-top">WPs</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Discretization</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">500,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/arcane.html" class="xref page"><strong>Arcane</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Exa-MA Framework</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,3,7</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Model Order Reduction and ML</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/cgal.html" class="xref page"><strong>CGAL</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Exa-MA Framework</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Solvers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">750,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/composyx.html" class="xref page"><strong>Composyx</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Exa-MA Framework</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inverse Problems and Data Assim.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1,500,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/feelpp.html" class="xref page"><strong>Feel++</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel is an open-source, high-performance C framework for solving complex PDE&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,2,3,4,5,6,7</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optimization</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">600,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/freefempp.html" class="xref page"><strong>Freefem++</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Exa-MA Framework</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,3,5,7</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Uncertainty Quantification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">900,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/hawen.html" class="xref page"><strong>Hawen</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Exa-MA Framework</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-muted"><i class="fa fa-times"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,3,4,5,6,7</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Total</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>4,250,000</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/hpddm.html" class="xref page"><strong>HPDDM</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HPDDM is an efficient implementation of various domain decomposition methods (DD&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/mahyco.html" class="xref page"><strong>MaHyCo</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Exa-MA Framework</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,3,5,7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/samurai.html" class="xref page"><strong>Samurai</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The main goal of samurai is to provide a new data structure based on intervals a&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/scimba.html" class="xref page"><strong>Scimba</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Exa-MA Framework</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/trust_platform.html" class="xref page"><strong>TRUST Platform</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST is a High Performance Computing (HPC) thermohydraulic engine for Computati&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="frameworks/uranie.html" class="xref page"><strong>Uranie</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Exa-MA Framework</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,5,6</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>A computing resources form is available <a href="https://forms.gle/iBs6YNgb8ZXCLk8L6">here</a> for gathering requests.</p>
-</div>
 </div>
 </div>
 <div class="openblock section-gray">
 <div class="content">
-<h2 id="_cicd_for_hpc" class="discrete">CI/CD for HPC</h2>
+<h2 id="_used_by_applications" class="discrete">Used by Applications</h2>
 <div class="paragraph">
-<p>Continuous Integration/Continuous Delivery strategies adapted for high-performance computing enable streamlined development, improved quality, and enhanced efficiency.</p>
-</div>
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-code-branch fa-2x"></i></span> <strong>Version Control &amp; Builds</strong></p>
-</div>
-<div class="paragraph">
-<p>Git-based source management with automated build processes ensuring consistent, reproducible compilation across environments.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-success"><i class="fa fa-vial fa-2x"></i></span> <strong>Testing &amp; Validation</strong></p>
-</div>
-<div class="paragraph">
-<p>Automated test suites covering unit tests, integration tests, and performance tests as part of the CI/CD pipeline.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-info"><i class="fa fa-box fa-2x"></i></span> <strong>Artifact Management</strong></p>
-</div>
-<div class="paragraph">
-<p>Central repository for build artifacts (executables, libraries) facilitating deployment and distribution.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-warning"><i class="fa fa-rocket fa-2x"></i></span> <strong>Continuous Deployment</strong></p>
-</div>
-<div class="paragraph">
-<p>Automated deployment to target HPC systems (supercomputers, clusters) with rollback capabilities.</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="openblock section-white">
-<div class="content">
-<h2 id="_containerization" class="discrete">Containerization</h2>
-<div class="paragraph">
-<p>Docker and Singularity provide portable, isolated containers for consistent and reproducible execution across different computing systems.</p>
-</div>
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-docker fa-2x"></i></span> <strong>Docker</strong></p>
-</div>
-<div class="paragraph">
-<p>Reproducible environments, dependency management, and versioning. Docker Hub for sharing containerized applications.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-success"><i class="fa fa-box-open fa-2x"></i></span> <strong>Singularity</strong></p>
-</div>
-<div class="paragraph">
-<p>Designed for HPC with seamless integration with resource managers (Slurm), GPU passthrough, and unprivileged user execution.</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Key Benefits:</strong></p>
+<p>These frameworks power the following Exa-MA applications:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Reproducible Environments</strong> — Encapsulate entire application stack</p>
+<p><strong><a href="frameworks/feelpp.html" class="xref page">Feel++</a>:</strong> <a href="applications/app-feelpp-discr-1.html" class="xref page">Discretization</a>, <a href="applications/app-feelpp-distance.html" class="xref page">Distance</a>, <a href="applications/app-feelpp-nlcrb.html" class="xref page">Nonlinear Compressive Reduced Basis</a>, <a href="applications/app-feelpp-rb.html" class="xref page">Reduced Basis</a>, <a href="applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a></p>
 </li>
 <li>
-<p><strong>Portability</strong> — Run consistently across different HPC systems</p>
+<p><strong><a href="frameworks/hpddm.html" class="xref page">HPDDM</a>:</strong> <a href="applications/app-hpddm-dfn.html" class="xref page">Preconditioning systems arising from discrete fracture networks</a></p>
 </li>
 <li>
-<p><strong>Isolation &amp; Security</strong> — Sandbox applications from host system</p>
+<p><strong><a href="frameworks/freefempp.html" class="xref page">Freefem++</a>:</strong> <a href="applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a>, <a href="applications/app-freefem-shape-opt-fem.html" class="xref page">Shape Opt FEM</a></p>
 </li>
 <li>
-<p><strong>Versioning</strong> — Easy rollback to previous versions</p>
+<p><strong><a href="frameworks/scimba.html" class="xref page">Scimba</a>:</strong> <a href="applications/app-scimba-shape-opt-nn.html" class="xref page">Shape Opt NN</a></p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="openblock section-gray">
-<div class="content">
-<h2 id="_hpc_concepts" class="discrete">HPC Concepts</h2>
-<h3 id="_mini_apps_and_proxy_apps" class="discrete">Mini-Apps and Proxy-Apps</h3>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><strong>Mini-Apps</strong> are small-scale programs focusing on specific computational patterns of larger applications. Used for benchmarking, performance analysis, and optimization.</p>
-</div>
-<div class="paragraph">
-<p><strong>Proxy-Apps</strong> mimic behavior and computational patterns of real-world scientific applications. Provide lightweight representation of computational requirements and communication patterns.</p>
-</div>
-</blockquote>
-</div>
-<h3 id="_performance_bottlenecks" class="discrete">Performance Bottlenecks</h3>
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-danger"><i class="fa fa-microchip fa-2x"></i></span> <strong>CPU Bound</strong></p>
-</div>
-<div class="paragraph">
-<p>Performance limited by processing power. Address with parallelization, code optimization, and performance profiling.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-warning"><i class="fa fa-memory fa-2x"></i></span> <strong>Memory Bound</strong></p>
-</div>
-<div class="paragraph">
-<p>Limited by memory speed/capacity. Optimize data locality, cache utilization, and reduce data movement.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-info"><i class="fa fa-clock fa-2x"></i></span> <strong>Latency Bound</strong></p>
-</div>
-<div class="paragraph">
-<p>Limited by data transfer delays. Optimize network, disk I/O, and use asynchronous operations.</p>
-</div>
-</blockquote>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -713,10 +543,10 @@ MathJax.Hub.Config({
 </div>
 </div>
 
-                      <h2 class="cards-group-title">Software Stack</h2>
+                      <h2 class="cards-group-title">Framework Catalog</h2>
                     
-                      <div class="softwares">
-                            <div class="software"><a class="page-card " href="frameworks/arcane.html">
+                      <div class="frameworks">
+                            <div class="framework"><a class="page-card " href="frameworks/arcane.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -726,7 +556,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/cgal.html">
+                            <div class="framework"><a class="page-card " href="frameworks/cgal.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -736,7 +566,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/composyx.html">
+                            <div class="framework"><a class="page-card " href="frameworks/composyx.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -746,17 +576,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/fabulous.html">
-  <div class="page-card-illustration">
-        <i class="fa-solid fa-vector-square"></i>
-  </div>
-  <div class="page-card-body">
-    <h4>Fabulous Package</h4>
-    <p class="page-card-description">Fast Accurate Block Linear krylOv Solver.</p>
-  </div>
-</a>
-</div>
-                            <div class="software"><a class="page-card " href="frameworks/feelpp.html">
+                            <div class="framework"><a class="page-card " href="frameworks/feelpp.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -766,7 +586,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/freefempp.html">
+                            <div class="framework"><a class="page-card " href="frameworks/freefempp.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -776,7 +596,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/hawen.html">
+                            <div class="framework"><a class="page-card " href="frameworks/hawen.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -786,7 +606,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/hpddm.html">
+                            <div class="framework"><a class="page-card " href="frameworks/hpddm.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -796,7 +616,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/mahyco.html">
+                            <div class="framework"><a class="page-card " href="frameworks/mahyco.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -806,47 +626,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/mumps.html">
-  <div class="page-card-illustration">
-        <i class="fa-solid fa-calculator"></i>
-  </div>
-  <div class="page-card-body">
-    <h4>MUMPS Package</h4>
-    <p class="page-card-description">Multifrontal Massively Parallel Sparse direct solver.</p>
-  </div>
-</a>
-</div>
-                            <div class="software"><a class="page-card " href="frameworks/pastix.html">
-  <div class="page-card-illustration">
-        <i class="fa-solid fa-th"></i>
-  </div>
-  <div class="page-card-body">
-    <h4>PaStiX Package</h4>
-    <p class="page-card-description">Parallel Sparse matriX package for direct solving.</p>
-  </div>
-</a>
-</div>
-                            <div class="software"><a class="page-card " href="frameworks/petsc.html">
-  <div class="page-card-illustration">
-        <i class="fa-solid fa-server"></i>
-  </div>
-  <div class="page-card-body">
-    <h4>PETSc Package</h4>
-    <p class="page-card-description">Portable Extensible Toolkit for Scientific Computation.</p>
-  </div>
-</a>
-</div>
-                            <div class="software"><a class="page-card " href="frameworks/qr_mumps.html">
-  <div class="page-card-illustration">
-        <i class="fa-solid fa-table"></i>
-  </div>
-  <div class="page-card-body">
-    <h4>qr_mumps Package</h4>
-    <p class="page-card-description">Multifrontal QR factorization for sparse matrices.</p>
-  </div>
-</a>
-</div>
-                            <div class="software"><a class="page-card " href="frameworks/samurai.html">
+                            <div class="framework"><a class="page-card " href="frameworks/samurai.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -856,7 +636,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/scimba.html">
+                            <div class="framework"><a class="page-card " href="frameworks/scimba.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -866,7 +646,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/trust_platform.html">
+                            <div class="framework"><a class="page-card " href="frameworks/trust_platform.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>
@@ -876,7 +656,7 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
-                            <div class="software"><a class="page-card " href="frameworks/uranie.html">
+                            <div class="framework"><a class="page-card " href="frameworks/uranie.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
   </div>

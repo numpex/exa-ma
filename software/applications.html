@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Applications :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/software/applications.html">
+    <meta name="description" content="Exa-MA applications - mini-apps, extended mini-apps, and demonstrators for exascale benchmarking.">
+    <meta name="generator" content="Antora 3.1.3">
+<link rel="stylesheet" href="../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = '../_'</script>
+
+</head>
+<body class="article docs-manuals-catalog docs-cards-layout ">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo"  src="../_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="body">
+  <a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../team.html">Team</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../partners.html">Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../contact.html">Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Work Packages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp0.html">WP0: Project Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp1.html">WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp2.html">WP2: Model Order Reduction and SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp3.html">WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp4.html">WP4: Inverse Problems and Data Assimilation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp5.html">WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp6.html">WP6: Uncertainty Quantification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp7.html">WP7: Showroom, Benchmarking, and Co-Design</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../results.html">Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deliverables and Publications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../deliverables.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../publications-hal.html">Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../news.html">News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../news/archive.html">Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workgroups.html">NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Software &amp; Benchmarking</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="frameworks.html">Frameworks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/scimba.html">Scimba</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frameworks/uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="applications.html">Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-feelpp-discr-1.html">Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-feelpp-distance.html">Distance</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-feelpp-nlcrb.html">Nonlinear Compressive Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-feelpp-rb.html">Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-feelpp-toolbox.html">Test Feel++ toolboxes at scale</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-hpddm-dfn.html">Preconditioning systems arising from discrete fracture networks</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-freefem-parmmg.html">Fichera corner</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-zellij.html">Zellij</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-eki.html">EKI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-freefem-shape-opt-fem.html">Shape Opt FEM</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-scimba-shape-opt-nn.html">Shape Opt NN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-scimba-plasma.html">Plasma NN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="applications/app-scimba-hybrid.html">Hybrid numerics</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="../index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="article">
+    <div class="toolbar" role="navigation">
+      <button class="nav-toggle"></button>
+       <a href="../index.html" class="home-link"></a> 
+      <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Exa-MA</a></li>
+    <li><a href="index.html">Software &amp; Benchmarking</a></li>
+    <li><a href="applications.html">Applications</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div class="content">
+      <article class="doc">
+         <h1 class="page">Applications</h1> 
+        <div class="paragraph lead">
+<p>Exa-MA applications are benchmarks and demonstrators that exercise the capabilities of our frameworks at scale. They range from focused mini-apps testing specific algorithms to full demonstrators combining multiple work packages. This is a work in progress of course.</p>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_at_a_glance" class="discrete">At a Glance</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-primary"><i class="fa fa-rocket fa-2x"></i></span> <strong>14 Applications</strong></p>
+</div>
+<div class="paragraph">
+<p>5 ready for benchmarking</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-cube fa-2x"></i></span> <strong>8 Mini-Apps</strong></p>
+</div>
+<div class="paragraph">
+<p>Focused benchmarks testing specific algorithms</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-cubes fa-2x"></i></span> <strong>4 Extended Mini-Apps</strong></p>
+</div>
+<div class="paragraph">
+<p>Multi-WP benchmarks with broader scope</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-warning"><i class="fa fa-desktop fa-2x"></i></span> <strong>2 Demonstrators</strong></p>
+</div>
+<div class="paragraph">
+<p>Full-scale application showcases</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock section-white">
+<div class="content">
+<h2 id="_application_status" class="discrete">Application Status</h2>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 11.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Application</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Frameworks</th>
+<th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Work Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-discr-1.html" class="xref page">Discretization</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++, PETSc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check-circle" title="Benchmark Ready"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1, WP3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-distance.html" class="xref page">Distance</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check-circle" title="Benchmark Ready"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-nlcrb.html" class="xref page">Nonlinear Compressive Reduced Basis</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++, PETSc&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP2, WP1, WP3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-rb.html" class="xref page">Reduced Basis</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check-circle" title="Benchmark Ready"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1, WP2, WP3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-toolbox.html" class="xref page">Test Feel++ toolboxes at scale</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1, WP3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-hpddm-dfn.html" class="xref page">Preconditioning systems arising from discrete fracture networks</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HPDDM, PETSc&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check-circle" title="Benchmark Ready"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Freefem++, MMG/ParMMG&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check-circle" title="Benchmark Ready"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1, WP3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-zellij.html" class="xref page">Zellij</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-eki.html" class="xref page">EKI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PETSc, GeoS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-freefem-shape-opt-fem.html" class="xref page">Shape Opt FEM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Freefem++</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-scimba-shape-opt-nn.html" class="xref page">Shape Opt NN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scimba</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-scimba-plasma.html" class="xref page">Plasma NN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-scimba-hybrid.html" class="xref page">Hybrid  numerics</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_benchmark_ready_applications" class="discrete">Benchmark-Ready Applications</h2>
+<div class="paragraph">
+<p>These applications are ready for performance evaluation on HPC systems:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Application</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Frameworks</th>
+<th class="tableblock halign-left valign-top">Metrics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-discr-1.html" class="xref page"><strong>Discretization</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Solve a PDE (heat,solid mech) with different discretisation methods from low to high order</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++, PETSc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">benchmark-verification, strong-scalability&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-distance.html" class="xref page"><strong>Distance</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compute distance to a range of entities using FMM or BVH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">analytical-solution-match, strong-scalability&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-rb.html" class="xref page"><strong>Reduced Basis</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test reduced basis methods and empirical interpolation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">benchmark-verification, offline-cost&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-hpddm-dfn.html" class="xref page"><strong>Preconditioning systems arising from discrete fracture networks</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test numerical and algorithm performance of PETSc preconditioners</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HPDDM, PETSc&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">strong-scalability, weak-scalability&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-freefem-parmmg.html" class="xref page"><strong>Fichera corner</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test ParMmg performance for distributed anisotropic mesh adaptation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Freefem++, MMG/ParMMG&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">strong-scalability, weak-scalability&#8230;&#8203;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock section-white">
+<div class="content">
+<h2 id="_applications_by_type" class="discrete">Applications by Type</h2>
+<h3 id="_demonstrators" class="discrete"><span class="icon text-warning"><i class="fa fa-desktop"></i></span> Demonstrators</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-feelpp-toolbox.html" class="xref page">Test Feel++ toolboxes at scale</a> — N/A</p>
+</li>
+<li>
+<p><a href="applications/app-scimba-hybrid.html" class="xref page">Hybrid  numerics</a> — N/A</p>
+</li>
+</ul>
+</div>
+<h3 id="_extended_mini_apps" class="discrete"><span class="icon text-success"><i class="fa fa-cubes"></i></span> Extended Mini Apps</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-feelpp-discr-1.html" class="xref page">Discretization</a> <span class="icon text-success"><i class="fa fa-check-circle" title="Ready"></i></span> — Feel++, PETSc</p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-nlcrb.html" class="xref page">Nonlinear Compressive Reduced Basis</a> — Feel++, PETSc</p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-rb.html" class="xref page">Reduced Basis</a> <span class="icon text-success"><i class="fa fa-check-circle" title="Ready"></i></span> — Feel++</p>
+</li>
+<li>
+<p><a href="applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a> <span class="icon text-success"><i class="fa fa-check-circle" title="Ready"></i></span> — Freefem++, MMG/ParMMG</p>
+</li>
+</ul>
+</div>
+<h3 id="_mini_apps" class="discrete"><span class="icon text-info"><i class="fa fa-cube"></i></span> Mini Apps</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-feelpp-distance.html" class="xref page">Distance</a> <span class="icon text-success"><i class="fa fa-check-circle" title="Ready"></i></span> — Feel++</p>
+</li>
+<li>
+<p><a href="applications/app-hpddm-dfn.html" class="xref page">Preconditioning systems arising from discrete fracture networks</a> <span class="icon text-success"><i class="fa fa-check-circle" title="Ready"></i></span> — HPDDM, PETSc</p>
+</li>
+<li>
+<p><a href="applications/app-zellij.html" class="xref page">Zellij</a> — N/A</p>
+</li>
+<li>
+<p><a href="applications/app-eki.html" class="xref page">EKI</a> — PETSc, GeoS</p>
+</li>
+<li>
+<p><a href="applications/app-freefem-shape-opt-fem.html" class="xref page">Shape Opt FEM</a> — Freefem++</p>
+</li>
+<li>
+<p><a href="applications/app-scimba-shape-opt-nn.html" class="xref page">Shape Opt NN</a> — Scimba</p>
+</li>
+<li>
+<p><a href="applications/app-scimba-plasma.html" class="xref page">Plasma NN</a> — N/A</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_applications_by_framework" class="discrete">Applications by Framework</h2>
+<h3 id="_feel" class="discrete">Feel++</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-feelpp-discr-1.html" class="xref page">Discretization</a> (Extended Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-distance.html" class="xref page">Distance</a> (Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-nlcrb.html" class="xref page">Nonlinear Compressive Reduced Basis</a> (Extended Mini App)</p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-rb.html" class="xref page">Reduced Basis</a> (Extended Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+<li>
+<p><a href="applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a> (Extended Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+</ul>
+</div>
+<h3 id="_freefem" class="discrete">Freefem++</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a> (Extended Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+<li>
+<p><a href="applications/app-freefem-shape-opt-fem.html" class="xref page">Shape Opt FEM</a> (Mini App)</p>
+</li>
+</ul>
+</div>
+<h3 id="_geos" class="discrete">GeoS</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-eki.html" class="xref page">EKI</a> (Mini App)</p>
+</li>
+</ul>
+</div>
+<h3 id="_hpddm" class="discrete">HPDDM</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-hpddm-dfn.html" class="xref page">Preconditioning systems arising from discrete fracture networks</a> (Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+</ul>
+</div>
+<h3 id="_mmgparmmg" class="discrete">MMG/ParMMG</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a> (Extended Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+</ul>
+</div>
+<h3 id="_mumps" class="discrete">MUMPS</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-hpddm-dfn.html" class="xref page">Preconditioning systems arising from discrete fracture networks</a> (Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+</ul>
+</div>
+<h3 id="_petsc" class="discrete">PETSc</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-feelpp-discr-1.html" class="xref page">Discretization</a> (Extended Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-nlcrb.html" class="xref page">Nonlinear Compressive Reduced Basis</a> (Extended Mini App)</p>
+</li>
+<li>
+<p><a href="applications/app-hpddm-dfn.html" class="xref page">Preconditioning systems arising from discrete fracture networks</a> (Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+<li>
+<p><a href="applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a> (Extended Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+<li>
+<p><a href="applications/app-eki.html" class="xref page">EKI</a> (Mini App)</p>
+</li>
+</ul>
+</div>
+<h3 id="_pastix" class="discrete">PaStiX</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-hpddm-dfn.html" class="xref page">Preconditioning systems arising from discrete fracture networks</a> (Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+</ul>
+</div>
+<h3 id="_scimba" class="discrete">Scimba</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-scimba-shape-opt-nn.html" class="xref page">Shape Opt NN</a> (Mini App)</p>
+</li>
+</ul>
+</div>
+<h3 id="_pytorch" class="discrete">pytorch</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-feelpp-nlcrb.html" class="xref page">Nonlinear Compressive Reduced Basis</a> (Extended Mini App)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock softwares">
+<div class="content">
+
+</div>
+</div>
+
+                      <h2 class="cards-group-title">Application Catalog</h2>
+                    
+                      <div class="applications">
+                            <div class="application"><a class="page-card application" href="applications/app-feelpp-discr-1.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cubes"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Discretization</h4>
+    <p class="page-card-description">Discretization - Solve a PDE (heat,solid mech) with different discretisation methods from low to high order...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-feelpp-distance.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Distance</h4>
+    <p class="page-card-description">Distance - Compute distance to a range of entities using FMM or BVH...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-eki.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>EKI</h4>
+    <p class="page-card-description">EKI - Demonstrate feasibility of ensemble Kalman filter based inversion of a simplified wave equation...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-freefem-parmmg.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cubes"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Fichera corner</h4>
+    <p class="page-card-description">Fichera corner - Test ParMmg performance for distributed anisotropic mesh adaptation...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-scimba-hybrid.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-desktop"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Hybrid  numerics</h4>
+    <p class="page-card-description">Hybrid  numerics - Test numerical hybrid methods on high dimensional physical and parametric PDE problems...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-feelpp-nlcrb.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cubes"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Nonlinear Compressive Reduced Basis</h4>
+    <p class="page-card-description">Nonlinear Compressive Reduced Basis - Test nonlinear compressive reduced basis methods...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-scimba-plasma.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Plasma NN</h4>
+    <p class="page-card-description">Plasma NN - Demonstrate neural nework algorithm, plasma simulation in 3D tokamak...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-hpddm-dfn.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Preconditioning systems arising from discrete fracture networks</h4>
+    <p class="page-card-description">Preconditioning systems arising from discrete fracture networks - Test numerical and algorithm performance of PETSc preconditioners...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-feelpp-rb.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cubes"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Reduced Basis</h4>
+    <p class="page-card-description">Reduced Basis - Test reduced basis methods and empirical interpolation...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-freefem-shape-opt-fem.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Shape Opt FEM</h4>
+    <p class="page-card-description">Shape Opt FEM - Demonstrate new shape optimisation algorithm, volume preserving, fem formulation...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-scimba-shape-opt-nn.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Shape Opt NN</h4>
+    <p class="page-card-description">Shape Opt NN - Demonstrate new shape optimisation algorithm, volume preserving, nn formulation...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-feelpp-toolbox.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-desktop"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Test Feel++ toolboxes at scale</h4>
+    <p class="page-card-description">Test Feel++ toolboxes at scale - test heat(eye2brain,thermalbridge), elasticity(nafems LE-10), thermoelectric(hifimagnet) and fluid (fda)...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-zellij.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Zellij</h4>
+    <p class="page-card-description">Zellij - Solveur de problèmes d'optimisation continue...</p>
+  </div>
+</a>
+</div>
+                      </div>
+      </article>
+    </div>
+  </main>
+</div>
+
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="../_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+    </div>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="../_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+</body>
+</html>
