@@ -1,10 +1,10 @@
 // modules/ROOT/pages/nav.adoc
 * xref:index.adoc[Home]
-* About Exa-MA
+* xref:about.adoc[About Exa-MA]
 ** xref:team.adoc[Team]
 ** xref:partners.adoc[Partners]
 ** xref:contact.adoc[Contact]
-* Work Packages
+* xref:workpackages.adoc[Work Packages]
 ** xref:workpackages.adoc[Overview]
 ** xref:workpackages/wp0.adoc[WP0: Project Management]
 ** xref:workpackages/wp1.adoc[WP1: Discretization]
@@ -15,8 +15,7 @@
 ** xref:workpackages/wp6.adoc[WP6: Uncertainty Quantification]
 ** xref:workpackages/wp7.adoc[WP7: Showroom, Benchmarking, and Co-Design]
 * xref:results.adoc[Results and Impact]
-* Deliverables and Publications
-** xref:deliverables.adoc[Overview]
+* xref:deliverables.adoc[Deliverables and Publications]
 ** xref:publications-hal.adoc[Publications (HAL)]
 * xref:news.adoc[News and Events]
 ** xref:news/archive.adoc[Archive]
