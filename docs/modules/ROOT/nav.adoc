@@ -1,6 +1,6 @@
 // modules/ROOT/pages/nav.adoc
 * xref:index.adoc[Home]
-* xref:about.adoc[About Exa-MA]
+* About Exa-MA
 ** xref:team.adoc[Team]
 ** xref:partners.adoc[Partners]
 ** xref:contact.adoc[Contact]
