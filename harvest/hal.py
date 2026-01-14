@@ -429,6 +429,128 @@ def output_csv(publications: list[dict], output_file: str | Path | None = None) 
     return content
 
 
+def _compute_statistics(publications: list[dict]) -> dict:
+    """Compute publication statistics."""
+    from collections import Counter
+    
+    stats = {
+        "total": len(publications),
+        "by_type": Counter(),
+        "by_year": {},
+        "with_doi": 0,
+        "with_pdf": 0,
+        "open_access": 0,
+        "by_domain": Counter(),
+    }
+    
+    for pub in publications:
+        # Type statistics
+        pub_type = pub.get("publication_type_label", "Unknown")
+        stats["by_type"][pub_type] += 1
+        
+        # DOI and PDF
+        if pub.get("doi"):
+            stats["with_doi"] += 1
+        if pub.get("pdf_url"):
+            stats["with_pdf"] += 1
+        if pub.get("open_access"):
+            stats["open_access"] += 1
+            
+        # Domain statistics
+        domains = pub.get("domains", [])
+        if isinstance(domains, list):
+            for domain in domains:
+                stats["by_domain"][domain] += 1
+        
+        # Per-year statistics
+        year = pub.get("year", "Unknown")
+        if year not in stats["by_year"]:
+            stats["by_year"][year] = {
+                "count": 0,
+                "by_type": Counter(),
+            }
+        stats["by_year"][year]["count"] += 1
+        stats["by_year"][year]["by_type"][pub_type] += 1
+    
+    return stats
+
+
+def _format_statistics_asciidoc(stats: dict) -> list[str]:
+    """Format statistics as AsciiDoc."""
+    lines = []
+    
+    # Map publication types to Font Awesome icons
+    type_icons = {
+        "Article in journal": "newspaper",
+        "Preprint / unpublished": "file-alt",
+        "Conference paper": "users",
+        "Poster": "image",
+        "Report": "file-text",
+        "Thesis": "graduation-cap",
+        "PhD": "graduation-cap",
+        "HDR": "user-graduate",
+        "Book": "book",
+        "Book chapter": "book-open",
+        "Software": "code",
+        "Dataset": "database",
+        "Patent": "certificate",
+    }
+    
+    # Global statistics section
+    lines.extend([
+        "== icon:chart-pie[] Overview",
+        "",
+        f"icon:list-ol[] Total publications: *{stats['total']}*",
+        "",
+    ])
+    
+    # Publication type distribution
+    if stats["by_type"]:
+        lines.extend([
+            "[.grid.grid-2.gap-2]",
+            "====",
+        ])
+        
+        for pub_type, count in stats["by_type"].most_common():
+            pct = (count / stats["total"] * 100) if stats["total"] > 0 else 0
+            icon = type_icons.get(pub_type, "file")
+            lines.extend([
+                "____",
+                f"icon:{icon}[size=2x,role=text-primary] *{count}* {pub_type}",
+                "",
+                f"_{pct:.1f}% of total_",
+                "____",
+                "",
+            ])
+        
+        lines.extend([
+            "====",
+            "",
+        ])
+    
+    # Access statistics
+    lines.extend([
+        "=== icon:unlock[] Access & Availability",
+        "",
+        f"* icon:fingerprint[] Publications with DOI: *{stats['with_doi']}* ({stats['with_doi']/stats['total']*100:.1f}%)",
+        f"* icon:file-pdf[] Publications with PDF: *{stats['with_pdf']}* ({stats['with_pdf']/stats['total']*100:.1f}%)",
+        f"* icon:lock-open[] Open Access: *{stats['open_access']}* ({stats['open_access']/stats['total']*100:.1f}%)",
+        "",
+    ])
+    
+    # Domain distribution
+    if stats["by_domain"]:
+        lines.extend([
+            "=== icon:flask[] By Scientific Domain",
+            "",
+        ])
+        for domain, count in stats["by_domain"].most_common(5):
+            lines.append(f"* icon:atom[] {domain}: *{count}*")
+        lines.append("")
+    
+    return lines
+
+
 def output_asciidoc(
     publications: list[dict], output_file: str | Path | None = None, partial: bool = False
 ) -> str:
@@ -449,6 +571,9 @@ def output_asciidoc(
         year = pub.get("year", "Unknown")
         by_year.setdefault(year, []).append(pub)
 
+    # Compute statistics
+    stats = _compute_statistics(formatted)
+
     lines = []
 
     if not partial:
@@ -463,17 +588,33 @@ def output_asciidoc(
             f"Total: *{len(formatted)}* publications.",
             "",
         ])
+        # Add statistics for full page
+        lines.extend(_format_statistics_asciidoc(stats))
     else:
-        # Add generation comment for partials
+        # Add statistics comment for partials
         lines.append(f"// Total publications: {len(formatted)}")
         lines.append("")
+        # Include statistics in partials too
+        lines.extend(_format_statistics_asciidoc(stats))
 
     for year in sorted(by_year.keys(), reverse=True):
         pubs = by_year[year]
+        year_stats = stats["by_year"].get(year, {})
+        
         lines.append(f"== {year}")
         lines.append("")
         lines.append(f"_{len(pubs)} publication{'s' if len(pubs) > 1 else ''}_")
         lines.append("")
+        
+        # Per-year type breakdown
+        if year_stats.get("by_type"):
+            type_summary = ", ".join(
+                f"{count} {pub_type}" 
+                for pub_type, count in year_stats["by_type"].most_common()
+            )
+            lines.append(f"_{type_summary}_")
+            lines.append("")
+        
         lines.append('[.striped.publications,cols="4,2,2,1",options="header"]')
         lines.append("|===")
         lines.append("|Title |Authors |Type |Links")

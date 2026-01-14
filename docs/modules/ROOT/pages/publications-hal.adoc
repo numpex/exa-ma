@@ -3,6 +3,7 @@
 = Exa-MA Publications
 :page-layout: default
 :icons: font
+:sectnums!:
 
 [.lead]
 Publications acknowledging the Exa-MA project (ANR-22-EXNU-0002), harvested from HAL.
