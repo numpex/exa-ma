@@ -32,7 +32,13 @@ icon:box-open[size=2x,role=text-success] *Packaging*
 ____
 
 ____
-icon:vial[size=2x,role=text-info] *Testing*
+icon:docker[set=fab,size=2x,role=text-info] *Containerization*
+
+Docker, Apptainer/Singularity available
+____
+
+____
+icon:vial[size=2x,role=text-primary] *Testing*
 
 26 with CI/CD, 17 with unit tests
 ____
@@ -104,8 +110,4 @@ These frameworks power the following Exa-MA applications:
 * *xref:frameworks/hpddm.adoc[HPDDM]:* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
 * *xref:frameworks/freefempp.adoc[Freefem++]:* xref:applications/app-freefem-parmmg.adoc[Fichera corner], xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
 * *xref:frameworks/scimba.adoc[Scimba]:* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
---
-
-[.softwares]
---
 --

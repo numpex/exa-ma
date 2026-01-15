@@ -135,26 +135,26 @@ Exa-MA is organized into seven scientific work packages plus project management:
 === Numerical Methods
 [cols="1,4"]
 |===
-|xref:workpackages/wp1.adoc[WP1] | *Discretization* – Meshing, adaptive refinement, high-order schemes
-|xref:workpackages/wp2.adoc[WP2] | *Model Reduction & Scientific ML* – ROMs, PINNs, neural operators
-|xref:workpackages/wp3.adoc[WP3] | *Solvers* – Domain decomposition, preconditioners, multiphysics
+|xref:workpackages/wp1.adoc[WP1] | *Discretization* – Mesh generation/adaptation (AMR), finite element framework, nonconforming methods, parallel-in-time, multiphysics coupling
+|xref:workpackages/wp2.adoc[WP2] | *Model Reduction & Scientific ML* – Physics-driven deep learning, neural operators, data-driven ROM, reduced basis, multi-fidelity, super-resolution
+|xref:workpackages/wp3.adoc[WP3] | *Solvers* – Mixed precision Krylov, data compression, variable accuracy, saddle point systems, partitioned multiphysics
 |===
 
 [discrete]
 === Data & Decision
 [cols="1,4"]
 |===
-|xref:workpackages/wp4.adoc[WP4] | *Inverse Problems & Data Assimilation* – Merging observations with simulations
-|xref:workpackages/wp5.adoc[WP5] | *Optimization* – Bayesian optimization, shape and topology optimization
-|xref:workpackages/wp6.adoc[WP6] | *Uncertainty Quantification* – Sensitivity analysis, surrogate-based UQ
+|xref:workpackages/wp4.adoc[WP4] | *Inverse Problems & Data Assimilation* – Deterministic/stochastic methods, observation strategies, multi-fidelity schedules, model updates
+|xref:workpackages/wp5.adoc[WP5] | *Optimization* – Combinatorial/continuous, surrogate-based, shape optimization, AutoML at exascale
+|xref:workpackages/wp6.adoc[WP6] | *Uncertainty Quantification* – Kernel-based sensitivity, UQ in PDE framework, surrogate modeling, acceleration on exascale
 |===
 
 [discrete]
 === Integration & Coordination
 [cols="1,4"]
 |===
-|xref:workpackages/wp7.adoc[WP7] | *Showroom & Benchmarking* – CI/CD, demonstrators, co-design with ExaDIP
-|xref:workpackages/wp0.adoc[WP0] | *Project Management* – Governance, coordination, reporting
+|xref:workpackages/wp7.adoc[WP7] | *Showroom & Benchmarking* – Testing/benchmarking environment, CI/CD, verification/validation, co-design coordination, training materials
+|xref:workpackages/wp0.adoc[WP0] | *Project Management* – Coordination, scientific/technical oversight, computing resources, communication, reporting
 |===
 
 [.text-right]

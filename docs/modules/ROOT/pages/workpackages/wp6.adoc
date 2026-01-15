@@ -2,24 +2,155 @@
 :page-tags: manual,wp
 :parent-catalogs: wp-catalog
 :page-illustration: fa-solid fa-wave-square
+:icons: font
 
-WP6 quantifies uncertainties in complex multiscale simulations and propagates them through the prediction pipeline.
+[.lead]
+WP6 quantifies uncertainties in complex multiscale simulations through sensitivity analysis, surrogate modeling, and high-dimensional integration, leveraging exascale computing for tractable UQ workflows.
+
+[discrete]
+== Recent Highlights (2024-2025)
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:chart-area[size=2x,role=text-primary] *Kernel-Based Sensitivity*
+
+Global sensitivity analysis methods with kernel-based dependence measures
+____
+
+____
+icon:toolbox[size=2x,role=text-success] *UQ Platforms*
+
+Uranie and OpenTURNS platforms for uncertainty quantification
+____
+
+____
+icon:link[size=2x,role=text-info] *Integrated Analysis*
+
+Sensitivity analyses linked with WP3 solvers and WP2 surrogates
+____
+
+____
+icon:server[size=2x,role=text-warning] *EuroHPC UQ*
+
+Initial UQ pipelines exercised on EuroHPC resources
+____
+====
 
 == Objectives
-- Kernel-based sensitivity analysis
-- Surrogate modeling for UQ and high-dimensional integration
-- Multi-arithmetic and multi-fidelity approaches
 
-== Leads & Timeline
-- Lead: École Polytechnique
-- Duration: Months 1-60
+Uncertainty Quantification includes several critical steps:
 
-== Recent Highlights
-- Sensitivity analyses linked with WP3 solvers and WP2 surrogates
-- Initial UQ pipelines exercised on EuroHPC resources
-- Shared UQ components prepared for WP7 benchmarking
+* Uncertainty propagation through complex multiscale models
+* Sensitivity analysis to understand important often correlated factors
+* Reduce uncertainty through modeling improvements in WP1
+* Establish robust inversion or optimization under uncertainties
 
-== Next Steps
-- Expand UQ benchmarks with additional industrial test cases
-- Provide ready-to-run sensitivity examples in the showroom
-- Align UQ metrics with WP0 reporting for impact tracking
+== Approach
+
+[.section-gray]
+--
+[mermaid]
+....
+graph TB
+    A[Uncertain Inputs] --> B[Uncertainty Propagation]
+    B --> C[Sensitivity Analysis]
+    B --> D[Surrogate Modeling]
+
+    C --> E[Kernel-Based Measures]
+    C --> F[High-Dim Integration]
+
+    D --> G[Multi-Fidelity UQ]
+    D --> H[PDE-Based UQ]
+
+    E --> I[UQ Results]
+    F --> I
+    G --> I
+    H --> I
+
+    I --> J[Robust Decisions]
+    I --> K[Model Updates]
+    I --> L[Optimization Under Uncertainty]
+
+    style A fill:#e1f5ff
+    style B fill:#ffe1f5
+    style C fill:#fff4e1
+    style D fill:#f5ffe1
+    style I fill:#e1ffe1
+    style J fill:#ffe1e1
+....
+--
+
+== Key Tasks
+
+[discrete]
+=== T6.1: Kernel-Based Sensitivity Analysis
+* Handle very high-dimensional and multivariate data in exascale applications
+* Develop tractable extensions of sensitivity analysis built upon kernel-based dependence measures
+* Investigate optimized computing schemes of high-dimensional integrals
+* Support uncertainty propagation step
+
+[discrete]
+=== T6.2: UQ in a PDE Solving Framework
+* Propagate uncertainties (initial conditions, coefficients) in complex PDE solutions
+* Use machine learning and stochastic spectral methods for suitable approximations
+* Address calibration challenges that exceed underlying problem size by orders of magnitude
+* Make HPC strategies mandatory for tractable solutions
+
+[discrete]
+=== T6.3: Surrogate Modeling for UQ
+* Address complex multi-physics and/or multi-scale problems with coupled, nested and chained numerical codes
+* Build and calibrate global metamodel assembling all prediction uncertainties
+* Requires HPC for this formidable task
+
+[discrete]
+=== T6.4: Acceleration via Exascale Calculations
+* Integrate methodological developments of Tasks 6.1 to 6.3
+* Use opensource platforms Uranie and OpenTURNS dedicated to uncertainty quantification
+* Take advantage of exascale computational properties
+* Conduct benchmarking on exascale applications
+
+== Leads & Partners
+
+[cols="2,3"]
+|===
+|Lead Institution |École Polytechnique
+|Co-Leaders |CEA, UNISTRA
+|Duration |Months 1-60
+|===
+
+== Addressed Exascale Bottlenecks
+
+WP6 targets bottlenecks **B8** (Discovery, design, and decision algorithms) and **B13** (Opportunity to integrate uncertainties):
+
+* Enabling ensembles of many small runs for UQ
+* Integrating uncertainties directly into core calculations
+* Handling high-dimensional integrals at scale
+* Efficient parameter sweeps for sensitivity analysis
+
+== Deliverables
+
+[cols="1,3,1"]
+|===
+|ID |Title |Due Dates
+
+|D6.1-MR
+|Activity reports (included in annual report D0.2-TR)
+|M24, M36, M48, M60
+
+|D6.2-S
+|Software release of URANIE
+|M48, M60
+
+|D6.3-B
+|Benchmarking analysis report (bottlenecks and breakthroughs)
+|M12, M24, M36, M48, M60
+|===
+
+== Collaborations
+
+* **WP1**: Modeling improvements to reduce uncertainty
+* **WP2**: Multi-fidelity models for UQ (T6.3)
+* **WP4**: Shared interest in stochastic methods and uncertainty integration
+* **WP5**: Optimization under uncertainty
+* **WP7**: Benchmarking analysis and integration

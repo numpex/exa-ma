@@ -10,7 +10,7 @@ content:
 ui:
   supplemental_files: ./docs/antora/supplemental-ui
   bundle:
-    url: https://github.com/feelpp/antora-ui/releases/download/v0.49/ui-bundle.zip
+    url: /Users/prudhomm/Devel/Antora/antora-ui/build/ui-bundle.zip
     snapshot: true
 output:
   clean: true
@@ -19,6 +19,8 @@ antora:
   extensions:
   - '@antora/collector-extension'
 asciidoc:
+  extensions:
+  - 'asciidoctor-kroki'
   attributes:
     project_name: Exa-MA
     project_version: 2.0.2
@@ -34,3 +36,5 @@ asciidoc:
     swimmer: Swimmer
     :exama: Exa-MA
     :numpex: NumPEx
+    kroki-fetch-diagram: true
+    kroki-server-url: https://kroki.io

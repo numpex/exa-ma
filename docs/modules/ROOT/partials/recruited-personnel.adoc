@@ -1,4 +1,4 @@
-// Total recruited personnel: 23
+// Total recruited personnel: 26
 :sectnums!:
 
 [discrete]
@@ -14,7 +14,7 @@ _13 personnel_
 |Pierre
 |WP1: Discretization
 |CEA
-|April 2024 - Present
+|November 2024 - Present
 |Isabelle Ramière +
 Hélène Barucq
 
@@ -23,14 +23,14 @@ Hélène Barucq
 |WP1: Discretization +
 WP3: Solvers
 |École Polytechnique
-|December 2024 - Present
+|November 2024 - Present
 |Marc Massot
 
 |*Ballout*
 |Hassan
 |WP2: Model Order Reduction & SciML
 |Université de Strasbourg
-|January 2024 - September 2027
+|October 2024 - September 2027
 |Yvon Maday +
 Christophe Prud'homme +
 Joubine Aghili
@@ -40,7 +40,7 @@ Joubine Aghili
 |WP2: Model Order Reduction & SciML +
 WP5: Optimization
 |Université de Strasbourg
-|January 2023 - September 2026
+|October 2023 - September 2026
 |Yannick Privat +
 Charles Dapogny +
 Victor Dansac +
@@ -50,7 +50,7 @@ Christophe Prud'homme
 |Daria
 |WP2: Model Order Reduction & SciML
 |Université de Strasbourg
-|January 2024 - October 2027
+|November 2024 - October 2027
 |Stéphane Lanteri
 
 |*Italiano*
@@ -79,14 +79,14 @@ Stephane Cotin
 |Alexandre
 |WP3: Solvers
 |Sorbonne Université
-|January 2025 - January 2028
+|October 2025 - October 2028
 |Pierre Jolivet
 
 |*Doumbouya*
 |Mohamed
 |WP4: Inverse Problems & Data Assimilation
 |Inria
-|January 2025 - October 2028
+|November 2025 - October 2028
 |Arthur Vidard
 
 |*Farba Seck*
@@ -101,7 +101,7 @@ Mark Asch
 |Mahmoud El Mehdi
 |WP5: Optimization
 |Inria
-|January 2024 - Present
+|October 2024 - Present
 |El-Ghazzali Talbi
 
 |*Nassouradine*
@@ -116,38 +116,46 @@ Mark Asch
 [discrete]
 == icon:flask[] Postdoctoral Researchers
 
-_4 personnel_
+_5 personnel_
 
 [.striped.recruited,cols="2,2,2,2,2,2",options="header"]
 |===
 |Last Name |First Name |Work Package |Institution |Period |Advisor(s)
 
+|*Georgiadis*
+|Christos
+|WP1: Discretization +
+WP7: Software, Benchmarking & Co-Design
+|Inria
+|May 2024 - April 2025
+|Pierre Alliez
+
 |*Truong*
 |Dinh Hung T
 |WP2: Model Order Reduction & SciML
 |Université de Strasbourg
-|January 2023 - Present
+|October 2023 - Present
 |Emmanuel Franck
 
 |*Chen*
 |Xinye
 |WP3: Solvers
 |Sorbonne Université
-|October 2024 - Present
+|Project start - Present
 |Fabienne Jezequel
 
 |*Kiran*
 |Utpal
 |WP3: Solvers
 |CEA
-|March 2025 - Present
+|February 2025 - Present
 |Vincent Faucher
 
 |*Spies*
 |Lukas
 |WP3: Solvers
 |Inria
-|January 2025 - February 2026
+|March 2025 - February 2026
 |
 
 |===
@@ -155,7 +163,7 @@ _4 personnel_
 [discrete]
 == icon:cogs[] Research Engineers
 
-_6 personnel_
+_8 personnel_
 
 [.striped.recruited,cols="2,2,2,2,2,2",options="header"]
 |===
@@ -166,7 +174,7 @@ _6 personnel_
 |WP0: Project Office +
 WP7: Software, Benchmarking & Co-Design
 |Université de Strasbourg
-|October 2025 - Present
+|July 2025 - Present
 |Christophe Prud'homme
 
 |*Cladellas*
@@ -174,7 +182,7 @@ WP7: Software, Benchmarking & Co-Design
 |WP1: Discretization +
 WP7: Software, Benchmarking & Co-Design
 |Université de Strasbourg
-|October 2025 - Present
+|Project start - Present
 |Christophe Prud'homme +
 Vincent Chabannes +
 Pierre Alliez +
@@ -184,15 +192,26 @@ Pierre Alliez +
 |Sébastien
 |WP1: Discretization
 |École Polytechnique
-|November 2024 - November 2027
+|Project start - Present
 |Loic Guarin
 
 |*Hoffmann*
 |Alexandre
 |WP1: Discretization
 |École Polytechnique
-|January 2025 - December 2028
+|January 2025 - January 2028
 |Loic Gouarin
+
+|*Saigre*
+|Thomas
+|WP1: Discretization +
+WP2: Model Order Reduction & SciML +
+WP3: Solvers +
+WP7: Software, Benchmarking & Co-Design
+|Université de Strasbourg
+|January 2024 - September 2025
+|Christophe Prud'homme +
+Vincent Chabannes
 
 |*Fabrizzi*
 |Erik
@@ -206,8 +225,15 @@ Pierre Alliez +
 |WP3: Solvers +
 WP7: Software, Benchmarking & Co-Design
 |Inria
-|January 2025 - September 2027
+|October 2025 - September 2027
 |Luc Giraud
+
+|*Zanella*
+|Raphaël
+|WP3: Solvers
+|Sorbonne Université
+|Project start - September 2025
+|Pierre Jolivet
 
 |===
 
@@ -218,10 +244,10 @@ WP7: Software, Benchmarking & Co-Design
 |===
 |Indicator |Value
 
-|Total Recruited Personnel |*23*
+|Total Recruited Personnel |*26*
 |PhD Students |13
-|Postdoctoral Researchers |4
-|Research Engineers |6
-|Women |2 (9%)
-|Men |21 (91%)
+|Postdoctoral Researchers |5
+|Research Engineers |8
+|Women |2 (8%)
+|Men |24 (92%)
 |===

@@ -2,24 +2,176 @@
 :page-tags: manual,wp
 :parent-catalogs: wp-catalog
 :page-illustration: fa-solid fa-sliders
+:icons: font
 
-WP5 advances exascale-ready optimization methods for continuous, combinatorial, and mixed problems, including AI-driven pipelines.
+[.lead]
+WP5 advances exascale-ready optimization methods for continuous, combinatorial, and mixed problems, with surrogate-based and AI-driven approaches.
+
+[discrete]
+== Recent Highlights (2024-2025)
+
+[.grid.grid-3.gap-2]
+====
+____
+icon:robot[size=2x,role=text-primary] *Bayesian at LUMI*
+
+Bayesian optimization at 8000 GPUs on LUMI supercomputer with fractal decomposition
+____
+
+____
+icon:link[size=2x,role=text-success] *WP2 Integration*
+
+Surrogate-based workflows coupled with WP2 ML models
+____
+
+____
+icon:bolt[size=2x,role=text-info] *Simulation-Based*
+
+High-performance simulation-based optimization
+____
+
+____
+icon:brain[size=2x,role=text-warning] *Deep GPs*
+
+Multi-fidelity modeling with deep Gaussian processes
+____
+
+____
+icon:cogs[size=2x,role=text-danger] *AutoML for HPC*
+
+AutoML experiments on HPC software parameter tuning
+____
+====
 
 == Objectives
-- Decomposition-based and surrogate-assisted optimization
-- Shape and topology optimization at scale
-- Optimization for AI (AutoML) and hybrid workflows
 
-== Leads & Timeline
-- Lead: Inria
-- Duration: Months 1-60
+WP5 focuses on designing and implementing exascale optimization algorithms for large-scale problems:
 
-== Recent Highlights
-- Bayesian optimization at scale, exercised on 8000 GPUs (LUMI) with fractal decomposition
-- Surrogate-based workflows coupled with WP2 ML models and WP6 UQ
-- Early AutoML experiments on HPC software parameter tuning
+* Combinatorial, continuous and mixed optimization using exact and approximate algorithms
+* Surrogate-based optimization using multi-fidelity models
+* Shape optimization for multiphysics problems
+* AutoML for automatic design of deep neural networks
 
-== Next Steps
-- Broaden large-scale Bayesian optimization benchmarks
-- Integrate optimization loops with WP7 CI/CD runners
-- Publish reproducible optimization notebooks and parameter studies
+== Approach
+
+[.section-gray]
+--
+[mermaid]
+....
+graph TB
+    A[Optimization Problem] --> B[Decomposition]
+    A --> C[Surrogate-Based]
+    A --> D[Shape Optimization]
+    A --> E[AutoML]
+
+    B --> F[Decision Space]
+    B --> G[Objective Space]
+
+    C --> H[Multi-Fidelity Models]
+    C --> I[Sampling Strategy]
+
+    D --> J[Mesh-Based]
+    D --> K[Neural Networks]
+
+    E --> L[Hyper-Parameters]
+    E --> M[Network Architecture]
+
+    F --> N[Parallel Solver]
+    G --> N
+    H --> N
+    I --> N
+    J --> N
+    K --> N
+    L --> N
+    M --> N
+
+    N --> O[Optimal Solution]
+
+    style A fill:#e1f5ff
+    style B fill:#ffe1f5
+    style C fill:#fff4e1
+    style D fill:#f5ffe1
+    style E fill:#e1e1ff
+    style N fill:#e1ffe1
+....
+--
+
+== Key Tasks
+
+[discrete]
+=== T5.1: Exascale Combinatorial and Continuous Optimization
+* Design general exascale optimization algorithms
+* Exact algorithms: branch and bound, tree search
+* Approximate algorithms: evolutionary algorithms, swarm intelligence
+* Decomposition-based exascale optimization for large-scale problems (LOPs)
+* Define efficient decomposition strategies in decision and objective spaces
+
+[discrete]
+=== T5.2: Exascale Surrogate-Based Optimization
+* Adapt SBO algorithms to exploit exascale HPC systems
+* Evaluate multiple candidate solutions in each iteration
+* Exploit multi-fidelity models (MFMs)
+* Design new parallel SBO algorithms considering:
+  - The surrogate
+  - The optimizer and its sampling strategy
+  - The coupling between them
+* Use machine learning for expensive functions using SBO and MFMs
+
+[discrete]
+=== T5.3: Exascale Shape Optimization
+* Develop toolbox for shape optimization at exascale
+* Study different meshes for state variable and design variable
+* Use reduced models from WP2 (e.g., neural networks) for faster evaluations
+* Find trade-off between cost and accuracy
+
+[discrete]
+=== T5.4: Exascale Optimization for AutoML
+* Develop optimization approaches for automatic design of deep neural networks (DNNs)
+* Optimize hyper-parameters (AutoML)
+* Address complex problems (dataset and network size)
+* Improve DNN accuracy, reduce energy and inference time
+* Improve robustness and solve large-scale/complex learning tasks
+
+== Leads & Partners
+
+[cols="2,3"]
+|===
+|Lead Institution |Inria
+|Co-Leaders |UNISTRA
+|Duration |Months 1-60
+|===
+
+== Addressed Exascale Bottlenecks
+
+WP5 targets bottlenecks **B7, B9, B10, B13**:
+
+* **B7 (Exascale Algorithms)**: Redesigning optimization algorithms to improve scalability
+* **B9 (Resilience, robustness and accuracy)**: Ensuring robust optimization with verifiable results
+* **B10 (Scientific productivity)**: Providing tools for scientists to use exascale systems productively
+* **B13 (Opportunity to integrate uncertainties)**: Optimization under uncertainty
+
+== Deliverables
+
+[cols="1,3,1"]
+|===
+|ID |Title |Due Dates
+
+|D5.1-MR
+|Activity reports (included in annual report D0.2-TR)
+|M12, M24, M36, M48, M60
+
+|D5.2-S
+|Software package for optimization and shape optimization
+|M36, M48, M60
+
+|D5.3-B
+|Benchmarking analysis report (bottlenecks and breakthroughs)
+|M12, M24, M36, M48, M60
+|===
+
+== Collaborations
+
+* **WP2**: Use of reduced models and neural networks (T5.3), multi-fidelity models (T5.2)
+* **WP6**: Optimization under uncertainty
+* **WP7**: Benchmarking analysis and integration
+* **NumPEx Projects**: ExaSoft, ExaDoST

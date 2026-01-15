@@ -2,24 +2,175 @@
 :page-tags: manual,wp
 :parent-catalogs: wp-catalog
 :page-illustration: fa-solid fa-gears
+:icons: font
 
-WP3 designs scalable solvers for sparse linear systems and coupled multiphysics, tuned for exascale architectures.
+[.lead]
+WP3 designs novel scalable solvers for sparse linear systems and coupled multiphysics problems, optimized for exascale architectures through communication reduction, mixed precision, and data compression techniques.
+
+[discrete]
+== Recent Highlights (2024-2025)
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tachometer-alt[size=2x,role=text-success] *50× Speedup Achievement*
+
+GenEO preconditioner: up to 50× speedup on large problems (45M DoFs, 2916 cores)
+____
+
+____
+icon:sitemap[size=2x,role=text-primary] *Multilevel Schwarz*
+
+Robust multilevel Schwarz preconditioners with hierarchies of coarse spaces
+____
+
+____
+icon:code-branch[size=2x,role=text-info] *HPDDM Framework*
+
+HPDDM framework with high-performance domain decomposition methods
+____
+
+____
+icon:sliders-h[size=2x,role=text-warning] *Mixed Precision*
+
+Mixed precision pathways integrated into solver kernels
+____
+====
 
 == Objectives
-- Domain decomposition and multilevel preconditioners
-- Mixed-precision and error-controlled solvers
-- Adaptive strategies for coupled multiphysics
 
-== Leads & Timeline
-- Lead: Inria
-- Duration: Months 1-60
+WP3 aims to design numerical kernels for solving linear systems that are mostly agnostic of the underlying models and approximation techniques:
 
-== Recent Highlights
-- GenEO preconditioner delivering up to 50x speedup on large Cobra cavity cases (45M DoFs, 2916 cores)
-- Robust multiphysics coupling strategies validated with WP1 meshes and WP6 UQ cases
-- Solver kernels prepared for heterogeneous GPU/CPU targets
+* Generic solution techniques that don't depend on function representation
+* Reduction of computational complexity, memory footprint, and data movement
+* Communication avoiding/hiding strategies with mixed arithmetic and data compression
+* Exploitation of extreme parallelism for coupled physics solvers
 
-== Next Steps
-- Extend GenEO scaling studies to additional EuroHPC systems
-- Integrate mixed-precision pathways into WP7 benchmarking
-- Publish solver playbooks for application teams
+== Approach
+
+[.section-gray]
+--
+[mermaid]
+....
+graph TB
+    A[Sparse Linear System] --> B[Domain Decomposition]
+    A --> C[Mixed Precision]
+    A --> D[Data Compression]
+
+    B --> E[Multilevel Methods]
+    B --> F[GenEO Coarse Space]
+
+    C --> G[Variable Accuracy]
+    C --> H[Precision Auto-Tuning]
+
+    D --> I[Low-Rank Approximations]
+
+    E --> J[Parallel Solver]
+    F --> J
+    G --> J
+    H --> J
+    I --> J
+
+    J --> K[Multiphysics Coupling]
+
+    style A fill:#e1f5ff
+    style B fill:#ffe1f5
+    style C fill:#fff4e1
+    style D fill:#f5ffe1
+    style J fill:#e1ffe1
+    style K fill:#ffe1e1
+....
+--
+
+== Key Tasks
+
+[discrete]
+=== T3.1: Domain Decomposition Methods with Subspace-Correction
+* Enhance scalability of multilevel domain decomposition methods
+* Investigate robustness with inexact setups and preconditioner applications
+* Study mixed arithmetic, inexact local solves, low-rank approximations
+* Validation in HPDDM library and Maphys++
+
+[discrete]
+=== T3.2: Data-Sparsity, Multiple Precision and Compression
+
+**T3.2.1: Modular Mixed Precision Krylov Solvers**
+
+* Develop subspace Krylov methods using mixed precision arithmetic
+* Create modular analyses for composable parallel implementations
+* Ensure final numerical quality of solutions
+
+**T3.2.2: Variable Accuracy Paradigm**
+
+* Decouple data representation from arithmetic
+* Control memory footprint and communication volume
+* Ensure user-prescribed accuracy guarantees
+
+**T3.2.3: Precision Auto-Tuning Tools**
+
+* Provide mixed precision versions of numerical codes
+* Improve precision auto-tuning performance
+* Develop methodologies for autotuning in coupled physics simulations
+
+**T3.2.4: Silent Errors in Solution Techniques**
+
+* Study and design silent error detection and correction at scale
+* Use intrinsic properties of numerical schemes or statistical techniques
+
+[discrete]
+=== T3.3: Adaptive Solution Strategies for Multiphysics and Multiscale
+
+**T3.3.1: Saddle Point Problems**
+
+* Investigate parallel efficiency of domain decomposition for saddle point problems
+* Address coupled multiphysics problems
+
+**T3.3.2: Exascale Resolution for Partitioned Coupling**
+
+* Automatic tuning of performance parameters
+* Handle coupling strengths, physics paths, adaptive convergence criteria
+* Joint strategy with auto-tuning work from T3.2.3
+
+== Leads & Partners
+
+[cols="2,3"]
+|===
+|Lead Institution |Inria
+|Co-Leaders |UNISTRA, Sorbonne Université, CEA, École Polytechnique
+|Duration |Months 1-60
+|===
+
+== Addressed Exascale Bottlenecks
+
+WP3 targets bottlenecks **B7** (Exascale Algorithms) and **B9** (Resilience, robustness and accuracy):
+
+* Communication reduction through domain decomposition methods
+* Avoiding/hiding synchronization in parallel solvers
+* Improved computational efficiency with mixed precision and data compression
+* Ensuring correctness and verifiability with silent error detection
+
+== Deliverables
+
+[cols="1,3,1"]
+|===
+|ID |Title |Due Dates
+
+|D3.1-MR
+|Activity reports (included in annual report D0.2-TR)
+|M12, M24, M36, M48, M60
+
+|D3.2-S
+|Software packages HPDDM, Maphys++, PROMISE
+|M24, M36, M48, M60
+
+|D3.3-B
+|Benchmarking analysis report (bottlenecks and breakthroughs)
+|M12, M24, M36, M48, M60
+|===
+
+== Collaborations
+
+* **ExaSoft**: Low-level software infrastructure and performance portability
+* **WP1**: Integration with nonconforming methods (T1.5) and multiphysics coupling (T1.7)
+* **WP2**: Collaboration on mixed precision and variable accuracy paradigm
+* **WP7**: Benchmarking analysis and integration

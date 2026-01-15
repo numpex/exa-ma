@@ -49,18 +49,56 @@ def clean_string(value: Any) -> str | None:
 
 
 def parse_date(value: Any) -> datetime | None:
-    """Parse various date formats."""
+    """Parse various date formats including French DD/MM/YYYY and Month Year formats."""
     if is_nan(value):
         return None
     if isinstance(value, datetime):
         return value
     str_val = str(value).strip()
-    # Try various formats
+
+    # Try standard formats (French DD/MM/YYYY format is prioritized)
     for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y"):
         try:
             return datetime.strptime(str_val.split()[0], fmt)
         except (ValueError, TypeError):
             continue
+
+    # Try "Month Year" formats (English and French)
+    # English: "January 2024", "Jan 2024"
+    for fmt in ("%B %Y", "%b %Y"):
+        try:
+            return datetime.strptime(str_val, fmt)
+        except (ValueError, TypeError):
+            continue
+
+    # Try French month names
+    french_months = {
+        "janvier": "January", "janv": "Jan",
+        "février": "February", "févr": "Feb", "fevrier": "February", "fevr": "Feb",
+        "mars": "March",
+        "avril": "April", "avr": "Apr",
+        "mai": "May",
+        "juin": "June",
+        "juillet": "July", "juil": "Jul",
+        "août": "August", "aout": "August", "aoû": "Aug",
+        "septembre": "September", "sept": "Sep",
+        "octobre": "October", "oct": "Oct",
+        "novembre": "November", "nov": "Nov",
+        "décembre": "December", "déc": "Dec", "decembre": "December", "dec": "Dec",
+    }
+
+    # Try to parse French month names by converting to English
+    str_lower = str_val.lower()
+    for french, english in french_months.items():
+        if french in str_lower:
+            # Replace French month with English equivalent
+            str_english = str_lower.replace(french, english)
+            for fmt in ("%B %Y", "%b %Y"):
+                try:
+                    return datetime.strptime(str_english, fmt)
+                except (ValueError, TypeError):
+                    continue
+
     return None
 
 
@@ -456,7 +494,14 @@ class TeamFetcher:
             raise ImportError("pandas is required. Install with: pip install pandas")
 
         data = self._fetch_excel()
-        return pd.read_excel(io.BytesIO(data), sheet_name=sheet_name or self.sheet_name)
+        # Disable automatic date parsing to ensure we use our custom parse_date function
+        # which correctly handles French DD/MM/YYYY format
+        return pd.read_excel(
+            io.BytesIO(data),
+            sheet_name=sheet_name or self.sheet_name,
+            parse_dates=False,  # Disable auto date parsing
+            date_format=None,   # Don't infer date format
+        )
 
     def _parse_work_packages(self, row: dict) -> list[str]:
         """Parse WP columns (WP0-WP7) to get all work packages.
@@ -640,14 +685,14 @@ def fetch_recruited_with_config(
 
 # Work Package titles
 WP_TITLES = {
-    "WP0": "Project Office",
+    "WP0": "Project Management",
     "WP1": "Discretization",
-    "WP2": "Model Order Reduction & SciML",
-    "WP3": "Solvers",
-    "WP4": "Inverse Problems & Data Assimilation",
+    "WP2": "Model order reduction, Surrogate, Scientific Machine Learning methods",
+    "WP3": "Solvers for linear algebra and multiphysics",
+    "WP4": "Combine Data and Models, Inverse Problems at Exascale",
     "WP5": "Optimization",
     "WP6": "Uncertainty Quantification",
-    "WP7": "Software, Benchmarking & Co-Design",
+    "WP7": "Showroom, Benchmarking and Co-Design coordination",
 }
 
 

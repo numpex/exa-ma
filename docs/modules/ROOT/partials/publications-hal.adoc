@@ -8,15 +8,15 @@ icon:list-ol[] Total publications: *38*
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:file-alt[size=2x,role=text-primary] *16* Preprint / unpublished
+icon:file-alt[size=2x,role=text-primary] *15* Preprint / unpublished
 
-_42.1% of total_
+_39.5% of total_
 ____
 
 ____
-icon:newspaper[size=2x,role=text-primary] *12* Article in journal
+icon:newspaper[size=2x,role=text-primary] *13* Article in journal
 
-_31.6% of total_
+_34.2% of total_
 ____
 
 ____
@@ -47,7 +47,7 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *12* (31.6%)
+* icon:fingerprint[] Publications with DOI: *13* (34.2%)
 * icon:file-pdf[] Publications with PDF: *34* (89.5%)
 * icon:lock-open[] Open Access: *37* (97.4%)
 
@@ -61,13 +61,18 @@ ____
 
 == 2026
 
-_2 publications_
+_3 publications_
 
-_1 Preprint / unpublished, 1 Article in journal_
+_2 Article in journal, 1 Preprint / unpublished_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
 |Title |Authors |Type |Links
+
+|*Mathematical modeling and simulation of coupled aqueous humor flow and temperature distribution in a realistic 3D human eye geometry*
+|Thomas Saigre, Vincent Chabannes, Christophe Prud'Homme et al.
+|Article in journal
+|link:https://hal.science/hal-04918559v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04918559/document[icon:file-pdf[title=PDF]]
 
 |*Multiword matrix multiplication over large finite fields in floating-point arithmetic*
 |Jérémy Berthomieu, Stef Graillat, Dimitri Lesnoff et al.
@@ -83,9 +88,9 @@ _1 Preprint / unpublished, 1 Article in journal_
 
 == 2025
 
-_24 publications_
+_23 publications_
 
-_11 Preprint / unpublished, 7 Article in journal, 2 Poster, 2 Conference paper, 1 HDR, 1 Report_
+_10 Preprint / unpublished, 7 Article in journal, 2 Poster, 2 Conference paper, 1 HDR, 1 Report_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
@@ -180,11 +185,6 @@ _11 Preprint / unpublished, 7 Article in journal, 2 Poster, 2 Conference paper, 
 |Patrick Amestoy, Antoine Jego, Jean-Yves L'Excellent et al.
 |Preprint / unpublished
 |link:https://hal.science/hal-05019106v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05019106/document[icon:file-pdf[title=PDF]]
-
-|*Mathematical modeling and simulation of coupled aqueous humor flow and temperature distribution in a realistic 3D human eye geometry*
-|Thomas Saigre, Vincent Chabannes, Christophe Prud'Homme et al.
-|Preprint / unpublished
-|link:https://hal.science/hal-04918559v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04918559/document[icon:file-pdf[title=PDF]]
 
 |*Enriching continuous Lagrange finite element approximation spaces using neural networks*
 |Hélène Barucq, Michel Duprez, Florian Faucher et al.
