@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>WP2: Model Order Reduction, Surrogates, and Scientific ML :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <title>WP2: Model Order Reduction, Surrogate, Scientific Machine Learning methods :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
     <link rel="canonical" href="https://numpex.github.io/exa-ma/workpackages/wp2.html">
     <meta name="generator" content="Antora 3.1.3">
 <link rel="stylesheet" href="../_/css/site.css">
@@ -11,90 +11,9 @@
 <!-- Font Awesome webfont CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
-<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
-<script src="../_/js/vendor/tabs-block-extension.js"></script>
-<script src="../_/js/vendor/tabs-block-behavior.js"></script>
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  messageStyle: "none",
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\\[','\\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    ignoreClass: "nostem|nolatexmath"
-  },
-  asciimath2jax: {
-    delimiters: [["\\$", "\\$"]],
-    ignoreClass: "nostem|noasciimath"
-  },
-
-  TeX: {
-      Macros: {
-      bold: ["{\\bf #1}",1],
-      calTh: "{\\mathcal{T}_h}",
-      card: ["{\\operatorname{card}(#1)}",1],
-      card: ["{\\operatorname{card}(#1)}",1],
-      Ck: ["{\\mathcal{C}^{#1}}",1],
-      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
-      diam: "{\\operatorname{diam}}",
-      dim: ["{\\operatorname{dim}(#1)}",1],
-      disp: ["{\\mathbf{#1}}",1],
-      domain: "{\\Omega}",
-      ds: "",
-      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
-      F:"{\\mathcal{F}}",
-      geo: "{\\mathrm{geo}}",
-      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
-      Id: "{\\mathcal{I}}",
-      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
-      jump: ["{[\\![ #1 ]\\!]}",1],
-      n:"{\\mathbf{n}}",
-      Ne: "{N_{\\mathrm{e}}}",
-      Next: "{\\mathrm{n}}",
-      nf: "{n_f}",
-      ngeo: "{n_{\\mathrm{geo}}}",
-      Nma: "{N_{\\mathrm{ma}}}",
-      NN: "{\\mathbb N}",
-      Nno: "{N_{\\mathrm{no}}}",
-      Nso: "{N_{\\mathrm{so}}}",
-      opdim: "{\\operatorname{dim}}",
-      p: "{\\mathrm{p}}",
-      P:"{\\mathcal{P}}",
-      Pch: ["{P^{#1}_{c,h}}",1],
-      Pcho: ["{P^{#1}_{c,h,0}}",1],
-      Pk: ["{\\mathcal{P}^{#1}}",1],
-      poly: ["{\\mathbb{#1}",1],
-      poly: ["{\\mathbb{#1}}",1],
-      prect: ["{\\left\\(#1\\right\\)}",1],
-      q:"{\\mathbf{q}}",
-      Qch: ["{Q^{#1}_{c,h}}",1],
-      Qk: ["{\\mathcal{Q}^{#1}}",1],
-      R: ["{\\mathbb{R}^{#1}}",1],
-      RR: "{\\mathbb R}",
-      set: ["{\\left\\{#1\\right\\}}",1],
-      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
-      T:"{\\mathcal{T}}",
-      tr: "{\\operatorname{tr}}",
-      v:"{\\mathbf{v}}",
-      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
-  },
-  extensions: ["mhchem.js"] 
-  }
-});
-</script>
-<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
-
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<!-- Alternating sections CSS -->
+<link rel="stylesheet" href="../_/css/workpackages.css">
 <script>var uiRootPath = '../_'</script>
 
   </head>
@@ -364,78 +283,275 @@ MathJax.Hub.Config({
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">WP2: Model Order Reduction, Surrogates, and Scientific ML</h1>
+<h1 class="page">WP2: Model Order Reduction, Surrogate, Scientific Machine Learning methods</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph lead">
+<p>WP2 develops non-intrusive approaches for ultra-fast surrogate models of complex physical problems, combining data-driven and model-driven techniques with a focus on physics-based neural network models.</p>
+</div>
+<h2 id="_recent_highlights_2024_2025" class="discrete">Recent Highlights (2024-2025)</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>WP2 accelerates simulations using reduced-order models and data-driven surrogates that remain faithful to physics.</p>
+<p><span class="icon text-primary"><i class="fa fa-layer-group fa-2x"></i></span> <strong>PINNs Innovation</strong></p>
+</div>
+<div class="paragraph">
+<p>Domain-decomposed PINNs with perfectly matched layers</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-rocket fa-2x"></i></span> <strong>Newton Solver Acceleration</strong></p>
+</div>
+<div class="paragraph">
+<p>Neural operators (FNO) accelerating Newton solvers: 80-200% CPU savings</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-wave-square fa-2x"></i></span> <strong>Navier-Stokes ROMs</strong></p>
+</div>
+<div class="paragraph">
+<p>Reduced-order models for parametric Navier-Stokes</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-warning"><i class="fa fa-chart-line fa-2x"></i></span> <strong>Exascale Optimization</strong></p>
+</div>
+<div class="paragraph">
+<p>Multi-fidelity surrogate-based optimization on 8000 GPUs (LUMI)</p>
+</div>
+</blockquote>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_objectives"><a class="anchor" href="#_objectives"></a>1. Objectives</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>WP2 uses <strong>non-intrusive</strong> approaches for designing ultra-fast surrogate models and strategies for leveraging these surrogates:</p>
+</div>
+<h3 id="_data_driven_techniques" class="discrete">Data-Driven Techniques</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Neural Galerkin and physics-informed neural networks</p>
+<p>Comparisons between reduced basis methods and neural network-based methods</p>
 </li>
 <li>
-<p>Non-intrusive reduced basis and multi-fidelity surrogates</p>
+<p>Deep learning operators (FNO, DeepONet) for PDE solutions</p>
 </li>
 <li>
-<p>Hybrid data- and physics-driven approaches for complex PDEs</p>
+<p>Data-driven model order reduction without intrusive access to simulators</p>
+</li>
+</ul>
+</div>
+<h3 id="_model_driven_techniques" class="discrete">Model-Driven Techniques</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Physics-informed neural networks (PINNs) respecting conservation laws</p>
+</li>
+<li>
+<p>Neural operators learning PDE operators from data</p>
+</li>
+<li>
+<p>Hybrid approaches combining physical constraints with data</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_leads_timeline"><a class="anchor" href="#_leads_timeline"></a>2. Leads &amp; Timeline</h2>
+<h2 id="_approach"><a class="anchor" href="#_approach"></a>2. Approach</h2>
 <div class="sectionbody">
+<div class="openblock section-gray">
+<div class="content">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-054286cfb1a4af3a711b1d63256760d11268948b.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_tasks"><a class="anchor" href="#_key_tasks"></a>3. Key Tasks</h2>
+<div class="sectionbody">
+<h3 id="_t2_1_physics_driven_deep_learning" class="discrete">T2.1: Physics-Driven Deep Learning</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Lead: Inria</p>
+<p>PINNs for PDEs with physical constraints</p>
 </li>
 <li>
-<p>Duration: Months 1-60</p>
+<p>Domain decomposition strategies for large-scale problems</p>
+</li>
+<li>
+<p>Perfectly matched layers for boundary conditions</p>
+</li>
+</ul>
+</div>
+<h3 id="_t2_2_neural_operators" class="discrete">T2.2: Neural Operators</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Fourier Neural Operators (FNO) for parametric PDEs</p>
+</li>
+<li>
+<p>DeepONet and operator learning frameworks</p>
+</li>
+<li>
+<p>Accelerating Newton iterations with learned operators</p>
+</li>
+</ul>
+</div>
+<h3 id="_t2_3_data_driven_model_order_reduction" class="discrete">T2.3: Data-Driven Model Order Reduction</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Proper Orthogonal Decomposition (POD)</p>
+</li>
+<li>
+<p>Dynamic Mode Decomposition (DMD)</p>
+</li>
+<li>
+<p>Autoencoders for nonlinear dimensionality reduction</p>
+</li>
+</ul>
+</div>
+<h3 id="_t2_4_non_intrusive_reduced_basis" class="discrete">T2.4: Non-Intrusive Reduced Basis</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Regression-based reduced basis methods</p>
+</li>
+<li>
+<p>Greedy sampling for snapshot selection</p>
+</li>
+<li>
+<p>A posteriori error estimation</p>
+</li>
+</ul>
+</div>
+<h3 id="_t2_5_multi_fidelity_modeling" class="discrete">T2.5: Multi-Fidelity Modeling</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Coupling low-fidelity and high-fidelity models</p>
+</li>
+<li>
+<p>Adaptive fidelity selection</p>
+</li>
+<li>
+<p>Cost-accuracy trade-offs for large ensembles</p>
+</li>
+</ul>
+</div>
+<h3 id="_t2_6_super_resolution_methods" class="discrete">T2.6: Super-Resolution Methods</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Real-time models with spatial/temporal upsampling</p>
+</li>
+<li>
+<p>Neural network-based mesh refinement</p>
+</li>
+<li>
+<p>Generative models for fine-scale details</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_recent_highlights"><a class="anchor" href="#_recent_highlights"></a>3. Recent Highlights</h2>
+<h2 id="_leads_partners"><a class="anchor" href="#_leads_partners"></a>4. Leads &amp; Partners</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Domain-decomposed PINNs with perfectly matched layers for high-dimensional advection-diffusion</p>
-</li>
-<li>
-<p>Neural operators (FNO) accelerating Newton solvers by 80-200% CPU savings</p>
-</li>
-<li>
-<p>Mesh-adaptation and preconditioning gains through ML-guided models</p>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lead Institution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inria</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Co-Leaders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UNISTRA, Sorbonne Université, CEA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Months 1-60</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>4. Next Steps</h2>
+<h2 id="_deliverables"><a class="anchor" href="#_deliverables"></a>5. Deliverables</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Title</th>
+<th class="tableblock halign-left valign-top">Due Dates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D2.1-S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Software packages for model reduction and scientific ML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M24, M36, M48, M60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D2.2-MR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activity reports (included in annual report D0.2-TR)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M12, M24, M36, M48, M60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D2.3-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benchmarking analysis report</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M12, M24, M36, M48, M60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_collaborations"><a class="anchor" href="#_collaborations"></a>6. Collaborations</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Expand PINN benchmarks to larger geometries from WP1</p>
+<p><strong>WP1</strong>: Mesh adaptation guided by ML surrogates</p>
 </li>
 <li>
-<p>Package surrogate models for WP7 CI/CD benches</p>
+<p><strong>WP3</strong>: Preconditioning with learned operators</p>
 </li>
 <li>
-<p>Publish reference notebooks in the showroom</p>
+<p><strong>WP4, WP5, WP6</strong>: Multi-fidelity models for inverse problems, optimization, and UQ</p>
+</li>
+<li>
+<p><strong>WP7</strong>: Showroom notebooks and benchmark integration</p>
 </li>
 </ul>
 </div>

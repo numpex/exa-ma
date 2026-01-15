@@ -11,90 +11,9 @@
 <!-- Font Awesome webfont CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
-<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
-<script src="../_/js/vendor/tabs-block-extension.js"></script>
-<script src="../_/js/vendor/tabs-block-behavior.js"></script>
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  messageStyle: "none",
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\\[','\\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    ignoreClass: "nostem|nolatexmath"
-  },
-  asciimath2jax: {
-    delimiters: [["\\$", "\\$"]],
-    ignoreClass: "nostem|noasciimath"
-  },
-
-  TeX: {
-      Macros: {
-      bold: ["{\\bf #1}",1],
-      calTh: "{\\mathcal{T}_h}",
-      card: ["{\\operatorname{card}(#1)}",1],
-      card: ["{\\operatorname{card}(#1)}",1],
-      Ck: ["{\\mathcal{C}^{#1}}",1],
-      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
-      diam: "{\\operatorname{diam}}",
-      dim: ["{\\operatorname{dim}(#1)}",1],
-      disp: ["{\\mathbf{#1}}",1],
-      domain: "{\\Omega}",
-      ds: "",
-      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
-      F:"{\\mathcal{F}}",
-      geo: "{\\mathrm{geo}}",
-      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
-      Id: "{\\mathcal{I}}",
-      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
-      jump: ["{[\\![ #1 ]\\!]}",1],
-      n:"{\\mathbf{n}}",
-      Ne: "{N_{\\mathrm{e}}}",
-      Next: "{\\mathrm{n}}",
-      nf: "{n_f}",
-      ngeo: "{n_{\\mathrm{geo}}}",
-      Nma: "{N_{\\mathrm{ma}}}",
-      NN: "{\\mathbb N}",
-      Nno: "{N_{\\mathrm{no}}}",
-      Nso: "{N_{\\mathrm{so}}}",
-      opdim: "{\\operatorname{dim}}",
-      p: "{\\mathrm{p}}",
-      P:"{\\mathcal{P}}",
-      Pch: ["{P^{#1}_{c,h}}",1],
-      Pcho: ["{P^{#1}_{c,h,0}}",1],
-      Pk: ["{\\mathcal{P}^{#1}}",1],
-      poly: ["{\\mathbb{#1}",1],
-      poly: ["{\\mathbb{#1}}",1],
-      prect: ["{\\left\\(#1\\right\\)}",1],
-      q:"{\\mathbf{q}}",
-      Qch: ["{Q^{#1}_{c,h}}",1],
-      Qk: ["{\\mathcal{Q}^{#1}}",1],
-      R: ["{\\mathbb{R}^{#1}}",1],
-      RR: "{\\mathbb R}",
-      set: ["{\\left\\{#1\\right\\}}",1],
-      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
-      T:"{\\mathcal{T}}",
-      tr: "{\\operatorname{tr}}",
-      v:"{\\mathbf{v}}",
-      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
-  },
-  extensions: ["mhchem.js"] 
-  }
-});
-</script>
-<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
-
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<!-- Alternating sections CSS -->
+<link rel="stylesheet" href="../_/css/workpackages.css">
 <script>var uiRootPath = '../_'</script>
 
   </head>
@@ -367,75 +286,309 @@ MathJax.Hub.Config({
 <h1 class="page">WP3: Solvers for Linear Algebra and Multiphysics</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph lead">
+<p>WP3 designs novel scalable solvers for sparse linear systems and coupled multiphysics problems, optimized for exascale architectures through communication reduction, mixed precision, and data compression techniques.</p>
+</div>
+<h2 id="_recent_highlights_2024_2025" class="discrete">Recent Highlights (2024-2025)</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>WP3 designs scalable solvers for sparse linear systems and coupled multiphysics, tuned for exascale architectures.</p>
+<p><span class="icon text-success"><i class="fa fa-tachometer-alt fa-2x"></i></span> <strong>50× Speedup Achievement</strong></p>
+</div>
+<div class="paragraph">
+<p>GenEO preconditioner: up to 50× speedup on large problems (45M DoFs, 2916 cores)</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-primary"><i class="fa fa-sitemap fa-2x"></i></span> <strong>Multilevel Schwarz</strong></p>
+</div>
+<div class="paragraph">
+<p>Robust multilevel Schwarz preconditioners with hierarchies of coarse spaces</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-code-branch fa-2x"></i></span> <strong>HPDDM Framework</strong></p>
+</div>
+<div class="paragraph">
+<p>HPDDM framework with high-performance domain decomposition methods</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-warning"><i class="fa fa-sliders-h fa-2x"></i></span> <strong>Mixed Precision</strong></p>
+</div>
+<div class="paragraph">
+<p>Mixed precision pathways integrated into solver kernels</p>
+</div>
+</blockquote>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_objectives"><a class="anchor" href="#_objectives"></a>1. Objectives</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>WP3 aims to design numerical kernels for solving linear systems that are mostly agnostic of the underlying models and approximation techniques:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Domain decomposition and multilevel preconditioners</p>
+<p>Generic solution techniques that don&#8217;t depend on function representation</p>
 </li>
 <li>
-<p>Mixed-precision and error-controlled solvers</p>
+<p>Reduction of computational complexity, memory footprint, and data movement</p>
 </li>
 <li>
-<p>Adaptive strategies for coupled multiphysics</p>
+<p>Communication avoiding/hiding strategies with mixed arithmetic and data compression</p>
+</li>
+<li>
+<p>Exploitation of extreme parallelism for coupled physics solvers</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_leads_timeline"><a class="anchor" href="#_leads_timeline"></a>2. Leads &amp; Timeline</h2>
+<h2 id="_approach"><a class="anchor" href="#_approach"></a>2. Approach</h2>
 <div class="sectionbody">
+<div class="openblock section-gray">
+<div class="content">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-fbbdc217320bd1f2a887976ffd19b69ed2b4dbeb.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_tasks"><a class="anchor" href="#_key_tasks"></a>3. Key Tasks</h2>
+<div class="sectionbody">
+<h3 id="_t3_1_domain_decomposition_methods_with_subspace_correction" class="discrete">T3.1: Domain Decomposition Methods with Subspace-Correction</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Lead: Inria</p>
+<p>Enhance scalability of multilevel domain decomposition methods</p>
 </li>
 <li>
-<p>Duration: Months 1-60</p>
+<p>Investigate robustness with inexact setups and preconditioner applications</p>
+</li>
+<li>
+<p>Study mixed arithmetic, inexact local solves, low-rank approximations</p>
+</li>
+<li>
+<p>Validation in HPDDM library and Maphys++</p>
+</li>
+</ul>
+</div>
+<h3 id="_t3_2_data_sparsity_multiple_precision_and_compression" class="discrete">T3.2: Data-Sparsity, Multiple Precision and Compression</h3>
+<div class="paragraph">
+<p><strong>T3.2.1: Modular Mixed Precision Krylov Solvers</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Develop subspace Krylov methods using mixed precision arithmetic</p>
+</li>
+<li>
+<p>Create modular analyses for composable parallel implementations</p>
+</li>
+<li>
+<p>Ensure final numerical quality of solutions</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>T3.2.2: Variable Accuracy Paradigm</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Decouple data representation from arithmetic</p>
+</li>
+<li>
+<p>Control memory footprint and communication volume</p>
+</li>
+<li>
+<p>Ensure user-prescribed accuracy guarantees</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>T3.2.3: Precision Auto-Tuning Tools</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Provide mixed precision versions of numerical codes</p>
+</li>
+<li>
+<p>Improve precision auto-tuning performance</p>
+</li>
+<li>
+<p>Develop methodologies for autotuning in coupled physics simulations</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>T3.2.4: Silent Errors in Solution Techniques</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Study and design silent error detection and correction at scale</p>
+</li>
+<li>
+<p>Use intrinsic properties of numerical schemes or statistical techniques</p>
+</li>
+</ul>
+</div>
+<h3 id="_t3_3_adaptive_solution_strategies_for_multiphysics_and_multiscale" class="discrete">T3.3: Adaptive Solution Strategies for Multiphysics and Multiscale</h3>
+<div class="paragraph">
+<p><strong>T3.3.1: Saddle Point Problems</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Investigate parallel efficiency of domain decomposition for saddle point problems</p>
+</li>
+<li>
+<p>Address coupled multiphysics problems</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>T3.3.2: Exascale Resolution for Partitioned Coupling</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Automatic tuning of performance parameters</p>
+</li>
+<li>
+<p>Handle coupling strengths, physics paths, adaptive convergence criteria</p>
+</li>
+<li>
+<p>Joint strategy with auto-tuning work from T3.2.3</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_recent_highlights"><a class="anchor" href="#_recent_highlights"></a>3. Recent Highlights</h2>
+<h2 id="_leads_partners"><a class="anchor" href="#_leads_partners"></a>4. Leads &amp; Partners</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lead Institution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inria</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Co-Leaders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UNISTRA, Sorbonne Université, CEA, École Polytechnique</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Months 1-60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_addressed_exascale_bottlenecks"><a class="anchor" href="#_addressed_exascale_bottlenecks"></a>5. Addressed Exascale Bottlenecks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>WP3 targets bottlenecks <strong>B7</strong> (Exascale Algorithms) and <strong>B9</strong> (Resilience, robustness and accuracy):</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>GenEO preconditioner delivering up to 50x speedup on large Cobra cavity cases (45M DoFs, 2916 cores)</p>
+<p>Communication reduction through domain decomposition methods</p>
 </li>
 <li>
-<p>Robust multiphysics coupling strategies validated with WP1 meshes and WP6 UQ cases</p>
+<p>Avoiding/hiding synchronization in parallel solvers</p>
 </li>
 <li>
-<p>Solver kernels prepared for heterogeneous GPU/CPU targets</p>
+<p>Improved computational efficiency with mixed precision and data compression</p>
+</li>
+<li>
+<p>Ensuring correctness and verifiability with silent error detection</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>4. Next Steps</h2>
+<h2 id="_deliverables"><a class="anchor" href="#_deliverables"></a>6. Deliverables</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Title</th>
+<th class="tableblock halign-left valign-top">Due Dates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D3.1-MR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activity reports (included in annual report D0.2-TR)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M12, M24, M36, M48, M60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D3.2-S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Software packages HPDDM, Maphys++, PROMISE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M24, M36, M48, M60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D3.3-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benchmarking analysis report (bottlenecks and breakthroughs)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M12, M24, M36, M48, M60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_collaborations"><a class="anchor" href="#_collaborations"></a>7. Collaborations</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Extend GenEO scaling studies to additional EuroHPC systems</p>
+<p><strong>ExaSoft</strong>: Low-level software infrastructure and performance portability</p>
 </li>
 <li>
-<p>Integrate mixed-precision pathways into WP7 benchmarking</p>
+<p><strong>WP1</strong>: Integration with nonconforming methods (T1.5) and multiphysics coupling (T1.7)</p>
 </li>
 <li>
-<p>Publish solver playbooks for application teams</p>
+<p><strong>WP2</strong>: Collaboration on mixed precision and variable accuracy paradigm</p>
+</li>
+<li>
+<p><strong>WP7</strong>: Benchmarking analysis and integration</p>
 </li>
 </ul>
 </div>

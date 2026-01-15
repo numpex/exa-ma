@@ -11,90 +11,9 @@
 <!-- Font Awesome webfont CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
-<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
-<script src="../_/js/vendor/tabs-block-extension.js"></script>
-<script src="../_/js/vendor/tabs-block-behavior.js"></script>
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  messageStyle: "none",
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\\[','\\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    ignoreClass: "nostem|nolatexmath"
-  },
-  asciimath2jax: {
-    delimiters: [["\\$", "\\$"]],
-    ignoreClass: "nostem|noasciimath"
-  },
-
-  TeX: {
-      Macros: {
-      bold: ["{\\bf #1}",1],
-      calTh: "{\\mathcal{T}_h}",
-      card: ["{\\operatorname{card}(#1)}",1],
-      card: ["{\\operatorname{card}(#1)}",1],
-      Ck: ["{\\mathcal{C}^{#1}}",1],
-      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
-      diam: "{\\operatorname{diam}}",
-      dim: ["{\\operatorname{dim}(#1)}",1],
-      disp: ["{\\mathbf{#1}}",1],
-      domain: "{\\Omega}",
-      ds: "",
-      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
-      F:"{\\mathcal{F}}",
-      geo: "{\\mathrm{geo}}",
-      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
-      Id: "{\\mathcal{I}}",
-      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
-      jump: ["{[\\![ #1 ]\\!]}",1],
-      n:"{\\mathbf{n}}",
-      Ne: "{N_{\\mathrm{e}}}",
-      Next: "{\\mathrm{n}}",
-      nf: "{n_f}",
-      ngeo: "{n_{\\mathrm{geo}}}",
-      Nma: "{N_{\\mathrm{ma}}}",
-      NN: "{\\mathbb N}",
-      Nno: "{N_{\\mathrm{no}}}",
-      Nso: "{N_{\\mathrm{so}}}",
-      opdim: "{\\operatorname{dim}}",
-      p: "{\\mathrm{p}}",
-      P:"{\\mathcal{P}}",
-      Pch: ["{P^{#1}_{c,h}}",1],
-      Pcho: ["{P^{#1}_{c,h,0}}",1],
-      Pk: ["{\\mathcal{P}^{#1}}",1],
-      poly: ["{\\mathbb{#1}",1],
-      poly: ["{\\mathbb{#1}}",1],
-      prect: ["{\\left\\(#1\\right\\)}",1],
-      q:"{\\mathbf{q}}",
-      Qch: ["{Q^{#1}_{c,h}}",1],
-      Qk: ["{\\mathcal{Q}^{#1}}",1],
-      R: ["{\\mathbb{R}^{#1}}",1],
-      RR: "{\\mathbb R}",
-      set: ["{\\left\\{#1\\right\\}}",1],
-      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
-      T:"{\\mathcal{T}}",
-      tr: "{\\operatorname{tr}}",
-      v:"{\\mathbf{v}}",
-      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
-  },
-  extensions: ["mhchem.js"] 
-  }
-});
-</script>
-<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
-
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<!-- Alternating sections CSS -->
+<link rel="stylesheet" href="../_/css/workpackages.css">
 <script>var uiRootPath = '../_'</script>
 
   </head>
@@ -367,75 +286,268 @@ MathJax.Hub.Config({
 <h1 class="page">WP6: Uncertainty Quantification</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph lead">
+<p>WP6 quantifies uncertainties in complex multiscale simulations through sensitivity analysis, surrogate modeling, and high-dimensional integration, leveraging exascale computing for tractable UQ workflows.</p>
+</div>
+<h2 id="_recent_highlights_2024_2025" class="discrete">Recent Highlights (2024-2025)</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>WP6 quantifies uncertainties in complex multiscale simulations and propagates them through the prediction pipeline.</p>
+<p><span class="icon text-primary"><i class="fa fa-chart-area fa-2x"></i></span> <strong>Kernel-Based Sensitivity</strong></p>
+</div>
+<div class="paragraph">
+<p>Global sensitivity analysis methods with kernel-based dependence measures</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-toolbox fa-2x"></i></span> <strong>UQ Platforms</strong></p>
+</div>
+<div class="paragraph">
+<p>Uranie and OpenTURNS platforms for uncertainty quantification</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-link fa-2x"></i></span> <strong>Integrated Analysis</strong></p>
+</div>
+<div class="paragraph">
+<p>Sensitivity analyses linked with WP3 solvers and WP2 surrogates</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-warning"><i class="fa fa-server fa-2x"></i></span> <strong>EuroHPC UQ</strong></p>
+</div>
+<div class="paragraph">
+<p>Initial UQ pipelines exercised on EuroHPC resources</p>
+</div>
+</blockquote>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_objectives"><a class="anchor" href="#_objectives"></a>1. Objectives</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Uncertainty Quantification includes several critical steps:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Kernel-based sensitivity analysis</p>
+<p>Uncertainty propagation through complex multiscale models</p>
 </li>
 <li>
-<p>Surrogate modeling for UQ and high-dimensional integration</p>
+<p>Sensitivity analysis to understand important often correlated factors</p>
 </li>
 <li>
-<p>Multi-arithmetic and multi-fidelity approaches</p>
+<p>Reduce uncertainty through modeling improvements in WP1</p>
+</li>
+<li>
+<p>Establish robust inversion or optimization under uncertainties</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_leads_timeline"><a class="anchor" href="#_leads_timeline"></a>2. Leads &amp; Timeline</h2>
+<h2 id="_approach"><a class="anchor" href="#_approach"></a>2. Approach</h2>
 <div class="sectionbody">
+<div class="openblock section-gray">
+<div class="content">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-969025ab0b9a07d334706f34798a1b958318f5ba.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_tasks"><a class="anchor" href="#_key_tasks"></a>3. Key Tasks</h2>
+<div class="sectionbody">
+<h3 id="_t6_1_kernel_based_sensitivity_analysis" class="discrete">T6.1: Kernel-Based Sensitivity Analysis</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Lead: École Polytechnique</p>
+<p>Handle very high-dimensional and multivariate data in exascale applications</p>
 </li>
 <li>
-<p>Duration: Months 1-60</p>
+<p>Develop tractable extensions of sensitivity analysis built upon kernel-based dependence measures</p>
+</li>
+<li>
+<p>Investigate optimized computing schemes of high-dimensional integrals</p>
+</li>
+<li>
+<p>Support uncertainty propagation step</p>
+</li>
+</ul>
+</div>
+<h3 id="_t6_2_uq_in_a_pde_solving_framework" class="discrete">T6.2: UQ in a PDE Solving Framework</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Propagate uncertainties (initial conditions, coefficients) in complex PDE solutions</p>
+</li>
+<li>
+<p>Use machine learning and stochastic spectral methods for suitable approximations</p>
+</li>
+<li>
+<p>Address calibration challenges that exceed underlying problem size by orders of magnitude</p>
+</li>
+<li>
+<p>Make HPC strategies mandatory for tractable solutions</p>
+</li>
+</ul>
+</div>
+<h3 id="_t6_3_surrogate_modeling_for_uq" class="discrete">T6.3: Surrogate Modeling for UQ</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Address complex multi-physics and/or multi-scale problems with coupled, nested and chained numerical codes</p>
+</li>
+<li>
+<p>Build and calibrate global metamodel assembling all prediction uncertainties</p>
+</li>
+<li>
+<p>Requires HPC for this formidable task</p>
+</li>
+</ul>
+</div>
+<h3 id="_t6_4_acceleration_via_exascale_calculations" class="discrete">T6.4: Acceleration via Exascale Calculations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrate methodological developments of Tasks 6.1 to 6.3</p>
+</li>
+<li>
+<p>Use opensource platforms Uranie and OpenTURNS dedicated to uncertainty quantification</p>
+</li>
+<li>
+<p>Take advantage of exascale computational properties</p>
+</li>
+<li>
+<p>Conduct benchmarking on exascale applications</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_recent_highlights"><a class="anchor" href="#_recent_highlights"></a>3. Recent Highlights</h2>
+<h2 id="_leads_partners"><a class="anchor" href="#_leads_partners"></a>4. Leads &amp; Partners</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lead Institution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">École Polytechnique</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Co-Leaders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CEA, UNISTRA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Months 1-60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_addressed_exascale_bottlenecks"><a class="anchor" href="#_addressed_exascale_bottlenecks"></a>5. Addressed Exascale Bottlenecks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>WP6 targets bottlenecks <strong>B8</strong> (Discovery, design, and decision algorithms) and <strong>B13</strong> (Opportunity to integrate uncertainties):</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Sensitivity analyses linked with WP3 solvers and WP2 surrogates</p>
+<p>Enabling ensembles of many small runs for UQ</p>
 </li>
 <li>
-<p>Initial UQ pipelines exercised on EuroHPC resources</p>
+<p>Integrating uncertainties directly into core calculations</p>
 </li>
 <li>
-<p>Shared UQ components prepared for WP7 benchmarking</p>
+<p>Handling high-dimensional integrals at scale</p>
+</li>
+<li>
+<p>Efficient parameter sweeps for sensitivity analysis</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>4. Next Steps</h2>
+<h2 id="_deliverables"><a class="anchor" href="#_deliverables"></a>6. Deliverables</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Title</th>
+<th class="tableblock halign-left valign-top">Due Dates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D6.1-MR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activity reports (included in annual report D0.2-TR)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M24, M36, M48, M60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D6.2-S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Software release of URANIE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M48, M60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D6.3-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benchmarking analysis report (bottlenecks and breakthroughs)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M12, M24, M36, M48, M60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_collaborations"><a class="anchor" href="#_collaborations"></a>7. Collaborations</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Expand UQ benchmarks with additional industrial test cases</p>
+<p><strong>WP1</strong>: Modeling improvements to reduce uncertainty</p>
 </li>
 <li>
-<p>Provide ready-to-run sensitivity examples in the showroom</p>
+<p><strong>WP2</strong>: Multi-fidelity models for UQ (T6.3)</p>
 </li>
 <li>
-<p>Align UQ metrics with WP0 reporting for impact tracking</p>
+<p><strong>WP4</strong>: Shared interest in stochastic methods and uncertainty integration</p>
+</li>
+<li>
+<p><strong>WP5</strong>: Optimization under uncertainty</p>
+</li>
+<li>
+<p><strong>WP7</strong>: Benchmarking analysis and integration</p>
 </li>
 </ul>
 </div>

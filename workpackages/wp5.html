@@ -11,90 +11,9 @@
 <!-- Font Awesome webfont CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
-<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
-<script src="../_/js/vendor/tabs-block-extension.js"></script>
-<script src="../_/js/vendor/tabs-block-behavior.js"></script>
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  messageStyle: "none",
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\\[','\\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    ignoreClass: "nostem|nolatexmath"
-  },
-  asciimath2jax: {
-    delimiters: [["\\$", "\\$"]],
-    ignoreClass: "nostem|noasciimath"
-  },
-
-  TeX: {
-      Macros: {
-      bold: ["{\\bf #1}",1],
-      calTh: "{\\mathcal{T}_h}",
-      card: ["{\\operatorname{card}(#1)}",1],
-      card: ["{\\operatorname{card}(#1)}",1],
-      Ck: ["{\\mathcal{C}^{#1}}",1],
-      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
-      diam: "{\\operatorname{diam}}",
-      dim: ["{\\operatorname{dim}(#1)}",1],
-      disp: ["{\\mathbf{#1}}",1],
-      domain: "{\\Omega}",
-      ds: "",
-      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
-      F:"{\\mathcal{F}}",
-      geo: "{\\mathrm{geo}}",
-      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
-      Id: "{\\mathcal{I}}",
-      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
-      jump: ["{[\\![ #1 ]\\!]}",1],
-      n:"{\\mathbf{n}}",
-      Ne: "{N_{\\mathrm{e}}}",
-      Next: "{\\mathrm{n}}",
-      nf: "{n_f}",
-      ngeo: "{n_{\\mathrm{geo}}}",
-      Nma: "{N_{\\mathrm{ma}}}",
-      NN: "{\\mathbb N}",
-      Nno: "{N_{\\mathrm{no}}}",
-      Nso: "{N_{\\mathrm{so}}}",
-      opdim: "{\\operatorname{dim}}",
-      p: "{\\mathrm{p}}",
-      P:"{\\mathcal{P}}",
-      Pch: ["{P^{#1}_{c,h}}",1],
-      Pcho: ["{P^{#1}_{c,h,0}}",1],
-      Pk: ["{\\mathcal{P}^{#1}}",1],
-      poly: ["{\\mathbb{#1}",1],
-      poly: ["{\\mathbb{#1}}",1],
-      prect: ["{\\left\\(#1\\right\\)}",1],
-      q:"{\\mathbf{q}}",
-      Qch: ["{Q^{#1}_{c,h}}",1],
-      Qk: ["{\\mathcal{Q}^{#1}}",1],
-      R: ["{\\mathbb{R}^{#1}}",1],
-      RR: "{\\mathbb R}",
-      set: ["{\\left\\{#1\\right\\}}",1],
-      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
-      T:"{\\mathcal{T}}",
-      tr: "{\\operatorname{tr}}",
-      v:"{\\mathbf{v}}",
-      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
-  },
-  extensions: ["mhchem.js"] 
-  }
-});
-</script>
-<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
-
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<!-- Alternating sections CSS -->
+<link rel="stylesheet" href="../_/css/workpackages.css">
 <script>var uiRootPath = '../_'</script>
 
   </head>
@@ -367,75 +286,300 @@ MathJax.Hub.Config({
 <h1 class="page">WP5: Optimization</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph lead">
+<p>WP5 advances exascale-ready optimization methods for continuous, combinatorial, and mixed problems, with surrogate-based and AI-driven approaches.</p>
+</div>
+<h2 id="_recent_highlights_2024_2025" class="discrete">Recent Highlights (2024-2025)</h2>
+<div class="exampleblock grid grid-3 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>WP5 advances exascale-ready optimization methods for continuous, combinatorial, and mixed problems, including AI-driven pipelines.</p>
+<p><span class="icon text-primary"><i class="fa fa-robot fa-2x"></i></span> <strong>Bayesian at LUMI</strong></p>
+</div>
+<div class="paragraph">
+<p>Bayesian optimization at 8000 GPUs on LUMI supercomputer with fractal decomposition</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-link fa-2x"></i></span> <strong>WP2 Integration</strong></p>
+</div>
+<div class="paragraph">
+<p>Surrogate-based workflows coupled with WP2 ML models</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-bolt fa-2x"></i></span> <strong>Simulation-Based</strong></p>
+</div>
+<div class="paragraph">
+<p>High-performance simulation-based optimization</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-warning"><i class="fa fa-brain fa-2x"></i></span> <strong>Deep GPs</strong></p>
+</div>
+<div class="paragraph">
+<p>Multi-fidelity modeling with deep Gaussian processes</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-danger"><i class="fa fa-cogs fa-2x"></i></span> <strong>AutoML for HPC</strong></p>
+</div>
+<div class="paragraph">
+<p>AutoML experiments on HPC software parameter tuning</p>
+</div>
+</blockquote>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_objectives"><a class="anchor" href="#_objectives"></a>1. Objectives</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>WP5 focuses on designing and implementing exascale optimization algorithms for large-scale problems:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Decomposition-based and surrogate-assisted optimization</p>
+<p>Combinatorial, continuous and mixed optimization using exact and approximate algorithms</p>
 </li>
 <li>
-<p>Shape and topology optimization at scale</p>
+<p>Surrogate-based optimization using multi-fidelity models</p>
 </li>
 <li>
-<p>Optimization for AI (AutoML) and hybrid workflows</p>
+<p>Shape optimization for multiphysics problems</p>
+</li>
+<li>
+<p>AutoML for automatic design of deep neural networks</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_leads_timeline"><a class="anchor" href="#_leads_timeline"></a>2. Leads &amp; Timeline</h2>
+<h2 id="_approach"><a class="anchor" href="#_approach"></a>2. Approach</h2>
 <div class="sectionbody">
+<div class="openblock section-gray">
+<div class="content">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-5d50c5677736af9a58d53c834b8212da337b354b.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_tasks"><a class="anchor" href="#_key_tasks"></a>3. Key Tasks</h2>
+<div class="sectionbody">
+<h3 id="_t5_1_exascale_combinatorial_and_continuous_optimization" class="discrete">T5.1: Exascale Combinatorial and Continuous Optimization</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Lead: Inria</p>
+<p>Design general exascale optimization algorithms</p>
 </li>
 <li>
-<p>Duration: Months 1-60</p>
+<p>Exact algorithms: branch and bound, tree search</p>
+</li>
+<li>
+<p>Approximate algorithms: evolutionary algorithms, swarm intelligence</p>
+</li>
+<li>
+<p>Decomposition-based exascale optimization for large-scale problems (LOPs)</p>
+</li>
+<li>
+<p>Define efficient decomposition strategies in decision and objective spaces</p>
+</li>
+</ul>
+</div>
+<h3 id="_t5_2_exascale_surrogate_based_optimization" class="discrete">T5.2: Exascale Surrogate-Based Optimization</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Adapt SBO algorithms to exploit exascale HPC systems</p>
+</li>
+<li>
+<p>Evaluate multiple candidate solutions in each iteration</p>
+</li>
+<li>
+<p>Exploit multi-fidelity models (MFMs)</p>
+</li>
+<li>
+<p>Design new parallel SBO algorithms considering:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The surrogate</p>
+</li>
+<li>
+<p>The optimizer and its sampling strategy</p>
+</li>
+<li>
+<p>The coupling between them</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Use machine learning for expensive functions using SBO and MFMs</p>
+</li>
+</ul>
+</div>
+<h3 id="_t5_3_exascale_shape_optimization" class="discrete">T5.3: Exascale Shape Optimization</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Develop toolbox for shape optimization at exascale</p>
+</li>
+<li>
+<p>Study different meshes for state variable and design variable</p>
+</li>
+<li>
+<p>Use reduced models from WP2 (e.g., neural networks) for faster evaluations</p>
+</li>
+<li>
+<p>Find trade-off between cost and accuracy</p>
+</li>
+</ul>
+</div>
+<h3 id="_t5_4_exascale_optimization_for_automl" class="discrete">T5.4: Exascale Optimization for AutoML</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Develop optimization approaches for automatic design of deep neural networks (DNNs)</p>
+</li>
+<li>
+<p>Optimize hyper-parameters (AutoML)</p>
+</li>
+<li>
+<p>Address complex problems (dataset and network size)</p>
+</li>
+<li>
+<p>Improve DNN accuracy, reduce energy and inference time</p>
+</li>
+<li>
+<p>Improve robustness and solve large-scale/complex learning tasks</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_recent_highlights"><a class="anchor" href="#_recent_highlights"></a>3. Recent Highlights</h2>
+<h2 id="_leads_partners"><a class="anchor" href="#_leads_partners"></a>4. Leads &amp; Partners</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lead Institution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inria</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Co-Leaders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UNISTRA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Months 1-60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_addressed_exascale_bottlenecks"><a class="anchor" href="#_addressed_exascale_bottlenecks"></a>5. Addressed Exascale Bottlenecks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>WP5 targets bottlenecks <strong>B7, B9, B10, B13</strong>:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Bayesian optimization at scale, exercised on 8000 GPUs (LUMI) with fractal decomposition</p>
+<p><strong>B7 (Exascale Algorithms)</strong>: Redesigning optimization algorithms to improve scalability</p>
 </li>
 <li>
-<p>Surrogate-based workflows coupled with WP2 ML models and WP6 UQ</p>
+<p><strong>B9 (Resilience, robustness and accuracy)</strong>: Ensuring robust optimization with verifiable results</p>
 </li>
 <li>
-<p>Early AutoML experiments on HPC software parameter tuning</p>
+<p><strong>B10 (Scientific productivity)</strong>: Providing tools for scientists to use exascale systems productively</p>
+</li>
+<li>
+<p><strong>B13 (Opportunity to integrate uncertainties)</strong>: Optimization under uncertainty</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>4. Next Steps</h2>
+<h2 id="_deliverables"><a class="anchor" href="#_deliverables"></a>6. Deliverables</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Title</th>
+<th class="tableblock halign-left valign-top">Due Dates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D5.1-MR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activity reports (included in annual report D0.2-TR)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M12, M24, M36, M48, M60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D5.2-S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Software package for optimization and shape optimization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M36, M48, M60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D5.3-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benchmarking analysis report (bottlenecks and breakthroughs)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M12, M24, M36, M48, M60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_collaborations"><a class="anchor" href="#_collaborations"></a>7. Collaborations</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Broaden large-scale Bayesian optimization benchmarks</p>
+<p><strong>WP2</strong>: Use of reduced models and neural networks (T5.3), multi-fidelity models (T5.2)</p>
 </li>
 <li>
-<p>Integrate optimization loops with WP7 CI/CD runners</p>
+<p><strong>WP6</strong>: Optimization under uncertainty</p>
 </li>
 <li>
-<p>Publish reproducible optimization notebooks and parameter studies</p>
+<p><strong>WP7</strong>: Benchmarking analysis and integration</p>
+</li>
+<li>
+<p><strong>NumPEx Projects</strong>: ExaSoft, ExaDoST</p>
 </li>
 </ul>
 </div>

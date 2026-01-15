@@ -11,90 +11,9 @@
 <!-- Font Awesome webfont CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
-<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
-<script src="../_/js/vendor/tabs-block-extension.js"></script>
-<script src="../_/js/vendor/tabs-block-behavior.js"></script>
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  messageStyle: "none",
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\\[','\\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    ignoreClass: "nostem|nolatexmath"
-  },
-  asciimath2jax: {
-    delimiters: [["\\$", "\\$"]],
-    ignoreClass: "nostem|noasciimath"
-  },
-
-  TeX: {
-      Macros: {
-      bold: ["{\\bf #1}",1],
-      calTh: "{\\mathcal{T}_h}",
-      card: ["{\\operatorname{card}(#1)}",1],
-      card: ["{\\operatorname{card}(#1)}",1],
-      Ck: ["{\\mathcal{C}^{#1}}",1],
-      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
-      diam: "{\\operatorname{diam}}",
-      dim: ["{\\operatorname{dim}(#1)}",1],
-      disp: ["{\\mathbf{#1}}",1],
-      domain: "{\\Omega}",
-      ds: "",
-      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
-      F:"{\\mathcal{F}}",
-      geo: "{\\mathrm{geo}}",
-      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
-      Id: "{\\mathcal{I}}",
-      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
-      jump: ["{[\\![ #1 ]\\!]}",1],
-      n:"{\\mathbf{n}}",
-      Ne: "{N_{\\mathrm{e}}}",
-      Next: "{\\mathrm{n}}",
-      nf: "{n_f}",
-      ngeo: "{n_{\\mathrm{geo}}}",
-      Nma: "{N_{\\mathrm{ma}}}",
-      NN: "{\\mathbb N}",
-      Nno: "{N_{\\mathrm{no}}}",
-      Nso: "{N_{\\mathrm{so}}}",
-      opdim: "{\\operatorname{dim}}",
-      p: "{\\mathrm{p}}",
-      P:"{\\mathcal{P}}",
-      Pch: ["{P^{#1}_{c,h}}",1],
-      Pcho: ["{P^{#1}_{c,h,0}}",1],
-      Pk: ["{\\mathcal{P}^{#1}}",1],
-      poly: ["{\\mathbb{#1}",1],
-      poly: ["{\\mathbb{#1}}",1],
-      prect: ["{\\left\\(#1\\right\\)}",1],
-      q:"{\\mathbf{q}}",
-      Qch: ["{Q^{#1}_{c,h}}",1],
-      Qk: ["{\\mathcal{Q}^{#1}}",1],
-      R: ["{\\mathbb{R}^{#1}}",1],
-      RR: "{\\mathbb R}",
-      set: ["{\\left\\{#1\\right\\}}",1],
-      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
-      T:"{\\mathcal{T}}",
-      tr: "{\\operatorname{tr}}",
-      v:"{\\mathbf{v}}",
-      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
-  },
-  extensions: ["mhchem.js"] 
-  }
-});
-</script>
-<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
-
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<!-- Alternating sections CSS -->
+<link rel="stylesheet" href="../_/css/workpackages.css">
 <script>var uiRootPath = '../_'</script>
 
   </head>
@@ -367,78 +286,319 @@ MathJax.Hub.Config({
 <h1 class="page">WP1: Discretization</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph lead">
+<p>WP1 focuses on geometric domain representations (meshes), physics-based models, and space-time discretization methods optimized for exascale computing.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recent_highlights_2024_2025"><a class="anchor" href="#_recent_highlights_2024_2025"></a>1. Recent Highlights (2024-2025)</h2>
+<div class="sectionbody">
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>WP1 develops robust mesh generation, adaptive refinement, and high-order discretizations that minimize communication and exploit exascale hardware.</p>
+<p><span class="icon text-primary"><i class="fa fa-cube fa-2x"></i></span> <strong>CGAL 6.0 Release</strong></p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_objectives"><a class="anchor" href="#_objectives"></a>1. Objectives</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Reliable meshing from imperfect or CAD-heavy geometries</p>
-</li>
-<li>
-<p>Adaptive mesh refinement and anisotropy at scale</p>
-</li>
-<li>
-<p>High-order and spectral discretizations</p>
-</li>
-<li>
-<p>Parallel and asynchronous time integration</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_leads_timeline"><a class="anchor" href="#_leads_timeline"></a>2. Leads &amp; Timeline</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Lead: CEA</p>
-</li>
-<li>
-<p>Duration: Months 1-60</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_recent_highlights"><a class="anchor" href="#_recent_highlights"></a>3. Recent Highlights</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Feature-preserving alpha wrapping integrated in CGAL 6.0</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-city fa-2x"></i></span> <strong>City-Scale Meshing</strong></p>
+</div>
+<div class="paragraph">
+<p>Ktirio-geom pipeline for city-scale watertight meshes</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-server fa-2x"></i></span> <strong>EuroHPC Benchmarks</strong></p>
+</div>
+<div class="paragraph">
+<p>Thermal-bridge and ParMMG benchmarks on EuroHPC systems</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-warning"><i class="fa fa-project-diagram fa-2x"></i></span> <strong>Multiphysics Ready</strong></p>
+</div>
+<div class="paragraph">
+<p>Domain-decomposition meshing for multiphysics applications</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-danger"><i class="fa fa-fire fa-2x"></i></span> <strong>On the Road to Exascale</strong></p>
+</div>
+<div class="paragraph">
+<p>Thermomechanical simulations successfully scaled to over 4000 CPU cores</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_objectives"><a class="anchor" href="#_objectives"></a>2. Objectives</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The key objectives are twofold:</p>
+</div>
+<h3 id="_geometric_domain_representations" class="discrete">Geometric Domain Representations</h3>
+<div class="paragraph">
+<p><strong>Meshes</strong> are the main starting point for simulations. WP1 develops adaptive, multiresolution, robust-to-defects, and efficient parallel representations of large-scale models supporting:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Valid large-scale mesh generation from CAD or measurement data</p>
 </li>
 <li>
-<p>Ktirio-geom pipeline for city-scale watertight meshes deployed on EuroHPC systems</p>
+<p>Adaptive mesh refinement (AMR) for structured/unstructured grids</p>
 </li>
 <li>
-<p>Thermal-bridge and ParMMG benchmarks validating large-scale adaptivity</p>
+<p>Nonconforming methods for parallel efficiency</p>
+</li>
+<li>
+<p>All-hexahedral block grids for high-order methods</p>
+</li>
+</ul>
+</div>
+<h3 id="_physics_based_models" class="discrete">Physics-Based Models</h3>
+<div class="paragraph">
+<p><strong>Multiphysics coupling</strong> at multiple scales in space and time requires:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>High-order methods to increase computational intensity and reduce communications</p>
+</li>
+<li>
+<p>Nonconforming methods designed to avoid/reduce/minimize communications</p>
+</li>
+<li>
+<p>Parallel-in-time strategies for evolution equations</p>
+</li>
+<li>
+<p>Adaptive coupling techniques for multiphysics/multiscale problems</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>4. Next Steps</h2>
+<h2 id="_workflow"><a class="anchor" href="#_workflow"></a>3. Workflow</h2>
+<div class="sectionbody">
+<div class="openblock section-gray">
+<div class="content">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-2debd204a1ad4d31e0e62264304c23971adfd563.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_tasks"><a class="anchor" href="#_key_tasks"></a>4. Key Tasks</h2>
+<div class="sectionbody">
+<h3 id="_t1_1_mesh_generation" class="discrete">T1.1: Mesh Generation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Valid large-scale mesh generation from defect-laden CAD/measurement data</p>
+</li>
+<li>
+<p>Two-level mesh generation for nonconforming domain decomposition</p>
+</li>
+<li>
+<p>All-hexahedral block structured meshes</p>
+</li>
+</ul>
+</div>
+<h3 id="_t1_2_t1_3_adaptive_mesh_refinement" class="discrete">T1.2-T1.3: Adaptive Mesh Refinement</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Unstructured grids: Mmg/ParMmg scalability (billions of cells)</p>
+</li>
+<li>
+<p>Cartesian/block grids: Patch-based, cell-based, wavelet multiresolution</p>
+</li>
+<li>
+<p>Load-balancing algorithms for dynamic adaptation</p>
+</li>
+</ul>
+</div>
+<h3 id="_t1_4_finite_element_exascale_framework_feef" class="discrete">T1.4: Finite Element Exascale Framework (FEEF)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>High-order/spectral FEM on unstructured grids</p>
+</li>
+<li>
+<p>Full de Rham complex support</p>
+</li>
+<li>
+<p>Nonconforming methods with optimized kernels</p>
+</li>
+</ul>
+</div>
+<h3 id="_t1_5_nonconforming_methods" class="discrete">T1.5: Nonconforming Methods</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Trefftz, HDG, HHO, mortar element methods</p>
+</li>
+<li>
+<p>Improved conditioning for iterative solvers</p>
+</li>
+<li>
+<p>Integration with domain decomposition (WP3)</p>
+</li>
+</ul>
+</div>
+<h3 id="_t1_6_time_strategy" class="discrete">T1.6: Time-Strategy</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Parallel-in-time (parareal) for parabolic PDEs and Hamiltonian systems</p>
+</li>
+<li>
+<p>Error control for multiscale problems with relaxation sources</p>
+</li>
+<li>
+<p>Adaptive operator splitting and multiresolution schemes</p>
+</li>
+</ul>
+</div>
+<h3 id="_t1_7_multiphysics_coupling" class="discrete">T1.7: Multiphysics Coupling</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Partitioned discretization with field projections and conservations</p>
+</li>
+<li>
+<p>Adaptive high-order coupling for heterogeneous physics</p>
+</li>
+<li>
+<p>Multiscale coupling via discontinuous Galerkin and neural networks</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_leads_partners"><a class="anchor" href="#_leads_partners"></a>5. Leads &amp; Partners</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lead Institution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CEA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Co-Leaders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UNISTRA, INRIA, École Polytechnique, Sorbonne Université</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Months 1-60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_addressed_exascale_bottlenecks"><a class="anchor" href="#_addressed_exascale_bottlenecks"></a>6. Addressed Exascale Bottlenecks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>WP1 targets bottlenecks <strong>B2, B6, B7, B9, B10, B11-B13</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Communication reduction through high-order and nonconforming methods</p>
+</li>
+<li>
+<p>Data movement efficiency via adaptive representations</p>
+</li>
+<li>
+<p>Parallel scalability with AMR and domain decomposition</p>
+</li>
+<li>
+<p>Resilience through robust mesh generation algorithms</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deliverables"><a class="anchor" href="#_deliverables"></a>7. Deliverables</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Title</th>
+<th class="tableblock halign-left valign-top">Due Dates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D1.1-S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Software toolboxes for mesh generation/adaptation, space-time discretization and coupling</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M24, M36, M48, M60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D1.2-MR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activity reports (included in annual report D0.2-TR)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M12, M24, M36, M48, M60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D1.3-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benchmarking analysis report (bottlenecks and breakthroughs)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M12, M24, M36, M48, M60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_collaborations"><a class="anchor" href="#_collaborations"></a>8. Collaborations</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Broaden urban meshing benchmarks across additional EuroHPC sites</p>
+<p><strong>ExaSoft</strong>: Low-level software infrastructure and performance portability</p>
 </li>
 <li>
-<p>Integrate meshing outputs into WP3 solver pipelines</p>
+<p><strong>WP3</strong>: Solver integration for discretized systems</p>
 </li>
 <li>
-<p>Publish reproducible meshing recipes in the showroom</p>
+<p><strong>WP7</strong>: Benchmarking and CI/CD integration</p>
 </li>
 </ul>
 </div>
