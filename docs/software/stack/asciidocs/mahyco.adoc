@@ -1,0 +1,74 @@
+= MaHyCo Package
+
+== Description
+
+nan
+
+== Packaging
+
+* [ ] Packages exist
+* [ ] Packages published in easily usable repositories
+* [ ] Packages installation tested on supercomputers
+* [ ] Packages available in community repositories
+
+== Minimal Validation Tests
+
+* [ ] Unit tests exist
+* [x] CI exists
+* [ ] CI runs regularly (each new release)
+* [x] CI runs regularly (each commit)
+
+== Public Repository
+
+* [x] Publicly available source repository
+* [x] Supports contribution via pull requests
+
+Repository: https://github.com/cea-hpc/MaHyCo
+
+== Clearly-identified license
+
+* [x] License clearly stated
+* [ ] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX is used
+* [ ] REUSE is used
+
+  - OSS: apache-2
+
+== Minimal Documentation
+
+* [x] Documentation exists
+* [ ] Easily browsable online
+  - nan
+
+== Open Public Discussion Channel
+
+* [x] Channel exists
+* [x] Freely joinable without invitation
+  - nan
+
+== Metadata
+
+* [ ] The following metadata is available:
+  - Software name: ✅
+  - Description: ❌
+  - License: ✅
+  - Documentation URL: ❌
+  - Discussion channel URL: ❌
+  - Package repositories URLs: ✅
+  - Repository URL: ✅
+  - Autoevaluation using the list of criteria stated here: ✅
+
+* [ ] Uses codemeta format
+
+== API Compatibility Information
+
+* [ ] API changes documented
+* [ ] Semantic Versioning used
+* [ ] Clear release policy
+
+== Minimal Performance Tests
+
+* [ ] Tests exist
+* [ ] Scripts to automate tests on supercomputers
+* [ ] Scripts/tools easing portability to new hardware
+

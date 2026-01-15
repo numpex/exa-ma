@@ -1,0 +1,136 @@
+# GitHub Actions workflow for generating documentation pages
+# Triggered manually or on schedule to update pages from Google Sheets
+
+name: Generate Documentation
+
+on:
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (preview only)'
+        required: false
+        default: 'false'
+        type: boolean
+      filter_wp:
+        description: 'Filter by work package (1-7, leave empty for all)'
+        required: false
+        type: string
+
+  # Weekly schedule (Sundays at midnight UTC)
+  schedule:
+    - cron: '0 0 * * 0'
+
+  # Trigger on push to main when config changes
+  push:
+    branches:
+      - main
+    paths:
+      - 'harvest-config.yaml'
+
+env:
+  SHEET_ID: 19v57jpek52nQV2V0tBBON5ivGCz7Bqf3Gw-fHroVHkA
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        run: |
+          uv pip install -e . --system
+
+      - name: Preview generation (dry run)
+        if: github.event.inputs.dry_run == 'true'
+        run: |
+          FILTER_ARGS=""
+          if [ -n "${{ github.event.inputs.filter_wp }}" ]; then
+            FILTER_ARGS="--filter-wp ${{ github.event.inputs.filter_wp }}"
+          fi
+          exa-ma-harvest-software generate \
+            -s sheets:${{ env.SHEET_ID }} \
+            -o docs/modules/software/pages \
+            --antora \
+            --dry-run \
+            $FILTER_ARGS
+
+      - name: Generate documentation pages
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          FILTER_ARGS=""
+          if [ -n "${{ github.event.inputs.filter_wp }}" ]; then
+            FILTER_ARGS="--filter-wp ${{ github.event.inputs.filter_wp }}"
+          fi
+
+          CONFIG_ARGS=""
+          if [ -f harvest-config.yaml ]; then
+            CONFIG_ARGS="-c harvest-config.yaml"
+          fi
+
+          exa-ma-harvest-software generate \
+            -s sheets:${{ env.SHEET_ID }} \
+            -o docs/modules/software/pages \
+            --antora \
+            $FILTER_ARGS \
+            $CONFIG_ARGS
+
+      - name: Show generated files
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          echo "Generated framework pages:"
+          ls -la docs/modules/software/pages/frameworks/ 2>/dev/null || echo "  (none)"
+          echo ""
+          echo "Generated application pages:"
+          ls -la docs/modules/software/pages/applications/ 2>/dev/null || echo "  (none)"
+          echo ""
+          echo "Generated index pages:"
+          ls -la docs/modules/software/pages/*.adoc 2>/dev/null | grep -E "(frameworks|applications)\.adoc" || echo "  (none)"
+
+      - name: Commit and push changes
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add docs/modules/software/
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "docs: Update generated software pages from Google Sheets
+
+            Generated automatically by GitHub Actions.
+            Source: https://docs.google.com/spreadsheets/d/${{ env.SHEET_ID }}
+
+            Co-Authored-By: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+
+            git push
+          fi
+
+      - name: Summary
+        run: |
+          echo "## Documentation Generation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            echo "**Mode:** Dry run (preview only)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Mode:** Full generation" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Source:** [Google Sheets](https://docs.google.com/spreadsheets/d/${{ env.SHEET_ID }})" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Generated Files" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          find docs/modules/software/pages -name "*.adoc" -type f 2>/dev/null | head -30 || echo "(none)"
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
