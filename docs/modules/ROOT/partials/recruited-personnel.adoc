@@ -21,14 +21,14 @@ Hélène Barucq
 |*Simon*
 |Antoine
 |WP1: Discretization +
-WP3: Solvers
+WP3: Solvers for linear algebra and multiphysics
 |École Polytechnique
 |November 2024 - Present
 |Marc Massot
 
 |*Ballout*
 |Hassan
-|WP2: Model Order Reduction & SciML
+|WP2: Model order reduction, Surrogate, Scientific Machine Learning methods
 |Université de Strasbourg
 |October 2024 - September 2027
 |Yvon Maday +
@@ -37,7 +37,7 @@ Joubine Aghili
 
 |*Belieres*
 |Amaury
-|WP2: Model Order Reduction & SciML +
+|WP2: Model order reduction, Surrogate, Scientific Machine Learning methods +
 WP5: Optimization
 |Université de Strasbourg
 |October 2023 - September 2026
@@ -48,14 +48,14 @@ Christophe Prud'homme
 
 |*Hrebenshchykova*
 |Daria
-|WP2: Model Order Reduction & SciML
+|WP2: Model order reduction, Surrogate, Scientific Machine Learning methods
 |Université de Strasbourg
 |November 2024 - October 2027
 |Stéphane Lanteri
 
 |*Italiano*
 |Vincent
-|WP2: Model Order Reduction & SciML
+|WP2: Model order reduction, Surrogate, Scientific Machine Learning methods
 |Université de Strasbourg
 |October 2025 - Present
 |Emmanuel Franck +
@@ -63,35 +63,35 @@ Stephane Cotin
 
 |*Antoine dit Urban*
 |Brieuc
-|WP3: Solvers
+|WP3: Solvers for linear algebra and multiphysics
 |Inria
 |Project start - Present
 |Frédéric Nataf
 
 |*Caruso*
 |Tom
-|WP3: Solvers
+|WP3: Solvers for linear algebra and multiphysics
 |Inria
 |Project start - Present
 |Frédéric Nataf
 
 |*Tabouret*
 |Alexandre
-|WP3: Solvers
+|WP3: Solvers for linear algebra and multiphysics
 |Sorbonne Université
 |October 2025 - October 2028
 |Pierre Jolivet
 
 |*Doumbouya*
 |Mohamed
-|WP4: Inverse Problems & Data Assimilation
+|WP4: Combine Data and Models, Inverse Problems at Exascale
 |Inria
 |November 2025 - October 2028
 |Arthur Vidard
 
 |*Farba Seck*
 |Pape
-|WP4: Inverse Problems & Data Assimilation
+|WP4: Combine Data and Models, Inverse Problems at Exascale
 |Inria
 |October 2025 - Present
 |Hélène Barucq +
@@ -125,35 +125,35 @@ _5 personnel_
 |*Georgiadis*
 |Christos
 |WP1: Discretization +
-WP7: Software, Benchmarking & Co-Design
+WP7: Showroom, Benchmarking and Co-Design coordination
 |Inria
 |May 2024 - April 2025
 |Pierre Alliez
 
 |*Truong*
 |Dinh Hung T
-|WP2: Model Order Reduction & SciML
+|WP2: Model order reduction, Surrogate, Scientific Machine Learning methods
 |Université de Strasbourg
 |October 2023 - Present
 |Emmanuel Franck
 
 |*Chen*
 |Xinye
-|WP3: Solvers
+|WP3: Solvers for linear algebra and multiphysics
 |Sorbonne Université
 |Project start - Present
 |Fabienne Jezequel
 
 |*Kiran*
 |Utpal
-|WP3: Solvers
+|WP3: Solvers for linear algebra and multiphysics
 |CEA
 |February 2025 - Present
 |Vincent Faucher
 
 |*Spies*
 |Lukas
-|WP3: Solvers
+|WP3: Solvers for linear algebra and multiphysics
 |Inria
 |March 2025 - February 2026
 |
@@ -171,8 +171,8 @@ _8 personnel_
 
 |*Antonczak*
 |Juliette
-|WP0: Project Office +
-WP7: Software, Benchmarking & Co-Design
+|WP0: Project Management +
+WP7: Showroom, Benchmarking and Co-Design coordination
 |Université de Strasbourg
 |July 2025 - Present
 |Christophe Prud'homme
@@ -180,7 +180,7 @@ WP7: Software, Benchmarking & Co-Design
 |*Cladellas*
 |Javier
 |WP1: Discretization +
-WP7: Software, Benchmarking & Co-Design
+WP7: Showroom, Benchmarking and Co-Design coordination
 |Université de Strasbourg
 |Project start - Present
 |Christophe Prud'homme +
@@ -205,9 +205,9 @@ Pierre Alliez +
 |*Saigre*
 |Thomas
 |WP1: Discretization +
-WP2: Model Order Reduction & SciML +
-WP3: Solvers +
-WP7: Software, Benchmarking & Co-Design
+WP2: Model order reduction, Surrogate, Scientific Machine Learning methods +
+WP3: Solvers for linear algebra and multiphysics +
+WP7: Showroom, Benchmarking and Co-Design coordination
 |Université de Strasbourg
 |January 2024 - September 2025
 |Christophe Prud'homme +
@@ -215,22 +215,22 @@ Vincent Chabannes
 
 |*Fabrizzi*
 |Erik
-|WP3: Solvers
+|WP3: Solvers for linear algebra and multiphysics
 |Sorbonne Université
 |October 2025 - Present
 |Pierre Jolivet
 
 |*Gouinguenet*
 |Arthur
-|WP3: Solvers +
-WP7: Software, Benchmarking & Co-Design
+|WP3: Solvers for linear algebra and multiphysics +
+WP7: Showroom, Benchmarking and Co-Design coordination
 |Inria
 |October 2025 - September 2027
 |Luc Giraud
 
 |*Zanella*
 |Raphaël
-|WP3: Solvers
+|WP3: Solvers for linear algebra and multiphysics
 |Sorbonne Université
 |Project start - September 2025
 |Pierre Jolivet
