@@ -88,6 +88,14 @@ sources:
       active_only: false
 
   # ============================================================
+  # External Partners (Google Sheets)
+  # ============================================================
+  partners:
+    type: google_sheets
+    sheet_id: "1bigC5N-5Zg2SGfUvpyMvYQPHvrSCqY2K"
+    sheet_name: "Overview"
+
+  # ============================================================
   # News & Events
   # ============================================================
   # Events are maintained in a separate file for easy editing

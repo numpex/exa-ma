@@ -2,7 +2,10 @@
 * xref:index.adoc[Home]
 * About Exa-MA
 ** xref:team.adoc[Team]
-** xref:partners.adoc[Partners]
+** xref:consortium.adoc[Consortium]
+** xref:external-partners.adoc[External Partners]
+** xref:sab.adoc[Scientific Advisory Board]
+** xref:collaborative-projects.adoc[Collaborative Projects]
 ** xref:contact.adoc[Contact]
 * xref:workpackages.adoc[Work Packages]
 ** xref:workpackages.adoc[Overview]

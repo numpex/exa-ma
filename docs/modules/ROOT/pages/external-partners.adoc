@@ -1,0 +1,16 @@
+= External Partners
+:page-layout: default
+:page-tags: info
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-handshake
+:description: External partners collaborating with the Exa-MA project.
+:page-alternating-sections: true
+:icons: font
+:toclevels: 0
+
+[.lead]
+The Exa-MA project collaborates with numerous external partners from industry, research organizations, and academia.
+
+include::ROOT:partial$external-partners-content.adoc[]
+
+For collaboration inquiries, please visit our xref:contact.adoc[contact page].

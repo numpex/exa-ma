@@ -37,6 +37,13 @@ from .news import (
     generate_recent_table,
     DEFAULT_CONFIG as NEWS_DEFAULT_CONFIG,
 )
+from .partners import (
+    fetch_partners,
+    fetch_partners_with_config,
+    generate_external_partners_section,
+    DEFAULT_SHEET_ID as PARTNERS_DEFAULT_SHEET_ID,
+    DEFAULT_SHEET_NAME as PARTNERS_DEFAULT_SHEET_NAME,
+)
 
 # Default unified config path
 DEFAULT_EXAMA_CONFIG = Path(__file__).parent.parent / "exama.yaml"
@@ -204,6 +211,70 @@ def harvest_news(args: argparse.Namespace) -> int:
     return 0
 
 
+def harvest_partners(args: argparse.Namespace) -> int:
+    """Run external partners harvesting."""
+    # Use unified config if --config is specified or exama.yaml exists
+    exama_config_path = getattr(args, 'config', None)
+
+    if exama_config_path or DEFAULT_EXAMA_CONFIG.exists():
+        collection = fetch_partners_with_config(config_path=exama_config_path or DEFAULT_EXAMA_CONFIG)
+    else:
+        collection = fetch_partners(
+            sheet_id=args.sheet_id,
+            sheet_name=args.sheet_name,
+        )
+
+    partners = collection.partners
+    if not partners:
+        print("No external partners found.")
+        return 1
+
+    # Print statistics
+    print(f"\nExternal Partners Statistics:")
+    print(f"  Total: {len(partners)}")
+
+    by_type = collection.by_type
+    print(f"\n  By type:")
+    for ptype, plist in by_type.items():
+        print(f"    {ptype.value}: {len(plist)}")
+
+    print(f"\n  Co-funding arrangements: {len(collection.cofunding_partners)}")
+
+    # Generate output
+    if args.format == "json":
+        import json
+        data = {
+            "partners": [p.model_dump(mode="json") for p in partners],
+            "statistics": {
+                "total": len(partners),
+                "by_type": {ptype.value: len(plist) for ptype, plist in by_type.items()},
+                "cofunding_count": len(collection.cofunding_partners),
+            },
+        }
+        output = json.dumps(data, indent=2, default=str)
+        if args.output:
+            Path(args.output).write_text(output)
+            print(f"\nJSON output written to: {args.output}")
+        else:
+            print("\n" + output)
+    else:
+        # AsciiDoc output
+        partial = getattr(args, 'partial', False)
+        content = generate_external_partners_section(
+            collection,
+            include_all=not args.cofunding_only,
+            partial=partial,
+        )
+
+        if args.output:
+            Path(args.output).write_text(content)
+            print(f"\nAsciiDoc output written to: {args.output}")
+        else:
+            print("\n" + content)
+
+    return 0
+
+
 def harvest_all(args: argparse.Namespace) -> int:
     """Run all harvesting operations."""
     print("=" * 60)
@@ -233,7 +304,7 @@ def harvest_all(args: argparse.Namespace) -> int:
     errors = 0
 
     # HAL Publications
-    print("\n[1/4] Harvesting HAL publications...")
+    print("\n[1/5] Harvesting HAL publications...")
     print("-" * 40)
 
     if exama_config:
@@ -255,7 +326,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # GitHub Releases
-    print("\n[2/4] Harvesting GitHub releases...")
+    print("\n[2/5] Harvesting GitHub releases...")
     print("-" * 40)
 
     if exama_config and exama_config.sources.deliverables.items:
@@ -274,7 +345,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # Team (recruited personnel)
-    print("\n[3/4] Harvesting team data...")
+    print("\n[3/5] Harvesting team data...")
     print("-" * 40)
 
     try:
@@ -296,8 +367,35 @@ def harvest_all(args: argparse.Namespace) -> int:
         print(f"Error harvesting team data: {e}")
         errors += 1
 
+    # External Partners
+    print("\n[4/5] Harvesting external partners...")
+    print("-" * 40)
+
+    partners = []
+    try:
+        if exama_config:
+            partners_collection = fetch_partners_with_config(config_path=exama_config_path or DEFAULT_EXAMA_CONFIG)
+        else:
+            partners_collection = fetch_partners()
+
+        partners = partners_collection.partners
+        if partners:
+            print(f"Found {len(partners)} external partners")
+            by_type = partners_collection.by_type
+            for ptype, plist in by_type.items():
+                print(f"  {ptype.value}: {len(plist)}")
+            partners_output = output_dir / "external-partners-content.adoc"
+            content = generate_external_partners_section(partners_collection, include_all=True, partial=True)
+            partners_output.write_text(content)
+            print(f"  Saved to: {partners_output}")
+        else:
+            print("No external partners found!")
+    except Exception as e:
+        print(f"Error harvesting partners: {e}")
+        errors += 1
+
     # News and Events
-    print("\n[4/4] Harvesting news and events...")
+    print("\n[5/5] Harvesting news and events...")
     print("-" * 40)
 
     news_events = []
@@ -323,6 +421,7 @@ def harvest_all(args: argparse.Namespace) -> int:
     print(f"  Publications: {len(publications) if publications else 0}")
     print(f"  Releases: {len(releases) if releases else 0}")
     print(f"  Personnel: {len(personnel) if 'personnel' in dir() and personnel else 0}")
+    print(f"  Partners: {len(partners) if partners else 0}")
     print(f"  Events: {len(news_events) if news_events else 0}")
     if errors:
         print(f"  Errors: {errors}")
@@ -342,6 +441,7 @@ Examples:
   exa-ma-harvest hal -o publications.adoc
   exa-ma-harvest releases -o deliverables.adoc --latest-only
   exa-ma-harvest team --funded-only
+  exa-ma-harvest partners -o external-partners.adoc
   exa-ma-harvest news --partials-dir ./partials
   exa-ma-harvest all --output-dir ./output
   exa-ma-harvest all --config exama.yaml
@@ -491,6 +591,41 @@ Legacy individual commands (deprecated, use subcommands above):
         help="Output directory for Antora partial files",
     )
 
+    # Partners subcommand
+    partners_parser = subparsers.add_parser(
+        "partners", help="Harvest external partners from Google Sheets"
+    )
+    partners_parser.add_argument(
+        "-o", "--output", help="Output file path (prints to stdout if not specified)"
+    )
+    partners_parser.add_argument(
+        "-f",
+        "--format",
+        choices=["json", "asciidoc"],
+        default="asciidoc",
+        help="Output format (default: asciidoc)",
+    )
+    partners_parser.add_argument(
+        "--sheet-id",
+        default=PARTNERS_DEFAULT_SHEET_ID,
+        help=f"Google Sheets document ID (default: {PARTNERS_DEFAULT_SHEET_ID})",
+    )
+    partners_parser.add_argument(
+        "--sheet-name",
+        default=PARTNERS_DEFAULT_SHEET_NAME,
+        help=f"Sheet name to read (default: {PARTNERS_DEFAULT_SHEET_NAME})",
+    )
+    partners_parser.add_argument(
+        "--cofunding-only",
+        action="store_true",
+        help="Only include partners with co-funding arrangements",
+    )
+    partners_parser.add_argument(
+        "--partial",
+        action="store_true",
+        help="Generate partial content without page header (for inclusion in other pages)",
+    )
+
     # All subcommand (run everything)
     all_parser = subparsers.add_parser("all", help="Run all harvesting operations")
     all_parser.add_argument(
@@ -533,6 +668,8 @@ Legacy individual commands (deprecated, use subcommands above):
         return harvest_team(args)
     elif args.command == "news":
         return harvest_news(args)
+    elif args.command == "partners":
+        return harvest_partners(args)
     elif args.command == "all":
         return harvest_all(args)
 

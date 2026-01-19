@@ -40,6 +40,49 @@ The first day opened with a welcome lunch followed by:
 * **WP5 - Optimization**: El Ghazali Talbi
 * **WP6 - Uncertainty Quantification**: Josselin Garnier and Clément Gauchy
 
+=== Day 1 Presentations
+
+[.striped,cols="1,3,2,1",options="header"]
+|===
+|Time |Presentation |Presenters |Slides
+
+|13:45-14:15
+|NumPEx & Exa-MA Refresher
+|Hélène Barucq, Christophe Prud'homme
+|xref:attachment$news/2026/ga/slides_wp0.pdf[icon:file-pdf[title=PDF]]
+
+|14:30-14:45
+|WP1 Discretization: progress, highlights & next steps
+|Pierre Alliez, Isabelle Ramière
+|xref:attachment$news/2026/ga/slides_wp1.pdf[icon:file-pdf[title=PDF]]
+
+|14:45-15:00
+|WP2 Model Order Reduction & Scientific ML: progress, highlights & next steps
+|Stéphane Lanteri, Emmanuel Franck
+|xref:attachment$news/2026/ga/slides_wp2.pdf[icon:file-pdf[title=PDF]]
+
+|15:00-15:15
+|WP3 Solvers for Linear Algebra: progress, highlights & next steps
+|Vincent Faucher, Luc Giraud, Frédéric Nataf
+|xref:attachment$news/2026/ga/slides_wp3.pdf[icon:file-pdf[title=PDF]]
+
+|15:15-15:30
+|WP4 Data-Model Integration: progress, highlights & next steps
+|Mark Asch, Arthur Vidard
+|xref:attachment$news/2026/ga/slides_wp4.pdf[icon:file-pdf[title=PDF]]
+
+|15:30-15:45
+|WP5 Optimization: progress, highlights & next steps
+|El Ghazali Talbi
+|xref:attachment$news/2026/ga/slides_wp5.pdf[icon:file-pdf[title=PDF]]
+
+|15:45-16:00
+|WP6 Uncertainty Quantification: progress, highlights & next steps
+|Josselin Garnier, Clément Gauchy
+|xref:attachment$news/2026/ga/slides_wp6.pdf[icon:file-pdf[title=PDF]]
+
+|===
+
 === Intra-WP Meetings
 
 The afternoon concluded with parallel intra-WP meetings (16:30-18:00) followed by a consortium dinner.
@@ -50,10 +93,31 @@ The afternoon concluded with parallel intra-WP meetings (16:30-18:00) followed b
 
 Morning sessions featured detailed presentations of the project's core computational frameworks:
 
-* **Feel++ Framework**: Christophe Prud'homme and Javier Cladellas
-* **Scimba Framework**: Emmanuel Franck and Victor Michel-Dansac
-* **Composyx Framework**: Luc Giraud and Arthur Gouinguenet
-* **Uranie Framework**: Clément Gauchy
+[.striped,cols="1,3,2,1",options="header"]
+|===
+|Time |Presentation |Presenters |Slides
+
+|9:00-9:15
+|Feel++ Framework
+|Christophe Prud'homme, Javier Cladellas
+|
+
+|9:15-9:30
+|Scimba Framework
+|Emmanuel Franck, Victor Michel-Dansac
+|xref:attachment$news/2026/ga/scimba.pdf[icon:file-pdf[title=PDF]]
+
+|9:30-9:45
+|Composyx Framework
+|Luc Giraud, Arthur Gouinguenet
+|
+
+|9:45-10:00
+|Uranie Framework
+|Clément Gauchy
+|
+
+|===
 
 === Breakout Sessions
 
@@ -121,7 +185,7 @@ Multiple sessions featured collaboration across work packages (e.g., WP1 × WP2 
 
 == Resources
 
-* **Full Agenda PDF**: xref:attachment$news/2026/exa-ma-2026-ga-agenda.pdf[Download complete agenda with schedule and room details]
+* **Full Agenda PDF**: xref:attachment$news/2026/ga/agenda.pdf[Download complete agenda with schedule and room details]
 * **Slides**: Available in the project repository
 * **Meeting Minutes**: Comprehensive notes from all sessions
 * **Photos**: Event documentation and team photos

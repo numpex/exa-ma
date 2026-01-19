@@ -1,0 +1,226 @@
+= Scientific Advisory Board
+:page-tags: info
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-user-tie
+:description: The Scientific Advisory Board (SAB) provides strategic guidance and expertise to the Exa-MA project.
+:icons: font
+:sectnums!:
+
+[.lead]
+The Scientific Advisory Board (SAB) provides strategic guidance and expertise to the Exa-MA project, bringing together internationally recognized experts in high-performance computing, numerical methods, and scientific computing.
+
+[.section-gray]
+--
+[discrete]
+== Role & Responsibilities
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:lightbulb[size=3x,role=text-primary]
+
+*Strategic Guidance*
+
+Offer high-level insights for the research agenda and suggest innovative ideas and emerging trends in HPC.
+____
+
+[.text-center]
+____
+icon:check-circle[size=3x,role=text-primary]
+
+*Evaluation & Feedback*
+
+Review project deliverables and assess progress to ensure the project remains on track with its objectives.
+____
+
+[.text-center]
+____
+icon:chart-line[size=3x,role=text-primary]
+
+*Trend Monitoring*
+
+Help stay current with HPC, numerical methods, AI, and related fields. Advise on cutting-edge techniques and best practices.
+____
+
+[.text-center]
+____
+icon:globe[size=3x,role=text-primary]
+
+*Alignment with HPC Objectives*
+
+Synergies with NumPEx, EuroHPC, and international strategies.
+____
+
+[.text-center]
+____
+icon:calendar-check[size=3x,role=text-primary]
+
+*Yearly Meetings*
+
+Attend General Assembly (virtual/in-person) and engage with WP teams.
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Board Members
+
+[discrete]
+=== WP1: Discretization Advisors
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::sab/geuzaine.jpg[Christophe Geuzaine,120,120]
+
+*Christophe Geuzaine*
+
+_University of Liege_
+
+Belgium
+____
+
+[.text-center]
+____
+image::sab/hesthaven.jpg[Jan Hesthaven,120,120]
+
+*Jan Hesthaven*
+
+_Karlsruhe Institute of Technology (KIT)_
+
+Germany
+____
+====
+
+[discrete]
+=== WP2: Model Order Reduction & SciML Advisors
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::sab/willcox.jpg[Karen Willcox,120,120]
+
+*Karen Willcox*
+
+_University of Texas at Austin_
+
+USA
+____
+
+[.text-center]
+____
+image::sab/rozza.jpg[Gianluigi Rozza,120,120]
+
+*Gianluigi Rozza*
+
+_SISSA_
+
+Italy
+____
+====
+
+[discrete]
+=== WP3: Solvers Advisors
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::sab/brown.jpg[Jed Brown,120,120]
+
+*Jed Brown*
+
+_University of Colorado Boulder_
+
+USA
+____
+
+[.text-center]
+____
+image::sab/mcinnes.jpg[Lois Curfman McInnes,120,120]
+
+*Lois Curfman McInnes*
+
+_Argonne National Laboratory_
+
+USA
+____
+====
+
+[discrete]
+=== WP4: Inverse Problems & Data Assimilation Advisor
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::sab/nerger.jpg[Lars Nerger,120,120]
+
+*Lars Nerger*
+
+_Alfred Wegener Institute (AWI)_
+
+Germany
+____
+====
+
+[discrete]
+=== WP5: Optimization Advisors
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::sab/zomaya.jpg[Albert Zomaya,120,120]
+
+*Albert Zomaya*
+
+_University of Sydney_
+
+Australia
+____
+
+[.text-center]
+____
+image::sab/bouvry.jpg[Pascal Bouvry,120,120]
+
+*Pascal Bouvry*
+
+_University of Luxembourg_
+
+Luxembourg
+____
+====
+
+[discrete]
+=== WP6: Uncertainty Quantification Advisor
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+image::sab/sudret.jpg[Bruno Sudret,120,120]
+
+*Bruno Sudret*
+
+_ETH Zurich_
+
+Switzerland
+____
+====
+--
+
+== SAB Meetings
+
+The Scientific Advisory Board meets annually during the Exa-MA General Assembly. Board members engage with project leaders, work package teams, and external partners to provide feedback and strategic guidance.
+
+The most recent SAB meeting took place during the xref:news/2026/20260119-21-ag.adoc[2026 General Assembly] in Aix-en-Provence.
+
+---
+
+For questions about the Scientific Advisory Board, please xref:contact.adoc[contact the project coordinators].

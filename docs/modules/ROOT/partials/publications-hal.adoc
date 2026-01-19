@@ -1,34 +1,34 @@
-// Total publications: 38
+// Total publications: 39
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *38*
+icon:list-ol[] Total publications: *39*
 
 [.grid.grid-2.gap-2]
 ====
 ____
 icon:file-alt[size=2x,role=text-primary] *15* Preprint / unpublished
 
-_39.5% of total_
+_38.5% of total_
 ____
 
 ____
 icon:newspaper[size=2x,role=text-primary] *13* Article in journal
 
-_34.2% of total_
+_33.3% of total_
 ____
 
 ____
-icon:users[size=2x,role=text-primary] *6* Conference paper
+icon:users[size=2x,role=text-primary] *7* Conference paper
 
-_15.8% of total_
+_17.9% of total_
 ____
 
 ____
 icon:image[size=2x,role=text-primary] *2* Poster
 
-_5.3% of total_
+_5.1% of total_
 ____
 
 ____
@@ -47,13 +47,13 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *13* (34.2%)
-* icon:file-pdf[] Publications with PDF: *34* (89.5%)
-* icon:lock-open[] Open Access: *37* (97.4%)
+* icon:fingerprint[] Publications with DOI: *14* (35.9%)
+* icon:file-pdf[] Publications with PDF: *34* (87.2%)
+* icon:lock-open[] Open Access: *37* (94.9%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *36*
+* icon:atom[] 0.info: *37*
 * icon:atom[] 0.math: *32*
 * icon:atom[] 1.math.math-na: *14*
 * icon:atom[] 1.math.math-ap: *9*
@@ -61,28 +61,33 @@ ____
 
 == 2026
 
-_3 publications_
+_4 publications_
 
-_2 Article in journal, 1 Preprint / unpublished_
+_2 Article in journal, 1 Preprint / unpublished, 1 Conference paper_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
 |Title |Authors |Type |Links
-
-|*Mathematical modeling and simulation of coupled aqueous humor flow and temperature distribution in a realistic 3D human eye geometry*
-|Thomas Saigre, Vincent Chabannes, Christophe Prud'Homme et al.
-|Article in journal
-|link:https://hal.science/hal-04918559v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04918559/document[icon:file-pdf[title=PDF]]
 
 |*Multiword matrix multiplication over large finite fields in floating-point arithmetic*
 |Jérémy Berthomieu, Stef Graillat, Dimitri Lesnoff et al.
 |Preprint / unpublished
 |link:https://hal.science/hal-04917201v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04917201/document[icon:file-pdf[title=PDF]]
 
+|*Mathematical modeling and simulation of coupled aqueous humor flow and temperature distribution in a realistic 3D human eye geometry*
+|Thomas Saigre, Vincent Chabannes, Christophe Prud'Homme et al.
+|Article in journal
+|link:https://hal.science/hal-04918559v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04918559/document[icon:file-pdf[title=PDF]]
+
 |*Neural semi-Lagrangian method for high-dimensional advection-diffusion problems*
 |Emmanuel Franck, Victor Michel-Dansac, Laurent Navoret et al.
 |Article in journal
 |link:https://hal.science/hal-05051195v4[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05051195/document[icon:file-pdf[title=PDF]]
+
+|*Bayesian and Partition-Based Optimization for Hyperparameter Optimization of LLM Fine-Tuning*
+|Nathan Davouse, El-Ghazali Talbi
+|Conference paper
+|link:https://hal.science/hal-05464629v1[icon:external-link-alt[title=HAL]]
 
 |===
 

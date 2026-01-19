@@ -1,0 +1,60 @@
+= Collaborative Projects
+:page-tags: info
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-project-diagram
+:description: Collaborative research projects involving Exa-MA partners.
+:icons: font
+
+[.lead]
+The Exa-MA project participates in several collaborative research initiatives, working alongside partner organizations to advance exascale computing and HPC technologies.
+
+[.section-white]
+--
+[discrete]
+== Funded Projects
+
+_4 funded projects involving Exa-MA partners_
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:earth-europe[size=2x,role=text-primary] *CoE-Hidalgo2*
+
+Centre of Excellence co-funded by NumPEx and EuroHPC
+
+2023–2026
+____
+
+[.text-center]
+____
+icon:brain[size=2x,role=text-success] *SAGE-HPC*
+
+AI for HPC — funded by NumPEx
+
+2026–2030
+____
+
+[.text-center]
+____
+icon:server[size=2x,role=text-info] *DAiMOS*
+
+HPC for AI — funded by NumPEx
+
+2026–2030
+____
+
+[.text-center]
+____
+icon:project-diagram[size=2x,role=text-warning] *JNL-G*
+
+Funded by ANR
+
+2026–2030
+____
+====
+
+--
+
+For collaboration inquiries, please visit our xref:contact.adoc[contact page].
+--

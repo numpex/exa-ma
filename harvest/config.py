@@ -110,6 +110,14 @@ class TeamConfig(BaseModel):
     filter: TeamFilterConfig = Field(default_factory=TeamFilterConfig)
 
 
+class PartnersConfig(BaseModel):
+    """External Partners (Google Sheets) configuration."""
+
+    type: str = "google_sheets"
+    sheet_id: str = "1bigC5N-5Zg2SGfUvpyMvYQPHvrSCqY2K"
+    sheet_name: str = "Overview"
+
+
 class NewsEvent(BaseModel):
     """Single news/event item."""
 
@@ -173,6 +181,7 @@ class SourcesConfig(BaseModel):
     deliverables: DeliverablesConfig = Field(default_factory=DeliverablesConfig)
     software: SoftwareConfig = Field(default_factory=SoftwareConfig)
     team: TeamConfig = Field(default_factory=TeamConfig)
+    partners: PartnersConfig = Field(default_factory=PartnersConfig)
     news: NewsConfig = Field(default_factory=NewsConfig)
 
 
@@ -264,6 +273,10 @@ class ExaMAConfig(BaseModel):
     def get_team_config(self) -> TeamConfig:
         """Get team configuration."""
         return self.sources.team
+
+    def get_partners_config(self) -> PartnersConfig:
+        """Get partners configuration."""
+        return self.sources.partners
 
     def get_news_config(self) -> NewsConfig:
         """Get news configuration."""

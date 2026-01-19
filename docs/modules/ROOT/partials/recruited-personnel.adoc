@@ -1,10 +1,10 @@
-// Total recruited personnel: 26
+// Total recruited personnel: 25
 :sectnums!:
 
 [discrete]
 == icon:graduation-cap[] PhD Students
 
-_13 personnel_
+_12 personnel_
 
 [.striped.recruited,cols="2,2,2,2,2,2",options="header"]
 |===
@@ -58,8 +58,8 @@ Christophe Prud'homme
 |WP2: Model order reduction, Surrogate, Scientific Machine Learning methods
 |Université de Strasbourg
 |October 2025 - Present
-|Emmanuel Franck +
-Stephane Cotin
+|Laurent Navoret +
+Antoine Deleforge
 
 |*Antoine dit Urban*
 |Brieuc
@@ -88,14 +88,6 @@ Stephane Cotin
 |Inria
 |November 2025 - October 2028
 |Arthur Vidard
-
-|*Farba Seck*
-|Pape
-|WP4: Combine Data and Models, Inverse Problems at Exascale
-|Inria
-|October 2025 - Present
-|Hélène Barucq +
-Mark Asch
 
 |*El Khadiri*
 |Mahmoud El Mehdi
@@ -244,10 +236,10 @@ WP7: Showroom, Benchmarking and Co-Design coordination
 |===
 |Indicator |Value
 
-|Total Recruited Personnel |*26*
-|PhD Students |13
+|Total Recruited Personnel |*25*
+|PhD Students |12
 |Postdoctoral Researchers |5
 |Research Engineers |8
 |Women |2 (8%)
-|Men |24 (92%)
+|Men |23 (92%)
 |===

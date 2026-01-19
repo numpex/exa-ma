@@ -1,0 +1,239 @@
+// Total external partners: 15
+:sectnums!:
+
+== icon:chart-pie[] Overview
+
+icon:handshake[] Total external partners: *15*
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:university[size=2x,role=text-primary] *5* Public Partners
+
+_33.3% of total_
+
+icon:flask[] EPIC: *2* | icon:graduation-cap[] Academic: *2* | icon:microscope[] Research Infra: *1*
+____
+
+____
+icon:building[size=2x,role=text-primary] *8* Private Partners
+
+_53.3% of total_
+
+icon:industry[] Large Groups: *5* | icon:briefcase[] SMEs: *3*
+____
+
+____
+icon:hand-holding-usd[size=2x,role=text-primary] *4* Co-funding Arrangements
+
+_26.7% of total_
+
+icon:user-graduate[] PhD Co-funding: *4*
+____
+
+____
+icon:project-diagram[size=2x,role=text-primary] *3* Funded Projects
+
+_20.0% of total_
+
+ANR PRCI, European, and other collaborative research projects
+____
+
+====
+
+== Large Groups
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:plane-departure[size=2x,role=text-primary] *Airbus CRT*
+
+_equipe Inria-Industrie Concace_
+
+*Collaboration:* Research Collaborations
+
+*Topics:* WP2: AI-driven, data driven, rom, WP3: solve, WP7: demonstrators
+
+____
+
+____
+icon:bolt[size=2x,role=text-primary] *EDF* [.badge.badge-cofunding]#icon:hand-holding-usd[] Co-funding#
+
+_Performance, Risque Industriel, Surveillance pour la Maintenance et l'Exploitation (PRISME)_
+_Electrotechnique et Mécanique des Structures (ERMES)_
+_Mécanique des Fluides, Energie et Environnement (MFEE)_
+_R&D_
+
+*Collaboration:* Research Collaborations, PhD co funding
+
+*Topics:* WP4: inverse problems, WP2: AI-driven, data driven, rom, WP3: solve, WP7: demonstrators, WP1: discretisation, WP5: optimisation, WP6: uq
+
+____
+
+____
+icon:handshake[size=2x,role=text-primary] *Roche*
+
+_Magnus Fontes Research Director at Roche_
+
+*Collaboration:* Research Collaborations
+
+*Topics:* WP2: AI-driven, data driven, rom, WP7: demonstrators
+
+____
+
+____
+icon:rocket[size=2x,role=text-primary] *Safran*
+
+*Collaboration:* Research Collaborations
+
+*Topics:* WP2: AI-driven, data driven, rom, WP1: discretisation, WP3: solve
+
+____
+
+____
+icon:oil-can[size=2x,role=text-primary] *TotalEnergies* [.badge.badge-cofunding]#icon:hand-holding-usd[] Co-funding#
+
+_equipe Inria-Industrie Makutu_
+
+*Collaboration:* PhD co funding
+
+*Topics:* WP1: discretisation, WP2: AI-driven, data driven, rom, WP4: inverse problems, WP7: demonstrators
+
+____
+
+====
+
+== SMEs
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:handshake[size=2x,role=text-primary] *Avnir energy*
+
+_R&D_
+
+*Collaboration:* Research Collaborations
+
+*Topics:* WP1: discretisation, WP3: solve, WP4: inverse problems, WP2: AI-driven, data driven, rom, WP6: uq, WP7: demonstrators
+
+____
+
+____
+icon:server[size=2x,role=text-primary] *Cerfacs*
+
+_equipe Inria-Industrie Concace_
+
+*Collaboration:* Research Collaborations
+
+*Topics:* WP2: AI-driven, data driven, rom, WP3: solve
+
+____
+
+____
+icon:handshake[size=2x,role=text-primary] *Geometry Factory*
+
+_R&D_
+
+*Collaboration:* Research Collaborations
+
+*Topics:* WP1: discretisation
+
+____
+
+====
+
+== Research Organizations (EPIC)
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:gas-pump[size=2x,role=text-primary] *IFPEN* [.badge.badge-cofunding]#icon:hand-holding-usd[] Co-funding#
+
+_Informatique Scientifique_
+
+*Collaboration:* PhD co funding
+
+*Topics:* WP3: solve, WP7: demonstrators
+
+____
+
+____
+icon:plane[size=2x,role=text-primary] *Onera* [.badge.badge-cofunding]#icon:hand-holding-usd[] Co-funding#
+
+_Onera - Saclay_
+_Maht App_
+
+*Collaboration:* PhD co funding, Research Collaborations
+
+*Topics:* WP1: discretisation, WP2: AI-driven, data driven, rom, WP3: solve, WP5: optimisation, WP7: demonstrators, WP6: uq
+
+____
+
+====
+
+== Academic Partners
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:handshake[size=2x,role=text-primary] *AMU*
+
+_LMA_
+
+*Collaboration:* Research Collaborations
+
+*Topics:* WP1: discretisation
+
+____
+
+____
+icon:handshake[size=2x,role=text-primary] *MPG* [.badge.badge-funded]#icon:project-diagram[] Funded Projects#
+
+_Institut du Soleil_
+
+*Collaboration:* Research Collaborations, Funded Projects
+
+*Topics:* WP4: inverse problems, WP7: demonstrators
+
+____
+
+====
+
+== Large scale Research Infrastructure
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:handshake[size=2x,role=text-primary] *LNCMI* [.badge.badge-funded]#icon:project-diagram[] Funded Projects#
+
+_CNRS - TGIR - Grenoble_
+
+*Collaboration:* Funded Projects
+
+*Topics:* WP1: discretisation, WP2: AI-driven, data driven, rom, WP3: solve, WP5: optimisation, WP6: uq, WP7: demonstrators
+
+____
+
+====
+
+== Collaboration Overview
+
+[.striped,cols="2,1",options="header"]
+|===
+|Indicator |Value
+
+|*Total External Partners* |*15*
+
+|*Public Partners* |*5*
+|{nbsp}{nbsp}EPIC |2
+|{nbsp}{nbsp}Academic |2
+|{nbsp}{nbsp}Research Infrastructure |1
+
+|*Private Partners* |*8*
+|{nbsp}{nbsp}Large Groups |5
+|{nbsp}{nbsp}SMEs |3
+
+|Other Partners |2
+
+|Co-funding Arrangements |4
+|===
