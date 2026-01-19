@@ -12,8 +12,110 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
-<!-- Alternating sections CSS -->
-<link rel="stylesheet" href="./_/css/workpackages.css">
+<!-- Custom badge styles for external partners -->
+<style>
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+.badge-cofunding {
+    background-color: #dc3545;
+    color: white;
+}
+.badge-funded {
+    background-color: #28a745;
+    color: white;
+}
+</style>
+<link rel="icon" href="./_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="./_/js/vendor/tabs-block-extension.js"></script>
+<script src="./_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
 <script>var uiRootPath = './_'</script>
 
   </head>
@@ -67,7 +169,16 @@
     <a class="nav-link" href="team.html">Team</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="partners.html">Partners</a>
+    <a class="nav-link" href="consortium.html">Consortium</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="external-partners.html">External Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sab.html">Scientific Advisory Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="collaborative-projects.html">Collaborative Projects</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="contact.html">Contact</a>
@@ -295,7 +406,7 @@
 <h2 id="_overview"><a class="anchor" href="#_overview"></a><span class="icon"><i class="fa fa-chart-pie"></i></span> Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-list-ol"></i></span> Total publications: <strong>38</strong></p>
+<p><span class="icon"><i class="fa fa-list-ol"></i></span> Total publications: <strong>39</strong></p>
 </div>
 <div class="exampleblock grid grid-2 gap-2">
 <div class="content">
@@ -305,7 +416,7 @@
 <p><span class="icon text-primary"><i class="fa fa-file-alt fa-2x"></i></span> <strong>15</strong> Preprint / unpublished</p>
 </div>
 <div class="paragraph">
-<p><em>39.5% of total</em></p>
+<p><em>38.5% of total</em></p>
 </div>
 </blockquote>
 </div>
@@ -315,17 +426,17 @@
 <p><span class="icon text-primary"><i class="fa fa-newspaper fa-2x"></i></span> <strong>13</strong> Article in journal</p>
 </div>
 <div class="paragraph">
-<p><em>34.2% of total</em></p>
+<p><em>33.3% of total</em></p>
 </div>
 </blockquote>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-users fa-2x"></i></span> <strong>6</strong> Conference paper</p>
+<p><span class="icon text-primary"><i class="fa fa-users fa-2x"></i></span> <strong>7</strong> Conference paper</p>
 </div>
 <div class="paragraph">
-<p><em>15.8% of total</em></p>
+<p><em>17.9% of total</em></p>
 </div>
 </blockquote>
 </div>
@@ -335,7 +446,7 @@
 <p><span class="icon text-primary"><i class="fa fa-image fa-2x"></i></span> <strong>2</strong> Poster</p>
 </div>
 <div class="paragraph">
-<p><em>5.3% of total</em></p>
+<p><em>5.1% of total</em></p>
 </div>
 </blockquote>
 </div>
@@ -366,13 +477,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="icon"><i class="fa fa-fingerprint"></i></span> Publications with DOI: <strong>13</strong> (34.2%)</p>
+<p><span class="icon"><i class="fa fa-fingerprint"></i></span> Publications with DOI: <strong>14</strong> (35.9%)</p>
 </li>
 <li>
-<p><span class="icon"><i class="fa fa-file-pdf"></i></span> Publications with PDF: <strong>34</strong> (89.5%)</p>
+<p><span class="icon"><i class="fa fa-file-pdf"></i></span> Publications with PDF: <strong>34</strong> (87.2%)</p>
 </li>
 <li>
-<p><span class="icon"><i class="fa fa-lock-open"></i></span> Open Access: <strong>37</strong> (97.4%)</p>
+<p><span class="icon"><i class="fa fa-lock-open"></i></span> Open Access: <strong>37</strong> (94.9%)</p>
 </li>
 </ul>
 </div>
@@ -382,7 +493,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="icon"><i class="fa fa-atom"></i></span> 0.info: <strong>36</strong></p>
+<p><span class="icon"><i class="fa fa-atom"></i></span> 0.info: <strong>37</strong></p>
 </li>
 <li>
 <p><span class="icon"><i class="fa fa-atom"></i></span> 0.math: <strong>32</strong></p>
@@ -405,10 +516,10 @@
 <h2 id="_2026"><a class="anchor" href="#_2026"></a>2026</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>3 publications</em></p>
+<p><em>4 publications</em></p>
 </div>
 <div class="paragraph">
-<p><em>2 Article in journal, 1 Preprint / unpublished</em></p>
+<p><em>2 Article in journal, 1 Preprint / unpublished, 1 Conference paper</em></p>
 </div>
 <table class="tableblock frame-all grid-all stretch striped publications">
 <colgroup>
@@ -427,22 +538,28 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mathematical modeling and simulation of coupled aqueous humor flow and temperature distribution in a realistic 3D human eye geometry</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Thomas Saigre, Vincent Chabannes, Christophe Prud&#8217;Homme et al.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Article in journal</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hal.science/hal-04918559v2"><span class="icon"><i class="fa fa-external-link-alt" title="HAL"></i></span></a> <a href="https://hal.science/hal-04918559/document"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiword matrix multiplication over large finite fields in floating-point arithmetic</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Jérémy Berthomieu, Stef Graillat, Dimitri Lesnoff et al.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preprint / unpublished</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hal.science/hal-04917201v2"><span class="icon"><i class="fa fa-external-link-alt" title="HAL"></i></span></a> <a href="https://hal.science/hal-04917201/document"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mathematical modeling and simulation of coupled aqueous humor flow and temperature distribution in a realistic 3D human eye geometry</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thomas Saigre, Vincent Chabannes, Christophe Prud&#8217;Homme et al.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Article in journal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hal.science/hal-04918559v2"><span class="icon"><i class="fa fa-external-link-alt" title="HAL"></i></span></a> <a href="https://hal.science/hal-04918559/document"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Neural semi-Lagrangian method for high-dimensional advection-diffusion problems</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Emmanuel Franck, Victor Michel-Dansac, Laurent Navoret et al.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Article in journal</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hal.science/hal-05051195v4"><span class="icon"><i class="fa fa-external-link-alt" title="HAL"></i></span></a> <a href="https://hal.science/hal-05051195/document"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bayesian and Partition-Based Optimization for Hyperparameter Optimization of LLM Fine-Tuning</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nathan Davouse, El-Ghazali Talbi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conference paper</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hal.science/hal-05464629v1"><span class="icon"><i class="fa fa-external-link-alt" title="HAL"></i></span></a></p></td>
 </tr>
 </tbody>
 </table>

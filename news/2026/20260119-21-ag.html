@@ -13,8 +13,110 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
-<!-- Alternating sections CSS -->
-<link rel="stylesheet" href="../../_/css/workpackages.css">
+<!-- Custom badge styles for external partners -->
+<style>
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+.badge-cofunding {
+    background-color: #dc3545;
+    color: white;
+}
+.badge-funded {
+    background-color: #28a745;
+    color: white;
+}
+</style>
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
 <script>var uiRootPath = '../../_'</script>
 
   </head>
@@ -68,7 +170,16 @@
     <a class="nav-link" href="../../team.html">Team</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../partners.html">Partners</a>
+    <a class="nav-link" href="../../consortium.html">Consortium</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../external-partners.html">External Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../sab.html">Scientific Advisory Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../collaborative-projects.html">Collaborative Projects</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../contact.html">Contact</a>
@@ -370,7 +481,70 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_intra_wp_meetings"><a class="anchor" href="#_intra_wp_meetings"></a>3.2. Intra-WP Meetings</h3>
+<h3 id="_day_1_presentations"><a class="anchor" href="#_day_1_presentations"></a>3.2. Day 1 Presentations</h3>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Time</th>
+<th class="tableblock halign-left valign-top">Presentation</th>
+<th class="tableblock halign-left valign-top">Presenters</th>
+<th class="tableblock halign-left valign-top">Slides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13:45-14:15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NumPEx &amp; Exa-MA Refresher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hélène Barucq, Christophe Prud&#8217;homme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/news/2026/ga/slides_wp0.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14:30-14:45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1 Discretization: progress, highlights &amp; next steps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pierre Alliez, Isabelle Ramière</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/news/2026/ga/slides_wp1.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14:45-15:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP2 Model Order Reduction &amp; Scientific ML: progress, highlights &amp; next steps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stéphane Lanteri, Emmanuel Franck</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/news/2026/ga/slides_wp2.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15:00-15:15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3 Solvers for Linear Algebra: progress, highlights &amp; next steps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vincent Faucher, Luc Giraud, Frédéric Nataf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/news/2026/ga/slides_wp3.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15:15-15:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP4 Data-Model Integration: progress, highlights &amp; next steps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mark Asch, Arthur Vidard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/news/2026/ga/slides_wp4.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15:30-15:45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP5 Optimization: progress, highlights &amp; next steps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">El Ghazali Talbi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/news/2026/ga/slides_wp5.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15:45-16:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP6 Uncertainty Quantification: progress, highlights &amp; next steps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Josselin Garnier, Clément Gauchy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/news/2026/ga/slides_wp6.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_intra_wp_meetings"><a class="anchor" href="#_intra_wp_meetings"></a>3.3. Intra-WP Meetings</h3>
 <div class="paragraph">
 <p>The afternoon concluded with parallel intra-WP meetings (16:30-18:00) followed by a consortium dinner.</p>
 </div>
@@ -385,22 +559,48 @@
 <div class="paragraph">
 <p>Morning sessions featured detailed presentations of the project&#8217;s core computational frameworks:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Feel++ Framework</strong>: Christophe Prud&#8217;homme and Javier Cladellas</p>
-</li>
-<li>
-<p><strong>Scimba Framework</strong>: Emmanuel Franck and Victor Michel-Dansac</p>
-</li>
-<li>
-<p><strong>Composyx Framework</strong>: Luc Giraud and Arthur Gouinguenet</p>
-</li>
-<li>
-<p><strong>Uranie Framework</strong>: Clément Gauchy</p>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Time</th>
+<th class="tableblock halign-left valign-top">Presentation</th>
+<th class="tableblock halign-left valign-top">Presenters</th>
+<th class="tableblock halign-left valign-top">Slides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9:00-9:15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++ Framework</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme, Javier Cladellas</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9:15-9:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scimba Framework</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Emmanuel Franck, Victor Michel-Dansac</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/news/2026/ga/scimba.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9:30-9:45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Composyx Framework</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Luc Giraud, Arthur Gouinguenet</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9:45-10:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uranie Framework</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clément Gauchy</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_breakout_sessions"><a class="anchor" href="#_breakout_sessions"></a>4.2. Breakout Sessions</h3>
@@ -548,7 +748,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Full Agenda PDF</strong>: <a href="../../_attachments/news/2026/exa-ma-2026-ga-agenda.pdf" class="xref attachment">Download complete agenda with schedule and room details</a></p>
+<p><strong>Full Agenda PDF</strong>: <a href="../../_attachments/news/2026/ga/agenda.pdf" class="xref attachment">Download complete agenda with schedule and room details</a></p>
 </li>
 <li>
 <p><strong>Slides</strong>: Available in the project repository</p>
