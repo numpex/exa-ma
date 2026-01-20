@@ -165,24 +165,24 @@ Each WP leader presented feedback from breakout sessions and outlined work plans
 * **WP5 Work Plan**: El Ghazali Talbi
 * **WP6 Work Plan**: Josselin Garnier and Clément Gauchy
 
-=== Closing Remarks
-
-The assembly concluded with general closing remarks from Hélène Barucq and Christophe Prud'homme, followed by a packed lunch.
-
-== Key Themes
-
-=== Framework-WP Integration
-
-The breakout sessions successfully connected computational frameworks with relevant work packages, identifying concrete collaboration opportunities and integration points.
-
-=== AI-HPC Convergence
-
-The Sage-HPC and Daimos presentations highlighted the bidirectional synergy between artificial intelligence and high-performance computing, a key focus for Exa-MA's evolution.
-
-=== Cross-WP Collaboration
-
-Multiple sessions featured collaboration across work packages (e.g., WP1 × WP2 × WP4), fostering interdisciplinary approaches to complex scientific challenges.
-
+//=== Closing Remarks
+//
+//The assembly concluded with general closing remarks from Hélène Barucq and Christophe Prud'homme, followed by a packed lunch.
+//
+//== Key Themes
+//
+//=== Framework-WP Integration
+//
+//The breakout sessions successfully connected computational frameworks with relevant work packages, identifying concrete collaboration opportunities and integration points.
+//
+//=== AI-HPC Convergence
+//
+//The Sage-HPC and Daimos presentations highlighted the bidirectional synergy between artificial intelligence and high-performance computing, a key focus for Exa-MA's evolution.
+//
+//=== Cross-WP Collaboration
+//
+//Multiple sessions featured collaboration across work packages (e.g., WP1 × WP2 × WP4), fostering interdisciplinary approaches to complex scientific challenges.
+//
 == Resources
 
 * **Full Agenda PDF**: xref:attachment$news/2026/ga/agenda.pdf[Download complete agenda with schedule and room details]
