@@ -84,6 +84,11 @@ _2 Preprint / unpublished, 2 Article in journal, 1 Conference paper_
 |Article in journal
 |link:https://hal.science/hal-04918559v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04918559/document[icon:file-pdf[title=PDF]]
 
+|*Multiword matrix multiplication over large finite fields in floating-point arithmetic*
+|Jérémy Berthomieu, Stef Graillat, Dimitri Lesnoff et al.
+|Preprint / unpublished
+|link:https://hal.science/hal-04917201v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04917201/document[icon:file-pdf[title=PDF]]
+
 |*Neural semi-Lagrangian method for high-dimensional advection-diffusion problems*
 |Emmanuel Franck, Victor Michel-Dansac, Laurent Navoret et al.
 |Article in journal
