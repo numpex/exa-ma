@@ -1,0 +1,92 @@
+= Exceptional Speedups with GenEO
+:page-layout: default
+:page-tags: highlight
+:parent-catalogs: highlights-2025
+:page-illustration: fa-solid fa-rocket
+:description: Up to 50× performance gains with GenEO preconditioning on large-scale problems
+
+// tag::card[]
+[.page-card]
+====
+[.page-card-illustration]
+--
+icon:rocket[size=3x,role=text-primary]
+--
+
+[.page-card-body]
+--
+xref:highlights/speedups.adoc[*Exceptional Speedups*]
+
+Up to 50× performance gains with GenEO preconditioning on large-scale problems
+--
+====
+// end::card[]
+
+[.lead]
+Our GenEO preconditioning approach has achieved remarkable speedups on large-scale problems, demonstrating the power of domain decomposition methods at exascale.
+
+== Overview
+
+The Generic Energy-Minimizing Coarse Space (GenEO) preconditioner has proven exceptionally effective for large-scale simulations, achieving up to *50× speedup* on challenging industrial problems.
+
+== Key Achievement
+
+[.text-center]
+****
+icon:rocket[size=4x,role=text-primary]
+
+*50× Speedup*
+
+Cobra cavity benchmark +
+45 million degrees of freedom +
+2,916 CPU cores
+****
+
+== Technical Details
+
+=== Problem Characteristics
+* *Application*: Cobra cavity industrial benchmark
+* *Problem Size*: 45 million degrees of freedom (DoFs)
+* *Computing Resources*: 2,916 CPU cores
+* *Method*: GenEO (Generalized Eigenvalue in Overlapping domains) preconditioning
+
+=== Performance Metrics
+* *Baseline*: Standard domain decomposition methods
+* *Optimized*: GenEO-enhanced solver pipeline
+* *Speedup*: Up to 50× reduction in solution time
+* *Scalability*: Strong scaling maintained across thousands of cores
+
+== Method Innovation
+
+The GenEO preconditioner enhances classical domain decomposition by:
+
+1. **Adaptive Coarse Space Construction**: Automatically builds coarse spaces based on local eigenvalue problems
+2. **Robust Convergence**: Maintains iteration counts independent of problem parameters
+3. **Parallel Efficiency**: Scales effectively to thousands of cores
+4. **Mixed-Precision Support**: Additional gains through adaptive precision strategies
+
+== Impact on Applications
+
+This breakthrough enables:
+
+* *Industrial Simulations*: Complex geometries (aerospace, automotive) now tractable at full resolution
+* *Real-Time Analysis*: Faster turnaround for design optimization loops
+* *Larger Problems*: Previously infeasible problem sizes now accessible
+* *Energy Efficiency*: Reduced computational time = lower energy consumption
+
+== Related Work Packages
+
+* xref:../workpackages/wp2.adoc[WP2: Scalable Linear Algebra] - Core method development
+* xref:../workpackages/wp3.adoc[WP3: Optimization & UQ] - Integration with optimization workflows
+* xref:../workpackages/wp5.adoc[WP5: Application Demonstrators] - Industrial validation
+
+== Publications & Resources
+
+* Conference presentations at domain decomposition workshops
+* Integration in production solvers (Feel++, FreeFEM)
+* Available through xref:software:index.adoc[Exa-MA software stack]
+
+[.text-center]
+--
+xref:results.adoc[← Back to Results] | xref:workpackages.adoc[View Work Packages] | xref:highlights/scale.adoc[Next: Exascale Computing →]
+--

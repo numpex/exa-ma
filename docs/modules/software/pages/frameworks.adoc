@@ -1,0 +1,113 @@
+= Frameworks
+:page-layout: manuals
+:page-tags: manual, catalog, frameworks
+:page-cards-tag: framework
+:page-cards-within-module: true
+:page-cards-framework-title: Framework Catalog
+:page-illustration: fa-solid fa-boxes-stacked
+:description: Exa-MA software frameworks - the building blocks for exascale applications.
+:icons: font
+:sectnums!:
+
+[.lead]
+Exa-MA frameworks are production-ready software libraries and tools that serve as building blocks for developing exascale applications. Each framework follows rigorous quality criteria for packaging, testing, documentation, and licensing.
+
+[.section-gray]
+--
+[discrete]
+== At a Glance
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:cubes[size=2x,role=text-primary] *44 Frameworks*
+
+12 eligible for production use in Exa-MA benchmarks.
+____
+
+____
+icon:box-open[size=2x,role=text-success] *Packaging*
+
+8 in Spack, 7 in Guix-HPC
+____
+
+____
+icon:docker[set=fab,size=2x,role=text-info] *Containerization*
+
+Docker, Apptainer/Singularity available
+____
+
+____
+icon:vial[size=2x,role=text-primary] *Testing*
+
+26 with CI/CD, 17 with unit tests
+____
+
+____
+icon:file-contract[size=2x,role=text-warning] *Licensing*
+
+27 with FLOSS licenses
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Framework Catalog
+
+[.striped,cols="2,4,1,1,1",options="header"]
+|===
+| Framework | Description | License | CI | WPs
+
+| xref:frameworks/arcane.adoc[*Arcane*]
+| _Exa-MA Framework_
+| icon:check[role=text-success]| icon:check[role=text-success]| 1,3,7
+| xref:frameworks/cgal.adoc[*CGAL*]
+| _Exa-MA Framework_
+| icon:check[role=text-success]| icon:check[role=text-success]| 1
+| xref:frameworks/composyx.adoc[*Composyx*]
+| _Exa-MA Framework_
+| icon:check[role=text-success]| icon:check[role=text-success]| 3
+| xref:frameworks/feelpp.adoc[*Feel++*]
+| Feel++ is an open-source, high-performance C++ framework for solving complex PDE...
+| icon:check[role=text-success]| icon:check[role=text-success]| 1,2,3,4,5,6,7
+| xref:frameworks/freefempp.adoc[*Freefem++*]
+| _Exa-MA Framework_
+| icon:check[role=text-success]| icon:check[role=text-success]| 1,3,5,7
+| xref:frameworks/hawen.adoc[*Hawen*]
+| _Exa-MA Framework_
+| icon:check[role=text-success]| icon:times[role=text-muted]| 1,3,4,5,6,7
+| xref:frameworks/hpddm.adoc[*HPDDM*]
+| HPDDM is an efficient implementation of various domain decomposition methods (DD...
+| icon:check[role=text-success]| icon:check[role=text-success]| 3
+| xref:frameworks/mahyco.adoc[*MaHyCo*]
+| _Exa-MA Framework_
+| icon:check[role=text-success]| icon:check[role=text-success]| 1,3,5,7
+| xref:frameworks/samurai.adoc[*Samurai*]
+| The main goal of samurai is to provide a new data structure based on intervals a...
+| icon:check[role=text-success]| icon:check[role=text-success]| 1
+| xref:frameworks/scimba.adoc[*Scimba*]
+| _Exa-MA Framework_
+| icon:check[role=text-success]| icon:check[role=text-success]| 2
+| xref:frameworks/trust_platform.adoc[*TRUST Platform*]
+| TRUST is a High Performance Computing (HPC) thermohydraulic engine for Computati...
+| icon:check[role=text-success]| icon:check[role=text-success]| 3,7
+| xref:frameworks/uranie.adoc[*Uranie*]
+| _Exa-MA Framework_
+| icon:check[role=text-success]| icon:check[role=text-success]| 2,5,6
+|===
+--
+
+[.section-gray]
+--
+[discrete]
+== Used by Applications
+
+These frameworks power the following Exa-MA applications:
+
+* *xref:frameworks/feelpp.adoc[Feel++]:* xref:applications/app-feelpp-discr-1.adoc[Discretization], xref:applications/app-feelpp-distance.adoc[Distance], xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis], xref:applications/app-feelpp-rb.adoc[Reduced Basis], xref:applications/app-freefem-parmmg.adoc[Fichera corner]
+* *xref:frameworks/hpddm.adoc[HPDDM]:* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
+* *xref:frameworks/freefempp.adoc[Freefem++]:* xref:applications/app-freefem-parmmg.adoc[Fichera corner], xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
+* *xref:frameworks/scimba.adoc[Scimba]:* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
+--

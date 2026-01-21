@@ -1,0 +1,184 @@
+= Feel++
+:page-layout: default
+:page-tags: framework, software, feelpp
+:page-illustration: fa-solid fa-cube
+:description: Feel++ - Feel++ is an open-source, high-performance C++ framework for solving complex PDE and ODE-based mathematical models using advanced Galerkin methods (fi...
+:icons: font
+:page-work-packages: WP1, WP2, WP3, WP4, WP5, WP6, WP7
+
+[.lead]
+Feel++ is an open-source, high-performance C++ framework for solving complex PDE and ODE-based mathematical models using advanced Galerkin methods (finite element, discontinuous Galerkin, and spectral methods) and efficient reduced-order modeling (ROM) techniques, including Reduced Basis (RB), Proper Orthogonal Decomposition (POD), and Empirical Interpolation Methods (EIM). It features specialized application toolboxes (CFD, CSM, FSI, thermoelectric, Maxwell), modern parallel computing with seamless Python integration (Pybind11), and extensive DevOps support (CI/CD, benchmarking, and containers). Feel++ is used in academia and industry for multiphysics simulations, inverse problems, uncertainty quantification, data assimilation, and machine learning applications.
+
+[.section-gray]
+--
+[discrete]
+== Overview
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Repository*
+
+https://github.com/feelpp/feelpp
+____
+
+____
+icon:file-contract[size=2x,role=text-success] *License*
+
+OSS:: LGPL v*,
+OSS:: GPL v*
+____
+
+____
+icon:book[size=2x,role=text-info] *Documentation*
+
+https://docs.feelpp.org
+____
+
+____
+icon:comments[size=2x,role=text-warning] *Discussion*
+
+Slack (https://feelpp.slack.com), GitHub Discussions (https://github.com/feelpp/discussions)____
+====
+--
+
+== Criteria Evaluation
+
+=== Packaging
+
+Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
+
+* [x] Packages exist
+* [x] Available in Spack
+* [x] Available in Guix-HPC
+* [x] Docker image available
+* [x] Apptainer/Singularity available
+
+* Spack: https://github.com/numpex/spack.numpex/blob/main/packages/feelpp/package.py
+* Guix: https://gitlab.inria.fr/numpex-pc5/wp3/guix-hpc/-/blob/feelpp/guix-hpc/packages/math.scm?ref_type=heads
+* Docker: https://github.com/feelpp/feelpp/pkgs/container/feelpp
+
+=== Testing & CI/CD
+
+Software should include validation tests triggered through automated mechanisms.
+
+* [x] Unit tests exist
+* [x] Continuous Integration configured
+* [x] CI runs on each release
+* [x] Benchmarking tests exist
+
+=== Repository & Contributions
+
+* [x] Public source repository available
+* [x] Supports contributions via pull requests
+
+Repository: https://github.com/feelpp/feelpp
+
+=== License
+
+Sources should be published under a clearly-identified free software license.
+
+* [x] License clearly stated
+* [x] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX identifiers used
+* [ ] REUSE compliant
+
+* LGPL v*
+* GPL v*
+
+=== Documentation
+
+* [x] Documentation exists
+* [x] Easily browsable online
+
+Documentation: https://docs.feelpp.org
+
+=== API Compatibility
+
+* [x] API changes documented
+* [x] Semantic versioning used
+* [ ] Release policy defined
+
+== Work Packages
+
+This framework is involved in the following work packages:
+
+=== WP1 icon:check-circle[role=text-success]
+Topics: unstructured mesh, mesh adaptation, cG, dG/hdG, parallel in time, multiphysics coupling, multiscale coupling, inhouse, interface, finite element, spectral element
+_Benchmarked in this WP_
+
+=== WP2 icon:check-circle[role=text-success]
+Topics: "ROM-DA: GEIM PBDW, ...", ROM: NIRB, "ROM: RB, POD, ..."
+_Benchmarked in this WP_
+
+=== WP3 icon:check-circle[role=text-success]
+Topics: domain decomposition methods, algebraic multiphysics coupling
+_Benchmarked in this WP_
+
+=== WP4 icon:check-circle[role=text-success]
+Topics: stochastic data assimilation: ensemble
+_Benchmarked in this WP_
+
+=== WP5 icon:check-circle[role=text-success]
+Topics: Iterative methods
+_Benchmarked in this WP_
+
+=== WP6
+Topics: interface
+
+=== WP7 icon:check-circle[role=text-success]
+Topics: Health, Environment, Energy, Physics, mini-apps
+_Benchmarked in this WP_
+
+
+== Technical Details
+
+*Languages:* C++17, Python, C++20, C++
+
+*Parallelism:* MPI, Parallelism - C++17 and after, Task based - C++
+
+*Data Formats:* Json, YAML, HDF5, Data-management system, VTK, in-house format, VTK, Ensight, Gmsh and asssociated formats
+
+*Resilience:* Checkpoint restart
+
+== Partners
+
+*Lead Partner:* Unistra,
+Inria Grenoble,
+CNRS
+
+*Consortium:* Feel++ Consortium
+
+== Used by Applications
+
+The following Exa-MA applications use Feel++:
+
+[cols="2,2,1",options="header"]
+|===
+| Application | Type | Status
+
+| xref:applications/app-feelpp-discr-1.adoc[Discretization]
+| Extended Mini App
+| Benchmark Ready
+
+| xref:applications/app-feelpp-distance.adoc[Distance]
+| Mini App
+| Benchmark Ready
+
+| xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis]
+| Extended Mini App
+| Planned
+
+| xref:applications/app-feelpp-rb.adoc[Reduced Basis]
+| Extended Mini App
+| Benchmark Ready
+
+| xref:applications/app-feelpp-io.adoc[Test I/O at large scale]
+| Mini App
+| Planned
+
+| xref:applications/app-freefem-parmmg.adoc[Fichera corner]
+| Extended Mini App
+| Benchmark Ready
+
+|===

@@ -1,0 +1,73 @@
+= Plasma NN
+:page-layout: default
+:page-tags: application, mini-app, app-scimba-plasma
+:page-illustration: fa-solid fa-cube
+:description: Plasma NN - Demonstrate neural nework algorithm, plasma simulation in 3D tokamak...
+:icons: font
+:page-status: planned
+:page-work-packages: WP2
+
+[.lead]
+Demonstrate neural nework algorithm, plasma simulation in 3D tokamak
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP2
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+N/A
+____
+====
+--
+
+
+== Overview
+
+Demonstrate neural nework algorithm, plasma simulation in 3D tokamak
+
+
+
+
+
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra
+
+*Responsible:* Emmanuel Franck
+
+

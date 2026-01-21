@@ -1,0 +1,102 @@
+= Exascale Computing on 8000 GPUs
+:page-layout: default
+:page-tags: highlight
+:parent-catalogs: highlights-2025
+:page-illustration: fa-solid fa-microchip
+:description: 8000 GPUs on LUMI supercomputer with fractal decomposition for Bayesian optimization
+
+// tag::card[]
+[.page-card]
+====
+[.page-card-illustration]
+--
+icon:microchip[size=3x,role=text-success]
+--
+
+[.page-card-body]
+--
+xref:highlights/scale.adoc[*Exascale Computing*]
+
+8000 GPUs on LUMI supercomputer with fractal decomposition for Bayesian optimization
+--
+====
+// end::card[]
+
+[.lead]
+Pushing the boundaries of optimization at scale with successful deployment on 8,000 GPUs of the LUMI supercomputer, demonstrating true exascale readiness.
+
+== Overview
+
+Our Bayesian optimization framework has been successfully deployed on LUMI (Finland), one of Europe's most powerful supercomputers, achieving unprecedented scale for uncertainty quantification and optimization workflows.
+
+== Key Achievement
+
+[.text-center]
+****
+icon:microchip[size=4x,role=text-success]
+
+*8,000 GPU Scale*
+
+LUMI Supercomputer (Finland) +
+Fractal domain decomposition +
+Bayesian optimization workflows
+****
+
+== Technical Details
+
+=== Computing Infrastructure
+* *System*: LUMI (Large Unified Modern Infrastructure)
+* *Location*: CSC Data Center, Kajaani, Finland
+* *Resources Utilized*: 8,000 AMD MI250X GPUs
+* *Peak Performance*: Multi-petaflop range for optimization campaigns
+
+=== Algorithmic Innovation
+* *Method*: Fractal domain decomposition for parallel Bayesian optimization
+* *Scalability*: Near-linear weak scaling to thousands of GPUs
+* *Efficiency*: Load balancing across heterogeneous search spaces
+* *Integration*: Coupled with WP1 discretizations and WP3 solvers
+
+== Fractal Decomposition Strategy
+
+The fractal approach enables:
+
+1. **Hierarchical Partitioning**: Recursive subdivision of parameter space
+2. **Adaptive Refinement**: Focus computational effort on promising regions
+3. **Asynchronous Execution**: Minimize idle time across GPU nodes
+4. **Memory Efficiency**: Distributed model storage and evaluation
+
+== Impact on Scientific Computing
+
+This achievement demonstrates:
+
+* *Exascale Readiness*: Methods proven at realistic exascale dimensions
+* *Uncertainty Quantification*: UQ now feasible for complex, expensive models
+* *Design Optimization*: Thousands of design parameters simultaneously explored
+* *EuroHPC Integration*: Workflows validated on production European infrastructure
+
+== Application Domains
+
+Successfully applied to:
+
+* **Material Science**: High-dimensional parameter searches for material properties
+* **Climate Modeling**: Ensemble-based uncertainty quantification
+* **Engineering Design**: Multi-objective optimization of complex systems
+* **Drug Discovery**: Molecular configuration space exploration
+
+== Related Work Packages
+
+* xref:../workpackages/wp3.adoc[WP3: Optimization & UQ] - Core optimization methods
+* xref:../workpackages/wp4.adoc[WP4: Scientific Machine Learning] - Surrogate model integration
+* xref:../workpackages/wp6.adoc[WP6: Software Stack] - Deployment and portability
+
+== Software & Resources
+
+* Open-source Bayesian optimization libraries
+* LUMI deployment recipes and tutorials
+* Integration with EuroHPC software stack
+* Performance benchmarking dashboards
+
+[.text-center]
+--
+xref:highlights/speedups.adoc[← Previous: Speedups] | xref:results.adoc[Back to Results] | xref:highlights/neural-acceleration.adoc[Next: Neural Operators →]
+--

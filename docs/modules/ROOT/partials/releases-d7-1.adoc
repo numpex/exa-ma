@@ -1,0 +1,32 @@
+// Deliverable: D7.1
+
+[.striped,cols="1,2,1,2",options="header"]
+|===
+|Version |Release |Date |Downloads
+
+|*v2.0.0* icon:star[role=text-warning,title=Latest]
+|Release v2.0.0
+|2025-11-12
+|link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v2.0.0[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.0.0/exa-ma-d7.1-v2.0.0.pdf[icon:file-pdf[title=PDF,role=text-danger]]
+
+|*v1.93.0*
+|Release v1.93.0
+|2025-10-23
+|link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v1.93.0[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v1.93.0/exa-ma-d7.1-v1.93.0.pdf[icon:file-pdf[title=PDF,role=text-danger]]
+
+|*v1.92.0*
+|Release v1.92.0
+|2025-10-22
+|link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v1.92.0[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v1.92.0/exa-ma-d7.1-v1.92.0.pdf[icon:file-pdf[title=PDF,role=text-danger]]
+
+|*v1.91.1*
+|Release v1.91.1
+|2025-10-11
+|link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v1.91.1[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v1.91.1/exa-ma-d7.1-v1.91.1.pdf[icon:file-pdf[title=PDF,role=text-danger]]
+
+|*v1.1.1* icon:bookmark[role=text-info,title=ANR Submission]
+|Release v1.1.1
+|2025-04-10
+|link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v1.1.1[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v1.1.1/exa-ma-d7.1-v1.1.1.pdf[icon:file-pdf[title=PDF,role=text-danger]]
+
+|===

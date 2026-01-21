@@ -1,0 +1,127 @@
+= Applications
+:page-layout: manuals
+:page-tags: manual, catalog, applications
+:page-cards-tag: application
+:page-cards-within-module: true
+:page-cards-application-title: Application Catalog
+:page-illustration: fa-solid fa-rocket
+:description: Exa-MA applications - mini-apps, extended mini-apps, and demonstrators for exascale benchmarking.
+:icons: font
+:sectnums!:
+
+[.lead]
+Exa-MA applications are benchmarks and demonstrators that exercise the capabilities of our frameworks at scale. They range from focused mini-apps testing specific algorithms to full demonstrators combining multiple work packages.
+
+[.section-gray]
+--
+[discrete]
+== At a Glance
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:rocket[size=2x,role=text-primary] *{{ stats.total }} Applications*
+
+{{ stats.benchmark_ready }} ready for benchmarking
+____
+
+____
+icon:cube[size=2x,role=text-info] *{{ stats.mini_apps }} Mini-Apps*
+
+Focused benchmarks testing specific algorithms
+____
+
+____
+icon:cubes[size=2x,role=text-success] *{{ stats.extended_mini_apps }} Extended Mini-Apps*
+
+Multi-WP benchmarks with broader scope
+____
+
+____
+icon:desktop[size=2x,role=text-warning] *{{ stats.demonstrators }} Demonstrators*
+
+Full-scale application showcases
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Application Status
+
+[.striped,cols="2,2,2,1,2",options="header"]
+|===
+| Application | Type | Frameworks | Status | Work Packages
+
+{% for app in applications %}
+| xref:applications/{{ app.slug }}.adoc[{{ app.name }}]
+| {{ app.application_type.value | replace('-', ' ') | title }}
+| {{ app.frameworks[:2] | join(', ') }}{% if app.frameworks|length > 2 %}...{% endif %}
+| {% if app.is_benchmark_ready %}icon:check-circle[role=text-success,title=Benchmark Ready]{% else %}icon:clock[role=text-warning,title={{ app.status.value }}]{% endif %}
+| {{ app.work_packages | join(', ') }}
+
+{% endfor %}
+|===
+--
+
+[.section-gray]
+--
+[discrete]
+== Benchmark-Ready Applications
+
+These applications are ready for performance evaluation on HPC systems:
+
+[.striped,cols="2,3,2,2",options="header"]
+|===
+| Application | Description | Frameworks | Metrics
+
+{% for app in applications if app.is_benchmark_ready %}
+| xref:applications/{{ app.slug }}.adoc[*{{ app.name }}*] icon:check-circle[role=text-success]
+| {{ app.purpose[:100] if app.purpose else '_Exa-MA Application_' }}{% if app.purpose and app.purpose|length > 100 %}...{% endif %}
+| {{ app.frameworks[:2] | join(', ') if app.frameworks else 'N/A' }}{% if app.frameworks|length > 2 %}...{% endif %}
+| {{ app.metrics[:2] | join(', ') if app.metrics else 'N/A' }}{% if app.metrics|length > 2 %}...{% endif %}
+
+{% endfor %}
+|===
+--
+
+{% if by_type %}
+[.section-white]
+--
+[discrete]
+== Applications by Type
+
+{% for app_type, type_apps in by_type.items() %}
+=== {% if app_type == 'mini-app' %}icon:cube[role=text-info]{% elif app_type == 'extended-mini-app' %}icon:cubes[role=text-success]{% else %}icon:desktop[role=text-warning]{% endif %} {{ app_type | replace('-', ' ') | title }}s
+
+{% for app in type_apps %}
+* xref:applications/{{ app.slug }}.adoc[{{ app.name }}]{% if app.is_benchmark_ready %} icon:check-circle[role=text-success,title=Ready]{% endif %} — {{ app.frameworks[:2] | join(', ') if app.frameworks else 'N/A' }}
+
+{% endfor %}
+
+{% endfor %}
+--
+{% endif %}
+
+{% if by_framework %}
+[.section-gray]
+--
+[discrete]
+== Applications by Framework
+
+{% for framework, fw_apps in by_framework.items() %}
+=== {{ framework }}
+
+{% for app in fw_apps %}
+* xref:applications/{{ app.slug }}.adoc[{{ app.name }}] ({{ app.application_type.value | replace('-', ' ') | title }}){% if app.is_benchmark_ready %} icon:check-circle[role=text-success]{% endif %}
+
+{% endfor %}
+
+{% endfor %}
+--
+{% endif %}
+
+[.applications]
+--
+--

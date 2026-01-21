@@ -1,0 +1,27 @@
+// Events: 2 upcoming
+
+[.grid.grid-2.gap-2.items-start]
+--
+[.card]
+====
+icon:network-wired[size=2x,role=text-info] *Trans-Numériques 2026*
+
+*Feb 02-05, 2026* | Couvent des Jacobins, Rennes
+
+First edition bringing together France's academic community around digital continuum challenges. NumPEx will be represented with presentations on performance, sustainability, and HPC. Exa-MA participants include project coordinators and WP leaders.
+
+https://inria.invityou.com/trans-numeriques2026[Event details and registration →]
+====
+
+[.card]
+====
+icon:brain[size=2x,role=text-success] *MAJSC 2026: ML & Autodiff in JAX*
+
+*Jun 08-12, 2026* | IRMA, Université de Strasbourg
+
+Workshop on Machine Learning and Automatic Differentiation in JAX for Scientific Computing. Five-day intensive program covering JAX fundamentals, neural networks (Equinox/Flax), automatic differentiation for PDEs (Diffrax), physics-informed neural networks, and neural operators. Organized by E. Franck (WP2 leader), V. Michel-Dansac, V. Vigon, and A. Musik from IRMA Strasbourg.
+
+https://majsc2026.pages.math.unistra.fr/[Event details and registration →]
+====
+
+--

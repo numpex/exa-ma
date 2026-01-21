@@ -1,0 +1,132 @@
+= Preconditioning systems arising from discrete fracture networks
+:page-layout: default
+:page-tags: application, mini-app, app-hpddm-dfn
+:page-illustration: fa-solid fa-cube
+:description: Preconditioning systems arising from discrete fracture networks - Test numerical and algorithm performance of PETSc preconditioners...
+:icons: font
+:page-status: benchmark-ready
+:page-work-packages: WP3
+
+[.lead]
+Test numerical and algorithm performance of PETSc preconditioners
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:check-circle[size=2x,role=text-success] *Status*
+
+Benchmark Ready
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP3
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+HPDDM, PETSc, MUMPS, PaStiX
+____
+====
+--
+
+[NOTE]
+====
+icon:check-circle[role=text-success] This application is **benchmark-ready** and can be used for performance evaluation.
+====
+
+== Overview
+
+Test numerical and algorithm performance of PETSc preconditioners
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **HPDDM**
+* **PETSc**
+* **MUMPS**
+* **PaStiX**
+
+=== Parallel Frameworks
+
+* MPI
+* Multithread
+* Multithread - OpenMP
+* GPU - Cuda
+
+== Methods & Algorithms
+
+
+
+=== WP3: Solvers
+
+* domain decomposition methods
+* multi-precision
+* krylov solver
+* preconditioning
+
+
+
+
+== Data Flow
+
+=== Inputs
+
+* PETSc binary
+* YAML config
+
+=== Outputs
+
+* CSV logs
+* PETSc binary
+* XML reports
+
+== Benchmarking
+
+=== Metrics
+
+* Strong Scalability
+* Weak Scalability
+* Time To Solution
+* Io Scaling
+* Relative Error
+
+=== Benchmark Scope
+
+* Solver Scaling
+* Multi Node
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | 2025-06-15
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Sorbonne U
+
+*Responsible:* P. Jolivet
+
+*WP7 Engineer:* Raphael Zanella (SU)
+

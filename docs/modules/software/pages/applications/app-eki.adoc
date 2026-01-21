@@ -1,0 +1,121 @@
+= EKI
+:page-layout: default
+:page-tags: application, mini-app, app-eki
+:page-illustration: fa-solid fa-cube
+:description: EKI - Demonstrate feasibility of ensemble Kalman filter based inversion of a simplified wave equation...
+:icons: font
+:page-status: planned
+:page-work-packages: WP4
+
+[.lead]
+Demonstrate feasibility of ensemble Kalman filter based inversion of a simplified wave equation
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP4
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+PETSc, GeoS
+____
+====
+--
+
+
+== Overview
+
+Demonstrate feasibility of ensemble Kalman filter based inversion of a simplified wave equation
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **PETSc**
+* **GeoS**
+
+=== Parallel Frameworks
+
+* MPI
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* spectral element
+* dG/hdG
+
+
+
+=== WP4: Inverse Problems & Data Assimilation
+
+* stochastic inverse problem
+* stochastic data assimilation: ensemble
+
+
+=== WP6: Uncertainty Quantification
+
+* uncertainty propagation
+
+== Data Flow
+
+=== Inputs
+
+* Gmsh
+* in-house
+
+=== Outputs
+
+* in-house
+
+== Benchmarking
+
+=== Metrics
+
+* Manufactured Solution
+* Weak Scalability
+
+=== Benchmark Scope
+
+* Ensemble Mode
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | 2026-10-01
+
+| Prototype Due | 2027-01-15
+|===
+
+== Team
+
+*Partners:* Inria BXSO, U Grenoble Alpes
+
+*Responsible:* M. Asch
+
+

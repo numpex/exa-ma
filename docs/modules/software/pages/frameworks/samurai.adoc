@@ -1,0 +1,123 @@
+= Samurai
+:page-layout: default
+:page-tags: framework, software, samurai
+:page-illustration: fa-solid fa-cube
+:description: Samurai - The main goal of samurai is to provide a new data structure based on intervals and algebra of sets to handle efficiently adaptive mesh refinement meth...
+:icons: font
+:page-work-packages: WP1
+
+[.lead]
+The main goal of samurai is to provide a new data structure based on intervals and algebra of sets to handle efficiently adaptive mesh refinement methods based on a cartesian grid. Such an approach has to be versatile enough to handle both AMR and multi-resolution methods.
+
+[.section-gray]
+--
+[discrete]
+== Overview
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Repository*
+
+https://github.com/hpc-maths/samurai
+____
+
+____
+icon:file-contract[size=2x,role=text-success] *License*
+
+OSS::BSD
+____
+
+____
+icon:book[size=2x,role=text-info] *Documentation*
+
+https://hpc-math-samurai.readthedocs.io/
+____
+
+____
+icon:comments[size=2x,role=text-warning] *Discussion*
+
+https://github.com/hpc-maths/samurai/discussions____
+====
+--
+
+== Criteria Evaluation
+
+=== Packaging
+
+Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
+
+* [x] Packages exist
+* [ ] Available in Spack
+* [ ] Available in Guix-HPC
+* [ ] Docker image available
+* [ ] Apptainer/Singularity available
+
+* Spack: https://github.com/spack/spack
+
+=== Testing & CI/CD
+
+Software should include validation tests triggered through automated mechanisms.
+
+* [x] Unit tests exist
+* [x] Continuous Integration configured
+* [x] CI runs on each release
+* [ ] Benchmarking tests exist
+
+=== Repository & Contributions
+
+* [x] Public source repository available
+* [x] Supports contributions via pull requests
+
+Repository: https://github.com/hpc-maths/samurai
+
+=== License
+
+Sources should be published under a clearly-identified free software license.
+
+* [x] License clearly stated
+* [x] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX identifiers used
+* [ ] REUSE compliant
+
+* BSD
+
+=== Documentation
+
+* [x] Documentation exists
+* [x] Easily browsable online
+
+Documentation: https://hpc-math-samurai.readthedocs.io/
+
+=== API Compatibility
+
+* [x] API changes documented
+* [x] Semantic versioning used
+* [x] Release policy defined
+
+== Work Packages
+
+This framework is involved in the following work packages:
+
+=== WP1 icon:check-circle[role=text-success]
+Topics: mesh adaptation
+_Benchmarked in this WP_
+
+
+== Technical Details
+
+*Languages:* C++, C++17, C++20
+
+*Parallelism:* MPI, Multithread
+
+*Data Formats:* HDF5
+
+*Resilience:* Checkpoint restart
+
+== Partners
+
+*Lead Partner:* CEA,
+IPP
+
+*Consortium:* IP Paris
+

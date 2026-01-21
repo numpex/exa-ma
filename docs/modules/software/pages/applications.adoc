@@ -1,0 +1,249 @@
+= Applications
+:page-layout: manuals
+:page-tags: manual, catalog, applications
+:page-cards-tag: application
+:page-cards-within-module: true
+:page-cards-application-title: Application Catalog
+:page-illustration: fa-solid fa-rocket
+:description: Exa-MA applications - mini-apps, extended mini-apps, and demonstrators for exascale benchmarking.
+:icons: font
+:sectnums!:
+
+[.lead]
+Exa-MA applications are benchmarks and demonstrators that exercise the capabilities of our frameworks at scale. They range from focused mini-apps testing specific algorithms to full demonstrators combining multiple work packages. This is a work in progress of course.
+
+[.section-gray]
+--
+[discrete]
+== At a Glance
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:rocket[size=2x,role=text-primary] *14 Applications*
+
+5 ready for benchmarking
+____
+
+____
+icon:cube[size=2x,role=text-info] *8 Mini-Apps*
+
+Focused benchmarks testing specific algorithms
+____
+
+____
+icon:cubes[size=2x,role=text-success] *4 Extended Mini-Apps*
+
+Multi-WP benchmarks with broader scope
+____
+
+____
+icon:desktop[size=2x,role=text-warning] *2 Demonstrators*
+
+Full-scale application showcases
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Application Status
+
+[.striped,cols="2,2,2,1,2",options="header"]
+|===
+| Application | Type | Frameworks | Status | Work Packages
+
+| xref:applications/app-feelpp-discr-1.adoc[Discretization]
+| Extended Mini App
+| Feel++, PETSc| icon:check-circle[role=text-success,title=Benchmark Ready]| WP1, WP3
+
+| xref:applications/app-feelpp-distance.adoc[Distance]
+| Mini App
+| Feel++| icon:check-circle[role=text-success,title=Benchmark Ready]| WP1
+
+| xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis]
+| Extended Mini App
+| Feel++, PETSc...| icon:clock[role=text-warning,title=planned]| WP2, WP1, WP3
+
+| xref:applications/app-feelpp-rb.adoc[Reduced Basis]
+| Extended Mini App
+| Feel++| icon:check-circle[role=text-success,title=Benchmark Ready]| WP1, WP2, WP3
+
+| xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale]
+| Demonstrator
+| | icon:clock[role=text-warning,title=planned]| WP1, WP3
+
+| xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
+| Mini App
+| HPDDM, PETSc...| icon:check-circle[role=text-success,title=Benchmark Ready]| WP3
+
+| xref:applications/app-freefem-parmmg.adoc[Fichera corner]
+| Extended Mini App
+| Freefem++, MMG/ParMMG...| icon:check-circle[role=text-success,title=Benchmark Ready]| WP1, WP3
+
+| xref:applications/app-zellij.adoc[Zellij]
+| Mini App
+| | icon:clock[role=text-warning,title=planned]| WP5
+
+| xref:applications/app-eki.adoc[EKI]
+| Mini App
+| PETSc, GeoS| icon:clock[role=text-warning,title=planned]| WP4
+
+| xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
+| Mini App
+| Freefem++| icon:clock[role=text-warning,title=planned]| WP5
+
+| xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
+| Mini App
+| Scimba| icon:clock[role=text-warning,title=planned]| WP5
+
+| xref:applications/app-scimba-plasma.adoc[Plasma NN]
+| Mini App
+| | icon:clock[role=text-warning,title=planned]| WP2
+
+| xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics]
+| Demonstrator
+| | icon:clock[role=text-warning,title=planned]| WP2
+
+|===
+--
+
+[.section-gray]
+--
+[discrete]
+== Benchmark-Ready Applications
+
+These applications are ready for performance evaluation on HPC systems:
+
+[.striped,cols="2,3,2,2",options="header"]
+|===
+| Application | Description | Frameworks | Metrics
+
+| xref:applications/app-feelpp-discr-1.adoc[*Discretization*] icon:check-circle[role=text-success]
+| Solve a PDE (heat,solid mech) with different discretisation methods from low to high order| Feel++, PETSc| benchmark-verification, strong-scalability...
+| xref:applications/app-feelpp-distance.adoc[*Distance*] icon:check-circle[role=text-success]
+| Compute distance to a range of entities using FMM or BVH| Feel++| analytical-solution-match, strong-scalability...
+| xref:applications/app-feelpp-rb.adoc[*Reduced Basis*] icon:check-circle[role=text-success]
+| Test reduced basis methods and empirical interpolation| Feel++| benchmark-verification, offline-cost...
+| xref:applications/app-hpddm-dfn.adoc[*Preconditioning systems arising from discrete fracture networks*] icon:check-circle[role=text-success]
+| Test numerical and algorithm performance of PETSc preconditioners| HPDDM, PETSc...| strong-scalability, weak-scalability...
+| xref:applications/app-freefem-parmmg.adoc[*Fichera corner*] icon:check-circle[role=text-success]
+| Test ParMmg performance for distributed anisotropic mesh adaptation| Freefem++, MMG/ParMMG...| strong-scalability, weak-scalability...
+|===
+--
+
+[.section-white]
+--
+[discrete]
+== Applications by Type
+
+[discrete]
+=== icon:desktop[role=text-warning] Demonstrators
+
+* xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale] — N/A
+
+* xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics] — N/A
+
+
+[discrete]
+=== icon:cubes[role=text-success] Extended Mini Apps
+
+* xref:applications/app-feelpp-discr-1.adoc[Discretization] icon:check-circle[role=text-success,title=Ready] — Feel++, PETSc
+
+* xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis] — Feel++, PETSc
+
+* xref:applications/app-feelpp-rb.adoc[Reduced Basis] icon:check-circle[role=text-success,title=Ready] — Feel++
+
+* xref:applications/app-freefem-parmmg.adoc[Fichera corner] icon:check-circle[role=text-success,title=Ready] — Freefem++, MMG/ParMMG
+
+
+[discrete]
+=== icon:cube[role=text-info] Mini Apps
+
+* xref:applications/app-feelpp-distance.adoc[Distance] icon:check-circle[role=text-success,title=Ready] — Feel++
+
+* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] icon:check-circle[role=text-success,title=Ready] — HPDDM, PETSc
+
+* xref:applications/app-zellij.adoc[Zellij] — N/A
+
+* xref:applications/app-eki.adoc[EKI] — PETSc, GeoS
+
+* xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM] — Freefem++
+
+* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN] — Scimba
+
+* xref:applications/app-scimba-plasma.adoc[Plasma NN] — N/A
+
+
+--
+
+[.section-gray]
+--
+[discrete]
+== Applications by Framework
+
+[discrete]
+=== Feel++
+
+* xref:applications/app-feelpp-discr-1.adoc[Discretization] (Extended Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-feelpp-distance.adoc[Distance] (Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis] (Extended Mini App)
+* xref:applications/app-feelpp-rb.adoc[Reduced Basis] (Extended Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
+
+[discrete]
+=== Freefem++
+
+* xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM] (Mini App)
+
+[discrete]
+=== GeoS
+
+* xref:applications/app-eki.adoc[EKI] (Mini App)
+
+[discrete]
+=== HPDDM
+
+* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
+
+[discrete]
+=== MMG/ParMMG
+
+* xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
+
+[discrete]
+=== MUMPS
+
+* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
+
+[discrete]
+=== PETSc
+
+* xref:applications/app-feelpp-discr-1.adoc[Discretization] (Extended Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis] (Extended Mini App)
+* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-eki.adoc[EKI] (Mini App)
+
+[discrete]
+=== PaStiX
+
+* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
+
+[discrete]
+=== Scimba
+
+* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN] (Mini App)
+
+[discrete]
+=== pytorch
+
+* xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis] (Extended Mini App)
+
+--
+
+[.softwares]
+--
+--

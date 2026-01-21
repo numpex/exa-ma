@@ -1,0 +1,221 @@
+= {{ app.name }}
+:page-layout: default
+:page-tags: application, {{ app.application_type.value }}, {{ app.slug }}
+:page-illustration: {% if app.application_type.value == 'demonstrator' %}fa-solid fa-desktop{% elif 'extended' in app.application_type.value %}fa-solid fa-cubes{% else %}fa-solid fa-cube{% endif %}
+
+:description: {{ app.name }} - {{ app.purpose[:150] if app.purpose else 'Exa-MA Application' }}...
+:icons: font
+:page-status: {{ app.status.value }}
+{% if app.work_packages %}
+:page-work-packages: {{ app.work_packages | join(', ') }}
+{% endif %}
+
+[.lead]
+{% if app.purpose %}
+{{ app.purpose }}
+{% else %}
+{{ app.name }} is an application developed as part of the Exa-MA project.
+{% endif %}
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+{{ app.application_type.value | replace('-', ' ') | title }}
+____
+
+____
+icon:{% if app.is_benchmark_ready %}check-circle[size=2x,role=text-success]{% else %}clock[size=2x,role=text-warning]{% endif %} *Status*
+
+{{ app.status.value | replace('-', ' ') | title }}
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+{{ app.work_packages | join(', ') if app.work_packages else 'N/A' }}
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+{{ app.frameworks | join(', ') if app.frameworks else 'N/A' }}
+____
+====
+--
+
+{% if app.is_benchmark_ready %}
+[NOTE]
+====
+icon:check-circle[role=text-success] This application is **benchmark-ready** and can be used for performance evaluation.
+====
+{% endif %}
+
+== Overview
+
+{% if app.purpose %}
+{{ app.purpose }}
+{% endif %}
+
+{% if app.repo_url %}
+=== Repository
+
+icon:code-branch[] {{ app.repo_url }}
+{% endif %}
+
+{% if app.frameworks or app.parallel_frameworks %}
+== Technical Stack
+
+{% if app.frameworks %}
+=== Frameworks Used
+
+{% for framework in app.frameworks %}
+* **{{ framework }}**
+{% endfor %}
+{% endif %}
+
+{% if app.parallel_frameworks %}
+=== Parallel Frameworks
+
+{% for pf in app.parallel_frameworks %}
+* {{ pf }}
+{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if app.methods_wp1 or app.methods_wp2 or app.methods_wp3 or app.methods_wp4 or app.methods_wp5 or app.methods_wp6 %}
+== Methods & Algorithms
+
+{% if app.methods_wp1 %}
+=== WP1: Discretization
+
+{% for method in app.methods_wp1 %}
+* {{ method }}
+{% endfor %}
+{% endif %}
+
+{% if app.methods_wp2 %}
+=== WP2: Model Order Reduction & SciML
+
+{% for method in app.methods_wp2 %}
+* {{ method }}
+{% endfor %}
+{% endif %}
+
+{% if app.methods_wp3 %}
+=== WP3: Solvers
+
+{% for method in app.methods_wp3 %}
+* {{ method }}
+{% endfor %}
+{% endif %}
+
+{% if app.methods_wp4 %}
+=== WP4: Inverse Problems & Data Assimilation
+
+{% for method in app.methods_wp4 %}
+* {{ method }}
+{% endfor %}
+{% endif %}
+
+{% if app.methods_wp5 %}
+=== WP5: Optimization
+
+{% for method in app.methods_wp5 %}
+* {{ method }}
+{% endfor %}
+{% endif %}
+
+{% if app.methods_wp6 %}
+=== WP6: Uncertainty Quantification
+
+{% for method in app.methods_wp6 %}
+* {{ method }}
+{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if app.inputs or app.outputs %}
+== Data Flow
+
+{% if app.inputs %}
+=== Inputs
+
+{% for input in app.inputs %}
+* {{ input }}
+{% endfor %}
+{% endif %}
+
+{% if app.outputs %}
+=== Outputs
+
+{% for output in app.outputs %}
+* {{ output }}
+{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if app.metrics or app.benchmark_scope %}
+== Benchmarking
+
+{% if app.metrics %}
+=== Metrics
+
+{% for metric in app.metrics %}
+* {{ metric | replace('-', ' ') | title }}
+{% endfor %}
+{% endif %}
+
+{% if app.benchmark_scope %}
+=== Benchmark Scope
+
+{% for scope in app.benchmark_scope %}
+* {{ scope | replace('-', ' ') | title }}
+{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if app.spec_due or app.proto_due %}
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+{% if app.spec_due %}
+| Specification Due | {{ app.spec_due | format_date }}
+{% endif %}
+
+{% if app.proto_due %}
+| Prototype Due | {{ app.proto_due | format_date }}
+{% endif %}
+|===
+{% endif %}
+
+{% if app.partners or app.responsible %}
+== Team
+
+{% if app.partners %}
+*Partners:* {{ app.partners | join(', ') }}
+{% endif %}
+
+{% if app.responsible %}
+*Responsible:* {{ app.responsible | join(', ') }}
+{% endif %}
+
+{% if app.wp7_engineer %}
+*WP7 Engineer:* {{ app.wp7_engineer }}
+{% endif %}
+{% endif %}
+
+{% if app.notes %}
+== Notes
+
+{{ app.notes }}
+{% endif %}

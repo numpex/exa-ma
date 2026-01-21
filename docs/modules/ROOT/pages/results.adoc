@@ -1,0 +1,179 @@
+= Results and Impact
+:page-tags: info
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-chart-line
+:description: Metrics, speedups, scale runs, packaging status, and milestones from the latest board review.
+:icons: font
+
+[.lead]
+This dashboard summarizes recent scientific and technical outcomes across Exa-MA. Metrics reflect the latest board presentation (December 2025) and are updated regularly.
+
+[.section-gray]
+--
+[discrete]
+== Project Metrics
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:file-alt[size=3x,role=text-primary] *36*
+
+Publications
+____
+
+[.text-center]
+____
+icon:cube[size=3x,role=text-success] *16*
+
+Software Packages
+____
+
+[.text-center]
+____
+icon:network-wired[size=3x,role=text-info] *18*
+
+Frameworks Impacted
+____
+
+[.text-center]
+____
+icon:users[size=3x,role=text-warning] *55*
+
+Funded Person-Years
+____
+====
+--
+
+[[highlights-2025]]
+[discrete]
+== 2025 Highlights
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:rocket[size=3x,role=text-primary]
+
+*xref:highlights/speedups.adoc[50× Speedup with GenEO]*
+
+GenEO preconditioning on large-scale problems (45M DoFs, 2916 cores)
+____
+
+[.text-center]
+____
+icon:microchip[size=3x,role=text-success]
+
+*xref:highlights/scale.adoc[8000 GPU Scale]*
+
+Bayesian optimization on LUMI supercomputer with fractal decomposition
+____
+
+[.text-center]
+____
+icon:brain[size=3x,role=text-info]
+
+*xref:highlights/neural-acceleration.adoc[80-200% CPU Savings]*
+
+Neural operators accelerating Newton iterations, domain-decomposed PINNs
+____
+
+[.text-center]
+____
+icon:city[size=3x,role=text-warning]
+
+*xref:highlights/urban-meshing.adoc[Urban Meshing]*
+
+From GIS data to watertight meshes for city-scale energy simulation
+____
+
+[.text-center]
+____
+icon:gauge-high[size=3x,role=text-danger]
+
+*xref:highlights/feelpp-benchmarking.adoc[HPC Benchmarking]*
+
+Automated CI/CD pipeline: code → EuroHPC runs in < 24h
+____
+====
+
+[.section-gray]
+--
+[discrete]
+== Software and Packaging Objectives
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:box[size=2x,role=text-primary] *Packaging Readiness*
+
+* Spack and Guix recipes published for all showcased codes
+* Docker and Apptainer containers available for rapid onboarding
+____
+
+____
+icon:sync-alt[size=2x,role=text-success] *CI/CD & Benchmarking*
+
+* Automated non-regression tests in WP7 pipelines
+* Performance dashboards in progress for key demonstrators
+____
+
+____
+icon:store[size=2x,role=text-info] *Software Showroom*
+
+* Demonstrators, mini-apps, and proxy apps aggregated for training
+* Reproducible notebooks planned for SciML, optimization, and UQ workflows
+____
+====
+--
+
+//[.section-white]
+//--
+//[discrete]
+//== Upcoming Milestones
+//
+//[.grid.grid-2.gap-2]
+//====
+//____
+//icon:calendar-check[size=2x,role=text-primary] *Q1 2026*
+//
+//* *January 2026*: General Assembly and Progress Review
+//* *March 2026*: SciML'25 invited talk by WP2 leadership
+//* *March 2026*: CI/CD and benchmarking training with CoE Hidalgo2
+//____
+//
+//____
+//icon:road[size=2x,role=text-success] *Ongoing*
+//
+//* Expanded EuroHPC benchmarking for solver and meshing pipelines
+//* xref:publications-hal.adoc[59 publications on HAL] and showroom refresh
+//* New notebooks for SciML, optimization, and UQ workflows
+//____
+//====
+//--
+
+[.section-white]
+--
+[discrete]
+== Explore Further
+
+[.striped,cols="1,4",options="header"]
+|===
+|Resource |Description
+
+|xref:publications-hal.adoc[icon:book[] Publications]
+|Browse all 36 publications from HAL (ANR-22-EXNU-0002)
+
+|xref:workpackages.adoc[icon:tasks[] Work Packages]
+|View WP-specific progress and deliverables
+
+|xref:software/index.adoc[icon:cube[] Software Stack]
+|Explore tools, APIs, and packaging status
+
+|xref:news.adoc[icon:calendar[] News and Events]
+|Upcoming sessions, releases, and training
+
+|xref:deliverables.adoc[icon:file-alt[] Deliverables]
+|Reports, documentation, and public outputs
+|===
+--

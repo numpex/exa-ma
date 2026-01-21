@@ -1,0 +1,158 @@
+= WP2: Model Order Reduction, Surrogate, Scientific Machine Learning methods
+:page-tags: manual,wp
+:parent-catalogs: wp-catalog
+:page-illustration: fa-solid fa-brain
+:icons: font
+
+[.lead]
+WP2 develops non-intrusive approaches for ultra-fast surrogate models of complex physical problems, combining data-driven and model-driven techniques with a focus on physics-based neural network models.
+
+[discrete]
+== Recent Highlights (2024-2025)
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:layer-group[size=2x,role=text-primary] *PINNs Innovation*
+
+Domain-decomposed PINNs with perfectly matched layers
+____
+
+____
+icon:rocket[size=2x,role=text-success] *Newton Solver Acceleration*
+
+Neural operators (FNO) accelerating Newton solvers: 80-200% CPU savings
+____
+
+____
+icon:wave-square[size=2x,role=text-info] *Navier-Stokes ROMs*
+
+Reduced-order models for parametric Navier-Stokes
+____
+
+____
+icon:chart-line[size=2x,role=text-warning] *Exascale Optimization*
+
+Multi-fidelity surrogate-based optimization on 8000 GPUs (LUMI)
+____
+====
+
+== Objectives
+
+WP2 uses **non-intrusive** approaches for designing ultra-fast surrogate models and strategies for leveraging these surrogates:
+
+[discrete]
+=== Data-Driven Techniques
+* Comparisons between reduced basis methods and neural network-based methods
+* Deep learning operators (FNO, DeepONet) for PDE solutions
+* Data-driven model order reduction without intrusive access to simulators
+
+[discrete]
+=== Model-Driven Techniques
+* Physics-informed neural networks (PINNs) respecting conservation laws
+* Neural operators learning PDE operators from data
+* Hybrid approaches combining physical constraints with data
+
+== Approach
+
+[.section-gray]
+--
+[mermaid]
+....
+graph TB
+    A[High-Fidelity Model] --> B[Data Generation]
+    B --> C[Surrogate Training]
+
+    D[Physics Constraints] --> C
+
+    C --> E[Reduced-Order Model]
+    C --> F[Neural Operator]
+
+    E --> G[Multi-Fidelity Coupling]
+    F --> G
+
+    G --> H[Uncertainty Quantification]
+    G --> I[Optimization]
+    G --> J[Inverse Problems]
+
+    style A fill:#e1f5ff
+    style C fill:#ffe1f5
+    style E fill:#f5ffe1
+    style F fill:#fff4e1
+    style G fill:#e1ffe1
+
+....
+--
+
+== Key Tasks
+
+[discrete]
+=== T2.1: Physics-Driven Deep Learning
+* PINNs for PDEs with physical constraints
+* Domain decomposition strategies for large-scale problems
+* Perfectly matched layers for boundary conditions
+
+[discrete]
+=== T2.2: Neural Operators
+* Fourier Neural Operators (FNO) for parametric PDEs
+* DeepONet and operator learning frameworks
+* Accelerating Newton iterations with learned operators
+
+[discrete]
+=== T2.3: Data-Driven Model Order Reduction
+* Proper Orthogonal Decomposition (POD)
+* Dynamic Mode Decomposition (DMD)
+* Autoencoders for nonlinear dimensionality reduction
+
+[discrete]
+=== T2.4: Non-Intrusive Reduced Basis
+* Regression-based reduced basis methods
+* Greedy sampling for snapshot selection
+* A posteriori error estimation
+
+[discrete]
+=== T2.5: Multi-Fidelity Modeling
+* Coupling low-fidelity and high-fidelity models
+* Adaptive fidelity selection
+* Cost-accuracy trade-offs for large ensembles
+
+[discrete]
+=== T2.6: Super-Resolution Methods
+* Real-time models with spatial/temporal upsampling
+* Neural network-based mesh refinement
+* Generative models for fine-scale details
+
+== Leads & Partners
+
+[cols="2,3"]
+|===
+|Lead Institution |Inria
+|Co-Leaders |UNISTRA, Sorbonne Université, CEA
+|Duration |Months 1-60
+|===
+
+== Deliverables
+
+[cols="1,3,1"]
+|===
+|ID |Title |Due Dates
+
+|D2.1-S
+|Software packages for model reduction and scientific ML
+|M24, M36, M48, M60
+
+|D2.2-MR
+|Activity reports (included in annual report D0.2-TR)
+|M12, M24, M36, M48, M60
+
+|D2.3-B
+|Benchmarking analysis report
+|M12, M24, M36, M48, M60
+|===
+
+== Collaborations
+
+* **WP1**: Mesh adaptation guided by ML surrogates
+* **WP3**: Preconditioning with learned operators
+* **WP4, WP5, WP6**: Multi-fidelity models for inverse problems, optimization, and UQ
+* **WP7**: Showroom notebooks and benchmark integration

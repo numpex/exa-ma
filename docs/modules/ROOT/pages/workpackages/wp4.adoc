@@ -1,0 +1,164 @@
+= WP4: Inverse Problems and Data Assimilation
+:page-tags: manual,wp
+:parent-catalogs: wp-catalog
+:page-illustration: fa-solid fa-database
+:icons: font
+
+[.lead]
+WP4 combines data and models by formulating and solving inverse problems using deterministic and stochastic methods, with multi-fidelity modeling for exascale efficiency.
+
+[discrete]
+== Recent Highlights (2024-2025)
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:clock[size=2x,role=text-primary] *Time-Parallel 4D-Var*
+
+Weak-constraint 4D-Var methods for time-parallel data assimilation
+____
+
+____
+icon:layer-group[size=2x,role=text-success] *Ensemble Methods*
+
+Ensemble-based approaches for error covariance estimation
+____
+
+____
+icon:project-diagram[size=2x,role=text-info] *Multi-Fidelity Strategies*
+
+Multi-fidelity strategies for inverse problems at scale
+____
+
+____
+icon:code-branch[size=2x,role=text-warning] *Hybrid Methods*
+
+Hybrid ensemble-variational methods with improved scalability
+____
+====
+
+== Objectives
+
+The combination of data and models is achieved through inverse problems, covering:
+
+* Deterministic and stochastic models and methods
+* Observation sparsity and sufficiency considerations
+* Multi-fidelity models (MFM) including reduced-order and AI-based surrogates
+* Scaling of inverse problem solution methods to exascale
+
+== Approach
+
+[.section-gray]
+--
+[mermaid]
+....
+graph TB
+    A[Observations] --> B[Data Assimilation]
+    C[Model] --> B
+
+    B --> D[Deterministic Methods]
+    B --> E[Stochastic Methods]
+
+    D --> F[Variational 4D-Var]
+    D --> G[Weak-Constraint]
+    D --> H[Time-Parallel]
+
+    E --> I[Ensemble Methods]
+    E --> J[SDE/SPDE]
+
+    F --> K[Inverse Problem Solution]
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+
+    L[Multi-Fidelity Models] --> K
+
+    K --> M[Updated Model]
+
+    style A fill:#e1f5ff
+    style B fill:#ffe1f5
+    style D fill:#fff4e1
+    style E fill:#f5ffe1
+    style K fill:#e1ffe1
+    style M fill:#ffe1e1
+....
+--
+
+== Key Tasks
+
+[discrete]
+=== T4.1: Deterministic Methods
+* Time-parallel methods with weak-constraint formulation of variational assimilation
+* Exploit different physics, spatial and temporal scales for improved parallelism
+* Develop hybrid ensemble-variational approaches using ensembles for better error covariance
+
+[discrete]
+=== T4.2: Stochastic Methods
+* Implement stochastic processes obeying stochastic differential equations (SDEs)
+* First approach: Itô theory with stochastic ordinary differential equations
+* Second approach: Stochastic partial differential equations (SPDE)
+* Study and compare approaches on classical inverse and data assimilation problems
+
+[discrete]
+=== T4.3: Observations
+* Improve description of observation error statistics beyond uncorrelated Gaussian errors
+* Address forecast errors dominated by position errors
+* Develop alternative metrics based on transport theory
+
+[discrete]
+=== T4.4: Multi-Fidelity Modeling
+* Joint work with WP2, Task T2.5
+* Consider PINN-type models as candidates for multi-fidelity models
+* Integration with WP2 Tasks T2.1 and T2.2 (neural operators)
+
+[discrete]
+=== T4.5: Model Management and Scheduling
+* Develop model management/scheduling strategies
+* Combine high-fidelity and lower-fidelity models optimally
+* Minimize variance in stochastic frameworks
+* Focus on exascale scaling as central issue
+
+== Leads & Partners
+
+[cols="2,3"]
+|===
+|Lead Institution |UNISTRA
+|Co-Leaders |Inria
+|Duration |Months 1-60
+|===
+
+== Addressed Exascale Bottlenecks
+
+WP4 targets bottlenecks **B8** (Discovery, design, and decision algorithms) and **B13** (Opportunity to integrate uncertainties):
+
+* Enabling ensembles of many small runs for data assimilation
+* Combining data and models through inverse problems
+* Integrating uncertainties directly into calculations
+* Efficient use of parallel resources for ensemble methods
+
+== Deliverables
+
+[cols="1,3,1"]
+|===
+|ID |Title |Due Dates
+
+|D4.1-MR
+|Activity reports (included in annual report D0.2-TR)
+|M12, M24, M36, M48, M60
+
+|D4.2-S
+|Software package for inverse problems and data assimilation
+|M24, M36, M48, M60
+
+|D4.3-B
+|Benchmarking analysis report (bottlenecks and breakthroughs)
+|M12, M24, M36, M48, M60
+|===
+
+== Collaborations
+
+* **WP2**: Joint work on multi-fidelity modeling (T2.5), PINN models (T2.1, T2.2)
+* **WP6**: Shared interest in uncertainty quantification
+* **WP7**: Benchmarking analysis and integration
+* **NumPEx Projects**: ExaDoST, ExaAToW

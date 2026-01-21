@@ -35,3 +35,6 @@ docs/meetings/20220907_kickoff/beamertheme-trigon/source/x.log
 cache/
 node_modules/
 public/
+**/__pycache__/**
+**/__pycache__/**
+**/__pycache__/**

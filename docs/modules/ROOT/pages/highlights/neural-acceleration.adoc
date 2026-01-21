@@ -1,0 +1,117 @@
+= Neural Operator Acceleration
+:page-layout: default
+:page-tags: highlight
+:parent-catalogs: highlights-2025
+:page-illustration: fa-solid fa-brain
+:description: 80-200% CPU savings through AI-enhanced Newton iterations and domain-decomposed PINNs
+
+// tag::card[]
+[.page-card]
+====
+[.page-card-illustration]
+--
+icon:brain[size=3x,role=text-info]
+--
+
+[.page-card-body]
+--
+xref:highlights/neural-acceleration.adoc[*Neural Operators*]
+
+80-200% CPU savings through AI-enhanced Newton iterations and domain-decomposed PINNs
+--
+====
+// end::card[]
+
+[.lead]
+Scientific machine learning meets traditional numerics: neural operators dramatically accelerate Newton iterations while preserving accuracy, achieving 80-200% CPU time savings.
+
+== Overview
+
+By integrating neural operators (FNO, DeepONet) with classical Newton-based nonlinear solvers, we've achieved substantial computational savings without sacrificing solution quality.
+
+== Key Achievement
+
+[.text-center]
+****
+icon:brain[size=4x,role=text-info]
+
+*80-200% CPU Savings*
+
+FNO-accelerated Newton loops +
+Domain-decomposed PINNs +
+Hybrid physics-ML workflows
+****
+
+== Technical Innovations
+
+=== Neural Operator Integration
+* *Fourier Neural Operators (FNO)*: Learn solution operators in spectral space
+* *Physics-Informed Neural Networks (PINNs)*: Enforce PDE constraints during training
+* *DeepONet*: Operator learning for parametric families of PDEs
+* *Hybrid Coupling*: Seamless integration with mesh-based discretizations
+
+=== Performance Metrics
+* *CPU Time Reduction*: 80-200% savings depending on problem class
+* *Accuracy Preservation*: Maintains scientific computing standards
+* *Memory Efficiency*: Reduced solver iterations = lower memory footprint
+* *Scalability*: Domain-decomposed training for large problems
+
+== Hybrid Physics-ML Workflow
+
+The integration strategy:
+
+1. **Offline Training**: Neural operators pre-trained on solution families
+2. **Online Acceleration**: Replace expensive Jacobian operations with learned approximations
+3. **Error Control**: Traditional solver verifies and corrects predictions
+4. **Adaptive Strategy**: Switch between neural and classical based on convergence metrics
+
+== Application Areas
+
+Successfully demonstrated in:
+
+* **Nonlinear PDEs**: Navier-Stokes, elasticity, reaction-diffusion
+* **Parametric Studies**: Design space exploration with varying coefficients
+* **Multi-Physics**: Coupled thermal-fluid-structural problems
+* **Inverse Problems**: Parameter identification accelerated by surrogate models
+
+== Domain Decomposition + Neural Methods
+
+Novel contribution: combining DD-based parallelism with neural operators:
+
+* *Local Neural Models*: Each subdomain trains specialized operators
+* *Communication Reduction*: Fewer interface exchanges per Newton step
+* *Load Balancing*: Adaptive work distribution based on neural convergence
+* *Mesh Coupling*: Neural predictions consistent with WP1 discretizations
+
+== Impact on Computational Science
+
+This breakthrough enables:
+
+* *Real-Time Simulation*: Interactive exploration of complex phenomena
+* *Design Optimization*: Faster optimization loops with reduced simulation cost
+* *Uncertainty Quantification*: Affordable ensemble methods for UQ campaigns
+* *Climate & Weather*: Accelerated multi-scale atmospheric models
+
+== Related Work Packages
+
+* xref:../workpackages/wp4.adoc[WP4: Scientific Machine Learning] - Neural operator development
+* xref:../workpackages/wp1.adoc[WP1: Advanced Discretizations] - Mesh and discretization coupling
+* xref:../workpackages/wp2.adoc[WP2: Scalable Linear Algebra] - Solver integration
+* xref:../workpackages/wp3.adoc[WP3: Optimization & UQ] - Application to inverse problems
+
+== Software & Training
+
+* Open-source neural operator libraries (PyTorch, JAX)
+* Integration tutorials with Feel++, FreeFEM
+* Training workshops: March 2026 (planned)
+* Reproducible Jupyter notebooks
+
+[NOTE]
+====
+**Upcoming**: March 2026 training workshop on neural operators for HPC, co-organized with CoE Hidalgo2.
+====
+
+[.text-center]
+--
+xref:highlights/scale.adoc[← Previous: Exascale Scale] | xref:results.adoc[Back to Results] | xref:highlights/urban-meshing.adoc[Next: Urban Meshing →]
+--

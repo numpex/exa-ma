@@ -1,16 +1,89 @@
-= Deliverables & Publications
+= Deliverables and Publications
+:page-tags: resource
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-file-lines
+:description: Key deliverables, reports, and publication links for Exa-MA.
+:icons: font
 
+[.lead]
 Exa-MA delivers a wide range of outputs, from software toolboxes and demonstrators to high-impact publications.
 
-== Key Deliverables
+[.section-gray]
+--
+[discrete]
+== Deliverable Reports
+
+Official project deliverables are versioned and published on GitHub with PDF downloads. icon:star[role=text-warning] marks the latest release, icon:bookmark[role=text-info] marks versions submitted to ANR.
+--
+
+[.section-white]
+--
+[discrete]
+=== D7.1: Research, Software Development & Benchmarking
+
+_Mega-deliverable consolidating Dx.1 reports from WP1 to WP7_
+
+*Work Packages*: WP1, WP2, WP3, WP4, WP5, WP6, WP7
+
+*Repository*: https://github.com/numpex/exa-ma-d7.1[icon:code-branch[] numpex/exa-ma-d7.1]
+
+// Include auto-generated releases table
+include::partial$releases-d7-1.adoc[]
+--
+
+[.section-gray]
+--
+[discrete]
+=== D7.3: Training Materials
+
+_Educational resources, tutorials, and workshop materials_
+
+*Work Packages*: WP7
+
+*Repository*: https://github.com/numpex/exa-ma-d7.3[icon:code-branch[] numpex/exa-ma-d7.3]
+
+// Include auto-generated releases table
+include::partial$releases-d7-3.adoc[]
+--
+
+[.section-white]
+--
+[discrete]
+== Publications
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:book[size=2x,role=text-primary] *Publications on HAL*
+
+Browse all peer-reviewed publications acknowledging Exa-MA (ANR-22-EXNU-0002), organized by year with direct links to PDFs.
+
+xref:publications-hal.adoc[View full publication list →]
+____
+
+____
+icon:external-link-alt[size=2x,role=text-info] *Search on HAL*
+
+Access the live HAL archive search for real-time publication updates.
+
+https://hal.science/search/index/?q=anrProjectReference_s:ANR-22-EXNU-0002[Search HAL archive →]
+____
+====
+
+Publications are automatically harvested from HAL using the ANR project identifier. The list is regenerated periodically to capture new submissions.
+--
+
+[.section-gray]
+--
+[discrete]
+== Key Outputs
 
 Software Toolboxes::
   Development of libraries for mesh generation, adaptive discretization, and solver components tailored for exascale computing.
+
 Benchmarking Reports::
   Comprehensive performance assessments of exascale software stacks, including a benchmarking framework developed under WP7.
+
 Demonstrators::
   Mini-apps and proxy-apps that validate our methodologies at scale.
-  
-== Publications
-So far, Exa-MA has produced 13 publications on HAL. Additional publications and reports will be released as the project progresses.
-you can find them xref:https://hal.science/search/index/?q=Exa-MA&rows=30&level0_domain_s=math+OR+info+OR+stat+OR+phys&publicationDateY_i=2025+OR+2024[> here].
+--

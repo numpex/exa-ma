@@ -1,52 +1,240 @@
 = Our Partners
+:page-tags: info
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-handshake
+:description: Institutions collaborating in the Exa-MA consortium.
+:icons: font
 
-The Exa-MA project brings together a diverse consortium of research institutions dedicated to advancing exascale computing. We have both “beneficiary” and “non‐beneficiary” partners, along with a grant & consortium agreement structure that ensures smooth collaboration. “Small” partners typically have 1–2 people actively involved, while “large” partners may have 10 or more.
+[.lead]
+The Exa-MA project brings together a diverse consortium of research institutions dedicated to advancing exascale computing. Both beneficiary and non-beneficiary partners collaborate under a grant and consortium agreement structure.
 
-image::consortium.png[Consortium Diagram, 800, role="center", align="center"]
+[.section-gray]
+--
+[discrete]
+== Consortium at a Glance
 
-== Overall Composition
+[cols="1,3",frame=none,grid=none]
+|===
+a|
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:users[size=3x,role=text-primary] *74*
 
-* 74 permanent staff  
-* 22 Person-Years (PY) funded through Exa-MA  
-** 22 PY for PhDs  
-** 12 PY for Postdocs  
-** 21 PY for Research Engineers  
+Permanent Staff
+____
 
-== Beneficiary Partners (Large)
+[.text-center]
+____
+icon:user-graduate[size=3x,role=text-success] *22 PY*
 
-* **CEA**
-* **Inria**  
-  + Contributing centers in Paris, Bordeaux, Nice, Lille, Strasbourg, Saclay, Grenoble, and Lyon
-* **Université de Strasbourg**  
-  + IRMA, Cemosis
-* **École Polytechnique**  
-  + Centre de Mathématiques Appliquées (CMAP)
-* **Sorbonne Universités**  
-  + LJLL, LIP6
+PhD Students
+____
 
-== Non-Beneficiary “Large” Partner
+[.text-center]
+____
+icon:flask[size=3x,role=text-info] *12 PY*
 
-* **CNRS** (with various institutes supporting the partners above)
+Postdocs
+____
 
-== Non-Beneficiary “Small” Partners
+[.text-center]
+____
+icon:cogs[size=3x,role=text-warning] *21 PY*
 
-* Bordeaux INP
-* ENS Lyon
-* Université Côte d'Azur
-* Université de Lille
-* Université de Lorraine
-* Université de Pau
-* Université de Picardie
-* Université Grenoble Alpes
-* Université Gustave Eiffel
-* Université Panthéon Assas
+Engineers
+____
+====
 
-== External Collaborations
+[.text-center]
+____
+icon:euro-sign[size=2x,role=text-success] *24M€ Total Budget*
 
-We also collaborate with international partners and industry experts to maintain alignment with global HPC standards. For a full list of partners or more details, please contact us.
+6M€ from ANR France 2030
+____
 
----
+a|
+image::consortium.png[Consortium Diagram]
+|===
+--
 
-NOTE:  
-“Small” means ~1–2 persons involved, “large” means 10 or more persons.  
-The specific role of each partner (beneficiary or non‐beneficiary) may vary, but all contribute to the technical and scientific progress of Exa-MA.
+[.section-white]
+--
+[discrete]
+== Beneficiary Partners
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:atom[size=2x,role=text-danger] *CEA*
+
+Commissariat à l'énergie atomique et aux énergies alternatives
+
+Major contributions to HPC infrastructure and numerical simulation
+____
+
+[.text-center]
+____
+icon:laptop-code[size=2x,role=text-primary] *Inria*
+
+French National Institute for Research in Digital Science and Technology
+
+Centers: Paris, Bordeaux, Nice, Lille, Strasbourg, Saclay, Grenoble, Lyon
+____
+
+[.text-center]
+____
+icon:university[size=2x,role=text-info] *Université de Strasbourg*
+
+IRMA (Institut de Recherche Mathématique Avancée) + Cemosis
+
+Project coordination and mathematical methods expertise
+____
+
+[.text-center]
+____
+icon:graduation-cap[size=2x,role=text-success] *École Polytechnique*
+
+Centre de Mathématiques Appliquées (CMAP)
+
+Applied mathematics and optimization
+____
+
+[.text-center]
+____
+icon:landmark[size=2x,role=text-warning] *Sorbonne Université*
+
+LJLL (Laboratoire Jacques-Louis Lions) + LIP6
+
+Numerical analysis and computer science
+____
+====
+--
+
+[.section-gray]
+--
+[discrete]
+== Non-Beneficiary Partners
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:building[size=2x,role=text-primary] *CNRS*
+
+Centre National de la Recherche Scientifique
+
+Supporting various institutes across the consortium
+____
+====
+
+[discrete]
+=== Associated Institutions
+
+[.striped,cols="3,2",options="header"]
+|===
+|Institution |Location
+
+|Bordeaux INP |Bordeaux
+|ENS Lyon |Lyon
+|Université Côte d'Azur |Nice
+|Université de Lille |Lille
+|Université de Lorraine |Nancy
+|Université de Pau et des Pays de l'Adour |Pau
+|Université de Picardie Jules Verne |Amiens
+|Université Grenoble Alpes |Grenoble
+|Université Gustave Eiffel |Paris
+|Université Paris-Panthéon-Assas |Paris
+|===
+--
+
+[.section-white]
+--
+[discrete]
+== Industry Partnerships
+
+_3 co-funded PhD positions with industrial partners_
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:oil-can[size=2x,role=text-danger] *TotalEnergies*
+
+Energy sector collaboration on numerical simulation for subsurface modeling and reservoir engineering.
+
+_1 co-funded PhD (TotalEnergies ½, Exa-MA ½)_
+____
+
+____
+icon:gas-pump[size=2x,role=text-warning] *IFPEN + ONERA*
+
+Joint partnership on computational methods for energy and aerospace applications.
+
+_1 co-funded PhD (IFPEN ¼, ONERA ¼, Exa-MA ½)_
+____
+
+____
+icon:rocket[size=2x,role=text-primary] *ONERA + Safran*
+
+Aerospace industry partnership on propulsion and turbomachinery simulation.
+
+_1 co-funded PhD (ONERA + Safran ½, Exa-MA ½)_
+____
+====
+--
+
+[.section-gray]
+--
+[discrete]
+== Collaborative Projects
+
+_4 funded projects involving Exa-MA partners_
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:europe[size=2x,role=text-primary] *CoE-Hidalgo2*
+
+Centre of Excellence co-funded by NumPEx and EuroHPC
+
+2023–2026
+____
+
+[.text-center]
+____
+icon:brain[size=2x,role=text-success] *SAGE-HPC*
+
+AI for HPC — funded by NumPEx
+
+2026–2030
+____
+
+[.text-center]
+____
+icon:server[size=2x,role=text-info] *DAiMOS*
+
+HPC for AI — funded by NumPEx
+
+2026–2030
+____
+
+[.text-center]
+____
+icon:project-diagram[size=2x,role=text-warning] *JNL-G*
+
+Funded by ANR
+
+2026–2030
+____
+====
+
+For collaboration inquiries, please visit our xref:contact.adoc[contact page].
+--
+
+[NOTE]
+====
+*Partner categories:* "Beneficiary" partners receive direct ANR funding. "Non-beneficiary" partners contribute expertise and resources without direct funding. Partner involvement ranges from 1-2 persons (small) to 10+ persons (large).
+====

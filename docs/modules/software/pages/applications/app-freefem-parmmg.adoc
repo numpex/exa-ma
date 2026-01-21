@@ -1,0 +1,129 @@
+= Fichera corner
+:page-layout: default
+:page-tags: application, extended-mini-app, app-freefem-parmmg
+:page-illustration: fa-solid fa-cubes
+:description: Fichera corner - Test ParMmg performance for distributed anisotropic mesh adaptation...
+:icons: font
+:page-status: benchmark-ready
+:page-work-packages: WP1, WP3
+
+[.lead]
+Test ParMmg performance for distributed anisotropic mesh adaptation
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Extended Mini App
+____
+
+____
+icon:check-circle[size=2x,role=text-success] *Status*
+
+Benchmark Ready
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1, WP3
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Freefem++, MMG/ParMMG, PETSc, Feel++
+____
+====
+--
+
+[NOTE]
+====
+icon:check-circle[role=text-success] This application is **benchmark-ready** and can be used for performance evaluation.
+====
+
+== Overview
+
+Test ParMmg performance for distributed anisotropic mesh adaptation
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Freefem++**
+* **MMG/ParMMG**
+* **PETSc**
+* **Feel++**
+
+=== Parallel Frameworks
+
+* MPI
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* mesh adaptation
+* unstructured mesh
+* finite element
+
+
+=== WP3: Solvers
+
+* preconditioning
+
+
+
+
+== Data Flow
+
+=== Inputs
+
+* in-house
+* YAML config
+
+=== Outputs
+
+* VTK
+* PETSc binary
+* XML reports
+
+== Benchmarking
+
+=== Metrics
+
+* Strong Scalability
+* Weak Scalability
+* Io Scaling
+
+=== Benchmark Scope
+
+* Multi Node
+* Method Verification
+* Workflow Component
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | 2025-06-15
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Sorbonne U, Inria PARIS
+
+*Responsible:* P. Jolivet; P.-H. Tournier
+
+

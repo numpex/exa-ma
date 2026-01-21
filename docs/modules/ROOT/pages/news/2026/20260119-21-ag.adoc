@@ -1,0 +1,243 @@
+= Exa-MA 2026 General Assembly
+:page-tags: resource,news2026
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-users
+:description: The 2026 General Assembly concluded successfully with all WP presentations and materials now available.
+
+[.lead]
+The Exa-MA 2026 General Assembly successfully concluded on January 21, 2026. Held at Arts et Métiers ParisTech in Aix-en-Provence from January 19-21, this three-day event brought together the entire consortium for comprehensive progress reviews, framework presentations, and strategic planning. **All presentation slides are now available for download below.**
+
+== Overview
+
+The General Assembly featured:
+
+* **WP Progress Reviews**: All seven work packages (WP1-WP7) presented scientific highlights and next steps
+* **Framework Presentations**: Deep dives into Feel++, Scimba, Composyx, and Uranie frameworks
+* **Breakout Sessions**: Focused collaboration sessions connecting frameworks with work packages
+* **AI & HPC Integration**: Presentations on Sage-HPC (AI for HPC) and Daimos (HPC for AI)
+* **Scientific Board Meeting**: Strategic discussions with board members, project leaders, and WP leaders
+
+== Event Details
+
+*Location*: Arts et Métiers ParisTech, 2 Cour des Arts et Métiers, 13617 Aix-en-Provence, France
+
+*Duration*: Monday, January 19 – Wednesday, January 21, 2026
+
+*Format*: In-person with remote access available
+
+== Day 1: Monday, January 19
+
+=== Welcome & WP Progress Reviews
+
+The first day opened with a welcome lunch followed by:
+
+* **NumPEx & ExaMA Refresher** (mandatory for newcomers)
+* **Introductory Words**: Hélène Barucq and Christophe Prud'homme
+* **WP1 - Discretization**: Pierre Alliez and Isabelle Ramière
+* **WP2 - Model Order Reduction & Scientific ML**: Stéphane Lanteri and Emmanuel Franck
+* **WP3 - Solvers for Linear Algebra**: Vincent Faucher, Luc Giraud, and Frédéric Nataf
+* **WP4 - Data-Model Integration**: Mark Asch and Arthur Vidard
+* **WP5 - Optimization**: El Ghazali Talbi
+* **WP6 - Uncertainty Quantification**: Josselin Garnier and Clément Gauchy
+
+=== Day 1 Presentations
+
+[.striped,cols="1,3,2,1",options="header"]
+|===
+|Time |Presentation |Presenters |Slides
+
+|13:45-14:15
+|NumPEx & Exa-MA Refresher
+|Hélène Barucq, Christophe Prud'homme
+|xref:attachment$news/2026/ga/slides_wp0.pdf[icon:file-pdf[title=PDF]]
+
+|14:30-14:45
+|WP1 Discretization: progress, highlights & next steps
+|Pierre Alliez, Isabelle Ramière
+|xref:attachment$news/2026/ga/slides_wp1.pdf[icon:file-pdf[title=PDF]]
+
+|14:45-15:00
+|WP2 Model Order Reduction & Scientific ML: progress, highlights & next steps
+|Stéphane Lanteri, Emmanuel Franck
+|xref:attachment$news/2026/ga/slides_wp2.pdf[icon:file-pdf[title=PDF]]
+
+|15:00-15:15
+|WP3 Solvers for Linear Algebra: progress, highlights & next steps
+|Vincent Faucher, Luc Giraud, Frédéric Nataf
+|xref:attachment$news/2026/ga/slides_wp3.pdf[icon:file-pdf[title=PDF]]
+
+|15:15-15:30
+|WP4 Data-Model Integration: progress, highlights & next steps
+|Mark Asch, Arthur Vidard
+|xref:attachment$news/2026/ga/slides_wp4.pdf[icon:file-pdf[title=PDF]]
+
+|15:30-15:45
+|WP5 Optimization: progress, highlights & next steps
+|El Ghazali Talbi
+|xref:attachment$news/2026/ga/slides_wp5.pdf[icon:file-pdf[title=PDF]]
+
+|15:45-16:00
+|WP6 Uncertainty Quantification: progress, highlights & next steps
+|Josselin Garnier, Clément Gauchy
+|xref:attachment$news/2026/ga/slides_wp6.pdf[icon:file-pdf[title=PDF]]
+
+|===
+
+=== Intra-WP Meetings
+
+The afternoon concluded with parallel intra-WP meetings (16:30-18:00) followed by a consortium dinner.
+
+== Day 2: Tuesday, January 20
+
+=== Framework Presentations
+
+Morning sessions featured detailed presentations of the project's core computational frameworks:
+
+[.striped,cols="1,3,2,1",options="header"]
+|===
+|Time |Presentation |Presenters |Slides
+
+|9:00-9:15
+|Feel++ Framework
+|Christophe Prud'homme
+|xref:attachment$news/2026/ga/feelpp.pdf[icon:file-pdf[title=PDF]]
+
+|9:15-9:30
+|Scimba Framework
+|Emmanuel Franck
+|xref:attachment$news/2026/ga/scimba.pdf[icon:file-pdf[title=PDF]]
+
+|9:30-9:45
+|Composyx Framework
+|Emmanuel Agullo, Gilles Marait
+|xref:attachment$news/2026/ga/composyx.pdf[icon:file-pdf[title=PDF]]
+
+|9:45-10:00
+|Uranie Framework
+|Clément Gauchy
+|xref:attachment$news/2026/ga/uranie.pdf[icon:file-pdf[title=PDF]]
+
+|===
+
+=== Breakout Sessions
+
+Three rounds of targeted breakout sessions connected frameworks with relevant work packages:
+
+**Round 1 (10:30-12:00)**:
+
+* Feel++ × WP1 × WP2
+* Composyx × WP3
+* Scimba × WP5
+
+**Round 2 (13:45-15:15)**:
+
+* Scimba × WP1 × WP2
+* Feel++ × WP4 × WP6
+* Uranie × WP5
+
+**Round 3 (15:45-17:15)**:
+
+* Composyx × WP1 × WP2 × WP4
+* Feel++ × WP3
+* Uranie × WP2 × WP6
+
+=== Scientific Board Meeting
+
+The day concluded with a scientific board meeting (17:30-18:30) bringing together board members, project leaders, and WP leaders for strategic discussions.
+
+== Day 3: Wednesday, January 21
+
+=== AI-HPC Integration
+
+Morning sessions explored the intersection of AI and HPC:
+
+[.striped,cols="1,3,2,1",options="header"]
+|===
+|Time |Presentation |Presenters |Slides
+
+|9:00-9:45
+|Sage-HPC: AI for HPC
+|Laetitia Giraldi
+|xref:attachment$news/2026/ga/sagehpc.pdf[icon:file-pdf[title=PDF]]
+
+|9:45-10:30
+|Daimos: HPC for AI
+|Julien Herrmann
+|xref:attachment$news/2026/ga/daimos.pdf[icon:file-pdf[title=PDF]]
+
+|===
+
+=== Feedback & Work Planning
+
+Each WP leader presented feedback from breakout sessions and outlined work plans:
+
+[.striped,cols="1,3,2,1",options="header"]
+|===
+|Time |Presentation |Presenters |Slides
+
+|10:45-11:00
+|WP1 Discretization: Feedback & Work Plan
+|Pierre Alliez, Isabelle Ramière
+|xref:attachment$news/2026/ga/slides-wp1-feedback.pdf[icon:file-pdf[title=PDF]]
+
+|11:00-11:15
+|WP2 Model Order Reduction & Scientific ML: Feedback & Work Plan
+|Stéphane Lanteri, Emmanuel Franck
+|xref:attachment$news/2026/ga/slides-wp2-feedback.pdf[icon:file-pdf[title=PDF]]
+
+|11:15-11:30
+|WP3 Solvers for Linear Algebra: Feedback & Work Plan
+|Vincent Faucher, Luc Giraud, Frédéric Nataf
+|xref:attachment$news/2026/ga/slides-wp3-feedback.pdf[icon:file-pdf[title=PDF]]
+
+|11:30-11:45
+|WP4 Data-Model Integration: Feedback & Work Plan
+|Mark Asch, Arthur Vidard
+|xref:attachment$news/2026/ga/slides-wp4-feedback.pdf[icon:file-pdf[title=PDF]]
+
+|11:45-12:00
+|WP5 Optimization: Feedback & Work Plan
+|El Ghazali Talbi
+|xref:attachment$news/2026/ga/slides-wp5-feedback.pdf[icon:file-pdf[title=PDF]]
+
+|12:00-12:15
+|WP6 Uncertainty Quantification: Feedback & Work Plan
+|Josselin Garnier, Clément Gauchy
+|xref:attachment$news/2026/ga/slides-wp6-feedback.pdf[icon:file-pdf[title=PDF]]
+
+|12:15-12:30
+|WP7 Software Integration: Feedback & Work Plan
+|Christophe Prud'homme
+|xref:attachment$news/2026/ga/slides-wp7-feedback.pdf[icon:file-pdf[title=PDF]]
+
+|===
+
+=== Closing Remarks
+
+The assembly concluded with general closing remarks from Hélène Barucq and Christophe Prud'homme, followed by a packed lunch.
+
+[.striped,cols="1,3,2,1",options="header"]
+|===
+|Time |Presentation |Presenters |Slides
+
+|12:30-12:45
+|Closing Remarks
+|Hélène Barucq, Christophe Prud'homme
+|xref:attachment$news/2026/ga/slides-closing-remarks.pdf[icon:file-pdf[title=PDF]]
+
+|===
+
+== Resources
+
+All presentation materials from the General Assembly are now available:
+
+* **Full Agenda PDF**: xref:attachment$news/2026/ga/agenda.pdf[Download complete agenda with schedule and room details]
+* **Slides**: All 24 presentation slides are available for download via the PDF links in the tables above
+
+== Next Steps
+
+Following the successful conclusion of the General Assembly, work packages are now implementing the agreed-upon action items and continuing the collaborations initiated during breakout sessions. The feedback sessions have defined clear roadmaps for each WP through the next reporting period.
+
+---
+
+For questions about the General Assembly or to access additional materials, please xref:contact.adoc[contact the project coordinators].

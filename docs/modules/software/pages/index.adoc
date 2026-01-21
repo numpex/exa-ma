@@ -1,148 +1,243 @@
-= WP7: HPC Resources for Exa‑MA
-Lydie Grospellier, Christophe Prud’homme  
-v1.1, 2025‑04‑22  
-:doctype: book  
-:sectnums:  
-:toc: left  
-:toclevels: 2  
-:icons: font  
-:icon-set: fab  
-:imagedir: images/
+= WP7: Software, Benchmarking & Co-Design
+:page-layout: manuals
+:page-tags: manual,catalog
+:parent-catalogs: exama-home
+:page-cards-tag: software
+:page-cards-within-module: true
+:page-cards-software-title: Software Stack
+:page-illustration: fa-solid fa-boxes-stacked
+:description: WP7 software stack, packaging, CI/CD, and showroom resources for Exa-MA.
+:icons: font
+:sectnums!:
 
-[.metadata]
-{author} — version {revnumber}, {revdate}
+[.lead]
+Work Package 7 focuses on software development, benchmarking, co-design activities, and training material to deliver production-ready exascale software following the CI/CD framework proposed by ExaDIP.
 
-== Introduction & WP7 Overview
+[.section-gray]
+--
+[discrete]
+== Objectives
 
-Work Package 7 (WP7) provides the “glue” for Exa‑MA, delivering the CI/CD framework, containerized environments, packaging standards, benchmarking suite, training materials, and automated deployment pipelines that bind together the methodological developments from WP1-WP6 into reproducible, high‑performance demonstrators on supercomputers.
+[.grid.grid-2.gap-2]
+====
+____
+icon:code[size=2x,role=text-primary] *Software Development*
 
-== Objectives and Deliverables
+From basic to advanced testing, including benchmarking, to verify the capabilities of exascale computing and address identified challenges.
+____
 
-* **Demonstrators**  
-  - Level 1 mini‑apps (single‑WP exercises)  
-  - Level 2 mini‑apps (cross‑WP exercises)  
-  - Level 3 proxy‑apps (full WP integration)  
+____
+icon:sync-alt[size=2x,role=text-success] *Co-Design Coordination*
 
-* **Benchmarking suite & KPI reports**  
-  - Performance, stability, deployment time, user adoption  
+Working closely with ExaDIP project to ensure effective communication and synergy for advancements in exascale computing.
+____
 
-* **Automated deployment platform**  
-  - Uniform Docker/Singularity images  
-  - SPAC & Guix‑HPC packages  
+____
+icon:desktop[size=2x,role=text-info] *Showroom*
 
-* **Training materials & showroom**  
-  - Tutorials, FAQs, recorded workshops  
-  - Web‑based portal showcasing live demos
+Platform to present and highlight outcomes and achievements of the Exa-MA project to the community.
+____
 
-== Governance and Roles
+____
+icon:graduation-cap[size=2x,role=text-warning] *Training Material*
 
-* **Steering Committee**  
-  - Representatives from WP1-WP6 + WP7 leads  
+Educational resources and materials based on project results, facilitating knowledge transfer and dissemination.
+____
+====
+--
 
-* **Technical Referents**  
-  - CI/CD pipelines  
-  - Containerization & packaging  
-  - Benchmarking & KPI tracking  
-  - Training & documentation  
+[.section-white]
+--
+[discrete]
+== Testing Process
 
-* **Demonstrator Leads**  
-  - Assigned binômes (developer + WP expert) per demonstrator  
+WP7 relies on the principles of non-regression, verification, and validation. All developments undergo rigorous testing before integration into demonstrators.
 
-== CI/CD Pipelines
+[.grid.grid-2.gap-2]
+====
+____
+icon:check-circle[size=2x,role=text-success] *Non-Regression*
 
-* **Version Control & Artifact Management**  
-  - Git repository structure, tagging conventions, artifact registry  
+Guarantee that results remain identical (bit-by-bit) for options unaffected by software evolutions. Focus on elementary tests.
+____
 
-* **Automated Build & Test Workflows**  
-  - Build → unit tests → integration tests → container image builds  
+____
+icon:balance-scale[size=2x,role=text-primary] *Verification*
 
-* **Deployment to Test Environments**  
-  - Staging cluster for full‑scale smoke tests  
+Measure absence of drift in consolidated solutions. Define acceptable relative variation thresholds.
+____
 
-* **Pipeline Templates & Best Practices**  
-  - Examples in `.github/workflows/ci.yml`
+____
+icon:flask[size=2x,role=text-info] *Validation*
 
-== Containerization & Packaging
+Evaluate algorithm performance in real-life configurations with representative test cases.
+____
 
-* **Docker & Singularity Images**  
-  - Base images for common HPC stacks (MPI, CUDA, etc.)  
+____
+icon:chart-line[size=2x,role=text-warning] *Interpretable Benefits*
 
-* **SPAC & Guix‑HPC Packaging**  
-  - Declarative package definitions for reproducibility  
+Establish simple metrics that demonstrate positive impact compared to previous approaches.
+____
+====
+--
 
-* **Image Registry & Versioning**  
-  - Tagging by WP, demonstrator level, software version  
+[.section-gray]
+--
+[discrete]
+== Software Development Workflow
 
-== Benchmarking & KPI Tracking
+.Exa-MA software development workflow
+image::ROOT:wp7-workflow.png[role="img-fluid img-shadow img-rounded w-70 justify-self-center",alt="Exa-MA software development workflow"]
 
-* **Key Performance Indicators**  
-  - Execution time, throughput, memory footprint, scalability  
+The workflow builds on the CI/CD framework with automated builds, testing, and deployment.
+--
 
-* **Automated Data Collection**  
-  - Scripts to extract logs, metrics, energy consumption  
+[.section-white]
+--
+[discrete]
+== Demonstrator Levels
 
-* **Dashboards & Reports**  
-  - Shared Grafana/Prometheus dashboards  
-  - Quarterly KPI summary reports
+[.grid.grid-2.gap-2]
+====
+____
+icon:cube[size=2x,role=text-primary] *Level 1: Mini-App*
 
-== Demonstrator Development Process
+Covers one or two Exa-MA Work Packages. Focuses on specific objectives within those WPs.
+____
 
-=== Demonstrator Levels
+____
+icon:cubes[size=2x,role=text-success] *Level 2: Multi-WP Mini-App*
 
-* **Level 1 (WP‑Specific Mini‑Apps)**  
-* **Level 2 (Cross‑WP Mini‑Apps)**  
-* **Level 3 (Proxy‑Apps covering ≥3 WPs)**  
+Covers two or more Work Packages. Demonstrates cross-collaboration and integration.
+____
 
-=== Project Template & Responsibilities
+____
+icon:server[size=2x,role=text-info] *Level 3: Proxy-App*
 
-* **Repository Skeleton**  
-  - `src/`, `tests/`, `ci/`, `containers/`, `docs/`  
-* **CI/CD Configuration**  
-  - Pre‑configured pipeline definitions  
-* **Binôme Assignment**  
-  - Developer + WP expert collaborate on test definitions, benchmarks, packaging
+Covers at least three Work Packages. Representative workload for evaluating HPC system performance.
+____
+====
 
-== Communication & Collaborative Tools
+[.striped,cols="2,1",options="header"]
+|===
+|Work Package |Core Hours Estimate (Level 1)
 
-* **GitHub Project**  
-  - Kanban board with issue templates, milestones, labels  
+|Discretization |500,000
+|Model Order Reduction and ML |1,000,000
+|Solvers |750,000
+|Inverse Problems and Data Assim. |1,500,000
+|Optimization |600,000
+|Uncertainty Quantification |900,000
+|*Total* |*4,250,000*
+|===
 
-* **Slack**  
-  - Channels: `#wp7-ci`, `#wp7-containers`, `#wp7-benchmarks`, `#wp7-training`  
+A computing resources form is available https://forms.gle/iBs6YNgb8ZXCLk8L6[here] for gathering requests.
+--
 
-* **Documentation Hub**  
-  - GitHub Pages or internal Wiki  
+[.section-gray]
+--
+[discrete]
+== CI/CD for HPC
 
-== Training Plan & Capacity Building
+Continuous Integration/Continuous Delivery strategies adapted for high-performance computing enable streamlined development, improved quality, and enhanced efficiency.
 
-* **Workshops & Tutorials**  
-  - Monthly hands‑on sessions: CI/CD, containers, benchmarking  
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Version Control & Builds*
 
-* **On‑Demand Materials**  
-  - Recorded videos, step‑by‑step guides, FAQ  
+Git-based source management with automated build processes ensuring consistent, reproducible compilation across environments.
+____
 
-* **Mentorship & Office Hours**  
-  - Weekly drop‑in sessions with technical referents  
+____
+icon:vial[size=2x,role=text-success] *Testing & Validation*
 
-== Maintenance, Support & Risk Management
+Automated test suites covering unit tests, integration tests, and performance tests as part of the CI/CD pipeline.
+____
 
-* **Issue Tracking & Support**  
-  - Dedicated Slack channel + GitHub issue queue  
+____
+icon:box[size=2x,role=text-info] *Artifact Management*
 
-* **Risk Register**  
-  - Tool/version compatibility, HPC site differences, network policies  
+Central repository for build artifacts (executables, libraries) facilitating deployment and distribution.
+____
 
-* **Mitigation Plans**  
-  - Regular upgrade cycles, multi‑site test matrix, fallback container images  
+____
+icon:rocket[size=2x,role=text-warning] *Continuous Deployment*
 
-== Annexes & References
+Automated deployment to target HPC systems (supercomputers, clusters) with rollback capabilities.
+____
+====
+--
 
-=== Annex A: Resource Request Form
+[.section-white]
+--
+[discrete]
+== Containerization
 
-For Level 1 demonstrator resource estimates, please use our [Resource Request Form](https://forms.gle/iBs6YNgb8ZXCLk8L6).
+Docker and Singularity provide portable, isolated containers for consistent and reproducible execution across different computing systems.
 
-=== Annex B: Glossary of Performance Terms
+[.grid.grid-2.gap-2]
+====
+____
+icon:docker[set=fab,size=2x,role=text-primary] *Docker*
 
-* **CPU‑bound**:: Performance limited by processor speed or insufficient parallelism.  
-* **Memory‑bound**:: Performance limited by memory bandwidth or latency.  
-* **Latency‑bound**:: Performance limited by communication or I/O delays.
+Reproducible environments, dependency management, and versioning. Docker Hub for sharing containerized applications.
+____
+
+____
+icon:box-open[size=2x,role=text-success] *Singularity*
+
+Designed for HPC with seamless integration with resource managers (Slurm), GPU passthrough, and unprivileged user execution.
+____
+====
+
+*Key Benefits:*
+
+* *Reproducible Environments* — Encapsulate entire application stack
+* *Portability* — Run consistently across different HPC systems
+* *Isolation & Security* — Sandbox applications from host system
+* *Versioning* — Easy rollback to previous versions
+--
+
+[.section-gray]
+--
+[discrete]
+== HPC Concepts
+
+[discrete]
+=== Mini-Apps and Proxy-Apps
+
+____
+*Mini-Apps* are small-scale programs focusing on specific computational patterns of larger applications. Used for benchmarking, performance analysis, and optimization.
+
+*Proxy-Apps* mimic behavior and computational patterns of real-world scientific applications. Provide lightweight representation of computational requirements and communication patterns.
+____
+
+[discrete]
+=== Performance Bottlenecks
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:microchip[size=2x,role=text-danger] *CPU Bound*
+
+Performance limited by processing power. Address with parallelization, code optimization, and performance profiling.
+____
+
+____
+icon:memory[size=2x,role=text-warning] *Memory Bound*
+
+Limited by memory speed/capacity. Optimize data locality, cache utilization, and reduce data movement.
+____
+
+____
+icon:clock[size=2x,role=text-info] *Latency Bound*
+
+Limited by data transfer delays. Optimize network, disk I/O, and use asynchronous operations.
+____
+====
+--
+
+[.softwares]
+--
+--

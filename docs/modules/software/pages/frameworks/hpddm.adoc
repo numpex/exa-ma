@@ -1,0 +1,134 @@
+= HPDDM
+:page-layout: default
+:page-tags: framework, software, hpddm
+:page-illustration: fa-solid fa-cube
+:description: HPDDM - HPDDM is an efficient implementation of various domain decomposition methods (DDM) such as one- and two-level Restricted Additive Schwarz (RAS) method...
+:icons: font
+:page-work-packages: WP3
+
+[.lead]
+HPDDM is an efficient implementation of various domain decomposition methods (DDM) such as one- and two-level Restricted Additive Schwarz (RAS) methods, the Finite Element Tearing and Interconnecting (FETI) method, and the Balancing Domain Decomposition (BDD) method. These methods can be enhanced with deflation vectors computed automatically by the framework.
+
+[.section-gray]
+--
+[discrete]
+== Overview
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Repository*
+
+https://github.com/hpddm/hpddm
+____
+
+____
+icon:file-contract[size=2x,role=text-success] *License*
+
+OSS:: LGPL v*
+____
+
+____
+icon:book[size=2x,role=text-info] *Documentation*
+
+https://github.com/hpddm/hpddm/blob/main/doc/cheatsheet.pdf
+____
+
+____
+icon:comments[size=2x,role=text-warning] *Discussion*
+
+GitHub Issues (https://github.com/hpddm/hpddm/issues)____
+====
+--
+
+== Criteria Evaluation
+
+=== Packaging
+
+Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
+
+* [x] Packages exist
+* [x] Available in Spack
+* [ ] Available in Guix-HPC
+* [ ] Docker image available
+* [ ] Apptainer/Singularity available
+
+* Spack: https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/hpddm/package.py
+
+=== Testing & CI/CD
+
+Software should include validation tests triggered through automated mechanisms.
+
+* [x] Unit tests exist
+* [x] Continuous Integration configured
+* [ ] CI runs on each release
+* [ ] Benchmarking tests exist
+
+=== Repository & Contributions
+
+* [x] Public source repository available
+* [x] Supports contributions via pull requests
+
+Repository: https://github.com/hpddm/hpddm
+
+=== License
+
+Sources should be published under a clearly-identified free software license.
+
+* [x] License clearly stated
+* [x] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX identifiers used
+* [ ] REUSE compliant
+
+* LGPL v*
+
+=== Documentation
+
+* [x] Documentation exists
+* [x] Easily browsable online
+
+Documentation: https://github.com/hpddm/hpddm/blob/main/doc/cheatsheet.pdf
+
+=== API Compatibility
+
+* [ ] API changes documented
+* [x] Semantic versioning used
+* [ ] Release policy defined
+
+== Work Packages
+
+This framework is involved in the following work packages:
+
+=== WP3 icon:check-circle[role=text-success]
+Topics: domain decomposition methods, multi-precision, tensor calculus, "reuse of Krylov subspaces for multiple right-hand sides", randomization, low-rank, interface
+_Benchmarked in this WP_
+
+
+== Technical Details
+
+*Languages:* C, C++, Fortran, Python
+
+*Parallelism:* MPI, Multithread - OpenMP, GPU - Cuda
+
+*Data Formats:* in-house format
+
+
+== Partners
+
+*Lead Partner:* Sorbonne U,
+Inria PARIS
+
+
+== Used by Applications
+
+The following Exa-MA applications use HPDDM:
+
+[cols="2,2,1",options="header"]
+|===
+| Application | Type | Status
+
+| xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
+| Mini App
+| Benchmark Ready
+
+|===

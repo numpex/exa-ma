@@ -1,0 +1,151 @@
+= Freefem++
+:page-layout: default
+:page-tags: framework, software, freefempp
+:page-illustration: fa-solid fa-cube
+:description: Freefem++ - Exa-MA Framework...
+:icons: font
+:page-work-packages: WP1, WP3, WP5, WP7
+
+[.lead]
+Freefem++ is a framework used in the Exa-MA project.
+
+[.section-gray]
+--
+[discrete]
+== Overview
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Repository*
+
+https://github.com/FreeFem/FreeFem-sources
+____
+
+____
+icon:file-contract[size=2x,role=text-success] *License*
+
+OSS:: LGPL v*
+____
+
+____
+icon:book[size=2x,role=text-info] *Documentation*
+
+_Not yet available_
+____
+
+____
+icon:comments[size=2x,role=text-warning] *Discussion*
+
+_Not yet available_
+____
+====
+--
+
+== Criteria Evaluation
+
+=== Packaging
+
+Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
+
+* [x] Packages exist
+* [x] Available in Spack
+* [ ] Available in Guix-HPC
+* [x] Docker image available
+* [ ] Apptainer/Singularity available
+
+* Spack: https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/freefem/package.py
+
+=== Testing & CI/CD
+
+Software should include validation tests triggered through automated mechanisms.
+
+* [x] Unit tests exist
+* [x] Continuous Integration configured
+* [ ] CI runs on each release
+* [ ] Benchmarking tests exist
+
+=== Repository & Contributions
+
+* [x] Public source repository available
+* [x] Supports contributions via pull requests
+
+Repository: https://github.com/FreeFem/FreeFem-sources
+
+=== License
+
+Sources should be published under a clearly-identified free software license.
+
+* [x] License clearly stated
+* [x] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX identifiers used
+* [ ] REUSE compliant
+
+* LGPL v*
+
+=== Documentation
+
+* [ ] Documentation exists
+* [ ] Easily browsable online
+
+
+=== API Compatibility
+
+* [ ] API changes documented
+* [ ] Semantic versioning used
+* [ ] Release policy defined
+
+== Work Packages
+
+This framework is involved in the following work packages:
+
+=== WP1 icon:check-circle[role=text-success]
+Topics: cG, dG/hdG, mesh adaptation, unstructured mesh, multiphysics coupling
+_Benchmarked in this WP_
+
+=== WP3 icon:check-circle[role=text-success]
+Topics: domain decomposition methods, algebraic multiphysics coupling, reuse of Krylov subspaces for multiple right-hand sides
+_Benchmarked in this WP_
+
+=== WP5 icon:check-circle[role=text-success]
+Topics: Iterative methods
+_Benchmarked in this WP_
+
+=== WP7 icon:check-circle[role=text-success]
+Topics: Geophysics, Energy, Health, Environment, Energy, Aero, mini-apps
+_Benchmarked in this WP_
+
+
+== Technical Details
+
+*Languages:* C++
+
+*Parallelism:* MPI
+
+*Data Formats:* VTK, in-house format, HDF5, Gmsh and asssociated formats
+
+
+== Partners
+
+*Lead Partner:* Sorbonne U,
+Inria PARIS
+
+*Consortium:* Sorbonne U
+
+== Used by Applications
+
+The following Exa-MA applications use Freefem++:
+
+[cols="2,2,1",options="header"]
+|===
+| Application | Type | Status
+
+| xref:applications/app-freefem-parmmg.adoc[Fichera corner]
+| Extended Mini App
+| Benchmark Ready
+
+| xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
+| Mini App
+| Planned
+
+|===

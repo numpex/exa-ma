@@ -1,0 +1,75 @@
+= CGAL Package
+
+== Description
+
+nan
+
+== Packaging
+
+* [x] Packages exist
+* [x] Packages published in easily usable repositories
+* [ ] Packages installation tested on supercomputers
+* [x] Packages available in community repositories
+
+== Minimal Validation Tests
+
+* [x] Unit tests exist
+* [x] CI exists
+* [ ] CI runs regularly (each new release)
+* [x] CI runs regularly (each commit)
+
+== Public Repository
+
+* [x] Publicly available source repository
+* [x] Supports contribution via pull requests
+
+Repository: https://github.com/CGAL
+
+== Clearly-identified license
+
+* [x] License clearly stated
+* [x] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX is used
+* [ ] REUSE is used
+
+  - OSS:: GPL v*
+  - OSS:: LGPL v*
+
+== Minimal Documentation
+
+* [x] Documentation exists
+* [ ] Easily browsable online
+  - nan
+
+== Open Public Discussion Channel
+
+* [x] Channel exists
+* [x] Freely joinable without invitation
+  - nan
+
+== Metadata
+
+* [ ] The following metadata is available:
+  - Software name: ✅
+  - Description: ❌
+  - License: ✅
+  - Documentation URL: ❌
+  - Discussion channel URL: ❌
+  - Package repositories URLs: ✅
+  - Repository URL: ✅
+  - Autoevaluation using the list of criteria stated here: ✅
+
+* [ ] Uses codemeta format
+
+== API Compatibility Information
+
+* [ ] API changes documented
+* [ ] Semantic Versioning used
+* [ ] Clear release policy
+
+== Minimal Performance Tests
+
+* [x] Tests exist
+* [ ] Scripts to automate tests on supercomputers
+* [ ] Scripts/tools easing portability to new hardware
+

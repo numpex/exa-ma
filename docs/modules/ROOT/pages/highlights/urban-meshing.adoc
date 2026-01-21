@@ -1,0 +1,200 @@
+= Urban-Scale Meshing for City Energy Simulation
+:page-layout: default
+:page-tags: highlight
+:parent-catalogs: highlights-2025
+:page-illustration: fa-solid fa-city
+:description: From urban data to multi-level watertight meshes, ready for building energy simulation at city scale and beyond.
+:icons: font
+
+[.lead]
+From urban data to multi-level watertight meshes, ready for building energy simulation at city scale and beyond.
+
+[.section-gray]
+--
+[discrete]
+== Identity Card
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:users[size=2x,role=text-primary] *Authors*
+
+* Christophe Prud'homme _(Unistra–Cemosis)_
+* Vincent Chabannes _(Unistra–Cemosis)_
+* Javier Cladellas _(Unistra–Cemosis)_
+* Pierre Alliez _(INRIA Sophia Antipolis)_ + Geometry Factory
+____
+
+____
+icon:handshake[size=2x,role=text-success] *Collaboration*
+
+* CoE HiDALGO2
+* ExaMA/NumPEx (UNISTRA, INRIA-CA)
+* Ktirio & CGAL projects
+
+_Date: September 2025_
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Context and Objective
+
+Urban energy, wind, and heat modeling requires *closed and coherent geometries*, while input data (buildings, roads, terrain, hydrology, vegetation) are heterogeneous and often non-watertight.
+
+*Objective*: Reconstruct *watertight urban meshes* at LoD-0/1, interoperable and enriched with physical model attributes for simulation.
+--
+
+[.section-gray]
+--
+[discrete]
+== Key Result and Innovation
+
+Development of a complete *GIS → Mesh* processing pipeline:
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:cogs[size=2x,role=text-primary] *Pipeline Components*
+
+* *Ingestion*: Mapbox data integration
+* *Robust Operations*: Ktirio-Geom with CGAL
+* *Boolean Operations*: Multi-layer processing
+* *Topological Control*: Closure verification
+____
+
+____
+icon:bolt[size=2x,role=text-success] *Performance Gains*
+
+* Multi-km² scenes → closed LoD-1/2 solids
+* Buildings, roads, terrain, rivers, vegetation, roofs
+* Preparation: *weeks → minutes*
+* Numerical stability improvements
+____
+====
+
+*Outputs compatible with*: Urban Building Model (Ktirio-UBM) and energy/CFD solvers.
+--
+
+[.section-white]
+--
+[discrete]
+== Grenoble City Reconstruction
+
+Reconstruction of the city of Grenoble over a 10 km radius with roads, rivers, water bodies, buildings with roofs, and topography — *with a single click*.
+--
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+.Ktirio application interface for urban data selection
+image::highlights/ktirio-geom/1-location-grenoble.png[Ktirio Interface,400]
+____
+
+[.text-center]
+____
+.Bird's eye view of Grenoble 10km mesh
+image::highlights/ktirio-geom/2-overview-grenoble.png[Grenoble Overview,400]
+____
+====
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+.City center with buildings, roads and vegetation
+image::highlights/ktirio-geom/3-zoom-grenoble.png[Grenoble City Center,400]
+____
+
+[.text-center]
+____
+.Mountain terrain with urban area
+image::highlights/ktirio-geom/4-zoom-grenoble.png[Grenoble Mountains,400]
+____
+====
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+.Detailed view: buildings and infrastructure
+image::highlights/ktirio-geom/5-zoom-grenoble.png[Grenoble Detailed View,400]
+____
+
+[.text-center]
+____
+.Close-up: river and urban structures
+image::highlights/ktirio-geom/6-zoom-grenoble.jpg[Grenoble River Detail,400]
+____
+====
+
+[.section-white]
+--
+Construction of a *watertight (conformal) mesh* ready for HPC (EuroHPC) for building energy simulation.
+--
+
+[.section-gray]
+--
+[discrete]
+== Impact and Next Steps
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:bullseye[size=2x,role=text-primary] *Current Impact*
+
+* Quick access to urban use cases faithful to energy/microclimate modeling
+* Dataset sharing in CoE HiDALGO2 ecosystem
+* Tools for urban heat island analysis
+____
+
+____
+icon:road[size=2x,role=text-success] *Next Steps*
+
+* Publication of *reference datasets* (watertight + scripts) via https://ckan.hidalgo2.eu[CKAN]
+* CFD & energy simulation coupling
+* Extended urban heat island studies
+____
+====
+--
+
+[.section-white]
+--
+[discrete]
+== Valorization
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:calendar-check[size=2x,role=text-primary] *Demonstrations*
+
+* CoE HiDALGO2 Review Demo _(September 18, 2025)_
+* https://hidalgo2.eu[Clustering Event at HLRS Stuttgart] _(November 4, 2025)_ — *Presented*
+____
+
+____
+icon:cloud[size=2x,role=text-info] *Deployment*
+
+* Cloud deployment of graphical application _(coming soon)_
+* Valorization via SATT Conectus
+____
+====
+--
+
+[.section-gray]
+--
+[discrete]
+== Related Work Packages
+
+[cols="1,3"]
+|===
+|xref:../workpackages/wp1.adoc[WP1] |*Discretization* — Mesh quality and adaptivity
+|xref:../workpackages/wp7.adoc[WP7] |*Showroom & Benchmarking* — Software deployment and integration
+|===
+
+[.text-center]
+xref:highlights/neural-acceleration.adoc[← Neural Operators] | xref:results.adoc[Back to Results] | xref:highlights/feelpp-benchmarking.adoc[HPC Benchmarking →]
+--

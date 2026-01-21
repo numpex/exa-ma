@@ -1,0 +1,196 @@
+# Exa-MA News and Events Configuration
+# Events are categorized as: upcoming, recent, or archived
+# Types: assembly, conference, training, webinar, workshop, external
+
+events:
+  # Upcoming events (displayed as cards)
+
+  - id: trans-numeriques-2026
+    type: external
+    status: upcoming
+    title: "Trans-Numériques 2026"
+    date: "2026-02-02"
+    end_date: "2026-02-05"
+    location: "Couvent des Jacobins, Rennes"
+    icon: "network-wired"
+    description: >
+      First edition bringing together France's academic community around digital continuum challenges.
+      NumPEx will be represented with presentations on performance, sustainability, and HPC.
+      Exa-MA participants include project coordinators and WP leaders.
+    url: "https://inria.invityou.com/trans-numeriques2026"
+
+  - id: majsc-2026
+    type: training
+    status: upcoming
+    title: "MAJSC 2026: ML & Autodiff in JAX"
+    date: "2026-06-08"
+    end_date: "2026-06-12"
+    location: "IRMA, Université de Strasbourg"
+    icon: "brain"
+    description: >
+      Workshop on Machine Learning and Automatic Differentiation in JAX for Scientific Computing.
+      Five-day intensive program covering JAX fundamentals, neural networks (Equinox/Flax),
+      automatic differentiation for PDEs (Diffrax), physics-informed neural networks,
+      and neural operators. Organized by E. Franck (WP2 leader), V. Michel-Dansac, V. Vigon,
+      and A. Musik from IRMA Strasbourg.
+    url: "https://majsc2026.pages.math.unistra.fr/"
+
+  # Recent events (displayed as table)
+  - id: ga-2026
+    type: assembly
+    status: recent
+    title: "General Assembly 2026"
+    date: "2026-01-19"
+    end_date: "2026-01-21"
+    location: "Arts et Métiers ParisTech, Aix-en-Provence"
+    icon: "users"
+    description: >
+      Three-day annual meeting with all WP leaders (WP1-WP7) presenting progress and scientific highlights.
+      Featured breakout sessions with Feel++, Scimba, Composyx, and Uranie frameworks,
+      plus presentations on Sage-HPC and Daimos. All 24 presentation slides are now available.
+    page: "news/2026/20260119-21-ag.adoc"
+
+  - id: website-refresh-2026
+    type: announcement
+    status: recent
+    title: "Exa-MA Website Refresh"
+    date: "2026-01-14"
+    icon: "globe"
+    description: >
+      The Exa-MA project website has been refreshed with updated content and improved navigation.
+      New features include detailed work package pages, a comprehensive software stack catalog
+      with 16+ open-source packages, team directory with photos, 2025 scientific highlights
+      (50× GenEO speedups, 8000 GPU scale on LUMI, neural operator acceleration),
+      and streamlined access to deliverables and publications.
+    url: "https://numpex.github.io/exa-ma/"
+    link_text: "Visit Exa-MA website →"
+
+  - id: sab-2025
+    type: assembly
+    status: recent
+    title: "Scientific Advisory Board Meeting"
+    date: "2025-12-09"
+    location: "Virtual (Zoom)"
+    icon: "clipboard-list"
+    description: >
+      Presentation of Exa-MA advances and 2025 highlights to the NumPEx Scientific Advisory Board.
+      Topics included the 50× GenEO speedup, 8000-GPU LUMI deployment, neural operator acceleration
+      (80-200% CPU savings), and CGAL 6.0 urban meshing achievements. Joint session with other NumPEx
+      projects showcasing program-wide progress. Interactive session with board members providing feedback
+      on project direction and scientific impact.
+    time: "11:30am – 2:00pm CET"
+
+  - id: youngpex-2025
+    type: workshop
+    status: recent
+    title: "First YoungPEx General Meeting"
+    date: "2025-11-12"
+    end_date: "2025-11-14"
+    location: "ENSEEIHT, Toulouse"
+    icon: "users"
+    description: >
+      Three-day workshop bringing together young researchers to discuss the future of HPC and open science.
+      Topics included sustainable computing with Georges Da Costa (Exa-SoFT), Grid'5000 tutorials,
+      energy measurement, and workshops on social and gender equality in science.
+      Organized by Thomas Saigre (Exa-MA), Karmijn Hoogveld (Exa-SofT), and other NumPEx members.
+    url: "https://numpex.org/the-first-youngpex-general-meeting/"
+
+  - id: hidalgo2-2025
+    type: external
+    status: recent
+    title: "HiDALGO2 Clustering Event"
+    date: "2025-11-04"
+    location: "HLRS, Stuttgart"
+    icon: "building"
+    description: >
+      Christophe Prud'homme presented the Ktirio Urban Building pilot for city energy modeling.
+      The pilot, co-funded 50% by NumPEx for EuroHPC, showcased the Ktirio Geom library
+      developed jointly through CoE Hidalgo2 and Exa-MA (WP1 Geometry, Unistra-Inria CA collaboration).
+    url: "https://www.hidalgo2.eu/clustering-event/"
+
+  - id: anr-numpex-2025
+    type: assembly
+    status: recent
+    title: "NumPEx/ANR Meeting"
+    date: "2025-09-03"
+    location: "Siège de l'ANR, Paris"
+    icon: "landmark"
+    description: >
+      Presentation of Exa-MA advances and 2025 highlights to ANR (Agence Nationale de la Recherche)
+      alongside other NumPEx projects. Joint session with all NumPEx project coordinators demonstrating the program's scientific impact
+      and progress towards exascale computing goals.
+
+  - id: sciml-2025
+    type: conference
+    status: recent
+    title: "SciML'25 Conference"
+    date: "2025-03-24"
+    end_date: "2025-03-26"
+    location: "Politecnico di Milano"
+    icon: "chalkboard-teacher"
+    description: >
+      Emmanuel Franck (WP2 leader) delivered invited talk on scientific machine learning.
+    url: "https://www.mate.polimi.it/events/EMS-TAG-SciML-25/"
+
+  - id: cicd-training-2025
+    type: training
+    status: recent
+    title: "CI/CD & Benchmarking Training"
+    date: "2025-03-24"
+    end_date: "2025-03-26"
+    location: "In collaboration with CoE Hidalgo2"
+    icon: "laptop-code"
+    description: >
+      Hands-on training on CI/CD best practices and advanced benchmarking for HPC software.
+    url: "https://events.it4i.cz/event/308/overview"
+
+  - id: ga-2025
+    type: assembly
+    status: recent
+    title: "General Assembly 2025"
+    date: "2025-01-14"
+    end_date: "2025-01-15"
+    location: "Université de Strasbourg"
+    icon: "users"
+    description: >
+      Consortium review of progress, WP4 and WP7 updates, cross-work-package collaborations.
+    page: "news/2025/20250114-15-ag.adoc"
+
+  # Archived events (displayed in archive page by year)
+  - id: packaging-webinar-2024
+    type: webinar
+    status: archived
+    title: "Packaging HPC Software Webinar"
+    date: "2024-12-03"
+    icon: "box"
+    description: >
+      E. Agullo (INRIA): Modern packaging with Spack and Guix-HPC.
+      J. Cladellas (UNISTRA): Preview of feelpp.benchmarking tool.
+      See results at bench.feelpp.org
+    url: "https://bench.feelpp.org"
+
+  - id: ga-2024
+    type: assembly
+    status: archived
+    title: "General Assembly 2024"
+    date: "2024-01-16"
+    end_date: "2024-01-17"
+    location: "Inria, Paris"
+    icon: "users"
+    description: >
+      First annual consortium meeting with WP presentations, technical discussions,
+      and planning for Year 2 activities. Establishment of cross-WP collaborations.
+    page: "news/2024/20240116-17-ag.adoc"
+
+  - id: kickoff-2023
+    type: assembly
+    status: archived
+    title: "Exa-MA Kickoff Meeting"
+    date: "2023-05-22"
+    end_date: "2023-05-23"
+    location: "Inria, Paris"
+    icon: "rocket"
+    description: >
+      Official launch of the Exa-MA project within NumPEx. Introduction of all work packages,
+      team presentations, and initial planning discussions.
+    page: "news/2023/20230522-23-kickoff.adoc"
