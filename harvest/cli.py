@@ -282,17 +282,16 @@ def harvest_all(args: argparse.Namespace) -> int:
     print("=" * 60)
 
     # Load unified config if available
+    # Note: args.config defaults to deliverables.yaml for backward compatibility,
+    # but we prefer exama.yaml for unified config
     exama_config = None
-    exama_config_path = getattr(args, 'config', None)
-    if exama_config_path:
-        try:
-            exama_config = load_exama_config(exama_config_path)
-            print(f"Using unified config: {exama_config_path}")
-        except FileNotFoundError:
-            print(f"Warning: Config file not found: {exama_config_path}")
-    elif DEFAULT_EXAMA_CONFIG.exists():
+    exama_config_path = None  # Track which config was actually loaded
+
+    # First try default exama.yaml location
+    if DEFAULT_EXAMA_CONFIG.exists():
         try:
             exama_config = load_exama_config(DEFAULT_EXAMA_CONFIG)
+            exama_config_path = DEFAULT_EXAMA_CONFIG
             print(f"Using unified config: {DEFAULT_EXAMA_CONFIG}")
         except Exception as e:
             print(f"Warning: Could not load default config: {e}")
@@ -400,7 +399,9 @@ def harvest_all(args: argparse.Namespace) -> int:
 
     news_events = []
     try:
-        news_config = load_news_config(exama_config_path if exama_config_path else None)
+        # Pass None to let load_news_config use unified config loading path
+        # (which handles external file references like news.file: "news.yaml")
+        news_config = load_news_config(None)
         news_events = news_config.get("events", [])
         if news_events:
             print(f"Found {len(news_events)} events")

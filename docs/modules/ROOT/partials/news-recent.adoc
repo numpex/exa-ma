@@ -1,7 +1,12 @@
-// Events: 8 recent
+// Events: 9 recent
 
 [cols="1,5",frame=none,grid=rows]
 |===
+|icon:users[size=2x] *Jan 19-21, 2026*
+|**General Assembly 2026** – Arts et Métiers ParisTech, Aix-en-Provence +
+Three-day annual meeting with all WP leaders (WP1-WP7) presenting progress and scientific highlights. Featured breakout sessions with Feel++, Scimba, Composyx, and Uranie frameworks, plus presentations on Sage-HPC and Daimos. All 24 presentation slides are now available. +
+xref:news/2026/20260119-21-ag.adoc[Read full recap →]
+
 |icon:globe[size=2x] *Jan 14, 2026*
 |**Exa-MA Website Refresh** +
 The Exa-MA project website has been refreshed with updated content and improved navigation. New features include detailed work package pages, a comprehensive software stack catalog with 16+ open-source packages, team directory with photos, 2025 scientific highlights (50× GenEO speedups, 8000 GPU scale on LUMI, neural operator acceleration), and streamlined access to deliverables and publications. +

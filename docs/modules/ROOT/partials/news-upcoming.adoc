@@ -1,18 +1,7 @@
-// Events: 3 upcoming
+// Events: 2 upcoming
 
 [.grid.grid-2.gap-2.items-start]
 --
-[.card]
-====
-icon:users[size=2x,role=text-primary] *General Assembly 2026*
-
-*Jan 19-21, 2026* | Arts et Métiers ParisTech, Aix-en-Provence
-
-Three-day annual meeting with all WP leaders presenting progress and scientific highlights. The General Assembly will include breakout sessions with Feel++, Scimba, Composyx, and Uranie frameworks, plus presentations on Sage-HPC and Daimos newly funded by NumPEx and strongly connected to Exa-MA.
-
-xref:news/2026/20260119-21-ag.adoc[View full agenda and details →]
-====
-
 [.card]
 ====
 icon:network-wired[size=2x,role=text-info] *Trans-Numériques 2026*

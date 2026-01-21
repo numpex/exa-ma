@@ -4,19 +4,6 @@
 
 events:
   # Upcoming events (displayed as cards)
-  - id: ga-2026
-    type: assembly
-    status: upcoming
-    title: "General Assembly 2026"
-    date: "2026-01-19"
-    end_date: "2026-01-21"
-    location: "Arts et Métiers ParisTech, Aix-en-Provence"
-    icon: "users"
-    description: >
-      Three-day annual meeting with all WP leaders presenting progress and scientific highlights.
-      The General Assembly will include breakout sessions with Feel++, Scimba, Composyx, and Uranie frameworks,
-      plus presentations on Sage-HPC and Daimos newly funded by NumPEx and strongly connected to Exa-MA.
-    page: "news/2026/20260119-21-ag.adoc"
 
   - id: trans-numeriques-2026
     type: external
@@ -49,6 +36,20 @@ events:
     url: "https://majsc2026.pages.math.unistra.fr/"
 
   # Recent events (displayed as table)
+  - id: ga-2026
+    type: assembly
+    status: recent
+    title: "General Assembly 2026"
+    date: "2026-01-19"
+    end_date: "2026-01-21"
+    location: "Arts et Métiers ParisTech, Aix-en-Provence"
+    icon: "users"
+    description: >
+      Three-day annual meeting with all WP leaders (WP1-WP7) presenting progress and scientific highlights.
+      Featured breakout sessions with Feel++, Scimba, Composyx, and Uranie frameworks,
+      plus presentations on Sage-HPC and Daimos. All 24 presentation slides are now available.
+    page: "news/2026/20260119-21-ag.adoc"
+
   - id: website-refresh-2026
     type: announcement
     status: recent
