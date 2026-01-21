@@ -17,6 +17,46 @@ The General Assembly featured:
 * **AI & HPC Integration**: Presentations on Sage-HPC (AI for HPC) and Daimos (HPC for AI)
 * **Scientific Board Meeting**: Strategic discussions with board members, project leaders, and WP leaders
 
+== Attendance
+
+icon:users[] Total participants: *65* | icon:university[] Institutions: *24*
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:user-check[size=2x,role=text-primary] *58* In-Person
+
+_89% of participants_
+
+Attended on-site at Arts et Métiers ParisTech, Aix-en-Provence
+____
+
+____
+icon:video[size=2x,role=text-info] *7* Online
+
+_11% of participants_
+
+Joined remotely via videoconference
+____
+
+____
+icon:building[size=2x,role=text-success] *24* Institutions
+
+_Diverse representation_
+
+icon:flask[] Inria: *16* | icon:atom[] CEA: *12* | icon:graduation-cap[] École Polytechnique: *5* | icon:university[] Univ. Strasbourg: *7*
+____
+
+____
+icon:globe[size=2x,role=text-warning] *5* Countries
+
+_International participation_
+
+icon:flag[] France, USA, Belgium, Italy, Switzerland, Germany
+____
+
+====
+
 == Event Details
 
 *Location*: Arts et Métiers ParisTech, 2 Cour des Arts et Métiers, 13617 Aix-en-Provence, France
