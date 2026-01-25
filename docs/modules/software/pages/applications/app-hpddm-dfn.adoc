@@ -128,5 +128,5 @@ Test numerical and algorithm performance of PETSc preconditioners
 
 *Responsible:* P. Jolivet
 
-*WP7 Engineer:* Raphael Zanella (SU)
+*WP7 Engineer:* Raphael Zanella (SU), Erik Fabrizzi (SU)
 

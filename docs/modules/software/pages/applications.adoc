@@ -10,7 +10,7 @@
 :sectnums!:
 
 [.lead]
-Exa-MA applications are benchmarks and demonstrators that exercise the capabilities of our frameworks at scale. They range from focused mini-apps testing specific algorithms to full demonstrators combining multiple work packages. This is a work in progress of course.
+Exa-MA applications are benchmarks and demonstrators that exercise the capabilities of our frameworks at scale. They range from focused mini-apps testing specific algorithms to full demonstrators combining multiple work packages.
 
 [.section-gray]
 --
@@ -138,7 +138,6 @@ These applications are ready for performance evaluation on HPC systems:
 [discrete]
 == Applications by Type
 
-[discrete]
 === icon:desktop[role=text-warning] Demonstrators
 
 * xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale] — N/A
@@ -146,7 +145,6 @@ These applications are ready for performance evaluation on HPC systems:
 * xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics] — N/A
 
 
-[discrete]
 === icon:cubes[role=text-success] Extended Mini Apps
 
 * xref:applications/app-feelpp-discr-1.adoc[Discretization] icon:check-circle[role=text-success,title=Ready] — Feel++, PETSc
@@ -158,7 +156,6 @@ These applications are ready for performance evaluation on HPC systems:
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] icon:check-circle[role=text-success,title=Ready] — Freefem++, MMG/ParMMG
 
 
-[discrete]
 === icon:cube[role=text-info] Mini Apps
 
 * xref:applications/app-feelpp-distance.adoc[Distance] icon:check-circle[role=text-success,title=Ready] — Feel++
@@ -183,7 +180,6 @@ These applications are ready for performance evaluation on HPC systems:
 [discrete]
 == Applications by Framework
 
-[discrete]
 === Feel++
 
 * xref:applications/app-feelpp-discr-1.adoc[Discretization] (Extended Mini App) icon:check-circle[role=text-success]
@@ -192,33 +188,27 @@ These applications are ready for performance evaluation on HPC systems:
 * xref:applications/app-feelpp-rb.adoc[Reduced Basis] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 
-[discrete]
 === Freefem++
 
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM] (Mini App)
 
-[discrete]
 === GeoS
 
 * xref:applications/app-eki.adoc[EKI] (Mini App)
 
-[discrete]
 === HPDDM
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
 
-[discrete]
 === MMG/ParMMG
 
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 
-[discrete]
 === MUMPS
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
 
-[discrete]
 === PETSc
 
 * xref:applications/app-feelpp-discr-1.adoc[Discretization] (Extended Mini App) icon:check-circle[role=text-success]
@@ -227,23 +217,20 @@ These applications are ready for performance evaluation on HPC systems:
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-eki.adoc[EKI] (Mini App)
 
-[discrete]
 === PaStiX
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
 
-[discrete]
 === Scimba
 
 * xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN] (Mini App)
 
-[discrete]
 === pytorch
 
 * xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis] (Extended Mini App)
 
 --
 
-[.softwares]
+[.applications]
 --
 --

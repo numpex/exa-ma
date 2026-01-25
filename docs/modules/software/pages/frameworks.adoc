@@ -28,19 +28,13 @@ ____
 ____
 icon:box-open[size=2x,role=text-success] *Packaging*
 
-8 in Spack, 7 in Guix-HPC
+10 in Spack, 7 in Guix-HPC
 ____
 
 ____
-icon:docker[set=fab,size=2x,role=text-info] *Containerization*
+icon:vial[size=2x,role=text-info] *Testing*
 
-Docker, Apptainer/Singularity available
-____
-
-____
-icon:vial[size=2x,role=text-primary] *Testing*
-
-26 with CI/CD, 17 with unit tests
+26 with CI/CD, 18 with unit tests
 ____
 
 ____
@@ -102,12 +96,78 @@ ____
 [.section-gray]
 --
 [discrete]
+== Frameworks by Work Package
+
+=== WP1
+
+* xref:frameworks/arcane.adoc[Arcane]
+* xref:frameworks/cgal.adoc[CGAL] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/freefempp.adoc[Freefem++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/mahyco.adoc[MaHyCo]
+* xref:frameworks/samurai.adoc[Samurai] icon:check-circle[role=text-success,title=Benchmarked]
+
+=== WP2
+
+* xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/scimba.adoc[Scimba] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/uranie.adoc[Uranie] icon:check-circle[role=text-success,title=Benchmarked]
+
+=== WP3
+
+* xref:frameworks/arcane.adoc[Arcane] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/composyx.adoc[Composyx] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/freefempp.adoc[Freefem++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/hpddm.adoc[HPDDM] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/mahyco.adoc[MaHyCo]
+* xref:frameworks/trust_platform.adoc[TRUST Platform] icon:check-circle[role=text-success,title=Benchmarked]
+
+=== WP4
+
+* xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
+
+=== WP5
+
+* xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/freefempp.adoc[Freefem++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/hawen.adoc[Hawen]
+* xref:frameworks/mahyco.adoc[MaHyCo]
+* xref:frameworks/uranie.adoc[Uranie] icon:check-circle[role=text-success,title=Benchmarked]
+
+=== WP6
+
+* xref:frameworks/feelpp.adoc[Feel++]
+* xref:frameworks/hawen.adoc[Hawen]
+* xref:frameworks/uranie.adoc[Uranie] icon:check-circle[role=text-success,title=Benchmarked]
+
+=== WP7
+
+* xref:frameworks/arcane.adoc[Arcane] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/freefempp.adoc[Freefem++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/hawen.adoc[Hawen]
+* xref:frameworks/mahyco.adoc[MaHyCo]
+* xref:frameworks/trust_platform.adoc[TRUST Platform] icon:check-circle[role=text-success,title=Benchmarked]
+
+--
+
+[.section-white]
+--
+[discrete]
 == Used by Applications
 
 These frameworks power the following Exa-MA applications:
 
-* *xref:frameworks/feelpp.adoc[Feel++]:* xref:applications/app-feelpp-discr-1.adoc[Discretization], xref:applications/app-feelpp-distance.adoc[Distance], xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis], xref:applications/app-feelpp-rb.adoc[Reduced Basis], xref:applications/app-freefem-parmmg.adoc[Fichera corner]
-* *xref:frameworks/hpddm.adoc[HPDDM]:* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
-* *xref:frameworks/freefempp.adoc[Freefem++]:* xref:applications/app-freefem-parmmg.adoc[Fichera corner], xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
-* *xref:frameworks/scimba.adoc[Scimba]:* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
+*xref:frameworks/feelpp.adoc[Feel++]:* xref:applications/app-feelpp-discr-1.adoc[Discretization], xref:applications/app-feelpp-distance.adoc[Distance], xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis], xref:applications/app-feelpp-rb.adoc[Reduced Basis], xref:applications/app-freefem-parmmg.adoc[Fichera corner]
+*xref:frameworks/hpddm.adoc[HPDDM]:* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
+*xref:frameworks/freefempp.adoc[Freefem++]:* xref:applications/app-freefem-parmmg.adoc[Fichera corner], xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
+*xref:frameworks/scimba.adoc[Scimba]:* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
+--
+
+[.frameworks]
+--
 --

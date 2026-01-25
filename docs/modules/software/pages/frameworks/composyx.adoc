@@ -31,14 +31,13 @@ ____
 ____
 icon:book[size=2x,role=text-info] *Documentation*
 
-_Not yet available_
+https://composyx.gitlabpages.inria.fr/composyx/
 ____
 
 ____
 icon:comments[size=2x,role=text-warning] *Discussion*
 
-_Not yet available_
-____
+https://gitlab.inria.fr/composyx/composyx/-/issues____
 ====
 --
 
@@ -49,20 +48,22 @@ ____
 Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
 
 * [x] Packages exist
-* [ ] Available in Spack
+* [x] Available in Spack
 * [x] Available in Guix-HPC
 * [ ] Docker image available
 * [x] Apptainer/Singularity available
 
+* Spack: https://github.com/spack/spack-packages/blob/develop/repos/spack_repo/builtin/packages/composyx/package.py
+* Guix: https://codeberg.org/guix-science/guix-science/src/branch/master/guix-science/packages/algebra.scm
 
 === Testing & CI/CD
 
 Software should include validation tests triggered through automated mechanisms.
 
-* [ ] Unit tests exist
+* [x] Unit tests exist
 * [x] Continuous Integration configured
 * [ ] CI runs on each release
-* [ ] Benchmarking tests exist
+* [x] Benchmarking tests exist
 
 === Repository & Contributions
 
@@ -84,9 +85,10 @@ Sources should be published under a clearly-identified free software license.
 
 === Documentation
 
-* [ ] Documentation exists
-* [ ] Easily browsable online
+* [x] Documentation exists
+* [x] Easily browsable online
 
+Documentation: https://composyx.gitlabpages.inria.fr/composyx/
 
 === API Compatibility
 
