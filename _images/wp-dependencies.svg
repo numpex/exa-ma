@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480">
+  <defs>
+    <linearGradient id="wp1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="wp2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="wp3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="wp4Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="wp5Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444"/>
+      <stop offset="100%" style="stop-color:#DC2626"/>
+    </linearGradient>
+    <linearGradient id="wp6Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="wp7Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14B8A6"/>
+      <stop offset="100%" style="stop-color:#0D9488"/>
+    </linearGradient>
+    <linearGradient id="examaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#94a3b8"/>
+      <stop offset="100%" style="stop-color:#64748b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="480" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#1e293b">Exa-MA Work Package Structure</text>
+  <text x="450" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Methods and Algorithms for Exascale</text>
+
+  <!-- Main Exa-MA container background -->
+  <rect x="60" y="70" width="780" height="310" rx="12" fill="#e2e8f0" opacity="0.5"/>
+
+  <!-- Scientific WPs container -->
+  <rect x="80" y="90" width="520" height="270" rx="8" fill="#f1f5f9"/>
+
+  <!-- FOUNDATION METHODS block (WP1, WP2, WP3) -->
+  <rect x="95" y="100" width="490" height="85" rx="6" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1.5"/>
+  <text x="110" y="118" font-family="system-ui, sans-serif" font-size="10" fill="#4338ca" font-weight="600">FOUNDATION METHODS</text>
+
+  <!-- ADVANCED METHODS block (WP4, WP5, WP6) -->
+  <rect x="95" y="220" width="490" height="85" rx="6" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="110" y="238" font-family="system-ui, sans-serif" font-size="10" fill="#b45309" font-weight="600">ADVANCED METHODS</text>
+
+  <!-- Data flow arrows (red) - draw before boxes -->
+  <!-- METHODS block to APPLICATIONS block (single arrow) -->
+  <path d="M 340 185 L 340 220" stroke="#dc2626" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+  <!-- METHODS block to WP7 -->
+  <path d="M 585 152 L 620 175" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#arrowRed)"/>
+  <!-- APPLICATIONS block to WP7 -->
+  <path d="M 585 262 L 620 240" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#arrowRed)"/>
+
+  <!-- WP1: Discretization -->
+  <g filter="url(#shadow)">
+    <rect x="130" y="125" width="140" height="55" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="200" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1e40af">WP1</text>
+    <text x="200" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Discretization</text>
+  </g>
+
+  <!-- WP2: Model Order Reduction -->
+  <g filter="url(#shadow)">
+    <rect x="280" y="125" width="140" height="55" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="350" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#047857">WP2</text>
+    <text x="350" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Model Reduction</text>
+  </g>
+
+  <!-- WP3: Solvers -->
+  <g filter="url(#shadow)">
+    <rect x="430" y="125" width="140" height="55" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="500" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#4f46e5">WP3</text>
+    <text x="500" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Solvers</text>
+  </g>
+
+  <!-- WP4: Inverse Problems -->
+  <g filter="url(#shadow)">
+    <rect x="130" y="245" width="140" height="55" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="200" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#b45309">WP4</text>
+    <text x="200" y="288" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Inverse Problems</text>
+  </g>
+
+  <!-- WP5: Optimization -->
+  <g filter="url(#shadow)">
+    <rect x="280" y="245" width="140" height="55" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="350" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#dc2626">WP5</text>
+    <text x="350" y="288" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Optimization</text>
+  </g>
+
+  <!-- WP6: Uncertainty Quantification -->
+  <g filter="url(#shadow)">
+    <rect x="430" y="245" width="140" height="55" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="500" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#7c3aed">WP6</text>
+    <text x="500" y="288" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#475569">UQ</text>
+  </g>
+
+  <!-- WP7: Development/Integration (right side) -->
+  <g filter="url(#shadow)">
+    <rect x="620" y="110" width="200" height="185" rx="8" fill="url(#wp7Grad)"/>
+    <text x="720" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="white">WP7</text>
+    <text x="720" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="rgba(255,255,255,0.95)">Development</text>
+    <text x="720" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="rgba(255,255,255,0.95)">CI/CD</text>
+    <text x="720" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="rgba(255,255,255,0.95)">Testing</text>
+    <text x="720" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="rgba(255,255,255,0.95)">Benchmarking</text>
+    <text x="720" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="rgba(255,255,255,0.95)">Training</text>
+  </g>
+
+  <!-- External NumPEx projects -->
+  <!-- PC2 Exa-SOFT (left) -->
+  <g>
+    <rect x="20" y="120" width="35" height="200" rx="6" fill="#7c3aed"/>
+    <text x="37" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="white" transform="rotate(-90 37 230)">PC2 Exa-SOFT</text>
+  </g>
+
+  <!-- PC5 Exa-DIP (right) -->
+  <g>
+    <rect x="845" y="120" width="35" height="200" rx="6" fill="#3b82f6"/>
+    <text x="862" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="white" transform="rotate(90 862 230)">PC5 Exa-DIP</text>
+  </g>
+
+  <!-- Bottom external projects -->
+  <!-- PC4 Exa-ATOW -->
+  <g>
+    <rect x="120" y="395" width="200" height="35" rx="6" fill="#f59e0b"/>
+    <text x="220" y="418" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="white">PC4 Exa-ATOW</text>
+  </g>
+
+  <!-- PC3 Exa-DOST -->
+  <g>
+    <rect x="380" y="395" width="200" height="35" rx="6" fill="#a855f7"/>
+    <text x="480" y="418" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="white">PC3 Exa-DOST</text>
+  </g>
+
+  <!-- No arrows to external projects - just placed at bottom -->
+
+  <!-- Legend -->
+  <rect x="60" y="440" width="780" height="35" rx="4" fill="transparent"/>
+  <line x1="80" y1="458" x2="110" y2="458" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+  <text x="120" y="462" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Internal data flow</text>
+
+  <rect x="230" y="452" width="12" height="12" rx="2" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1"/>
+  <text x="248" y="462" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Foundation</text>
+
+  <rect x="320" y="452" width="12" height="12" rx="2" fill="#fef3c7" stroke="#fbbf24" stroke-width="1"/>
+  <text x="338" y="462" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Advanced</text>
+
+  <!-- NumPEx sister projects legend -->
+  <rect x="420" y="450" width="6" height="16" rx="1" fill="#7c3aed"/>
+  <text x="430" y="462" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">PC2</text>
+  <rect x="460" y="454" width="20" height="6" rx="1" fill="#a855f7"/>
+  <text x="484" y="462" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">PC3</text>
+  <rect x="510" y="454" width="20" height="6" rx="1" fill="#f59e0b"/>
+  <text x="534" y="462" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">PC4</text>
+  <rect x="560" y="450" width="6" height="16" rx="1" fill="#3b82f6"/>
+  <text x="570" y="462" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">PC5</text>
+  <text x="600" y="462" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">NumPEx sister projects</text>
+</svg>
