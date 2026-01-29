@@ -4,13 +4,12 @@
 :page-illustration: fa-solid fa-people-group
 :description: Overview of NumPEx transversal workgroups and Exa-MA representatives.
 :icons: font
+:page-alternating-sections: true
 
 [.lead]
 The NumPEx program organizes cross-cutting workgroups that span all constituent projects, fostering collaboration and addressing broad challenges relevant to exascale computing.
 
-[.section-gray]
---
-[discrete]
+
 == Technical Workgroups
 
 [.grid.grid-2.gap-2]
@@ -55,11 +54,8 @@ Checkpoint/restart, fault tolerance, silent error detection
 *Exa-MA:* Y. Robert
 ____
 ====
---
 
-[.section-white]
---
-[discrete]
+
 == Infrastructure & Software
 
 [.grid.grid-2.gap-2]
@@ -84,11 +80,7 @@ CI/CD pipelines, packaging, deployment, interoperability
 *Exa-MA:* C. Prud'homme, L. Gouarin, P. Jolivet
 ____
 ====
---
 
-[.section-gray]
---
-[discrete]
 == Community & Outreach
 
 [.grid.grid-2.gap-2]
@@ -133,11 +125,7 @@ Dedicated group for PhD students and postdocs, fostering collaboration across th
 *Exa-MA:* D. Hrebenshchykova
 ____
 ====
---
 
-[.section-white]
---
-[discrete]
 == Contact Representatives
 
 For questions about Exa-MA participation in NumPEx workgroups, contact our primary representatives:
@@ -157,4 +145,4 @@ For questions about Exa-MA participation in NumPEx workgroups, contact our prima
 |International |Hélène Barucq |mailto:helene.barucq@inria.fr[icon:envelope[] helene.barucq@inria.fr]
 |YoungPEx |Daria Hrebenshchykova |mailto:daria.hrebenshchykova@inria.fr[icon:envelope[] daria.hrebenshchykova@inria.fr]
 |===
---
+
