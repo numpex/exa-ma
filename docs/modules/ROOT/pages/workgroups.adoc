@@ -130,7 +130,7 @@ _Early-Career Network_
 
 Dedicated group for PhD students and postdocs, fostering collaboration across the NumPEx consortium through workshops, seminars, and networking events.
 
-*Exa-MA:* T. Saigre
+*Exa-MA:* D. Hrebenshchykova
 ____
 ====
 --
@@ -155,5 +155,6 @@ For questions about Exa-MA participation in NumPEx workgroups, contact our prima
 |Software Production |Christophe Prud'homme |mailto:christophe.prudhomme@cemosis.fr[icon:envelope[] christophe.prudhomme@cemosis.fr]
 |Gender/Equity/Diversity |Arthur Vidard |mailto:Arthur.Vidard@inria.fr[icon:envelope[] Arthur.Vidard@inria.fr]
 |International |Hélène Barucq |mailto:helene.barucq@inria.fr[icon:envelope[] helene.barucq@inria.fr]
+|YoungPEx |Daria Hrebenshchykova |mailto:daria.hrebenshchykova@inria.fr[icon:envelope[] daria.hrebenshchykova@inria.fr]
 |===
 --

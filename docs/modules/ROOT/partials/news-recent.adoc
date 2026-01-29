@@ -1,7 +1,11 @@
-// Events: 9 recent
+// Events: 10 recent
 
 [cols="1,5",frame=none,grid=rows]
 |===
+|icon:user-graduate[size=2x] *Jan 21, 2026*
+|**Daria Hrebenshchykova appointed Exa-MA YoungPEx representative** +
+At the 2026 General Assembly, Daria Hrebenshchykova (PhD student, WP2, Inria) was appointed as the new Exa-MA representative in the YoungPEx early-career network. YoungPEx brings together PhD students and postdocs across the NumPEx consortium through workshops, seminars, and networking events. +
+
 |icon:users[size=2x] *Jan 19-21, 2026*
 |**General Assembly 2026** – Arts et Métiers ParisTech, Aix-en-Provence +
 Three-day annual meeting with all WP leaders (WP1-WP7) presenting progress and scientific highlights. Featured breakout sessions with Feel++, Scimba, Composyx, and Uranie frameworks, plus presentations on Sage-HPC and Daimos. All 24 presentation slides are now available. +

@@ -9,6 +9,10 @@ The Exa-MA 2026 General Assembly successfully concluded on January 21, 2026. Hel
 
 == Overview
 
+[.grid.grid-main-sidebar.gap-3.items-center]
+--
+[.no-panel]
+====
 The General Assembly featured:
 
 * **WP Progress Reviews**: All seven work packages (WP1-WP7) presented scientific highlights and next steps
@@ -16,6 +20,10 @@ The General Assembly featured:
 * **Breakout Sessions**: Focused collaboration sessions connecting frameworks with work packages
 * **AI & HPC Integration**: Presentations on Sage-HPC (AI for HPC) and Daimos (HPC for AI)
 * **Scientific Board Meeting**: Strategic discussions with board members, project leaders, and WP leaders
+====
+
+image::2026/ga/2026-01-21 10.52.22-1.jpg[Group photo,role="img-fluid img-shadow img-rounded w-100  justify-self-end",link=self]
+--
 
 == Attendance
 
@@ -266,6 +274,35 @@ The assembly concluded with general closing remarks from Hélène Barucq and Chr
 |xref:attachment$news/2026/ga/slides-closing-remarks.pdf[icon:file-pdf[title=PDF]]
 
 |===
+
+== Photo Gallery
+
+[.text-center]
+.Group photo - Exa-MA 2026 General Assembly participants
+image::2026/ga/2026-01-21 10.52.22-1.jpg[Group photo of Exa-MA 2026 General Assembly participants,role="img-fluid img-shadow img-rounded w-70 center",link=self]
+
+[.grid.grid-3.gap-2.mt-4]
+====
+[.text-center]
+.Day 1 - Welcome session
+image::2026/ga/2026-01-19 13.56.09.jpg[Day 1 welcome session,role="img-fluid img-shadow img-rounded",link=self]
+
+[.text-center]
+.Day 1 - WP presentations
+image::2026/ga/2026-01-19 14.46.47.jpg[Day 1 WP presentations,role="img-fluid img-shadow img-rounded",link=self]
+
+[.text-center]
+.Day 2 - Scientific Advisory Board meeting
+image::2026/ga/2026-01-20 17.36.05.jpg[Day 2 Scientific Advisory Board meeting,role="img-fluid img-shadow img-rounded",link=self]
+
+[.text-center]
+.Day 3 - AI for HPC presentation (Sage-HPC)
+image::2026/ga/2026-01-21 09.11.19.jpg[Day 3 AI for HPC presentation,role="img-fluid img-shadow img-rounded",link=self]
+
+[.text-center]
+.Day 3 - AI for HPC presentation (Sage-HPC)
+image::2026/ga/2026-01-21 09.11.48.jpg[Day 3 AI for HPC presentation,role="img-fluid img-shadow img-rounded",link=self]
+====
 
 == Resources
 

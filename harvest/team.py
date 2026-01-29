@@ -297,8 +297,12 @@ class RecruitedPerson(BaseModel):
 
     @property
     def institution_display(self) -> str:
-        """Return normalized institution name."""
-        return normalize_institution(self.partner or self.institution)
+        """Return normalized institution name.
+
+        Prioritizes 'institution' (employer) over 'partner' as per Google Sheet
+        column I (Institution employer) being the authoritative source.
+        """
+        return normalize_institution(self.institution or self.partner)
 
     @property
     def has_detailed_info(self) -> bool:
@@ -595,7 +599,7 @@ class TeamFetcher:
             position_raw=position_raw,
             team=clean_string(row.get("Team")),
             partner=clean_string(row.get("Partner")),
-            institution=clean_string(row.get("Institution (emloyer)")),
+            institution=clean_string(row.get("Institution (employer)")),
             advisors=self._parse_advisors(row),
         )
 
@@ -874,8 +878,14 @@ def generate_recruited_section(
                         wp_parts.append(wp)
                 wp_str = " +\n".join(wp_parts)  # Line break between multiple WPs
 
-            # Institution
+            # Institution (employer) and Partner (collaboration)
             inst_str = person.institution_display
+            # Show partner if different from institution to highlight collaborations
+            if person.partner and person.institution:
+                partner_norm = normalize_institution(person.partner)
+                inst_norm = normalize_institution(person.institution)
+                if partner_norm != inst_norm:
+                    inst_str = f"{inst_norm} +\n_(Partner: {partner_norm})_"
 
             # Period
             period_str = person.start_date_display

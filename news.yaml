@@ -50,6 +50,18 @@ events:
       plus presentations on Sage-HPC and Daimos. All 24 presentation slides are now available.
     page: "news/2026/20260119-21-ag.adoc"
 
+  - id: youngpex-representative-2026
+    type: announcement
+    status: recent
+    title: "Daria Hrebenshchykova appointed Exa-MA YoungPEx representative"
+    date: "2026-01-21"
+    icon: "user-graduate"
+    description: >
+      At the 2026 General Assembly, Daria Hrebenshchykova (PhD student, WP2, Inria)
+      was appointed as the new Exa-MA representative in the YoungPEx early-career network.
+      YoungPEx brings together PhD students and postdocs across the NumPEx consortium
+      through workshops, seminars, and networking events.
+
   - id: website-refresh-2026
     type: announcement
     status: recent
