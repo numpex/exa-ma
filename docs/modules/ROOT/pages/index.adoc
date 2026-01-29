@@ -1,4 +1,5 @@
 = Exa-MA: Methods and Algorithms for Exascale
+:sectnums!:
 :page-layout: manuals
 :page-tags: exama-home
 :page-cards-tag: catalog,info,resource,highlights
@@ -10,12 +11,13 @@
 :icons: font
 :source-highlighter: highlight.js
 :description: Developing cutting-edge numerical methods, algorithms, and software for exascale computing within the NumPEx initiative.
-:!sectnums:
+:page-alternating-sections: true
+
 
 [.lead.lead-75]
 Building the future of exascale computing through advanced numerical methods, AI-enhanced algorithms, and production-ready open-source software.
 
-[discrete]
+//[discrete]
 == Our Mission
 
 The Exa-MA project is part of France's PEPR NumPEx initiative, dedicated to pushing the frontiers of exascale computing. We develop and deploy:
@@ -54,9 +56,32 @@ Demonstrators, benchmarks, and real-world applications across scientific domains
 [.lead.lead-75]
 Exa-MA brings together leading French institutions (CEA, École Polytechnique, Inria, Sorbonne Université, Université de Strasbourg) with a budget of 6.255 M€ over the project duration.
 
-[.section-gray]
---
-[discrete]
+
+//[discrete]
+== Latest News & Updates
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:check-circle[size=2x,role=text-success] *January 21, 2026* +
+xref:news/2026/20260119-21-ag.adoc[General Assembly 2026 Concluded] – 65 participants, 24 institutions. All slides now available!
+____
+
+[.text-center]
+____
+icon:calendar[size=2x,role=text-primary] *February 2026* +
+https://inria.invityou.com/trans-numeriques2026[Trans-Numériques 2026] – France's digital continuum conference
+____
+====
+
+Stay informed about project milestones, publications, and community events:
+
+* xref:news.adoc[News and Events] – Latest announcements and upcoming activities
+* xref:deliverables.adoc[Deliverables] – Reports, documentation, and public outputs
+* xref:results.adoc[Results & Impact] – Detailed metrics and scientific achievements
+
+//[discrete]
 == Recent Achievements
 
 [discrete]
@@ -122,11 +147,8 @@ ____
 icon:users[size=2x,role=text-warning] *55* Person-Years
 ____
 ====
---
 
-[.section-white]
---
-[discrete]
+//[discrete]
 == Work Packages Overview
 
 Exa-MA is organized into seven scientific work packages plus project management:
@@ -159,41 +181,8 @@ Exa-MA is organized into seven scientific work packages plus project management:
 
 [.text-right]
 xref:workpackages.adoc[View detailed work packages →]
---
 
-[.section-gray]
---
-[discrete]
-== Latest News & Updates
-
-[discrete]
-=== Upcoming Events
-
-[.grid.grid-2.gap-2]
-====
-[.text-center]
-____
-icon:calendar[size=2x,role=text-primary] *January 2026* +
-xref:news/2026/20260119-21-ag.adoc[General Assembly 2026] – Progress review in Aix-en-Provence
-____
-
-[.text-center]
-____
-icon:network-wired[size=2x,role=text-success] *February 2026* +
-https://inria.invityou.com/trans-numeriques2026[Trans-Numériques 2026] – France's digital continuum conference
-____
-====
-
-Stay informed about project milestones, publications, and community events:
-
-* xref:news.adoc[News and Events] – Latest announcements and upcoming activities
-* xref:deliverables.adoc[Deliverables] – Reports, documentation, and public outputs
-* xref:results.adoc[Results & Impact] – Detailed metrics and scientific achievements
---
-
-[.section-white]
---
-[discrete]
+//[discrete]
 == Getting Started
 
 Whether you're a researcher, developer, or end user, find your entry point:
@@ -210,4 +199,3 @@ Whether you're a researcher, developer, or end user, find your entry point:
 ====
 xref:about.adoc[Learn more about Exa-MA] | xref:contact.adoc[Get in touch] | xref:team.adoc[Meet the team]
 ====
---
