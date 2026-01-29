@@ -53,17 +53,17 @@ ____
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *37*
-* icon:atom[] 0.math: *33*
+* icon:atom[] 0.math: *34*
+* icon:atom[] 0.info: *34*
 * icon:atom[] 1.math.math-na: *15*
 * icon:atom[] 1.math.math-ap: *9*
 * icon:atom[] 1.info.info-ai: *5*
 
 == 2026
 
-_5 publications_
+_4 publications_
 
-_2 Preprint / unpublished, 2 Article in journal, 1 Conference paper_
+_2 Article in journal, 1 Preprint / unpublished, 1 Conference paper_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
@@ -73,11 +73,6 @@ _2 Preprint / unpublished, 2 Article in journal, 1 Conference paper_
 |Joubine Aghili, Hassan Ballout, Yvon Maday et al.
 |Preprint / unpublished
 |link:https://hal.science/hal-05466017v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05466017/document[icon:file-pdf[title=PDF]]
-
-|*Multiword matrix multiplication over large finite fields in floating-point arithmetic*
-|Jérémy Berthomieu, Stef Graillat, Dimitri Lesnoff et al.
-|Preprint / unpublished
-|link:https://hal.science/hal-04917201v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04917201/document[icon:file-pdf[title=PDF]]
 
 |*Mathematical modeling and simulation of coupled aqueous humor flow and temperature distribution in a realistic 3D human eye geometry*
 |Thomas Saigre, Vincent Chabannes, Christophe Prud'Homme et al.
@@ -98,13 +93,18 @@ _2 Preprint / unpublished, 2 Article in journal, 1 Conference paper_
 
 == 2025
 
-_23 publications_
+_24 publications_
 
-_10 Preprint / unpublished, 7 Article in journal, 2 Poster, 2 Conference paper, 1 HDR, 1 Report_
+_11 Preprint / unpublished, 7 Article in journal, 2 Poster, 2 Conference paper, 1 HDR, 1 Report_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
 |Title |Authors |Type |Links
+
+|*Two-way Coupling of Fluid-Structure Interaction for Elastic Magneto-Swimmers: A Finite Element ALE Approach*
+|Christophe Prud'Homme, Vincent Chabannes, Laetitia Giraldi et al.
+|Preprint / unpublished
+|link:https://inria.hal.science/hal-05482283v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-05482283/document[icon:file-pdf[title=PDF]]
 
 |*3D Modeling of Solar Oscillations with Hybridizable Discontinuous Galerkin Method*
 |Florian Faucher, Ha Pham, Damien Fournier et al.
@@ -206,15 +206,15 @@ _10 Preprint / unpublished, 7 Article in journal, 2 Poster, 2 Conference paper, 
 |Article in journal
 |link:https://hal.science/hal-04440076v4[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04440076/document[icon:file-pdf[title=PDF]]
 
-|*Two-way Coupling of Fluid--Structure Interaction for Elastic Magneto-Swimmers: A Finite Element ALE Approach*
-|Christophe Prud'Homme, Vincent Chabannes, Laëtitia Giraldi et al.
-|Preprint / unpublished
-|link:https://hal.science/hal-05343702v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05343702/document[icon:file-pdf[title=PDF]]
-
 |*Deterministic and probabilistic rounding error analysis of neural networks in floating-point arithmetic*
 |Théo Beuzeville, Alfredo Buttari, Serge Gratton et al.
 |Article in journal
 |link:https://hal.science/hal-04663142v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04663142/document[icon:file-pdf[title=PDF]]
+
+|*Two-way Coupling of Fluid--Structure Interaction for Elastic Magneto-Swimmers: A Finite Element ALE Approach*
+|Christophe Prud'Homme, Vincent Chabannes, Laëtitia Giraldi et al.
+|Preprint / unpublished
+|link:https://hal.science/hal-05343702v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05343702/document[icon:file-pdf[title=PDF]]
 
 |*Mixed precision accumulation for neural network inference guided by componentwise forward error analysis*
 |El-Mehdi El Arar, Silviu-Ioan Filip, Theo Mary et al.
