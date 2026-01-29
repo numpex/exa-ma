@@ -37,7 +37,8 @@ ____
 ____
 icon:comments[size=2x,role=text-warning] *Discussion*
 
-GitHub Issues (https://github.com/hpddm/hpddm/issues)____
+GitHub Issues (https://github.com/hpddm/hpddm/issues)
+____
 ====
 --
 

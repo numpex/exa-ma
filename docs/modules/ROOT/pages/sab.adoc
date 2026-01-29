@@ -5,13 +5,11 @@
 :description: The Scientific Advisory Board (SAB) provides strategic guidance and expertise to the Exa-MA project.
 :icons: font
 :sectnums!:
+:page-alternating-sections: true
 
 [.lead]
 The Scientific Advisory Board (SAB) provides strategic guidance and expertise to the Exa-MA project, bringing together internationally recognized experts in high-performance computing, numerical methods, and scientific computing.
 
-[.section-gray]
---
-[discrete]
 == Role & Responsibilities
 
 [.grid.grid-2.gap-2]
@@ -61,11 +59,7 @@ icon:calendar-check[size=3x,role=text-primary]
 Attend General Assembly (virtual/in-person) and engage with WP teams.
 ____
 ====
---
 
-[.section-white]
---
-[discrete]
 == Board Members
 
 [discrete]
@@ -213,7 +207,7 @@ _ETH Zurich_
 Switzerland
 ____
 ====
---
+
 
 == SAB Meetings
 

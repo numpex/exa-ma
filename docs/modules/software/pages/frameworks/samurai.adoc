@@ -37,7 +37,8 @@ ____
 ____
 icon:comments[size=2x,role=text-warning] *Discussion*
 
-https://github.com/hpc-maths/samurai/discussions____
+https://github.com/hpc-maths/samurai/discussions
+____
 ====
 --
 

@@ -4,13 +4,12 @@
 :page-illustration: fa-solid fa-project-diagram
 :description: Collaborative research projects involving Exa-MA partners.
 :icons: font
+:page-alternating-sections: true
 
 [.lead]
 The Exa-MA project participates in several collaborative research initiatives, working alongside partner organizations to advance exascale computing and HPC technologies.
 
-[.section-white]
---
-[discrete]
+
 == Funded Projects
 
 _4 funded projects involving Exa-MA partners_
@@ -54,7 +53,5 @@ Funded by ANR
 ____
 ====
 
---
 
 For collaboration inquiries, please visit our xref:contact.adoc[contact page].
---

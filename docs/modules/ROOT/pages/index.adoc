@@ -197,5 +197,5 @@ Whether you're a researcher, developer, or end user, find your entry point:
 
 [.text-center]
 ====
-xref:about.adoc[Learn more about Exa-MA] | xref:contact.adoc[Get in touch] | xref:team.adoc[Meet the team]
+xref:overview.adoc[Learn more about Exa-MA] | xref:contact.adoc[Get in touch] | xref:team.adoc[Meet the team]
 ====

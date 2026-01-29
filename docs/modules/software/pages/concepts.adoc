@@ -92,7 +92,7 @@ We propose the following workflow building on the <<cicd,CI/CD framework>>.
 This workflow is based on the following principles:
 
 .Exa-MA software development workflow
-image::{imagedir}wp7-workflow.png[]
+image::ROOT:wp7-workflow.png[]
 
 === Demonstrator
 

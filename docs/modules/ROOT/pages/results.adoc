@@ -167,7 +167,7 @@ ____
 |xref:workpackages.adoc[icon:tasks[] Work Packages]
 |View WP-specific progress and deliverables
 
-|xref:software/index.adoc[icon:cube[] Software Stack]
+|xref:software:index.adoc[icon:cube[] Software Stack]
 |Explore tools, APIs, and packaging status
 
 |xref:news.adoc[icon:calendar[] News and Events]

@@ -37,7 +37,8 @@ ____
 ____
 icon:comments[size=2x,role=text-warning] *Discussion*
 
-https://gitlab.inria.fr/scimba/scimba/-/issues____
+https://gitlab.inria.fr/scimba/scimba/-/issues
+____
 ====
 --
 
