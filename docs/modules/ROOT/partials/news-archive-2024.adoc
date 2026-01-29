@@ -10,6 +10,6 @@ https://bench.feelpp.org[Event details and presentations]
 |icon:users[size=2x] *Jan 16-17, 2024*
 |**General Assembly 2024** – Inria, Paris +
 First annual consortium meeting with WP presentations, technical discussions, and planning for Year 2 activities. Establishment of cross-WP collaborations. +
-_Full recap coming soon_
+xref:news/2024/20240116-17-ag.adoc[Read full recap →]
 
 |===
