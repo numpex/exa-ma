@@ -37,8 +37,7 @@ ____
 ____
 icon:comments[size=2x,role=text-warning] *Discussion*
 
-https://github.com/cea-trust-platform/trust-code/issues
-____
+https://github.com/cea-trust-platform/trust-code/issues____
 ====
 --
 
