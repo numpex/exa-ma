@@ -1,0 +1,122 @@
+= Privacy Notice (RGPD)
+:page-tags: legal
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-user-shield
+:description: Privacy policy and personal data protection information for the Exa-MA website.
+:icons: font
+
+[.lead]
+This page describes how we process personal data on the Exa-MA project website, in accordance with the General Data Protection Regulation (GDPR/RGPD).
+
+== Data Controller
+
+The Exa-MA website is managed by:
+
+*Université de Strasbourg - Cemosis* +
+UFR Math-Info, 7 rue René Descartes +
+67084 Strasbourg Cedex, France
+
+For data protection inquiries, contact the institutional Data Protection Officer (DPO):
+
+icon:envelope[] dpo@unistra.fr +
+https://www.unistra.fr/protection-des-donnees
+
+== Data We Publish
+
+=== Team & Project Information
+
+We publish professional information about project members, including:
+
+* Names and professional affiliations
+* Job titles and roles within the project
+* Professional email addresses
+* Professional photographs
+
+*Legal basis*: Legitimate interest (Art. 6.1.f GDPR) -- transparency of publicly-funded research project and professional communication.
+
+=== Event Photography
+
+Group photographs from project events may be published on this website.
+
+*Legal basis*: Consent (Art. 6.1.a GDPR) -- participants are informed at events and can request removal.
+
+=== Recruited Personnel
+
+We publish information about personnel funded by the project, including names, positions, work packages, institutions, and employment periods.
+
+*Legal basis*: Legitimate interest (Art. 6.1.f GDPR) -- accountability for public research funding (France 2030 / ANR).
+
+== Hosting & Technical Data
+
+This website is hosted on *GitHub Pages* (GitHub Inc., USA). GitHub may collect:
+
+* IP addresses
+* Browser information
+* Access timestamps
+
+This constitutes a transfer to the United States under GitHub's data processing terms and Standard Contractual Clauses.
+
+=== External Resources
+
+[.striped,cols="2,3,2",options="header"]
+|===
+|Service |Purpose |Data
+
+|Cloudflare CDN
+|Delivers Font Awesome icons
+|IP address may be logged
+
+|Kroki.io
+|Renders technical diagrams
+|Diagram content (no personal data)
+
+|GitHub
+|Source code repository, hosting
+|IP addresses, access logs
+|===
+
+== Your Rights
+
+Under GDPR, you have the right to:
+
+* *Access* your personal data
+* *Rectify* inaccurate data
+* *Erase* your data ("right to be forgotten")
+* *Restrict* processing
+* *Object* to processing based on legitimate interest
+* *Data portability*
+
+To exercise these rights, contact:
+
+icon:envelope[] christophe.prudhomme@cemosis.fr
+
+=== Photo Removal Requests
+
+If you appear in a photograph published on this website and wish to be removed, please contact us with:
+
+* The URL of the page containing the image
+* A description of which image or your position in a group photo
+* Your name for identification
+
+We will process removal requests within 30 days.
+
+== Data Retention
+
+* *Team information*: Retained for the duration of the project and archival purposes
+* *Event photos*: Retained for project documentation and reporting
+* *Technical logs*: Managed by GitHub according to their retention policies
+
+== Complaints
+
+If you believe your data protection rights have not been respected, you may lodge a complaint with the French data protection authority:
+
+*CNIL* (Commission Nationale de l'Informatique et des Libertés) +
+3 Place de Fontenoy, TSA 80715 +
+75334 Paris Cedex 07, France +
+https://www.cnil.fr
+
+== Updates
+
+This privacy notice may be updated periodically. The date of last revision is indicated below.
+
+_Last updated: {docdate}_

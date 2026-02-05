@@ -1,0 +1,92 @@
+= Legal Notice (Mentions Légales)
+:page-tags: legal
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-balance-scale
+:description: Legal information about the Exa-MA website publisher and hosting.
+:icons: font
+
+[.lead]
+Legal information required under French law (Loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique - LCEN).
+
+== Site Publisher (Éditeur)
+
+*Université de Strasbourg* +
+4 rue Blaise Pascal, CS 90032 +
+67081 Strasbourg Cedex, France +
+icon:phone[] +33 (0)3 68 85 00 00 +
+https://www.unistra.fr
+
+=== Publishing Unit
+
+*Cemosis* (Centre de Modélisation et de Simulation de Strasbourg) +
+UFR Mathématique et Informatique +
+7 rue René Descartes +
+67084 Strasbourg Cedex, France +
+https://www.cemosis.fr
+
+=== Publication Director
+
+*Christophe Prud'homme* +
+Professor, Université de Strasbourg +
+Exa-MA Project Co-Coordinator +
+icon:envelope[] christophe.prudhomme@cemosis.fr
+
+== Hosting Provider (Hébergeur)
+
+*GitHub Inc.* +
+88 Colin P Kelly Jr St +
+San Francisco, CA 94107, USA +
+https://github.com
+
+GitHub Pages service is used to host this static documentation website.
+
+== Project Funding
+
+The Exa-MA project is funded by the French government through:
+
+* https://www.economie.gouv.fr/france-2030[*France 2030*] investment program
+* *ANR* (Agence Nationale de la Recherche)
+
+image::france-2030-logo.png[France 2030,120,link="https://www.economie.gouv.fr/france-2030"]
+
+== Intellectual Property
+
+=== Content
+
+The textual content of this website (documentation, descriptions, reports) is produced by the Exa-MA consortium members. Unless otherwise indicated, content is available under https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)] license.
+
+=== Software
+
+Software documentation refers to open-source projects developed within the Exa-MA consortium. Each software project is governed by its own license (typically LGPL, Apache 2.0, or similar open-source licenses). See individual software pages for specific licensing information.
+
+=== Logos and Trademarks
+
+* The *France 2030* logo is the property of the French government
+* The *NumPEx* logo is the property of the NumPEx program
+* Institutional logos belong to their respective organizations
+
+=== Photographs
+
+Portrait photographs of team members are used with their consent. Event photographs are taken at project meetings where participants are informed of documentation purposes.
+
+== Accessibility
+
+We strive to make this website accessible to all users. The site is built using:
+
+* Semantic HTML5 markup
+* Responsive design for mobile devices
+* Sufficient color contrast ratios
+
+For accessibility concerns or to request content in alternative formats, please contact:
+
+icon:envelope[] christophe.prudhomme@cemosis.fr
+
+== Personal Data Protection
+
+For information about how we process personal data, please see our xref:privacy.adoc[Privacy Notice (RGPD)].
+
+== Applicable Law
+
+This website and its legal notices are governed by French law. Any disputes shall be subject to the exclusive jurisdiction of the French courts.
+
+_Last updated: {docdate}_
