@@ -1,7 +1,12 @@
-// Events: 10 recent
+// Events: 11 recent
 
 [cols="1,5",frame=none,grid=rows]
 |===
+|icon:network-wired[size=2x] *Feb 02-05, 2026*
+|**Trans-Numériques 2026** – Couvent des Jacobins, Rennes +
+First edition bringing together France's academic community around digital continuum challenges. NumPEx was represented with presentations on performance, sustainability, and HPC. Exa-MA participants included project coordinators and WP leaders. Presentation slides are now available. +
+xref:news/2026/20260202-05-transnumeriques.adoc[Read full recap →]
+
 |icon:user-graduate[size=2x] *Jan 21, 2026*
 |**Daria Hrebenshchykova appointed Exa-MA YoungPEx representative** +
 At the 2026 General Assembly, Daria Hrebenshchykova (PhD student, WP2, Inria) was appointed as the new Exa-MA representative in the YoungPEx early-career network. YoungPEx brings together PhD students and postdocs across the NumPEx consortium through workshops, seminars, and networking events. +

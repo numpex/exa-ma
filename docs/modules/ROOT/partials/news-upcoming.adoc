@@ -4,13 +4,12 @@
 --
 [.card]
 ====
-icon:network-wired[size=2x,role=text-info] *Trans-Numériques 2026*
+icon:microchip[size=2x,role=text-primary] *AMD and NumPEx Technical Meeting*
 
-*Feb 02-05, 2026* | Couvent des Jacobins, Rennes
+*Feb 18-19, 2026* | Saclay
 
-First edition bringing together France's academic community around digital continuum challenges. NumPEx will be represented with presentations on performance, sustainability, and HPC. Exa-MA participants include project coordinators and WP leaders.
+Two-day coordination meeting between AMD and NumPEx focused on technical exchanges. Exa-MA (PC1) contributes a presentation of the project and its objectives, and outlines three potential collaboration/pilot tracks with AMD developers across WP1, WP3, and WP5.
 
-https://inria.invityou.com/trans-numeriques2026[Event details and registration →]
 ====
 
 [.card]

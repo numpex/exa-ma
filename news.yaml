@@ -5,19 +5,18 @@
 events:
   # Upcoming events (displayed as cards)
 
-  - id: trans-numeriques-2026
-    type: external
+  - id: amd-numpex-meeting-2026
+    type: workshop
     status: upcoming
-    title: "Trans-Numériques 2026"
-    date: "2026-02-02"
-    end_date: "2026-02-05"
-    location: "Couvent des Jacobins, Rennes"
-    icon: "network-wired"
+    title: "AMD and NumPEx Technical Meeting"
+    date: "2026-02-18"
+    end_date: "2026-02-19"
+    location: "Saclay"
+    icon: "microchip"
     description: >
-      First edition bringing together France's academic community around digital continuum challenges.
-      NumPEx will be represented with presentations on performance, sustainability, and HPC.
-      Exa-MA participants include project coordinators and WP leaders.
-    url: "https://inria.invityou.com/trans-numeriques2026"
+      Two-day coordination meeting between AMD and NumPEx focused on technical exchanges.
+      Exa-MA (PC1) contributes a presentation of the project and its objectives, and outlines
+      three potential collaboration/pilot tracks with AMD developers across WP1, WP3, and WP5.
 
   - id: majsc-2026
     type: training
@@ -36,6 +35,21 @@ events:
     url: "https://majsc2026.pages.math.unistra.fr/"
 
   # Recent events (displayed as table)
+  - id: trans-numeriques-2026
+    type: external
+    status: recent
+    title: "Trans-Numériques 2026"
+    date: "2026-02-02"
+    end_date: "2026-02-05"
+    location: "Couvent des Jacobins, Rennes"
+    icon: "network-wired"
+    description: >
+      First edition bringing together France's academic community around digital continuum challenges.
+      NumPEx was represented with presentations on performance, sustainability, and HPC.
+      Exa-MA participants included project coordinators and WP leaders. Presentation slides are now available.
+    page: "news/2026/20260202-05-transnumeriques.adoc"
+    url: "https://inria.invityou.com/trans-numeriques2026"
+
   - id: ga-2026
     type: assembly
     status: recent

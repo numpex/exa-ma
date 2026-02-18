@@ -1,0 +1,36 @@
+= Trans-Numériques 2026
+:page-tags: resource,news2026
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-network-wired
+:description: Exa-MA contributions and presentation materials from Trans-Numériques 2026.
+
+[.lead]
+Trans-Numériques 2026 took place in Rennes from February 2 to 5, 2026.
+Exa-MA contributed to the NumPEx presence with workshops animations on AI-HPC convergence as well as software ecosystem.
+
+== Event Details
+
+*Location*: Couvent des Jacobins, Rennes, France
+
+*Duration*: Monday, February 2 – Thursday, February 5, 2026
+
+*Event website*: https://inria.invityou.com/trans-numeriques2026[Trans-Numériques 2026]
+
+== Presentation Slides
+
+[.striped,cols="3,1,1",options="header"]
+|===
+|Presentation |PDF |PPTX
+
+|Atelier 1 - Convergence HPC-IA
+|xref:attachment$news/2026/inter-pepr/slides_transnum_convergence_hpcia.pdf[icon:file-pdf[title=PDF]]
+|-
+
+|Atelier 2 - Continuum digital
+|xref:attachment$news/2026/inter-pepr/2026-02-03-NumPEx-Intro-Transnumeriques-Continuum.pdf[icon:file-pdf[title=PDF]]
+|xref:attachment$news/2026/inter-pepr/2026-02-03-NumPEx-Intro-Transnumeriques-Continuum.pptx[PPTX]
+
+|Atelier 3 - Ecosysteme logiciel
+|xref:attachment$news/2026/inter-pepr/ecosysteme-logiciel-1.pdf[icon:file-pdf[title=PDF]]
+|xref:attachment$news/2026/inter-pepr/ecosysteme-logiciel-1.pptx[PPTX]
+|===
