@@ -49,12 +49,11 @@ ____
 Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
 
 * [x] Packages exist
-* [x] Available in Spack
+* [ ] Available in Spack
 * [ ] Available in Guix-HPC
-* [x] Docker image available
+* [ ] Docker image available
 * [ ] Apptainer/Singularity available
 
-* Spack: https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/freefem/package.py
 
 === Testing & CI/CD
 

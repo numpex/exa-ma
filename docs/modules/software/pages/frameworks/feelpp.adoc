@@ -49,14 +49,11 @@ Slack (https://feelpp.slack.com), GitHub Discussions (https://github.com/feelpp/
 Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
 
 * [x] Packages exist
-* [x] Available in Spack
-* [x] Available in Guix-HPC
-* [x] Docker image available
-* [x] Apptainer/Singularity available
+* [ ] Available in Spack
+* [ ] Available in Guix-HPC
+* [ ] Docker image available
+* [ ] Apptainer/Singularity available
 
-* Spack: https://github.com/numpex/spack.numpex/blob/main/packages/feelpp/package.py
-* Guix: https://gitlab.inria.fr/numpex-pc5/wp3/guix-hpc/-/blob/feelpp/guix-hpc/packages/math.scm?ref_type=heads
-* Docker: https://github.com/feelpp/feelpp/pkgs/container/feelpp
 
 === Testing & CI/CD
 

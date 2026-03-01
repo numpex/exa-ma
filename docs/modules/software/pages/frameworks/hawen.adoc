@@ -50,7 +50,7 @@ Software should be packaged (preferably using Spack or Guix package formats) and
 
 * [x] Packages exist
 * [ ] Available in Spack
-* [x] Available in Guix-HPC
+* [ ] Available in Guix-HPC
 * [ ] Docker image available
 * [ ] Apptainer/Singularity available
 

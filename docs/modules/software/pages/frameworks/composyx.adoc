@@ -48,13 +48,11 @@ https://gitlab.inria.fr/composyx/composyx/-/issues____
 Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
 
 * [x] Packages exist
-* [x] Available in Spack
-* [x] Available in Guix-HPC
+* [ ] Available in Spack
+* [ ] Available in Guix-HPC
 * [ ] Docker image available
-* [x] Apptainer/Singularity available
+* [ ] Apptainer/Singularity available
 
-* Spack: https://github.com/spack/spack-packages/blob/develop/repos/spack_repo/builtin/packages/composyx/package.py
-* Guix: https://codeberg.org/guix-science/guix-science/src/branch/master/guix-science/packages/algebra.scm
 
 === Testing & CI/CD
 
