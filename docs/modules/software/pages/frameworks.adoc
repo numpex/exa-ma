@@ -28,7 +28,7 @@ ____
 ____
 icon:box-open[size=2x,role=text-success] *Packaging*
 
-0 in Spack, 0 in Guix-HPC
+10 in Spack, 7 in Guix-HPC
 ____
 
 ____

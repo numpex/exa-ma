@@ -54,6 +54,9 @@ Software should be packaged (preferably using Spack or Guix package formats) and
 * [ ] Docker image available
 * [ ] Apptainer/Singularity available
 
+* Spack: URL
+* Guix: URL
+* Docker: URL
 
 === Testing & CI/CD
 

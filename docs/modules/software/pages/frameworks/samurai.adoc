@@ -48,11 +48,12 @@ https://github.com/hpc-maths/samurai/discussions____
 Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
 
 * [x] Packages exist
-* [ ] Available in Spack
+* [x] Available in Spack
 * [ ] Available in Guix-HPC
 * [ ] Docker image available
 * [ ] Apptainer/Singularity available
 
+* Spack: https://github.com/spack/spack
 
 === Testing & CI/CD
 
