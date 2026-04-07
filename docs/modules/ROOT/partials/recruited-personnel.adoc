@@ -1,4 +1,4 @@
-// Total recruited personnel: 25
+// Total recruited personnel: 27
 :sectnums!:
 
 [discrete]
@@ -81,14 +81,18 @@ Antoine Deleforge
 |WP3: Solvers for linear algebra and multiphysics
 |Sorbonne Université
 |October 2025 - October 2028
-|Pierre Jolivet
+|Emmanuel Agullo +
+Luc Giraud +
+Pierre Jolivet +
+Théo Mary
 
 |*Doumbouya*
 |Mohamed
 |WP4: Combine Data and Models, Inverse Problems at Exascale
 |Inria
 |November 2025 - October 2028
-|Arthur Vidard
+|Olivier Zahm +
+Arthur Vidard
 
 |*El Khadiri*
 |Mahmoud El Mehdi
@@ -109,7 +113,7 @@ Antoine Deleforge
 [discrete]
 == icon:flask[] Postdoctoral Researchers
 
-_5 personnel_
+_6 personnel_
 
 [.striped.recruited,cols="2,2,2,2,2,2",options="header"]
 |===
@@ -127,7 +131,7 @@ WP7: Showroom, Benchmarking and Co-Design coordination
 |Dinh Hung T
 |WP2: Model order reduction, Surrogate, Scientific Machine Learning methods
 |Université de Strasbourg
-|October 2023 - Present
+|October 2023 - October 2025
 |Emmanuel Franck
 
 |*Chen*
@@ -147,9 +151,19 @@ WP7: Showroom, Benchmarking and Co-Design coordination
 |*Spies*
 |Lukas
 |WP3: Solvers for linear algebra and multiphysics
-|Inria
-|March 2025 - February 2026
+|CEA
+|March 2025 - March 2026
+|Vincent Faucher +
+Pierre-Henri Tournier +
+Frédéric Nataf
+
+|*Boëzennec*
+|Robin
 |
+|Unknown
+|January 2026 - Present
+|Anne Benoît +
+Yves Robert
 
 |===
 
@@ -210,7 +224,7 @@ Vincent Chabannes
 |Erik
 |WP3: Solvers for linear algebra and multiphysics
 |Sorbonne Université
-|October 2025 - Present
+|October 2025 - October 2026
 |Pierre Jolivet
 
 |*Gouinguenet*
@@ -237,10 +251,10 @@ WP7: Showroom, Benchmarking and Co-Design coordination
 |===
 |Indicator |Value
 
-|Total Recruited Personnel |*25*
+|Total Recruited Personnel |*27*
 |PhD Students |12
-|Postdoctoral Researchers |5
+|Postdoctoral Researchers |6
 |Research Engineers |8
-|Women |2 (8%)
-|Men |23 (92%)
+|Women |2 (7%)
+|Men |25 (93%)
 |===

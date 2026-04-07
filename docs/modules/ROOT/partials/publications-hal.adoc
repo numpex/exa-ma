@@ -1,59 +1,59 @@
-// Total publications: 41
+// Total publications: 46
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *41*
+icon:list-ol[] Total publications: *46*
 
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:file-alt[size=2x,role=text-primary] *15* Preprint / unpublished
+icon:file-alt[size=2x,role=text-primary] *17* Preprint / unpublished
 
-_36.6% of total_
+_37.0% of total_
 ____
 
 ____
-icon:newspaper[size=2x,role=text-primary] *14* Article in journal
+icon:newspaper[size=2x,role=text-primary] *15* Article in journal
 
-_34.1% of total_
+_32.6% of total_
 ____
 
 ____
-icon:users[size=2x,role=text-primary] *8* Conference paper
+icon:users[size=2x,role=text-primary] *9* Conference paper
 
-_19.5% of total_
+_19.6% of total_
 ____
 
 ____
 icon:image[size=2x,role=text-primary] *2* Poster
 
-_4.9% of total_
+_4.3% of total_
+____
+
+____
+icon:file-text[size=2x,role=text-primary] *2* Report
+
+_4.3% of total_
 ____
 
 ____
 icon:user-graduate[size=2x,role=text-primary] *1* HDR
 
-_2.4% of total_
-____
-
-____
-icon:file-text[size=2x,role=text-primary] *1* Report
-
-_2.4% of total_
+_2.2% of total_
 ____
 
 ====
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *15* (36.6%)
-* icon:file-pdf[] Publications with PDF: *36* (87.8%)
-* icon:lock-open[] Open Access: *39* (95.1%)
+* icon:fingerprint[] Publications with DOI: *15* (32.6%)
+* icon:file-pdf[] Publications with PDF: *41* (89.1%)
+* icon:lock-open[] Open Access: *44* (95.7%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *37*
+* icon:atom[] 0.info: *41*
 * icon:atom[] 0.math: *34*
 * icon:atom[] 1.math.math-na: *15*
 * icon:atom[] 1.math.math-ap: *9*
@@ -61,13 +61,23 @@ ____
 
 == 2026
 
-_6 publications_
+_8 publications_
 
-_3 Article in journal, 2 Preprint / unpublished, 1 Conference paper_
+_4 Preprint / unpublished, 3 Article in journal, 1 Conference paper_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
 |Title |Authors |Type |Links
+
+|*Efficient Fine-Scale Simulation of Nonlinear Hyperelastic Lattice Structures*
+|Clément Guillet, Thibaut Hirschler, Pierre Jolivet et al.
+|Preprint / unpublished
+|link:https://hal.science/hal-05547894v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05547894/document[icon:file-pdf[title=PDF]]
+
+|*Overview of overlapping Schwarz methods in PETSc*
+|Pierre Jolivet, Jordi Manyer, Raphaël Zanella
+|Preprint / unpublished
+|link:https://hal.science/hal-05501527v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05501527/document[icon:file-pdf[title=PDF]]
 
 |*Multiword matrix multiplication over large finite fields in floating-point arithmetic*
 |Jérémy Berthomieu, Stef Graillat, Dimitri Lesnoff et al.
@@ -103,9 +113,9 @@ _3 Article in journal, 2 Preprint / unpublished, 1 Conference paper_
 
 == 2025
 
-_24 publications_
+_27 publications_
 
-_10 Preprint / unpublished, 7 Article in journal, 3 Conference paper, 2 Poster, 1 HDR, 1 Report_
+_10 Preprint / unpublished, 8 Article in journal, 4 Conference paper, 2 Poster, 2 Report, 1 HDR_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
@@ -140,6 +150,11 @@ _10 Preprint / unpublished, 7 Article in journal, 3 Conference paper, 2 Poster, 
 |Raphaël Carpintero Perez, Sébastien Da Veiga, Josselin Garnier
 |Preprint / unpublished
 |link:https://hal.science/hal-05289909v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05289909/document[icon:file-pdf[title=PDF]]
+
+|*Partial Detectors Versus Replication To Cope With Silent Errors*
+|Anne Benoit, Thomas Herault, Yves Robert et al.
+|Conference paper
+|link:https://inria.hal.science/hal-05231852v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-05231852/document[icon:file-pdf[title=PDF]]
 
 |*Portage GPU d'un solveur éléments finis discontinus hybridisé pour les problèmes d'ondes en fréquence*
 |Ahmed Chabib, Roland Greffe, Christophe Geuzaine et al.
@@ -216,10 +231,20 @@ _10 Preprint / unpublished, 7 Article in journal, 3 Conference paper, 2 Poster, 
 |Article in journal
 |link:https://hal.science/hal-04440076v4[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04440076/document[icon:file-pdf[title=PDF]]
 
+|*Fault-tolerant numerical iterative algorithms at scale*
+|Alix Tremodeux, Emmanuel Agullo, Anne Benoit et al.
+|Report
+|link:https://inria.hal.science/hal-04872041v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-04872041/document[icon:file-pdf[title=PDF]]
+
 |*Two-way Coupling of Fluid--Structure Interaction for Elastic Magneto-Swimmers: A Finite Element ALE Approach*
 |Christophe Prud'Homme, Vincent Chabannes, Laëtitia Giraldi et al.
 |Preprint / unpublished
 |link:https://hal.science/hal-05343702v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05343702/document[icon:file-pdf[title=PDF]]
+
+|*Fault-tolerant numerical iterative algorithms at scale*
+|Alix Tremodeux, Anne Benoit, Emmanuel Agullo et al.
+|Article in journal
+|link:https://inria.hal.science/hal-05234063v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-05234063/document[icon:file-pdf[title=PDF]]
 
 |*Deterministic and probabilistic rounding error analysis of neural networks in floating-point arithmetic*
 |Théo Beuzeville, Alfredo Buttari, Serge Gratton et al.
