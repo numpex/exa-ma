@@ -20,13 +20,13 @@ Exa-MA applications are benchmarks and demonstrators that exercise the capabilit
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:rocket[size=2x,role=text-primary] *14 Applications*
+icon:rocket[size=2x,role=text-primary] *15 Applications*
 
 5 ready for benchmarking
 ____
 
 ____
-icon:cube[size=2x,role=text-info] *8 Mini-Apps*
+icon:cube[size=2x,role=text-info] *9 Mini-Apps*
 
 Focused benchmarks testing specific algorithms
 ____
