@@ -181,4 +181,8 @@ The following Exa-MA applications use Feel++:
 | Extended Mini App
 | Benchmark Ready
 
+| xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
+| Demonstrator
+| Planned
+
 |===

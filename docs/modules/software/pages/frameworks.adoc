@@ -162,7 +162,7 @@ ____
 
 These frameworks power the following Exa-MA applications:
 
-*xref:frameworks/feelpp.adoc[Feel++]:* xref:applications/app-feelpp-discr-1.adoc[Discretization], xref:applications/app-feelpp-distance.adoc[Distance], xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis], xref:applications/app-feelpp-rb.adoc[Reduced Basis], xref:applications/app-freefem-parmmg.adoc[Fichera corner]
+*xref:frameworks/feelpp.adoc[Feel++]:* xref:applications/app-feelpp-discr-1.adoc[Discretization], xref:applications/app-feelpp-distance.adoc[Distance], xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis], xref:applications/app-feelpp-rb.adoc[Reduced Basis], xref:applications/app-freefem-parmmg.adoc[Fichera corner], xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
 *xref:frameworks/hpddm.adoc[HPDDM]:* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
 *xref:frameworks/freefempp.adoc[Freefem++]:* xref:applications/app-freefem-parmmg.adoc[Fichera corner], xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
 *xref:frameworks/scimba.adoc[Scimba]:* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]

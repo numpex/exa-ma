@@ -29,3 +29,4 @@
 ** xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
 ** xref:applications/app-scimba-plasma.adoc[Plasma NN]
 ** xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics]
+** xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]

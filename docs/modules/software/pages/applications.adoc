@@ -26,7 +26,7 @@ icon:rocket[size=2x,role=text-primary] *15 Applications*
 ____
 
 ____
-icon:cube[size=2x,role=text-info] *9 Mini-Apps*
+icon:cube[size=2x,role=text-info] *8 Mini-Apps*
 
 Focused benchmarks testing specific algorithms
 ____
@@ -38,7 +38,7 @@ Multi-WP benchmarks with broader scope
 ____
 
 ____
-icon:desktop[size=2x,role=text-warning] *2 Demonstrators*
+icon:desktop[size=2x,role=text-warning] *3 Demonstrators*
 
 Full-scale application showcases
 ____
@@ -106,6 +106,10 @@ ____
 | Demonstrator
 | | icon:clock[role=text-warning,title=planned]| WP2
 
+| xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
+| Demonstrator
+| Feel++| icon:clock[role=text-warning,title=planned]| WP1, WP3
+
 |===
 --
 
@@ -143,6 +147,8 @@ These applications are ready for performance evaluation on HPC systems:
 * xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale] — N/A
 
 * xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics] — N/A
+
+* xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca] — Feel++
 
 
 === icon:cubes[role=text-success] Extended Mini Apps
@@ -187,6 +193,7 @@ These applications are ready for performance evaluation on HPC systems:
 * xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis] (Extended Mini App)
 * xref:applications/app-feelpp-rb.adoc[Reduced Basis] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca] (Demonstrator)
 
 === Freefem++
 
