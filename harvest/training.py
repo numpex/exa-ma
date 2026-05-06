@@ -38,6 +38,17 @@ def load_config_with_fallback(config_path: Path | None = None) -> dict[str, Any]
     return load_config(DEFAULT_CONFIG)
 
 
+def resolve_partials_dir(config_path: Path | None = None) -> Path:
+    """Resolve the default Antora partials directory."""
+    unified_config = config_path or DEFAULT_UNIFIED_CONFIG
+    if unified_config.exists():
+        unified = load_config(unified_config)
+        partials_dir = unified.get("output", {}).get("partials_dir")
+        if partials_dir:
+            return Path(partials_dir)
+    return DEFAULT_PARTIALS_DIR
+
+
 def format_date_range(item: dict[str, Any]) -> str:
     """Format a training date or date range for display."""
     start = item.get("date", "")
@@ -142,14 +153,18 @@ def generate_training_cards(
             lines.append(f"*Topics:* {'; '.join(topics)}")
             lines.append("")
         if resources:
-            lines.append("*Resources:*")
+            resource_links = []
             for resource in resources:
                 label = resource.get("title", "Resource")
                 resource_url = resource.get("url", "")
                 if resource_url:
-                    lines.append(f"* {resource_url}[{label}]")
+                    resource_links.append(f"{resource_url}[{label}]")
                 else:
-                    lines.append(f"* {label}")
+                    resource_links.append(label)
+            lines.append("*Resources:* +")
+            for idx, link in enumerate(resource_links):
+                suffix = " +" if idx < len(resource_links) - 1 else ""
+                lines.append(f"{link}{suffix}")
             lines.append("")
         if url:
             lines.append(f"{url}[Training details]")
@@ -199,11 +214,8 @@ def main() -> None:
     trainings = config.get("trainings", [])
     print(f"Loaded {len(trainings)} training sessions")
 
-    if args.partials_dir:
-        output_partials(config, args.partials_dir)
-    else:
-        for line in generate_training_catalog(trainings):
-            print(line)
+    output_dir = args.partials_dir or resolve_partials_dir(args.config)
+    output_partials(config, output_dir)
 
 
 if __name__ == "__main__":

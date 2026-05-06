@@ -33,14 +33,13 @@ from .team import (
 from .news import (
     load_config_with_fallback as load_news_config,
     output_partials as news_output_partials,
-    generate_upcoming_cards,
-    generate_recent_table,
     DEFAULT_CONFIG as NEWS_DEFAULT_CONFIG,
+    resolve_partials_dir as resolve_news_partials_dir,
 )
 from .training import (
     load_config_with_fallback as load_training_config,
     output_partials as training_output_partials,
-    generate_training_catalog,
+    resolve_partials_dir as resolve_training_partials_dir,
 )
 from .partners import (
     fetch_partners,
@@ -215,16 +214,8 @@ def harvest_news(args: argparse.Namespace) -> int:
     archived = len([e for e in events if e.get("status") == "archived"])
     print(f"  Upcoming: {upcoming}, Recent: {recent}, Archived: {archived}")
 
-    if args.partials_dir:
-        news_output_partials(config, args.partials_dir)
-    else:
-        # Print to stdout
-        print("\n=== Upcoming Events ===")
-        for line in generate_upcoming_cards(events):
-            print(line)
-        print("\n=== Recent Events ===")
-        for line in generate_recent_table(events):
-            print(line)
+    output_dir = args.partials_dir or resolve_news_partials_dir(args.config)
+    news_output_partials(config, output_dir)
 
     return 0
 
@@ -241,11 +232,8 @@ def harvest_training(args: argparse.Namespace) -> int:
         print("No training sessions found.")
         return 1
 
-    if args.partials_dir:
-        training_output_partials(config, args.partials_dir)
-    else:
-        for line in generate_training_catalog(trainings):
-            print(line)
+    output_dir = args.partials_dir or resolve_training_partials_dir(args.config)
+    training_output_partials(config, output_dir)
 
     return 0
 
@@ -647,7 +635,10 @@ Legacy individual commands (deprecated, use subcommands above):
     news_parser.add_argument(
         "--partials-dir",
         type=Path,
-        help="Output directory for Antora partial files",
+        help=(
+            "Output directory for Antora partial files "
+            "(default: output.partials_dir from exama.yaml, or docs/modules/ROOT/partials)"
+        ),
     )
 
     # Training subcommand
@@ -663,7 +654,10 @@ Legacy individual commands (deprecated, use subcommands above):
     training_parser.add_argument(
         "--partials-dir",
         type=Path,
-        help="Output directory for Antora partial files",
+        help=(
+            "Output directory for Antora partial files "
+            "(default: output.partials_dir from exama.yaml, or docs/modules/ROOT/partials)"
+        ),
     )
 
     # Partners subcommand

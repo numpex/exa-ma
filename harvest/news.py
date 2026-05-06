@@ -33,6 +33,18 @@ except ImportError:
 # Default config path (relative to this module)
 DEFAULT_CONFIG = Path(__file__).parent.parent / "news.yaml"
 DEFAULT_UNIFIED_CONFIG = Path(__file__).parent.parent / "exama.yaml"
+DEFAULT_PARTIALS_DIR = Path("docs/modules/ROOT/partials")
+
+
+def resolve_partials_dir(config_path: Path | None = None) -> Path:
+    """Resolve the default Antora partials directory."""
+    unified_config = config_path or DEFAULT_UNIFIED_CONFIG
+    if unified_config.exists():
+        config = load_config(unified_config)
+        partials_dir = config.get("output", {}).get("partials_dir")
+        if partials_dir:
+            return Path(partials_dir)
+    return DEFAULT_PARTIALS_DIR
 
 # Icon mapping for event types
 TYPE_ICONS = {
@@ -356,16 +368,8 @@ def main():
     config_source = args.config or DEFAULT_UNIFIED_CONFIG if DEFAULT_UNIFIED_CONFIG.exists() else DEFAULT_CONFIG
     print(f"Loaded {len(events)} events from {config_source}")
 
-    if args.partials_dir:
-        output_partials(config, args.partials_dir)
-    else:
-        # Print to stdout
-        print("\n=== Upcoming Events ===")
-        for line in generate_upcoming_cards(events):
-            print(line)
-        print("\n=== Recent Events ===")
-        for line in generate_recent_table(events):
-            print(line)
+    output_dir = args.partials_dir or resolve_partials_dir(args.config)
+    output_partials(config, output_dir)
 
 
 if __name__ == "__main__":

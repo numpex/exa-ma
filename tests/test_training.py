@@ -3,10 +3,12 @@
 from pathlib import Path
 
 from harvest.training import (
+    DEFAULT_PARTIALS_DIR,
     format_date_range,
     generate_training_catalog,
     load_config_with_fallback,
     output_partials,
+    resolve_partials_dir,
 )
 
 
@@ -63,3 +65,17 @@ def test_load_config_with_fallback_uses_unified_training_file(tmp_path, monkeypa
     config = load_config_with_fallback()
 
     assert config["trainings"][0]["title"] == "Test Training"
+
+
+def test_resolve_partials_dir_uses_unified_output_config(tmp_path):
+    exama = tmp_path / "exama.yaml"
+    exama.write_text(
+        "output:\n  partials_dir: custom/partials\n",
+        encoding="utf-8",
+    )
+
+    assert resolve_partials_dir(exama) == Path("custom/partials")
+
+
+def test_resolve_partials_dir_falls_back_to_antora_partials(tmp_path):
+    assert resolve_partials_dir(tmp_path / "missing.yaml") == DEFAULT_PARTIALS_DIR
