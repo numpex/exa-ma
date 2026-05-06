@@ -1,0 +1,48 @@
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:rocket[size=3x,role=text-primary]
+
+*xref:highlights/speedups.adoc[50× Speedup with GenEO]*
+
+GenEO preconditioning on large-scale problems (45M DoFs, 2916 cores)
+____
+
+[.text-center]
+____
+icon:microchip[size=3x,role=text-success]
+
+*xref:highlights/scale.adoc[8000 GPU Scale]*
+
+Bayesian optimization on LUMI supercomputer with fractal decomposition
+____
+
+[.text-center]
+____
+icon:brain[size=3x,role=text-info]
+
+*xref:highlights/neural-acceleration.adoc[80-200% CPU Savings]*
+
+Neural operators accelerating Newton iterations, domain-decomposed PINNs
+____
+
+[.text-center]
+____
+icon:city[size=3x,role=text-warning]
+
+*xref:highlights/urban-meshing.adoc[Urban Meshing]*
+
+From GIS data to watertight meshes for city-scale energy simulation
+____
+
+[.text-center]
+____
+icon:gauge-high[size=3x,role=text-danger]
+
+*xref:highlights/feelpp-benchmarking.adoc[HPC Benchmarking]*
+
+Automated CI/CD pipeline: code -> EuroHPC runs in < 24h
+____
+
+====
