@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Test Feel++ toolboxes at scale :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
-    <link rel="canonical" href="https://numpex.github.io/exa-ma/software/applications/app-feelpp-toolbox.html">
-    <meta name="description" content="Test Feel++ toolboxes at scale - test heat(eye2brain,thermalbridge), elasticity(nafems LE-10), thermoelectric(hifimagnet) and fluid (fda)...">
+    <title>thermomeca :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/software/applications/app-feelpp-thermomeca-1.html">
+    <meta name="description" content="thermomeca - Demonstrate partitioned static linear thermoelastic coupling on a fixed reference mesh using displacement-dependent effective thermal conductivity; ve...">
     <meta name="generator" content="Antora 3.1.14">
 <link rel="stylesheet" href="../../_/css/site.css">
 
@@ -323,7 +323,7 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="app-feelpp-rb.html">Reduced Basis</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="app-feelpp-toolbox.html">Test Feel++ toolboxes at scale</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -350,7 +350,7 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="app-scimba-hybrid.html">Hybrid  numerics</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="app-feelpp-thermomeca-1.html">thermomeca</a>
   </li>
 </ul>
@@ -382,12 +382,12 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="../../index.html">Exa-MA</a></li>
     <li><a href="../applications.html">Applications</a></li>
-    <li><a href="app-feelpp-toolbox.html">Test Feel++ toolboxes at scale</a></li>
+    <li><a href="app-feelpp-thermomeca-1.html">thermomeca</a></li>
   </ul>
 </nav>
 
   
-    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/software/pages/applications/app-feelpp-toolbox.adoc">Edit this Page</a></div>
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/software/pages/applications/app-feelpp-thermomeca-1.adoc">Edit this Page</a></div>
   
   <div class="page-downloads">
   <span class="label">Download as</span>
@@ -407,11 +407,11 @@ MathJax.Hub.Config({
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Test Feel++ toolboxes at scale</h1>
+<h1 class="page">thermomeca</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>test heat(eye2brain,thermalbridge), elasticity(nafems LE-10), thermoelectric(hifimagnet) and fluid (fda)</p>
+<p>Demonstrate partitioned static linear thermoelastic coupling on a fixed reference mesh using displacement-dependent effective thermal conductivity; verify equivalence with explicit mesh deformation and assess HPC scalability.</p>
 </div>
 <div class="openblock section-gray">
 <div class="content">
@@ -454,7 +454,7 @@ MathJax.Hub.Config({
 <p><span class="icon text-purple"><i class="fa fa-boxes-stacked fa-2x"></i></span> <strong>Frameworks</strong></p>
 </div>
 <div class="paragraph">
-<p>N/A</p>
+<p>Feel++</p>
 </div>
 </blockquote>
 </div>
@@ -468,12 +468,145 @@ MathJax.Hub.Config({
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>1. Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>test heat(eye2brain,thermalbridge), elasticity(nafems LE-10), thermoelectric(hifimagnet) and fluid (fda)</p>
+<p>Demonstrate partitioned static linear thermoelastic coupling on a fixed reference mesh using displacement-dependent effective thermal conductivity; verify equivalence with explicit mesh deformation and assess HPC scalability.</p>
+</div>
+<div class="sect2">
+<h3 id="_repository"><a class="anchor" href="#_repository"></a>1.1. Repository</h3>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-code-branch"></i></span> <a href="https://github.com/numpex/apps-feelpp" class="bare">github.com/numpex/apps-feelpp</a></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_timeline"><a class="anchor" href="#_timeline"></a>2. Timeline</h2>
+<h2 id="_technical_stack"><a class="anchor" href="#_technical_stack"></a>2. Technical Stack</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_frameworks_used"><a class="anchor" href="#_frameworks_used"></a>2.1. Frameworks Used</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Feel++</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_parallel_frameworks"><a class="anchor" href="#_parallel_frameworks"></a>2.2. Parallel Frameworks</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>MPI</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_methods_algorithms"><a class="anchor" href="#_methods_algorithms"></a>3. Methods &amp; Algorithms</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_wp1_discretization"><a class="anchor" href="#_wp1_discretization"></a>3.1. WP1: Discretization</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>finite element</p>
+</li>
+<li>
+<p>multiphysics coupling</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wp3_solvers"><a class="anchor" href="#_wp3_solvers"></a>3.2. WP3: Solvers</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>multiphysics coupling</p>
+</li>
+<li>
+<p>domain decomposition methods</p>
+</li>
+<li>
+<p>preconditioning</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_flow"><a class="anchor" href="#_data_flow"></a>4. Data Flow</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_inputs"><a class="anchor" href="#_inputs"></a>4.1. Inputs</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Gmsh</p>
+</li>
+<li>
+<p>JSON config</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_outputs"><a class="anchor" href="#_outputs"></a>4.2. Outputs</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>HDF5 fields</p>
+</li>
+<li>
+<p>CSV predictions</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_benchmarking"><a class="anchor" href="#_benchmarking"></a>5. Benchmarking</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_metrics"><a class="anchor" href="#_metrics"></a>5.1. Metrics</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Strong Scalability</p>
+</li>
+<li>
+<p>Time To Solution</p>
+</li>
+<li>
+<p>Relative Error</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_benchmark_scope"><a class="anchor" href="#_benchmark_scope"></a>5.2. Benchmark Scope</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Multi Node</p>
+</li>
+<li>
+<p>Solver Scaling</p>
+</li>
+<li>
+<p>Method Verification</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_timeline"><a class="anchor" href="#_timeline"></a>6. Timeline</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -489,24 +622,24 @@ MathJax.Hub.Config({
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specification Due</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2025-06-15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2026-07-06</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prototype Due</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2026-07-06</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_team"><a class="anchor" href="#_team"></a>3. Team</h2>
+<h2 id="_team"><a class="anchor" href="#_team"></a>7. Team</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Partners:</strong> Unistra</p>
+<p><strong>Partners:</strong> CEA, Inria BXSO, Unistra</p>
 </div>
 <div class="paragraph">
-<p><strong>Responsible:</strong> V. Chabannes; C. Prud&#8217;homme</p>
+<p><strong>Responsible:</strong> V Chabannes, C Prud&#8217;homme, I Ramière, H Barucq</p>
 </div>
 <div class="paragraph">
 <p><strong>WP7 Engineer:</strong> Javier Cladellas (UNISTRA)</p>
