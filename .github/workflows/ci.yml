@@ -34,7 +34,7 @@ jobs:
         uv pip install -e .
         # Generate partials for Antora includes using unified harvest command
         # Harvests: HAL publications, GitHub releases, team data, and news/events
-        exa-ma-harvest all --output-dir docs/modules/ROOT/partials/
+        exa-ma-harvest all
     - name: Commit updated partials
       run: |
         git config user.name "github-actions[bot]"

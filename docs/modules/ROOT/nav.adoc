@@ -22,6 +22,7 @@
 * xref:results.adoc[icon:trophy[] Results and Impact]
 * xref:deliverables.adoc[icon:book[] Deliverables and Publications]
 ** xref:publications-hal.adoc[icon:file-alt[] Publications (HAL)]
+* xref:training.adoc[icon:graduation-cap[] Training]
 * xref:news.adoc[icon:newspaper[] News and Events]
 ** xref:news/archive.adoc[icon:archive[] Archive]
 * xref:workgroups.adoc[icon:network-wired[] NumPEx Work Groups]

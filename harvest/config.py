@@ -6,6 +6,7 @@ Provides a single configuration model that consolidates all data sources:
 - GitHub deliverables
 - Google Sheets (software, team)
 - News/events
+- Training sessions
 
 This module uses Pydantic for validation and supports:
 - Loading from exama.yaml
@@ -167,6 +168,13 @@ class NewsConfig(BaseModel):
         return [NewsEvent.model_validate(e) for e in events_data]
 
 
+class TrainingConfig(BaseModel):
+    """Training catalog configuration."""
+
+    type: str = "yaml"
+    file: str | None = None
+
+
 class OutputConfig(BaseModel):
     """Output directory configuration."""
 
@@ -183,6 +191,7 @@ class SourcesConfig(BaseModel):
     team: TeamConfig = Field(default_factory=TeamConfig)
     partners: PartnersConfig = Field(default_factory=PartnersConfig)
     news: NewsConfig = Field(default_factory=NewsConfig)
+    training: TrainingConfig = Field(default_factory=TrainingConfig)
 
 
 class ExaMAConfig(BaseModel):
@@ -281,6 +290,10 @@ class ExaMAConfig(BaseModel):
     def get_news_config(self) -> NewsConfig:
         """Get news configuration."""
         return self.sources.news
+
+    def get_training_config(self) -> TrainingConfig:
+        """Get training configuration."""
+        return self.sources.training
 
     def get_news_events(self) -> list[NewsEvent]:
         """Get news events, loading from external file if specified.

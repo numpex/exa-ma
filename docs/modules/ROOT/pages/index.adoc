@@ -70,8 +70,8 @@ ____
 
 [.text-center]
 ____
-icon:calendar[size=2x,role=text-primary] *February 2026* +
-https://inria.invityou.com/trans-numeriques2026[Trans-Numériques 2026] – France's digital continuum conference
+icon:landmark[size=2x,role=text-primary] *June 11, 2026* +
+NumPEx/ANR Meeting – Morning progress presentations, including Exa-MA, followed by ANR questions and afternoon governance discussions
 ____
 ====
 

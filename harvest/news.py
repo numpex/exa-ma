@@ -205,7 +205,7 @@ def get_event_year(event: dict) -> int | None:
 
 def generate_archive_by_year(events: list[dict]) -> dict[int, list[str]]:
     """Generate archive content grouped by year."""
-    archived = [e for e in events if e.get("status") == "archived"]
+    archived = [e for e in events if e.get("status") in {"archived", "recent"}]
 
     # Group by year
     by_year: dict[int, list[dict]] = {}
@@ -279,7 +279,12 @@ def output_partials(config: dict, output_dir: Path) -> dict[str, str]:
             "",
         ]
         for year in sorted(archive_by_year.keys(), reverse=True):
-            archived_count = len([e for e in events if e.get("status") == "archived" and get_event_year(e) == year])
+            archived_count = len([
+                e
+                for e in events
+                if e.get("status") in {"archived", "recent"}
+                and get_event_year(e) == year
+            ])
             index_lines.append(f"* <<{year},{year}>> ({archived_count} events)")
 
         index_content = "\n".join(index_lines)

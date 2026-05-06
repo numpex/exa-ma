@@ -1,0 +1,170 @@
+# Exa-MA Training Configuration
+
+trainings:
+  - id: majsc-2026
+    status: upcoming
+    title: "MAJSC 2026: ML & Autodiff in JAX"
+    date: "2026-06-08"
+    end_date: "2026-06-12"
+    location: "IRMA, Université de Strasbourg"
+    icon: "brain"
+    organizers:
+      - "E. Franck"
+      - "V. Michel-Dansac"
+      - "V. Vigon"
+      - "A. Musik"
+    topics:
+      - "JAX fundamentals"
+      - "Neural networks with Equinox and Flax"
+      - "Automatic differentiation for PDEs with Diffrax"
+      - "Physics-informed neural networks"
+      - "Neural operators"
+    description: >
+      Five-day workshop on Machine Learning and Automatic Differentiation in JAX
+      for Scientific Computing.
+    url: "https://majsc2026.pages.math.unistra.fr/"
+    related_news: "majsc-2026"
+
+  - id: hidalgo2-built-environments-webinar-2026
+    status: archived
+    title: "Webinar on Global Challenges and Built Environments"
+    date: "2026-01-12"
+    location: "Online"
+    icon: "city"
+    organizers:
+      - "NCC France"
+      - "CoE HiDALGO2"
+      - "UNISTRA - Exa-MA WP1/WP7"
+    topics:
+      - "HPC as a Service"
+      - "Simulation Workflows"
+      - "Ktirio Urban Building use case"
+      - "City-scale energy simulation"
+      - "HPC applications for built environments"
+      - "Digital twins and decision support"
+      - "Benchmarking and performance analysis for HPC simulations"
+
+    description: >
+      Webinar on HPC applications and use cases for built environments, including
+      the Ktirio Urban Building presentation on city-scale energy simulation from
+      data to HPC simulations and decision support.
+    url: "https://www.hidalgo2.eu/webinar-on-global-challenges-and-built-environments-discover-4-hpc-applications-use-cases/"
+
+  - id: hidalgo2-building-city-energy-2025
+    status: archived
+    title: "From Building to City Energy Simulation"
+    date: "2025-11-26"
+    end_date: "2025-11-28"
+    location: "Online"
+    icon: "city"
+    organizers:
+      - "CoE HiDALGO2"
+      - "NCC Czechia"
+      - "NCC Germany"
+      - "UNISTRA - Exa-MA WP1/WP7"
+    topics:
+      - "Ktirio Urban Building framework"
+      - "Building-level and city-scale energy simulation"
+      - "GIS, scenario, weather, and vegetation data"
+      - "HPC workflows for urban energy modeling"
+    description: >
+      Three-day hands-on training course on building-level and city-scale energy
+      simulation with the Ktirio Urban Building framework.
+    url: "https://www.hidalgo2.eu/hidalgo2-training-from-building-to-city-energy-simulation-with-ncc-czechia-ncc-germany/"
+
+  - id: makutu-mark-asch-master-class-2025
+    status: archived
+    title: "Master Class by Prof. Mark Asch: Bayesian Inversion"
+    date: "2025-11-17"
+    end_date: "2025-11-19"
+    location: "University of Pau / Inria Makutu"
+    icon: "chalkboard-teacher"
+    organizers:
+      - "Inria Makutu"
+    topics:
+      - "Bayesian inversion"
+      - "Inverse problems"
+      - "Uncertainty quantification"
+    description: >
+      Three-day master class by Prof. Mark Asch during his visit to Makutu and
+      the University of Pau.
+    url: "https://team.inria.fr/makutu/master-class-by-prof-mark-asch/"
+
+  - id: hidalgo2-cicd-benchmarking-2025
+    status: archived
+    title: "Containerization, CI/CD, and Benchmarking Solutions for HPC"
+    date: "2025-03-24"
+    end_date: "2025-03-26"
+    location: "Online / University of Strasbourg"
+    icon: "code-branch"
+    organizers:
+      - "CoE HiDALGO2"
+      - "Exa-MA WP7"
+      - "HLRS"
+      - "NCC Czechia"
+    topics:
+      - "Containerization for HPC applications"
+      - "CI/CD workflows with GitHub Actions, GitLab Runners, and JacamarCI"
+      - "Benchmarking with feelpp.benchmarking and ReFrame"
+      - "Reproducible workflows for EuroHPC platforms"
+    description: >
+      Three-day training session on containerization, CI/CD, and benchmarking
+      solutions for HPC, developed jointly through Exa-MA WP7 and CoE HiDALGO2.
+    url: "https://www.hidalgo2.eu/training-session-containerization-ci-cd-and-benchmarking-solutions-for-hpc-university-of-strasbourg/"
+
+  - id: d73-hpddm-petsc-training-materials
+    status: material
+    title: "HPDDM and PETSc Training Materials"
+    icon: "network-wired"
+    organizers:
+      - "Exa-MA WP7"
+      - "HPDDM / FreeFEM contributors"
+    topics:
+      - "HPDDM preconditioners"
+      - "PETSc KSP and domain decomposition"
+      - "Advanced parallel usage through FreeFEM"
+      - "SIAM and CEA/INRIA/EDF training sessions"
+    description: >
+      D7.3 identifies HPDDM training material connected to PETSc, including
+      FreeFEM tutorial sections on advanced parallel usage, PETSc user-guide
+      material on block Jacobi and overlapping additive Schwarz preconditioners,
+      SIAM sessions, and CEA/INRIA/EDF numerical analysis training.
+    resources:
+      - title: "FreeFEM tutorial, sections 6-8"
+        url: "https://joliv.et/FreeFem-tutorial/"
+      - title: "PETSc user guide: block Jacobi and overlapping additive Schwarz preconditioners"
+        url: "https://petsc.org/release/manual/ksp/#block-jacobi-and-overlapping-additive-schwarz-preconditioners"
+      - title: "SIAM training/session 79650"
+        url: "https://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=79650"
+      - title: "SIAM training/session 82505"
+        url: "https://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=82505"
+      - title: "CEA/INRIA/EDF Numerical Analysis School 2023"
+        url: "https://ecoles-cea-edf-inria.fr/en/history/ecole-analyse-numerique-2023/"
+    source: "D7.3"
+
+  - id: d73-freefem-petsc-training-materials
+    status: material
+    title: "FreeFEM Parallel and PETSc Tutorials"
+    icon: "terminal"
+    organizers:
+      - "FreeFEM contributors"
+      - "Exa-MA WP7"
+    topics:
+      - "FreeFEM installation and basics"
+      - "Advanced parallel usage with PETSc"
+      - "Beginner and expert hands-on sessions"
+      - "FreeFEM Days training material"
+    description: >
+      D7.3 lists FreeFEM training resources that include advanced parallel usage
+      with PETSc, FreeFEM Days hands-on sessions, and video material for newcomers
+      and practitioners.
+    resources:
+      - title: "FreeFEM tutorial"
+        url: "https://joliv.et/FreeFem-tutorial"
+      - title: "FreeFEM Days"
+        url: "https://freefem.org/ffdays.html"
+      - title: "FreeFEM YouTube channel"
+        url: "https://www.youtube.com/@freefem9826"
+      - title: "Introductory FreeFEM video series"
+        url: "https://www.youtube.com/playlist?list=PL6fjYEpJFi7Wu9ZFlak7r0QgrF0aNi8H1"
+    source: "D7.3"

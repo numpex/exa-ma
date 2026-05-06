@@ -37,6 +37,11 @@ from .news import (
     generate_recent_table,
     DEFAULT_CONFIG as NEWS_DEFAULT_CONFIG,
 )
+from .training import (
+    load_config_with_fallback as load_training_config,
+    output_partials as training_output_partials,
+    generate_training_catalog,
+)
 from .partners import (
     fetch_partners,
     fetch_partners_with_config,
@@ -47,6 +52,19 @@ from .partners import (
 
 # Default unified config path
 DEFAULT_EXAMA_CONFIG = Path(__file__).parent.parent / "exama.yaml"
+DEFAULT_PARTIALS_DIR = Path("docs/modules/ROOT/partials")
+
+
+def resolve_all_output_dir(
+    args: argparse.Namespace,
+    exama_config: ExaMAConfig | None = None,
+) -> Path:
+    """Resolve the output directory for ``exa-ma-harvest all``."""
+    if args.output_dir:
+        return Path(args.output_dir)
+    if exama_config:
+        return Path(exama_config.output.partials_dir)
+    return DEFAULT_PARTIALS_DIR
 
 
 def harvest_hal(args: argparse.Namespace) -> int:
@@ -211,6 +229,27 @@ def harvest_news(args: argparse.Namespace) -> int:
     return 0
 
 
+def harvest_training(args: argparse.Namespace) -> int:
+    """Run training catalog generation."""
+    config = load_training_config(args.config)
+    trainings = config.get("trainings", [])
+
+    config_source = args.config if args.config else "exama.yaml or training.yaml"
+    print(f"Loaded {len(trainings)} training sessions from {config_source}")
+
+    if not trainings:
+        print("No training sessions found.")
+        return 1
+
+    if args.partials_dir:
+        training_output_partials(config, args.partials_dir)
+    else:
+        for line in generate_training_catalog(trainings):
+            print(line)
+
+    return 0
+
+
 def harvest_partners(args: argparse.Namespace) -> int:
     """Run external partners harvesting."""
     # Use unified config if --config is specified or exama.yaml exists
@@ -297,13 +336,13 @@ def harvest_all(args: argparse.Namespace) -> int:
             print(f"Warning: Could not load default config: {e}")
 
     # Determine output directory
-    output_dir = Path(args.output_dir) if args.output_dir else Path.cwd()
+    output_dir = resolve_all_output_dir(args, exama_config)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     errors = 0
 
     # HAL Publications
-    print("\n[1/5] Harvesting HAL publications...")
+    print("\n[1/6] Harvesting HAL publications...")
     print("-" * 40)
 
     if exama_config:
@@ -325,7 +364,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # GitHub Releases
-    print("\n[2/5] Harvesting GitHub releases...")
+    print("\n[2/6] Harvesting GitHub releases...")
     print("-" * 40)
 
     if exama_config and exama_config.sources.deliverables.items:
@@ -344,7 +383,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # Team (recruited personnel)
-    print("\n[3/5] Harvesting team data...")
+    print("\n[3/6] Harvesting team data...")
     print("-" * 40)
 
     try:
@@ -367,7 +406,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # External Partners
-    print("\n[4/5] Harvesting external partners...")
+    print("\n[4/6] Harvesting external partners...")
     print("-" * 40)
 
     partners = []
@@ -394,7 +433,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # News and Events
-    print("\n[5/5] Harvesting news and events...")
+    print("\n[5/6] Harvesting news and events...")
     print("-" * 40)
 
     news_events = []
@@ -416,6 +455,23 @@ def harvest_all(args: argparse.Namespace) -> int:
         print(f"Error harvesting news: {e}")
         errors += 1
 
+    # Training
+    print("\n[6/6] Harvesting training catalog...")
+    print("-" * 40)
+
+    trainings = []
+    try:
+        training_config = load_training_config(None)
+        trainings = training_config.get("trainings", [])
+        if trainings:
+            print(f"Found {len(trainings)} training sessions")
+            training_output_partials(training_config, output_dir)
+        else:
+            print("No training sessions found!")
+    except Exception as e:
+        print(f"Error harvesting training: {e}")
+        errors += 1
+
     # Summary
     print("\n" + "=" * 60)
     print("Harvesting complete!")
@@ -424,6 +480,7 @@ def harvest_all(args: argparse.Namespace) -> int:
     print(f"  Personnel: {len(personnel) if 'personnel' in dir() and personnel else 0}")
     print(f"  Partners: {len(partners) if partners else 0}")
     print(f"  Events: {len(news_events) if news_events else 0}")
+    print(f"  Training sessions: {len(trainings) if trainings else 0}")
     if errors:
         print(f"  Errors: {errors}")
     print("=" * 60)
@@ -435,7 +492,7 @@ def main():
     """Main entry point for the combined CLI."""
     parser = argparse.ArgumentParser(
         prog="exa-ma-harvest",
-        description="Exa-MA Harvesting Tools - Collect publications, deliverables, and team data",
+        description="Exa-MA Harvesting Tools - Collect publications, deliverables, team, news, and training data",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -444,7 +501,8 @@ Examples:
   exa-ma-harvest team --funded-only
   exa-ma-harvest partners -o external-partners.adoc
   exa-ma-harvest news --partials-dir ./partials
-  exa-ma-harvest all --output-dir ./output
+  exa-ma-harvest training --partials-dir ./partials
+  exa-ma-harvest all
   exa-ma-harvest all --config exama.yaml
 
 Configuration:
@@ -592,6 +650,22 @@ Legacy individual commands (deprecated, use subcommands above):
         help="Output directory for Antora partial files",
     )
 
+    # Training subcommand
+    training_parser = subparsers.add_parser(
+        "training", help="Generate training catalog partials"
+    )
+    training_parser.add_argument(
+        "-c",
+        "--config",
+        type=Path,
+        help="Path to config file (default: exama.yaml or training.yaml)",
+    )
+    training_parser.add_argument(
+        "--partials-dir",
+        type=Path,
+        help="Output directory for Antora partial files",
+    )
+
     # Partners subcommand
     partners_parser = subparsers.add_parser(
         "partners", help="Harvest external partners from Google Sheets"
@@ -631,7 +705,10 @@ Legacy individual commands (deprecated, use subcommands above):
     all_parser = subparsers.add_parser("all", help="Run all harvesting operations")
     all_parser.add_argument(
         "--output-dir",
-        help="Output directory for generated files (default: current directory)",
+        help=(
+            "Output directory for generated files "
+            "(default: output.partials_dir from exama.yaml, or docs/modules/ROOT/partials)"
+        ),
     )
     all_parser.add_argument(
         "-c",
@@ -669,6 +746,8 @@ Legacy individual commands (deprecated, use subcommands above):
         return harvest_team(args)
     elif args.command == "news":
         return harvest_news(args)
+    elif args.command == "training":
+        return harvest_training(args)
     elif args.command == "partners":
         return harvest_partners(args)
     elif args.command == "all":

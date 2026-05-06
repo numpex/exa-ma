@@ -12,6 +12,7 @@ from harvest.config import (
     SoftwareConfig,
     TeamConfig,
     NewsConfig,
+    TrainingConfig,
     merge_with_legacy_deliverables,
 )
 
@@ -89,6 +90,14 @@ class TestExaMAConfig:
 
         assert isinstance(news_config, NewsConfig)
         assert news_config.file == "news.yaml"
+
+    def test_get_training_config(self, sample_exama_config):
+        """Test getting training configuration."""
+        config = ExaMAConfig.from_dict(sample_exama_config)
+        training_config = config.get_training_config()
+
+        assert isinstance(training_config, TrainingConfig)
+        assert training_config.file == "training.yaml"
 
     def test_get_news_events_from_file(self, temp_config_dir):
         """Test loading news events from external file."""

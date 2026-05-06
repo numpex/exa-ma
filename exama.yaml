@@ -7,6 +7,7 @@
 # - Software (frameworks & applications) from Google Sheets
 # - Team (recruited personnel) from Google Sheets
 # - News and events
+# - Training sessions
 
 project:
   name: "Exa-MA"
@@ -102,6 +103,13 @@ sources:
   news:
     type: yaml
     file: "news.yaml"  # External file for easy maintenance
+
+  # ============================================================
+  # Training
+  # ============================================================
+  training:
+    type: yaml
+    file: "training.yaml"
 
 # ============================================================
 # Output Configuration

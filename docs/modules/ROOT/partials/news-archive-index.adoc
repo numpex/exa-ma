@@ -1,4 +1,6 @@
-// Archive years: 2
+// Archive years: 4
 
+* <<2026,2026>> (6 events)
+* <<2025,2025>> (9 events)
 * <<2024,2024>> (2 events)
 * <<2023,2023>> (1 events)

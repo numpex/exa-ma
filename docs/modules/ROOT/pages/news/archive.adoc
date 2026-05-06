@@ -13,6 +13,22 @@ For current and upcoming events, visit the xref:news.adoc[News and Events] page.
 [.section-gray]
 --
 [discrete]
+== 2026
+
+include::partial$news-archive-2026.adoc[]
+--
+
+[.section-white]
+--
+[discrete]
+== 2025
+
+include::partial$news-archive-2025.adoc[]
+--
+
+[.section-gray]
+--
+[discrete]
 == 2024
 
 include::partial$news-archive-2024.adoc[]

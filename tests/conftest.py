@@ -60,6 +60,10 @@ def sample_exama_config() -> dict:
                 "type": "yaml",
                 "file": "news.yaml",
             },
+            "training": {
+                "type": "yaml",
+                "file": "training.yaml",
+            },
         },
         "output": {
             "partials_dir": "docs/modules/ROOT/partials",

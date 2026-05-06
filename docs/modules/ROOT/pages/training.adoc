@@ -1,0 +1,11 @@
+= Training
+:page-tags: resource
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-graduation-cap
+:description: Training sessions and educational resources from Exa-MA.
+:sectnums!:
+
+[.lead]
+Training sessions, workshops, and educational resources connected to Exa-MA activities.
+
+include::partial$training-catalog.adoc[]

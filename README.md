@@ -231,19 +231,24 @@ sources:
   news:
     type: yaml
     file: "news.yaml"  # External file for easy maintenance
+
+  training:
+    type: yaml
+    file: "training.yaml"
 ```
 
 ### Commands
 
 ```bash
 # Harvest all sources at once (recommended)
-exa-ma-harvest all --output-dir docs/modules/ROOT/partials/
+exa-ma-harvest all
 
 # Individual subcommands
 exa-ma-harvest hal -o publications.adoc
 exa-ma-harvest releases -o deliverables.adoc
 exa-ma-harvest team --output recruited.adoc
 exa-ma-harvest news --partials-dir docs/modules/ROOT/partials/
+exa-ma-harvest training --partials-dir docs/modules/ROOT/partials/
 exa-ma-harvest-software generate -o docs/modules/software/pages
 ```
 
