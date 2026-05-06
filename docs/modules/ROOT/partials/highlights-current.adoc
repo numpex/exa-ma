@@ -1,0 +1,21 @@
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:network-wired[size=3x,role=text-success]
+
+*xref:highlights/hpddm-petsc-3-25.adoc[HPDDM in PETSc 3.25]*
+
+Robust Schwarz and GenEO-type preconditioners available in CPU-GPU PETSc workflows
+____
+
+[.text-center]
+____
+icon:microchip[size=3x,role=text-primary]
+
+*xref:highlights/pfda-bs-vqe-lumi.adoc[PFDA-BS VQE on 8000 GPUs]*
+
+Black-box optimization for chemistry workloads, validated on LUMI from 3 to 560 parameters
+____
+
+====
