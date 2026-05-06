@@ -1,0 +1,16 @@
+= 2025 Highlights
+:page-tags: highlight
+:parent-catalogs: highlights-2025
+:page-illustration: fa-solid fa-box-archive
+:description: Frozen Exa-MA scientific and technical highlights for 2025.
+:sectnums!:
+
+[.lead]
+Frozen archive of Exa-MA scientific and technical highlights for 2025.
+
+include::partial$highlights-2025.adoc[]
+
+[.text-center]
+--
+xref:results.adoc[Back to Results and Impact]
+--

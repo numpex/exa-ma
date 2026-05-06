@@ -1,0 +1,76 @@
+# Exa-MA Highlights Configuration
+
+current_year: 2026
+
+highlights:
+  - id: hpddm-petsc-3-25
+    year: 2026
+    status: current
+    frozen: false
+    title: "HPDDM in PETSc 3.25"
+    icon: "network-wired"
+    role: "text-success"
+    summary: "Robust Schwarz and GenEO-type preconditioners available in CPU-GPU PETSc workflows"
+    page: "highlights/hpddm-petsc-3-25.adoc"
+    attachment: "highlights/2026/hpddm-petsc-3.25.pdf"
+
+  - id: pfda-bs-vqe-lumi
+    year: 2026
+    status: current
+    frozen: false
+    title: "PFDA-BS VQE on 8000 GPUs"
+    icon: "microchip"
+    role: "text-primary"
+    summary: "Black-box optimization for chemistry workloads, validated on LUMI from 3 to 560 parameters"
+    page: "highlights/pfda-bs-vqe-lumi.adoc"
+    attachment: "highlights/2026/pfda-bs-vqe-lumi.pdf"
+
+  - id: geneo-speedup
+    year: 2025
+    status: archived
+    frozen: true
+    title: "50× Speedup with GenEO"
+    icon: "rocket"
+    role: "text-primary"
+    summary: "GenEO preconditioning on large-scale problems (45M DoFs, 2916 cores)"
+    page: "highlights/speedups.adoc"
+
+  - id: lumi-8000-gpu-scale
+    year: 2025
+    status: archived
+    frozen: true
+    title: "8000 GPU Scale"
+    icon: "microchip"
+    role: "text-success"
+    summary: "Bayesian optimization on LUMI supercomputer with fractal decomposition"
+    page: "highlights/scale.adoc"
+
+  - id: neural-acceleration
+    year: 2025
+    status: archived
+    frozen: true
+    title: "80-200% CPU Savings"
+    icon: "brain"
+    role: "text-info"
+    summary: "Neural operators accelerating Newton iterations, domain-decomposed PINNs"
+    page: "highlights/neural-acceleration.adoc"
+
+  - id: urban-meshing
+    year: 2025
+    status: archived
+    frozen: true
+    title: "Urban Meshing"
+    icon: "city"
+    role: "text-warning"
+    summary: "From GIS data to watertight meshes for city-scale energy simulation"
+    page: "highlights/urban-meshing.adoc"
+
+  - id: feelpp-benchmarking
+    year: 2025
+    status: archived
+    frozen: true
+    title: "HPC Benchmarking"
+    icon: "gauge-high"
+    role: "text-danger"
+    summary: "Automated CI/CD pipeline: code -> EuroHPC runs in < 24h"
+    page: "highlights/feelpp-benchmarking.adoc"

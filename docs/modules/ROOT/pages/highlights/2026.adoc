@@ -1,0 +1,16 @@
+= 2026 Highlights
+:page-tags: highlight
+:parent-catalogs: highlights-current
+:page-illustration: fa-solid fa-star
+:description: Current-year Exa-MA scientific and technical highlights for 2026.
+:sectnums!:
+
+[.lead]
+Current-year scientific and technical highlights. This page is updated during 2026 as new highlights are validated.
+
+include::partial$highlights-2026.adoc[]
+
+[.text-center]
+--
+xref:results.adoc[Back to Results and Impact]
+--

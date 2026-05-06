@@ -41,6 +41,11 @@ from .training import (
     output_partials as training_output_partials,
     resolve_partials_dir as resolve_training_partials_dir,
 )
+from .highlights import (
+    load_config_with_fallback as load_highlights_config,
+    output_partials as highlights_output_partials,
+    resolve_partials_dir as resolve_highlights_partials_dir,
+)
 from .partners import (
     fetch_partners,
     fetch_partners_with_config,
@@ -238,6 +243,23 @@ def harvest_training(args: argparse.Namespace) -> int:
     return 0
 
 
+def harvest_highlights(args: argparse.Namespace) -> int:
+    """Run highlight partial generation."""
+    config = load_highlights_config(args.config)
+    highlights = config.get("highlights", [])
+
+    config_source = args.config if args.config else "exama.yaml or highlights.yaml"
+    print(f"Loaded {len(highlights)} highlights from {config_source}")
+
+    if not highlights:
+        print("No highlights found.")
+        return 1
+
+    output_dir = args.partials_dir or resolve_highlights_partials_dir(args.config)
+    highlights_output_partials(config, output_dir)
+    return 0
+
+
 def harvest_partners(args: argparse.Namespace) -> int:
     """Run external partners harvesting."""
     # Use unified config if --config is specified or exama.yaml exists
@@ -330,7 +352,7 @@ def harvest_all(args: argparse.Namespace) -> int:
     errors = 0
 
     # HAL Publications
-    print("\n[1/6] Harvesting HAL publications...")
+    print("\n[1/7] Harvesting HAL publications...")
     print("-" * 40)
 
     if exama_config:
@@ -352,7 +374,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # GitHub Releases
-    print("\n[2/6] Harvesting GitHub releases...")
+    print("\n[2/7] Harvesting GitHub releases...")
     print("-" * 40)
 
     if exama_config and exama_config.sources.deliverables.items:
@@ -371,7 +393,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # Team (recruited personnel)
-    print("\n[3/6] Harvesting team data...")
+    print("\n[3/7] Harvesting team data...")
     print("-" * 40)
 
     try:
@@ -394,7 +416,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # External Partners
-    print("\n[4/6] Harvesting external partners...")
+    print("\n[4/7] Harvesting external partners...")
     print("-" * 40)
 
     partners = []
@@ -421,7 +443,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # News and Events
-    print("\n[5/6] Harvesting news and events...")
+    print("\n[5/7] Harvesting news and events...")
     print("-" * 40)
 
     news_events = []
@@ -444,7 +466,7 @@ def harvest_all(args: argparse.Namespace) -> int:
         errors += 1
 
     # Training
-    print("\n[6/6] Harvesting training catalog...")
+    print("\n[6/7] Harvesting training catalog...")
     print("-" * 40)
 
     trainings = []
@@ -460,6 +482,23 @@ def harvest_all(args: argparse.Namespace) -> int:
         print(f"Error harvesting training: {e}")
         errors += 1
 
+    # Highlights
+    print("\n[7/7] Harvesting highlights...")
+    print("-" * 40)
+
+    highlights = []
+    try:
+        highlights_config = load_highlights_config(None)
+        highlights = highlights_config.get("highlights", [])
+        if highlights:
+            print(f"Found {len(highlights)} highlights")
+            highlights_output_partials(highlights_config, output_dir)
+        else:
+            print("No highlights found!")
+    except Exception as e:
+        print(f"Error harvesting highlights: {e}")
+        errors += 1
+
     # Summary
     print("\n" + "=" * 60)
     print("Harvesting complete!")
@@ -469,6 +508,7 @@ def harvest_all(args: argparse.Namespace) -> int:
     print(f"  Partners: {len(partners) if partners else 0}")
     print(f"  Events: {len(news_events) if news_events else 0}")
     print(f"  Training sessions: {len(trainings) if trainings else 0}")
+    print(f"  Highlights: {len(highlights) if highlights else 0}")
     if errors:
         print(f"  Errors: {errors}")
     print("=" * 60)
@@ -480,7 +520,7 @@ def main():
     """Main entry point for the combined CLI."""
     parser = argparse.ArgumentParser(
         prog="exa-ma-harvest",
-        description="Exa-MA Harvesting Tools - Collect publications, deliverables, team, news, and training data",
+        description="Exa-MA Harvesting Tools - Collect publications, deliverables, team, news, training, and highlight data",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -490,6 +530,7 @@ Examples:
   exa-ma-harvest partners -o external-partners.adoc
   exa-ma-harvest news --partials-dir ./partials
   exa-ma-harvest training --partials-dir ./partials
+  exa-ma-harvest highlights --partials-dir ./partials
   exa-ma-harvest all
   exa-ma-harvest all --config exama.yaml
 
@@ -660,6 +701,25 @@ Legacy individual commands (deprecated, use subcommands above):
         ),
     )
 
+    # Highlights subcommand
+    highlights_parser = subparsers.add_parser(
+        "highlights", help="Generate highlight partials"
+    )
+    highlights_parser.add_argument(
+        "-c",
+        "--config",
+        type=Path,
+        help="Path to config file (default: exama.yaml or highlights.yaml)",
+    )
+    highlights_parser.add_argument(
+        "--partials-dir",
+        type=Path,
+        help=(
+            "Output directory for Antora partial files "
+            "(default: output.partials_dir from exama.yaml, or docs/modules/ROOT/partials)"
+        ),
+    )
+
     # Partners subcommand
     partners_parser = subparsers.add_parser(
         "partners", help="Harvest external partners from Google Sheets"
@@ -742,6 +802,8 @@ Legacy individual commands (deprecated, use subcommands above):
         return harvest_news(args)
     elif args.command == "training":
         return harvest_training(args)
+    elif args.command == "highlights":
+        return harvest_highlights(args)
     elif args.command == "partners":
         return harvest_partners(args)
     elif args.command == "all":

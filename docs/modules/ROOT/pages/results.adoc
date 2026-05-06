@@ -17,85 +17,56 @@ This dashboard summarizes recent scientific and technical outcomes across Exa-MA
 ====
 [.text-center]
 ____
-icon:file-alt[size=3x,role=text-primary] *36*
+icon:file-alt[size=3x,role=text-primary] *xref:publications-hal.adoc[46]*
 
 Publications
 ____
 
 [.text-center]
 ____
-icon:cube[size=3x,role=text-success] *16*
+icon:cube[size=3x,role=text-success] *xref:software:index.adoc[16]*
 
 Software Packages
 ____
 
 [.text-center]
 ____
-icon:network-wired[size=3x,role=text-info] *18*
+icon:network-wired[size=3x,role=text-info] *xref:software:index.adoc[18]*
 
 Frameworks Impacted
 ____
 
 [.text-center]
 ____
-icon:users[size=3x,role=text-warning] *55*
+icon:users[size=3x,role=text-warning] *xref:team-recruited.adoc[55]*
 
 Funded Person-Years
 ____
 ====
 --
 
+[[highlights-current]]
+[[highlights-2026]]
+[discrete]
+== Latest Highlights: 2026
+
+include::partial$highlights-current.adoc[]
+
+[.text-center]
+--
+xref:highlights/2026.adoc[View all 2026 highlights]
+--
+
 [[highlights-2025]]
 [discrete]
 == 2025 Highlights
 
-[.grid.grid-2.gap-2]
-====
-[.text-center]
-____
-icon:rocket[size=3x,role=text-primary]
-
-*xref:highlights/speedups.adoc[50× Speedup with GenEO]*
-
-GenEO preconditioning on large-scale problems (45M DoFs, 2916 cores)
-____
+include::partial$highlights-2025.adoc[]
 
 [.text-center]
-____
-icon:microchip[size=3x,role=text-success]
-
-*xref:highlights/scale.adoc[8000 GPU Scale]*
-
-Bayesian optimization on LUMI supercomputer with fractal decomposition
-____
-
-[.text-center]
-____
-icon:brain[size=3x,role=text-info]
-
-*xref:highlights/neural-acceleration.adoc[80-200% CPU Savings]*
-
-Neural operators accelerating Newton iterations, domain-decomposed PINNs
-____
-
-[.text-center]
-____
-icon:city[size=3x,role=text-warning]
-
-*xref:highlights/urban-meshing.adoc[Urban Meshing]*
-
-From GIS data to watertight meshes for city-scale energy simulation
-____
-
-[.text-center]
-____
-icon:gauge-high[size=3x,role=text-danger]
-
-*xref:highlights/feelpp-benchmarking.adoc[HPC Benchmarking]*
-
-Automated CI/CD pipeline: code → EuroHPC runs in < 24h
-____
-====
+--
+xref:highlights/2025.adoc[View all 2025 highlights]
+--
 
 [.section-gray]
 --
@@ -162,7 +133,7 @@ ____
 |Resource |Description
 
 |xref:publications-hal.adoc[icon:book[] Publications]
-|Browse all 36 publications from HAL (ANR-22-EXNU-0002)
+|Browse all 46 publications from HAL (ANR-22-EXNU-0002)
 
 |xref:workpackages.adoc[icon:tasks[] Work Packages]
 |View WP-specific progress and deliverables

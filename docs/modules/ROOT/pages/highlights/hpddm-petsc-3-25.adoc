@@ -1,0 +1,78 @@
+= HPDDM and PETSc 3.25 for CPU-GPU Architectures
+:page-layout: default
+:page-tags: highlight
+:parent-catalogs: highlights-2026
+:page-illustration: fa-solid fa-network-wired
+:description: Robust HPDDM domain-decomposition preconditioners integrated in PETSc 3.25 for CPU-GPU workflows.
+
+// tag::card[]
+[.page-card]
+====
+[.page-card-illustration]
+--
+icon:network-wired[size=3x,role=text-success]
+--
+
+[.page-card-body]
+--
+xref:highlights/hpddm-petsc-3-25.adoc[*HPDDM in PETSc 3.25*]
+
+Robust Schwarz and GenEO-type preconditioners available in CPU-GPU PETSc workflows
+--
+====
+// end::card[]
+
+[.lead]
+HPDDM domain-decomposition preconditioners are now available in modern PETSc workflows, including CPU-GPU contexts, through developments integrated in PETSc 3.25.
+
+== Context
+
+Domain decomposition methods are central to solving the very large linear systems that arise in scientific and industrial simulations. HPDDM provides advanced solvers and preconditioners, including multilevel Schwarz methods and GenEO-type coarse spaces.
+
+The 2026 work focused on making these robust methods directly usable inside the modern PETSc ecosystem, with particular attention to heterogeneous CPU-GPU architectures.
+
+== Key Result
+
+[.text-center]
+****
+icon:network-wired[size=4x,role=text-success]
+
+*HPDDM in PETSc 3.25*
+
+Robust Schwarz and GenEO-type preconditioners +
+PETSc-native CPU and CPU-GPU workflows +
+Production-oriented solver interoperability
+****
+
+HPDDM internal structures were revised to rely more directly on PETSc-native objects and operations. The result is more than a technical GPU port: advanced domain-decomposition preconditioners can now be used in production PETSc workflows while benefiting from PETSc accelerator abstractions.
+
+== Impact
+
+This removes a major software barrier for NumPEx and Exa-MA by bringing advanced preconditioning methods closer to the heterogeneous architectures targeted by exascale computing.
+
+Feel++ has already integrated PETSc 3.25 and can now exploit HPDDM strategies through PETSc in real application cases. Other Exa-MA frameworks using PETSc, such as FreeFEM or TRUST/CEA, should be able to benefit from these developments with reduced integration cost.
+
+== Next Steps
+
+* Validate the methods at larger scale.
+* Optimize performance on NVIDIA and AMD GPUs.
+* Extend support toward Kokkos.
+* Evaluate mixed and multiphysics problems representative of Exa-MA applications.
+
+== Contributors
+
+* Erik Fabrizzi, Exa-MA WP7 engineer
+* Pierre Jolivet
+
+Partners: Sorbonne Université, EDF R&D, Argonne National Laboratory, Universitat Politècnica de València.
+
+== Resources
+
+* https://github.com/hpddm/hpddm[HPDDM repository]
+* https://hal.science/hal-05501527[Overview of overlapping Schwarz methods in PETSc]
+* xref:attachment$highlights/2026/hpddm-petsc-3.25.pdf[Original highlight sheet]
+
+[.text-center]
+--
+xref:results.adoc[Back to Results] | xref:highlights/pfda-bs-vqe-lumi.adoc[Next: PFDA-BS and VQE on LUMI]
+--

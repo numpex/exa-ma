@@ -8,6 +8,7 @@
 # - Team (recruited personnel) from Google Sheets
 # - News and events
 # - Training sessions
+# - Highlights
 
 project:
   name: "Exa-MA"
@@ -110,6 +111,13 @@ sources:
   training:
     type: yaml
     file: "training.yaml"
+
+  # ============================================================
+  # Highlights
+  # ============================================================
+  highlights:
+    type: yaml
+    file: "highlights.yaml"
 
 # ============================================================
 # Output Configuration

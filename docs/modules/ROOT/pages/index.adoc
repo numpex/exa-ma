@@ -120,7 +120,7 @@ Automated CI/CD pipeline: code → EuroHPC runs in < 24h
 ____
 ====
 
-xref:results.adoc#highlights-2025[View detailed 2025 results →]
+xref:results.adoc#highlights-current[View latest highlights →]
 
 [discrete]
 === Impact at a Glance
@@ -129,7 +129,7 @@ xref:results.adoc#highlights-2025[View detailed 2025 results →]
 ====
 [.text-center]
 ____
-icon:file-alt[size=2x,role=text-primary] *36* Publications
+icon:file-alt[size=2x,role=text-primary] *46* Publications
 ____
 
 [.text-center]

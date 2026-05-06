@@ -1,0 +1,78 @@
+= PFDA-BS for Exascale-Quantum Hybrid Optimization
+:page-layout: default
+:page-tags: highlight
+:parent-catalogs: highlights-2026
+:page-illustration: fa-solid fa-microchip
+:description: PFDA-BS black-box optimization for VQE chemistry workloads, validated up to 8000 GPUs on LUMI.
+
+// tag::card[]
+[.page-card]
+====
+[.page-card-illustration]
+--
+icon:microchip[size=3x,role=text-primary]
+--
+
+[.page-card-body]
+--
+xref:highlights/pfda-bs-vqe-lumi.adoc[*PFDA-BS VQE on 8000 GPUs*]
+
+Black-box optimization for chemistry workloads, validated on LUMI from 3 to 560 parameters
+--
+====
+// end::card[]
+
+[.lead]
+PFDA-BS, a fractal-optimization algorithm, has been validated for Variational Quantum Eigensolver workloads on LUMI, scaling to 8000 GPUs without molecule-specific tuning.
+
+== Context
+
+Predicting the ground-state energy of a molecule is a major challenge in computational chemistry, with direct applications in drug design, catalysis, and materials science.
+
+The Variational Quantum Eigensolver combines quantum and classical computing, but it faces two practical limits: the combinatorial growth of the parameter space and the difficulty of using exascale resources efficiently. The objective is a generic optimizer that scales on hybrid exascale-quantum machines and does not require molecule-specific parameter tuning.
+
+== Key Result
+
+[.text-center]
+****
+icon:microchip[size=4x,role=text-success]
+
+*8000 GPUs on LUMI*
+
+Nine molecules +
+3 to 560 optimization parameters +
+Chemical accuracy without gradients
+****
+
+PFDA-BS was validated on the LUMI supercomputer with nine molecules covering a range from 3 to 560 parameters. Unlike existing approaches often limited to a few dozen accelerators, the method uses up to 8000 GPUs in parallel and reduces computation time from hours to minutes.
+
+The optimizer reaches the chemical accuracy required in practice without gradient computations and without retuning parameters for each molecule.
+
+== Impact
+
+For the first time, a generic black-box optimization algorithm can fully exploit exascale supercomputers for chemically relevant molecular simulations.
+
+Because the method only uses energy values, it can be transferred without modification to hybrid workflows with quantum hardware once such machines become available. This makes it a practical bridge between current exascale systems and future exascale-quantum platforms.
+
+== Next Steps
+
+* Apply the method to more complex molecules.
+* Strengthen collaborations with industrial partners.
+* Target applications in pharmacology, catalysis, and materials science.
+
+== Contributors
+
+* Mahmoud El-Mehdi El-Khadiri
+* Jorge M. Cruz-Duarte
+* El-Ghazali Talbi
+
+Partners: Inria and Université de Lille.
+
+== Resources
+
+* xref:attachment$highlights/2026/pfda-bs-vqe-lumi.pdf[Original highlight sheet]
+
+[.text-center]
+--
+xref:highlights/hpddm-petsc-3-25.adoc[Previous: HPDDM and PETSc 3.25] | xref:results.adoc[Back to Results]
+--

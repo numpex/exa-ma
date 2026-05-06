@@ -34,6 +34,7 @@ exa-ma-harvest-hal = "harvest.hal:main"
 exa-ma-harvest-releases = "harvest.releases:main"
 exa-ma-harvest-news = "harvest.news:main"
 exa-ma-harvest-training = "harvest.training:main"
+exa-ma-harvest-highlights = "harvest.highlights:main"
 exa-ma-harvest-software = "harvest.software.cli:main"
 exa-ma-harvest-all = "harvest.cli:main"
 
