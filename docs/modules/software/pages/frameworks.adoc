@@ -98,7 +98,7 @@ ____
 [discrete]
 == Frameworks by Work Package
 
-=== WP1
+*WP1*
 
 * xref:frameworks/arcane.adoc[Arcane]
 * xref:frameworks/cgal.adoc[CGAL] icon:check-circle[role=text-success,title=Benchmarked]
@@ -108,13 +108,13 @@ ____
 * xref:frameworks/mahyco.adoc[MaHyCo]
 * xref:frameworks/samurai.adoc[Samurai] icon:check-circle[role=text-success,title=Benchmarked]
 
-=== WP2
+*WP2*
 
 * xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/scimba.adoc[Scimba] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/uranie.adoc[Uranie] icon:check-circle[role=text-success,title=Benchmarked]
 
-=== WP3
+*WP3*
 
 * xref:frameworks/arcane.adoc[Arcane] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/composyx.adoc[Composyx] icon:check-circle[role=text-success,title=Benchmarked]
@@ -125,12 +125,12 @@ ____
 * xref:frameworks/mahyco.adoc[MaHyCo]
 * xref:frameworks/trust_platform.adoc[TRUST Platform] icon:check-circle[role=text-success,title=Benchmarked]
 
-=== WP4
+*WP4*
 
 * xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
 
-=== WP5
+*WP5*
 
 * xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/freefempp.adoc[Freefem++] icon:check-circle[role=text-success,title=Benchmarked]
@@ -138,13 +138,13 @@ ____
 * xref:frameworks/mahyco.adoc[MaHyCo]
 * xref:frameworks/uranie.adoc[Uranie] icon:check-circle[role=text-success,title=Benchmarked]
 
-=== WP6
+*WP6*
 
 * xref:frameworks/feelpp.adoc[Feel++]
 * xref:frameworks/hawen.adoc[Hawen]
 * xref:frameworks/uranie.adoc[Uranie] icon:check-circle[role=text-success,title=Benchmarked]
 
-=== WP7
+*WP7*
 
 * xref:frameworks/arcane.adoc[Arcane] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
@@ -162,10 +162,20 @@ ____
 
 These frameworks power the following Exa-MA applications:
 
-*xref:frameworks/feelpp.adoc[Feel++]:* xref:applications/app-feelpp-discr-1.adoc[Discretization], xref:applications/app-feelpp-distance.adoc[Distance], xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis], xref:applications/app-feelpp-rb.adoc[Reduced Basis], xref:applications/app-freefem-parmmg.adoc[Fichera corner], xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
-*xref:frameworks/hpddm.adoc[HPDDM]:* xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
-*xref:frameworks/freefempp.adoc[Freefem++]:* xref:applications/app-freefem-parmmg.adoc[Fichera corner], xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
-*xref:frameworks/scimba.adoc[Scimba]:* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
+* xref:frameworks/feelpp.adoc[Feel++]
+** xref:applications/app-feelpp-discr-1.adoc[Discretization]
+** xref:applications/app-feelpp-distance.adoc[Distance]
+** xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis]
+** xref:applications/app-feelpp-rb.adoc[Reduced Basis]
+** xref:applications/app-freefem-parmmg.adoc[Fichera corner]
+** xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
+* xref:frameworks/hpddm.adoc[HPDDM]
+** xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
+* xref:frameworks/freefempp.adoc[Freefem++]
+** xref:applications/app-freefem-parmmg.adoc[Fichera corner]
+** xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
+* xref:frameworks/scimba.adoc[Scimba]
+** xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
 --
 
 [.frameworks]

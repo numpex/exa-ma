@@ -11,7 +11,15 @@
 :sectnums!:
 
 [.lead]
-Work Package 7 focuses on software development, benchmarking, co-design activities, and training material to deliver production-ready exascale software following the CI/CD framework proposed by ExaDIP.
+Work Package 7 focuses on software development, benchmarking, co-design activities, and training material to deliver production-ready exascale software following the CI/CD framework proposed by Exa-DI.
+
+[.section-white]
+--
+[discrete]
+== NumPEx Software Catalog
+
+link:https://numpex-pc5.gitlabpages.inria.fr/tutorials/projects/catalog/index.html[icon:external-link-alt[] NumPEx Software Catalog] provides the cross-project NumPEx software package catalog and complements the Exa-MA WP7 software stack pages below.
+--
 
 [.section-gray]
 --
@@ -29,7 +37,7 @@ ____
 ____
 icon:sync-alt[size=2x,role=text-success] *Co-Design Coordination*
 
-Working closely with ExaDIP project to ensure effective communication and synergy for advancements in exascale computing.
+Working closely with Exa-DI project to ensure effective communication and synergy for advancements in exascale computing.
 ____
 
 ____

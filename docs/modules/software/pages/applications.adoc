@@ -142,7 +142,7 @@ These applications are ready for performance evaluation on HPC systems:
 [discrete]
 == Applications by Type
 
-=== icon:desktop[role=text-warning] Demonstrators
+icon:desktop[role=text-warning] *Demonstrators*
 
 * xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale] — N/A
 
@@ -151,7 +151,7 @@ These applications are ready for performance evaluation on HPC systems:
 * xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca] — Feel++
 
 
-=== icon:cubes[role=text-success] Extended Mini Apps
+icon:cubes[role=text-success] *Extended Mini Apps*
 
 * xref:applications/app-feelpp-discr-1.adoc[Discretization] icon:check-circle[role=text-success,title=Ready] — Feel++, PETSc
 
@@ -162,7 +162,7 @@ These applications are ready for performance evaluation on HPC systems:
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] icon:check-circle[role=text-success,title=Ready] — Freefem++, MMG/ParMMG
 
 
-=== icon:cube[role=text-info] Mini Apps
+icon:cube[role=text-info] *Mini Apps*
 
 * xref:applications/app-feelpp-distance.adoc[Distance] icon:check-circle[role=text-success,title=Ready] — Feel++
 
@@ -186,7 +186,7 @@ These applications are ready for performance evaluation on HPC systems:
 [discrete]
 == Applications by Framework
 
-=== Feel++
+*Feel++*
 
 * xref:applications/app-feelpp-discr-1.adoc[Discretization] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-distance.adoc[Distance] (Mini App) icon:check-circle[role=text-success]
@@ -195,28 +195,28 @@ These applications are ready for performance evaluation on HPC systems:
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca] (Demonstrator)
 
-=== Freefem++
+*Freefem++*
 
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM] (Mini App)
 
-=== GeoS
+*GeoS*
 
 * xref:applications/app-eki.adoc[EKI] (Mini App)
 
-=== HPDDM
+*HPDDM*
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
 
-=== MMG/ParMMG
+*MMG/ParMMG*
 
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 
-=== MUMPS
+*MUMPS*
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
 
-=== PETSc
+*PETSc*
 
 * xref:applications/app-feelpp-discr-1.adoc[Discretization] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis] (Extended Mini App)
@@ -224,15 +224,15 @@ These applications are ready for performance evaluation on HPC systems:
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-eki.adoc[EKI] (Mini App)
 
-=== PaStiX
+*PaStiX*
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
 
-=== Scimba
+*Scimba*
 
 * xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN] (Mini App)
 
-=== pytorch
+*pytorch*
 
 * xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis] (Extended Mini App)
 

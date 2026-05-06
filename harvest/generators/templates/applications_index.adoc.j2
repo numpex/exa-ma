@@ -93,7 +93,7 @@ These applications are ready for performance evaluation on HPC systems:
 == Applications by Type
 
 {% for app_type, type_apps in by_type.items() %}
-=== {% if app_type == 'mini-app' %}icon:cube[role=text-info]{% elif app_type == 'extended-mini-app' %}icon:cubes[role=text-success]{% else %}icon:desktop[role=text-warning]{% endif %} {{ app_type | replace('-', ' ') | title }}s
+{% if app_type == 'mini-app' %}icon:cube[role=text-info]{% elif app_type == 'extended-mini-app' %}icon:cubes[role=text-success]{% else %}icon:desktop[role=text-warning]{% endif %} *{{ app_type | replace('-', ' ') | title }}s*
 
 {% for app in type_apps %}
 * xref:applications/{{ app.slug }}.adoc[{{ app.name }}]{% if app.is_benchmark_ready %} icon:check-circle[role=text-success,title=Ready]{% endif %} — {{ app.frameworks[:2] | join(', ') if app.frameworks else 'N/A' }}
@@ -111,7 +111,7 @@ These applications are ready for performance evaluation on HPC systems:
 == Applications by Framework
 
 {% for framework, fw_apps in by_framework.items() %}
-=== {{ framework }}
+*{{ framework }}*
 
 {% for app in fw_apps %}
 * xref:applications/{{ app.slug }}.adoc[{{ app.name }}] ({{ app.application_type.value | replace('-', ' ') | title }}){% if app.is_benchmark_ready %} icon:check-circle[role=text-success]{% endif %}

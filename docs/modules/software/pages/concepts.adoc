@@ -23,9 +23,9 @@ endif::[]
 
 == Work Package 7
 
-Work Package 7 (WP7) in the Exa-MA project focuses on several key objectives. Firstly, it involves software development ranging from basic to advanced testing, including benchmarking, to verify the capabilities of exascale computing and address identified challenges. The aim is to deliver software packages following the continuous integration/continuous delivery (CI/CD) framework proposed by ExaDIP.
+Work Package 7 (WP7) in the Exa-MA project focuses on several key objectives. Firstly, it involves software development ranging from basic to advanced testing, including benchmarking, to verify the capabilities of exascale computing and address identified challenges. The aim is to deliver software packages following the continuous integration/continuous delivery (CI/CD) framework proposed by Exa-DI.
 
-Secondly, WP7 coordinates co-design activities within Exa-MA, working closely with the ExaDIP project. This collaboration ensures effective communication and synergy between the projects to drive advancements in exascale computing.
+Secondly, WP7 coordinates co-design activities within Exa-MA, working closely with the Exa-DI project. This collaboration ensures effective communication and synergy between the projects to drive advancements in exascale computing.
 
 Additionally, WP7 aims to establish a showroom to showcase the results achieved through Exa-MA. This showroom will serve as a platform to present and highlight the outcomes and achievements of the project.
 
@@ -33,7 +33,7 @@ Lastly, WP7 contributes to the creation of training material based on the result
 
 To accomplish these objectives, WP7 relies on the principles of non-regression, verification, and validation. The various studies and developments conducted across different work packages within Exa-MA will undergo rigorous testing and evaluation before integration into a demonstrator.
 
-WP7 is staffed by a dedicated team of engineers who work at the intersection of Exa-MA and other projects, particularly ExaDIP. The management of WP7 follows an Agile approach, aligning with the project management plan established in WP0 to ensure efficient and effective progress towards the set goals.
+WP7 is staffed by a dedicated team of engineers who work at the intersection of Exa-MA and other projects, particularly Exa-DI. The management of WP7 follows an Agile approach, aligning with the project management plan established in WP0 to ensure efficient and effective progress towards the set goals.
 
 === Testing Process sub objectives
 

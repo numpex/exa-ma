@@ -141,6 +141,9 @@ ____
 |xref:software:index.adoc[icon:cube[] Software Stack]
 |Explore tools, APIs, and packaging status
 
+|link:https://numpex-pc5.gitlabpages.inria.fr/tutorials/projects/catalog/index.html[icon:external-link-alt[] NumPEx Software Catalog]
+|Open the cross-project NumPEx software package catalog
+
 |xref:news.adoc[icon:calendar[] News and Events]
 |Upcoming sessions, releases, and training
 

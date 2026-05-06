@@ -72,7 +72,7 @@ ____
 == Frameworks by Work Package
 
 {% for wp_num, wp_packages in by_work_package.items() %}
-=== WP{{ wp_num }}
+*WP{{ wp_num }}*
 
 {% for pkg in wp_packages %}
 * xref:frameworks/{{ pkg.slug }}.adoc[{{ pkg.name }}]{% if pkg.work_packages %}{% for wp in pkg.work_packages if wp.wp_number == wp_num and wp.benchmarked %} icon:check-circle[role=text-success,title=Benchmarked]{% endfor %}{% endif %}
@@ -93,7 +93,10 @@ These frameworks power the following Exa-MA applications:
 
 {% for slug, data in framework_usage.items() %}
 {% if data.apps %}
-*xref:frameworks/{{ slug }}.adoc[{{ data.package.name }}]:* {% for app in data.apps %}xref:applications/{{ app.slug }}.adoc[{{ app.name }}]{% if not loop.last %}, {% endif %}{% endfor %}
+* xref:frameworks/{{ slug }}.adoc[{{ data.package.name }}]
+{% for app in data.apps %}
+** xref:applications/{{ app.slug }}.adoc[{{ app.name }}]
+{% endfor %}
 
 {% endif %}
 {% endfor %}

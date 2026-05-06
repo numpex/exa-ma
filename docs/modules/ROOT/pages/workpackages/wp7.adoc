@@ -5,7 +5,7 @@
 :icons: font
 
 [.lead]
-WP7 integrates, tests, and benchmarks methods and software from all WPs, coordinates co-design activities with ExaDIP, and delivers the showroom, CI/CD infrastructure, and training materials.
+WP7 integrates, tests, and benchmarks methods and software from all WPs, coordinates co-design activities with Exa-DI, and delivers the showroom, CI/CD infrastructure, and training materials.
 
 [discrete]
 == Recent Highlights (2024-2025)
@@ -50,7 +50,7 @@ WP7 provides the infrastructure and coordination for:
 * Software testing from simple to advanced benchmarking
 * Verification of exascale capabilities and handling of identified challenges (B1-B13)
 * Delivery of software packages with CI/CD framework
-* Coordination of co-design activities within Exa-MA and with ExaDIP
+* Coordination of co-design activities within Exa-MA and with Exa-DI
 * Showroom of Exa-MA results and training material
 
 == Integration Framework
@@ -143,7 +143,7 @@ WP7 addresses **ALL bottlenecks (B1-B13)** through:
 * Benchmarking to verify exascale capabilities
 * Handling of all identified challenges
 * Non-regression, verification and validation testing
-* CI/CD integration with ExaDIP
+* CI/CD integration with Exa-DI
 
 *Bottlenecks: B1 (Energy efficiency), B2 (Interconnect), B3 (Memory), B4 (System software), B5 (Programming systems), B6 (Data Management), B7 (Exascale Algorithms), B8 (Discovery/design/decision), B9 (Resilience/robustness/accuracy), B10 (Scientific productivity), B11 (Reproducibility/replicability), B12 (Pre/Post processing), B13 (Integrate uncertainties)*
 
@@ -174,4 +174,4 @@ WP7 addresses **ALL bottlenecks (B1-B13)** through:
 
 * **All WPs (WP1-WP6)**: Benchmarking and testing of all developments
 * **WP0**: Follows project management plan
-* **NumPEx Projects**: ExaSoft, ExaDoST, ExaAToW, ExaDIP (CI/CD and co-design)
+* **NumPEx Projects**: ExaSoft, ExaDoST, ExaAToW, Exa-DI (CI/CD and co-design)
