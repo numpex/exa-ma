@@ -8,15 +8,15 @@ icon:list-ol[] Total publications: *46*
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:file-alt[size=2x,role=text-primary] *17* Preprint / unpublished
+icon:newspaper[size=2x,role=text-primary] *18* Article in journal
 
-_37.0% of total_
+_39.1% of total_
 ____
 
 ____
-icon:newspaper[size=2x,role=text-primary] *15* Article in journal
+icon:file-alt[size=2x,role=text-primary] *14* Preprint / unpublished
 
-_32.6% of total_
+_30.4% of total_
 ____
 
 ____
@@ -47,7 +47,7 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *15* (32.6%)
+* icon:fingerprint[] Publications with DOI: *17* (37.0%)
 * icon:file-pdf[] Publications with PDF: *41* (89.1%)
 * icon:lock-open[] Open Access: *44* (95.7%)
 
@@ -61,9 +61,9 @@ ____
 
 == 2026
 
-_8 publications_
+_10 publications_
 
-_4 Preprint / unpublished, 3 Article in journal, 1 Conference paper_
+_5 Article in journal, 4 Preprint / unpublished, 1 Conference paper_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
@@ -104,6 +104,16 @@ _4 Preprint / unpublished, 3 Article in journal, 1 Conference paper_
 |Article in journal
 |link:https://hal.science/hal-04525918v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04525918/document[icon:file-pdf[title=PDF]]
 
+|*BLAS-based Mixed Precision Block Memory Accessor with Applications to Sparse Direct Solvers*
+|Patrick Amestoy, Antoine Jego, Jean-Yves L'Excellent et al.
+|Article in journal
+|link:https://hal.science/hal-05019106v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05019106/document[icon:file-pdf[title=PDF]]
+
+|*Mixed precision accumulation for neural network inference guided by componentwise forward error analysis*
+|El-Mehdi El Arar, Silviu-Ioan Filip, Theo Mary et al.
+|Article in journal
+|link:https://hal.science/hal-04995708v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04995708/document[icon:file-pdf[title=PDF]]
+
 |*Bayesian and Partition-Based Optimization for Hyperparameter Optimization of LLM Fine-Tuning*
 |Nathan Davouse, El-Ghazali Talbi
 |Conference paper
@@ -113,9 +123,9 @@ _4 Preprint / unpublished, 3 Article in journal, 1 Conference paper_
 
 == 2025
 
-_27 publications_
+_25 publications_
 
-_10 Preprint / unpublished, 8 Article in journal, 4 Conference paper, 2 Poster, 2 Report, 1 HDR_
+_9 Article in journal, 7 Preprint / unpublished, 4 Conference paper, 2 Poster, 2 Report, 1 HDR_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
@@ -216,14 +226,9 @@ _10 Preprint / unpublished, 8 Article in journal, 4 Conference paper, 2 Poster, 
 |Article in journal
 |link:https://hal.science/hal-04663197v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04663197/document[icon:file-pdf[title=PDF]]
 
-|*BLAS-based Block Memory Accessor with Applications to Mixed Precision Sparse Direct Solvers*
-|Patrick Amestoy, Antoine Jego, Jean-Yves L'Excellent et al.
-|Preprint / unpublished
-|link:https://hal.science/hal-05019106v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05019106/document[icon:file-pdf[title=PDF]]
-
 |*Enriching continuous Lagrange finite element approximation spaces using neural networks*
 |Hélène Barucq, Michel Duprez, Florian Faucher et al.
-|Preprint / unpublished
+|Article in journal
 |link:https://hal.science/hal-04935072v4[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04935072/document[icon:file-pdf[title=PDF]]
 
 |*Accelerating the convergence of Newton's method for nonlinear elliptic PDEs using Fourier neural operators*
@@ -250,11 +255,6 @@ _10 Preprint / unpublished, 8 Article in journal, 4 Conference paper, 2 Poster, 
 |Théo Beuzeville, Alfredo Buttari, Serge Gratton et al.
 |Article in journal
 |link:https://hal.science/hal-04663142v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04663142/document[icon:file-pdf[title=PDF]]
-
-|*Mixed precision accumulation for neural network inference guided by componentwise forward error analysis*
-|El-Mehdi El Arar, Silviu-Ioan Filip, Theo Mary et al.
-|Preprint / unpublished
-|link:https://hal.science/hal-04995708v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04995708/document[icon:file-pdf[title=PDF]]
 
 |===
 
