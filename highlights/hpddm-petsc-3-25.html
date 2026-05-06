@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HPDDM and PETSc 3.25 for CPU-GPU Architectures :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/highlights/hpddm-petsc-3-25.html">
+    <meta name="description" content="Robust HPDDM domain-decomposition preconditioners integrated in PETSc 3.25 for CPU-GPU workflows.">
+    <meta name="generator" content="Antora 3.1.14">
+<link rel="stylesheet" href="../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- Custom badge styles for external partners -->
+<style>
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+.badge-cofunding {
+    background-color: #dc3545;
+    color: white;
+}
+.badge-funded {
+    background-color: #28a745;
+    color: white;
+}
+</style>
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = '../_'</script>
+
+  </head>
+  <body class="article">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo" style="height: 50px; max-height: none !important; width: auto;" src="../_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html"><span class="icon"><i class="fa fa-home"></i></span> Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../overview.html"><span class="icon"><i class="fa fa-mountain-sun"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text"><span class="icon"><i class="fa fa-info-circle"></i></span> About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../team.html"><span class="icon"><i class="fa fa-users"></i></span> WP Leaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../team-recruited.html"><span class="icon"><i class="fa fa-user-graduate"></i></span> Recruited Personnel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../consortium.html"><span class="icon"><i class="fa fa-building"></i></span> Consortium</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../external-partners.html"><span class="icon"><i class="fa fa-handshake"></i></span> External Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../sab.html"><span class="icon"><i class="fa fa-clipboard-list"></i></span> Scientific Advisory Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../collaborative-projects.html"><span class="icon"><i class="fa fa-project-diagram"></i></span> Collaborative Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../contact.html"><span class="icon"><i class="fa fa-envelope"></i></span> Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../workpackages.html"><span class="icon"><i class="fa fa-cubes"></i></span> Work Packages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages.html"><span class="icon"><i class="fa fa-list"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp0.html"><span class="icon"><i class="fa fa-tasks"></i></span> WP0: Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp1.html"><span class="icon"><i class="fa fa-th"></i></span> WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp2.html"><span class="icon"><i class="fa fa-brain"></i></span> WP2: MOR &amp; SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp3.html"><span class="icon"><i class="fa fa-calculator"></i></span> WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp4.html"><span class="icon"><i class="fa fa-chart-line"></i></span> WP4: Inverse Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp5.html"><span class="icon"><i class="fa fa-bullseye"></i></span> WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp6.html"><span class="icon"><i class="fa fa-random"></i></span> WP6: UQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp7.html"><span class="icon"><i class="fa fa-rocket"></i></span> WP7: Software &amp; Benchmarking</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../results.html"><span class="icon"><i class="fa fa-trophy"></i></span> Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../deliverables.html"><span class="icon"><i class="fa fa-book"></i></span> Deliverables and Publications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../publications-hal.html"><span class="icon"><i class="fa fa-file-alt"></i></span> Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../training.html"><span class="icon"><i class="fa fa-graduation-cap"></i></span> Training</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../news.html"><span class="icon"><i class="fa fa-newspaper"></i></span> News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../news/archive.html"><span class="icon"><i class="fa fa-archive"></i></span> Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workgroups.html"><span class="icon"><i class="fa fa-network-wired"></i></span> NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../software/index.html">WP7: Software &amp; Benchmarking</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/concepts.html">Concepts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../software/frameworks.html">Frameworks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/scimba.html">Scimba</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../software/applications.html">Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-discr-1.html">Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-distance.html">Distance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-nlcrb.html">Nonlinear Compressive Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-rb.html">Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-toolbox.html">Test Feel++ toolboxes at scale</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-hpddm-dfn.html">Preconditioning systems arising from discrete fracture networks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-freefem-parmmg.html">Fichera corner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-zellij.html">Zellij</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-eki.html">EKI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-freefem-shape-opt-fem.html">Shape Opt FEM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-scimba-shape-opt-nn.html">Shape Opt NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-scimba-plasma.html">Plasma NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-scimba-hybrid.html">Hybrid  numerics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-thermomeca-1.html">thermomeca</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="../index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="../index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Exa-MA</a></li>
+    <li><a href="hpddm-petsc-3-25.html">HPDDM and PETSc 3.25 for CPU-GPU Architectures</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/ROOT/pages/highlights/hpddm-petsc-3-25.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="../_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">HPDDM and PETSc 3.25 for CPU-GPU Architectures</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="exampleblock page-card">
+<div class="content">
+<div class="openblock page-card-illustration">
+<div class="content">
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-network-wired fa-3x"></i></span></p>
+</div>
+</div>
+</div>
+<div class="openblock page-card-body">
+<div class="content">
+<div class="paragraph">
+<p><a href="#"><strong>HPDDM in PETSc 3.25</strong></a></p>
+</div>
+<div class="paragraph">
+<p>Robust Schwarz and GenEO-type preconditioners available in CPU-GPU PETSc workflows</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph lead">
+<p>HPDDM domain-decomposition preconditioners are now available in modern PETSc workflows, including CPU-GPU contexts, through developments integrated in PETSc 3.25.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_context"><a class="anchor" href="#_context"></a>1. Context</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Domain decomposition methods are central to solving the very large linear systems that arise in scientific and industrial simulations. HPDDM provides advanced solvers and preconditioners, including multilevel Schwarz methods and GenEO-type coarse spaces.</p>
+</div>
+<div class="paragraph">
+<p>The 2026 work focused on making these robust methods directly usable inside the modern PETSc ecosystem, with particular attention to heterogeneous CPU-GPU architectures.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_result"><a class="anchor" href="#_key_result"></a>2. Key Result</h2>
+<div class="sectionbody">
+<div class="sidebarblock text-center">
+<div class="content">
+<div class="paragraph">
+<p><span class="icon text-success"><i class="fa fa-network-wired fa-4x"></i></span></p>
+</div>
+<div class="paragraph">
+<p><strong>HPDDM in PETSc 3.25</strong></p>
+</div>
+<div class="paragraph">
+<p>Robust Schwarz and GenEO-type preconditioners<br>
+PETSc-native CPU and CPU-GPU workflows<br>
+Production-oriented solver interoperability</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>HPDDM internal structures were revised to rely more directly on PETSc-native objects and operations. The result is more than a technical GPU port: advanced domain-decomposition preconditioners can now be used in production PETSc workflows while benefiting from PETSc accelerator abstractions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_impact"><a class="anchor" href="#_impact"></a>3. Impact</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This removes a major software barrier for NumPEx and Exa-MA by bringing advanced preconditioning methods closer to the heterogeneous architectures targeted by exascale computing.</p>
+</div>
+<div class="paragraph">
+<p>Feel++ has already integrated PETSc 3.25 and can now exploit HPDDM strategies through PETSc in real application cases. Other Exa-MA frameworks using PETSc, such as FreeFEM or TRUST/CEA, should be able to benefit from these developments with reduced integration cost.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>4. Next Steps</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Validate the methods at larger scale.</p>
+</li>
+<li>
+<p>Optimize performance on NVIDIA and AMD GPUs.</p>
+</li>
+<li>
+<p>Extend support toward Kokkos.</p>
+</li>
+<li>
+<p>Evaluate mixed and multiphysics problems representative of Exa-MA applications.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contributors"><a class="anchor" href="#_contributors"></a>5. Contributors</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Erik Fabrizzi, Exa-MA WP7 engineer</p>
+</li>
+<li>
+<p>Pierre Jolivet</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Partners: Sorbonne Université, EDF R&amp;D, Argonne National Laboratory, Universitat Politècnica de València.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources"><a class="anchor" href="#_resources"></a>6. Resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/hpddm/hpddm">HPDDM repository</a></p>
+</li>
+<li>
+<p><a href="https://hal.science/hal-05501527">Overview of overlapping Schwarz methods in PETSc</a></p>
+</li>
+<li>
+<p><a href="../_attachments/highlights/2026/hpddm-petsc-3.25.pdf" class="xref attachment">Original highlight sheet</a></p>
+</li>
+</ul>
+</div>
+<div class="openblock text-center">
+<div class="content">
+<div class="paragraph">
+<p><a href="../results.html" class="xref page">Back to Results</a> | <a href="pfda-bs-vqe-lumi.html" class="xref page">Next: PFDA-BS and VQE on LUMI</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="../_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+        <div style="font-size: 0.75rem; color: #757575; margin-top: 0.5em;">
+            <a href="../privacy.html" style="color: #757575; text-decoration: none; margin-right: 1.5em;">Privacy Notice</a>
+            <a href="../legal-notice.html" style="color: #757575; text-decoration: none;">Legal Notice</a>
+        </div>
+    </div>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="../_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>
