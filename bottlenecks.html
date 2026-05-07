@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>External Partners :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
-    <link rel="canonical" href="https://numpex.github.io/exa-ma/external-partners.html">
-    <meta name="description" content="External partners collaborating with the Exa-MA project.">
+    <title>Exascale Bottlenecks :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/bottlenecks.html">
+    <meta name="description" content="Definitions of the exascale bottlenecks referenced by Exa-MA highlights, frameworks, applications, and work packages.">
     <meta name="generator" content="Antora 3.1.14">
 <link rel="stylesheet" href="./_/css/site.css">
 
@@ -169,7 +169,7 @@ MathJax.Hub.Config({
     <button class="nav-item-toggle"></button>
     <span class="nav-text"><span class="icon"><i class="fa fa-info-circle"></i></span> About Exa-MA</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="bottlenecks.html"><span class="icon"><i class="fa fa-triangle-exclamation"></i></span> Exascale Bottlenecks</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -181,7 +181,7 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="consortium.html"><span class="icon"><i class="fa fa-building"></i></span> Consortium</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="external-partners.html"><span class="icon"><i class="fa fa-handshake"></i></span> External Partners</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -385,12 +385,12 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="index.html">Exa-MA</a></li>
     <li><span class="icon"><i class="fa fa-info-circle"></i></span> About Exa-MA</li>
-    <li><a href="external-partners.html"><span class="icon"><i class="fa fa-handshake"></i></span> External Partners</a></li>
+    <li><a href="bottlenecks.html"><span class="icon"><i class="fa fa-triangle-exclamation"></i></span> Exascale Bottlenecks</a></li>
   </ul>
 </nav>
 
   
-    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/ROOT/pages/external-partners.adoc">Edit this Page</a></div>
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/ROOT/pages/bottlenecks.adoc">Edit this Page</a></div>
   
   <div class="page-downloads">
   <span class="label">Download as</span>
@@ -410,391 +410,154 @@ MathJax.Hub.Config({
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">External Partners</h1>
+<h1 class="page">Exascale Bottlenecks</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>The Exa-MA project collaborates with numerous external partners from industry, research organizations, and academia.</p>
+<p>The Exa-MA scientific document identifies thirteen exascale bottlenecks. Exa-MA directly addresses the methodological and algorithmic bottlenecks B7-B11 and B13, while B1-B6 and B12 are addressed through transverse collaborations across NumPEx.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_overview"><a class="anchor" href="#_overview"></a><span class="icon"><i class="fa fa-chart-pie"></i></span> Overview</h2>
+<h2 id="_hardware_system_and_data_bottlenecks"><a class="anchor" href="#_hardware_system_and_data_bottlenecks"></a>1. Hardware, System, and Data Bottlenecks</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-handshake"></i></span> Total external partners: <strong>15</strong></p>
+<p>These bottlenecks are mainly handled through collaborations with other NumPEx projects, but they constrain the methods, algorithms, software, and demonstrators developed in Exa-MA.</p>
 </div>
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-university fa-2x"></i></span> <strong>5</strong> Public Partners</p>
-</div>
-<div class="paragraph">
-<p><em>33.3% of total</em></p>
-</div>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-flask"></i></span> EPIC: <strong>2</strong> | <span class="icon"><i class="fa fa-graduation-cap"></i></span> Academic: <strong>2</strong> | <span class="icon"><i class="fa fa-microscope"></i></span> Research Infra: <strong>1</strong></p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-building fa-2x"></i></span> <strong>8</strong> Private Partners</p>
-</div>
-<div class="paragraph">
-<p><em>53.3% of total</em></p>
-</div>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-industry"></i></span> Large Groups: <strong>5</strong> | <span class="icon"><i class="fa fa-briefcase"></i></span> SMEs: <strong>3</strong></p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-hand-holding-usd fa-2x"></i></span> <strong>4</strong> Co-funding Arrangements</p>
-</div>
-<div class="paragraph">
-<p><em>26.7% of total</em></p>
-</div>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-user-graduate"></i></span> PhD Co-funding: <strong>4</strong></p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-project-diagram fa-2x"></i></span> <strong>3</strong> Funded Projects</p>
-</div>
-<div class="paragraph">
-<p><em>20.0% of total</em></p>
-</div>
-<div class="paragraph">
-<p>ANR PRCI, European, and other collaborative research projects</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_large_groups"><a class="anchor" href="#_large_groups"></a>Large Groups</h2>
-<div class="sectionbody">
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-plane-departure fa-2x"></i></span> <strong>Airbus CRT</strong></p>
-</div>
-<div class="paragraph">
-<p><em>equipe Inria-Industrie Concace</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> Research Collaborations</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP2: AI-driven, data driven, rom, WP3: solve, WP7: demonstrators</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-bolt fa-2x"></i></span> <strong>EDF</strong> <span class="badge badge-cofunding"><span class="icon"><i class="fa fa-hand-holding-usd"></i></span> Co-funding</span></p>
-</div>
-<div class="paragraph">
-<p><em>Performance, Risque Industriel, Surveillance pour la Maintenance et l&#8217;Exploitation (PRISME)</em>
-<em>Electrotechnique et Mécanique des Structures (ERMES)</em>
-<em>Mécanique des Fluides, Energie et Environnement (MFEE)</em>
-<em>R&amp;D</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> Research Collaborations, PhD co funding</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP4: inverse problems, WP2: AI-driven, data driven, rom, WP3: solve, WP7: demonstrators, WP1: discretisation, WP5: optimisation, WP6: uq</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-handshake fa-2x"></i></span> <strong>Roche</strong></p>
-</div>
-<div class="paragraph">
-<p><em>Magnus Fontes Research Director at Roche</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> Research Collaborations</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP2: AI-driven, data driven, rom, WP7: demonstrators</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-rocket fa-2x"></i></span> <strong>Safran</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> Research Collaborations</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP2: AI-driven, data driven, rom, WP1: discretisation, WP3: solve</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-oil-can fa-2x"></i></span> <strong>TotalEnergies</strong> <span class="badge badge-cofunding"><span class="icon"><i class="fa fa-hand-holding-usd"></i></span> Co-funding</span></p>
-</div>
-<div class="paragraph">
-<p><em>equipe Inria-Industrie Makutu</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> PhD co funding</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP1: discretisation, WP2: AI-driven, data driven, rom, WP4: inverse problems, WP7: demonstrators</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_smes"><a class="anchor" href="#_smes"></a>SMEs</h2>
-<div class="sectionbody">
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-handshake fa-2x"></i></span> <strong>Avnir energy</strong></p>
-</div>
-<div class="paragraph">
-<p><em>R&amp;D</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> Research Collaborations</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP1: discretisation, WP3: solve, WP4: inverse problems, WP2: AI-driven, data driven, rom, WP6: uq, WP7: demonstrators</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-server fa-2x"></i></span> <strong>Cerfacs</strong></p>
-</div>
-<div class="paragraph">
-<p><em>equipe Inria-Industrie Concace</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> Research Collaborations</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP2: AI-driven, data driven, rom, WP3: solve</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-handshake fa-2x"></i></span> <strong>Geometry Factory</strong></p>
-</div>
-<div class="paragraph">
-<p><em>R&amp;D</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> Research Collaborations</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP1: discretisation</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_research_organizations_epic"><a class="anchor" href="#_research_organizations_epic"></a>Research Organizations (EPIC)</h2>
-<div class="sectionbody">
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-gas-pump fa-2x"></i></span> <strong>IFPEN</strong> <span class="badge badge-cofunding"><span class="icon"><i class="fa fa-hand-holding-usd"></i></span> Co-funding</span></p>
-</div>
-<div class="paragraph">
-<p><em>Informatique Scientifique</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> PhD co funding</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP3: solve, WP7: demonstrators</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-plane fa-2x"></i></span> <strong>Onera</strong> <span class="badge badge-cofunding"><span class="icon"><i class="fa fa-hand-holding-usd"></i></span> Co-funding</span></p>
-</div>
-<div class="paragraph">
-<p><em>Onera - Saclay</em>
-<em>Maht App</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> PhD co funding, Research Collaborations</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP1: discretisation, WP2: AI-driven, data driven, rom, WP3: solve, WP5: optimisation, WP7: demonstrators, WP6: uq</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_academic_partners"><a class="anchor" href="#_academic_partners"></a>Academic Partners</h2>
-<div class="sectionbody">
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-handshake fa-2x"></i></span> <strong>AMU</strong></p>
-</div>
-<div class="paragraph">
-<p><em>LMA</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> Research Collaborations</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP1: discretisation</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-handshake fa-2x"></i></span> <strong>MPG</strong> <span class="badge badge-funded"><span class="icon"><i class="fa fa-project-diagram"></i></span> Funded Projects</span></p>
-</div>
-<div class="paragraph">
-<p><em>Institut du Soleil</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> Research Collaborations, Funded Projects</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP4: inverse problems, WP7: demonstrators</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_large_scale_research_infrastructure"><a class="anchor" href="#_large_scale_research_infrastructure"></a>Large scale Research Infrastructure</h2>
-<div class="sectionbody">
-<div class="exampleblock grid grid-2 gap-2">
-<div class="content">
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-handshake fa-2x"></i></span> <strong>LNCMI</strong> <span class="badge badge-funded"><span class="icon"><i class="fa fa-project-diagram"></i></span> Funded Projects</span></p>
-</div>
-<div class="paragraph">
-<p><em>CNRS - TGIR - Grenoble</em></p>
-</div>
-<div class="paragraph">
-<p><strong>Collaboration:</strong> Funded Projects</p>
-</div>
-<div class="paragraph">
-<p><strong>Topics:</strong> WP1: discretisation, WP2: AI-driven, data driven, rom, WP3: solve, WP5: optimisation, WP6: uq, WP7: demonstrators</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_collaboration_overview"><a class="anchor" href="#_collaboration_overview"></a>Collaboration Overview</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch striped">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 66.6666%;">
-<col style="width: 33.3334%;">
+<col style="width: 12.5%;">
+<col style="width: 25%;">
+<col style="width: 62.5%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Indicator</th>
-<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Bottleneck</th>
+<th class="tableblock halign-left valign-top">Definition
+
+<a id="b1"></a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Total External Partners</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>15</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Energy efficiency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Develop energy-efficient technologies to keep exascale systems within the target power envelope.</p>
+<p class="tableblock"><a id="b2"></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Public Partners</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>5</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interconnect technology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Improve vertical intra-node and horizontal inter-node data movement in terms of energy efficiency and performance.</p>
+<p class="tableblock"><a id="b3"></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;EPIC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Memory technology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integrate new memory technologies to improve capacity, bandwidth, resiliency, and energy efficiency.</p>
+<p class="tableblock"><a id="b4"></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;Academic</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scalable system software</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Increase the scalability, power sensitivity, and resiliency of system software, including operating systems, runtimes, and monitoring.</p>
+<p class="tableblock"><a id="b5"></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;Research Infrastructure</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B5</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Programming systems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Develop programming paradigms that express fine-grained concurrency, locality, and resilience.</p>
+<p class="tableblock"><a id="b6"></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Private Partners</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>8</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B6</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data management</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Develop software that handles massive data volumes, including data analysis, compression, fault tolerance, and large-scale I/O.</p>
+<p class="tableblock"><a id="b12"></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;Large Groups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;&#160;SMEs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Other Partners</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Co-funding Arrangements</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B12</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pre/post processing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scale visualization, in situ processing, and the preparation and analysis steps that surround large simulations.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_algorithmic_and_methodological_bottlenecks"><a class="anchor" href="#_algorithmic_and_methodological_bottlenecks"></a>2. Algorithmic and Methodological Bottlenecks</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>For collaboration inquiries, please visit our <a href="contact.html" class="xref page">contact page</a>.</p>
+<p>These bottlenecks are the core Exa-MA targets. They are the tags used by highlights, frameworks, applications, and work packages throughout the website.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 25%;">
+<col style="width: 62.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Bottleneck</th>
+<th class="tableblock halign-left valign-top">Definition
+
+<a id="b7"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B7</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exascale algorithms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redesign algorithms to improve scalability by reducing communication, avoiding or hiding synchronization, and increasing computational efficiency on accelerators.</p>
+<p class="tableblock"><a id="b8"></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B8</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discovery, design, and decision algorithms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move beyond single large simulations toward ensembles of many runs, as required by uncertainty quantification, parameter optimization, design, and decision workflows.</p>
+<p class="tableblock"><a id="b9"></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B9</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resilience, robustness and accuracy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ensure computations remain correct, reproducible, and verifiable even in the presence of software and hardware errors.</p>
+<p class="tableblock"><a id="b10"></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B10</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scientific productivity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provide scientists with tools to develop programs, run applications, prepare inputs, collect outputs, and analyze results productively on exascale systems.</p>
+<p class="tableblock"><a id="b11"></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B11</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reproducibility and replicability of computation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provide the data, code, workflows, and practices needed to re-obtain computational results and build trust in future scientific exploration.</p>
+<p class="tableblock"><a id="b13"></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>B13</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opportunity to integrate uncertainties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integrate uncertainties directly into the core calculation, rather than treating uncertainty quantification only as a post-processing step.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exa_ma_focus"><a class="anchor" href="#_exa_ma_focus"></a>3. Exa-MA Focus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The scientific document states that B1-B6 and B12 are tackled at the methods and algorithms level through transverse collaborations in NumPEx. Exa-MA directly addresses B7-B11 and B13 through its methods, algorithms, software libraries, methodological patterns, AI components, and benchmarked demonstrators.</p>
+</div>
+<div class="openblock text-center">
+<div class="content">
+<div class="paragraph">
+<p><a href="overview.html#_exascale_bottlenecks" class="xref page">Back to overview</a></p>
+</div>
+</div>
 </div>
 </div>
 </div>

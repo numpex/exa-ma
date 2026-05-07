@@ -171,6 +171,9 @@ MathJax.Hub.Config({
     <span class="nav-text"><span class="icon"><i class="fa fa-info-circle"></i></span> About Exa-MA</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bottlenecks.html"><span class="icon"><i class="fa fa-triangle-exclamation"></i></span> Exascale Bottlenecks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="team.html"><span class="icon"><i class="fa fa-users"></i></span> WP Leaders</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -460,16 +463,16 @@ MathJax.Hub.Config({
 <div class="quoteblock text-center">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-success"><i class="fa fa-check-circle fa-2x"></i></span> <strong>January 21, 2026</strong><br>
-<a href="news/2026/20260119-21-ag.html" class="xref page">General Assembly 2026 Concluded</a> – 65 participants, 24 institutions. All slides now available!</p>
+<p><span class="icon text-primary"><i class="fa fa-users fa-2x"></i></span> <strong>May 07, 2026</strong> | COMET Bercy, Paris<br>
+NumPEx Operational Committee Meeting - Agenda: news and BoD feedback; mid-term evaluation covering programme KPIs, international and industrial relations, scientific production, and societal impact; training in NumPEx; software production, including the continuation of&#8230;&#8203;</p>
 </div>
 </blockquote>
 </div>
 <div class="quoteblock text-center">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-landmark fa-2x"></i></span> <strong>June 11, 2026</strong><br>
-NumPEx/ANR Meeting – Morning progress presentations, including Exa-MA, followed by ANR questions and afternoon governance discussions</p>
+<p><span class="icon text-success"><i class="fa fa-brain fa-2x"></i></span> <strong>Jun 08-12, 2026</strong> | IRMA, Université de Strasbourg<br>
+<a href="https://majsc2026.pages.math.unistra.fr/">MAJSC 2026: ML &amp; Autodiff in JAX</a> - Workshop on Machine Learning and Automatic Differentiation in JAX for Scientific Computing. Five-day intensive program covering JAX fundamentals, neural networks (Equinox/Flax), automatic differentiation for PDEs (Diffrax)&#8230;&#8203;</p>
 </div>
 </blockquote>
 </div>
@@ -496,46 +499,32 @@ NumPEx/ANR Meeting – Morning progress presentations, including Exa-MA, followe
 <div class="sect1">
 <h2 id="_recent_achievements"><a class="anchor" href="#_recent_achievements"></a>3. Recent Achievements</h2>
 <div class="sectionbody">
-<h3 id="_2025_highlights" class="discrete">2025 Highlights</h3>
+<h3 id="_latest_highlights" class="discrete">Latest Highlights</h3>
 <div class="exampleblock grid grid-2 gap-2">
 <div class="content">
 <div class="quoteblock text-center">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-rocket fa-2x"></i></span> <strong>Up to 50× Speedup</strong><br>
-GenEO preconditioning on large-scale problems (45M DoFs, 2916 cores)</p>
+<p><span class="icon text-success"><i class="fa fa-network-wired fa-3x"></i></span></p>
+</div>
+<div class="paragraph">
+<p><strong><a href="highlights/hpddm-petsc-3-25.html" class="xref page">HPDDM in PETSc 3.25</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Robust Schwarz and GenEO-type preconditioners available in CPU-GPU PETSc workflows</p>
 </div>
 </blockquote>
 </div>
 <div class="quoteblock text-center">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-success"><i class="fa fa-microchip fa-2x"></i></span> <strong>8000 GPU Scale</strong><br>
-Bayesian optimization on LUMI supercomputer with fractal decomposition</p>
+<p><span class="icon text-primary"><i class="fa fa-microchip fa-3x"></i></span></p>
 </div>
-</blockquote>
-</div>
-<div class="quoteblock text-center">
-<blockquote>
 <div class="paragraph">
-<p><span class="icon text-info"><i class="fa fa-brain fa-2x"></i></span> <strong>80-200% CPU Savings</strong><br>
-Neural operators accelerating Newton iterations, domain-decomposed PINNs</p>
+<p><strong><a href="highlights/pfda-bs-vqe-lumi.html" class="xref page">PFDA-BS VQE on 8000 GPUs</a></strong></p>
 </div>
-</blockquote>
-</div>
-<div class="quoteblock text-center">
-<blockquote>
 <div class="paragraph">
-<p><span class="icon text-warning"><i class="fa fa-city fa-2x"></i></span> <strong>Urban Meshing</strong><br>
-Feature-preserving alpha wrapping (CGAL 6.0) and urban-scale mesh generation (Ktirio-Geom)</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock text-center">
-<blockquote>
-<div class="paragraph">
-<p><span class="icon text-danger"><i class="fa fa-gauge-high fa-2x"></i></span> <strong>HPC Benchmarking</strong><br>
-Automated CI/CD pipeline: code → EuroHPC runs in &lt; 24h</p>
+<p>Black-box optimization for chemistry workloads, validated on LUMI from 3 to 560 parameters</p>
 </div>
 </blockquote>
 </div>
@@ -733,6 +722,16 @@ Automated CI/CD pipeline: code → EuroHPC runs in &lt; 24h</p>
   <div class="page-card-body">
     <h4>Contact Us</h4>
     <p class="page-card-description">How to reach the Exa-MA team for inquiries and collaboration.</p>
+  </div>
+</a>
+</div>
+                            <div class="info"><a class="page-card " href="bottlenecks.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Exascale Bottlenecks</h4>
+    <p class="page-card-description">Definitions of the exascale bottlenecks referenced by Exa-MA highlights, frameworks, applications, and work packages.</p>
   </div>
 </a>
 </div>
