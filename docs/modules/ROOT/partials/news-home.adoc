@@ -1,0 +1,17 @@
+// Events: homepage selection from 21 configured events
+
+[.grid.grid-2.gap-2]
+====
+[.text-center]
+____
+icon:users[size=2x,role=text-primary] *May 07, 2026* | COMET Bercy, Paris +
+NumPEx Operational Committee Meeting - Agenda: news and BoD feedback; mid-term evaluation covering programme KPIs, international and industrial relations, scientific production, and societal impact; training in NumPEx; software production, including the continuation of...
+____
+
+[.text-center]
+____
+icon:brain[size=2x,role=text-success] *Jun 08-12, 2026* | IRMA, Université de Strasbourg +
+https://majsc2026.pages.math.unistra.fr/[MAJSC 2026: ML & Autodiff in JAX] - Workshop on Machine Learning and Automatic Differentiation in JAX for Scientific Computing. Five-day intensive program covering JAX fundamentals, neural networks (Equinox/Flax), automatic differentiation for PDEs (Diffrax)...
+____
+
+====

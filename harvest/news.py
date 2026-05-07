@@ -34,6 +34,7 @@ except ImportError:
 DEFAULT_CONFIG = Path(__file__).parent.parent / "news.yaml"
 DEFAULT_UNIFIED_CONFIG = Path(__file__).parent.parent / "exama.yaml"
 DEFAULT_PARTIALS_DIR = Path("docs/modules/ROOT/partials")
+DEFAULT_PAGES_DIR = Path(__file__).parent.parent / "docs/modules/ROOT/pages"
 
 
 def resolve_partials_dir(config_path: Path | None = None) -> Path:
@@ -106,6 +107,80 @@ def format_date_range(event: dict) -> str:
         return start
 
 
+def truncate_text(text: str, limit: int = 240) -> str:
+    """Trim long descriptions for compact homepage cards."""
+    text = " ".join(text.strip().split())
+    if len(text) <= limit:
+        return text
+
+    trimmed = text[:limit].rsplit(" ", 1)[0].rstrip(" .,;:")
+    return f"{trimmed}..."
+
+
+def event_title_link(event: dict, title: str) -> str:
+    """Return a linked event title when a page or external URL is available."""
+    if event.get("page") and (DEFAULT_PAGES_DIR / event["page"]).exists():
+        return f"xref:{event['page']}[{title}]"
+    if event.get("url"):
+        return f"{event['url']}[{title}]"
+    return title
+
+
+def event_detail_link(event: dict, page_label: str, url_label: str) -> str:
+    """Return a detail link, avoiding xrefs to pages that are not present."""
+    if event.get("page") and (DEFAULT_PAGES_DIR / event["page"]).exists():
+        return f"xref:{event['page']}[{page_label}]"
+    if event.get("url"):
+        return f"{event['url']}[{url_label}]"
+    return ""
+
+
+def generate_home_cards(events: list[dict], limit: int = 2) -> list[str]:
+    """Generate compact cards for the homepage from upcoming and recent events."""
+    upcoming = sorted(
+        [e for e in events if e.get("status") == "upcoming"],
+        key=lambda x: x.get("date", ""),
+    )
+    recent = sorted(
+        [e for e in events if e.get("status") == "recent"],
+        key=lambda x: x.get("date", ""),
+        reverse=True,
+    )
+    selected = upcoming[:limit]
+    if len(selected) < limit:
+        selected.extend(recent[: limit - len(selected)])
+
+    if not selected:
+        return ["_No news or events listed._"]
+
+    lines = ["[.grid.grid-2.gap-2]", "===="]
+    for event in selected:
+        icon = event.get("icon", TYPE_ICONS.get(event.get("type", ""), "calendar"))
+        role = TYPE_ROLES.get(event.get("type", ""), "text-primary")
+        title = event.get("title", "Untitled Event")
+        title_link = event_title_link(event, title)
+        date_str = format_date_range(event)
+        location = event.get("location", "")
+        description = truncate_text(event.get("summary") or event.get("description", ""))
+        date_line = f"*{date_str}*"
+        if location:
+            date_line = f"{date_line} | {location}"
+
+        lines.extend(
+            [
+                "[.text-center]",
+                "____",
+                f"icon:{icon}[size=2x,role={role}] {date_line} +",
+                f"{title_link} - {description}",
+                "____",
+                "",
+            ]
+        )
+
+    lines.append("====")
+    return lines
+
+
 def generate_upcoming_cards(events: list[dict]) -> list[str]:
     """Generate card layout for upcoming events."""
     upcoming = [e for e in events if e.get("status") == "upcoming"]
@@ -123,16 +198,12 @@ def generate_upcoming_cards(events: list[dict]) -> list[str]:
         location = event.get("location", "")
         description = event.get("description", "").strip().replace("\n", " ")
 
-        # Build link (support custom link_text)
         custom_link_text = event.get("link_text")
-        if event.get("page"):
-            label = custom_link_text or "View full agenda and details →"
-            link = f"xref:{event['page']}[{label}]"
-        elif event.get("url"):
-            label = custom_link_text or "Event details and registration →"
-            link = f"{event['url']}[{label}]"
-        else:
-            link = ""
+        link = event_detail_link(
+            event,
+            custom_link_text or "View full agenda and details →",
+            custom_link_text or "Event details and registration →",
+        )
 
         lines.append("[.card]")
         lines.append("====")
@@ -173,16 +244,12 @@ def generate_event_table(events: list[dict], table_class: str = "") -> list[str]
         location = event.get("location", "")
         description = event.get("description", "").strip().replace("\n", " ")
 
-        # Build link (support custom link_text)
         custom_link_text = event.get("link_text")
-        if event.get("page"):
-            label = custom_link_text or "Read full recap →"
-            link_text = f"xref:{event['page']}[{label}]"
-        elif event.get("url"):
-            label = custom_link_text or "Event details and presentations"
-            link_text = f"{event['url']}[{label}]"
-        else:
-            link_text = ""
+        link_text = event_detail_link(
+            event,
+            custom_link_text or "Read full recap →",
+            custom_link_text or "Event details and presentations",
+        )
 
         # Format location
         location_str = f" – {location}" if location else ""
@@ -248,6 +315,19 @@ def output_partials(config: dict, output_dir: Path) -> dict[str, str]:
     events = config.get("events", [])
 
     results = {}
+
+    # Generate compact homepage partial
+    home_lines = [
+        f"// Events: homepage selection from {len(events)} configured events",
+        "",
+    ]
+    home_lines.extend(generate_home_cards(events))
+
+    home_content = "\n".join(home_lines)
+    home_path = output_dir / "news-home.adoc"
+    home_path.write_text(home_content, encoding="utf-8")
+    print(f"  Saved partial: {home_path}")
+    results["home"] = home_content
 
     # Generate upcoming events partial
     upcoming_lines = [

@@ -37,9 +37,15 @@ ____
 ____
 icon:comments[size=2x,role=text-warning] *Discussion*
 
-https://github.com/hpc-maths/samurai/discussions____
+* https://github.com/hpc-maths/samurai/discussions
+____
 ====
 --
+
+== Exascale Bottlenecks Addressed
+
+`B6` Data management `B7` Exascale algorithms `B9` Resilience, robustness and accuracy `B10` Scientific productivity `B11` Reproducibility and replicability
+
 
 == Criteria Evaluation
 

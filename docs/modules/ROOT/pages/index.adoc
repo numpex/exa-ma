@@ -60,20 +60,7 @@ Exa-MA brings together leading French institutions (CEA, École Polytechnique, I
 //[discrete]
 == Latest News & Updates
 
-[.grid.grid-2.gap-2]
-====
-[.text-center]
-____
-icon:check-circle[size=2x,role=text-success] *January 21, 2026* +
-xref:news/2026/20260119-21-ag.adoc[General Assembly 2026 Concluded] – 65 participants, 24 institutions. All slides now available!
-____
-
-[.text-center]
-____
-icon:landmark[size=2x,role=text-primary] *June 11, 2026* +
-NumPEx/ANR Meeting – Morning progress presentations, including Exa-MA, followed by ANR questions and afternoon governance discussions
-____
-====
+include::partial$news-home.adoc[]
 
 Stay informed about project milestones, publications, and community events:
 
@@ -85,40 +72,9 @@ Stay informed about project milestones, publications, and community events:
 == Recent Achievements
 
 [discrete]
-=== 2025 Highlights
+=== Latest Highlights
 
-[.grid.grid-2.gap-2]
-====
-[.text-center]
-____
-icon:rocket[size=2x,role=text-primary] *Up to 50× Speedup* +
-GenEO preconditioning on large-scale problems (45M DoFs, 2916 cores)
-____
-
-[.text-center]
-____
-icon:microchip[size=2x,role=text-success] *8000 GPU Scale* +
-Bayesian optimization on LUMI supercomputer with fractal decomposition
-____
-
-[.text-center]
-____
-icon:brain[size=2x,role=text-info] *80-200% CPU Savings* +
-Neural operators accelerating Newton iterations, domain-decomposed PINNs
-____
-
-[.text-center]
-____
-icon:city[size=2x,role=text-warning] *Urban Meshing* +
-Feature-preserving alpha wrapping (CGAL 6.0) and urban-scale mesh generation (Ktirio-Geom)
-____
-
-[.text-center]
-____
-icon:gauge-high[size=2x,role=text-danger] *HPC Benchmarking* +
-Automated CI/CD pipeline: code → EuroHPC runs in < 24h
-____
-====
+include::partial$highlights-current.adoc[]
 
 xref:results.adoc#highlights-current[View latest highlights →]
 

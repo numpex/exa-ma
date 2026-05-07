@@ -37,9 +37,15 @@ ____
 ____
 icon:comments[size=2x,role=text-warning] *Discussion*
 
-https://github.com/cea-trust-platform/trust-code/issues____
+* https://github.com/cea-trust-platform/trust-code/issues
+____
 ====
 --
+
+== Exascale Bottlenecks Addressed
+
+`B6` Data management `B7` Exascale algorithms `B9` Resilience, robustness and accuracy `B10` Scientific productivity `B11` Reproducibility and replicability
+
 
 == Criteria Evaluation
 

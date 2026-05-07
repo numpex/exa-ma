@@ -12,6 +12,11 @@ from typing import TYPE_CHECKING
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+from ..bottlenecks import (
+    bottleneck_badges,
+    linked_bottleneck_badges,
+    normalize_bottleneck_ids,
+)
 from .base import BaseGenerator, GeneratorConfig
 
 if TYPE_CHECKING:
@@ -44,6 +49,9 @@ class AsciidocGenerator(BaseGenerator):
         # Add custom filters
         self.env.filters["prepend"] = lambda s, prefix: f"{prefix}{s}" if s else ""
         self.env.filters["format_date"] = self._format_date
+        self.env.filters["bottleneck_badges"] = bottleneck_badges
+        self.env.filters["linked_bottleneck_badges"] = linked_bottleneck_badges
+        self.env.filters["bottleneck_ids"] = normalize_bottleneck_ids
 
     @staticmethod
     def _format_date(value, fmt: str = "%Y-%m-%d") -> str:
@@ -82,8 +90,13 @@ class AsciidocGenerator(BaseGenerator):
         # Find applications that use this framework
         used_by = []
         if applications:
+            app_list = (
+                applications.eligible_applications
+                if self.config.include_eligible_only
+                else applications.applications
+            )
             package_name_lower = package.name.lower()
-            for app in applications.applications:
+            for app in app_list:
                 for fw in app.frameworks:
                     if fw.lower() == package_name_lower or package_name_lower in fw.lower():
                         used_by.append(app)

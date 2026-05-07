@@ -57,7 +57,7 @@ icon:comments[size=2x,role=text-warning] *Discussion*
 
 {% if package.channels %}
 {% for channel in package.channels[:2] %}
-{{ channel }}{% if not loop.last %}, {% endif %}
+* {{ channel }}
 {% endfor %}
 {% else %}
 _Not yet available_
@@ -65,6 +65,13 @@ _Not yet available_
 ____
 ====
 --
+
+{% if package.bottlenecks %}
+== Exascale Bottlenecks Addressed
+
+{{ package.bottlenecks | bottleneck_badges }}
+
+{% endif %}
 
 == Criteria Evaluation
 

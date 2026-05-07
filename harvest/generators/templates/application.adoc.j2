@@ -50,6 +50,13 @@ ____
 ====
 --
 
+{% if app.bottlenecks %}
+== Exascale Bottlenecks Addressed
+
+{{ app.bottlenecks | bottleneck_badges }}
+
+{% endif %}
+
 {% if app.is_benchmark_ready %}
 [NOTE]
 ====

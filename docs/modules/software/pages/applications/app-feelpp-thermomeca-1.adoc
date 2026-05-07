@@ -44,6 +44,7 @@ ____
 --
 
 
+
 == Overview
 
 Demonstrate partitioned static linear thermoelastic coupling on a fixed reference mesh using displacement-dependent effective thermal conductivity; verify equivalence with explicit mesh deformation and assess HPC scalability.

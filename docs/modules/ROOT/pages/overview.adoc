@@ -90,6 +90,11 @@ _(Directly addressed by Exa-MA)_
 --
 ====
 
+[.text-center]
+--
+xref:bottlenecks.adoc[View detailed bottleneck definitions]
+--
+
 == Our Objectives
 
 [.grid.grid-2.gap-2.items-start]

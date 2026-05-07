@@ -370,6 +370,7 @@ class Application(BaseModel):
     # Technical
     frameworks: list[str] = Field(default_factory=list)
     parallel_frameworks: list[str] = Field(default_factory=list)
+    bottlenecks: list[str] = Field(default_factory=list)
 
     # Timeline
     spec_due: Optional[datetime] = None
@@ -385,7 +386,7 @@ class Application(BaseModel):
         "methods_wp1", "methods_wp2", "methods_wp3", "methods_wp4",
         "methods_wp5", "methods_wp6", "wp7_topics",
         "inputs", "outputs", "metrics", "benchmark_scope",
-        "frameworks", "parallel_frameworks",
+        "frameworks", "parallel_frameworks", "bottlenecks",
         mode="before"
     )
     @classmethod

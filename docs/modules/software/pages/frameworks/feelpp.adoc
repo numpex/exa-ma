@@ -38,9 +38,16 @@ ____
 ____
 icon:comments[size=2x,role=text-warning] *Discussion*
 
-Slack (https://feelpp.slack.com), GitHub Discussions (https://github.com/feelpp/discussions)____
+* Slack (https://feelpp.slack.com)
+* GitHub Discussions (https://github.com/feelpp/discussions)
+____
 ====
 --
+
+== Exascale Bottlenecks Addressed
+
+`B7` Exascale algorithms `B2` Interconnect technology `B11` Reproducibility and replicability `B10` Scientific productivity `B6` Data management `B12` Pre/post processing `B9` Resilience, robustness and accuracy
+
 
 == Criteria Evaluation
 
@@ -172,10 +179,6 @@ The following Exa-MA applications use Feel++:
 | xref:applications/app-feelpp-rb.adoc[Reduced Basis]
 | Extended Mini App
 | Benchmark Ready
-
-| xref:applications/app-feelpp-io.adoc[Test I/O at large scale]
-| Mini App
-| Planned
 
 | xref:applications/app-freefem-parmmg.adoc[Fichera corner]
 | Extended Mini App

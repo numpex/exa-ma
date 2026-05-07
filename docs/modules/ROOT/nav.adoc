@@ -2,6 +2,7 @@
 * xref:index.adoc[icon:home[] Home]
 * xref:overview.adoc[icon:mountain-sun[] Overview]
 * icon:info-circle[] About Exa-MA
+** xref:bottlenecks.adoc[icon:triangle-exclamation[] Exascale Bottlenecks]
 ** xref:team.adoc[icon:users[] WP Leaders]
 ** xref:team-recruited.adoc[icon:user-graduate[] Recruited Personnel]
 ** xref:consortium.adoc[icon:building[] Consortium]

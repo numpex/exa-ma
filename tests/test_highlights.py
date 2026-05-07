@@ -28,6 +28,21 @@ def test_generate_highlight_cards_links_to_detail_page():
     assert "Robust preconditioners" in content
 
 
+def test_generate_highlight_cards_renders_bottleneck_badges():
+    highlights = [
+        {
+            "title": "HPDDM in PETSc 3.25",
+            "summary": "Robust preconditioners for PETSc workflows",
+            "bottlenecks": ["B7 - Exascale Algorithms", "B9"],
+        }
+    ]
+
+    content = "\n".join(generate_highlight_cards(highlights))
+
+    assert "`B7` Exascale algorithms" in content
+    assert "`B9` Resilience, robustness and accuracy" in content
+
+
 def test_highlights_for_year_filters_by_year():
     config = {
         "highlights": [

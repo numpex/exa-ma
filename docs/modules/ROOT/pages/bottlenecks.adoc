@@ -1,0 +1,100 @@
+= Exascale Bottlenecks
+:page-tags: info
+:page-illustration: fa-solid fa-triangle-exclamation
+:icons: font
+:description: Definitions of the exascale bottlenecks referenced by Exa-MA highlights, frameworks, applications, and work packages.
+
+[.lead]
+The Exa-MA scientific document identifies thirteen exascale bottlenecks. Exa-MA directly addresses the methodological and algorithmic bottlenecks B7-B11 and B13, while B1-B6 and B12 are addressed through transverse collaborations across NumPEx.
+
+== Hardware, System, and Data Bottlenecks
+
+These bottlenecks are mainly handled through collaborations with other NumPEx projects, but they constrain the methods, algorithms, software, and demonstrators developed in Exa-MA.
+
+[cols="1,2,5",options="header"]
+|===
+|ID |Bottleneck |Definition
+
+[[b1]]
+|`B1`
+|Energy efficiency
+|Develop energy-efficient technologies to keep exascale systems within the target power envelope.
+
+[[b2]]
+|`B2`
+|Interconnect technology
+|Improve vertical intra-node and horizontal inter-node data movement in terms of energy efficiency and performance.
+
+[[b3]]
+|`B3`
+|Memory technology
+|Integrate new memory technologies to improve capacity, bandwidth, resiliency, and energy efficiency.
+
+[[b4]]
+|`B4`
+|Scalable system software
+|Increase the scalability, power sensitivity, and resiliency of system software, including operating systems, runtimes, and monitoring.
+
+[[b5]]
+|`B5`
+|Programming systems
+|Develop programming paradigms that express fine-grained concurrency, locality, and resilience.
+
+[[b6]]
+|`B6`
+|Data management
+|Develop software that handles massive data volumes, including data analysis, compression, fault tolerance, and large-scale I/O.
+
+[[b12]]
+|`B12`
+|Pre/post processing
+|Scale visualization, in situ processing, and the preparation and analysis steps that surround large simulations.
+|===
+
+== Algorithmic and Methodological Bottlenecks
+
+These bottlenecks are the core Exa-MA targets. They are the tags used by highlights, frameworks, applications, and work packages throughout the website.
+
+[cols="1,2,5",options="header"]
+|===
+|ID |Bottleneck |Definition
+
+[[b7]]
+|`B7`
+|Exascale algorithms
+|Redesign algorithms to improve scalability by reducing communication, avoiding or hiding synchronization, and increasing computational efficiency on accelerators.
+
+[[b8]]
+|`B8`
+|Discovery, design, and decision algorithms
+|Move beyond single large simulations toward ensembles of many runs, as required by uncertainty quantification, parameter optimization, design, and decision workflows.
+
+[[b9]]
+|`B9`
+|Resilience, robustness and accuracy
+|Ensure computations remain correct, reproducible, and verifiable even in the presence of software and hardware errors.
+
+[[b10]]
+|`B10`
+|Scientific productivity
+|Provide scientists with tools to develop programs, run applications, prepare inputs, collect outputs, and analyze results productively on exascale systems.
+
+[[b11]]
+|`B11`
+|Reproducibility and replicability of computation
+|Provide the data, code, workflows, and practices needed to re-obtain computational results and build trust in future scientific exploration.
+
+[[b13]]
+|`B13`
+|Opportunity to integrate uncertainties
+|Integrate uncertainties directly into the core calculation, rather than treating uncertainty quantification only as a post-processing step.
+|===
+
+== Exa-MA Focus
+
+The scientific document states that B1-B6 and B12 are tackled at the methods and algorithms level through transverse collaborations in NumPEx. Exa-MA directly addresses B7-B11 and B13 through its methods, algorithms, software libraries, methodological patterns, AI components, and benchmarked demonstrators.
+
+[.text-center]
+--
+xref:overview.adoc#_exascale_bottlenecks[Back to overview]
+--

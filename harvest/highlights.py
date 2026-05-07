@@ -8,6 +8,8 @@ from typing import Any
 
 import yaml
 
+from .bottlenecks import bottleneck_badges
+
 DEFAULT_CONFIG = Path(__file__).parent.parent / "highlights.yaml"
 DEFAULT_UNIFIED_CONFIG = Path(__file__).parent.parent / "exama.yaml"
 DEFAULT_PARTIALS_DIR = Path("docs/modules/ROOT/partials")
@@ -60,6 +62,7 @@ def generate_highlight_cards(highlights: list[dict[str, Any]]) -> list[str]:
         title = item.get("title", "Untitled Highlight")
         page = item.get("page", "")
         summary = item.get("summary", "").strip()
+        bottlenecks = bottleneck_badges(item.get("bottlenecks", []))
 
         lines.extend(
             [
@@ -73,7 +76,10 @@ def generate_highlight_cards(highlights: list[dict[str, Any]]) -> list[str]:
             lines.append(f"*xref:{page}[{title}]*")
         else:
             lines.append(f"*{title}*")
-        lines.extend(["", summary, "____", ""])
+        lines.extend(["", summary])
+        if bottlenecks:
+            lines.extend(["", bottlenecks])
+        lines.extend(["____", ""])
 
     lines.append("====")
     return lines

@@ -50,13 +50,14 @@ ____
 [discrete]
 == Framework Catalog
 
-[.striped,cols="2,4,1,1,1",options="header"]
+[.striped,cols="2,4,3,1,1,1",options="header"]
 |===
-| Framework | Description | License | CI | WPs
+| Framework | Description | Bottlenecks | License | CI | WPs
 
 {% for pkg in packages %}
 | xref:frameworks/{{ pkg.slug }}.adoc[*{{ pkg.name }}*]
 | {{ (pkg.description[:80] + '...') if pkg.description and pkg.description|length > 80 else (pkg.description or '_Exa-MA Framework_') }}
+| {{ pkg.bottlenecks | linked_bottleneck_badges if pkg.bottlenecks else 'N/A' }}
 | {% if pkg.has_floss_license %}icon:check[role=text-success]{% else %}icon:times[role=text-muted]{% endif %}
 | {% if pkg.has_ci %}icon:check[role=text-success]{% else %}icon:times[role=text-muted]{% endif %}
 | {% for wp in pkg.work_packages %}{{ wp.wp_number }}{% if not loop.last %},{% endif %}{% endfor %}

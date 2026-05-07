@@ -145,6 +145,8 @@ class ExcelFetcher(SoftwareDataSource):
         "work_package": "work_packages",
         "application_type": "application_type",
         "purpose": "purpose",
+        "Bottlenecks": "bottlenecks",
+        "Bottelnecks ExaMA": "bottlenecks",
         "Method-Algorithm WP1": "methods_wp1",
         "Method-Algorithm WP2": "methods_wp2",
         "Method-Algorithm WP3": "methods_wp3",
@@ -330,7 +332,7 @@ class ExcelFetcher(SoftwareDataSource):
                 "methods_wp1", "methods_wp2", "methods_wp3", "methods_wp4",
                 "methods_wp5", "methods_wp6", "wp7_topics",
                 "inputs", "outputs", "metrics", "benchmark_scope",
-                "frameworks", "parallel_frameworks"
+                "frameworks", "parallel_frameworks", "bottlenecks"
             ):
                 # These are handled by the validator in the model
                 kwargs[model_field] = value

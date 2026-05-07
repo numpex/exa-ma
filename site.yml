@@ -36,5 +36,4 @@ asciidoc:
     swimmer: Swimmer
     :exama: Exa-MA
     :numpex: NumPEx
-    kroki-fetch-diagram: true
     kroki-server-url: https://kroki.io
