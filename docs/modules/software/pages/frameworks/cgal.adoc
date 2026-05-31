@@ -126,3 +126,28 @@ _Benchmarked in this WP_
 
 *Consortium:* Inria
 
+== Used by Applications
+
+The following Exa-MA applications use CGAL:
+
+[cols="2,2,1",options="header"]
+|===
+| Application | Type | Status
+
+| xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
+| Demonstrator
+| Planned
+
+| xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement]
+| Mini App
+| Planned
+
+| xref:applications/app-cgal-cdt2.adoc[Constrained Delaunay Triangulation 2D]
+| Mini App
+| Planned
+
+| xref:applications/app-cgal-ccdt3.adoc[Conforming Constrained Delaunay Triangulation 3D]
+| Mini App
+| Planned
+
+|===

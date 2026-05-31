@@ -181,6 +181,7 @@ These frameworks power the following Exa-MA applications:
 ** xref:applications/app-feelpp-rb.adoc[Reduced Basis]
 ** xref:applications/app-freefem-parmmg.adoc[Fichera corner]
 ** xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
+** xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
 
 * xref:frameworks/hpddm.adoc[HPDDM]
 ** xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
@@ -191,6 +192,12 @@ These frameworks power the following Exa-MA applications:
 
 * xref:frameworks/scimba.adoc[Scimba]
 ** xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
+
+* xref:frameworks/cgal.adoc[CGAL]
+** xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
+** xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement]
+** xref:applications/app-cgal-cdt2.adoc[Constrained Delaunay Triangulation 2D]
+** xref:applications/app-cgal-ccdt3.adoc[Conforming Constrained Delaunay Triangulation 3D]
 
 --
 

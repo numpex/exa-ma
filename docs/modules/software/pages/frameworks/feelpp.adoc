@@ -188,4 +188,8 @@ The following Exa-MA applications use Feel++:
 | Demonstrator
 | Planned
 
+| xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
+| Demonstrator
+| Planned
+
 |===

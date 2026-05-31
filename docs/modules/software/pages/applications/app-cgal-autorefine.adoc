@@ -1,0 +1,105 @@
+= Mesh autorefinement
+:page-layout: default
+:page-tags: application, mini-app, app-cgal-autorefine
+:page-illustration: fa-solid fa-cube
+:description: Mesh autorefinement - Test the parallel performance of triangle mesh autorefinement...
+:icons: font
+:page-status: planned
+:page-work-packages: WP1
+
+[.lead]
+Test the parallel performance of triangle mesh autorefinement
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+CGAL
+____
+====
+--
+
+
+
+== Overview
+
+Test the parallel performance of triangle mesh autorefinement
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **CGAL**
+
+=== Parallel Frameworks
+
+* Multithread - TBB
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* unstructured mesh
+
+
+
+
+
+
+
+== Benchmarking
+
+=== Metrics
+
+* Strong Scalability
+* Weak Scalability
+* Time To Solution
+
+=== Benchmark Scope
+
+* Single Node
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra, Inria CA
+
+*Responsible:* V. Chabannes; C. Prud'homme, P. Alliez
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+

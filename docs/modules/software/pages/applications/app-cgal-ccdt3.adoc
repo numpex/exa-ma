@@ -1,0 +1,104 @@
+= Conforming Constrained Delaunay Triangulation 3D
+:page-layout: default
+:page-tags: application, mini-app, app-cgal-ccdt3
+:page-illustration: fa-solid fa-cube
+:description: Conforming Constrained Delaunay Triangulation 3D - Demonstrate the weak and strong scalability of the conforming constrained delaunay triangulation algorithm for tetrahedral meshes and tetrahedral reme...
+:icons: font
+:page-status: planned
+:page-work-packages: WP1
+
+[.lead]
+Demonstrate the weak and strong scalability of the conforming constrained delaunay triangulation algorithm for tetrahedral meshes and tetrahedral remeshing.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+CGAL
+____
+====
+--
+
+
+
+== Overview
+
+Demonstrate the weak and strong scalability of the conforming constrained delaunay triangulation algorithm for tetrahedral meshes and tetrahedral remeshing.
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **CGAL**
+
+=== Parallel Frameworks
+
+* Multithread - TBB
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* unstructured mesh
+
+
+
+
+
+
+
+== Benchmarking
+
+=== Metrics
+
+* Weak Scalability
+* Strong Scalability
+
+=== Benchmark Scope
+
+* Single Node
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra, Inria CA
+
+*Responsible:* V. Chabannes; C. Prud'homme, P. Alliez
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+
