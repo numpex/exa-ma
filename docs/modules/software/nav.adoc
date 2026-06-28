@@ -34,3 +34,4 @@
 ** xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement]
 ** xref:applications/app-cgal-cdt2.adoc[Constrained Delaunay Triangulation 2D]
 ** xref:applications/app-cgal-ccdt3.adoc[Conforming Constrained Delaunay Triangulation 3D]
+** xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners]

@@ -185,6 +185,7 @@ These frameworks power the following Exa-MA applications:
 
 * xref:frameworks/hpddm.adoc[HPDDM]
 ** xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
+** xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners]
 
 * xref:frameworks/freefempp.adoc[Freefem++]
 ** xref:applications/app-freefem-parmmg.adoc[Fichera corner]

@@ -20,13 +20,13 @@ Exa-MA applications are benchmarks and demonstrators that exercise the capabilit
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:rocket[size=2x,role=text-primary] *19 Applications*
+icon:rocket[size=2x,role=text-primary] *20 Applications*
 
 5 ready for benchmarking
 ____
 
 ____
-icon:cube[size=2x,role=text-info] *11 Mini-Apps*
+icon:cube[size=2x,role=text-info] *12 Mini-Apps*
 
 Focused benchmarks testing specific algorithms
 ____
@@ -126,6 +126,10 @@ ____
 | Mini App
 | CGAL| icon:clock[role=text-warning,title=planned]| WP1
 
+| xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners]
+| Mini App
+| PETSc, HPDDM...| icon:clock[role=text-warning,title=planned]| WP3
+
 |===
 --
 
@@ -202,6 +206,8 @@ icon:cube[role=text-info] *Mini Apps*
 
 * xref:applications/app-cgal-ccdt3.adoc[Conforming Constrained Delaunay Triangulation 3D] — CGAL
 
+* xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners] — PETSc, HPDDM
+
 
 --
 
@@ -239,6 +245,7 @@ icon:cube[role=text-info] *Mini Apps*
 *HPDDM*
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners] (Mini App)
 
 *MMG/ParMMG*
 
@@ -247,6 +254,7 @@ icon:cube[role=text-info] *Mini Apps*
 *MUMPS*
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners] (Mini App)
 
 *PETSc*
 
@@ -255,6 +263,7 @@ icon:cube[role=text-info] *Mini Apps*
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-eki.adoc[EKI] (Mini App)
+* xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners] (Mini App)
 
 *PaStiX*
 
