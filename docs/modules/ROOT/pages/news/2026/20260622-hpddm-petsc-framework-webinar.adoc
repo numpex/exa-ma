@@ -1,0 +1,353 @@
+= HPDDM / PETSc Framework Webinar
+:page-tags: resource,news2026,webinar
+:page-parent: news.adoc
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-network-wired
+:description: Recording, slides, and extracted meeting report from the June 22, 2026 HPDDM / PETSc framework webinar.
+
+[.lead]
+The HPDDM / PETSc framework webinar took place online on June 22, 2026.
+The session reviewed HPDDM's integration in PETSc, GPU-enabled domain decomposition, GENEO requirements, and Exa-MA mini-apps where HPDDM should be evaluated.
+
+== Recording and Materials
+
+*Date*: Monday, June 22, 2026
+
+*Time*: 14:03 CEST
+
+*Format*: Online webinar
+
+*Recording*: link:https://us02web.zoom.us/rec/share/W3P2pMpXdKHo0wcxUL_6aEpKDCaJ9mU17teNxWMj6v3Qp8pc_3-2ojb0zMbiqi7F.XqHqXBvIz-JntzxQ?startTime=1782129818000[Zoom recording]
+
+*Passcode*: pass:[4!GvQ#j$]
+
+=== Slide Decks
+
+[.striped,cols="3,2,1",options="header"]
+|===
+|Deck |Presenters |PDF
+
+|Refactoring HPDDM for GPU-Enabled Domain Decomposition - HPDDM & PETSc 3.25
+|Erik Fabrizzi, Pierre Jolivet
+|xref:attachment$webinars/2026/2026-hpddm-1.pdf[icon:file-pdf[title=PDF]]
+
+|Robust overlapping Schwarz methods and their applications
+|Pierre Jolivet
+|xref:attachment$webinars/2026/2026-hpddm-2.pdf[icon:file-pdf[title=PDF]]
+|===
+
+[.webinar-report]
+== Meeting Report
+
+*Meeting*: Exa-MA framework session dedicated to HPDDM
+
+*Presentation*: Erik Fabrizzi, with contributions from Pierre Jolivet
+
+*Participants mentioned*: Christophe Prud'homme, Erik Fabrizzi, Pierre Jolivet, Frederic Nataf, Isabelle Ramiere, Pierre-Henri Tournier, Vincent Faucher, Loic Gouarin, Juliette Antonczak
+
+*Purpose*: review the status of HPDDM within PETSc, identify GPU and portability issues, and define relevant Exa-MA mini-apps, benchmarks, and demonstrators where HPDDM should be activated or evaluated.
+
+=== Objectives of the Session
+
+The session aimed to position HPDDM within the Exa-MA framework activities, based on recent work presented at the PETSc Annual Meeting 2026.
+
+The main objectives were to:
+
+* clarify the current status of the HPDDM integration in PETSc;
+* understand the user workflow through PETSc `KSP` and `PC`;
+* discuss GPU support, in particular CUDA, HIP/AMD, and Kokkos;
+* identify Exa-MA mini-apps where HPDDM should be tested;
+* prepare a CPU/GPU benchmarking path for the October deliverable;
+* identify possible integrations with PETSc-based frameworks such as MFEM, Feel++, TRUST, FreeFEM, `Code_Aster`, and Gridap.jl.
+
+=== Current Status of HPDDM in PETSc
+
+HPDDM is a library for the preconditioning of linear systems. It was initially developed as a standalone library, but significant effort has recently been devoted to integrating it more tightly into PETSc.
+
+The recent work consists in progressively replacing HPDDM native internal operations with PETSc data structures and PETSc operations. This makes the code more generic, easier to maintain, and better aligned with PETSc backends, in particular for GPU execution.
+
+Within PETSc, the main component relevant to Exa-MA is `PCHPDDM`, i.e. HPDDM used as a preconditioner. The `KSPHPDDM` layer exists, but was not considered central for the current Exa-MA applications, since it is mostly useful for specific Krylov methods such as block methods.
+
+The PETSc interface allows the user or the calling framework to:
+
+* use HPDDM as a PETSc preconditioner;
+* provide the Neumann matrices required by GENEO;
+* provide the right-hand side matrix of the generalized eigenvalue problem when needed;
+* provide the deflation matrix `Z` directly if it is already known;
+* choose different coarse correction strategies, such as additive, balanced, or deflated corrections;
+* compare HPDDM with other PETSc preconditioners by changing runtime options rather than rewriting application code.
+
+A key point is that HPDDM is not used as a standalone solver here. It acts as a preconditioner inside a PETSc linear solver workflow. The Krylov method remains selected through PETSc, and the local subdomain solvers can be direct or iterative. By default, exact local factorizations are often used on subdomains, but this can be changed through PETSc options.
+
+=== GENEO, Neumann Matrices, and the Role of the Framework
+
+GENEO is the central robust two-level method in HPDDM for SPD problems. It constructs a coarse space from local generalized eigenvalue problems defined on overlapping subdomains. Its main strength is numerical robustness, with theoretical guarantees on the conditioning of the preconditioned operator.
+
+The counterpart is that GENEO is not fully algebraic. It requires Neumann matrices on the overlapping subdomains. These matrices must use natural boundary conditions on the artificial interfaces induced by the domain decomposition, while preserving the essential boundary conditions of the original problem.
+
+This means that the calling framework plays an important role. If the framework has ghost elements or a suitable representation of overlapping subdomains, assembling the Neumann matrices can be relatively natural. This is the case, or could be the case, for frameworks such as FreeFEM, `Code_Aster`, Gridap.jl, MFEM, and potentially Feel++ once the proper interface is available.
+
+When Neumann matrices are not available, HPDDM can still be used through algebraic variants. These are easier to activate, often directly through PETSc options, but they do not provide the same theoretical guarantees as GENEO.
+
+=== Numerical Positioning with Respect to AMG and Multigrid
+
+The discussion clarified the practical positioning of HPDDM.
+
+When algebraic multigrid works well, it is often faster than two-level domain decomposition methods. However, AMG may be sensitive to geometry, mesh quality, coefficient contrasts, discretization choices, and parameter tuning.
+
+HPDDM/GENEO is usually more expensive in setup and sometimes per iteration, but it is more robust in difficult cases. It is especially relevant when the solver must remain reliable under changes in geometry, mesh, discretization, or physical regime.
+
+Two examples were discussed.
+
+==== Code_Aster / EDF Elasticity Application
+
+An EDF application involving an elasticity problem on a PWR vessel-like geometry was presented as an example where BoomerAMG encountered convergence difficulties on more complex geometries or larger cases, despite tuning efforts. HPDDM/GENEO proved robust on the same family of problems.
+
+==== Discrete Fracture Network Application
+
+The DFN application from the SERENA team at Inria Paris was discussed as a second example. The problem involves discrete fracture networks and Raviart-Thomas-type discretizations. In simple cases, multigrid methods may work, but as the number and complexity of fractures increase, multigrid and one-level domain decomposition methods become fragile. HPDDM/GENEO remains robust when the Neumann matrices are available.
+
+The operational message is clear: AMG remains a good first option when it works, but HPDDM is a priority candidate for robustness, scalability, complex geometries, non-standard discretizations, and difficult coupled problems.
+
+=== New Development Direction: MPI / Subdomain Granularity
+
+A major development direction is the decoupling of the number of MPI processes from the number of subdomains.
+
+Two configurations are targeted:
+
+* *Several subdomains per MPI process*: this allows the number of subdomains to be increased without increasing the number of MPI ranks. It can reduce the complexity of local subdomain problems and is particularly relevant for batching operations on GPUs.
+* *Several MPI processes per subdomain*: this allows larger subdomains to be handled by several MPI processes. It is relevant when using distributed direct solvers or compression-based solvers such as MUMPS, STRUMPACK, or `SuperLU_DIST`.
+
+Similar ideas are already available in PETSc for some preconditioners, such as `PCASM`, `PCGASM`, and `PCBJACOBI`, for example through parameters such as `nblocks`.
+
+The objective is to bring the same flexibility to `PCHPDDM`, so that the restricted Schwarz part and the GENEO coarse-space part support the same granularity. This is also relevant for exascale architectures. Several subdomains per MPI process may enable efficient use of batched linear algebra, for example through Kokkos.
+
+=== Existing HPDDM / PETSc Mini-App
+
+The current HPDDM mini-app is located in the `apps-petsc` repository, in:
+
+----
+src/app-hpddm-dfn.c
+----
+
+It is not an HPDDM-only application, but rather a PETSc application using HPDDM as a linear solver/preconditioner component. The mini-app comes from a discrete fracture network application developed by the SERENA team.
+
+The mini-app demonstrates the full PETSc/HPDDM workflow:
+
+* loading the global matrix;
+* loading the right-hand side;
+* loading index sets describing the distribution;
+* loading the Neumann matrices;
+* handling Dirichlet degrees of freedom;
+* configuring `KSP` and `PC`;
+* selecting `PCHPDDM`;
+* solving the linear system;
+* retrieving PETSc metrics such as iteration count, residual, and convergence reason.
+
+Only a small part of the code is strictly HPDDM-specific. Most of the code is PETSc boilerplate for loading data and reconstructing the correct parallel distribution.
+
+The mini-app is therefore useful as a reference workflow, but it would be useful to produce a simplified version, stripped of the many regression-test-specific branches inherited from PETSc examples.
+
+Larger datasets are being prepared by the SERENA team. These would make it possible to move from a small demonstrator to significantly larger benchmark cases, potentially up to several hundred million degrees of freedom.
+
+=== GPU Support: Status, Limitations, and Strategy
+
+Recent work has moved a significant part of the preconditioner application to the GPU when the matrices are already available on the device.
+
+The ideal workflow is:
+
+. the framework assembles the matrix on the GPU;
+. the local matrix stays on the GPU;
+. HPDDM/PETSc applies the preconditioner without unnecessary transfers back to the CPU;
+. supported sparse and dense operations use PETSc GPU backends.
+
+Several limitations remain:
+
+* some host-device transfers remain, especially around the deflation vectors `Z` and overlap-related vector exchanges;
+* the coarse solver and local solvers still rely heavily on direct solvers;
+* if MUMPS is used as the local direct solver, matrices must be copied back to the CPU;
+* efficient GPU direct solvers remain a critical missing piece;
+* the recent PETSc integration of cuDSS, NVIDIA's sparse direct solver, should be benchmarked;
+* PETScSF could eventually replace some HPDDM-specific MPI communication mechanisms, enabling better use of GPU-aware and GPU-to-GPU communication.
+
+The DFN mini-app is considered GPU-ready in the sense that the matrix can be loaded on the CPU and then converted to a PETSc GPU matrix type, for example `MPIAIJCUSPARSE`, before setup and solve. This is not optimal from an I/O point of view because PETSc still loads matrices from disk through the CPU, but it is sufficient to benchmark the solver and preconditioner phases.
+
+This limitation should be explicitly stated in the benchmark report to avoid mixing I/O costs with solver/preconditioner performance.
+
+Regarding AMD, PETSc has a HIP backend, largely derived from the CUDA backend. However, some pieces are still missing in `PCHPDDM`. Access to AMD hardware is therefore necessary to test and improve this path.
+
+It was agreed that the HPDDM team should be added to the AMD/CINES call in order to test the HIP backend. Kokkos is also seen as an important path toward CUDA/AMD portability, especially for batched linear algebra.
+
+=== Saddle Point Systems, Stokes, Oseen, and Non-Symmetric Problems
+
+The discussion confirmed that HPDDM is not limited to SPD problems. Saddle point systems are important for Exa-MA and can be handled through PETSc flexibility, in particular through `PCFIELDSPLIT`.
+
+For Stokes systems and nearly incompressible elasticity, the work of Frederic Nataf and Pierre-Henri Tournier can be used in the PETSc/HPDDM context. The idea is to apply HPDDM to relevant blocks, for instance the `A00` block, and possibly to Schur-complement approximations.
+
+For non-symmetric systems, such as Oseen or R13-type equations, several strategies are available:
+
+* using a physics-based field split;
+* applying HPDDM to selected blocks;
+* using algebraic HPDDM variants rather than GENEO when GENEO becomes unsuitable;
+* treating some non-symmetric systems monolithically.
+
+The theory is less strong than for SPD/GENEO cases, but PETSc/HPDDM already provides practical options to test.
+
+For Oseen, GENEO may work in low-convection regimes, but may fail when the problem becomes convection-dominated. In such cases, algebraic HPDDM variants are more appropriate.
+
+=== Exa-MA Use Cases Identified
+
+Several Exa-MA use cases were identified where HPDDM should be activated or evaluated.
+
+* *PETSc / DFN mini-app*: the existing `apps-petsc` DFN mini-app should remain the reference HPDDM mini-app. It should be used to produce a first CPU benchmark, and then a GPU benchmark if the machine access and PETSc configuration allow it.
+* *Thermo-mechanical benchmark with MFEM + PETSc + HPDDM*: the MFEM thermo-mechanical benchmark discussed by Isabelle Ramiere is a strong candidate. HPDDM should be tested against Jacobi, BoomerAMG, algebraic HPDDM, and HPDDM/GENEO if the required Neumann matrices can be exposed from MFEM.
+* *Feel++ + PETSc + HPDDM*: Feel++ is a natural candidate for HPDDM experiments, especially in discretization mini-apps and coupled applications.
+* *TRUST and other PETSc-based frameworks*: TRUST also uses PETSc and should be evaluated in the same spirit. The relevant question is to identify cases where HPDDM adds value compared with the current solver strategy.
+* *Coupled thermo-mechanical and multiphysics problems*: coupled thermo-mechanical problems were identified as good targets because they combine robustness, scaling, and block-structured multiphysics issues.
+
+=== Mini-Apps and Benchmarks
+
+[.striped,cols="2,1,1,3,2,2,2",options="header"]
+|===
+|App / benchmark |Status |Exa-MA link |Scientific / technical objective |Stress point |Contacts |Next step
+
+|`apps-petsc` DFN mini-app
+|Current / reference
+|WP3 / WP7
+|Use PETSc with HPDDM/PCHPDDM as solver and preconditioner on discrete fracture network systems
+|Neumann matrices, distribution reconstruction, CPU/GPU benchmark, PETSc CPU I/O
+|HPDDM team; SERENA team; Pierre Jolivet; Erik Fabrizzi
+|Prepare CPU benchmark for October deliverable; GPU benchmark if access and configuration allow
+
+|MFEM thermo-mechanical benchmark
+|Candidate / priority
+|WP3
+|Test algebraic PCHPDDM then HPDDM/GENEO on thermo-mechanical systems
+|Strong scaling, BoomerAMG fragility, exposing Neumann matrices
+|Isabelle Ramiere / MFEM team; HPDDM support
+|First test with algebraic PCHPDDM; then investigate Neumann matrices for GENEO
+
+|Feel++ + PETSc + HPDDM mini-apps
+|Candidate
+|WP1 / WP3 / WP7
+|Activate HPDDM through PETSc in Feel++ discretization or coupling mini-apps
+|Algebraic mode first, later GENEO if overlap and Neumann assembly are exposed
+|Feel++ team; WP7; HPDDM support
+|Identify candidate apps, then test HPDDM activation
+
+|TRUST and other PETSc-based frameworks
+|Candidate
+|WP3 / WP7
+|Evaluate HPDDM wherever PETSc solvers are accessible
+|Identify cases where HPDDM adds value compared with the current solver strategy
+|TRUST team; Exa-MA; HPDDM team
+|Check HPDDM activation in TRUST at next framework session
+
+|Coupled thermo-mechanical / multiphysics demonstrators
+|Future
+|WP3
+|Use block-structured multiphysics problems as demonstrators beyond DFN
+|Robustness, scaling, field splits, non-symmetric or saddle-point systems
+|Exa-MA WP3; relevant application teams
+|Define candidate demonstrator and solver comparison protocol
+|===
+
+=== Decisions and Agreed Points
+
+. The `apps-petsc` DFN mini-app is retained as the reference HPDDM mini-app.
+. A CPU benchmark should be prepared for the October deliverable.
+. A GPU benchmark is desirable, depending on hardware access and the maturity of GPU direct solvers.
+. No separate GPU mini-app is required; the same mini-app can be used with PETSc GPU matrix conversion.
+. The CPU I/O limitation of PETSc must be clearly documented in the benchmark report.
+. HPDDM should be tested in other Exa-MA mini-apps whenever PETSc is available.
+. The MFEM thermo-mechanical benchmark is identified as a priority case for HPDDM testing.
+. The HPDDM team should be added to the AMD/CINES call.
+. Saddle point and non-symmetric problems are within scope, using `PCFIELDSPLIT` and algebraic HPDDM variants.
+. A simplified pedagogical PETSc/HPDDM example would be useful for framework developers.
+
+=== Tasks and Action Items
+
+[.striped,cols="1,3,2,3",options="header"]
+|===
+|# |Task |Owner(s) |Target / comment
+
+|1
+|Prepare a CPU benchmark of the DFN `apps-petsc` mini-app with `PCHPDDM`
+|HPDDM team
+|October deliverable
+
+|2
+|Add a methodological note on PETSc CPU I/O and GPU matrix conversion
+|HPDDM team / WP7
+|October deliverable
+
+|3
+|Test the DFN mini-app on NVIDIA GPUs using PETSc GPU matrix types
+|HPDDM team
+|Depending on access
+
+|4
+|Evaluate cuDSS as a GPU direct solver for HPDDM subdomains
+|HPDDM team
+|Short / medium term
+
+|5
+|Add the HPDDM team to the AMD/CINES call
+|Christophe / Exa-MA coordination
+|As soon as possible
+
+|6
+|Test algebraic `PCHPDDM` on the MFEM thermo-mechanical benchmark
+|Isabelle / MFEM team, with HPDDM support
+|First test
+
+|7
+|Investigate how to expose Neumann matrices from MFEM for GENEO
+|MFEM team / HPDDM team
+|After algebraic test
+
+|8
+|Identify Feel++ mini-apps where HPDDM can be activated through PETSc
+|Feel++ team / WP7
+|To be planned
+
+|9
+|Test HPDDM in Feel++ discretization or coupling mini-apps
+|Feel++ team, with HPDDM support
+|After identification
+
+|10
+|Check HPDDM activation in TRUST
+|TRUST team / Exa-MA
+|Next framework session
+
+|11
+|Produce a simplified PETSc/HPDDM example derived from `ex76`
+|Pierre / Erik
+|Useful for integrators
+
+|12
+|Share the recording on the Exa-MA channel
+|Christophe
+|To finalize
+|===
+
+=== Points of Attention
+
+* HPDDM/GENEO is robust but may be more expensive than AMG when AMG works well.
+* GENEO requires Neumann matrices, so the integration effort depends strongly on the calling framework.
+* Algebraic HPDDM variants are easier to test but come with weaker theoretical guarantees.
+* GPU direct solvers remain a critical bottleneck.
+* NVIDIA/CUDA is currently the most advanced path; AMD/HIP requires explicit testing.
+* The coarse solve and overlap communications remain important profiling points.
+* The new subdomain/MPI granularity is strategically important for exascale architectures but still under development in `PCHPDDM`.
+
+=== Operational Summary
+
+The meeting confirms that HPDDM is an important component of the Exa-MA software and algorithmic ecosystem, especially for cases where solver robustness is more important than minimizing cost per iteration.
+
+The PETSc integration makes HPDDM accessible to several Exa-MA frameworks with a relatively transparent user workflow, provided that the framework exposes the required matrices and PETSc options.
+
+In the short term, the priority is to produce a clean benchmark of the DFN mini-app, first on CPU and then on GPU if possible. HPDDM should also be tested on at least one application outside `apps-petsc`, with the MFEM thermo-mechanical benchmark as the most immediate candidate.
+
+In the medium term, the focus should be on consolidating GPU support, testing AMD/HIP, evaluating cuDSS, and integrating HPDDM as a solver/preconditioner option in Feel++, TRUST, and other PETSc-based Exa-MA mini-apps.

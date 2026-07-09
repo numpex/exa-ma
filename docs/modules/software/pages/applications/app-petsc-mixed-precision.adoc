@@ -1,0 +1,121 @@
+= Impact of mixed-precision on PETSc solvers and preconditioners
+:page-layout: default
+:page-tags: application, mini-app, app-petsc-mixed-precision
+:page-illustration: fa-solid fa-cube
+:description: Impact of mixed-precision on PETSc solvers and preconditioners - Provide a benchmark framework to study the effects of mixed precision on PETSc Krylov solvers and preconditioners in terms of performance, convergence...
+:icons: font
+:page-status: planned
+:page-work-packages: WP3
+
+[.lead]
+Provide a benchmark framework to study the effects of mixed precision on PETSc Krylov solvers and preconditioners in terms of performance, convergence, and numerical accuracy.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP3
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+PETSc, HPDDM, MUMPS
+____
+====
+--
+
+
+
+== Overview
+
+Provide a benchmark framework to study the effects of mixed precision on PETSc Krylov solvers and preconditioners in terms of performance, convergence, and numerical accuracy.
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **PETSc**
+* **HPDDM**
+* **MUMPS**
+
+=== Parallel Frameworks
+
+* MPI
+* Multithread - OpenMP
+
+== Methods & Algorithms
+
+
+
+=== WP3: Solvers
+
+* direct solver
+* multi-precision
+* domain decomposition methods
+* krylov solver
+* preconditioning
+
+
+
+
+== Data Flow
+
+=== Inputs
+
+* PETSc binary
+* Matrix Market
+
+=== Outputs
+
+* Residual history
+* CSV logs
+
+== Benchmarking
+
+=== Metrics
+
+* Time To Solution
+* Energy To Solution
+
+=== Benchmark Scope
+
+* Solver Scaling
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Sorbonne U, Inria PARIS
+
+*Responsible:* P. Jolivet
+
+

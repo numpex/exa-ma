@@ -8,7 +8,7 @@ icon:network-wired[size=3x,role=text-success]
 
 Robust Schwarz and GenEO-type preconditioners available in CPU-GPU PETSc workflows
 
-`B7` Exascale algorithms `B9` Resilience & accuracy `B10` Productivity `B11` Reproducibility
+`B7` Exascale algorithms `B9` Resilience, robustness and accuracy `B10` Scientific productivity `B11` Reproducibility and replicability
 ____
 
 [.text-center]
@@ -19,7 +19,7 @@ icon:microchip[size=3x,role=text-primary]
 
 Black-box optimization for chemistry workloads, validated on LUMI from 3 to 560 parameters
 
-`B7` Exascale algorithms `B8` Discovery algorithms `B10` Productivity
+`B7` Exascale algorithms `B8` Discovery, design, and decision algorithms `B10` Scientific productivity
 ____
 
 ====

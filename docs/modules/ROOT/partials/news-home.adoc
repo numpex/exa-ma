@@ -1,17 +1,29 @@
-// Events: homepage selection from 21 configured events
+// Events: homepage selection from 25 configured events
 
 [.grid.grid-2.gap-2]
 ====
 [.text-center]
 ____
-icon:users[size=2x,role=text-primary] *May 07, 2026* | COMET Bercy, Paris +
-NumPEx Operational Committee Meeting - Agenda: news and BoD feedback; mid-term evaluation covering programme KPIs, international and industrial relations, scientific production, and societal impact; training in NumPEx; software production, including the continuation of...
+icon:th-large[size=2x,role=text-warning] *Jun 26, 2026* | Online (Zoom) +
+xref:news/2026/20260626-samurai-framework-webinar.adoc[SAMURAI Framework Webinar] - Framework discussion session on SAMURAI, focused on adaptive mesh representations, patch-based and cell-based data structures, multiresolution analysis, memory locality, and data-structure design for Exa-MA applications.
 ____
 
 [.text-center]
 ____
-icon:brain[size=2x,role=text-success] *Jun 08-12, 2026* | IRMA, Université de Strasbourg +
-https://majsc2026.pages.math.unistra.fr/[MAJSC 2026: ML & Autodiff in JAX] - Workshop on Machine Learning and Automatic Differentiation in JAX for Scientific Computing. Five-day intensive program covering JAX fundamentals, neural networks (Equinox/Flax), automatic differentiation for PDEs (Diffrax)...
+icon:code[size=2x,role=text-warning] *Jun 25, 2026* | Online (Zoom) +
+xref:news/2026/20260625-freefem-framework-webinar.adoc[FreeFEM{plus}{plus} Framework Webinar] - Framework webinar on FreeFEM{plus}{plus} as a high-level domain-specific language for finite-element multiphysics simulations, covering its software ecosystem, parallel capabilities, solver interfaces, and Exa-MA use cases.
+____
+
+[.text-center]
+____
+icon:industry[size=2x,role=text-warning] *Jun 23, 2026* | Online (Zoom) +
+xref:news/2026/20260623-trust-framework-webinar.adoc[TRUST Framework Webinar] - CEA TRUST framework discussion on GPU porting with Kokkos, PETSc/HYPRE/AMGX solver strategies, structured multigrid, HPDDM comparisons, mixed precision, TRUST-Uranie links, and MI300 access.
+____
+
+[.text-center]
+____
+icon:network-wired[size=2x,role=text-warning] *Jun 22, 2026* | Online (Zoom) +
+xref:news/2026/20260622-hpddm-petsc-framework-webinar.adoc[HPDDM / PETSc Framework Webinar] - HPDDM and PETSc framework session on GPU-enabled domain decomposition, PCHPDDM integration in PETSc, GENEO requirements, CPU/GPU benchmarking, AMD/HIP portability, and Exa-MA mini-app candidates.
 ____
 
 ====

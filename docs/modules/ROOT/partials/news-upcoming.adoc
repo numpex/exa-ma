@@ -1,36 +1,3 @@
-// Events: 3 upcoming
+// Events: 0 upcoming
 
-[.grid.grid-2.gap-2.items-start]
---
-[.card]
-====
-icon:users[size=2x,role=text-primary] *NumPEx Operational Committee Meeting*
-
-*May 07, 2026* | COMET Bercy, Paris
-
-Agenda: news and BoD feedback; mid-term evaluation covering programme KPIs, international and industrial relations, scientific production, and societal impact; training in NumPEx; software production, including the continuation of discussions on NumPEx software production and the production and organization for the second half of NumPEx.
-
-====
-
-[.card]
-====
-icon:brain[size=2x,role=text-success] *MAJSC 2026: ML & Autodiff in JAX*
-
-*Jun 08-12, 2026* | IRMA, Université de Strasbourg
-
-Workshop on Machine Learning and Automatic Differentiation in JAX for Scientific Computing. Five-day intensive program covering JAX fundamentals, neural networks (Equinox/Flax), automatic differentiation for PDEs (Diffrax), physics-informed neural networks, and neural operators. Organized by E. Franck (WP2 leader), V. Michel-Dansac, V. Vigon, and A. Musik from IRMA Strasbourg.
-
-https://majsc2026.pages.math.unistra.fr/[Event details and registration →]
-====
-
-[.card]
-====
-icon:landmark[size=2x,role=text-primary] *NumPEx/ANR Meeting*
-
-*Jun 11, 2026*
-
-Morning session devoted to presentations on the progress of the NumPEx research projects, including Exa-MA, followed by questions from the ANR. The afternoon will be set aside for discussions between the program's governing body and the ANR.
-
-====
-
---
+_No upcoming events scheduled._

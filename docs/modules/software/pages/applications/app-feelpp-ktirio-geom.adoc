@@ -1,0 +1,115 @@
+= Terrain Generation
+:page-layout: default
+:page-tags: application, demonstrator, app-feelpp-ktirio-geom
+:page-illustration: fa-solid fa-desktop
+:description: Terrain Generation - Demonstrate the creation of a city mesh including elevation, roads, water bodies and land markers....
+:icons: font
+:page-status: planned
+:page-work-packages: WP1
+
+[.lead]
+Demonstrate the creation of a city mesh including elevation, roads, water bodies and land markers.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Demonstrator
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Feel++, CGAL
+____
+====
+--
+
+
+
+== Overview
+
+Demonstrate the creation of a city mesh including elevation, roads, water bodies and land markers.
+
+=== Repository
+
+icon:code-branch[] https://github.com/numpex/apps-feelpp
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+* **CGAL**
+
+=== Parallel Frameworks
+
+* Multithread
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* unstructured mesh
+
+
+
+
+
+
+== Data Flow
+
+
+=== Outputs
+
+* Gmsh
+
+== Benchmarking
+
+=== Metrics
+
+* Strong Scalability
+* Weak Scalability
+* Time To Solution
+
+=== Benchmark Scope
+
+* Single Node
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra, Inria CA
+
+*Responsible:* V. Chabannes; C. Prud'homme
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+

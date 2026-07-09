@@ -11,6 +11,7 @@ highlights:
     icon: "network-wired"
     role: "text-success"
     summary: "Robust Schwarz and GenEO-type preconditioners available in CPU-GPU PETSc workflows"
+    bottlenecks: [B7, B9, B10, B11]
     page: "highlights/hpddm-petsc-3-25.adoc"
     attachment: "highlights/2026/hpddm-petsc-3.25.pdf"
 
@@ -22,6 +23,7 @@ highlights:
     icon: "microchip"
     role: "text-primary"
     summary: "Black-box optimization for chemistry workloads, validated on LUMI from 3 to 560 parameters"
+    bottlenecks: [B7, B8, B10]
     page: "highlights/pfda-bs-vqe-lumi.adoc"
     attachment: "highlights/2026/pfda-bs-vqe-lumi.pdf"
 
@@ -33,6 +35,7 @@ highlights:
     icon: "rocket"
     role: "text-primary"
     summary: "GenEO preconditioning on large-scale problems (45M DoFs, 2916 cores)"
+    bottlenecks: [B7, B9]
     page: "highlights/speedups.adoc"
 
   - id: lumi-8000-gpu-scale
@@ -43,6 +46,7 @@ highlights:
     icon: "microchip"
     role: "text-success"
     summary: "Bayesian optimization on LUMI supercomputer with fractal decomposition"
+    bottlenecks: [B7, B8]
     page: "highlights/scale.adoc"
 
   - id: neural-acceleration
@@ -53,6 +57,7 @@ highlights:
     icon: "brain"
     role: "text-info"
     summary: "Neural operators accelerating Newton iterations, domain-decomposed PINNs"
+    bottlenecks: [B7, B10]
     page: "highlights/neural-acceleration.adoc"
 
   - id: urban-meshing
@@ -63,6 +68,7 @@ highlights:
     icon: "city"
     role: "text-warning"
     summary: "From GIS data to watertight meshes for city-scale energy simulation"
+    bottlenecks: [B7, B10, B11]
     page: "highlights/urban-meshing.adoc"
 
   - id: feelpp-benchmarking
@@ -73,4 +79,5 @@ highlights:
     icon: "gauge-high"
     role: "text-danger"
     summary: "Automated CI/CD pipeline: code -> EuroHPC runs in < 24h"
+    bottlenecks: [B9, B10, B11]
     page: "highlights/feelpp-benchmarking.adoc"

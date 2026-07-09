@@ -1,5 +1,6 @@
 = Exa-MA 2026 General Assembly
 :page-tags: resource,news2026
+:page-parent: news.adoc
 :parent-catalogs: exama-home
 :page-illustration: fa-solid fa-users
 :description: The 2026 General Assembly concluded successfully with all WP presentations and materials now available.

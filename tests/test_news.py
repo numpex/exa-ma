@@ -65,6 +65,27 @@ def test_generate_home_cards_prefers_upcoming_events():
     assert "Recent Event" not in content
 
 
+def test_generate_home_cards_defaults_to_four_events():
+    events = [
+        {
+            "status": "recent",
+            "type": "announcement",
+            "title": f"Recent Event {idx}",
+            "date": f"2026-01-0{idx}",
+            "description": "Recent update",
+        }
+        for idx in range(1, 6)
+    ]
+
+    content = "\n".join(generate_home_cards(events))
+
+    assert "Recent Event 5" in content
+    assert "Recent Event 4" in content
+    assert "Recent Event 3" in content
+    assert "Recent Event 2" in content
+    assert "Recent Event 1" not in content
+
+
 def test_event_detail_link_skips_missing_page_xref():
     event = {
         "page": "news/2099/missing.adoc",

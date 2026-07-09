@@ -1,0 +1,596 @@
+= FreeFEM{plus}{plus} Framework Webinar
+:page-tags: resource,news2026,webinar
+:page-parent: news.adoc
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-code
+:description: Recording and slides from the June 25, 2026 FreeFEM{plus}{plus} framework webinar.
+
+[.lead]
+The FreeFEM{plus}{plus} framework webinar took place online on June 25, 2026.
+The session presented FreeFEM{plus}{plus} as a high-level domain-specific language for finite-element multiphysics simulations, with emphasis on solver interfaces, PETSc integration, Exa-MA mini-apps, and roadmap items across WP1, WP3, WP5, and WP7.
+
+== Recording and Materials
+
+*Date*: Thursday, June 25, 2026
+
+*Time*: 14:09 CEST
+
+*Format*: Online webinar
+
+*Recording*: link:https://us02web.zoom.us/rec/share/nlLNmqP2zWt1N290NJTUt7fE30MUtILT_OdAw8QwwUcqquTfCncitrqmy8syTPoy.SLE0-t0Ws20LUF8O?startTime=1782389356000[Zoom recording]
+
+*Passcode*: pass:[x^%Lz$2u]
+
+=== Slide Deck
+
+[.striped,cols="3,2,1",options="header"]
+|===
+|Deck |Presenter |PDF
+
+|FreeFEM: a high-level DSL for multi-physics simulations
+|Pierre-Henri Tournier
+|xref:attachment$webinars/2026/2026-freefem.pdf[icon:file-pdf[title=PDF]]
+|===
+
+[.webinar-report]
+== Meeting Report
+
+*Presentation*: FreeFEM: a high-level DSL for multi-physics simulations
+
+*Presenter*: Pierre-Henri Tournier
+
+*Context*: NumPEx / Exa-MA framework meeting
+
+*Main objective*: identify FreeFEM capabilities, links with Exa-MA work packages, existing and future mini-apps, and concrete follow-up actions.
+
+=== Participants Identified
+
+* Pierre-Henri Tournier
+* Christophe Prud'homme
+* Pierre Jolivet
+* Frederic Hecht
+* Isabelle Ramiere
+* Utpal Kiran
+
+=== General Overview of FreeFEM
+
+Pierre-Henri Tournier presented FreeFEM as a mature open-source high-level domain-specific language for finite element simulations.
+
+FreeFEM is designed to stay close to the mathematical variational formulation while still giving access to efficient numerical backends. The main message was that FreeFEM allows rapid prototyping, teaching, and application development without losing access to high-performance solver infrastructure.
+
+Key points:
+
+* FreeFEM is open source, distributed under LGPL 3.
+* It is written in C++ and supports distributed-memory parallelism with MPI.
+* It runs on Unix/Linux, Windows, macOS, smartphones, and supercomputers.
+* It provides a DSL close to finite element mathematics.
+* It has online documentation, a community forum, monthly developer/user meetings, FreeFEM days, and a YouTube channel.
+* The core development team includes Frederic Hecht, Pierre Jolivet, and Pierre-Henri Tournier.
+* Simon Legrand contributes to build system and CI/CD.
+* Pierre Marchand contributes to BEM-related developments.
+* Gerald Sadaka contributes to FreeVol / finite-volume aspects.
+* New developments are also supported by the ERC Synergy PSINumScat project, with research engineers and a postdoc.
+
+=== Main Software Capabilities
+
+The presentation highlighted the following FreeFEM capabilities:
+
+* PDEs in 2D and 3D, on curves, and on surfaces.
+* Simplicial meshes: segments in 1D, triangles in 2D, surface triangles in 3D, and tetrahedra in 3D.
+* In-house 2D unstructured mesh generation with `bamg`.
+* 2D anisotropic mesh adaptation.
+* 3D interfaces with TetGen, MMG, and ParMmg.
+* Finite element spaces: arbitrary order continuous Lagrange elements, Raviart-Thomas elements, Nedelec edge elements up to order 3, DG up to degree 4, and extension through C++ plugins.
+* Linear solvers: LU, Cholesky, Crout, CG, GMRES, UMFPACK, SuperLU, MUMPS, PETSc, and HPDDM through the parallel interface.
+* Nonlinear, time-dependent, optimization, and eigenvalue capabilities via PETSc/SLEPc: SNES, TS, TAO, EPS, and NEP.
+* Optimization libraries: IPOPT, NLopt, and PETSc TAO.
+* FEM-BEM coupling.
+* Time-dependent geometries and meshes.
+* C++ plugin mechanism for extending the language.
+* More than 600 examples.
+
+=== PETSc, HPDDM, and Parallel Computing
+
+The PETSc interface is a major strength of the FreeFEM ecosystem, largely thanks to Pierre Jolivet's work.
+
+The presentation showed how FreeFEM can move from a high-level variational form to matrix/vector access and PETSc-based parallel solution. The PETSc interface allows FreeFEM scripts to be used for prototyping and testing advanced methods while relying on scalable external solvers.
+
+Important points:
+
+* FreeFEM can assemble variational forms and expose the corresponding linear algebra objects.
+* PETSc enables scalable parallel linear algebra and solver workflows.
+* FreeFEM can be used as a rapid prototyping layer for new domain decomposition methods.
+* Final high-performance implementations can then be pushed into PETSc/HPDDM when mature.
+* This workflow is particularly relevant for Exa-MA WP3.
+
+=== Links with Exa-MA WP1: Discretization, Meshes, Adaptation
+
+The WP1 discussion focused on meshes, finite element spaces, mesh adaptation, and high-order or wave-oriented mesh generation.
+
+==== Current Capabilities
+
+FreeFEM currently supports only simplicial meshes. For mesh generation and adaptation, it provides or interfaces with:
+
+* `bamg` for 2D unstructured mesh generation;
+* in-house 2D anisotropic adaptation tools;
+* TetGen, MMG, and ParMmg for 3D workflows;
+* Mshmet for metric computation.
+
+==== D7.1 Benchmark
+
+A D7.1 benchmark was presented for 3D heterogeneous linear elasticity in a hollow cylinder, with P1 and P3 discretizations.
+
+The benchmark showed weak scaling results with increasing problem sizes. A key bottleneck was identified: initial mesh generation and partitioning are not scalable enough because the workflow currently relies on a global initial mesh.
+
+This is an important Exa-MA point because it separates scalable solver/assembly behavior from non-scalable preprocessing steps.
+
+==== Current WP1 Mini-App
+
+The current identified WP1 mini-app is `app-freefem-parmmg`.
+
+Its purpose is to test ParMmg performance for distributed anisotropic mesh adaptation on the Fichera corner.
+
+==== WP1 Roadmap
+
+The roadmap includes:
+
+* automatic generation of quasi-optimal non-uniform meshes for wave propagation;
+* identification of trapping, visible, and invisible regions using ray dynamics;
+* possible use of ray tracing on GPUs;
+* refinement of a posteriori estimators through ray-dynamics information;
+* implementation of curved elements, since only linear geometric elements are currently available.
+
+=== Links with Exa-MA WP3: Solvers and Domain Decomposition
+
+The WP3 link is particularly strong because FreeFEM developers are also involved in WP3 activities, especially through PETSc, HPDDM, and domain decomposition methods.
+
+==== Role of FreeFEM for WP3
+
+FreeFEM is useful for:
+
+* rapid setup of test cases for different physics;
+* prototyping of new domain decomposition algorithms;
+* testing PETSc/HPDDM and `ffddm` methods;
+* generating reproducible solver benchmarks;
+* exposing mathematical formulations and solver options in compact scripts.
+
+==== D7.1 Maxwell Benchmark
+
+A D7.1 benchmark was presented for time-harmonic second-order Maxwell equations in the unit cube, discretized with lowest-order Nedelec edge elements and solved with a nested two-grid optimized overlapping Schwarz preconditioner.
+
+This benchmark is relevant for H(curl) discretizations, high-frequency wave problems, domain decomposition methods, scalability studies, and PETSc/HPDDM-based solver development.
+
+==== Spectral Coarse Spaces for Waves
+
+The presentation also showed results on spectral coarse spaces for waves, including a cobra cavity test case partitioned into 2916 subdomains.
+
+The key point is that GenEO-like spectral coarse spaces can strongly reduce iteration counts for wave problems, but the coarse problem may become expensive at scale. This motivates further work on more efficient coarse spaces.
+
+==== WP3 Roadmap
+
+The WP3 roadmap includes:
+
+* rewrite of parallel data structures for distributed meshes and finite element spaces;
+* goal of moving from sequential to parallel scripts with minimal changes, for example by changing the mesh type from `mesh` to `Dmesh`;
+* ongoing work by P.-L. Bacq on these parallel data structures;
+* domain decomposition for coupled problems, including saddle-point systems from fluid-structure interaction;
+* mixed precision for GenEO, with adaptive strategies based on local condition number estimates;
+* PhD work of Tom Caruso on mixed precision;
+* improved GenEO-type domain decomposition preconditioners for H(curl) problems;
+* two-level domain decomposition for BEM discretizations of Helmholtz wave problems;
+* low-rank approximation for BEM, including hybrid cross approximation techniques through the Theia library, Htool-DDM, and FreeFEM.
+
+=== Links with Exa-MA WP5: Optimization
+
+FreeFEM has mature optimization capabilities and is interfaced with IPOPT, NLopt, and PETSc TAO.
+
+It also includes shape and topology optimization toolboxes, especially for elastic structures, fluid mechanics, and PDE-constrained optimization.
+
+A recent optimization book by Frederic Hecht, Gontran Lance, and Emmanuel Trelat provides FreeFEM scripts for PDE-constrained optimization.
+
+==== Current WP5 Mini-App
+
+The current identified WP5 mini-app is `app-freefem-shape-opt-fem`.
+
+Purpose:
+
+* shape optimization;
+* volume-preserving constraint;
+* finite element discretization.
+
+This app should be documented and made usable as an Exa-MA mini-app.
+
+=== Links with Exa-MA WP7: Software, CI/CD, Packaging, Tooling
+
+WP7-related points include software modernization and tooling.
+
+==== CI/CD
+
+FreeFEM's CI/CD pipeline is being overhauled using GitHub Actions, with work by Simon Legrand.
+
+==== CMake and Build System
+
+FreeFEM is moving toward a modernized CMake build system for:
+
+* multi-platform compilation;
+* testing;
+* packaging.
+
+This is important for Exa-MA reproducibility and deployment on supercomputers.
+
+==== Debugger
+
+A longer-term roadmap item is a FreeFEM debugger allowing users to pause the execution of a FreeFEM script, inspect FreeFEM variables, and improve the debugging experience for complex scripts.
+
+=== Discussion Points
+
+==== GPU Support
+
+A question was raised about GPU support.
+
+The conclusion is that there is currently no general FreeFEM GPU porting effort. The current FreeFEM workflow remains mostly CPU-oriented.
+
+However, there are possible GPU-related directions:
+
+* ray tracing / ray dynamics on GPUs for wave-oriented mesh generation;
+* use of external backends such as PETSc/HPDDM where relevant;
+* possible future hybrid CPU/GPU mini-apps, but no clear action was decided.
+
+==== StarPU
+
+StarPU was mentioned as a possible direction, but no concrete FreeFEM/StarPU work plan was decided.
+
+This should remain an open technical question unless a clear mini-app or runtime use case is identified.
+
+==== HHO / HDG
+
+The status of HHO / HDG support was raised.
+
+The conclusion was not fully clear. It should be clarified whether:
+
+* HHO / HDG are already supported directly in FreeFEM;
+* they can be implemented through existing DG or plugin mechanisms;
+* a dedicated extension would be required;
+* there is a simple existing script that could be turned into a mini-app.
+
+==== Variational Inequalities and Contact Mechanics
+
+Isabelle Ramiere asked whether the GenEO / saddle-point preconditioning results could extend to variational inequalities, for example contact mechanics.
+
+The answer was not definitive. The discussion suggested that:
+
+* the extension is not immediate;
+* additional mathematical work would be required;
+* contact mechanics could be a relevant follow-up topic;
+* this could become a PhD-level or postdoc-level research direction if aligned with Exa-MA priorities.
+
+==== Radiative Transfer / Ray Tracing Mini-App
+
+Christophe Prud'homme proposed considering a radiative transfer / ray tracing mini-app.
+
+The idea would be to test computations involving many rays emitted in many directions, ray/surface interactions, topography or geometric complexity, scalability, and potentially hybrid CPU/GPU execution.
+
+The proposed use case is not yet specified enough. It should be assessed with the FreeFEM team to determine whether it is a good Exa-MA mini-app and what exactly it would benchmark.
+
+==== Definition and Packaging of FreeFEM Mini-Apps
+
+A key discussion point was how to package FreeFEM mini-apps for Exa-MA.
+
+The expectation is that an `apps-freefem` repository should contain, for each app:
+
+* FreeFEM scripts;
+* input data;
+* run instructions;
+* expected outputs;
+* figures or plots when relevant;
+* reference results;
+* performance/scalability metrics;
+* information on software dependencies;
+* deployment instructions for supercomputers.
+
+Pierre Jolivet raised the question of what should be measured:
+
+* only selected timings, for example assembly or solver steps;
+* or the full FreeFEM workflow, including preprocessing, mesh partitioning, assembly, solver, and output.
+
+This should be decided explicitly for each app.
+
+==== Spack and Supercomputer Deployment
+
+FreeFEM is available in Spack, but the current Spack formula does not appear to provide the PETSc-enabled configuration required for the intended Exa-MA supercomputer workflows.
+
+Current practice on supercomputers is to rely on custom builds.
+
+Issues to clarify:
+
+* how to update or use the FreeFEM Spack package with PETSc support;
+* whether separate builds are needed for real and complex PETSc scalar types;
+* how to handle the FreeFEM/PETSc plugin configuration;
+* what the recommended Spack practice is for this case.
+
+Christophe Prud'homme proposed asking the Spack Slack channel about best practices for PETSc real/complex variants and FreeFEM packaging.
+
+==== Mixed Precision Mini-App
+
+Mixed precision was discussed as a promising Exa-MA mini-app direction.
+
+The goal should not be only to switch some computations to single precision. The more interesting goal is to provide a certified or at least justified mixed-precision strategy.
+
+Possible ingredients:
+
+* local factorization in single precision;
+* use of local condition number estimates;
+* adaptive choice of precision;
+* validation that the preconditioner is not damaged by reduced precision;
+* theoretical and numerical guarantees;
+* connection with HPDDM/PETSc and GenEO;
+* link with Tom Caruso's PhD.
+
+A possible mini-app name was mentioned: `apps-freefem-mixed-precision`.
+
+=== Mini-Apps and Benchmarks
+
+[.striped,cols="2,1,1,3,2,2,2",options="header"]
+|===
+|App / benchmark |Status |Exa-MA link |Scientific / technical objective |Stress point |Contacts |Next step
+
+|`app-freefem-parmmg`
+|Current / existing
+|WP1
+|Test ParMmg performance for distributed anisotropic mesh adaptation on the Fichera corner
+|Distributed mesh adaptation, scalability, preprocessing
+|Pierre-Henri Tournier; WP1 contacts; possibly A. Chabib
+|Document repository, scripts, data, expected outputs, and metrics
+
+|`app-freefem-shape-opt-fem`
+|Current / existing
+|WP5
+|Shape optimization with volume preservation using FEM
+|Optimization workflow, FreeFEM optimization toolboxes, IPOPT/NLopt/TAO links
+|Pierre-Henri Tournier; Frederic Hecht; WP5 contacts
+|Turn existing scripts into a reproducible Exa-MA app
+
+|3D heterogeneous elasticity hollow cylinder benchmark
+|Current benchmark / candidate app
+|WP1 / WP3
+|Weak scaling for P1/P3 discretizations on heterogeneous linear elasticity
+|Mesh generation, partitioning, assembly, solver, P1/P3 comparison
+|Pierre-Henri Tournier; Pierre Jolivet
+|Decide whether to promote from D7.1 benchmark to official app
+
+|Nearly incompressible elasticity with GenEO saddle-point preconditioner
+|Current result / candidate app
+|WP3
+|Robust GenEO domain decomposition for saddle-point problems
+|Heterogeneity, near incompressibility, saddle-point solvers, scalability
+|Pierre-Henri Tournier; Pierre Jolivet; Frederic Hecht
+|Clarify reproducibility package and expected benchmark metrics
+
+|Maxwell H(curl) D7.1 benchmark
+|Current benchmark / candidate app
+|WP3
+|Time-harmonic Maxwell equations with Nedelec elements and optimized Schwarz preconditioner
+|H(curl), wave problems, solver scalability, PETSc/HPDDM
+|Pierre Jolivet; Pierre-Henri Tournier
+|Decide whether to include as `apps-freefem-maxwell` or similar
+
+|Cobra cavity / spectral coarse spaces for waves
+|Current result / future app
+|WP3
+|Test GenEO-like spectral coarse spaces for high-frequency wave propagation
+|Wave propagation, coarse space size, scalability, iteration count reduction
+|Pierre-Henri Tournier; Pierre Jolivet; F. Nataf / E. Parolin links
+|Assess whether this is mature enough for an app
+
+|Mixed precision GenEO / HPDDM mini-app
+|Future / proposed
+|WP3
+|Evaluate adaptive mixed precision based on local condition numbers
+|Local factorizations, preconditioner robustness, theoretical guarantees
+|Pierre Jolivet; Pierre-Henri Tournier; Tom Caruso
+|Define minimal demonstrator and certification criteria
+
+|Radiative transfer / ray tracing mini-app
+|Future / exploratory
+|WP1 / WP3 / WP7
+|Test ray/surface interaction workflows with many rays and geometric complexity
+|Scalability, geometry, possible hybrid CPU/GPU execution
+|Christophe Prud'homme; Pierre-Henri Tournier; application owner TBD
+|Define physics, geometry, metrics, and whether FreeFEM is the right framework
+
+|Wave-oriented mesh adaptation using ray dynamics
+|Future / roadmap
+|WP1
+|Generate quasi-optimal non-uniform meshes for wave propagation using trapping/visible/invisible regions
+|Ray dynamics, a posteriori indicators, mesh adaptation
+|A. Chabib; Pierre-Henri Tournier
+|Clarify relation with `app-freefem-parmmg` and whether it becomes a separate app
+
+|Curved elements / high-order geometry app
+|Future / roadmap
+|WP1
+|Validate curved elements once implemented
+|Geometry approximation, high-order meshes, wave accuracy
+|Pierre-Henri Tournier; A. Chabib
+|Wait for implementation status; define validation case
+
+|Domain decomposition for coupled FSI saddle-point systems
+|Future / roadmap
+|WP3
+|Investigate DD strategies for coupled fluid-structure interaction
+|Coupled multiphysics, saddle-point systems, solver robustness
+|L. Spies; Pierre-Henri Tournier; Pierre Jolivet
+|Clarify app candidate and benchmark problem
+
+|GenEO for H(curl) problems
+|Future / roadmap
+|WP3
+|Improve GenEO-type DD preconditioners for H(curl) problems
+|Heterogeneities, topology, expensive coarse problem
+|Pierre-Henri Tournier; Pierre Jolivet
+|Identify benchmark and performance target
+
+|Two-level DD for BEM Helmholtz problems
+|Future / roadmap
+|WP3
+|Extend extended harmonic GenEO to BEM discretizations of wave problems
+|BEM, Helmholtz, two-level DD
+|E. Parolin; P. Marchand; Pierre-Henri Tournier
+|Decide whether it should become an Exa-MA app
+
+|Low-rank BEM / HCA app
+|Future / roadmap
+|WP3
+|Interface Theia in Htool-DDM and FreeFEM for hybrid cross approximation
+|Low-rank compression, BEM operators, memory/performance
+|I. Chollet; P. Marchand; Pierre-Henri Tournier
+|Clarify maturity and Exa-MA relevance
+
+|HHO / HDG example
+|Open / unclear
+|WP1 / WP3
+|Clarify whether HHO/HDG support can produce an app
+|Discretization support, implementation status
+|Pierre-Henri Tournier; Frederic Hecht; Pierre Jolivet
+|Clarify current support and possible example
+
+|StarPU-related FreeFEM app
+|Open / unclear
+|WP7 / runtime
+|Explore whether StarPU has a meaningful role in a FreeFEM workflow
+|Task runtime, hybrid execution
+|Christophe Prud'homme; Pierre-Henri Tournier
+|Keep open until a concrete use case is identified
+|===
+
+=== Tasks and Action Items
+
+[.striped,cols="1,3,2,3",options="header"]
+|===
+|# |Task |Owner(s) |Target / comment
+
+|1
+|Finalize the official list of FreeFEM apps to track in the Exa-MA apps table
+|Christophe Prud'homme; Pierre-Henri Tournier
+|Include current apps and candidate/future apps.
+
+|2
+|Create or complete the `apps-freefem` repository structure
+|Pierre-Henri Tournier; WP7 support
+|Repository should include scripts, data, README, run instructions, expected outputs, plots, and performance metrics.
+
+|3
+|Document `app-freefem-parmmg`
+|Pierre-Henri Tournier
+|Include Fichera corner setup, ParMmg workflow, metrics, and scalability results.
+
+|4
+|Document `app-freefem-shape-opt-fem`
+|Pierre-Henri Tournier; Frederic Hecht
+|Reuse existing FreeFEM shape optimization scripts and make them reproducible for Exa-MA.
+
+|5
+|Decide whether the D7.1 3D elasticity benchmark becomes an official FreeFEM app
+|Pierre-Henri Tournier; Christophe Prud'homme
+|Important because it exposes the mesh generation/partitioning bottleneck.
+
+|6
+|Decide whether the D7.1 Maxwell H(curl) benchmark becomes an official FreeFEM app
+|Pierre Jolivet; Pierre-Henri Tournier
+|Candidate for WP3 solver and domain-decomposition benchmarking.
+
+|7
+|Define what each FreeFEM app should measure
+|Pierre Jolivet; Pierre-Henri Tournier; Christophe Prud'homme
+|Clarify kernel timings versus complete workflow timings.
+
+|8
+|Add standard benchmark metadata for each FreeFEM app
+|WP7; Pierre-Henri Tournier
+|Problem size, number of ranks, dofs, discretization, solver options, timings, output files.
+
+|9
+|Clarify GPU status and possible GPU-related routes
+|Pierre-Henri Tournier; Pierre Jolivet; Christophe Prud'homme
+|Current status: no general GPU effort. Possible routes: PETSc/HPDDM backends or ray tracing/ray dynamics.
+
+|10
+|Clarify whether StarPU is relevant for FreeFEM
+|Christophe Prud'homme; Pierre-Henri Tournier
+|No concrete direction decided yet. Needs a real use case.
+
+|11
+|Clarify HHO / HDG support in FreeFEM
+|Pierre-Henri Tournier; Frederic Hecht; Pierre Jolivet
+|Determine whether examples exist and whether they can become mini-apps.
+
+|12
+|Assess the radiative transfer / ray tracing mini-app idea
+|Christophe Prud'homme; Pierre-Henri Tournier
+|Define physics, geometry, expected outputs, scalability objective, and implementation route.
+
+|13
+|Clarify the Spack deployment strategy for FreeFEM on supercomputers
+|Pierre Jolivet; Pierre-Henri Tournier
+|Current Spack formula does not appear to support the needed PETSc-enabled workflow.
+
+|14
+|Ask the Spack community about PETSc real/complex variants
+|Christophe Prud'homme
+|Especially whether separate FreeFEM/PETSc builds are needed and how to package them.
+
+|15
+|Clarify FreeFEM builds with PETSc real and complex scalar types
+|Pierre Jolivet; Frederic Hecht; Pierre-Henri Tournier
+|Important for wave/Maxwell examples and PETSc plugin configuration.
+
+|16
+|Define the mixed-precision FreeFEM mini-app
+|Pierre Jolivet; Pierre-Henri Tournier; Tom Caruso
+|Candidate name: `apps-freefem-mixed-precision`.
+
+|17
+|Specify the certification/validation criteria for mixed precision
+|Pierre Jolivet; Tom Caruso
+|Need to show that reduced precision does not damage the preconditioner.
+
+|18
+|Identify which solver components can use single precision
+|Pierre Jolivet; Tom Caruso; Pierre-Henri Tournier
+|Likely focus: local factorizations and local condition-number-based strategies.
+
+|19
+|Follow up on GenEO / saddle-point preconditioners for variational inequalities and contact
+|Isabelle Ramiere; Pierre-Henri Tournier; Pierre Jolivet; Frederic Hecht
+|Potential mathematical research direction; not immediate.
+
+|20
+|Clarify the roadmap for parallel data structures and `Dmesh`
+|P.-L. Bacq; Pierre-Henri Tournier
+|Important for simplifying the transition from sequential to parallel FreeFEM scripts.
+
+|21
+|Clarify the roadmap for curved elements
+|Pierre-Henri Tournier; A. Chabib
+|Could become a WP1 validation app once implementation is mature.
+
+|22
+|Clarify the wave mesh adaptation / ray dynamics roadmap
+|A. Chabib; Pierre-Henri Tournier
+|Link with quasi-optimal non-uniform meshes and a posteriori estimators.
+
+|23
+|Assess whether BEM / Helmholtz / HCA developments should become Exa-MA apps
+|Pierre-Henri Tournier; P. Marchand; E. Parolin; I. Chollet
+|Future WP3 apps if maturity and reproducibility are sufficient.
+
+|24
+|Track FreeFEM CI/CD, CMake, packaging, and debugger work under WP7
+|Simon Legrand; Pierre-Henri Tournier
+|Relevant for reproducibility, deployment, and user-facing robustness.
+
+|25
+|Produce a concise summary of this meeting for the shared Google Doc
+|Pierre-Henri Tournier; Christophe Prud'homme
+|Include app table and task list.
+|===

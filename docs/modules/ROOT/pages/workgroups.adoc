@@ -4,7 +4,6 @@
 :page-illustration: fa-solid fa-people-group
 :description: Overview of NumPEx transversal workgroups and Exa-MA representatives.
 :icons: font
-:page-alternating-sections: true
 
 [.lead]
 The NumPEx program organizes cross-cutting workgroups that span all constituent projects, fostering collaboration and addressing broad challenges relevant to exascale computing.

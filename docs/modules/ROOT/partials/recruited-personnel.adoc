@@ -1,10 +1,10 @@
-// Total recruited personnel: 27
+// Total recruited personnel: 28
 :sectnums!:
 
 [discrete]
 == icon:graduation-cap[] PhD Students
 
-_12 personnel_
+_13 personnel_
 
 [.striped.recruited,cols="2,2,2,2,2,2",options="header"]
 |===
@@ -75,6 +75,15 @@ Antoine Deleforge
 |Inria
 |Project start - Present
 |Frédéric Nataf
+
+|*Olivier*
+|Maël
+|WP3: Solvers for linear algebra and multiphysics
+|Inria
+|January 2026 - Present
+|Emmanuel Agullo +
+Luc Giraud +
+Théo Mary
 
 |*Tabouret*
 |Alexandre
@@ -251,10 +260,10 @@ WP7: Showroom, Benchmarking and Co-Design coordination
 |===
 |Indicator |Value
 
-|Total Recruited Personnel |*27*
-|PhD Students |12
+|Total Recruited Personnel |*28*
+|PhD Students |13
 |Postdoctoral Researchers |6
 |Research Engineers |8
 |Women |2 (7%)
-|Men |25 (93%)
+|Men |26 (93%)
 |===

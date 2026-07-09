@@ -1,5 +1,6 @@
 = Trans-Numériques 2026
 :page-tags: resource,news2026
+:page-parent: news.adoc
 :parent-catalogs: exama-home
 :page-illustration: fa-solid fa-network-wired
 :description: Exa-MA contributions and presentation materials from Trans-Numériques 2026.

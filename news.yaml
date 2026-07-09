@@ -7,7 +7,7 @@ events:
 
   - id: opecom-2026-05-07
     type: assembly
-    status: upcoming
+    status: archived
     title: "NumPEx Operational Committee Meeting"
     date: "2026-05-07"
     location: "COMET Bercy, Paris"
@@ -34,7 +34,7 @@ events:
 
   - id: majsc-2026
     type: training
-    status: upcoming
+    status: recent
     title: "MAJSC 2026: ML & Autodiff in JAX"
     date: "2026-06-08"
     end_date: "2026-06-12"
@@ -50,7 +50,7 @@ events:
 
   - id: anr-numpex-2026
     type: assembly
-    status: upcoming
+    status: recent
     title: "NumPEx/ANR Meeting"
     date: "2026-06-11"
     icon: "landmark"
@@ -60,6 +60,62 @@ events:
       discussions between the program's governing body and the ANR.
 
   # Recent events (displayed as table)
+  - id: framework-webinar-samurai-2026
+    type: webinar
+    status: recent
+    title: "SAMURAI Framework Webinar"
+    date: "2026-06-26"
+    location: "Online (Zoom)"
+    icon: "th-large"
+    description: >
+      Framework discussion session on SAMURAI, focused on adaptive mesh representations,
+      patch-based and cell-based data structures, multiresolution analysis, memory locality,
+      and data-structure design for Exa-MA applications.
+    page: "news/2026/20260626-samurai-framework-webinar.adoc"
+    link_text: "View recording and slides ->"
+
+  - id: framework-webinar-freefem-2026
+    type: webinar
+    status: recent
+    title: "FreeFEM{plus}{plus} Framework Webinar"
+    date: "2026-06-25"
+    location: "Online (Zoom)"
+    icon: "code"
+    description: >
+      Framework webinar on FreeFEM{plus}{plus} as a high-level domain-specific language for
+      finite-element multiphysics simulations, covering its software ecosystem,
+      parallel capabilities, solver interfaces, and Exa-MA use cases.
+    page: "news/2026/20260625-freefem-framework-webinar.adoc"
+    link_text: "View recording and slides ->"
+
+  - id: framework-webinar-trust-2026
+    type: webinar
+    status: recent
+    title: "TRUST Framework Webinar"
+    date: "2026-06-23"
+    location: "Online (Zoom)"
+    icon: "industry"
+    description: >
+      CEA TRUST framework discussion on GPU porting with Kokkos, PETSc/HYPRE/AMGX
+      solver strategies, structured multigrid, HPDDM comparisons, mixed precision,
+      TRUST-Uranie links, and MI300 access.
+    page: "news/2026/20260623-trust-framework-webinar.adoc"
+    link_text: "View report, recording, and slides ->"
+
+  - id: framework-webinar-hpddm-petsc-2026
+    type: webinar
+    status: recent
+    title: "HPDDM / PETSc Framework Webinar"
+    date: "2026-06-22"
+    location: "Online (Zoom)"
+    icon: "network-wired"
+    description: >
+      HPDDM and PETSc framework session on GPU-enabled domain decomposition,
+      PCHPDDM integration in PETSc, GENEO requirements, CPU/GPU benchmarking,
+      AMD/HIP portability, and Exa-MA mini-app candidates.
+    page: "news/2026/20260622-hpddm-petsc-framework-webinar.adoc"
+    link_text: "View report, recording, and slides ->"
+
   - id: trans-numeriques-2026
     type: external
     status: archived

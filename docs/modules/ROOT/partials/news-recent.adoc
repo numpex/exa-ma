@@ -1,7 +1,36 @@
-// Events: 9 recent
+// Events: 15 recent
 
 [cols="1,5",frame=none,grid=rows]
 |===
+|icon:th-large[size=2x] *Jun 26, 2026*
+|**SAMURAI Framework Webinar** – Online (Zoom) +
+Framework discussion session on SAMURAI, focused on adaptive mesh representations, patch-based and cell-based data structures, multiresolution analysis, memory locality, and data-structure design for Exa-MA applications. +
+xref:news/2026/20260626-samurai-framework-webinar.adoc[View recording and slides ->]
+
+|icon:code[size=2x] *Jun 25, 2026*
+|**FreeFEM{plus}{plus} Framework Webinar** – Online (Zoom) +
+Framework webinar on FreeFEM{plus}{plus} as a high-level domain-specific language for finite-element multiphysics simulations, covering its software ecosystem, parallel capabilities, solver interfaces, and Exa-MA use cases. +
+xref:news/2026/20260625-freefem-framework-webinar.adoc[View recording and slides ->]
+
+|icon:industry[size=2x] *Jun 23, 2026*
+|**TRUST Framework Webinar** – Online (Zoom) +
+CEA TRUST framework discussion on GPU porting with Kokkos, PETSc/HYPRE/AMGX solver strategies, structured multigrid, HPDDM comparisons, mixed precision, TRUST-Uranie links, and MI300 access. +
+xref:news/2026/20260623-trust-framework-webinar.adoc[View report, recording, and slides ->]
+
+|icon:network-wired[size=2x] *Jun 22, 2026*
+|**HPDDM / PETSc Framework Webinar** – Online (Zoom) +
+HPDDM and PETSc framework session on GPU-enabled domain decomposition, PCHPDDM integration in PETSc, GENEO requirements, CPU/GPU benchmarking, AMD/HIP portability, and Exa-MA mini-app candidates. +
+xref:news/2026/20260622-hpddm-petsc-framework-webinar.adoc[View report, recording, and slides ->]
+
+|icon:landmark[size=2x] *Jun 11, 2026*
+|**NumPEx/ANR Meeting** +
+Morning session devoted to presentations on the progress of the NumPEx research projects, including Exa-MA, followed by questions from the ANR. The afternoon will be set aside for discussions between the program's governing body and the ANR. +
+
+|icon:brain[size=2x] *Jun 08-12, 2026*
+|**MAJSC 2026: ML & Autodiff in JAX** – IRMA, Université de Strasbourg +
+Workshop on Machine Learning and Automatic Differentiation in JAX for Scientific Computing. Five-day intensive program covering JAX fundamentals, neural networks (Equinox/Flax), automatic differentiation for PDEs (Diffrax), physics-informed neural networks, and neural operators. Organized by E. Franck (WP2 leader), V. Michel-Dansac, V. Vigon, and A. Musik from IRMA Strasbourg. +
+https://majsc2026.pages.math.unistra.fr/[Event details and presentations]
+
 |icon:user-graduate[size=2x] *Jan 21, 2026*
 |**Daria Hrebenshchykova appointed Exa-MA YoungPEx representative** +
 At the 2026 General Assembly, Daria Hrebenshchykova (PhD student, WP2, Inria) was appointed as the new Exa-MA representative in the YoungPEx early-career network. YoungPEx brings together PhD students and postdocs across the NumPEx consortium through workshops, seminars, and networking events. +

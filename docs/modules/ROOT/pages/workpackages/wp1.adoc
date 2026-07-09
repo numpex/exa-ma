@@ -2,7 +2,6 @@
 :page-tags: manual,wp
 :parent-catalogs: wp-catalog
 :page-illustration: fa-solid fa-draw-polygon
-:page-alternating-sections: true
 :icons: font
 
 [.lead]

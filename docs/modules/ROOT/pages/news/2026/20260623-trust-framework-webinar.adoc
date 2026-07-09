@@ -1,0 +1,298 @@
+= TRUST Framework Webinar
+:page-tags: resource,news2026,webinar
+:page-parent: news.adoc
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-industry
+:description: Recording, slides, and extracted meeting report from the June 23, 2026 CEA TRUST framework webinar.
+
+[.lead]
+The TRUST framework webinar took place online on June 23, 2026.
+The discussion focused on CEA TRUST, GPU porting with Kokkos, solver and preconditioner strategies, mini-apps, mixed precision, and possible links with HPDDM, Uranie, WP3, WP6, and AMD MI300 access.
+
+== Recording and Materials
+
+*Date*: Tuesday, June 23, 2026
+
+*Time*: 10:07 CEST
+
+*Format*: Online webinar
+
+*Recording*: link:https://us02web.zoom.us/rec/share/jgOK59D-lLTz5rqrJeqSDH_O1fVAzJcBV3WgwsDqYOIUbg4_R1Hid4bR92SJ17Vq.s_6Y4CRiD8zJPgK2?startTime=1782202079000[Zoom recording]
+
+*Passcode*: pass:[6kB1MC+q]
+
+=== Slide Deck
+
+[.striped,cols="3,2,1",options="header"]
+|===
+|Deck |Presenter |PDF
+
+|Plateforme TRUST - WP3: Solveurs, WP7: Benchmarking
+|Pierre Ledac and TRUST team
+|xref:attachment$webinars/2026/2026-trust.pdf[icon:file-pdf[title=PDF]]
+|===
+
+[.webinar-report]
+== Meeting Report
+
+*Date*: June 23, 2026
+
+*Context*: Exa-MA / NumPEx discussion on the TRUST framework, solver strategies, GPU porting, mini-apps, and possible links with HPDDM, Uranie, WP3, WP6, and AMD MI300 access.
+
+*Participants*: Christophe Prud'homme; Pierre Ledac - CEA, TRUST; Pierre Jolivet; Utpal Kiran; Erik Fabrizzi; Ansar Calloo; Lucas Spies; Vincent Chabannes; Juliette Antonczak
+
+=== Purpose of the Discussion
+
+The meeting focused on the status and possible Exa-MA integration of the CEA TRUST framework, with emphasis on:
+
+* GPU porting and performance portability, mainly through Kokkos;
+* linear solver and preconditioner strategies on GPU;
+* structured versus algebraic multigrid approaches;
+* possible TRUST-based mini-apps for Exa-MA;
+* links with HPDDM and solver benchmarking;
+* possible TRUST-Uranie activities for uncertainty quantification;
+* mixed precision as a future optimization direction;
+* access to MI300 GPU resources through the GENCI Grand Challenge.
+
+=== TRUST Framework Status
+
+Pierre Ledac presented TRUST as a CEA simulation framework used for fluid mechanics and thermo-hydraulic applications, with a significant application ecosystem. The framework is being progressively ported to GPU using Kokkos.
+
+The GPU migration is already effective for several kernels and applications, but the port is still hybrid in places. Some parts of the computation remain on CPU, in particular some matrix construction or initialization steps, while GPU-resident updates and kernels are progressively introduced.
+
+A key point is that solver and preconditioner performance is now one of the main bottlenecks for large GPU runs. TRUST currently relies on a solver ecosystem involving PETSc, HYPRE, AMGX, and potentially Ginkgo and HPDDM.
+
+=== Matrix Assembly and GPU Residency
+
+Utpal Kiran raised a question about matrix assembly. The answer was that TRUST currently has several assembly paths, depending on the application and discretization.
+
+The current situation is hybrid:
+
+* in some cases, the matrix is built on CPU and then copied to GPU;
+* if the matrix is constant, this may be acceptable because the cost is paid only once;
+* for Jacobian coefficients or similar updates, PETSc GPU interfaces can be used to update values directly on the device;
+* full GPU-resident sparse matrix assembly is still work in progress.
+
+This is not seen as a blocker for the first solver-oriented mini-apps, but it is important for future work on fully GPU-resident workflows and nonlinear/time-dependent simulations.
+
+=== Linear Solvers: HYPRE, AMGX, PETSc, Ginkgo, HPDDM
+
+Pierre Jolivet asked what alternative Ginkgo solvers could perform better than the current TRUST solver stack.
+
+Pierre Ledac answered that, at this stage, he is not yet confident that Ginkgo performs better than the current combinations used in TRUST, in particular PETSc/HYPRE and AMGX. The comparison still needs systematic benchmarking, including convergence behavior, robustness, and time-to-solution.
+
+The solver candidates to compare include:
+
+* PETSc/HYPRE, especially BoomerAMG;
+* AMGX;
+* Ginkgo;
+* HPDDM;
+* structured HYPRE solvers for structured meshes;
+* possibly AMD/ROCm-specific solver kernels if such work becomes available through NumPEx or AMD collaborations.
+
+=== Structured Multigrid and HYPRE
+
+A specific discussion concerned structured meshes. TRUST is already using HYPRE successfully on tetrahedral/unstructured cases. However, for structured meshes, algebraic multigrid may be too costly, and structured multigrid could be a better option.
+
+The open technical question is how to expose TRUST structured mesh information to HYPRE:
+
+* either through PETSc data structures, for example DMDA;
+* or by directly providing the relevant structured information to HYPRE, possibly using SStruct-type solvers.
+
+Pierre Jolivet noted that he was not sure whether the necessary PETSc plumbing exists between DMDA and HYPRE SStruct solvers, and said he would check.
+
+=== Mini-Apps and Benchmarks
+
+Christophe Prud'homme emphasized the need for mini-apps.
+
+The first realistic TRUST mini-apps should likely be solver-oriented rather than full discretization mini-apps. TRUST can provide representative matrices and linear systems, together with PETSc option files, allowing comparison of several preconditioners and solvers.
+
+[.striped,cols="2,1,1,3,2,2,2",options="header"]
+|===
+|App / benchmark |Status |Exa-MA link |Scientific / technical objective |Stress point |Contacts |Next step
+
+|TRUST solver mini-app based on representative linear systems
+|Proposed / priority
+|WP3 / WP7
+|Export or provide representative TRUST linear systems and compare solver/preconditioner strategies
+|Reproducibility, representative matrices, PETSc option files
+|TRUST / Exa-MA / HPDDM team
+|Define first mini-app; starting point: `apps-trust-hpddm-mg`
+
+|TRUST preconditioner benchmark
+|Proposed
+|WP3
+|Compare HPDDM, HYPRE BoomerAMG, AMGX, Ginkgo, and PETSc-based strategies
+|Convergence, robustness, GPU performance, memory footprint
+|TRUST / Exa-MA WP3
+|Establish benchmark protocol and metrics
+
+|Structured multigrid test case
+|Candidate
+|WP3
+|Evaluate structured HYPRE/SStruct or PETSc DMDA path for structured TRUST meshes
+|Exposing structured mesh data, AMG cost
+|TRUST; Pierre Jolivet
+|Check DMDA-to-HYPRE SStruct feasibility; identify test case
+
+|Mixed-precision verification/validation cases
+|Future / proposed
+|WP3 / WP7
+|Test mixed precision for solver/preconditioner memory and bandwidth pressure
+|Correctness, physical validation, robustness, time-to-solution
+|TRUST / Exa-MA
+|Define small verification and larger validation cases
+
+|TRUST-Uranie UQ workflow
+|Future
+|WP6 / WP7
+|Package and benchmark coupled TRUST-Uranie uncertainty quantification workflows
+|Roadmap, engineer profile, reproducible workflows
+|Exa-MA / CEA / Ecole Polytechnique
+|Build roadmap within roughly six months
+
+|MI300 validation campaign
+|Future / access-dependent
+|WP3 / WP7
+|Large GPU campaign for TRUST simulations and solver stack
+|MI300 access strategy, GPU-hour needs, readiness
+|Christophe Prud'homme; TRUST
+|Clarify Grand Challenge strategy
+|===
+
+=== Mixed Precision
+
+Mixed precision was identified as an important future direction. Once the Kokkos/GPU porting work has matured, reducing memory traffic and bandwidth pressure becomes a major optimization target.
+
+The main motivations are:
+
+* reducing the amount of data transferred to the GPU;
+* reducing memory footprint;
+* improving bandwidth-bound kernels;
+* potentially accelerating solvers and preconditioners.
+
+HYPRE already seems to have some support for lower precision or single precision in parts of the solver stack, but it is not yet clear how easily this can be accessed from PETSc or how well it is documented.
+
+A robust mixed-precision activity would require:
+
+* a small verification case to test correctness and performance quickly;
+* a larger validation case, for example a turbulent flow simulation lasting several hours, to check that physical quantities such as turbulence spectra remain acceptable;
+* metrics on convergence, accuracy, robustness, memory footprint, and time-to-solution.
+
+This could become a good Exa-MA mini-app or demonstrator topic, especially if connected to WP3 solver activities and AMD GPU work.
+
+=== TRUST, Uranie, and WP6
+
+A possible link between TRUST and Uranie was discussed in the context of WP6 and uncertainty quantification.
+
+Christophe recalled that Exa-MA may be able to support approximately one year of engineer time. The engineer would likely be recruited at Ecole Polytechnique but would work closely with CEA, with possible interactions around both Uranie and TRUST.
+
+The exact roadmap still needs to be defined. Candidate activities include:
+
+* packaging and deployment of TRUST/Uranie benchmark workflows;
+* reproducible benchmarking;
+* definition and implementation of benchmark cases;
+* TRUST-only benchmark support;
+* Uranie-only workflow support;
+* coupled TRUST-Uranie uncertainty quantification workflows;
+* integration with Exa-MA mini-app and benchmarking strategy.
+
+The group agreed that there is time to define the work, but that the roadmap should converge within roughly six months in order to prepare the recruitment profile.
+
+=== MI300 / GENCI Grand Challenge Access
+
+The GENCI Grand Challenge on MI300 GPUs was discussed.
+
+TRUST is interested, especially because access to JUPITER may be uncertain and TRUST has a large simulation campaign that could benefit from MI300 resources. Pierre Ledac estimated that TRUST might need around *100,000 GPU-hours*.
+
+Exa-MA is preparing a broader request involving several frameworks and groups. The open strategic question is whether TRUST should:
+
+* submit independently, because it has a large physics-driven simulation campaign; or
+* join the Exa-MA/NumPEx request, if this is strategically preferable.
+
+Christophe will check the best strategy and come back to Pierre. TRUST indicated that it is ready to start, including during the September-October access window.
+
+=== Software Versioning and Regression Testing
+
+The discussion also covered PETSc and Kokkos version management.
+
+The main conclusion is that TRUST needs to follow GPU-related updates closely, because new versions often include important bug fixes and performance improvements. However, updates can also introduce regressions or numerical changes that are costly to analyze.
+
+Pierre emphasized the importance of having many regression tests covering all relevant solver configurations. Such tests may become essential several years later when a PETSc, Kokkos, or solver-stack update changes behavior.
+
+One CPU-side PETSc update was mentioned as causing blocking issues in parallel regression tests; the exact version should be checked before documenting this externally.
+
+=== AMD Solver/Kernel Collaboration
+
+Pierre Ledac asked about a previous AMD-related discussion mentioning possible solver developments.
+
+Christophe clarified that the items discussed in the AMD workshop were mostly proposals or possible co-design directions, not necessarily existing AMD solver products. Examples included GPU-resident solver paths, SpMV, smoothers, Krylov methods, collective reductions, mixed precision, convergence behavior, and memory footprint.
+
+Christophe will check where the AMD/NumPEx discussions stand and whether TRUST could be connected to future AMD co-design activities.
+
+=== Tasks and Action Items
+
+[.striped,cols="1,3,2,3",options="header"]
+|===
+|# |Task |Owner(s) |Target / comment
+
+|1
+|Check whether PETSc DMDA can be connected cleanly to HYPRE SStruct solvers
+|Pierre Jolivet
+|Needed to choose structured multigrid integration strategy
+
+|2
+|Define first TRUST solver mini-app based on representative linear systems
+|TRUST / Exa-MA / HPDDM team
+|Starting point: `apps-trust-hpddm-mg`
+
+|3
+|Compare PETSc/HYPRE, AMGX, Ginkgo, HPDDM on representative TRUST systems
+|TRUST / Exa-MA WP3
+|Include convergence, robustness, GPU performance, memory footprint
+
+|4
+|Identify structured mesh test case for structured multigrid
+|TRUST
+|Especially relevant where AMG is too costly
+
+|5
+|Define mixed-precision verification and validation cases
+|TRUST / Exa-MA
+|Need both small correctness/performance case and larger physical validation case
+
+|6
+|Build roadmap for TRUST-Uranie engineer activity
+|Exa-MA / CEA / Ecole Polytechnique
+|Target convergence within roughly six months
+
+|7
+|Clarify MI300 Grand Challenge strategy: TRUST standalone or via Exa-MA
+|Christophe Prud'homme
+|TRUST may need about 100,000 GPU-hours and is ready to start
+
+|8
+|Share TRUST presentation slides
+|Pierre Ledac
+|Via Slack or email
+
+|9
+|Check AMD/NumPEx solver co-design status and possible TRUST involvement
+|Christophe Prud'homme
+|Especially around GPU-resident solvers and mixed precision
+|===
+
+=== Proposed Exa-MA Framing
+
+TRUST appears to be a strong candidate framework for Exa-MA WP3 activities because it provides realistic, production-grade solver and preconditioner challenges on modern GPU architectures.
+
+The most pragmatic short-term objective is not yet to define a full discretization mini-app, but rather to create a solver-oriented TRUST mini-app suite. This suite should expose representative systems, allow controlled solver/preconditioner comparisons, and provide reproducible performance and robustness metrics.
+
+A good medium-term trajectory would be:
+
+. solver benchmark mini-apps;
+. structured multigrid experiments;
+. HPDDM comparison and integration;
+. mixed-precision experiments;
+. TRUST-Uranie uncertainty quantification workflow;
+. MI300 large-scale validation campaign.

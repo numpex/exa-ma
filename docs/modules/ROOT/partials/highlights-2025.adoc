@@ -8,7 +8,7 @@ icon:rocket[size=3x,role=text-primary]
 
 GenEO preconditioning on large-scale problems (45M DoFs, 2916 cores)
 
-`B7` Exascale algorithms `B9` Resilience & accuracy
+`B7` Exascale algorithms `B9` Resilience, robustness and accuracy
 ____
 
 [.text-center]
@@ -19,7 +19,7 @@ icon:microchip[size=3x,role=text-success]
 
 Bayesian optimization on LUMI supercomputer with fractal decomposition
 
-`B7` Exascale algorithms `B8` Discovery algorithms
+`B7` Exascale algorithms `B8` Discovery, design, and decision algorithms
 ____
 
 [.text-center]
@@ -30,7 +30,7 @@ icon:brain[size=3x,role=text-info]
 
 Neural operators accelerating Newton iterations, domain-decomposed PINNs
 
-`B7` Exascale algorithms `B10` Productivity
+`B7` Exascale algorithms `B10` Scientific productivity
 ____
 
 [.text-center]
@@ -41,7 +41,7 @@ icon:city[size=3x,role=text-warning]
 
 From GIS data to watertight meshes for city-scale energy simulation
 
-`B7` Exascale algorithms `B10` Productivity `B11` Reproducibility
+`B7` Exascale algorithms `B10` Scientific productivity `B11` Reproducibility and replicability
 ____
 
 [.text-center]
@@ -52,7 +52,7 @@ icon:gauge-high[size=3x,role=text-danger]
 
 Automated CI/CD pipeline: code -> EuroHPC runs in < 24h
 
-`B9` Resilience & accuracy `B10` Productivity `B11` Reproducibility
+`B9` Resilience, robustness and accuracy `B10` Scientific productivity `B11` Reproducibility and replicability
 ____
 
 ====

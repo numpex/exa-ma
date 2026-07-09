@@ -1,73 +1,108 @@
-// Total publications: 46
+// Total publications: 53
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *46*
+icon:list-ol[] Total publications: *53*
 
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:newspaper[size=2x,role=text-primary] *18* Article in journal
+icon:file-alt[size=2x,role=text-primary] *20* Preprint / unpublished
 
-_39.1% of total_
+_37.7% of total_
 ____
 
 ____
-icon:file-alt[size=2x,role=text-primary] *14* Preprint / unpublished
+icon:newspaper[size=2x,role=text-primary] *19* Article in journal
 
-_30.4% of total_
+_35.8% of total_
 ____
 
 ____
 icon:users[size=2x,role=text-primary] *9* Conference paper
 
-_19.6% of total_
-____
-
-____
-icon:image[size=2x,role=text-primary] *2* Poster
-
-_4.3% of total_
+_17.0% of total_
 ____
 
 ____
 icon:file-text[size=2x,role=text-primary] *2* Report
 
-_4.3% of total_
+_3.8% of total_
+____
+
+____
+icon:image[size=2x,role=text-primary] *2* Poster
+
+_3.8% of total_
 ____
 
 ____
 icon:user-graduate[size=2x,role=text-primary] *1* HDR
 
-_2.2% of total_
+_1.9% of total_
 ____
 
 ====
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *17* (37.0%)
-* icon:file-pdf[] Publications with PDF: *41* (89.1%)
-* icon:lock-open[] Open Access: *44* (95.7%)
+* icon:fingerprint[] Publications with DOI: *17* (32.1%)
+* icon:file-pdf[] Publications with PDF: *48* (90.6%)
+* icon:lock-open[] Open Access: *51* (96.2%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *41*
-* icon:atom[] 0.math: *34*
-* icon:atom[] 1.math.math-na: *15*
+* icon:atom[] 0.info: *60*
+* icon:atom[] 0.math: *39*
+* icon:atom[] 1.math.math-na: *17*
 * icon:atom[] 1.math.math-ap: *9*
-* icon:atom[] 1.info.info-ai: *5*
+* icon:atom[] 1.info.info-na: *8*
 
 == 2026
 
-_10 publications_
+_19 publications_
 
-_5 Article in journal, 4 Preprint / unpublished, 1 Conference paper_
+_11 Preprint / unpublished, 6 Article in journal, 1 Report, 1 Conference paper_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
 |Title |Authors |Type |Links
+
+|*Mixed precision Newton's method for optimization*
+|Nicolas Brisebarre, Giuseppe Carrino, Theo Mary et al.
+|Preprint / unpublished
+|link:https://hal.science/hal-05677812v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05677812/document[icon:file-pdf[title=PDF]]
+
+|*Sharper Bounds on the Required Fixed-Point Precision for Emulating Floating-Point Matrix Multiplication*
+|Massimiliano Fasi, Theo Mary, Mantas Mikaitis
+|Preprint / unpublished
+|link:https://hal.science/hal-05658479v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05658479/document[icon:file-pdf[title=PDF]]
+
+|*Systematic Error-Aware Mixed-Precision Approach for Exploiting Microscaling Formats in Cholesky Factorization*
+|Abdurauf Abdurakhmanov, Theo Mary, Hatem Ltaief et al.
+|Preprint / unpublished
+|link:https://hal.science/hal-05641535v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05641535/document[icon:file-pdf[title=PDF]]
+
+|*Doubly adaptive precision restarted GMRES*
+|Emmanuel Agullo, Luc Giraud, Pierre Jolivet et al.
+|Preprint / unpublished
+|link:https://hal.science/hal-05640635v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05640635/document[icon:file-pdf[title=PDF]]
+
+|*Mixed Precision Compression of Tucker Decomposition*
+|Grey Ballard, Theo Mary, Bhisham Dev Verma
+|Preprint / unpublished
+|link:https://hal.science/hal-05640503v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05640503/document[icon:file-pdf[title=PDF]]
+
+|*Enabling non-Flexible Mixed-Precision Preconditioned GMRES with Memory Accessors*
+|Patrick Amestoy, Ouassel El Habti, Antoine Jego et al.
+|Preprint / unpublished
+|link:https://hal.science/hal-05640144v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05640144/document[icon:file-pdf[title=PDF]]
+
+|*Mixed Precision Perturbation Analysis of Two-Level Domain Decomposition Preconditioners*
+|Tom Caruso, Pierre Jolivet, Theo Mary et al.
+|Preprint / unpublished
+|link:https://hal.science/hal-05628912v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05628912/document[icon:file-pdf[title=PDF]]
 
 |*Efficient Fine-Scale Simulation of Nonlinear Hyperelastic Lattice Structures*
 |Clément Guillet, Thibaut Hirschler, Pierre Jolivet et al.
@@ -83,6 +118,11 @@ _5 Article in journal, 4 Preprint / unpublished, 1 Conference paper_
 |Jérémy Berthomieu, Stef Graillat, Dimitri Lesnoff et al.
 |Preprint / unpublished
 |link:https://hal.science/hal-04917201v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04917201/document[icon:file-pdf[title=PDF]]
+
+|*Neural network preconditioning: a case study for the solution of the parametric Helmholtz equation*
+|Luc Giraud, Carola Kruse, Paul Mycek et al.
+|Report
+|link:https://hal.science/hal-05157038v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05157038/document[icon:file-pdf[title=PDF]]
 
 |*Nonlinear compressive reduced basis approximation : when Taylor meets Kolmogorov*
 |Joubine Aghili, Hassan Ballout, Yvon Maday et al.
@@ -104,6 +144,11 @@ _5 Article in journal, 4 Preprint / unpublished, 1 Conference paper_
 |Article in journal
 |link:https://hal.science/hal-04525918v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04525918/document[icon:file-pdf[title=PDF]]
 
+|*Mixed precision strategies for preconditioned GMRES: a comprehensive analysis*
+|Alfredo Buttari, Xin Liu, Theo Mary et al.
+|Article in journal
+|link:https://hal.science/hal-05071696v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05071696/document[icon:file-pdf[title=PDF]]
+
 |*BLAS-based Mixed Precision Block Memory Accessor with Applications to Sparse Direct Solvers*
 |Patrick Amestoy, Antoine Jego, Jean-Yves L'Excellent et al.
 |Article in journal
@@ -123,9 +168,9 @@ _5 Article in journal, 4 Preprint / unpublished, 1 Conference paper_
 
 == 2025
 
-_25 publications_
+_23 publications_
 
-_9 Article in journal, 7 Preprint / unpublished, 4 Conference paper, 2 Poster, 2 Report, 1 HDR_
+_9 Article in journal, 6 Preprint / unpublished, 4 Conference paper, 2 Poster, 1 HDR, 1 Report_
 
 [.striped.publications,cols="4,2,2,1",options="header"]
 |===
@@ -161,15 +206,15 @@ _9 Article in journal, 7 Preprint / unpublished, 4 Conference paper, 2 Poster, 2
 |Preprint / unpublished
 |link:https://hal.science/hal-05289909v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05289909/document[icon:file-pdf[title=PDF]]
 
-|*Partial Detectors Versus Replication To Cope With Silent Errors*
-|Anne Benoit, Thomas Herault, Yves Robert et al.
-|Conference paper
-|link:https://inria.hal.science/hal-05231852v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-05231852/document[icon:file-pdf[title=PDF]]
-
 |*Portage GPU d'un solveur éléments finis discontinus hybridisé pour les problèmes d'ondes en fréquence*
 |Ahmed Chabib, Roland Greffe, Christophe Geuzaine et al.
 |Conference paper
 |link:https://hal.science/hal-05235205v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05235205/document[icon:file-pdf[title=PDF]]
+
+|*Partial Detectors Versus Replication To Cope With Silent Errors*
+|Anne Benoit, Thomas Herault, Yves Robert et al.
+|Conference paper
+|link:https://inria.hal.science/hal-05231852v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-05231852/document[icon:file-pdf[title=PDF]]
 
 |*Error Analysis of Matrix Multiplication with Narrow Range Floating-Point Arithmetic*
 |Theo Mary, Mantas Mikaitis
@@ -180,11 +225,6 @@ _9 Article in journal, 7 Preprint / unpublished, 4 Conference paper, 2 Poster, 2
 |Yongseok Jang, Pierre Jolivet, Theo Mary
 |Preprint / unpublished
 |link:https://hal.science/hal-05163845v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05163845/document[icon:file-pdf[title=PDF]]
-
-|*Neural network preconditioning: a case study for the solution of the parametric Helmholtz equation*
-|Luc Giraud, Carola Kruse, Paul Mycek et al.
-|Report
-|link:https://hal.science/hal-05157038v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05157038/document[icon:file-pdf[title=PDF]]
 
 |*COMBINED GALERKIN AND REGRESSION BASED ALGORITHM FOR PARAMETER DEPENDANT PDE'S*
 |Hassan Ballout, Yvon Maday, Christophe Prud'Homme
@@ -200,11 +240,6 @@ _9 Article in journal, 7 Preprint / unpublished, 4 Conference paper, 2 Poster, 2
 |Theo Mary
 |Article in journal
 |link:https://hal.science/hal-04554516v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04554516/document[icon:file-pdf[title=PDF]]
-
-|*Mixed precision strategies for preconditioned GMRES: a comprehensive analysis*
-|Alfredo Buttari, Xin Liu, Theo Mary et al.
-|Preprint / unpublished
-|link:https://hal.science/hal-05071696v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05071696/document[icon:file-pdf[title=PDF]]
 
 |*Effect of Cooling of the Ocular Surface on Endothelial Cell Sedimentation in Cell Injection Therapy: Insights from Computational Fluid Dynamics*
 |Thomas Saigre, Vincent Chabannes, Giovanna Guidoboni et al.

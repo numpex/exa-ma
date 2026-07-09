@@ -11,7 +11,7 @@ The Exa-MA scientific document identifies thirteen exascale bottlenecks. Exa-MA 
 
 These bottlenecks are mainly handled through collaborations with other NumPEx projects, but they constrain the methods, algorithms, software, and demonstrators developed in Exa-MA.
 
-[cols="1,2,5",options="header"]
+[.striped,cols="1,2,5",options="header"]
 |===
 |ID |Bottleneck |Definition
 
@@ -55,7 +55,7 @@ These bottlenecks are mainly handled through collaborations with other NumPEx pr
 
 These bottlenecks are the core Exa-MA targets. They are the tags used by highlights, frameworks, applications, and work packages throughout the website.
 
-[cols="1,2,5",options="header"]
+[.striped,cols="1,2,5",options="header"]
 |===
 |ID |Bottleneck |Definition
 

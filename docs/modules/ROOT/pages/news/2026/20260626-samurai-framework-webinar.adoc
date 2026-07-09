@@ -1,0 +1,387 @@
+= SAMURAI Framework Webinar
+:page-tags: resource,news2026,webinar
+:page-parent: news.adoc
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-table-cells
+:description: Recording and slides from the June 26, 2026 SAMURAI framework webinar.
+
+[.lead]
+The SAMURAI framework webinar took place online on June 26, 2026.
+The session focused on adaptive mesh representations, interval-based data structures, multiresolution methods, CPU/GPU parallelism, and NumPEx interactions around AMR benchmarking, I/O, and task-based execution.
+
+== Recording and Materials
+
+*Date*: Friday, June 26, 2026
+
+*Time*: 10:09 CEST
+
+*Format*: Online webinar
+
+*Recording*: link:https://us02web.zoom.us/rec/share/YlzMD9llSkLs842L0ihND8TYjWg09YMZ99i609MrUC88XfT4wZpMdudQXno5XsZW.0Jrakx3sYFcFnOxK?startTime=1782461363000[Zoom recording]
+
+*Passcode*: pass:[3w?P582b]
+
+=== Slide Deck
+
+[.striped,cols="3,2,1",options="header"]
+|===
+|Deck |Presenter |PDF
+
+|SAMURAI - Exa-MA discussion session
+|Loic Gouarin
+|xref:attachment$webinars/2026/2026-samurai.pdf[icon:file-pdf[title=PDF]]
+|===
+
+[.webinar-report]
+== Meeting Report
+
+*Presenter*: Loic Gouarin, HPC@Maths team, CMAP / CNRS - Ecole Polytechnique
+
+*Topic*: Samurai framework for block-structured Cartesian AMR/MRA, NumPEx interactions, and possible links with Exa-MA methods and software.
+
+*Sources*: meeting transcript and Samurai slide deck.
+
+=== Participants Identified from the Transcript
+
+[.striped,cols="2,3,4",options="header"]
+|===
+|Name |Affiliation / role as identified |Contribution in the meeting
+
+|Christophe Prud'homme
+|Exa-MA / Cemosis
+|Chairing, questions on Exa-MA positioning, Feel++/HDG/domain-decomposition/solver links, mini-apps, deliverables
+
+|Loic Gouarin
+|HPC@Maths, CMAP / CNRS - Ecole Polytechnique
+|Samurai presentation and discussion
+
+|Pierre Ledac
+|CEA
+|Questions on GPU friendliness and ImEx/PETSc TS
+
+|Theo Grandsart
+|StarPU-related work
+|Mentioned a follow-up technical meeting on StarPU/Samurai
+
+|Nathalie Furmento
+|StarPU-related work
+|Present, identified in transcript
+
+|Lucas
+|Mentioned by Christophe as present
+|No explicit intervention in the transcript
+|===
+
+=== Executive Summary
+
+The meeting presented *Samurai* as a data-structure and software framework for adaptive Cartesian meshes, with a distinctive representation based on *intervals* and an *algebra of sets*.
+The central idea is to recover advantages of patch-based AMR, such as memory locality and easy neighbor operations, while avoiding excessive refinement and hierarchy overhead.
+
+For Exa-MA, the most relevant conclusions are:
+
+* Samurai should be understood primarily as an AMR/MRA topology and field infrastructure, not as a monolithic discretization framework.
+* The current finite-volume layer is inside Samurai, but the intended long-term architecture is to move method-specific layers such as FV, LBM, DG, or HDG outside Samurai.
+* The interval/set algebra can naturally express intersections, translations, projections, ghost regions, parent/child relations, and communication regions.
+* Samurai is already connected to NumPEx activities around high-order coupling, high-resolution methods with error control, AMR benchmarking, AMR I/O, and StarPU-based task parallelism.
+* The most immediate Exa-MA mini-app candidate is a 2D Burgers AMR/MRA case, focused on flux computation at the finest level, error control, shock speed accuracy, and future performance baselines.
+* Longer-term links with Feel++ could include HDG trace-space construction, domain decomposition, and local discretizations inside Samurai cells or patches.
+* The StarPU direction is promising only if task granularity is sufficiently coarse: interval blocks, levels, patches, subdomains, or expensive local physics, not individual cells.
+* GPU work is still preliminary; a clearer internal strategy is expected after a short proof-of-concept phase.
+
+=== Samurai Motivation and Design
+
+Loic Gouarin introduced Samurai as a framework developed mainly in the HPC@Maths team at CMAP / Ecole Polytechnique.
+The central contribution is a data structure for adaptive Cartesian meshes that makes operations between grids explicit and compact.
+
+The presentation compared two broad AMR representations:
+
+* *Patch-based representations* provide compact rectangular patches, good memory locality, cache behavior, tiling, neighbor lookup, and inter-level operations, but they can refine more cells than needed and require storing a grid hierarchy.
+* *Cell-based representations* store only cells required by the adaptation criterion and avoid a full hierarchy, but neighbor lookup, inter-level operations, ghost-cell construction, and locality are more difficult.
+
+The talk also contrasted AMR and MRA.
+AMR typically uses heuristic indicators such as gradients or second derivatives.
+MRA uses wavelet-like detail coefficients obtained by projection and prediction, which gives an error-control-oriented criterion but is harder to express with classical AMR data structures.
+
+The slides identified four Samurai design principles:
+
+. compress the mesh according to level-wise spatial connectivity along Cartesian axes;
+. provide fast lookup for cells, especially parents and neighbors;
+. maximize memory contiguity for cache efficiency and vectorization;
+. facilitate complex operations between meshes, numerical schemes, and MRA operations.
+
+=== Interval Representation and Set Algebra
+
+The core object is an interval of the form:
+
+[source,text]
+----
+[start, end) @ offset
+----
+
+For a 2D adaptive Cartesian mesh, Samurai stores contiguous runs of cells along the x direction, level by level, together with y-intervals and offsets that identify where the associated x-intervals are stored.
+This gives a compact representation while keeping data spatially contiguous where possible.
+
+The set operations exposed in Samurai include:
+
+* intersection;
+* union;
+* difference;
+* translation;
+* projection.
+
+These operations express mesh manipulations and numerical supports without explicit tree traversal.
+For example, jump regions can be found through translation and intersection:
+
+[source,cpp]
+----
+auto jump_set = intersection(
+    translate(mesh[1], {1}).on(0),
+    mesh[0]
+);
+----
+
+Projection between levels can be written in the same algebraic style:
+
+[source,cpp]
+----
+auto proj_set = intersection(mesh[level], mesh[level + 1])
+    .on(level);
+
+proj_set([&](auto i)
+{
+    u(level, i) = 0.5*(u(level+1, 2*i) + u(level+1, 2*i+1));
+});
+----
+
+The important conclusion is that Samurai exposes AMR topology as algebraic manipulation of interval sets, rather than as explicit patch hierarchy management.
+
+=== Current Roadmap and Parallelism
+
+Samurai already has MPI support.
+The algebra of sets is used to define exchanged data, especially ghost and interface regions, through mesh translations and intersections rather than explicit recomputation of interfaces.
+
+Load balancing remains work in progress.
+Candidate strategies include space-filling curves, Hilbert and Morton orderings, diffusion-based approaches, METIS, and Scotch.
+For MRA, re-adaptation may be needed at each iteration in order not to break the multiresolution logic, which makes repeated load balancing a delicate cost.
+
+The slides described a GPU proof of concept with two possible strategies:
+
+. keep the mesh and set algebra on the CPU and run only numerical kernels on the GPU;
+. move the mesh and an adapted algebra onto the GPU.
+
+The current status is preliminary.
+Kokkos is viewed as a likely portability layer once the GPU strategy is clearer.
+The Samurai team does not consider the current code ready for the immediate MI300A/Adastra Grand Challenge.
+
+=== NumPEx Interactions
+
+Several NumPEx interactions were presented.
+
+* *High-order space-time coupling*: work on a high-order coupling library for multiphysics applications, implemented in the CwIPI2 C++ library.
+* *High-resolution methods with error control*: coupling ImEx integrators with adaptive multiresolution using Samurai and Ponio for multiscale reaction-diffusion-convection PDEs, including stiff systems.
+* *EXA-DI block-structured AMR*: benchmarking open-source block-structured AMR software such as Dyablo, Samurai, AthenaK, and Astro/AMReX-based applications.
+* *EXA-DOST AMR I/O*: identifying AMR I/O requirements, common strategies, and compression options.
+* *EXA-SOFT StarPU task-based parallelism*: expressing Samurai adaptive computations as a StarPU task graph for asynchronous and heterogeneous CPU/GPU execution.
+
+=== Samurai as Framework, Backend, or Topology Library
+
+A central discussion point was whether Samurai should be viewed as a complete discretization framework or as an AMR infrastructure with an API for other method frameworks.
+
+Loic's answer was that finite-volume methods are currently still inside Samurai, but method-specific layers should ultimately move outside.
+Samurai should manage the mesh, provide operators to manipulate it, and attach fields to it.
+Finite volume, lattice Boltzmann, DG, and potentially HDG should become external method modules.
+
+This is important for Exa-MA because Samurai can be positioned as a topological/adaptive Cartesian mesh infrastructure on which specialized numerical methods are implemented.
+
+=== HDG, Skeletons, Trace Spaces, and Domain Decomposition
+
+Christophe asked whether Samurai has an explicit notion of mesh skeleton: facets, edges, coarse/fine interfaces, orientations, normals, and cell-face connectivity.
+Loic answered that Samurai does not precompute such structures in the same way as an unstructured mesh framework.
+Because Samurai is Cartesian, many relations can be recovered through translations and intersections.
+
+For HDG, the global coupling is the trace space on faces or facets, while local volume problems are discontinuous and element-local.
+The set algebra should make it possible to define the required trace or skeleton sets, but there is no dedicated HDG skeleton abstraction yet.
+
+The discussion also considered Samurai cells or patches as adaptive macro-subdomains connected through nonconforming interfaces.
+This suggests a possible Exa-MA direction:
+
+[source,text]
+----
+Samurai interval sets
+  -> adaptive Cartesian macro-topology
+  -> cells/patches/subdomains/interfaces/ghost regions
+
+Feel++ or another framework
+  -> local discretization inside each cell/patch/subdomain
+  -> HDG, DG, FV, FE, ROM, or physics-specific local solvers
+
+PETSc / HPDDM / Composyx
+  -> global algebraic solve or interface/preconditioner layer
+----
+
+This remains exploratory but is relevant for HDG, mortar methods, and domain decomposition.
+
+=== PETSc, Composyx, HPDDM, and Solvers
+
+Samurai is currently more a PETSc user than a PETSc contributor.
+However, AMR changes matrix structure and can degrade conditioning compared with uniform-grid problems.
+This opens a research direction around solver and preconditioner behavior for AMR-generated matrices.
+
+The discussion mentioned PETSc finite-volume and time-stepping use, possible links with Composyx and HPDDM, algebraic multigrid versus geometric multigrid, and the possibility of HPDDM/GenEO-type coarse spaces for robustness.
+A possible second Samurai mini-app could therefore target WP3 solver and preconditioner questions.
+
+=== StarPU and Task Granularity
+
+The StarPU link is natural because Samurai already identifies computational regions through interval sets.
+The main difficulty is task granularity.
+Raw intervals may be too small to amortize task overhead, while levels, patches, subdomains, or expensive local physics kernels may provide enough work.
+
+Christophe suggested that StarPU may become more relevant when local work is expensive, for example high-order methods, HDG local solvers, domain-decomposition subdomain solves, stiff local chemistry, or particle-like local kernels.
+This matches application contexts such as hydrogen-risk simulations with stiff chemistry or ONERA-related DSMC work.
+
+=== Mini-Apps and Benchmarks
+
+[.striped,cols="2,1,1,3,2,2,2",options="header"]
+|===
+|App / benchmark |Status |Exa-MA link |Scientific / technical objective |Stress point |Contacts |Next step
+
+|2D Burgers AMR/MRA mini-app
+|Proposed / priority
+|WP1 / WP7
+|Demonstrate correct flux computation at finest level on adapted MRA grids, error control, and shock speed accuracy
+|Numerical quality versus extra finest-level flux cost, parallel baseline
+|Loic Gouarin; Samurai team; Exa-MA WP1/WP7
+|Specify for October deliverable; prepare first numerical baseline
+
+|Solver/preconditioner AMR benchmark
+|Future / open
+|WP3
+|Study how AMR-generated matrices affect conditioning and solver robustness
+|AMG versus geometric AMR multigrid versus HPDDM/GenEO/Composyx behavior
+|Christophe Prud'homme; Loic Gouarin; WP3 / PETSc / Composyx / HPDDM contacts
+|Decide whether a second Samurai mini-app is needed
+
+|EXA-DI block-structured AMR benchmark
+|Current interaction
+|EXA-DI / WP7
+|Compare Dyablo, Samurai, AthenaK, and Astro/AMReX on common AMR problems
+|Fixed numerical scheme, adaptation criterion, error target, accuracy versus cost
+|EXA-DI GT block-structured AMR participants
+|Continue benchmark setup; AthenaK and Astro expected later
+
+|AMR I/O and compression workflow
+|Current interaction
+|EXA-DOST / WP7
+|Define common I/O strategy for AMR libraries with compression options
+|Format choice, visualization reconstruction, lossy/lossless compression
+|Sylvain Joube; J. Bigot; M. Delorme; A. Durocher; L. Gouarin; M. Stauffert
+|Continue format and compression analysis
+
+|StarPU/Samurai task-graph mini-app
+|Future / technical
+|EXA-SOFT / WP7
+|Express adaptive computations as a StarPU task graph for CPU/GPU execution
+|Task granularity, dependencies, MPI interaction, expensive local physics
+|Theo Grandsart; Nathalie Furmento; Loic Gouarin; StarPU team
+|Continue technical work and identify viable task granularity
+
+|High-resolution methods with error control
+|Current interaction
+|WP1 / WP7
+|Couple ImEx integrators with adaptive multiresolution using Samurai and Ponio for reaction-diffusion-convection PDEs
+|Error control, stiff chemistry, PETSc TS/DAE component
+|Fadel Kicha; L. Gouarin; J. Massot; M. Massot; L. Series; C. Tenaud
+|Continue NumPEx-funded work
+|===
+
+=== Tasks and Action Items
+
+[.striped,cols="1,3,2,3",options="header"]
+|===
+|# |Task |Owner(s) |Target / comment
+
+|1
+|Provide Samurai slides as PDF and optional HTML link
+|Loic Gouarin
+|Share on Slack or project channel
+
+|2
+|Make the recording and notes available to the relevant Exa-MA group
+|Christophe Prud'homme
+|After processing and agreement from participants
+
+|3
+|Review and validate the meeting notes/report
+|Loic Gouarin
+|Christophe indicated that Loic would be asked to verify the summary
+
+|4
+|Clarify the Samurai architecture diagram: core boundary versus external method boxes
+|Loic Gouarin / Samurai team
+|Useful for Exa-MA/ANR presentations
+
+|5
+|Specify the Burgers AMR/MRA mini-app for Exa-MA
+|Loic Gouarin; Exa-MA WP1/WP7 input
+|Needed for October deliverable
+
+|6
+|Prepare a first numerical baseline for the Burgers mini-app
+|Samurai team
+|Flux-at-finest-level behavior, error control, and current cost
+
+|7
+|Define next-year performance roadmap for the Samurai mini-app
+|Samurai team / Exa-MA coordination
+|Support yearly mini-app evolution
+
+|8
+|Continue AMR benchmark work with Dyablo, Samurai, AthenaK, and Astro/AMReX
+|EXA-DI GT block-structured AMR participants
+|Benchmarks for Dyablo/Samurai exist; AthenaK and Astro expected later
+
+|9
+|Identify whether a second Samurai mini-app should target solver/preconditioner questions
+|Christophe Prud'homme; Loic Gouarin; WP3 / PETSc / Composyx / HPDDM contacts
+|Open WP3 direction
+
+|10
+|Continue StarPU/Samurai technical work and identify task granularity
+|Theo Grandsart; Nathalie Furmento; Loic Gouarin; StarPU team
+|Follow-up technical meeting planned
+
+|11
+|Produce a clearer GPU strategy after the proof-of-concept phase
+|Samurai team
+|Approximate three-month horizon
+
+|12
+|Revisit Samurai suitability for MI300A/APU systems after GPU and communication work progresses
+|Samurai team / Exa-MA coordination
+|Not ready for the immediate Grand Challenge
+|===
+
+=== Applications and Examples Mentioned
+
+The presentation showed or mentioned several Samurai use cases:
+
+* Navier-Stokes plus ink convection with two distinct adaptive meshes communicating through set algebra;
+* adaptation from OBJ/STL geometry using CGAL distance computation;
+* Riemann problem with levels and solution visualization;
+* lattice Boltzmann flow case;
+* a non-numerical benchmark inspired by Pablo where bubbles move sinusoidally and trigger re-adaptation at each time step;
+* plasma discharge simulation in sheaths, where adaptation is effective because the main activity occurs near sheaths and not in the bulk.
+
+=== Suggested Exa-MA Positioning
+
+Samurai should be presented as a structured adaptive Cartesian mesh infrastructure based on interval compression and set algebra.
+It supports AMR/MRA, efficient mesh operations, field manipulation, MPI exchange regions, and future heterogeneous task execution.
+
+Potential links with Feel++ should be framed carefully.
+Samurai should not replace the general Feel++ mesh and variational framework.
+A more credible path is to use Samurai as a Cartesian AMR topology backend for specific methods, or as a macro-topology for domain decomposition and local discretizations coupled through traces, mortars, or interface operators.
+
+=== Links
+
+* link:https://github.com/hpc-maths/samurai[SAMURAI repository]
+* link:https://hpc-maths.github.io/2025-hands-on-samurai[Hands-on SAMURAI]

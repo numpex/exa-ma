@@ -11,7 +11,6 @@
 :icons: font
 :source-highlighter: highlight.js
 :description: Developing cutting-edge numerical methods, algorithms, and software for exascale computing within the NumPEx initiative.
-:page-alternating-sections: true
 
 
 [.lead.lead-75]

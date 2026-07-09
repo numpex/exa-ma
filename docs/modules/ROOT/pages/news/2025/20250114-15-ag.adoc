@@ -1,4 +1,5 @@
 = Account of the Exa-MA Project General Assembly
+:page-parent: news.adoc
 :doctype: article
 :icons: font
 :sectnums:
@@ -61,4 +62,3 @@ The day concluded with a convivial dinner with informal exchanges among particip
 == Documentation and Support Materials
 
 Presentation slides, photos, and the full notes from the General Assembly are available for further consultation.
-

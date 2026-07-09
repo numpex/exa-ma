@@ -4,7 +4,6 @@
 :parent-catalogs: exama-home
 :page-illustration: fa-solid fa-handshake
 :description: External partners collaborating with the Exa-MA project.
-:page-alternating-sections: true
 :icons: font
 :toclevels: 0
 

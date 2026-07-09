@@ -135,7 +135,7 @@ def event_detail_link(event: dict, page_label: str, url_label: str) -> str:
     return ""
 
 
-def generate_home_cards(events: list[dict], limit: int = 2) -> list[str]:
+def generate_home_cards(events: list[dict], limit: int = 4) -> list[str]:
     """Generate compact cards for the homepage from upcoming and recent events."""
     upcoming = sorted(
         [e for e in events if e.get("status") == "upcoming"],

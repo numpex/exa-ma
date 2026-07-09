@@ -137,4 +137,8 @@ The following Exa-MA applications use HPDDM:
 | Mini App
 | Benchmark Ready
 
+| xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners]
+| Mini App
+| Planned
+
 |===
