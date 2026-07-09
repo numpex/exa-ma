@@ -139,15 +139,15 @@ _11 Preprint / unpublished, 6 Article in journal, 1 Report, 1 Conference paper_
 |Article in journal
 |link:https://hal.science/hal-05051195v4[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05051195/document[icon:file-pdf[title=PDF]]
 
-|*A modular framework for the backward error analysis of GMRES*
-|Alfredo Buttari, Nicholas J Higham, Theo Mary et al.
-|Article in journal
-|link:https://hal.science/hal-04525918v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04525918/document[icon:file-pdf[title=PDF]]
-
 |*Mixed precision strategies for preconditioned GMRES: a comprehensive analysis*
 |Alfredo Buttari, Xin Liu, Theo Mary et al.
 |Article in journal
 |link:https://hal.science/hal-05071696v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05071696/document[icon:file-pdf[title=PDF]]
+
+|*A modular framework for the backward error analysis of GMRES*
+|Alfredo Buttari, Nicholas J Higham, Theo Mary et al.
+|Article in journal
+|link:https://hal.science/hal-04525918v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04525918/document[icon:file-pdf[title=PDF]]
 
 |*BLAS-based Mixed Precision Block Memory Accessor with Applications to Sparse Direct Solvers*
 |Patrick Amestoy, Antoine Jego, Jean-Yves L'Excellent et al.
@@ -206,15 +206,15 @@ _9 Article in journal, 6 Preprint / unpublished, 4 Conference paper, 2 Poster, 1
 |Preprint / unpublished
 |link:https://hal.science/hal-05289909v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05289909/document[icon:file-pdf[title=PDF]]
 
-|*Portage GPU d'un solveur éléments finis discontinus hybridisé pour les problèmes d'ondes en fréquence*
-|Ahmed Chabib, Roland Greffe, Christophe Geuzaine et al.
-|Conference paper
-|link:https://hal.science/hal-05235205v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05235205/document[icon:file-pdf[title=PDF]]
-
 |*Partial Detectors Versus Replication To Cope With Silent Errors*
 |Anne Benoit, Thomas Herault, Yves Robert et al.
 |Conference paper
 |link:https://inria.hal.science/hal-05231852v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-05231852/document[icon:file-pdf[title=PDF]]
+
+|*Portage GPU d'un solveur éléments finis discontinus hybridisé pour les problèmes d'ondes en fréquence*
+|Ahmed Chabib, Roland Greffe, Christophe Geuzaine et al.
+|Conference paper
+|link:https://hal.science/hal-05235205v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05235205/document[icon:file-pdf[title=PDF]]
 
 |*Error Analysis of Matrix Multiplication with Narrow Range Floating-Point Arithmetic*
 |Theo Mary, Mantas Mikaitis
