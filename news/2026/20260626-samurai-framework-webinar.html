@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SAMURAI Framework Webinar :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/news/2026/20260626-samurai-framework-webinar.html">
+    <meta name="description" content="Recording and slides from the June 26, 2026 SAMURAI framework webinar.">
+    <meta name="generator" content="Antora 3.1.14">
+<link rel="stylesheet" href="../../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- Custom badge styles for external partners -->
+<style>
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+.badge-cofunding {
+    background-color: #dc3545;
+    color: white;
+}
+.badge-funded {
+    background-color: #28a745;
+    color: white;
+}
+</style>
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = '../../_'</script>
+
+  </head>
+  <body class="article alternating-sections">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo" style="height: 50px; max-height: none !important; width: auto;" src="../../_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html"><span class="icon"><i class="fa fa-home"></i></span> Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../overview.html"><span class="icon"><i class="fa fa-mountain-sun"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text"><span class="icon"><i class="fa fa-info-circle"></i></span> About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../bottlenecks.html"><span class="icon"><i class="fa fa-triangle-exclamation"></i></span> Exascale Bottlenecks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../team.html"><span class="icon"><i class="fa fa-users"></i></span> WP Leaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../team-recruited.html"><span class="icon"><i class="fa fa-user-graduate"></i></span> Recruited Personnel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../consortium.html"><span class="icon"><i class="fa fa-building"></i></span> Consortium</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../external-partners.html"><span class="icon"><i class="fa fa-handshake"></i></span> External Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../sab.html"><span class="icon"><i class="fa fa-clipboard-list"></i></span> Scientific Advisory Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../collaborative-projects.html"><span class="icon"><i class="fa fa-project-diagram"></i></span> Collaborative Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../contact.html"><span class="icon"><i class="fa fa-envelope"></i></span> Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../workpackages.html"><span class="icon"><i class="fa fa-cubes"></i></span> Work Packages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages.html"><span class="icon"><i class="fa fa-list"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp0.html"><span class="icon"><i class="fa fa-tasks"></i></span> WP0: Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp1.html"><span class="icon"><i class="fa fa-th"></i></span> WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp2.html"><span class="icon"><i class="fa fa-brain"></i></span> WP2: MOR &amp; SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp3.html"><span class="icon"><i class="fa fa-calculator"></i></span> WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp4.html"><span class="icon"><i class="fa fa-chart-line"></i></span> WP4: Inverse Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp5.html"><span class="icon"><i class="fa fa-bullseye"></i></span> WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp6.html"><span class="icon"><i class="fa fa-random"></i></span> WP6: UQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp7.html"><span class="icon"><i class="fa fa-rocket"></i></span> WP7: Software &amp; Benchmarking</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../results.html"><span class="icon"><i class="fa fa-trophy"></i></span> Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../deliverables.html"><span class="icon"><i class="fa fa-book"></i></span> Deliverables and Publications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../publications-hal.html"><span class="icon"><i class="fa fa-file-alt"></i></span> Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../training.html"><span class="icon"><i class="fa fa-graduation-cap"></i></span> Training</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../news.html"><span class="icon"><i class="fa fa-newspaper"></i></span> News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../archive.html"><span class="icon"><i class="fa fa-archive"></i></span> Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../workgroups.html"><span class="icon"><i class="fa fa-network-wired"></i></span> NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/index.html"><span class="icon"><i class="fa fa-laptop-code"></i></span> WP7: Software &amp; Benchmarking</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/concepts.html">Concepts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/frameworks.html"><span class="icon"><i class="fa fa-cubes"></i></span> Frameworks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/scimba.html">Scimba</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/applications.html"><span class="icon"><i class="fa fa-rocket"></i></span> Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-discr-1.html">Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-distance.html">Distance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-nlcrb.html">Nonlinear Compressive Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-rb.html">Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-toolbox.html">Test Feel++ toolboxes at scale</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-hpddm-dfn.html">Preconditioning systems arising from discrete fracture networks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-freefem-parmmg.html">Fichera corner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-zellij.html">Zellij</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-eki.html">EKI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-freefem-shape-opt-fem.html">Shape Opt FEM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-shape-opt-nn.html">Shape Opt NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-plasma.html">Plasma NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-hybrid.html">Hybrid  numerics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-thermomeca-1.html">thermomeca</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-ktirio-geom.html">Terrain Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-autorefine.html">Mesh autorefinement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-cdt2.html">Constrained Delaunay Triangulation 2D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-ccdt3.html">Conforming Constrained Delaunay Triangulation 3D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-petsc-mixed-precision.html">Impact of mixed-precision on PETSc solvers and preconditioners</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="../../index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="../../index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Exa-MA</a></li>
+    <li><a href="../../news.html">News and Events</a></li>
+    <li><a href="20260626-samurai-framework-webinar.html">SAMURAI Framework Webinar</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/ROOT/pages/news/2026/20260626-samurai-framework-webinar.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="../../_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">SAMURAI Framework Webinar</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>The SAMURAI framework webinar took place online on June 26, 2026.
+The session focused on adaptive mesh representations, interval-based data structures, multiresolution methods, CPU/GPU parallelism, and NumPEx interactions around AMR benchmarking, I/O, and task-based execution.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recording_and_materials"><a class="anchor" href="#_recording_and_materials"></a>1. Recording and Materials</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Date</strong>: Friday, June 26, 2026</p>
+</div>
+<div class="paragraph">
+<p><strong>Time</strong>: 10:09 CEST</p>
+</div>
+<div class="paragraph">
+<p><strong>Format</strong>: Online webinar</p>
+</div>
+<div class="paragraph">
+<p><strong>Recording</strong>: <a href="https://us02web.zoom.us/rec/share/YlzMD9llSkLs842L0ihND8TYjWg09YMZ99i609MrUC88XfT4wZpMdudQXno5XsZW.0Jrakx3sYFcFnOxK?startTime=1782461363000">Zoom recording</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Passcode</strong>: 3w?P582b</p>
+</div>
+<div class="sect2">
+<h3 id="_slide_deck"><a class="anchor" href="#_slide_deck"></a>1.1. Slide Deck</h3>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Deck</th>
+<th class="tableblock halign-left valign-top">Presenter</th>
+<th class="tableblock halign-left valign-top">PDF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SAMURAI - Exa-MA discussion session</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loic Gouarin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/webinars/2026/2026-samurai.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1 webinar-report">
+<h2 id="_meeting_report"><a class="anchor" href="#_meeting_report"></a>2. Meeting Report</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Presenter</strong>: Loic Gouarin, HPC@Maths team, CMAP / CNRS - Ecole Polytechnique</p>
+</div>
+<div class="paragraph">
+<p><strong>Topic</strong>: Samurai framework for block-structured Cartesian AMR/MRA, NumPEx interactions, and possible links with Exa-MA methods and software.</p>
+</div>
+<div class="paragraph">
+<p><strong>Sources</strong>: meeting transcript and Samurai slide deck.</p>
+</div>
+<div class="sect2">
+<h3 id="_participants_identified_from_the_transcript"><a class="anchor" href="#_participants_identified_from_the_transcript"></a>2.1. Participants Identified from the Transcript</h3>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Affiliation / role as identified</th>
+<th class="tableblock halign-left valign-top">Contribution in the meeting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exa-MA / Cemosis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chairing, questions on Exa-MA positioning, Feel++/HDG/domain-decomposition/solver links, mini-apps, deliverables</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loic Gouarin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HPC@Maths, CMAP / CNRS - Ecole Polytechnique</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Samurai presentation and discussion</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pierre Ledac</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CEA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Questions on GPU friendliness and ImEx/PETSc TS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Theo Grandsart</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">StarPU-related work</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mentioned a follow-up technical meeting on StarPU/Samurai</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nathalie Furmento</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">StarPU-related work</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Present, identified in transcript</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lucas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mentioned by Christophe as present</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No explicit intervention in the transcript</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_executive_summary"><a class="anchor" href="#_executive_summary"></a>2.2. Executive Summary</h3>
+<div class="paragraph">
+<p>The meeting presented <strong>Samurai</strong> as a data-structure and software framework for adaptive Cartesian meshes, with a distinctive representation based on <strong>intervals</strong> and an <strong>algebra of sets</strong>.
+The central idea is to recover advantages of patch-based AMR, such as memory locality and easy neighbor operations, while avoiding excessive refinement and hierarchy overhead.</p>
+</div>
+<div class="paragraph">
+<p>For Exa-MA, the most relevant conclusions are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Samurai should be understood primarily as an AMR/MRA topology and field infrastructure, not as a monolithic discretization framework.</p>
+</li>
+<li>
+<p>The current finite-volume layer is inside Samurai, but the intended long-term architecture is to move method-specific layers such as FV, LBM, DG, or HDG outside Samurai.</p>
+</li>
+<li>
+<p>The interval/set algebra can naturally express intersections, translations, projections, ghost regions, parent/child relations, and communication regions.</p>
+</li>
+<li>
+<p>Samurai is already connected to NumPEx activities around high-order coupling, high-resolution methods with error control, AMR benchmarking, AMR I/O, and StarPU-based task parallelism.</p>
+</li>
+<li>
+<p>The most immediate Exa-MA mini-app candidate is a 2D Burgers AMR/MRA case, focused on flux computation at the finest level, error control, shock speed accuracy, and future performance baselines.</p>
+</li>
+<li>
+<p>Longer-term links with Feel++ could include HDG trace-space construction, domain decomposition, and local discretizations inside Samurai cells or patches.</p>
+</li>
+<li>
+<p>The StarPU direction is promising only if task granularity is sufficiently coarse: interval blocks, levels, patches, subdomains, or expensive local physics, not individual cells.</p>
+</li>
+<li>
+<p>GPU work is still preliminary; a clearer internal strategy is expected after a short proof-of-concept phase.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_samurai_motivation_and_design"><a class="anchor" href="#_samurai_motivation_and_design"></a>2.3. Samurai Motivation and Design</h3>
+<div class="paragraph">
+<p>Loic Gouarin introduced Samurai as a framework developed mainly in the HPC@Maths team at CMAP / Ecole Polytechnique.
+The central contribution is a data structure for adaptive Cartesian meshes that makes operations between grids explicit and compact.</p>
+</div>
+<div class="paragraph">
+<p>The presentation compared two broad AMR representations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Patch-based representations</strong> provide compact rectangular patches, good memory locality, cache behavior, tiling, neighbor lookup, and inter-level operations, but they can refine more cells than needed and require storing a grid hierarchy.</p>
+</li>
+<li>
+<p><strong>Cell-based representations</strong> store only cells required by the adaptation criterion and avoid a full hierarchy, but neighbor lookup, inter-level operations, ghost-cell construction, and locality are more difficult.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The talk also contrasted AMR and MRA.
+AMR typically uses heuristic indicators such as gradients or second derivatives.
+MRA uses wavelet-like detail coefficients obtained by projection and prediction, which gives an error-control-oriented criterion but is harder to express with classical AMR data structures.</p>
+</div>
+<div class="paragraph">
+<p>The slides identified four Samurai design principles:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>compress the mesh according to level-wise spatial connectivity along Cartesian axes;</p>
+</li>
+<li>
+<p>provide fast lookup for cells, especially parents and neighbors;</p>
+</li>
+<li>
+<p>maximize memory contiguity for cache efficiency and vectorization;</p>
+</li>
+<li>
+<p>facilitate complex operations between meshes, numerical schemes, and MRA operations.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interval_representation_and_set_algebra"><a class="anchor" href="#_interval_representation_and_set_algebra"></a>2.4. Interval Representation and Set Algebra</h3>
+<div class="paragraph">
+<p>The core object is an interval of the form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[start, end) @ offset</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For a 2D adaptive Cartesian mesh, Samurai stores contiguous runs of cells along the x direction, level by level, together with y-intervals and offsets that identify where the associated x-intervals are stored.
+This gives a compact representation while keeping data spatially contiguous where possible.</p>
+</div>
+<div class="paragraph">
+<p>The set operations exposed in Samurai include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>intersection;</p>
+</li>
+<li>
+<p>union;</p>
+</li>
+<li>
+<p>difference;</p>
+</li>
+<li>
+<p>translation;</p>
+</li>
+<li>
+<p>projection.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These operations express mesh manipulations and numerical supports without explicit tree traversal.
+For example, jump regions can be found through translation and intersection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto jump_set = intersection(
+    translate(mesh[1], {1}).on(0),
+    mesh[0]
+);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Projection between levels can be written in the same algebraic style:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto proj_set = intersection(mesh[level], mesh[level + 1])
+    .on(level);
+
+proj_set([&amp;](auto i)
+{
+    u(level, i) = 0.5*(u(level+1, 2*i) + u(level+1, 2*i+1));
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The important conclusion is that Samurai exposes AMR topology as algebraic manipulation of interval sets, rather than as explicit patch hierarchy management.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_current_roadmap_and_parallelism"><a class="anchor" href="#_current_roadmap_and_parallelism"></a>2.5. Current Roadmap and Parallelism</h3>
+<div class="paragraph">
+<p>Samurai already has MPI support.
+The algebra of sets is used to define exchanged data, especially ghost and interface regions, through mesh translations and intersections rather than explicit recomputation of interfaces.</p>
+</div>
+<div class="paragraph">
+<p>Load balancing remains work in progress.
+Candidate strategies include space-filling curves, Hilbert and Morton orderings, diffusion-based approaches, METIS, and Scotch.
+For MRA, re-adaptation may be needed at each iteration in order not to break the multiresolution logic, which makes repeated load balancing a delicate cost.</p>
+</div>
+<div class="paragraph">
+<p>The slides described a GPU proof of concept with two possible strategies:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>keep the mesh and set algebra on the CPU and run only numerical kernels on the GPU;</p>
+</li>
+<li>
+<p>move the mesh and an adapted algebra onto the GPU.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The current status is preliminary.
+Kokkos is viewed as a likely portability layer once the GPU strategy is clearer.
+The Samurai team does not consider the current code ready for the immediate MI300A/Adastra Grand Challenge.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_numpex_interactions"><a class="anchor" href="#_numpex_interactions"></a>2.6. NumPEx Interactions</h3>
+<div class="paragraph">
+<p>Several NumPEx interactions were presented.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>High-order space-time coupling</strong>: work on a high-order coupling library for multiphysics applications, implemented in the CwIPI2 C++ library.</p>
+</li>
+<li>
+<p><strong>High-resolution methods with error control</strong>: coupling ImEx integrators with adaptive multiresolution using Samurai and Ponio for multiscale reaction-diffusion-convection PDEs, including stiff systems.</p>
+</li>
+<li>
+<p><strong>EXA-DI block-structured AMR</strong>: benchmarking open-source block-structured AMR software such as Dyablo, Samurai, AthenaK, and Astro/AMReX-based applications.</p>
+</li>
+<li>
+<p><strong>EXA-DOST AMR I/O</strong>: identifying AMR I/O requirements, common strategies, and compression options.</p>
+</li>
+<li>
+<p><strong>EXA-SOFT StarPU task-based parallelism</strong>: expressing Samurai adaptive computations as a StarPU task graph for asynchronous and heterogeneous CPU/GPU execution.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_samurai_as_framework_backend_or_topology_library"><a class="anchor" href="#_samurai_as_framework_backend_or_topology_library"></a>2.7. Samurai as Framework, Backend, or Topology Library</h3>
+<div class="paragraph">
+<p>A central discussion point was whether Samurai should be viewed as a complete discretization framework or as an AMR infrastructure with an API for other method frameworks.</p>
+</div>
+<div class="paragraph">
+<p>Loic&#8217;s answer was that finite-volume methods are currently still inside Samurai, but method-specific layers should ultimately move outside.
+Samurai should manage the mesh, provide operators to manipulate it, and attach fields to it.
+Finite volume, lattice Boltzmann, DG, and potentially HDG should become external method modules.</p>
+</div>
+<div class="paragraph">
+<p>This is important for Exa-MA because Samurai can be positioned as a topological/adaptive Cartesian mesh infrastructure on which specialized numerical methods are implemented.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hdg_skeletons_trace_spaces_and_domain_decomposition"><a class="anchor" href="#_hdg_skeletons_trace_spaces_and_domain_decomposition"></a>2.8. HDG, Skeletons, Trace Spaces, and Domain Decomposition</h3>
+<div class="paragraph">
+<p>Christophe asked whether Samurai has an explicit notion of mesh skeleton: facets, edges, coarse/fine interfaces, orientations, normals, and cell-face connectivity.
+Loic answered that Samurai does not precompute such structures in the same way as an unstructured mesh framework.
+Because Samurai is Cartesian, many relations can be recovered through translations and intersections.</p>
+</div>
+<div class="paragraph">
+<p>For HDG, the global coupling is the trace space on faces or facets, while local volume problems are discontinuous and element-local.
+The set algebra should make it possible to define the required trace or skeleton sets, but there is no dedicated HDG skeleton abstraction yet.</p>
+</div>
+<div class="paragraph">
+<p>The discussion also considered Samurai cells or patches as adaptive macro-subdomains connected through nonconforming interfaces.
+This suggests a possible Exa-MA direction:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Samurai interval sets
+  -&gt; adaptive Cartesian macro-topology
+  -&gt; cells/patches/subdomains/interfaces/ghost regions
+
+Feel++ or another framework
+  -&gt; local discretization inside each cell/patch/subdomain
+  -&gt; HDG, DG, FV, FE, ROM, or physics-specific local solvers
+
+PETSc / HPDDM / Composyx
+  -&gt; global algebraic solve or interface/preconditioner layer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This remains exploratory but is relevant for HDG, mortar methods, and domain decomposition.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_petsc_composyx_hpddm_and_solvers"><a class="anchor" href="#_petsc_composyx_hpddm_and_solvers"></a>2.9. PETSc, Composyx, HPDDM, and Solvers</h3>
+<div class="paragraph">
+<p>Samurai is currently more a PETSc user than a PETSc contributor.
+However, AMR changes matrix structure and can degrade conditioning compared with uniform-grid problems.
+This opens a research direction around solver and preconditioner behavior for AMR-generated matrices.</p>
+</div>
+<div class="paragraph">
+<p>The discussion mentioned PETSc finite-volume and time-stepping use, possible links with Composyx and HPDDM, algebraic multigrid versus geometric multigrid, and the possibility of HPDDM/GenEO-type coarse spaces for robustness.
+A possible second Samurai mini-app could therefore target WP3 solver and preconditioner questions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_starpu_and_task_granularity"><a class="anchor" href="#_starpu_and_task_granularity"></a>2.10. StarPU and Task Granularity</h3>
+<div class="paragraph">
+<p>The StarPU link is natural because Samurai already identifies computational regions through interval sets.
+The main difficulty is task granularity.
+Raw intervals may be too small to amortize task overhead, while levels, patches, subdomains, or expensive local physics kernels may provide enough work.</p>
+</div>
+<div class="paragraph">
+<p>Christophe suggested that StarPU may become more relevant when local work is expensive, for example high-order methods, HDG local solvers, domain-decomposition subdomain solves, stiff local chemistry, or particle-like local kernels.
+This matches application contexts such as hydrogen-risk simulations with stiff chemistry or ONERA-related DSMC work.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mini_apps_and_benchmarks"><a class="anchor" href="#_mini_apps_and_benchmarks"></a>2.11. Mini-Apps and Benchmarks</h3>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 15.3846%;">
+<col style="width: 7.6923%;">
+<col style="width: 7.6923%;">
+<col style="width: 23.0769%;">
+<col style="width: 15.3846%;">
+<col style="width: 15.3846%;">
+<col style="width: 15.3847%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">App / benchmark</th>
+<th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Exa-MA link</th>
+<th class="tableblock halign-left valign-top">Scientific / technical objective</th>
+<th class="tableblock halign-left valign-top">Stress point</th>
+<th class="tableblock halign-left valign-top">Contacts</th>
+<th class="tableblock halign-left valign-top">Next step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2D Burgers AMR/MRA mini-app</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Proposed / priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1 / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrate correct flux computation at finest level on adapted MRA grids, error control, and shock speed accuracy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numerical quality versus extra finest-level flux cost, parallel baseline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loic Gouarin; Samurai team; Exa-MA WP1/WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify for October deliverable; prepare first numerical baseline</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Solver/preconditioner AMR benchmark</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Future / open</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Study how AMR-generated matrices affect conditioning and solver robustness</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AMG versus geometric AMR multigrid versus HPDDM/GenEO/Composyx behavior</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme; Loic Gouarin; WP3 / PETSc / Composyx / HPDDM contacts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decide whether a second Samurai mini-app is needed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXA-DI block-structured AMR benchmark</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current interaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXA-DI / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compare Dyablo, Samurai, AthenaK, and Astro/AMReX on common AMR problems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fixed numerical scheme, adaptation criterion, error target, accuracy versus cost</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXA-DI GT block-structured AMR participants</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continue benchmark setup; AthenaK and Astro expected later</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AMR I/O and compression workflow</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current interaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXA-DOST / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define common I/O strategy for AMR libraries with compression options</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Format choice, visualization reconstruction, lossy/lossless compression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sylvain Joube; J. Bigot; M. Delorme; A. Durocher; L. Gouarin; M. Stauffert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continue format and compression analysis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">StarPU/Samurai task-graph mini-app</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Future / technical</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXA-SOFT / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Express adaptive computations as a StarPU task graph for CPU/GPU execution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task granularity, dependencies, MPI interaction, expensive local physics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Theo Grandsart; Nathalie Furmento; Loic Gouarin; StarPU team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continue technical work and identify viable task granularity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High-resolution methods with error control</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current interaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1 / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Couple ImEx integrators with adaptive multiresolution using Samurai and Ponio for reaction-diffusion-convection PDEs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error control, stiff chemistry, PETSc TS/DAE component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fadel Kicha; L. Gouarin; J. Massot; M. Massot; L. Series; C. Tenaud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continue NumPEx-funded work</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_tasks_and_action_items"><a class="anchor" href="#_tasks_and_action_items"></a>2.12. Tasks and Action Items</h3>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">#</th>
+<th class="tableblock halign-left valign-top">Task</th>
+<th class="tableblock halign-left valign-top">Owner(s)</th>
+<th class="tableblock halign-left valign-top">Target / comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provide Samurai slides as PDF and optional HTML link</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loic Gouarin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Share on Slack or project channel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make the recording and notes available to the relevant Exa-MA group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">After processing and agreement from participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Review and validate the meeting notes/report</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loic Gouarin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe indicated that Loic would be asked to verify the summary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clarify the Samurai architecture diagram: core boundary versus external method boxes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loic Gouarin / Samurai team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Useful for Exa-MA/ANR presentations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the Burgers AMR/MRA mini-app for Exa-MA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loic Gouarin; Exa-MA WP1/WP7 input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Needed for October deliverable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prepare a first numerical baseline for the Burgers mini-app</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Samurai team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flux-at-finest-level behavior, error control, and current cost</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define next-year performance roadmap for the Samurai mini-app</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Samurai team / Exa-MA coordination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Support yearly mini-app evolution</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continue AMR benchmark work with Dyablo, Samurai, AthenaK, and Astro/AMReX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXA-DI GT block-structured AMR participants</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benchmarks for Dyablo/Samurai exist; AthenaK and Astro expected later</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identify whether a second Samurai mini-app should target solver/preconditioner questions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme; Loic Gouarin; WP3 / PETSc / Composyx / HPDDM contacts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open WP3 direction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continue StarPU/Samurai technical work and identify task granularity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Theo Grandsart; Nathalie Furmento; Loic Gouarin; StarPU team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Follow-up technical meeting planned</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Produce a clearer GPU strategy after the proof-of-concept phase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Samurai team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Approximate three-month horizon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Revisit Samurai suitability for MI300A/APU systems after GPU and communication work progresses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Samurai team / Exa-MA coordination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not ready for the immediate Grand Challenge</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_applications_and_examples_mentioned"><a class="anchor" href="#_applications_and_examples_mentioned"></a>2.13. Applications and Examples Mentioned</h3>
+<div class="paragraph">
+<p>The presentation showed or mentioned several Samurai use cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Navier-Stokes plus ink convection with two distinct adaptive meshes communicating through set algebra;</p>
+</li>
+<li>
+<p>adaptation from OBJ/STL geometry using CGAL distance computation;</p>
+</li>
+<li>
+<p>Riemann problem with levels and solution visualization;</p>
+</li>
+<li>
+<p>lattice Boltzmann flow case;</p>
+</li>
+<li>
+<p>a non-numerical benchmark inspired by Pablo where bubbles move sinusoidally and trigger re-adaptation at each time step;</p>
+</li>
+<li>
+<p>plasma discharge simulation in sheaths, where adaptation is effective because the main activity occurs near sheaths and not in the bulk.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_suggested_exa_ma_positioning"><a class="anchor" href="#_suggested_exa_ma_positioning"></a>2.14. Suggested Exa-MA Positioning</h3>
+<div class="paragraph">
+<p>Samurai should be presented as a structured adaptive Cartesian mesh infrastructure based on interval compression and set algebra.
+It supports AMR/MRA, efficient mesh operations, field manipulation, MPI exchange regions, and future heterogeneous task execution.</p>
+</div>
+<div class="paragraph">
+<p>Potential links with Feel should be framed carefully.
+Samurai should not replace the general Feel mesh and variational framework.
+A more credible path is to use Samurai as a Cartesian AMR topology backend for specific methods, or as a macro-topology for domain decomposition and local discretizations coupled through traces, mortars, or interface operators.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links"><a class="anchor" href="#_links"></a>2.15. Links</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/hpc-maths/samurai">SAMURAI repository</a></p>
+</li>
+<li>
+<p><a href="https://hpc-maths.github.io/2025-hands-on-samurai">Hands-on SAMURAI</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="../../_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+        <div style="font-size: 0.75rem; color: #757575; margin-top: 0.5em;">
+            <a href="../../privacy.html" style="color: #757575; text-decoration: none; margin-right: 1.5em;">Privacy Notice</a>
+            <a href="../../legal-notice.html" style="color: #757575; text-decoration: none;">Legal Notice</a>
+        </div>
+    </div>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="../../_/js/vendor/highlight.js"></script>
+
+<script src="../../_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>

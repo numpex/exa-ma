@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TRUST Framework Webinar :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/news/2026/20260623-trust-framework-webinar.html">
+    <meta name="description" content="Recording, slides, and extracted meeting report from the June 23, 2026 CEA TRUST framework webinar.">
+    <meta name="generator" content="Antora 3.1.14">
+<link rel="stylesheet" href="../../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- Custom badge styles for external partners -->
+<style>
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+.badge-cofunding {
+    background-color: #dc3545;
+    color: white;
+}
+.badge-funded {
+    background-color: #28a745;
+    color: white;
+}
+</style>
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = '../../_'</script>
+
+  </head>
+  <body class="article alternating-sections">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo" style="height: 50px; max-height: none !important; width: auto;" src="../../_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html"><span class="icon"><i class="fa fa-home"></i></span> Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../overview.html"><span class="icon"><i class="fa fa-mountain-sun"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text"><span class="icon"><i class="fa fa-info-circle"></i></span> About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../bottlenecks.html"><span class="icon"><i class="fa fa-triangle-exclamation"></i></span> Exascale Bottlenecks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../team.html"><span class="icon"><i class="fa fa-users"></i></span> WP Leaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../team-recruited.html"><span class="icon"><i class="fa fa-user-graduate"></i></span> Recruited Personnel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../consortium.html"><span class="icon"><i class="fa fa-building"></i></span> Consortium</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../external-partners.html"><span class="icon"><i class="fa fa-handshake"></i></span> External Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../sab.html"><span class="icon"><i class="fa fa-clipboard-list"></i></span> Scientific Advisory Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../collaborative-projects.html"><span class="icon"><i class="fa fa-project-diagram"></i></span> Collaborative Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../contact.html"><span class="icon"><i class="fa fa-envelope"></i></span> Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../workpackages.html"><span class="icon"><i class="fa fa-cubes"></i></span> Work Packages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages.html"><span class="icon"><i class="fa fa-list"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp0.html"><span class="icon"><i class="fa fa-tasks"></i></span> WP0: Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp1.html"><span class="icon"><i class="fa fa-th"></i></span> WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp2.html"><span class="icon"><i class="fa fa-brain"></i></span> WP2: MOR &amp; SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp3.html"><span class="icon"><i class="fa fa-calculator"></i></span> WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp4.html"><span class="icon"><i class="fa fa-chart-line"></i></span> WP4: Inverse Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp5.html"><span class="icon"><i class="fa fa-bullseye"></i></span> WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp6.html"><span class="icon"><i class="fa fa-random"></i></span> WP6: UQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp7.html"><span class="icon"><i class="fa fa-rocket"></i></span> WP7: Software &amp; Benchmarking</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../results.html"><span class="icon"><i class="fa fa-trophy"></i></span> Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../deliverables.html"><span class="icon"><i class="fa fa-book"></i></span> Deliverables and Publications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../publications-hal.html"><span class="icon"><i class="fa fa-file-alt"></i></span> Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../training.html"><span class="icon"><i class="fa fa-graduation-cap"></i></span> Training</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../news.html"><span class="icon"><i class="fa fa-newspaper"></i></span> News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../archive.html"><span class="icon"><i class="fa fa-archive"></i></span> Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../workgroups.html"><span class="icon"><i class="fa fa-network-wired"></i></span> NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/index.html"><span class="icon"><i class="fa fa-laptop-code"></i></span> WP7: Software &amp; Benchmarking</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/concepts.html">Concepts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/frameworks.html"><span class="icon"><i class="fa fa-cubes"></i></span> Frameworks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/scimba.html">Scimba</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/applications.html"><span class="icon"><i class="fa fa-rocket"></i></span> Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-discr-1.html">Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-distance.html">Distance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-nlcrb.html">Nonlinear Compressive Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-rb.html">Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-toolbox.html">Test Feel++ toolboxes at scale</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-hpddm-dfn.html">Preconditioning systems arising from discrete fracture networks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-freefem-parmmg.html">Fichera corner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-zellij.html">Zellij</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-eki.html">EKI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-freefem-shape-opt-fem.html">Shape Opt FEM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-shape-opt-nn.html">Shape Opt NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-plasma.html">Plasma NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-hybrid.html">Hybrid  numerics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-thermomeca-1.html">thermomeca</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-ktirio-geom.html">Terrain Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-autorefine.html">Mesh autorefinement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-cdt2.html">Constrained Delaunay Triangulation 2D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-ccdt3.html">Conforming Constrained Delaunay Triangulation 3D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-petsc-mixed-precision.html">Impact of mixed-precision on PETSc solvers and preconditioners</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="../../index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="../../index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Exa-MA</a></li>
+    <li><a href="../../news.html">News and Events</a></li>
+    <li><a href="20260623-trust-framework-webinar.html">TRUST Framework Webinar</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/ROOT/pages/news/2026/20260623-trust-framework-webinar.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="../../_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">TRUST Framework Webinar</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>The TRUST framework webinar took place online on June 23, 2026.
+The discussion focused on CEA TRUST, GPU porting with Kokkos, solver and preconditioner strategies, mini-apps, mixed precision, and possible links with HPDDM, Uranie, WP3, WP6, and AMD MI300 access.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recording_and_materials"><a class="anchor" href="#_recording_and_materials"></a>1. Recording and Materials</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Date</strong>: Tuesday, June 23, 2026</p>
+</div>
+<div class="paragraph">
+<p><strong>Time</strong>: 10:07 CEST</p>
+</div>
+<div class="paragraph">
+<p><strong>Format</strong>: Online webinar</p>
+</div>
+<div class="paragraph">
+<p><strong>Recording</strong>: <a href="https://us02web.zoom.us/rec/share/jgOK59D-lLTz5rqrJeqSDH_O1fVAzJcBV3WgwsDqYOIUbg4_R1Hid4bR92SJ17Vq.s_6Y4CRiD8zJPgK2?startTime=1782202079000">Zoom recording</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Passcode</strong>: 6kB1MC+q</p>
+</div>
+<div class="sect2">
+<h3 id="_slide_deck"><a class="anchor" href="#_slide_deck"></a>1.1. Slide Deck</h3>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Deck</th>
+<th class="tableblock halign-left valign-top">Presenter</th>
+<th class="tableblock halign-left valign-top">PDF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plateforme TRUST - WP3: Solveurs, WP7: Benchmarking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pierre Ledac and TRUST team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/webinars/2026/2026-trust.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1 webinar-report">
+<h2 id="_meeting_report"><a class="anchor" href="#_meeting_report"></a>2. Meeting Report</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Date</strong>: June 23, 2026</p>
+</div>
+<div class="paragraph">
+<p><strong>Context</strong>: Exa-MA / NumPEx discussion on the TRUST framework, solver strategies, GPU porting, mini-apps, and possible links with HPDDM, Uranie, WP3, WP6, and AMD MI300 access.</p>
+</div>
+<div class="paragraph">
+<p><strong>Participants</strong>: Christophe Prud&#8217;homme; Pierre Ledac - CEA, TRUST; Pierre Jolivet; Utpal Kiran; Erik Fabrizzi; Ansar Calloo; Lucas Spies; Vincent Chabannes; Juliette Antonczak</p>
+</div>
+<div class="sect2">
+<h3 id="_purpose_of_the_discussion"><a class="anchor" href="#_purpose_of_the_discussion"></a>2.1. Purpose of the Discussion</h3>
+<div class="paragraph">
+<p>The meeting focused on the status and possible Exa-MA integration of the CEA TRUST framework, with emphasis on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>GPU porting and performance portability, mainly through Kokkos;</p>
+</li>
+<li>
+<p>linear solver and preconditioner strategies on GPU;</p>
+</li>
+<li>
+<p>structured versus algebraic multigrid approaches;</p>
+</li>
+<li>
+<p>possible TRUST-based mini-apps for Exa-MA;</p>
+</li>
+<li>
+<p>links with HPDDM and solver benchmarking;</p>
+</li>
+<li>
+<p>possible TRUST-Uranie activities for uncertainty quantification;</p>
+</li>
+<li>
+<p>mixed precision as a future optimization direction;</p>
+</li>
+<li>
+<p>access to MI300 GPU resources through the GENCI Grand Challenge.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trust_framework_status"><a class="anchor" href="#_trust_framework_status"></a>2.2. TRUST Framework Status</h3>
+<div class="paragraph">
+<p>Pierre Ledac presented TRUST as a CEA simulation framework used for fluid mechanics and thermo-hydraulic applications, with a significant application ecosystem. The framework is being progressively ported to GPU using Kokkos.</p>
+</div>
+<div class="paragraph">
+<p>The GPU migration is already effective for several kernels and applications, but the port is still hybrid in places. Some parts of the computation remain on CPU, in particular some matrix construction or initialization steps, while GPU-resident updates and kernels are progressively introduced.</p>
+</div>
+<div class="paragraph">
+<p>A key point is that solver and preconditioner performance is now one of the main bottlenecks for large GPU runs. TRUST currently relies on a solver ecosystem involving PETSc, HYPRE, AMGX, and potentially Ginkgo and HPDDM.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_matrix_assembly_and_gpu_residency"><a class="anchor" href="#_matrix_assembly_and_gpu_residency"></a>2.3. Matrix Assembly and GPU Residency</h3>
+<div class="paragraph">
+<p>Utpal Kiran raised a question about matrix assembly. The answer was that TRUST currently has several assembly paths, depending on the application and discretization.</p>
+</div>
+<div class="paragraph">
+<p>The current situation is hybrid:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>in some cases, the matrix is built on CPU and then copied to GPU;</p>
+</li>
+<li>
+<p>if the matrix is constant, this may be acceptable because the cost is paid only once;</p>
+</li>
+<li>
+<p>for Jacobian coefficients or similar updates, PETSc GPU interfaces can be used to update values directly on the device;</p>
+</li>
+<li>
+<p>full GPU-resident sparse matrix assembly is still work in progress.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is not seen as a blocker for the first solver-oriented mini-apps, but it is important for future work on fully GPU-resident workflows and nonlinear/time-dependent simulations.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_linear_solvers_hypre_amgx_petsc_ginkgo_hpddm"><a class="anchor" href="#_linear_solvers_hypre_amgx_petsc_ginkgo_hpddm"></a>2.4. Linear Solvers: HYPRE, AMGX, PETSc, Ginkgo, HPDDM</h3>
+<div class="paragraph">
+<p>Pierre Jolivet asked what alternative Ginkgo solvers could perform better than the current TRUST solver stack.</p>
+</div>
+<div class="paragraph">
+<p>Pierre Ledac answered that, at this stage, he is not yet confident that Ginkgo performs better than the current combinations used in TRUST, in particular PETSc/HYPRE and AMGX. The comparison still needs systematic benchmarking, including convergence behavior, robustness, and time-to-solution.</p>
+</div>
+<div class="paragraph">
+<p>The solver candidates to compare include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>PETSc/HYPRE, especially BoomerAMG;</p>
+</li>
+<li>
+<p>AMGX;</p>
+</li>
+<li>
+<p>Ginkgo;</p>
+</li>
+<li>
+<p>HPDDM;</p>
+</li>
+<li>
+<p>structured HYPRE solvers for structured meshes;</p>
+</li>
+<li>
+<p>possibly AMD/ROCm-specific solver kernels if such work becomes available through NumPEx or AMD collaborations.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_structured_multigrid_and_hypre"><a class="anchor" href="#_structured_multigrid_and_hypre"></a>2.5. Structured Multigrid and HYPRE</h3>
+<div class="paragraph">
+<p>A specific discussion concerned structured meshes. TRUST is already using HYPRE successfully on tetrahedral/unstructured cases. However, for structured meshes, algebraic multigrid may be too costly, and structured multigrid could be a better option.</p>
+</div>
+<div class="paragraph">
+<p>The open technical question is how to expose TRUST structured mesh information to HYPRE:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>either through PETSc data structures, for example DMDA;</p>
+</li>
+<li>
+<p>or by directly providing the relevant structured information to HYPRE, possibly using SStruct-type solvers.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Pierre Jolivet noted that he was not sure whether the necessary PETSc plumbing exists between DMDA and HYPRE SStruct solvers, and said he would check.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mini_apps_and_benchmarks"><a class="anchor" href="#_mini_apps_and_benchmarks"></a>2.6. Mini-Apps and Benchmarks</h3>
+<div class="paragraph">
+<p>Christophe Prud&#8217;homme emphasized the need for mini-apps.</p>
+</div>
+<div class="paragraph">
+<p>The first realistic TRUST mini-apps should likely be solver-oriented rather than full discretization mini-apps. TRUST can provide representative matrices and linear systems, together with PETSc option files, allowing comparison of several preconditioners and solvers.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 15.3846%;">
+<col style="width: 7.6923%;">
+<col style="width: 7.6923%;">
+<col style="width: 23.0769%;">
+<col style="width: 15.3846%;">
+<col style="width: 15.3846%;">
+<col style="width: 15.3847%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">App / benchmark</th>
+<th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Exa-MA link</th>
+<th class="tableblock halign-left valign-top">Scientific / technical objective</th>
+<th class="tableblock halign-left valign-top">Stress point</th>
+<th class="tableblock halign-left valign-top">Contacts</th>
+<th class="tableblock halign-left valign-top">Next step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST solver mini-app based on representative linear systems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Proposed / priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3 / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Export or provide representative TRUST linear systems and compare solver/preconditioner strategies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reproducibility, representative matrices, PETSc option files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST / Exa-MA / HPDDM team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define first mini-app; starting point: <code>apps-trust-hpddm-mg</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST preconditioner benchmark</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Proposed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compare HPDDM, HYPRE BoomerAMG, AMGX, Ginkgo, and PETSc-based strategies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Convergence, robustness, GPU performance, memory footprint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST / Exa-MA WP3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Establish benchmark protocol and metrics</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Structured multigrid test case</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Candidate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Evaluate structured HYPRE/SStruct or PETSc DMDA path for structured TRUST meshes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exposing structured mesh data, AMG cost</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST; Pierre Jolivet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check DMDA-to-HYPRE SStruct feasibility; identify test case</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mixed-precision verification/validation cases</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Future / proposed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3 / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test mixed precision for solver/preconditioner memory and bandwidth pressure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Correctness, physical validation, robustness, time-to-solution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST / Exa-MA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define small verification and larger validation cases</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST-Uranie UQ workflow</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Future</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP6 / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Package and benchmark coupled TRUST-Uranie uncertainty quantification workflows</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Roadmap, engineer profile, reproducible workflows</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exa-MA / CEA / Ecole Polytechnique</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Build roadmap within roughly six months</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MI300 validation campaign</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Future / access-dependent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3 / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Large GPU campaign for TRUST simulations and solver stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MI300 access strategy, GPU-hour needs, readiness</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme; TRUST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clarify Grand Challenge strategy</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_mixed_precision"><a class="anchor" href="#_mixed_precision"></a>2.7. Mixed Precision</h3>
+<div class="paragraph">
+<p>Mixed precision was identified as an important future direction. Once the Kokkos/GPU porting work has matured, reducing memory traffic and bandwidth pressure becomes a major optimization target.</p>
+</div>
+<div class="paragraph">
+<p>The main motivations are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>reducing the amount of data transferred to the GPU;</p>
+</li>
+<li>
+<p>reducing memory footprint;</p>
+</li>
+<li>
+<p>improving bandwidth-bound kernels;</p>
+</li>
+<li>
+<p>potentially accelerating solvers and preconditioners.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>HYPRE already seems to have some support for lower precision or single precision in parts of the solver stack, but it is not yet clear how easily this can be accessed from PETSc or how well it is documented.</p>
+</div>
+<div class="paragraph">
+<p>A robust mixed-precision activity would require:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a small verification case to test correctness and performance quickly;</p>
+</li>
+<li>
+<p>a larger validation case, for example a turbulent flow simulation lasting several hours, to check that physical quantities such as turbulence spectra remain acceptable;</p>
+</li>
+<li>
+<p>metrics on convergence, accuracy, robustness, memory footprint, and time-to-solution.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This could become a good Exa-MA mini-app or demonstrator topic, especially if connected to WP3 solver activities and AMD GPU work.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trust_uranie_and_wp6"><a class="anchor" href="#_trust_uranie_and_wp6"></a>2.8. TRUST, Uranie, and WP6</h3>
+<div class="paragraph">
+<p>A possible link between TRUST and Uranie was discussed in the context of WP6 and uncertainty quantification.</p>
+</div>
+<div class="paragraph">
+<p>Christophe recalled that Exa-MA may be able to support approximately one year of engineer time. The engineer would likely be recruited at Ecole Polytechnique but would work closely with CEA, with possible interactions around both Uranie and TRUST.</p>
+</div>
+<div class="paragraph">
+<p>The exact roadmap still needs to be defined. Candidate activities include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>packaging and deployment of TRUST/Uranie benchmark workflows;</p>
+</li>
+<li>
+<p>reproducible benchmarking;</p>
+</li>
+<li>
+<p>definition and implementation of benchmark cases;</p>
+</li>
+<li>
+<p>TRUST-only benchmark support;</p>
+</li>
+<li>
+<p>Uranie-only workflow support;</p>
+</li>
+<li>
+<p>coupled TRUST-Uranie uncertainty quantification workflows;</p>
+</li>
+<li>
+<p>integration with Exa-MA mini-app and benchmarking strategy.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The group agreed that there is time to define the work, but that the roadmap should converge within roughly six months in order to prepare the recruitment profile.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mi300_genci_grand_challenge_access"><a class="anchor" href="#_mi300_genci_grand_challenge_access"></a>2.9. MI300 / GENCI Grand Challenge Access</h3>
+<div class="paragraph">
+<p>The GENCI Grand Challenge on MI300 GPUs was discussed.</p>
+</div>
+<div class="paragraph">
+<p>TRUST is interested, especially because access to JUPITER may be uncertain and TRUST has a large simulation campaign that could benefit from MI300 resources. Pierre Ledac estimated that TRUST might need around <strong>100,000 GPU-hours</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Exa-MA is preparing a broader request involving several frameworks and groups. The open strategic question is whether TRUST should:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>submit independently, because it has a large physics-driven simulation campaign; or</p>
+</li>
+<li>
+<p>join the Exa-MA/NumPEx request, if this is strategically preferable.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Christophe will check the best strategy and come back to Pierre. TRUST indicated that it is ready to start, including during the September-October access window.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_software_versioning_and_regression_testing"><a class="anchor" href="#_software_versioning_and_regression_testing"></a>2.10. Software Versioning and Regression Testing</h3>
+<div class="paragraph">
+<p>The discussion also covered PETSc and Kokkos version management.</p>
+</div>
+<div class="paragraph">
+<p>The main conclusion is that TRUST needs to follow GPU-related updates closely, because new versions often include important bug fixes and performance improvements. However, updates can also introduce regressions or numerical changes that are costly to analyze.</p>
+</div>
+<div class="paragraph">
+<p>Pierre emphasized the importance of having many regression tests covering all relevant solver configurations. Such tests may become essential several years later when a PETSc, Kokkos, or solver-stack update changes behavior.</p>
+</div>
+<div class="paragraph">
+<p>One CPU-side PETSc update was mentioned as causing blocking issues in parallel regression tests; the exact version should be checked before documenting this externally.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_amd_solverkernel_collaboration"><a class="anchor" href="#_amd_solverkernel_collaboration"></a>2.11. AMD Solver/Kernel Collaboration</h3>
+<div class="paragraph">
+<p>Pierre Ledac asked about a previous AMD-related discussion mentioning possible solver developments.</p>
+</div>
+<div class="paragraph">
+<p>Christophe clarified that the items discussed in the AMD workshop were mostly proposals or possible co-design directions, not necessarily existing AMD solver products. Examples included GPU-resident solver paths, SpMV, smoothers, Krylov methods, collective reductions, mixed precision, convergence behavior, and memory footprint.</p>
+</div>
+<div class="paragraph">
+<p>Christophe will check where the AMD/NumPEx discussions stand and whether TRUST could be connected to future AMD co-design activities.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tasks_and_action_items"><a class="anchor" href="#_tasks_and_action_items"></a>2.12. Tasks and Action Items</h3>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">#</th>
+<th class="tableblock halign-left valign-top">Task</th>
+<th class="tableblock halign-left valign-top">Owner(s)</th>
+<th class="tableblock halign-left valign-top">Target / comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check whether PETSc DMDA can be connected cleanly to HYPRE SStruct solvers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pierre Jolivet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Needed to choose structured multigrid integration strategy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define first TRUST solver mini-app based on representative linear systems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST / Exa-MA / HPDDM team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starting point: <code>apps-trust-hpddm-mg</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compare PETSc/HYPRE, AMGX, Ginkgo, HPDDM on representative TRUST systems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST / Exa-MA WP3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include convergence, robustness, GPU performance, memory footprint</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identify structured mesh test case for structured multigrid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Especially relevant where AMG is too costly</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define mixed-precision verification and validation cases</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST / Exa-MA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Need both small correctness/performance case and larger physical validation case</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Build roadmap for TRUST-Uranie engineer activity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exa-MA / CEA / Ecole Polytechnique</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target convergence within roughly six months</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clarify MI300 Grand Challenge strategy: TRUST standalone or via Exa-MA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST may need about 100,000 GPU-hours and is ready to start</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Share TRUST presentation slides</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pierre Ledac</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Via Slack or email</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check AMD/NumPEx solver co-design status and possible TRUST involvement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Especially around GPU-resident solvers and mixed precision</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_proposed_exa_ma_framing"><a class="anchor" href="#_proposed_exa_ma_framing"></a>2.13. Proposed Exa-MA Framing</h3>
+<div class="paragraph">
+<p>TRUST appears to be a strong candidate framework for Exa-MA WP3 activities because it provides realistic, production-grade solver and preconditioner challenges on modern GPU architectures.</p>
+</div>
+<div class="paragraph">
+<p>The most pragmatic short-term objective is not yet to define a full discretization mini-app, but rather to create a solver-oriented TRUST mini-app suite. This suite should expose representative systems, allow controlled solver/preconditioner comparisons, and provide reproducible performance and robustness metrics.</p>
+</div>
+<div class="paragraph">
+<p>A good medium-term trajectory would be:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>solver benchmark mini-apps;</p>
+</li>
+<li>
+<p>structured multigrid experiments;</p>
+</li>
+<li>
+<p>HPDDM comparison and integration;</p>
+</li>
+<li>
+<p>mixed-precision experiments;</p>
+</li>
+<li>
+<p>TRUST-Uranie uncertainty quantification workflow;</p>
+</li>
+<li>
+<p>MI300 large-scale validation campaign.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="../../_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+        <div style="font-size: 0.75rem; color: #757575; margin-top: 0.5em;">
+            <a href="../../privacy.html" style="color: #757575; text-decoration: none; margin-right: 1.5em;">Privacy Notice</a>
+            <a href="../../legal-notice.html" style="color: #757575; text-decoration: none;">Legal Notice</a>
+        </div>
+    </div>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="../../_/js/vendor/highlight.js"></script>
+
+<script src="../../_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>

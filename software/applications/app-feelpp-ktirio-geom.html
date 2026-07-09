@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Terrain Generation :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/software/applications/app-feelpp-ktirio-geom.html">
+    <meta name="description" content="Terrain Generation - Demonstrate the creation of a city mesh including elevation, roads, water bodies and land markers....">
+    <meta name="generator" content="Antora 3.1.14">
+<link rel="stylesheet" href="../../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- Custom badge styles for external partners -->
+<style>
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+.badge-cofunding {
+    background-color: #dc3545;
+    color: white;
+}
+.badge-funded {
+    background-color: #28a745;
+    color: white;
+}
+</style>
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = '../../_'</script>
+
+  </head>
+  <body class="article alternating-sections">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo" style="height: 50px; max-height: none !important; width: auto;" src="../../_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html"><span class="icon"><i class="fa fa-home"></i></span> Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../overview.html"><span class="icon"><i class="fa fa-mountain-sun"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text"><span class="icon"><i class="fa fa-info-circle"></i></span> About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../bottlenecks.html"><span class="icon"><i class="fa fa-triangle-exclamation"></i></span> Exascale Bottlenecks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../team.html"><span class="icon"><i class="fa fa-users"></i></span> WP Leaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../team-recruited.html"><span class="icon"><i class="fa fa-user-graduate"></i></span> Recruited Personnel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../consortium.html"><span class="icon"><i class="fa fa-building"></i></span> Consortium</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../external-partners.html"><span class="icon"><i class="fa fa-handshake"></i></span> External Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../sab.html"><span class="icon"><i class="fa fa-clipboard-list"></i></span> Scientific Advisory Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../collaborative-projects.html"><span class="icon"><i class="fa fa-project-diagram"></i></span> Collaborative Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../contact.html"><span class="icon"><i class="fa fa-envelope"></i></span> Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../workpackages.html"><span class="icon"><i class="fa fa-cubes"></i></span> Work Packages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages.html"><span class="icon"><i class="fa fa-list"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp0.html"><span class="icon"><i class="fa fa-tasks"></i></span> WP0: Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp1.html"><span class="icon"><i class="fa fa-th"></i></span> WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp2.html"><span class="icon"><i class="fa fa-brain"></i></span> WP2: MOR &amp; SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp3.html"><span class="icon"><i class="fa fa-calculator"></i></span> WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp4.html"><span class="icon"><i class="fa fa-chart-line"></i></span> WP4: Inverse Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp5.html"><span class="icon"><i class="fa fa-bullseye"></i></span> WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp6.html"><span class="icon"><i class="fa fa-random"></i></span> WP6: UQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp7.html"><span class="icon"><i class="fa fa-rocket"></i></span> WP7: Software &amp; Benchmarking</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../results.html"><span class="icon"><i class="fa fa-trophy"></i></span> Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../deliverables.html"><span class="icon"><i class="fa fa-book"></i></span> Deliverables and Publications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../publications-hal.html"><span class="icon"><i class="fa fa-file-alt"></i></span> Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../training.html"><span class="icon"><i class="fa fa-graduation-cap"></i></span> Training</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../news.html"><span class="icon"><i class="fa fa-newspaper"></i></span> News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../news/archive.html"><span class="icon"><i class="fa fa-archive"></i></span> Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../workgroups.html"><span class="icon"><i class="fa fa-network-wired"></i></span> NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html"><span class="icon"><i class="fa fa-laptop-code"></i></span> WP7: Software &amp; Benchmarking</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../concepts.html">Concepts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../frameworks.html"><span class="icon"><i class="fa fa-cubes"></i></span> Frameworks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/scimba.html">Scimba</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frameworks/uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../applications.html"><span class="icon"><i class="fa fa-rocket"></i></span> Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-feelpp-discr-1.html">Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-feelpp-distance.html">Distance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-feelpp-nlcrb.html">Nonlinear Compressive Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-feelpp-rb.html">Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-feelpp-toolbox.html">Test Feel++ toolboxes at scale</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-hpddm-dfn.html">Preconditioning systems arising from discrete fracture networks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-freefem-parmmg.html">Fichera corner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-zellij.html">Zellij</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-eki.html">EKI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-freefem-shape-opt-fem.html">Shape Opt FEM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-scimba-shape-opt-nn.html">Shape Opt NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-scimba-plasma.html">Plasma NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-scimba-hybrid.html">Hybrid  numerics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-feelpp-thermomeca-1.html">thermomeca</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="app-feelpp-ktirio-geom.html">Terrain Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-cgal-autorefine.html">Mesh autorefinement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-cgal-cdt2.html">Constrained Delaunay Triangulation 2D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-cgal-ccdt3.html">Conforming Constrained Delaunay Triangulation 3D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="app-petsc-mixed-precision.html">Impact of mixed-precision on PETSc solvers and preconditioners</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="../../index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="../../index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Exa-MA</a></li>
+    <li><a href="../applications.html"><span class="icon"><i class="fa fa-rocket"></i></span> Applications</a></li>
+    <li><a href="app-feelpp-ktirio-geom.html">Terrain Generation</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/software/pages/applications/app-feelpp-ktirio-geom.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="../../_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Terrain Generation</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Demonstrate the creation of a city mesh including elevation, roads, water bodies and land markers.</p>
+</div>
+<div class="openblock section-gray">
+<div class="content">
+<h2 id="_quick_facts" class="discrete">Quick Facts</h2>
+<div class="exampleblock grid grid-2 gap-2">
+<div class="content">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-primary"><i class="fa fa-tag fa-2x"></i></span> <strong>Type</strong></p>
+</div>
+<div class="paragraph">
+<p>Demonstrator</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-warning"><i class="fa fa-clock fa-2x"></i></span> <strong>Status</strong></p>
+</div>
+<div class="paragraph">
+<p>Planned</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-info"><i class="fa fa-layer-group fa-2x"></i></span> <strong>Work Packages</strong></p>
+</div>
+<div class="paragraph">
+<p>WP1</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><span class="icon text-purple"><i class="fa fa-boxes-stacked fa-2x"></i></span> <strong>Frameworks</strong></p>
+</div>
+<div class="paragraph">
+<p>Feel++, CGAL</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>1. Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demonstrate the creation of a city mesh including elevation, roads, water bodies and land markers.</p>
+</div>
+<div class="sect2">
+<h3 id="_repository"><a class="anchor" href="#_repository"></a>1.1. Repository</h3>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-code-branch"></i></span> <a href="https://github.com/numpex/apps-feelpp" class="bare">github.com/numpex/apps-feelpp</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_technical_stack"><a class="anchor" href="#_technical_stack"></a>2. Technical Stack</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_frameworks_used"><a class="anchor" href="#_frameworks_used"></a>2.1. Frameworks Used</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Feel++</strong></p>
+</li>
+<li>
+<p><strong>CGAL</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_parallel_frameworks"><a class="anchor" href="#_parallel_frameworks"></a>2.2. Parallel Frameworks</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Multithread</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_methods_algorithms"><a class="anchor" href="#_methods_algorithms"></a>3. Methods &amp; Algorithms</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_wp1_discretization"><a class="anchor" href="#_wp1_discretization"></a>3.1. WP1: Discretization</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>unstructured mesh</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_flow"><a class="anchor" href="#_data_flow"></a>4. Data Flow</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_outputs"><a class="anchor" href="#_outputs"></a>4.1. Outputs</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Gmsh</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_benchmarking"><a class="anchor" href="#_benchmarking"></a>5. Benchmarking</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_metrics"><a class="anchor" href="#_metrics"></a>5.1. Metrics</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Strong Scalability</p>
+</li>
+<li>
+<p>Weak Scalability</p>
+</li>
+<li>
+<p>Time To Solution</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_benchmark_scope"><a class="anchor" href="#_benchmark_scope"></a>5.2. Benchmark Scope</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Single Node</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_timeline"><a class="anchor" href="#_timeline"></a>6. Timeline</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Milestone</th>
+<th class="tableblock halign-left valign-top">Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specification Due</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prototype Due</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_team"><a class="anchor" href="#_team"></a>7. Team</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Partners:</strong> Unistra, Inria CA</p>
+</div>
+<div class="paragraph">
+<p><strong>Responsible:</strong> V. Chabannes; C. Prud&#8217;homme</p>
+</div>
+<div class="paragraph">
+<p><strong>WP7 Engineer:</strong> Javier Cladellas (UNISTRA)</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="../../_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+        <div style="font-size: 0.75rem; color: #757575; margin-top: 0.5em;">
+            <a href="../../privacy.html" style="color: #757575; text-decoration: none; margin-right: 1.5em;">Privacy Notice</a>
+            <a href="../../legal-notice.html" style="color: #757575; text-decoration: none;">Legal Notice</a>
+        </div>
+    </div>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="../../_/js/vendor/highlight.js"></script>
+
+<script src="../../_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>

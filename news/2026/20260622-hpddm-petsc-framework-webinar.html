@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HPDDM / PETSc Framework Webinar :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/news/2026/20260622-hpddm-petsc-framework-webinar.html">
+    <meta name="description" content="Recording, slides, and extracted meeting report from the June 22, 2026 HPDDM / PETSc framework webinar.">
+    <meta name="generator" content="Antora 3.1.14">
+<link rel="stylesheet" href="../../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- Custom badge styles for external partners -->
+<style>
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+.badge-cofunding {
+    background-color: #dc3545;
+    color: white;
+}
+.badge-funded {
+    background-color: #28a745;
+    color: white;
+}
+</style>
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = '../../_'</script>
+
+  </head>
+  <body class="article alternating-sections">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo" style="height: 50px; max-height: none !important; width: auto;" src="../../_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html"><span class="icon"><i class="fa fa-home"></i></span> Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../overview.html"><span class="icon"><i class="fa fa-mountain-sun"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text"><span class="icon"><i class="fa fa-info-circle"></i></span> About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../bottlenecks.html"><span class="icon"><i class="fa fa-triangle-exclamation"></i></span> Exascale Bottlenecks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../team.html"><span class="icon"><i class="fa fa-users"></i></span> WP Leaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../team-recruited.html"><span class="icon"><i class="fa fa-user-graduate"></i></span> Recruited Personnel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../consortium.html"><span class="icon"><i class="fa fa-building"></i></span> Consortium</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../external-partners.html"><span class="icon"><i class="fa fa-handshake"></i></span> External Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../sab.html"><span class="icon"><i class="fa fa-clipboard-list"></i></span> Scientific Advisory Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../collaborative-projects.html"><span class="icon"><i class="fa fa-project-diagram"></i></span> Collaborative Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../contact.html"><span class="icon"><i class="fa fa-envelope"></i></span> Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../workpackages.html"><span class="icon"><i class="fa fa-cubes"></i></span> Work Packages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages.html"><span class="icon"><i class="fa fa-list"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp0.html"><span class="icon"><i class="fa fa-tasks"></i></span> WP0: Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp1.html"><span class="icon"><i class="fa fa-th"></i></span> WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp2.html"><span class="icon"><i class="fa fa-brain"></i></span> WP2: MOR &amp; SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp3.html"><span class="icon"><i class="fa fa-calculator"></i></span> WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp4.html"><span class="icon"><i class="fa fa-chart-line"></i></span> WP4: Inverse Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp5.html"><span class="icon"><i class="fa fa-bullseye"></i></span> WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp6.html"><span class="icon"><i class="fa fa-random"></i></span> WP6: UQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp7.html"><span class="icon"><i class="fa fa-rocket"></i></span> WP7: Software &amp; Benchmarking</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../results.html"><span class="icon"><i class="fa fa-trophy"></i></span> Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../deliverables.html"><span class="icon"><i class="fa fa-book"></i></span> Deliverables and Publications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../publications-hal.html"><span class="icon"><i class="fa fa-file-alt"></i></span> Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../training.html"><span class="icon"><i class="fa fa-graduation-cap"></i></span> Training</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../news.html"><span class="icon"><i class="fa fa-newspaper"></i></span> News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../archive.html"><span class="icon"><i class="fa fa-archive"></i></span> Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../workgroups.html"><span class="icon"><i class="fa fa-network-wired"></i></span> NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/index.html"><span class="icon"><i class="fa fa-laptop-code"></i></span> WP7: Software &amp; Benchmarking</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/concepts.html">Concepts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/frameworks.html"><span class="icon"><i class="fa fa-cubes"></i></span> Frameworks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/scimba.html">Scimba</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/applications.html"><span class="icon"><i class="fa fa-rocket"></i></span> Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-discr-1.html">Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-distance.html">Distance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-nlcrb.html">Nonlinear Compressive Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-rb.html">Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-toolbox.html">Test Feel++ toolboxes at scale</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-hpddm-dfn.html">Preconditioning systems arising from discrete fracture networks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-freefem-parmmg.html">Fichera corner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-zellij.html">Zellij</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-eki.html">EKI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-freefem-shape-opt-fem.html">Shape Opt FEM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-shape-opt-nn.html">Shape Opt NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-plasma.html">Plasma NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-hybrid.html">Hybrid  numerics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-thermomeca-1.html">thermomeca</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-ktirio-geom.html">Terrain Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-autorefine.html">Mesh autorefinement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-cdt2.html">Constrained Delaunay Triangulation 2D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-ccdt3.html">Conforming Constrained Delaunay Triangulation 3D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-petsc-mixed-precision.html">Impact of mixed-precision on PETSc solvers and preconditioners</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="../../index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="../../index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Exa-MA</a></li>
+    <li><a href="../../news.html">News and Events</a></li>
+    <li><a href="20260622-hpddm-petsc-framework-webinar.html">HPDDM / PETSc Framework Webinar</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/ROOT/pages/news/2026/20260622-hpddm-petsc-framework-webinar.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="../../_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">HPDDM / PETSc Framework Webinar</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>The HPDDM / PETSc framework webinar took place online on June 22, 2026.
+The session reviewed HPDDM&#8217;s integration in PETSc, GPU-enabled domain decomposition, GENEO requirements, and Exa-MA mini-apps where HPDDM should be evaluated.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recording_and_materials"><a class="anchor" href="#_recording_and_materials"></a>1. Recording and Materials</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Date</strong>: Monday, June 22, 2026</p>
+</div>
+<div class="paragraph">
+<p><strong>Time</strong>: 14:03 CEST</p>
+</div>
+<div class="paragraph">
+<p><strong>Format</strong>: Online webinar</p>
+</div>
+<div class="paragraph">
+<p><strong>Recording</strong>: <a href="https://us02web.zoom.us/rec/share/W3P2pMpXdKHo0wcxUL_6aEpKDCaJ9mU17teNxWMj6v3Qp8pc_3-2ojb0zMbiqi7F.XqHqXBvIz-JntzxQ?startTime=1782129818000">Zoom recording</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Passcode</strong>: 4!GvQ#j$</p>
+</div>
+<div class="sect2">
+<h3 id="_slide_decks"><a class="anchor" href="#_slide_decks"></a>1.1. Slide Decks</h3>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Deck</th>
+<th class="tableblock halign-left valign-top">Presenters</th>
+<th class="tableblock halign-left valign-top">PDF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refactoring HPDDM for GPU-Enabled Domain Decomposition - HPDDM &amp; PETSc 3.25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erik Fabrizzi, Pierre Jolivet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/webinars/2026/2026-hpddm-1.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robust overlapping Schwarz methods and their applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pierre Jolivet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../_attachments/webinars/2026/2026-hpddm-2.pdf" class="xref attachment"><span class="icon"><i class="fa fa-file-pdf" title="PDF"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1 webinar-report">
+<h2 id="_meeting_report"><a class="anchor" href="#_meeting_report"></a>2. Meeting Report</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Meeting</strong>: Exa-MA framework session dedicated to HPDDM</p>
+</div>
+<div class="paragraph">
+<p><strong>Presentation</strong>: Erik Fabrizzi, with contributions from Pierre Jolivet</p>
+</div>
+<div class="paragraph">
+<p><strong>Participants mentioned</strong>: Christophe Prud&#8217;homme, Erik Fabrizzi, Pierre Jolivet, Frederic Nataf, Isabelle Ramiere, Pierre-Henri Tournier, Vincent Faucher, Loic Gouarin, Juliette Antonczak</p>
+</div>
+<div class="paragraph">
+<p><strong>Purpose</strong>: review the status of HPDDM within PETSc, identify GPU and portability issues, and define relevant Exa-MA mini-apps, benchmarks, and demonstrators where HPDDM should be activated or evaluated.</p>
+</div>
+<div class="sect2">
+<h3 id="_objectives_of_the_session"><a class="anchor" href="#_objectives_of_the_session"></a>2.1. Objectives of the Session</h3>
+<div class="paragraph">
+<p>The session aimed to position HPDDM within the Exa-MA framework activities, based on recent work presented at the PETSc Annual Meeting 2026.</p>
+</div>
+<div class="paragraph">
+<p>The main objectives were to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>clarify the current status of the HPDDM integration in PETSc;</p>
+</li>
+<li>
+<p>understand the user workflow through PETSc <code>KSP</code> and <code>PC</code>;</p>
+</li>
+<li>
+<p>discuss GPU support, in particular CUDA, HIP/AMD, and Kokkos;</p>
+</li>
+<li>
+<p>identify Exa-MA mini-apps where HPDDM should be tested;</p>
+</li>
+<li>
+<p>prepare a CPU/GPU benchmarking path for the October deliverable;</p>
+</li>
+<li>
+<p>identify possible integrations with PETSc-based frameworks such as MFEM, Feel++, TRUST, FreeFEM, <code>Code_Aster</code>, and Gridap.jl.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_current_status_of_hpddm_in_petsc"><a class="anchor" href="#_current_status_of_hpddm_in_petsc"></a>2.2. Current Status of HPDDM in PETSc</h3>
+<div class="paragraph">
+<p>HPDDM is a library for the preconditioning of linear systems. It was initially developed as a standalone library, but significant effort has recently been devoted to integrating it more tightly into PETSc.</p>
+</div>
+<div class="paragraph">
+<p>The recent work consists in progressively replacing HPDDM native internal operations with PETSc data structures and PETSc operations. This makes the code more generic, easier to maintain, and better aligned with PETSc backends, in particular for GPU execution.</p>
+</div>
+<div class="paragraph">
+<p>Within PETSc, the main component relevant to Exa-MA is <code>PCHPDDM</code>, i.e. HPDDM used as a preconditioner. The <code>KSPHPDDM</code> layer exists, but was not considered central for the current Exa-MA applications, since it is mostly useful for specific Krylov methods such as block methods.</p>
+</div>
+<div class="paragraph">
+<p>The PETSc interface allows the user or the calling framework to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>use HPDDM as a PETSc preconditioner;</p>
+</li>
+<li>
+<p>provide the Neumann matrices required by GENEO;</p>
+</li>
+<li>
+<p>provide the right-hand side matrix of the generalized eigenvalue problem when needed;</p>
+</li>
+<li>
+<p>provide the deflation matrix <code>Z</code> directly if it is already known;</p>
+</li>
+<li>
+<p>choose different coarse correction strategies, such as additive, balanced, or deflated corrections;</p>
+</li>
+<li>
+<p>compare HPDDM with other PETSc preconditioners by changing runtime options rather than rewriting application code.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A key point is that HPDDM is not used as a standalone solver here. It acts as a preconditioner inside a PETSc linear solver workflow. The Krylov method remains selected through PETSc, and the local subdomain solvers can be direct or iterative. By default, exact local factorizations are often used on subdomains, but this can be changed through PETSc options.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_geneo_neumann_matrices_and_the_role_of_the_framework"><a class="anchor" href="#_geneo_neumann_matrices_and_the_role_of_the_framework"></a>2.3. GENEO, Neumann Matrices, and the Role of the Framework</h3>
+<div class="paragraph">
+<p>GENEO is the central robust two-level method in HPDDM for SPD problems. It constructs a coarse space from local generalized eigenvalue problems defined on overlapping subdomains. Its main strength is numerical robustness, with theoretical guarantees on the conditioning of the preconditioned operator.</p>
+</div>
+<div class="paragraph">
+<p>The counterpart is that GENEO is not fully algebraic. It requires Neumann matrices on the overlapping subdomains. These matrices must use natural boundary conditions on the artificial interfaces induced by the domain decomposition, while preserving the essential boundary conditions of the original problem.</p>
+</div>
+<div class="paragraph">
+<p>This means that the calling framework plays an important role. If the framework has ghost elements or a suitable representation of overlapping subdomains, assembling the Neumann matrices can be relatively natural. This is the case, or could be the case, for frameworks such as FreeFEM, <code>Code_Aster</code>, Gridap.jl, MFEM, and potentially Feel++ once the proper interface is available.</p>
+</div>
+<div class="paragraph">
+<p>When Neumann matrices are not available, HPDDM can still be used through algebraic variants. These are easier to activate, often directly through PETSc options, but they do not provide the same theoretical guarantees as GENEO.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_numerical_positioning_with_respect_to_amg_and_multigrid"><a class="anchor" href="#_numerical_positioning_with_respect_to_amg_and_multigrid"></a>2.4. Numerical Positioning with Respect to AMG and Multigrid</h3>
+<div class="paragraph">
+<p>The discussion clarified the practical positioning of HPDDM.</p>
+</div>
+<div class="paragraph">
+<p>When algebraic multigrid works well, it is often faster than two-level domain decomposition methods. However, AMG may be sensitive to geometry, mesh quality, coefficient contrasts, discretization choices, and parameter tuning.</p>
+</div>
+<div class="paragraph">
+<p>HPDDM/GENEO is usually more expensive in setup and sometimes per iteration, but it is more robust in difficult cases. It is especially relevant when the solver must remain reliable under changes in geometry, mesh, discretization, or physical regime.</p>
+</div>
+<div class="paragraph">
+<p>Two examples were discussed.</p>
+</div>
+<div class="sect3">
+<h4 id="_code_aster_edf_elasticity_application"><a class="anchor" href="#_code_aster_edf_elasticity_application"></a>2.4.1. Code_Aster / EDF Elasticity Application</h4>
+<div class="paragraph">
+<p>An EDF application involving an elasticity problem on a PWR vessel-like geometry was presented as an example where BoomerAMG encountered convergence difficulties on more complex geometries or larger cases, despite tuning efforts. HPDDM/GENEO proved robust on the same family of problems.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_discrete_fracture_network_application"><a class="anchor" href="#_discrete_fracture_network_application"></a>2.4.2. Discrete Fracture Network Application</h4>
+<div class="paragraph">
+<p>The DFN application from the SERENA team at Inria Paris was discussed as a second example. The problem involves discrete fracture networks and Raviart-Thomas-type discretizations. In simple cases, multigrid methods may work, but as the number and complexity of fractures increase, multigrid and one-level domain decomposition methods become fragile. HPDDM/GENEO remains robust when the Neumann matrices are available.</p>
+</div>
+<div class="paragraph">
+<p>The operational message is clear: AMG remains a good first option when it works, but HPDDM is a priority candidate for robustness, scalability, complex geometries, non-standard discretizations, and difficult coupled problems.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_development_direction_mpi_subdomain_granularity"><a class="anchor" href="#_new_development_direction_mpi_subdomain_granularity"></a>2.5. New Development Direction: MPI / Subdomain Granularity</h3>
+<div class="paragraph">
+<p>A major development direction is the decoupling of the number of MPI processes from the number of subdomains.</p>
+</div>
+<div class="paragraph">
+<p>Two configurations are targeted:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Several subdomains per MPI process</strong>: this allows the number of subdomains to be increased without increasing the number of MPI ranks. It can reduce the complexity of local subdomain problems and is particularly relevant for batching operations on GPUs.</p>
+</li>
+<li>
+<p><strong>Several MPI processes per subdomain</strong>: this allows larger subdomains to be handled by several MPI processes. It is relevant when using distributed direct solvers or compression-based solvers such as MUMPS, STRUMPACK, or <code>SuperLU_DIST</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Similar ideas are already available in PETSc for some preconditioners, such as <code>PCASM</code>, <code>PCGASM</code>, and <code>PCBJACOBI</code>, for example through parameters such as <code>nblocks</code>.</p>
+</div>
+<div class="paragraph">
+<p>The objective is to bring the same flexibility to <code>PCHPDDM</code>, so that the restricted Schwarz part and the GENEO coarse-space part support the same granularity. This is also relevant for exascale architectures. Several subdomains per MPI process may enable efficient use of batched linear algebra, for example through Kokkos.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_existing_hpddm_petsc_mini_app"><a class="anchor" href="#_existing_hpddm_petsc_mini_app"></a>2.6. Existing HPDDM / PETSc Mini-App</h3>
+<div class="paragraph">
+<p>The current HPDDM mini-app is located in the <code>apps-petsc</code> repository, in:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>src/app-hpddm-dfn.c</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is not an HPDDM-only application, but rather a PETSc application using HPDDM as a linear solver/preconditioner component. The mini-app comes from a discrete fracture network application developed by the SERENA team.</p>
+</div>
+<div class="paragraph">
+<p>The mini-app demonstrates the full PETSc/HPDDM workflow:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>loading the global matrix;</p>
+</li>
+<li>
+<p>loading the right-hand side;</p>
+</li>
+<li>
+<p>loading index sets describing the distribution;</p>
+</li>
+<li>
+<p>loading the Neumann matrices;</p>
+</li>
+<li>
+<p>handling Dirichlet degrees of freedom;</p>
+</li>
+<li>
+<p>configuring <code>KSP</code> and <code>PC</code>;</p>
+</li>
+<li>
+<p>selecting <code>PCHPDDM</code>;</p>
+</li>
+<li>
+<p>solving the linear system;</p>
+</li>
+<li>
+<p>retrieving PETSc metrics such as iteration count, residual, and convergence reason.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Only a small part of the code is strictly HPDDM-specific. Most of the code is PETSc boilerplate for loading data and reconstructing the correct parallel distribution.</p>
+</div>
+<div class="paragraph">
+<p>The mini-app is therefore useful as a reference workflow, but it would be useful to produce a simplified version, stripped of the many regression-test-specific branches inherited from PETSc examples.</p>
+</div>
+<div class="paragraph">
+<p>Larger datasets are being prepared by the SERENA team. These would make it possible to move from a small demonstrator to significantly larger benchmark cases, potentially up to several hundred million degrees of freedom.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gpu_support_status_limitations_and_strategy"><a class="anchor" href="#_gpu_support_status_limitations_and_strategy"></a>2.7. GPU Support: Status, Limitations, and Strategy</h3>
+<div class="paragraph">
+<p>Recent work has moved a significant part of the preconditioner application to the GPU when the matrices are already available on the device.</p>
+</div>
+<div class="paragraph">
+<p>The ideal workflow is:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the framework assembles the matrix on the GPU;</p>
+</li>
+<li>
+<p>the local matrix stays on the GPU;</p>
+</li>
+<li>
+<p>HPDDM/PETSc applies the preconditioner without unnecessary transfers back to the CPU;</p>
+</li>
+<li>
+<p>supported sparse and dense operations use PETSc GPU backends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Several limitations remain:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>some host-device transfers remain, especially around the deflation vectors <code>Z</code> and overlap-related vector exchanges;</p>
+</li>
+<li>
+<p>the coarse solver and local solvers still rely heavily on direct solvers;</p>
+</li>
+<li>
+<p>if MUMPS is used as the local direct solver, matrices must be copied back to the CPU;</p>
+</li>
+<li>
+<p>efficient GPU direct solvers remain a critical missing piece;</p>
+</li>
+<li>
+<p>the recent PETSc integration of cuDSS, NVIDIA&#8217;s sparse direct solver, should be benchmarked;</p>
+</li>
+<li>
+<p>PETScSF could eventually replace some HPDDM-specific MPI communication mechanisms, enabling better use of GPU-aware and GPU-to-GPU communication.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The DFN mini-app is considered GPU-ready in the sense that the matrix can be loaded on the CPU and then converted to a PETSc GPU matrix type, for example <code>MPIAIJCUSPARSE</code>, before setup and solve. This is not optimal from an I/O point of view because PETSc still loads matrices from disk through the CPU, but it is sufficient to benchmark the solver and preconditioner phases.</p>
+</div>
+<div class="paragraph">
+<p>This limitation should be explicitly stated in the benchmark report to avoid mixing I/O costs with solver/preconditioner performance.</p>
+</div>
+<div class="paragraph">
+<p>Regarding AMD, PETSc has a HIP backend, largely derived from the CUDA backend. However, some pieces are still missing in <code>PCHPDDM</code>. Access to AMD hardware is therefore necessary to test and improve this path.</p>
+</div>
+<div class="paragraph">
+<p>It was agreed that the HPDDM team should be added to the AMD/CINES call in order to test the HIP backend. Kokkos is also seen as an important path toward CUDA/AMD portability, especially for batched linear algebra.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_saddle_point_systems_stokes_oseen_and_non_symmetric_problems"><a class="anchor" href="#_saddle_point_systems_stokes_oseen_and_non_symmetric_problems"></a>2.8. Saddle Point Systems, Stokes, Oseen, and Non-Symmetric Problems</h3>
+<div class="paragraph">
+<p>The discussion confirmed that HPDDM is not limited to SPD problems. Saddle point systems are important for Exa-MA and can be handled through PETSc flexibility, in particular through <code>PCFIELDSPLIT</code>.</p>
+</div>
+<div class="paragraph">
+<p>For Stokes systems and nearly incompressible elasticity, the work of Frederic Nataf and Pierre-Henri Tournier can be used in the PETSc/HPDDM context. The idea is to apply HPDDM to relevant blocks, for instance the <code>A00</code> block, and possibly to Schur-complement approximations.</p>
+</div>
+<div class="paragraph">
+<p>For non-symmetric systems, such as Oseen or R13-type equations, several strategies are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>using a physics-based field split;</p>
+</li>
+<li>
+<p>applying HPDDM to selected blocks;</p>
+</li>
+<li>
+<p>using algebraic HPDDM variants rather than GENEO when GENEO becomes unsuitable;</p>
+</li>
+<li>
+<p>treating some non-symmetric systems monolithically.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The theory is less strong than for SPD/GENEO cases, but PETSc/HPDDM already provides practical options to test.</p>
+</div>
+<div class="paragraph">
+<p>For Oseen, GENEO may work in low-convection regimes, but may fail when the problem becomes convection-dominated. In such cases, algebraic HPDDM variants are more appropriate.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exa_ma_use_cases_identified"><a class="anchor" href="#_exa_ma_use_cases_identified"></a>2.9. Exa-MA Use Cases Identified</h3>
+<div class="paragraph">
+<p>Several Exa-MA use cases were identified where HPDDM should be activated or evaluated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>PETSc / DFN mini-app</strong>: the existing <code>apps-petsc</code> DFN mini-app should remain the reference HPDDM mini-app. It should be used to produce a first CPU benchmark, and then a GPU benchmark if the machine access and PETSc configuration allow it.</p>
+</li>
+<li>
+<p><strong>Thermo-mechanical benchmark with MFEM + PETSc + HPDDM</strong>: the MFEM thermo-mechanical benchmark discussed by Isabelle Ramiere is a strong candidate. HPDDM should be tested against Jacobi, BoomerAMG, algebraic HPDDM, and HPDDM/GENEO if the required Neumann matrices can be exposed from MFEM.</p>
+</li>
+<li>
+<p>*Feel + PETSc + HPDDM*: Feel is a natural candidate for HPDDM experiments, especially in discretization mini-apps and coupled applications.</p>
+</li>
+<li>
+<p><strong>TRUST and other PETSc-based frameworks</strong>: TRUST also uses PETSc and should be evaluated in the same spirit. The relevant question is to identify cases where HPDDM adds value compared with the current solver strategy.</p>
+</li>
+<li>
+<p><strong>Coupled thermo-mechanical and multiphysics problems</strong>: coupled thermo-mechanical problems were identified as good targets because they combine robustness, scaling, and block-structured multiphysics issues.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mini_apps_and_benchmarks"><a class="anchor" href="#_mini_apps_and_benchmarks"></a>2.10. Mini-Apps and Benchmarks</h3>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 15.3846%;">
+<col style="width: 7.6923%;">
+<col style="width: 7.6923%;">
+<col style="width: 23.0769%;">
+<col style="width: 15.3846%;">
+<col style="width: 15.3846%;">
+<col style="width: 15.3847%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">App / benchmark</th>
+<th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Exa-MA link</th>
+<th class="tableblock halign-left valign-top">Scientific / technical objective</th>
+<th class="tableblock halign-left valign-top">Stress point</th>
+<th class="tableblock halign-left valign-top">Contacts</th>
+<th class="tableblock halign-left valign-top">Next step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apps-petsc</code> DFN mini-app</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current / reference</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3 / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use PETSc with HPDDM/PCHPDDM as solver and preconditioner on discrete fracture network systems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neumann matrices, distribution reconstruction, CPU/GPU benchmark, PETSc CPU I/O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HPDDM team; SERENA team; Pierre Jolivet; Erik Fabrizzi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prepare CPU benchmark for October deliverable; GPU benchmark if access and configuration allow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MFEM thermo-mechanical benchmark</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Candidate / priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test algebraic PCHPDDM then HPDDM/GENEO on thermo-mechanical systems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Strong scaling, BoomerAMG fragility, exposing Neumann matrices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Isabelle Ramiere / MFEM team; HPDDM support</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First test with algebraic PCHPDDM; then investigate Neumann matrices for GENEO</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++ + PETSc + HPDDM mini-apps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Candidate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1 / WP3 / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate HPDDM through PETSc in Feel++ discretization or coupling mini-apps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Algebraic mode first, later GENEO if overlap and Neumann assembly are exposed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++ team; WP7; HPDDM support</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identify candidate apps, then test HPDDM activation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST and other PETSc-based frameworks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Candidate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3 / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Evaluate HPDDM wherever PETSc solvers are accessible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identify cases where HPDDM adds value compared with the current solver strategy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST team; Exa-MA; HPDDM team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check HPDDM activation in TRUST at next framework session</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coupled thermo-mechanical / multiphysics demonstrators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Future</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use block-structured multiphysics problems as demonstrators beyond DFN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robustness, scaling, field splits, non-symmetric or saddle-point systems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exa-MA WP3; relevant application teams</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define candidate demonstrator and solver comparison protocol</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_decisions_and_agreed_points"><a class="anchor" href="#_decisions_and_agreed_points"></a>2.11. Decisions and Agreed Points</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>apps-petsc</code> DFN mini-app is retained as the reference HPDDM mini-app.</p>
+</li>
+<li>
+<p>A CPU benchmark should be prepared for the October deliverable.</p>
+</li>
+<li>
+<p>A GPU benchmark is desirable, depending on hardware access and the maturity of GPU direct solvers.</p>
+</li>
+<li>
+<p>No separate GPU mini-app is required; the same mini-app can be used with PETSc GPU matrix conversion.</p>
+</li>
+<li>
+<p>The CPU I/O limitation of PETSc must be clearly documented in the benchmark report.</p>
+</li>
+<li>
+<p>HPDDM should be tested in other Exa-MA mini-apps whenever PETSc is available.</p>
+</li>
+<li>
+<p>The MFEM thermo-mechanical benchmark is identified as a priority case for HPDDM testing.</p>
+</li>
+<li>
+<p>The HPDDM team should be added to the AMD/CINES call.</p>
+</li>
+<li>
+<p>Saddle point and non-symmetric problems are within scope, using <code>PCFIELDSPLIT</code> and algebraic HPDDM variants.</p>
+</li>
+<li>
+<p>A simplified pedagogical PETSc/HPDDM example would be useful for framework developers.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tasks_and_action_items"><a class="anchor" href="#_tasks_and_action_items"></a>2.12. Tasks and Action Items</h3>
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">#</th>
+<th class="tableblock halign-left valign-top">Task</th>
+<th class="tableblock halign-left valign-top">Owner(s)</th>
+<th class="tableblock halign-left valign-top">Target / comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prepare a CPU benchmark of the DFN <code>apps-petsc</code> mini-app with <code>PCHPDDM</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HPDDM team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">October deliverable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add a methodological note on PETSc CPU I/O and GPU matrix conversion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HPDDM team / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">October deliverable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test the DFN mini-app on NVIDIA GPUs using PETSc GPU matrix types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HPDDM team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Depending on access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Evaluate cuDSS as a GPU direct solver for HPDDM subdomains</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HPDDM team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Short / medium term</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add the HPDDM team to the AMD/CINES call</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe / Exa-MA coordination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As soon as possible</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test algebraic <code>PCHPDDM</code> on the MFEM thermo-mechanical benchmark</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Isabelle / MFEM team, with HPDDM support</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First test</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Investigate how to expose Neumann matrices from MFEM for GENEO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MFEM team / HPDDM team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">After algebraic test</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identify Feel++ mini-apps where HPDDM can be activated through PETSc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++ team / WP7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To be planned</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test HPDDM in Feel++ discretization or coupling mini-apps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++ team, with HPDDM support</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">After identification</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check HPDDM activation in TRUST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRUST team / Exa-MA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Next framework session</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Produce a simplified PETSc/HPDDM example derived from <code>ex76</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pierre / Erik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Useful for integrators</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Share the recording on the Exa-MA channel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To finalize</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_points_of_attention"><a class="anchor" href="#_points_of_attention"></a>2.13. Points of Attention</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>HPDDM/GENEO is robust but may be more expensive than AMG when AMG works well.</p>
+</li>
+<li>
+<p>GENEO requires Neumann matrices, so the integration effort depends strongly on the calling framework.</p>
+</li>
+<li>
+<p>Algebraic HPDDM variants are easier to test but come with weaker theoretical guarantees.</p>
+</li>
+<li>
+<p>GPU direct solvers remain a critical bottleneck.</p>
+</li>
+<li>
+<p>NVIDIA/CUDA is currently the most advanced path; AMD/HIP requires explicit testing.</p>
+</li>
+<li>
+<p>The coarse solve and overlap communications remain important profiling points.</p>
+</li>
+<li>
+<p>The new subdomain/MPI granularity is strategically important for exascale architectures but still under development in <code>PCHPDDM</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_operational_summary"><a class="anchor" href="#_operational_summary"></a>2.14. Operational Summary</h3>
+<div class="paragraph">
+<p>The meeting confirms that HPDDM is an important component of the Exa-MA software and algorithmic ecosystem, especially for cases where solver robustness is more important than minimizing cost per iteration.</p>
+</div>
+<div class="paragraph">
+<p>The PETSc integration makes HPDDM accessible to several Exa-MA frameworks with a relatively transparent user workflow, provided that the framework exposes the required matrices and PETSc options.</p>
+</div>
+<div class="paragraph">
+<p>In the short term, the priority is to produce a clean benchmark of the DFN mini-app, first on CPU and then on GPU if possible. HPDDM should also be tested on at least one application outside <code>apps-petsc</code>, with the MFEM thermo-mechanical benchmark as the most immediate candidate.</p>
+</div>
+<div class="paragraph">
+<p>In the medium term, the focus should be on consolidating GPU support, testing AMD/HIP, evaluating cuDSS, and integrating HPDDM as a solver/preconditioner option in Feel++, TRUST, and other PETSc-based Exa-MA mini-apps.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="../../_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+        <div style="font-size: 0.75rem; color: #757575; margin-top: 0.5em;">
+            <a href="../../privacy.html" style="color: #757575; text-decoration: none; margin-right: 1.5em;">Privacy Notice</a>
+            <a href="../../legal-notice.html" style="color: #757575; text-decoration: none;">Legal Notice</a>
+        </div>
+    </div>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="../../_/js/vendor/highlight.js"></script>
+
+<script src="../../_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>

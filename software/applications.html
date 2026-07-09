@@ -120,7 +120,7 @@ MathJax.Hub.Config({
 <script>var uiRootPath = '../_'</script>
 
 </head>
-<body class="article docs-manuals-catalog docs-cards-layout ">
+<body class="article docs-manuals-catalog docs-cards-layout  alternating-sections">
 <header class="header">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
         <div class="navbar-brand">
@@ -357,6 +357,21 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="applications/app-feelpp-thermomeca-1.html">thermomeca</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-feelpp-ktirio-geom.html">Terrain Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-cgal-autorefine.html">Mesh autorefinement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-cgal-cdt2.html">Constrained Delaunay Triangulation 2D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-cgal-ccdt3.html">Conforming Constrained Delaunay Triangulation 3D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-petsc-mixed-precision.html">Impact of mixed-precision on PETSc solvers and preconditioners</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -404,7 +419,7 @@ MathJax.Hub.Config({
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-rocket fa-2x"></i></span> <strong>15 Applications</strong></p>
+<p><span class="icon text-primary"><i class="fa fa-rocket fa-2x"></i></span> <strong>20 Applications</strong></p>
 </div>
 <div class="paragraph">
 <p>5 ready for benchmarking</p>
@@ -414,7 +429,7 @@ MathJax.Hub.Config({
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-info"><i class="fa fa-cube fa-2x"></i></span> <strong>8 Mini-Apps</strong></p>
+<p><span class="icon text-info"><i class="fa fa-cube fa-2x"></i></span> <strong>12 Mini-Apps</strong></p>
 </div>
 <div class="paragraph">
 <p>Focused benchmarks testing specific algorithms</p>
@@ -434,7 +449,7 @@ MathJax.Hub.Config({
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-warning"><i class="fa fa-desktop fa-2x"></i></span> <strong>3 Demonstrators</strong></p>
+<p><span class="icon text-warning"><i class="fa fa-desktop fa-2x"></i></span> <strong>4 Demonstrators</strong></p>
 </div>
 <div class="paragraph">
 <p>Full-scale application showcases</p>
@@ -564,6 +579,41 @@ MathJax.Hub.Config({
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WP1, WP3</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++, CGAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-cgal-autorefine.html" class="xref page">Mesh autorefinement</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CGAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-cgal-cdt2.html" class="xref page">Constrained Delaunay Triangulation 2D</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CGAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-cgal-ccdt3.html" class="xref page">Conforming Constrained Delaunay Triangulation 3D</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CGAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-petsc-mixed-precision.html" class="xref page">Impact of mixed-precision on PETSc solvers and preconditioners</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PETSc, HPDDM&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -641,6 +691,9 @@ MathJax.Hub.Config({
 <li>
 <p><a href="applications/app-feelpp-thermomeca-1.html" class="xref page">thermomeca</a> — Feel++</p>
 </li>
+<li>
+<p><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a> — Feel++, CGAL</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -688,6 +741,18 @@ MathJax.Hub.Config({
 <li>
 <p><a href="applications/app-scimba-plasma.html" class="xref page">Plasma NN</a> — N/A</p>
 </li>
+<li>
+<p><a href="applications/app-cgal-autorefine.html" class="xref page">Mesh autorefinement</a> — CGAL</p>
+</li>
+<li>
+<p><a href="applications/app-cgal-cdt2.html" class="xref page">Constrained Delaunay Triangulation 2D</a> — CGAL</p>
+</li>
+<li>
+<p><a href="applications/app-cgal-ccdt3.html" class="xref page">Conforming Constrained Delaunay Triangulation 3D</a> — CGAL</p>
+</li>
+<li>
+<p><a href="applications/app-petsc-mixed-precision.html" class="xref page">Impact of mixed-precision on PETSc solvers and preconditioners</a> — PETSc, HPDDM</p>
+</li>
 </ul>
 </div>
 </div>
@@ -695,6 +760,25 @@ MathJax.Hub.Config({
 <div class="openblock section-gray">
 <div class="content">
 <h2 id="_applications_by_framework" class="discrete">Applications by Framework</h2>
+<div class="paragraph">
+<p><strong>CGAL</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a> (Demonstrator)</p>
+</li>
+<li>
+<p><a href="applications/app-cgal-autorefine.html" class="xref page">Mesh autorefinement</a> (Mini App)</p>
+</li>
+<li>
+<p><a href="applications/app-cgal-cdt2.html" class="xref page">Constrained Delaunay Triangulation 2D</a> (Mini App)</p>
+</li>
+<li>
+<p><a href="applications/app-cgal-ccdt3.html" class="xref page">Conforming Constrained Delaunay Triangulation 3D</a> (Mini App)</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><strong>Feel++</strong></p>
 </div>
@@ -717,6 +801,9 @@ MathJax.Hub.Config({
 </li>
 <li>
 <p><a href="applications/app-feelpp-thermomeca-1.html" class="xref page">thermomeca</a> (Demonstrator)</p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a> (Demonstrator)</p>
 </li>
 </ul>
 </div>
@@ -751,6 +838,9 @@ MathJax.Hub.Config({
 <li>
 <p><a href="applications/app-hpddm-dfn.html" class="xref page">Preconditioning systems arising from discrete fracture networks</a> (Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
 </li>
+<li>
+<p><a href="applications/app-petsc-mixed-precision.html" class="xref page">Impact of mixed-precision on PETSc solvers and preconditioners</a> (Mini App)</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -770,6 +860,9 @@ MathJax.Hub.Config({
 <ul>
 <li>
 <p><a href="applications/app-hpddm-dfn.html" class="xref page">Preconditioning systems arising from discrete fracture networks</a> (Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+<li>
+<p><a href="applications/app-petsc-mixed-precision.html" class="xref page">Impact of mixed-precision on PETSc solvers and preconditioners</a> (Mini App)</p>
 </li>
 </ul>
 </div>
@@ -792,6 +885,9 @@ MathJax.Hub.Config({
 </li>
 <li>
 <p><a href="applications/app-eki.html" class="xref page">EKI</a> (Mini App)</p>
+</li>
+<li>
+<p><a href="applications/app-petsc-mixed-precision.html" class="xref page">Impact of mixed-precision on PETSc solvers and preconditioners</a> (Mini App)</p>
 </li>
 </ul>
 </div>
@@ -836,6 +932,26 @@ MathJax.Hub.Config({
                       <h2 class="cards-group-title">Application Catalog</h2>
                     
                       <div class="applications">
+                            <div class="application"><a class="page-card application" href="applications/app-cgal-ccdt3.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Conforming Constrained Delaunay Triangulation 3D</h4>
+    <p class="page-card-description">Conforming Constrained Delaunay Triangulation 3D - Demonstrate the weak and strong scalability of the conforming constrained delaunay triangulation algorithm for tetrahedral meshes and tetrahedral reme...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-cgal-cdt2.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Constrained Delaunay Triangulation 2D</h4>
+    <p class="page-card-description">Constrained Delaunay Triangulation 2D - Demonstrate the weak and strong scalability of the constrained delaunay triangulation algorithm...</p>
+  </div>
+</a>
+</div>
                             <div class="application"><a class="page-card application" href="applications/app-feelpp-discr-1.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cubes"></i>
@@ -883,6 +999,26 @@ MathJax.Hub.Config({
   <div class="page-card-body">
     <h4>Hybrid  numerics</h4>
     <p class="page-card-description">Hybrid  numerics - Test numerical hybrid methods on high dimensional physical and parametric PDE problems...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-petsc-mixed-precision.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Impact of mixed-precision on PETSc solvers and preconditioners</h4>
+    <p class="page-card-description">Impact of mixed-precision on PETSc solvers and preconditioners - Provide a benchmark framework to study the effects of mixed precision on PETSc Krylov solvers and preconditioners in terms of performance, convergence...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-cgal-autorefine.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Mesh autorefinement</h4>
+    <p class="page-card-description">Mesh autorefinement - Test the parallel performance of triangle mesh autorefinement...</p>
   </div>
 </a>
 </div>
@@ -943,6 +1079,16 @@ MathJax.Hub.Config({
   <div class="page-card-body">
     <h4>Shape Opt NN</h4>
     <p class="page-card-description">Shape Opt NN - Demonstrate new shape optimisation algorithm, volume preserving, nn formulation...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-feelpp-ktirio-geom.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-desktop"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Terrain Generation</h4>
+    <p class="page-card-description">Terrain Generation - Demonstrate the creation of a city mesh including elevation, roads, water bodies and land markers....</p>
   </div>
 </a>
 </div>
