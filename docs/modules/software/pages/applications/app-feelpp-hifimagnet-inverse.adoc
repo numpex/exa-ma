@@ -1,0 +1,170 @@
+= HiFiMagnet thermo-electric parameter inversion
+:page-layout: default
+:page-tags: application, extended-mini-app, app-feelpp-hifimagnet-inverse
+:page-illustration: fa-solid fa-cubes
+:description: HiFiMagnet thermo-electric parameter inversion - Inverse application: estimate nonlinear electrical-conductivity, thermal-conductivity, contact and cooling parameters from voltage-drop, temperature a...
+:icons: font
+:page-status: planned
+:page-work-packages: WP1, WP2, WP3, WP4, WP6
+
+[.lead]
+Inverse application: estimate nonlinear electrical-conductivity, thermal-conductivity, contact and cooling parameters from voltage-drop, temperature and optional magnetic-field observations collected at several imposed-total-current operating points.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Extended Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1, WP2, WP3, WP4, WP6
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Feel++, PETSc/TAO, HPDDM
+____
+====
+--
+
+
+
+== Overview
+
+Inverse application: estimate nonlinear electrical-conductivity, thermal-conductivity, contact and cooling parameters from voltage-drop, temperature and optional magnetic-field observations collected at several imposed-total-current operating points.
+
+=== Repository
+
+icon:code-branch[] https://github.com/numpex/apps-feelpp
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+* **PETSc/TAO**
+* **HPDDM**
+
+=== Parallel Frameworks
+
+* MPI
+* Kokkos
+* GPU - HIP
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* nonlinear thermo-electric finite elements
+* coupled PDE-scalar formulation
+* integral total-current boundary condition
+
+=== WP2: Model Order Reduction & SciML
+
+* ROM
+* hyper-reduction
+* surrogate models
+* FOM/ROM switching for repeated forward and adjoint evaluations
+
+=== WP3: Solvers
+
+* nonlinear block solvers
+* adjoint linear solves
+* PETSc/HPDDM preconditioning
+
+=== WP4: Inverse Problems & Data Assimilation
+
+* PDE-constrained parameter inversion: weighted multi-experiment data misfit plus regularization; adjoint gradients; nonlinear least squares; parameter bounds; optional Gauss-Newton/Hessian actions and identifiability analysis
+
+
+=== WP6: Uncertainty Quantification
+
+* measurement-noise modelling
+* uncertainty propagation
+* ensemble inversion
+
+== Data Flow
+
+=== Inputs
+
+* Gmsh
+* JSON config
+* nonlinear material laws
+* imposed currents
+* voltage-drop and temperature observations
+
+=== Outputs
+
+* Calibrated parameter vector or fields p*
+* forward and adjoint fields per experiment
+* predicted observables
+* residual decomposition
+* gradient/Hessian information
+* sensitivities
+* uncertainty estimates
+* objective histories
+* JSON/CSV reports
+
+== Benchmarking
+
+=== Metrics
+
+* Taylor Gradient Test
+* Parameter Recovery Error
+* Observation Misfit By Observable
+* Regularization Contribution
+* Identifiability
+* Time To Inference
+* Pde Solves To Solution
+* Tao Iterations
+* Strong Scalability
+* Weak Scalability
+* Experiment Throughput
+
+=== Benchmark Scope
+
+* Multi Node
+* Multi Gpu
+* Full System
+* Method Verification
+* Solver Scaling
+* Ensemble Mode
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra, LNCMI/CNRS
+
+*Responsible:* C. Prud'homme; V. Chabannes
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+
+== Notes
+
+Mathematical specification. Unknown design p=(parameters or parameter fields for σ(T;p), k(T;p), electrical/thermal contacts and cooling). For experiments e=1,…,Ne with imposed total currents Ie, solve Fe(ye;p,Ie)=0 using the shared state y=(φ,T,ΔV). Minimize Jinv(p)=1/2 Σe [||WT(CT Te-dT,e)||² + wV|ΔVe-dV,e|² + wB||CB Be-dB,e||²] + αR(p), subject to pmin≤p≤pmax. Outputs are p*, reconstructed observables and state/adjoint fields—not operating controls. TAO provides the deterministic scalable baseline; experiments provide an outer level of parallelism.

@@ -1,0 +1,171 @@
+= HiFiMagnet robust optimal operation and control
+:page-layout: default
+:page-tags: application, extended-mini-app, app-feelpp-hifimagnet-optcontrol
+:page-illustration: fa-solid fa-cubes
+:description: HiFiMagnet robust optimal operation and control - Optimal-operation application: determine coil-group currents and cooling controls that reach a target magnetic field with minimum power and thermal st...
+:icons: font
+:page-status: planned
+:page-work-packages: WP1, WP2, WP3, WP5, WP6
+
+[.lead]
+Optimal-operation application: determine coil-group currents and cooling controls that reach a target magnetic field with minimum power and thermal stress while satisfying temperature, voltage, power, total-current and actuator constraints.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Extended Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1, WP2, WP3, WP5, WP6
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Feel++, PETSc/TAO, HPDDM, Sage-HPC
+____
+====
+--
+
+
+
+== Overview
+
+Optimal-operation application: determine coil-group currents and cooling controls that reach a target magnetic field with minimum power and thermal stress while satisfying temperature, voltage, power, total-current and actuator constraints.
+
+=== Repository
+
+icon:code-branch[] https://github.com/numpex/apps-feelpp
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+* **PETSc/TAO**
+* **HPDDM**
+* **Sage-HPC**
+
+=== Parallel Frameworks
+
+* MPI
+* Kokkos
+* GPU - HIP
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* nonlinear thermo-electric finite elements
+* coupled PDE-scalar formulation
+* integral total-current boundary condition
+
+=== WP2: Model Order Reduction & SciML
+
+* ROM
+* hyper-reduction
+* surrogate-assisted optimization
+* FOM/ROM switching
+
+=== WP3: Solvers
+
+* nonlinear block solvers
+* repeated state/adjoint solves
+* PETSc/HPDDM preconditioning
+
+
+=== WP5: Optimization
+
+* PDE-constrained optimal operation and control: target-field tracking
+* power and thermal objectives; adjoint gradients; bound/general constraints; multiple coil-current and cooling controls; deterministic and robust formulations
+
+=== WP6: Uncertainty Quantification
+
+* uncertain material and cooling parameters
+* stochastic and robust optimization
+* expectation and CVaR objectives
+
+== Data Flow
+
+=== Inputs
+
+* Gmsh
+* JSON config
+* nonlinear material laws
+* target field
+* current/cooling bounds
+* uncertainty scenarios
+
+=== Outputs
+
+* Optimal control vector z* (coil-group currents and cooling controls)
+* optimal state/adjoint fields
+* magnetic field
+* power and peak-temperature predictions
+* voltage and constraint margins
+* KKT and objective histories
+* Pareto/robustness reports
+
+== Benchmarking
+
+=== Metrics
+
+* Taylor Gradient Test
+* Target Field Error
+* Electrical Power
+* Peak Temperature
+* Constraint Violation
+* Kkt Residual
+* Time To Optimum
+* Pde Solves To Solution
+* Tao Iterations
+* Strong Scalability
+* Weak Scalability
+* Scenario Throughput
+
+=== Benchmark Scope
+
+* Multi Node
+* Multi Gpu
+* Full System
+* Solver Scaling
+* Ensemble Mode
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra, LNCMI/CNRS
+
+*Responsible:* C. Prud'homme; V. Chabannes
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+
+== Notes
+
+Mathematical specification. Control z=(I1,…,Ing, cooling flow rates or heat-transfer coefficients); for each circuit the shared forward operator imposes total current Ig and computes ΔVg. A first objective is Jctrl(z)=1/2||CB B(y,z)-Btarget||² + βP(y,z) + γR(z), subject to F(y;z)=0, Tmax(y)≤Tlim, ΔVg(y)≤Vlim,g, P(y,z)≤Plim and zmin≤z≤zmax. WP6 extension: minimize Eξ[Jctrl(z,ξ)] plus a CVaR penalty on thermal/voltage risk. Outputs are z* and engineering performance/constraint margins—not calibrated material parameters. TAO is the deterministic reference; Sage-HPC can compare surrogate-assisted, Bayesian and learning-based strategies on the same contract.

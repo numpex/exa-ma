@@ -192,4 +192,16 @@ The following Exa-MA applications use Feel++:
 | Demonstrator
 | Planned
 
+| xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet]
+| Extended Mini App
+| Planned
+
+| xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion]
+| Extended Mini App
+| Planned
+
+| xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control]
+| Extended Mini App
+| Planned
+
 |===

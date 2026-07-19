@@ -182,10 +182,16 @@ These frameworks power the following Exa-MA applications:
 ** xref:applications/app-freefem-parmmg.adoc[Fichera corner]
 ** xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
 ** xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
+** xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet]
+** xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion]
+** xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control]
 
 * xref:frameworks/hpddm.adoc[HPDDM]
 ** xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
 ** xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners]
+** xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet]
+** xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion]
+** xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control]
 
 * xref:frameworks/freefempp.adoc[Freefem++]
 ** xref:applications/app-freefem-parmmg.adoc[Fichera corner]
