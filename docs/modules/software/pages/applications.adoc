@@ -22,7 +22,7 @@ Exa-MA applications are benchmarks and demonstrators that exercise the capabilit
 ____
 icon:rocket[size=2x,role=text-primary] *23 Applications*
 
-5 ready for benchmarking
+6 ready for benchmarking
 ____
 
 ____
