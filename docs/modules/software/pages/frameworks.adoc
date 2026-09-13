@@ -20,9 +20,9 @@ Exa-MA frameworks are production-ready software libraries and tools that serve a
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:cubes[size=2x,role=text-primary] *44 Frameworks*
+icon:cubes[size=2x,role=text-primary] *45 Frameworks*
 
-12 eligible for production use in Exa-MA benchmarks.
+13 eligible for production use in Exa-MA benchmarks.
 ____
 
 ____
@@ -34,13 +34,13 @@ ____
 ____
 icon:vial[size=2x,role=text-info] *Testing*
 
-26 with CI/CD, 18 with unit tests
+27 with CI/CD, 19 with unit tests
 ____
 
 ____
 icon:file-contract[size=2x,role=text-warning] *Licensing*
 
-27 with FLOSS licenses
+28 with FLOSS licenses
 ____
 ====
 --
@@ -74,6 +74,10 @@ ____
 | _Exa-MA Framework_
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
 | icon:check[role=text-success]| icon:check[role=text-success]| 1,3,5,7
+| xref:frameworks/funtides.adoc[*FUnTiDES*]
+| FUnTiDES (Fast Unstructured Time Dynamic Equation Solver) is a high-performance ...
+| xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms]
+| icon:check[role=text-success]| icon:check[role=text-success]| 1,7
 | xref:frameworks/hawen.adoc[*Hawen*]
 | _Exa-MA Framework_
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
@@ -116,6 +120,7 @@ ____
 * xref:frameworks/cgal.adoc[CGAL] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/freefempp.adoc[Freefem++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/funtides.adoc[FUnTiDES]
 * xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/mahyco.adoc[MaHyCo]
 * xref:frameworks/samurai.adoc[Samurai] icon:check-circle[role=text-success,title=Benchmarked]
@@ -161,6 +166,7 @@ ____
 * xref:frameworks/arcane.adoc[Arcane] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/freefempp.adoc[Freefem++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/funtides.adoc[FUnTiDES]
 * xref:frameworks/hawen.adoc[Hawen]
 * xref:frameworks/mahyco.adoc[MaHyCo]
 * xref:frameworks/trust_platform.adoc[TRUST Platform] icon:check-circle[role=text-success,title=Benchmarked]

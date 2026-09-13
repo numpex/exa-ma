@@ -7,6 +7,7 @@
 ** xref:frameworks/composyx.adoc[Composyx]
 ** xref:frameworks/feelpp.adoc[Feel++]
 ** xref:frameworks/freefempp.adoc[Freefem++]
+** xref:frameworks/funtides.adoc[FUnTiDES]
 ** xref:frameworks/hawen.adoc[Hawen]
 ** xref:frameworks/hpddm.adoc[HPDDM]
 ** xref:frameworks/mahyco.adoc[MaHyCo]

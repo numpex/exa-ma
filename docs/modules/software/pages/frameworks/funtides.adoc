@@ -1,0 +1,127 @@
+= FUnTiDES
+:page-layout: default
+:page-tags: framework, software, funtides
+:page-illustration: fa-solid fa-cube
+:description: FUnTiDES - FUnTiDES (Fast Unstructured Time Dynamic Equation Solver) is a high-performance library and collection of proxy applications for 2D/3D acoustic and el...
+:icons: font
+:page-work-packages: WP1, WP7
+
+[.lead]
+FUnTiDES (Fast Unstructured Time Dynamic Equation Solver) is a high-performance library and collection of proxy applications for 2D/3D acoustic and elastic wave propagation using high-order spectral element methods (SEM) and Discontinuous Galerkin (DG, only for acoustics for now). Its C++17 backend uses Kokkos for CPU/GPU portability, with MPI support and Python bindings via pybind11. It provides unit tests, analytical validation cases, and C++/Python performance benchmarks.
+
+[.section-gray]
+--
+[discrete]
+== Overview
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:code-branch[size=2x,role=text-primary] *Repository*
+
+https://github.com/FUnTiDES-sim/FUnTiDES
+____
+
+____
+icon:file-contract[size=2x,role=text-success] *License*
+
+OSS: Cecill-*
+____
+
+____
+icon:book[size=2x,role=text-info] *Documentation*
+
+https://github.com/FUnTiDES-sim/FUnTiDES#readme
+____
+
+____
+icon:comments[size=2x,role=text-warning] *Discussion*
+
+* https://github.com/FUnTiDES-sim/FUnTiDES/issues
+____
+====
+--
+
+== Exascale Bottlenecks Addressed
+
+`B7` Exascale algorithms
+
+
+== Criteria Evaluation
+
+=== Packaging
+
+Software should be packaged (preferably using Spack or Guix package formats) and published in public repositories.
+
+* [ ] Packages exist
+* [ ] Available in Spack
+* [ ] Available in Guix-HPC
+* [x] Docker image available
+* [ ] Apptainer/Singularity available
+
+
+=== Testing & CI/CD
+
+Software should include validation tests triggered through automated mechanisms.
+
+* [x] Unit tests exist
+* [x] Continuous Integration configured
+* [ ] CI runs on each release
+* [ ] Benchmarking tests exist
+
+=== Repository & Contributions
+
+* [x] Public source repository available
+* [x] Supports contributions via pull requests
+
+Repository: https://github.com/FUnTiDES-sim/FUnTiDES
+
+=== License
+
+Sources should be published under a clearly-identified free software license.
+
+* [x] License clearly stated
+* [x] FLOSS license (FSF/OSI conformant)
+* [ ] SPDX identifiers used
+* [ ] REUSE compliant
+
+* OSS: Cecill-*
+
+=== Documentation
+
+* [x] Documentation exists
+* [x] Easily browsable online
+
+Documentation: https://github.com/FUnTiDES-sim/FUnTiDES#readme
+
+=== API Compatibility
+
+* [ ] API changes documented
+* [ ] Semantic versioning used
+* [ ] Release policy defined
+
+== Work Packages
+
+This framework is involved in the following work packages:
+
+=== WP1
+Topics: finite element, spectral element, unstructured mesh, dG/hdG
+
+=== WP7
+Topics: Geophysics, proxy-apps
+
+
+== Technical Details
+
+*Languages:* C++17, Python
+
+*Parallelism:* MPI, Multithread - OpenMP, GPU - Cuda, Kokkos
+
+*Data Formats:* Adios, Json, YAML, ASCII
+
+
+== Partners
+
+*Lead Partner:* Inria BXSO
+
+
