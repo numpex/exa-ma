@@ -95,9 +95,9 @@ ____
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
 | icon:check[role=text-success]| icon:check[role=text-success]| 1
 | xref:frameworks/scimba.adoc[*Scimba*]
-| _Exa-MA Framework_
+| Scimba is a Python library that implements several Scientific Machine Learning (...
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
-| icon:check[role=text-success]| icon:check[role=text-success]| 2
+| icon:check[role=text-success]| icon:check[role=text-success]| 1,2,3,4,7
 | xref:frameworks/trust_platform.adoc[*TRUST Platform*]
 | TRUST is a High Performance Computing (HPC) thermohydraulic engine for Computati...
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
@@ -124,6 +124,7 @@ ____
 * xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/mahyco.adoc[MaHyCo]
 * xref:frameworks/samurai.adoc[Samurai] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/scimba.adoc[Scimba]
 
 *WP2*
 
@@ -140,12 +141,14 @@ ____
 * xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/hpddm.adoc[HPDDM] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/mahyco.adoc[MaHyCo]
+* xref:frameworks/scimba.adoc[Scimba]
 * xref:frameworks/trust_platform.adoc[TRUST Platform] icon:check-circle[role=text-success,title=Benchmarked]
 
 *WP4*
 
 * xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/scimba.adoc[Scimba]
 
 *WP5*
 
@@ -169,6 +172,7 @@ ____
 * xref:frameworks/funtides.adoc[FUnTiDES]
 * xref:frameworks/hawen.adoc[Hawen]
 * xref:frameworks/mahyco.adoc[MaHyCo]
+* xref:frameworks/scimba.adoc[Scimba]
 * xref:frameworks/trust_platform.adoc[TRUST Platform] icon:check-circle[role=text-success,title=Benchmarked]
 
 --
@@ -205,6 +209,8 @@ These frameworks power the following Exa-MA applications:
 
 * xref:frameworks/scimba.adoc[Scimba]
 ** xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
+** xref:applications/app-scimba-plasma.adoc[Plasma NN]
+** xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics]
 
 * xref:frameworks/cgal.adoc[CGAL]
 ** xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]

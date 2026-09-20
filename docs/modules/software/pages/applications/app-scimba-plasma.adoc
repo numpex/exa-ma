@@ -38,7 +38,7 @@ ____
 ____
 icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
 
-N/A
+Scimba
 ____
 ====
 --
@@ -50,8 +50,42 @@ ____
 Demonstrate neural nework algorithm, plasma simulation in 3D tokamak
 
 
+== Technical Stack
+
+=== Frameworks Used
+
+* **Scimba**
+
+=== Parallel Frameworks
+
+* GPU
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* unstructured mesh
+* finite element
+
+=== WP2: Model Order Reduction & SciML
+
+* PINN
+* NN/Autoencoder
+
+=== WP3: Solvers
+
+* krylov solver
+* preconditioning
 
 
+
+
+
+== Benchmarking
+
+=== Metrics
+
+* Manufactured Solution
 
 
 == Timeline
