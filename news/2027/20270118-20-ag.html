@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Exa-MA 2027 General Assembly — Bordeaux :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/news/2027/20270118-20-ag.html">
+    <meta name="description" content="Join the next Exa-MA General Assembly in Bordeaux, 18–20 January 2027. Discover the first draft programme.">
+    <meta name="generator" content="Antora 3.1.14">
+<link rel="stylesheet" href="../../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- Custom badge styles for external partners -->
+<style>
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+.badge-cofunding {
+    background-color: #dc3545;
+    color: white;
+}
+.badge-funded {
+    background-color: #28a745;
+    color: white;
+}
+</style>
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = '../../_'</script>
+
+  </head>
+  <body class="article alternating-sections">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo" style="height: 50px; max-height: none !important; width: auto;" src="../../_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html"><span class="icon"><i class="fa fa-home"></i></span> Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../overview.html"><span class="icon"><i class="fa fa-mountain-sun"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text"><span class="icon"><i class="fa fa-info-circle"></i></span> About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../bottlenecks.html"><span class="icon"><i class="fa fa-triangle-exclamation"></i></span> Exascale Bottlenecks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../team.html"><span class="icon"><i class="fa fa-users"></i></span> WP Leaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../team-recruited.html"><span class="icon"><i class="fa fa-user-graduate"></i></span> Recruited Personnel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../consortium.html"><span class="icon"><i class="fa fa-building"></i></span> Consortium</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../external-partners.html"><span class="icon"><i class="fa fa-handshake"></i></span> External Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../sab.html"><span class="icon"><i class="fa fa-clipboard-list"></i></span> Scientific Advisory Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../collaborative-projects.html"><span class="icon"><i class="fa fa-project-diagram"></i></span> Collaborative Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../contact.html"><span class="icon"><i class="fa fa-envelope"></i></span> Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../workpackages.html"><span class="icon"><i class="fa fa-cubes"></i></span> Work Packages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages.html"><span class="icon"><i class="fa fa-list"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp0.html"><span class="icon"><i class="fa fa-tasks"></i></span> WP0: Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp1.html"><span class="icon"><i class="fa fa-th"></i></span> WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp2.html"><span class="icon"><i class="fa fa-brain"></i></span> WP2: MOR &amp; SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp3.html"><span class="icon"><i class="fa fa-calculator"></i></span> WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp4.html"><span class="icon"><i class="fa fa-chart-line"></i></span> WP4: Inverse Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp5.html"><span class="icon"><i class="fa fa-bullseye"></i></span> WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp6.html"><span class="icon"><i class="fa fa-random"></i></span> WP6: UQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../workpackages/wp7.html"><span class="icon"><i class="fa fa-rocket"></i></span> WP7: Software &amp; Benchmarking</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../results.html"><span class="icon"><i class="fa fa-trophy"></i></span> Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../deliverables.html"><span class="icon"><i class="fa fa-book"></i></span> Deliverables and Publications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../publications-hal.html"><span class="icon"><i class="fa fa-file-alt"></i></span> Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../training.html"><span class="icon"><i class="fa fa-graduation-cap"></i></span> Training</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../news.html"><span class="icon"><i class="fa fa-newspaper"></i></span> News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../archive.html"><span class="icon"><i class="fa fa-archive"></i></span> Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../workgroups.html"><span class="icon"><i class="fa fa-network-wired"></i></span> NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/index.html"><span class="icon"><i class="fa fa-laptop-code"></i></span> WP7: Software &amp; Benchmarking</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/concepts.html">Concepts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/frameworks.html"><span class="icon"><i class="fa fa-cubes"></i></span> Frameworks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/funtides.html">FUnTiDES</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/scimba.html">Scimba</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/frameworks/uranie.html">Uranie</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../software/applications.html"><span class="icon"><i class="fa fa-rocket"></i></span> Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-discr-1.html">Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-distance.html">Distance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-nlcrb.html">Nonlinear Compressive Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-rb.html">Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-toolbox.html">Test Feel++ toolboxes at scale</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-hpddm-dfn.html">Preconditioning systems arising from discrete fracture networks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-freefem-parmmg.html">Fichera corner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-zellij.html">Zellij</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-eki.html">EKI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-freefem-shape-opt-fem.html">Shape Opt FEM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-shape-opt-nn.html">Shape Opt NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-plasma.html">Plasma NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-scimba-hybrid.html">Hybrid  numerics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-thermomeca-1.html">thermomeca</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-ktirio-geom.html">Terrain Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-autorefine.html">Mesh autorefinement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-cdt2.html">Constrained Delaunay Triangulation 2D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-cgal-ccdt3.html">Conforming Constrained Delaunay Triangulation 3D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-petsc-mixed-precision.html">Impact of mixed-precision on PETSc solvers and preconditioners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-mi300a-fem.html">MI300A high-order finite-element kernels and HiFiMagnet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-hifimagnet-inverse.html">HiFiMagnet thermo-electric parameter inversion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../software/applications/app-feelpp-hifimagnet-optcontrol.html">HiFiMagnet robust optimal operation and control</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="../../index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="../../index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Exa-MA</a></li>
+    <li><a href="../../news.html">News and Events</a></li>
+    <li><a href="20270118-20-ag.html">Exa-MA 2027 General Assembly — Bordeaux</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/ROOT/pages/news/2027/20270118-20-ag.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="../../_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Exa-MA 2027 General Assembly — Bordeaux</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>The next <strong>Exa-MA General Assembly</strong> will take place in <strong>Bordeaux from Monday 18 to Wednesday 20 January 2027</strong>, at the Inria research centre in Talence.
+The three-day meeting will bring together the consortium for scientific progress reviews, PhD and postdoctoral presentations, poster sessions, and discussions on the project&#8217;s roadmap.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_details"><a class="anchor" href="#_event_details"></a>1. Event details</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Dates</strong>: 18–20 January 2027, beginning with a welcome lunch on Monday at 12:00 and ending with a packed lunch on Wednesday at 12:45.</p>
+</li>
+<li>
+<p><strong>Venue</strong>: Centre de recherche Inria, 200 avenue de la Vieille Tour, 33400 Talence, France (Bordeaux).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This is the <strong>first draft programme</strong>, based on the agenda available on 25 September 2026.
+Sessions, speakers, and times remain provisional. All times below are local to Bordeaux (CET).
+Room assignments and videoconference details are to be confirmed.
+For doctoral presentations, the linked thesis titles provide research context; talk titles remain to be confirmed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_event_details">1. Event details</a></li>
+<li><a href="#_monday_18_january_wp1wp3_and_round_table_discussions">2. Monday 18 January — WP1–WP3 and round-table discussions</a></li>
+<li><a href="#_tuesday_19_january_wp4wp7_and_intra_wp_meetings">3. Tuesday 19 January — WP4–WP7 and intra-WP meetings</a></li>
+<li><a href="#_wednesday_20_january_round_table_discussions_and_roadmap">4. Wednesday 20 January — Round-table discussions and roadmap</a></li>
+<li><a href="#_programme_updates">5. Programme updates</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_monday_18_january_wp1wp3_and_round_table_discussions"><a class="anchor" href="#_monday_18_january_wp1wp3_and_round_table_discussions"></a>2. Monday 18 January — WP1–WP3 and round-table discussions</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Time (CET)</th>
+<th class="tableblock halign-left valign-top">Session</th>
+<th class="tableblock halign-left valign-top">Speakers / participants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12:00–13:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Welcome lunch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13:30–13:40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Introductory words</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hélène Barucq, Christophe Prud&#8217;homme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13:40–13:50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1 — Discretization: progress and scientific highlights</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pierre Alliez, Isabelle Ramière</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13:50–14:05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PhD presentation — WP1<br>
+Thesis: <a href="https://theses.fr/s408792">Couplage temporel adaptatif d&#8217;ordre élevé pour des simulations multiphysiques</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antoine Simon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14:05–14:20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PhD presentation — WP1<br>
+Thesis: <a href="https://theses.fr/s405665">Algorithme de couplages multiphysiques pour solveurs en boîte noire dans un environnement HPC</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pierre Dubois</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14:20–14:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP2 — Model order, surrogate, and scientific ML methods: progress and scientific highlights</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stéphane Lanteri, Emmanuel Franck</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14:30–14:45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PhD presentation — WP2<br>
+Thesis: <a href="https://theses.fr/s402028">Méthodes de Base Réduite Non Linéaire Compressive pour les φquations Paramétrées de Navier-Stokes Incompressibles en Régime de Turbulence.</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hassan Ballout</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14:45–15:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PhD presentation — WP2<br>
+Thesis: <a href="https://theses.fr/s402717">Construction de modèles de substitution multiniveaux basés sur la physique à partir de réseaux neuronaux. Application à la propagation des ondes électromagnétiques</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Daria Hrebenshchykova</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15:00–15:10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3 — Solvers for linear algebra and multiphysics: progress and scientific highlights</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vincent Faucher, Luc Giraud, Frédéric Nataf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15:10–15:25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PhD presentation — WP3<br>
+Thesis: <a href="https://theses.fr/s400062">Préconditioneurs et solveur basés sur de réseaux de neurones pour les systèmes linéaires creux.</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brieuc Antoine</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15:40–15:55</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postdoctoral presentation — WP3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lukas Spies</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15:55–16:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poster presentations and coffee break</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16:30–18:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Round-table discussions — session 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19:30 onwards</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dinner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The 15:25–15:40 slot is not assigned in the current Monday agenda.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tuesday_19_january_wp4wp7_and_intra_wp_meetings"><a class="anchor" href="#_tuesday_19_january_wp4wp7_and_intra_wp_meetings"></a>3. Tuesday 19 January — WP4–WP7 and intra-WP meetings</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Time (CET)</th>
+<th class="tableblock halign-left valign-top">Session</th>
+<th class="tableblock halign-left valign-top">Speakers / participants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">08:30–09:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Welcome coffee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">09:00–10:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Presentations by members of the board or scientific committee on specific subjects</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Speakers and topics to be confirmed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10:00–10:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poster presentations and coffee break</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10:30–10:40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP4 — Combining data and models, inverse problems: progress and scientific highlights</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mark Asch, Arthur Vidard</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10:40–10:55</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PhD presentation — WP4<br>
+Thesis: <a href="https://theses.fr/s371978">Assimilation de données variationnelles multi-fidélité pour les prévisions océaniques</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hélène Hénon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10:55–11:05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP5 — Optimization: progress and scientific highlights</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">El Ghazali Talbi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11:05–11:20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PhD presentation — WP5<br>
+Thesis: <a href="https://theses.fr/s376581">Optimisation de forme par apprentissage</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amaury Belières</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11:20–11:35</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PhD presentation — WP5<br>
+Thesis: Title not yet verified on theses.fr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mahmoud El Mehdi El Khadiri</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11:35–11:45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP6 — Uncertainty quantification: progress and scientific highlights</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Josselin Garnier, Clément Gauchy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11:45–12:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PhD presentation — WP6<br>
+Thesis: <a href="https://theses.fr/s430084">Quantification de l’incertitude pour le tenseur de Reynolds en mécanique des fluides par apprentissage statistique informé par la physique</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mahamat Nassouradine</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12:00–12:15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP7 — Showroom, benchmarking, and co-design coordination: progress and scientific highlights</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Christophe Prud&#8217;homme, Ansar Caloo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12:15–12:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Research engineering presentation — HPDDM (WP7)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erik Fabrizzi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12:30–13:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lunch break</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13:30–15:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intra-WP meetings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15:30–16:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poster presentations and coffee break</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16:00–18:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scientific board meeting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Board members, PC leaders, and WP leaders</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19:30 onwards</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dinner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wednesday_20_january_round_table_discussions_and_roadmap"><a class="anchor" href="#_wednesday_20_january_round_table_discussions_and_roadmap"></a>4. Wednesday 20 January — Round-table discussions and roadmap</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch striped">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Time (CET)</th>
+<th class="tableblock halign-left valign-top">Session</th>
+<th class="tableblock halign-left valign-top">Speakers / participants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">08:30–09:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Welcome coffee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">09:00–10:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Round-table discussions — session 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10:30–11:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poster presentations and coffee break</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11:00–12:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feedback from intra-WP meetings: points to address and roadmap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP leaders</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12:30–12:45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Closing remarks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hélène Barucq, Christophe Prud&#8217;homme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12:45 onwards</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Packed lunch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All participants</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programme_updates"><a class="anchor" href="#_programme_updates"></a>5. Programme updates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page will be updated with presentation titles and round-table topics as the programme is finalised.</p>
+</div>
+<div class="paragraph">
+<p><a href="../../news.html" class="xref page">Back to News and Events</a></p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="../../_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+        <div style="font-size: 0.75rem; color: #757575; margin-top: 0.5em;">
+            <a href="../../privacy.html" style="color: #757575; text-decoration: none; margin-right: 1.5em;">Privacy Notice</a>
+            <a href="../../legal-notice.html" style="color: #757575; text-decoration: none;">Legal Notice</a>
+        </div>
+    </div>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="../../_/js/vendor/highlight.js"></script>
+
+<script src="../../_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>
