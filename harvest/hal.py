@@ -561,6 +561,8 @@ def _format_statistics_asciidoc(stats: dict) -> list[str]:
 def output_asciidoc(
     publications: list[dict], output_file: str | Path | None = None, partial: bool = False,
     wp_assignments: dict[str, list[str]] | None = None,
+    proposed_wp_assignments: dict[str, list[str]] | None = None,
+    wp_conflicts: set[str] | None = None,
 ) -> str:
     """Output publications as AsciiDoc with tables grouped by year.
 
@@ -569,6 +571,8 @@ def output_asciidoc(
         output_file: Optional file path to write output
         partial: If True, output only the tables (for Antora partials)
         wp_assignments: Confirmed Zotero WP memberships keyed by HAL ID.
+        proposed_wp_assignments: Read-only proposed memberships keyed by HAL ID.
+        wp_conflicts: HAL IDs skipped because a duplicate candidate needs review.
     """
     formatted = [format_publication(p) for p in publications]
 
@@ -606,6 +610,42 @@ def output_asciidoc(
         lines.append("")
         # Include statistics in partials too
         lines.extend(_format_statistics_asciidoc(stats))
+
+    if proposed_wp_assignments is not None:
+        counts = {f"WP{i}": {"confirmed": 0, "proposed": 0} for i in range(1, 8)}
+        without_wp = 0
+        conflict_count = 0
+        for pub in formatted:
+            hal_id = pub["hal_id"]
+            confirmed = set((wp_assignments or {}).get(hal_id, []))
+            proposed = set(proposed_wp_assignments.get(hal_id, []))
+            if not confirmed and not proposed:
+                without_wp += 1
+            if hal_id in (wp_conflicts or set()):
+                conflict_count += 1
+            for wp in confirmed:
+                counts[wp]["confirmed"] += 1
+            for wp in proposed - confirmed:
+                counts[wp]["proposed"] += 1
+        lines.extend([
+            "== Proposed WP distribution",
+            "",
+            "Counts include proposed assignments from a read-only HAL/Zotero dry run. "
+            "A publication may appear in several WPs; no proposal changes Zotero.",
+            "",
+            f"*{without_wp}* publications have no WP assignment or proposal; "
+            f"*{conflict_count}* records need duplicate review.",
+            "",
+            '[cols="1,1,1",options="header"]',
+            "|===",
+            "|WP |Confirmed |Proposed",
+        ])
+        for wp, count in counts.items():
+            lines.append(
+                f"|xref:workpackages/wp{wp[2:]}.adoc[{wp}] "
+                f"|{count['confirmed']} |{count['proposed']}"
+            )
+        lines.extend(["|===", ""])
 
     for year in sorted(by_year.keys(), reverse=True):
         pubs = by_year[year]
@@ -650,10 +690,15 @@ def output_asciidoc(
             pub_type = str(pub_type).replace("|", "\\|")
 
             # One publication row can link to several work packages.
-            workpackages = (wp_assignments or {}).get(pub["hal_id"], [])
+            confirmed = set((wp_assignments or {}).get(pub["hal_id"], []))
+            proposed = set((proposed_wp_assignments or {}).get(pub["hal_id"], []))
             wp_links = ", ".join(
-                f"xref:workpackages/wp{wp[2:]}.adoc[{wp}]" for wp in workpackages
+                f"xref:workpackages/wp{wp[2:]}.adoc[{wp}]"
+                + (" (proposed)" if wp not in confirmed else "")
+                for wp in sorted(confirmed | proposed)
             )
+            if not wp_links and pub["hal_id"] in (wp_conflicts or set()):
+                wp_links = "Needs duplicate review"
 
             # Build links
             links = []

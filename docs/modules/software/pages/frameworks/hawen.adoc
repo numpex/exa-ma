@@ -59,6 +59,7 @@ Software should be packaged (preferably using Spack or Guix package formats) and
 * [ ] Docker image available
 * [ ] Apptainer/Singularity available
 
+* Spack: https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/hpddm/package.py
 
 === Testing & CI/CD
 

@@ -1,0 +1,163 @@
+= MI300A high-order finite-element kernels and HiFiMagnet
+:page-layout: default
+:page-tags: application, extended-mini-app, app-feelpp-mi300a-fem
+:page-illustration: fa-solid fa-cubes
+:description: MI300A high-order finite-element kernels and HiFiMagnet - Forward-performance benchmark: solve the nonlinear thermo-electric high-field-magnet model at fixed accuracy and expose state fields, nonlinear/linear...
+:icons: font
+:page-status: planned
+:page-work-packages: WP1, WP3, WP7
+
+[.lead]
+Forward-performance benchmark: solve the nonlinear thermo-electric high-field-magnet model at fixed accuracy and expose state fields, nonlinear/linear solver behaviour, device residency and CPU/APU performance; no inverse or control objective is introduced in this application.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Extended Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1, WP3, WP7
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Feel++, PETSc, HPDDM
+____
+====
+--
+
+
+
+== Overview
+
+Forward-performance benchmark: solve the nonlinear thermo-electric high-field-magnet model at fixed accuracy and expose state fields, nonlinear/linear solver behaviour, device residency and CPU/APU performance; no inverse or control objective is introduced in this application.
+
+=== Repository
+
+icon:code-branch[] https://github.com/numpex/apps-feelpp
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+* **PETSc**
+* **HPDDM**
+
+=== Parallel Frameworks
+
+* MPI
+* Kokkos
+* GPU - HIP
+* Multithread - OpenMP
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* high-order cG/H1 and HDG
+* full/partial/matrix-free assembly
+* homogeneous worksets
+* facets
+* traces
+* coupled blocks
+* skeleton terms
+
+
+=== WP3: Solvers
+
+* PETSc/HPDDM Krylov solvers
+* preconditioning
+* nonlinear and block solvers
+* device-resident sparse algebra
+
+
+
+
+== Data Flow
+
+=== Inputs
+
+* Gmsh
+* JSON config
+* Spack environment
+* Apptainer image
+
+=== Outputs
+
+* Electric potential φ
+* temperature T
+* unknown potential drop ΔV
+* current density J
+* Joule losses
+* JSON/CSV performance reports
+* profiles
+* HDF5 fields
+* reproducible native and container environments
+
+== Benchmarking
+
+=== Metrics
+
+* Forward Residual
+* Discretization Error
+* Fixed Accuracy
+* Time To Solution
+* Time To Precision
+* Nonlinear And Linear Iterations
+* Assembly Cost
+* Solve Cost
+* Memory Residency
+* Host Device Transfers
+* Strong Scalability
+* Weak Scalability
+* Multi Apu Scalability
+
+=== Benchmark Scope
+
+* Single Node
+* Multi Node
+* Multi Gpu
+* Full System
+* Method Verification
+* Solver Scaling
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra, Sorbonne U, LNCMI/CNRS, CINES
+
+*Responsible:* C. Prud'homme; V. Chabannes; P. Jolivet
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+
+== Notes
+
+Common forward operator used by all three applications: state y=(φ,T,ΔV), J=-σ(T;p)∇φ, ∇·J=0, -∇·(k(T;p)∇T)=J·E, V=0 on Γ-, V=ΔV on Γ+, ∫Γ+ J·n ds=Iset, with cooling boundary conditions. This row benchmarks only the forward map and its cG/H1 and HDG implementations. Grand Challenge AMD MI300A at CINES/Adastra: 319 MI300A in September-October 2026, then 128 MI300A from November 2026 for six months. Compare native Spack and Apptainer execution, CPU multicore and hybrid CPU+GPU/APU.

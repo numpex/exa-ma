@@ -213,3 +213,13 @@ def test_publication_table_links_multiple_wps_in_one_row():
     without_wp = output_asciidoc([record], partial=True, wp_assignments={"hal-12345": []})
     assert "|xref:workpackages/" not in without_wp
     assert without_wp.count("|*A publication*") == 1
+
+    preview = output_asciidoc(
+        [record], partial=True, wp_assignments={"hal-12345": ["WP2"]},
+        proposed_wp_assignments={"hal-12345": ["WP2", "WP6"]},
+    )
+    assert "== Proposed WP distribution" in preview
+    assert "|xref:workpackages/wp2.adoc[WP2] |1 |0" in preview
+    assert "|xref:workpackages/wp6.adoc[WP6] |0 |1" in preview
+    assert "xref:workpackages/wp2.adoc[WP2], xref:workpackages/wp6.adoc[WP6] (proposed)" in preview
+    assert preview.count("|*A publication*") == 1

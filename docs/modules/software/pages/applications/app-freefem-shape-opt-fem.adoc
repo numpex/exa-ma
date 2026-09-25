@@ -1,7 +1,7 @@
 = Shape Opt FEM
 :page-layout: default
-:page-tags: application, mini-app, app-freefem-shape-opt-fem
-:page-illustration: fa-solid fa-cube
+:page-tags: application, demonstrator, app-freefem-shape-opt-fem
+:page-illustration: fa-solid fa-desktop
 :description: Shape Opt FEM - Demonstrate new shape optimisation algorithm, volume preserving, fem formulation...
 :icons: font
 :page-status: planned
@@ -20,7 +20,7 @@ Demonstrate new shape optimisation algorithm, volume preserving, fem formulation
 ____
 icon:tag[size=2x,role=text-primary] *Type*
 
-Mini App
+Demonstrator
 ____
 
 ____
@@ -73,6 +73,13 @@ Demonstrate new shape optimisation algorithm, volume preserving, fem formulation
 
 
 
+== Benchmarking
+
+=== Metrics
+
+* Manufactured Solution
+* Analytical Solution Match
+
 
 == Timeline
 
@@ -89,6 +96,6 @@ Demonstrate new shape optimisation algorithm, volume preserving, fem formulation
 
 *Partners:* Unistra
 
-*Responsible:* Victor Dansac
+*Responsible:* Victor Miche-Dansac
 
 

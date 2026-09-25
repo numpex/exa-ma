@@ -12,6 +12,7 @@ from harvest.zotero import (
     build_plan,
     classify,
     confirmed_workpackages,
+    fetch_workpackage_preview,
     new_item,
 )
 
@@ -118,6 +119,43 @@ def test_french_accents_and_word_boundaries(config):
     )
 
 
+def test_fractal_decomposition_optimization_phrase_is_wp5():
+    pub = publication(title_s=["A Comparative Study of Fractal-Based Decomposition Optimization"])
+    assert classify(pub, {"WP5": ["fractal based decomposition optimization"]})[0] == ["WP5"]
+
+
+def test_gaussian_processes_are_classified_by_purpose():
+    rules = {
+        "WP5": ["bayesian optimization"],
+        "WP6": ["uncertainty quantification"],
+    }
+    assert classify(publication(title_s=["Gaussian processes"]), rules)[0] == []
+    cases = (
+        ("Gaussian processes for Bayesian optimization", ["WP5"]),
+        ("Gaussian processes for uncertainty quantification", ["WP6"]),
+        (
+            "Bayesian optimization and uncertainty quantification with Gaussian processes",
+            ["WP5", "WP6"],
+        ),
+    )
+    for title, expected in cases:
+        assert classify(publication(title_s=[title]), rules)[0] == expected
+
+
+def test_author_history_has_weak_weight_and_needs_two_abstract_purpose_phrases():
+    rules = {"WP5": ["bayesian optimization", "shape optimization"]}
+    pub = publication(
+        title_s=["Gaussian processes"],
+        abstract_s=["Bayesian optimization and shape optimization"],
+    )
+    assert classify(pub, rules)[0] == []
+    hint = {"WP5": [{"author": "Jane Doe", "confirmed_items": 2}]}
+    wps, evidence = classify(pub, rules, hint)
+    assert wps == ["WP5"]
+    assert evidence["WP5"]["score"] == 3
+    assert classify(publication(title_s=["Gaussian processes"]), rules, hint)[0] == []
+
+
 def test_existing_assignment_and_metadata_win(config, collections):
     item = existing()
     untouched = copy.deepcopy(item)
@@ -167,6 +205,59 @@ def test_unassigned_goes_to_parent_without_wp_labels(config, collections):
         [pub], [{"key": "SAVED", "data": data}], collections, config, FakeClient()
     )
     assert again == []
+
+
+def test_author_history_is_advisory_and_cross_wp_authors_are_excluded(config, collections):
+    records = []
+    for key, wp, author in (
+        ("A", "WPKEY3ART", "Jane Doe"),
+        ("B", "WPKEY3ART", "Jane Doe"),
+        ("C", "WPKEY3ART", "Alex Multi"),
+        ("D", "WPKEY4ART", "Alex Multi"),
+    ):
+        records.append(
+            {
+                "key": key,
+                "data": {
+                    "itemType": "journalArticle",
+                    "title": key,
+                    "collections": [wp],
+                    "creators": [{"creatorType": "author", "name": author}],
+                },
+            }
+        )
+    pub = publication(
+        title_s=["A topic without keyword evidence"],
+        doiId_s="",
+        authFullName_s=["Jane Doe", "Alex Multi"],
+    )
+    actions, _, report = build_plan([pub], records, collections, config, FakeClient())
+    assert actions[0]["data"]["collections"] == ["ROOT"]
+    row = report["classifications"][0]
+    assert row["workpackages"] == []
+    assert row["author_suggestions"] == {
+        "WP3": [{"author": "Jane Doe", "confirmed_items": 2}]
+    }
+
+
+def test_site_preview_proposes_wps_without_writing(config, collections, tmp_path):
+    import yaml
+
+    class ReadOnlyClient(FakeClient):
+        def list_all(self, resource):
+            return collections if resource == "collections" else []
+
+    client = ReadOnlyClient()
+    path = tmp_path / "zotero.yaml"
+    path.write_text(yaml.safe_dump(config))
+    with patch("harvest.zotero.ZoteroClient", return_value=client):
+        confirmed, proposed, conflicts = fetch_workpackage_preview(
+            [publication()], config_path=path
+        )
+    assert confirmed == {"hal-12345678": []}
+    assert proposed == {"hal-12345678": ["WP3"]}
+    assert conflicts == set()
+    assert client.calls == []
 
 
 def test_later_classification_preserves_existing_memberships(config, collections):

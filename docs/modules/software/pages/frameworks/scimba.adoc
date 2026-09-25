@@ -2,12 +2,12 @@
 :page-layout: default
 :page-tags: framework, software, scimba
 :page-illustration: fa-solid fa-cube
-:description: Scimba - Exa-MA Framework...
+:description: Scimba - Scimba is a Python library that implements several Scientific Machine Learning (SciML) methods for PDE problems, as well as tools for hybrid numerical...
 :icons: font
-:page-work-packages: WP2
+:page-work-packages: WP1, WP2, WP3, WP4, WP7
 
 [.lead]
-Scimba is a framework used in the Exa-MA project.
+Scimba is a Python library that implements several Scientific Machine Learning (SciML) methods for PDE problems, as well as tools for hybrid numerical methods.
 
 [.section-gray]
 --
@@ -104,9 +104,21 @@ Documentation: https://scimba.gitlabpages.inria.fr/scimba/
 
 This framework is involved in the following work packages:
 
+=== WP1
+Topics: finite element, unstructured mesh, finite volume
+
 === WP2 icon:check-circle[role=text-success]
 Topics: NN/Autoencoder, PINN
 _Benchmarked in this WP_
+
+=== WP3
+Topics: krylov solver
+
+=== WP4
+Topics: deterministic inverse problem
+
+=== WP7
+Topics: Energy, Physics
 
 
 == Technical Details
@@ -133,7 +145,15 @@ The following Exa-MA applications use Scimba:
 | Application | Type | Status
 
 | xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
+| Demonstrator
+| Planned
+
+| xref:applications/app-scimba-plasma.adoc[Plasma NN]
 | Mini App
+| Planned
+
+| xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics]
+| Demonstrator
 | Planned
 
 |===

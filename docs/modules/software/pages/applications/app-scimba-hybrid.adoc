@@ -38,7 +38,7 @@ ____
 ____
 icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
 
-N/A
+Scimba
 ____
 ====
 --
@@ -50,6 +50,15 @@ ____
 Test numerical hybrid methods on high dimensional physical and parametric PDE problems
 
 
+== Technical Stack
+
+=== Frameworks Used
+
+* **Scimba**
+
+=== Parallel Frameworks
+
+* GPU
 
 
 

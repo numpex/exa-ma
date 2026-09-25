@@ -5,14 +5,14 @@ identifier and files them in group **5582837**, under **Our Publications**.
 `exa-ma-d7.1` separately retrieves Zotero's bibliography. This command is separate
 from `exa-ma-harvest all`, so normal website builds never modify Zotero.
 
-The Exa-MA publications page reads the current `Our Publications/WP1`–`WP7`
-memberships from Zotero when `exa-ma-harvest all` generates its HAL partial.
-It shows one row per HAL record with links to every confirmed WP; records without
-a confirmed Zotero WP assignment have an empty WP cell. Keyword suggestions in
-this tool's dry-run report do not appear on the site until the Zotero item is
-actually placed in a WP collection. Site generation needs Zotero read access;
-the CI workflow uses the `ZOTERO_API_KEY` secret.
-The site workflow refreshes at **06:17 UTC**, after the 04:17 UTC Zotero sync.
+The Exa-MA publications page shows confirmed Zotero WP memberships alongside
+clearly marked proposals from a read-only classification preview. Its summary
+counts confirmed and proposed WP links separately; one item may count in several
+WPs. Duplicate conflicts are marked for review. Site generation needs Zotero
+read access; the CI workflow uses the `ZOTERO_API_KEY` secret. The site workflow
+refreshes at **06:17 UTC**. The 04:17 UTC Zotero job remains a dry run while the
+distribution is reviewed; a manually dispatched run with `apply=true` can upload
+the changes after approval.
 
 ## Run locally
 
@@ -41,15 +41,27 @@ the similarly named collections under External Publications.
    Examples: domain decomposition → WP3; inverse problems → WP4; shape optimization
    → WP5. Case, punctuation, hyphens and accents are normalized. Matching uses word
    boundaries, not arbitrary substrings. Inflection variants are explicit rules.
-3. Abstract matches are reported as suggestions only. A title match contributes
-   3, a HAL-keyword match 4, and an abstract match at most 1 per WP. The assignment
-   threshold is 3. These are transparent rule weights, **not probabilities**.
+3. A title match contributes 3, a HAL-keyword match 4, and distinct abstract
+   phrase matches contribute at most 2 per WP. Confirmed author history adds
+   only 1 point. The assignment threshold is 3, so an author alone or with one
+   abstract phrase cannot assign a WP. These are transparent rule weights,
+   **not probabilities**.
 4. Multiple WPs may match, placing one Zotero item in several collections.
-   Authors are not used to infer WP membership. Generic words such as simulation,
-   HPC and performance are deliberately insufficient.
+   The report also suggests WPs for authors who already have at least two distinct
+   Zotero publications in exactly one WP. This history can tip two abstract
+   purpose phrases over the threshold, but never files a paper by itself. Names
+   are ambiguous, and contributors can publish across several WPs. Confirm an
+   uncertain author-based suggestion by adding the HAL ID to `assignments` after review.
+   Generic words such as simulation, HPC and performance are deliberately insufficient.
 5. References without a clear WP match go directly in `Our Publications`, with
    no WP collection or WP tag added. Abstract suggestions remain in the report
    only. Existing memberships are preserved if a WP is assigned later.
+
+Gaussian processes (GPs) are a method, not a WP signal on their own. A GP paper
+about Bayesian optimization points to WP5; a paper about uncertainty
+quantification points to WP6. If both purposes are explicit, both WPs can be
+assigned. An author who works in both WPs does not settle an otherwise unclear
+paper's assignment.
 
 Papers, posters, and theses are filed under `WPx/Articles`; HAL reports under
 `WPx/Technical Notes`; software and datasets under their corresponding category.

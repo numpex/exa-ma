@@ -69,6 +69,7 @@ keyword_rules:
     - problemes inverses
   WP5:
     - shape optimization
+    - fractal based decomposition optimization
     - bayesian optimization
     - combinatorial optimization
     - continuous optimization

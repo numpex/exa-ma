@@ -1,14 +1,22 @@
-// Total recruited personnel: 28
+// Total recruited personnel: 35
 :sectnums!:
 
 [discrete]
 == icon:graduation-cap[] PhD Students
 
-_13 personnel_
+_16 personnel_
 
 [.striped.recruited,cols="2,2,2,2,2,2",options="header"]
 |===
 |Last Name |First Name |Work Package |Institution |Period |Advisor(s)
+
+|*Bergez*
+|Quentin
+|WP1: Discretization +
+WP2: Model order reduction, Surrogate, Scientific Machine Learning methods
+|Inria
+|January 2026 - October 2029
+|Hélène Barucq
 
 |*Dubois*
 |Pierre
@@ -66,21 +74,28 @@ Antoine Deleforge
 |Brieuc
 |WP3: Solvers for linear algebra and multiphysics
 |Inria
-|Project start - Present
+|October 2024 - September 2027
 |Frédéric Nataf
 
 |*Caruso*
 |Tom
 |WP3: Solvers for linear algebra and multiphysics
 |Inria
-|Project start - Present
+|October 2024 - September 2027
 |Frédéric Nataf
+
+|*Fabrizzi*
+|Erik
+|WP3: Solvers for linear algebra and multiphysics
+|Sorbonne Université
+|October 2026 - October 2029
+|Pierre Jolivet
 
 |*Olivier*
 |Maël
 |WP3: Solvers for linear algebra and multiphysics
 |Inria
-|January 2026 - Present
+|January 2026 - May 2029
 |Emmanuel Agullo +
 Luc Giraud +
 Théo Mary
@@ -103,11 +118,18 @@ Théo Mary
 |Olivier Zahm +
 Arthur Vidard
 
+|*Latre*
+|Bruno
+|WP4: Combine Data and Models, Inverse Problems at Exascale
+|Inria
+|January 2026 - October 2029
+|Hélène Barucq
+
 |*El Khadiri*
 |Mahmoud El Mehdi
 |WP5: Optimization
 |Inria
-|October 2024 - Present
+|October 2024 - October 2027
 |El-Ghazzali Talbi
 
 |*Nassouradine*
@@ -122,7 +144,7 @@ Arthur Vidard
 [discrete]
 == icon:flask[] Postdoctoral Researchers
 
-_6 personnel_
+_7 personnel_
 
 [.striped.recruited,cols="2,2,2,2,2,2",options="header"]
 |===
@@ -143,6 +165,14 @@ WP7: Showroom, Benchmarking and Co-Design coordination
 |October 2023 - October 2025
 |Emmanuel Franck
 
+|*Boëzennec*
+|Robin
+|WP3: Solvers for linear algebra and multiphysics
+|Inria
+|January 2026 - Present
+|Anne Benoît +
+Yves Robert
+
 |*Chen*
 |Xinye
 |WP3: Solvers for linear algebra and multiphysics
@@ -161,25 +191,24 @@ WP7: Showroom, Benchmarking and Co-Design coordination
 |Lukas
 |WP3: Solvers for linear algebra and multiphysics
 |CEA
-|March 2025 - March 2026
+|March 2025 - February 2026
 |Vincent Faucher +
 Pierre-Henri Tournier +
 Frédéric Nataf
 
-|*Boëzennec*
-|Robin
-|
-|Unknown
+|*Jaber*
+|Edgar
+|WP6: Uncertainty Quantification
+|École Polytechnique
 |January 2026 - Present
-|Anne Benoît +
-Yves Robert
+|Josselin Garnier
 
 |===
 
 [discrete]
 == icon:cogs[] Research Engineers
 
-_8 personnel_
+_7 personnel_
 
 [.striped.recruited,cols="2,2,2,2,2,2",options="header"]
 |===
@@ -229,13 +258,6 @@ WP7: Showroom, Benchmarking and Co-Design coordination
 |Christophe Prud'homme +
 Vincent Chabannes
 
-|*Fabrizzi*
-|Erik
-|WP3: Solvers for linear algebra and multiphysics
-|Sorbonne Université
-|October 2025 - October 2026
-|Pierre Jolivet
-
 |*Gouinguenet*
 |Arthur
 |WP3: Solvers for linear algebra and multiphysics +
@@ -260,10 +282,10 @@ WP7: Showroom, Benchmarking and Co-Design coordination
 |===
 |Indicator |Value
 
-|Total Recruited Personnel |*28*
-|PhD Students |13
-|Postdoctoral Researchers |6
-|Research Engineers |8
-|Women |2 (7%)
-|Men |26 (93%)
+|Total Recruited Personnel |*35*
+|PhD Students |16
+|Postdoctoral Researchers |7
+|Research Engineers |7
+|Women |2 (6%)
+|Men |33 (94%)
 |===

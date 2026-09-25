@@ -20,9 +20,9 @@ Exa-MA frameworks are production-ready software libraries and tools that serve a
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:cubes[size=2x,role=text-primary] *44 Frameworks*
+icon:cubes[size=2x,role=text-primary] *45 Frameworks*
 
-12 eligible for production use in Exa-MA benchmarks.
+13 eligible for production use in Exa-MA benchmarks.
 ____
 
 ____
@@ -34,13 +34,13 @@ ____
 ____
 icon:vial[size=2x,role=text-info] *Testing*
 
-26 with CI/CD, 18 with unit tests
+27 with CI/CD, 19 with unit tests
 ____
 
 ____
 icon:file-contract[size=2x,role=text-warning] *Licensing*
 
-27 with FLOSS licenses
+28 with FLOSS licenses
 ____
 ====
 --
@@ -74,6 +74,10 @@ ____
 | _Exa-MA Framework_
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
 | icon:check[role=text-success]| icon:check[role=text-success]| 1,3,5,7
+| xref:frameworks/funtides.adoc[*FUnTiDES*]
+| FUnTiDES (Fast Unstructured Time Dynamic Equation Solver) is a high-performance ...
+| xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms]
+| icon:check[role=text-success]| icon:check[role=text-success]| 1,7
 | xref:frameworks/hawen.adoc[*Hawen*]
 | _Exa-MA Framework_
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
@@ -91,9 +95,9 @@ ____
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
 | icon:check[role=text-success]| icon:check[role=text-success]| 1
 | xref:frameworks/scimba.adoc[*Scimba*]
-| _Exa-MA Framework_
+| Scimba is a Python library that implements several Scientific Machine Learning (...
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
-| icon:check[role=text-success]| icon:check[role=text-success]| 2
+| icon:check[role=text-success]| icon:check[role=text-success]| 1,2,3,4,7
 | xref:frameworks/trust_platform.adoc[*TRUST Platform*]
 | TRUST is a High Performance Computing (HPC) thermohydraulic engine for Computati...
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
@@ -116,9 +120,11 @@ ____
 * xref:frameworks/cgal.adoc[CGAL] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/freefempp.adoc[Freefem++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/funtides.adoc[FUnTiDES]
 * xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/mahyco.adoc[MaHyCo]
 * xref:frameworks/samurai.adoc[Samurai] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/scimba.adoc[Scimba]
 
 *WP2*
 
@@ -135,12 +141,14 @@ ____
 * xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/hpddm.adoc[HPDDM] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/mahyco.adoc[MaHyCo]
+* xref:frameworks/scimba.adoc[Scimba]
 * xref:frameworks/trust_platform.adoc[TRUST Platform] icon:check-circle[role=text-success,title=Benchmarked]
 
 *WP4*
 
 * xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/hawen.adoc[Hawen] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/scimba.adoc[Scimba]
 
 *WP5*
 
@@ -161,8 +169,10 @@ ____
 * xref:frameworks/arcane.adoc[Arcane] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/feelpp.adoc[Feel++] icon:check-circle[role=text-success,title=Benchmarked]
 * xref:frameworks/freefempp.adoc[Freefem++] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/funtides.adoc[FUnTiDES]
 * xref:frameworks/hawen.adoc[Hawen]
 * xref:frameworks/mahyco.adoc[MaHyCo]
+* xref:frameworks/scimba.adoc[Scimba]
 * xref:frameworks/trust_platform.adoc[TRUST Platform] icon:check-circle[role=text-success,title=Benchmarked]
 
 --
@@ -182,10 +192,16 @@ These frameworks power the following Exa-MA applications:
 ** xref:applications/app-freefem-parmmg.adoc[Fichera corner]
 ** xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
 ** xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
+** xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet]
+** xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion]
+** xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control]
 
 * xref:frameworks/hpddm.adoc[HPDDM]
 ** xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
 ** xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners]
+** xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet]
+** xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion]
+** xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control]
 
 * xref:frameworks/freefempp.adoc[Freefem++]
 ** xref:applications/app-freefem-parmmg.adoc[Fichera corner]
@@ -193,6 +209,8 @@ These frameworks power the following Exa-MA applications:
 
 * xref:frameworks/scimba.adoc[Scimba]
 ** xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
+** xref:applications/app-scimba-plasma.adoc[Plasma NN]
+** xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics]
 
 * xref:frameworks/cgal.adoc[CGAL]
 ** xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]

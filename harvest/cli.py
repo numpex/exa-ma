@@ -94,10 +94,13 @@ def harvest_hal(args: argparse.Namespace) -> int:
     if args.format == "json":
         hal_json(publications, args.output)
     else:
-        from .zotero import fetch_confirmed_workpackages
+        from .zotero import fetch_workpackage_preview
 
-        assignments = fetch_confirmed_workpackages(publications)
-        hal_asciidoc(publications, args.output, wp_assignments=assignments)
+        confirmed, proposed, conflicts = fetch_workpackage_preview(publications)
+        hal_asciidoc(
+            publications, args.output, wp_assignments=confirmed,
+            proposed_wp_assignments=proposed, wp_conflicts=conflicts,
+        )
 
     return 0
 
@@ -371,11 +374,14 @@ def harvest_all(args: argparse.Namespace) -> int:
     if publications:
         print(f"Found {len(publications)} publications")
         try:
-            from .zotero import fetch_confirmed_workpackages
+            from .zotero import fetch_workpackage_preview
 
-            assignments = fetch_confirmed_workpackages(publications)
+            confirmed, proposed, conflicts = fetch_workpackage_preview(publications)
             hal_output = output_dir / "publications-hal.adoc"
-            hal_asciidoc(publications, hal_output, partial=True, wp_assignments=assignments)
+            hal_asciidoc(
+                publications, hal_output, partial=True, wp_assignments=confirmed,
+                proposed_wp_assignments=proposed, wp_conflicts=conflicts,
+            )
         except Exception as error:
             print(f"Error retrieving Zotero WP assignments: {error}", file=sys.stderr)
             errors += 1

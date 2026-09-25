@@ -20,25 +20,25 @@ Exa-MA applications are benchmarks and demonstrators that exercise the capabilit
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:rocket[size=2x,role=text-primary] *20 Applications*
+icon:rocket[size=2x,role=text-primary] *23 Applications*
 
-5 ready for benchmarking
+6 ready for benchmarking
 ____
 
 ____
-icon:cube[size=2x,role=text-info] *12 Mini-Apps*
+icon:cube[size=2x,role=text-info] *10 Mini-Apps*
 
 Focused benchmarks testing specific algorithms
 ____
 
 ____
-icon:cubes[size=2x,role=text-success] *4 Extended Mini-Apps*
+icon:cubes[size=2x,role=text-success] *7 Extended Mini-Apps*
 
 Multi-WP benchmarks with broader scope
 ____
 
 ____
-icon:desktop[size=2x,role=text-warning] *4 Demonstrators*
+icon:desktop[size=2x,role=text-warning] *6 Demonstrators*
 
 Full-scale application showcases
 ____
@@ -91,20 +91,20 @@ ____
 | PETSc, GeoS| icon:clock[role=text-warning,title=planned]| WP4
 
 | xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
-| Mini App
+| Demonstrator
 | Freefem++| icon:clock[role=text-warning,title=planned]| WP5
 
 | xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
-| Mini App
+| Demonstrator
 | Scimba| icon:clock[role=text-warning,title=planned]| WP5
 
 | xref:applications/app-scimba-plasma.adoc[Plasma NN]
 | Mini App
-| | icon:clock[role=text-warning,title=planned]| WP2
+| Scimba| icon:clock[role=text-warning,title=planned]| WP2
 
 | xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics]
 | Demonstrator
-| | icon:clock[role=text-warning,title=planned]| WP2
+| Scimba| icon:clock[role=text-warning,title=planned]| WP2
 
 | xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
 | Demonstrator
@@ -129,6 +129,18 @@ ____
 | xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners]
 | Mini App
 | PETSc, HPDDM...| icon:clock[role=text-warning,title=planned]| WP3
+
+| xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet]
+| Extended Mini App
+| Feel++, PETSc...| icon:clock[role=text-warning,title=planned]| WP1, WP3, WP7
+
+| xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion]
+| Extended Mini App
+| Feel++, PETSc/TAO...| icon:clock[role=text-warning,title=planned]| WP1, WP2, WP3, WP4, WP6
+
+| xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control]
+| Extended Mini App
+| Feel++, PETSc/TAO...| icon:clock[role=text-warning,title=planned]| WP1, WP2, WP3, WP5, WP6
 
 |===
 --
@@ -166,7 +178,11 @@ icon:desktop[role=text-warning] *Demonstrators*
 
 * xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale] — N/A
 
-* xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics] — N/A
+* xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM] — Freefem++
+
+* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN] — Scimba
+
+* xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics] — Scimba
 
 * xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca] — Feel++
 
@@ -183,6 +199,12 @@ icon:cubes[role=text-success] *Extended Mini Apps*
 
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] icon:check-circle[role=text-success,title=Ready] — Freefem++, MMG/ParMMG
 
+* xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet] — Feel++, PETSc
+
+* xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion] — Feel++, PETSc/TAO
+
+* xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control] — Feel++, PETSc/TAO
+
 
 icon:cube[role=text-info] *Mini Apps*
 
@@ -194,11 +216,7 @@ icon:cube[role=text-info] *Mini Apps*
 
 * xref:applications/app-eki.adoc[EKI] — PETSc, GeoS
 
-* xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM] — Freefem++
-
-* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN] — Scimba
-
-* xref:applications/app-scimba-plasma.adoc[Plasma NN] — N/A
+* xref:applications/app-scimba-plasma.adoc[Plasma NN] — Scimba
 
 * xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement] — CGAL
 
@@ -232,11 +250,14 @@ icon:cube[role=text-info] *Mini Apps*
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca] (Demonstrator)
 * xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation] (Demonstrator)
+* xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet] (Extended Mini App)
+* xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion] (Extended Mini App)
+* xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control] (Extended Mini App)
 
 *Freefem++*
 
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
-* xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM] (Mini App)
+* xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM] (Demonstrator)
 
 *GeoS*
 
@@ -246,6 +267,9 @@ icon:cube[role=text-info] *Mini Apps*
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners] (Mini App)
+* xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet] (Extended Mini App)
+* xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion] (Extended Mini App)
+* xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control] (Extended Mini App)
 
 *MMG/ParMMG*
 
@@ -264,14 +288,26 @@ icon:cube[role=text-info] *Mini Apps*
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-eki.adoc[EKI] (Mini App)
 * xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners] (Mini App)
+* xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet] (Extended Mini App)
+
+*PETSc/TAO*
+
+* xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion] (Extended Mini App)
+* xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control] (Extended Mini App)
 
 *PaStiX*
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
 
+*Sage-HPC*
+
+* xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control] (Extended Mini App)
+
 *Scimba*
 
-* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN] (Mini App)
+* xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN] (Demonstrator)
+* xref:applications/app-scimba-plasma.adoc[Plasma NN] (Mini App)
+* xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics] (Demonstrator)
 
 *pytorch*
 

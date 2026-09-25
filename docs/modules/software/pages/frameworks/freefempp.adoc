@@ -150,7 +150,7 @@ The following Exa-MA applications use Freefem++:
 | Benchmark Ready
 
 | xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
-| Mini App
+| Demonstrator
 | Planned
 
 |===

@@ -207,11 +207,12 @@ def words(value):
     return " ".join(re.findall(r"[^\W_]+", value.casefold()))
 
 
-def classify(pub, rules):
-    """Specific title/HAL-keyword phrases assign WPs; abstracts only suggest them.
+def classify(pub, rules, author_evidence=None):
+    """Specific topic phrases dominate; confirmed author history adds one point.
 
     Scores are rule weights, not probabilities. A single title (3) or keyword
-    (4) match suffices; abstract matches are capped at 1 per WP.
+    (4) match suffices; abstract matches are capped at 2 per WP. An author
+    alone, or an author plus one abstract phrase, cannot assign a WP.
     """
     fields = {
         "title": words(_first_str(pub.get("title_s"))),
@@ -234,10 +235,47 @@ def classify(pub, rules):
             ]
             if found:
                 matches.append({"field": field, "phrases": found})
-                score += weight
+                score += min(2, len(found)) if field == "abstract" else weight
+        if author_evidence and wp in author_evidence:
+            matches.append({"field": "author", "authors": author_evidence[wp]})
+            score += 1
         if matches:
             evidence[wp] = {"score": score, "matches": matches}
     return sorted(wp for wp, info in evidence.items() if info["score"] >= 3), evidence
+
+
+def author_suggestions(pub, items, tree):
+    """Suggest WPs from authors with repeated, exclusive Zotero WP history.
+
+    Author history is intentionally advisory: names are imperfect identifiers,
+    and a contributor may publish in several work packages.
+    """
+    history = defaultdict(lambda: defaultdict(set))
+    for item in items:
+        data = item["data"]
+        wps = tree.workpackages(data.get("collections", []))
+        if not wps or data.get("itemType") in ("attachment", "note", "annotation"):
+            continue
+        for creator in data.get("creators", []):
+            name = creator.get("name") or " ".join(
+                part for part in (creator.get("firstName"), creator.get("lastName")) if part
+            )
+            if name:
+                for wp in wps:
+                    history[words(name)][wp].add(item["key"])
+
+    evidence = defaultdict(list)
+    authors = pub.get("authFullName_s", [])
+    for name in [authors] if isinstance(authors, str) else authors:
+        counts = history.get(words(name), {})
+        if len(counts) == 1:
+            wp, keys = next(iter(counts.items()))
+            if len(keys) >= 2:
+                evidence[wp].append({"author": name, "confirmed_items": len(keys)})
+    return {
+        wp: sorted(rows, key=lambda row: row["author"])
+        for wp, rows in sorted(evidence.items())
+    }
 
 
 def hal_ids(data):
@@ -292,6 +330,22 @@ def fetch_confirmed_workpackages(publications, config_path=None):
     collections = client.list_all("collections")
     items = client.list_all("items/top")
     return confirmed_workpackages(publications, items, collections, config)
+
+
+def fetch_workpackage_preview(publications, config_path=None):
+    """Read Zotero and preview classifications without writing any items."""
+    path = config_path or Path(__file__).parent.parent / "zotero.yaml"
+    config = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    client = ZoteroClient(config["group_id"], os.environ.get("ZOTERO_API_KEY"))
+    collections = client.list_all("collections")
+    items = client.list_all("items/top")
+    confirmed = confirmed_workpackages(publications, items, collections, config)
+    _, _, report = build_plan(publications, items, collections, config, client)
+    proposed = {
+        row["hal_id"]: row["workpackages"] for row in report["classifications"]
+    }
+    conflicts = {row["hal_id"] for row in report["conflicts"]}
+    return confirmed, proposed, conflicts
 
 
 def new_item(pub, client):
@@ -523,7 +577,8 @@ def build_plan(publications, items, collections, config, client):
             data["extra"] = (data.get("extra", "").rstrip() + "\nHAL ID: " + hid).lstrip()
         existing = list(data.get("collections", []))
         existing_wps = tree.workpackages(existing)
-        inferred, evidence = classify(pub, rules)
+        author_evidence = author_suggestions(pub, items, tree)
+        inferred, evidence = classify(pub, rules, author_evidence)
         if hid in assignments:
             wps = existing_wps | set(assignments[hid])
             basis = "manual mapping"
@@ -532,7 +587,18 @@ def build_plan(publications, items, collections, config, client):
             basis = "existing Zotero membership"
         else:
             wps = set(inferred)
-            basis = "title/HAL keywords" if wps else "unassigned"
+            if not wps:
+                basis = "unassigned"
+            elif any(
+                not any(
+                    match["field"] in ("title", "keywords")
+                    for match in evidence[wp]["matches"]
+                )
+                for wp in wps
+            ):
+                basis = "weighted topic/author evidence"
+            else:
+                basis = "title/HAL keywords"
         classifications.append(
             {
                 "hal_id": hid,
@@ -540,6 +606,7 @@ def build_plan(publications, items, collections, config, client):
                 "workpackages": sorted(wps),
                 "basis": basis,
                 "keyword_evidence": evidence,
+                "author_suggestions": author_evidence,
             }
         )
         if wps:
