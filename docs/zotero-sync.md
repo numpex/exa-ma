@@ -45,8 +45,11 @@ the similarly named collections under External Publications.
    3, a HAL-keyword match 4, and an abstract match at most 1 per WP. The assignment
    threshold is 3. These are transparent rule weights, **not probabilities**.
 4. Multiple WPs may match, placing one Zotero item in several collections.
-   Authors are not used to infer WP membership. Generic words such as simulation,
-   HPC and performance are deliberately insufficient.
+   The report also suggests WPs for authors who already have at least two distinct
+   Zotero publications in exactly one WP. These author hints never add collections:
+   names are ambiguous, and contributors can publish across several WPs. Confirm
+   an author-based suggestion by adding the HAL ID to `assignments` after review.
+   Generic words such as simulation, HPC and performance are deliberately insufficient.
 5. References without a clear WP match go directly in `Our Publications`, with
    no WP collection or WP tag added. Abstract suggestions remain in the report
    only. Existing memberships are preserved if a WP is assigned later.

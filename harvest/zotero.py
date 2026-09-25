@@ -240,6 +240,40 @@ def classify(pub, rules):
     return sorted(wp for wp, info in evidence.items() if info["score"] >= 3), evidence
 
 
+def author_suggestions(pub, items, tree):
+    """Suggest WPs from authors with repeated, exclusive Zotero WP history.
+
+    Author history is intentionally advisory: names are imperfect identifiers,
+    and a contributor may publish in several work packages.
+    """
+    history = defaultdict(lambda: defaultdict(set))
+    for item in items:
+        data = item["data"]
+        wps = tree.workpackages(data.get("collections", []))
+        if not wps or data.get("itemType") in ("attachment", "note", "annotation"):
+            continue
+        for creator in data.get("creators", []):
+            name = creator.get("name") or " ".join(
+                part for part in (creator.get("firstName"), creator.get("lastName")) if part
+            )
+            if name:
+                for wp in wps:
+                    history[words(name)][wp].add(item["key"])
+
+    evidence = defaultdict(list)
+    authors = pub.get("authFullName_s", [])
+    for name in [authors] if isinstance(authors, str) else authors:
+        counts = history.get(words(name), {})
+        if len(counts) == 1:
+            wp, keys = next(iter(counts.items()))
+            if len(keys) >= 2:
+                evidence[wp].append({"author": name, "confirmed_items": len(keys)})
+    return {
+        wp: sorted(rows, key=lambda row: row["author"])
+        for wp, rows in sorted(evidence.items())
+    }
+
+
 def hal_ids(data):
     return set(
         HAL_ID.findall(
@@ -540,6 +574,7 @@ def build_plan(publications, items, collections, config, client):
                 "workpackages": sorted(wps),
                 "basis": basis,
                 "keyword_evidence": evidence,
+                "author_suggestions": author_suggestions(pub, items, tree),
             }
         )
         if wps:

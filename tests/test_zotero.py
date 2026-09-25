@@ -118,6 +118,11 @@ def test_french_accents_and_word_boundaries(config):
     )
 
 
+def test_fractal_decomposition_optimization_phrase_is_wp5():
+    pub = publication(title_s=["A Comparative Study of Fractal-Based Decomposition Optimization"])
+    assert classify(pub, {"WP5": ["fractal based decomposition optimization"]})[0] == ["WP5"]
+
+
 def test_existing_assignment_and_metadata_win(config, collections):
     item = existing()
     untouched = copy.deepcopy(item)
@@ -167,6 +172,39 @@ def test_unassigned_goes_to_parent_without_wp_labels(config, collections):
         [pub], [{"key": "SAVED", "data": data}], collections, config, FakeClient()
     )
     assert again == []
+
+
+def test_author_history_is_advisory_and_cross_wp_authors_are_excluded(config, collections):
+    records = []
+    for key, wp, author in (
+        ("A", "WPKEY3ART", "Jane Doe"),
+        ("B", "WPKEY3ART", "Jane Doe"),
+        ("C", "WPKEY3ART", "Alex Multi"),
+        ("D", "WPKEY4ART", "Alex Multi"),
+    ):
+        records.append(
+            {
+                "key": key,
+                "data": {
+                    "itemType": "journalArticle",
+                    "title": key,
+                    "collections": [wp],
+                    "creators": [{"creatorType": "author", "name": author}],
+                },
+            }
+        )
+    pub = publication(
+        title_s=["A topic without keyword evidence"],
+        doiId_s="",
+        authFullName_s=["Jane Doe", "Alex Multi"],
+    )
+    actions, _, report = build_plan([pub], records, collections, config, FakeClient())
+    assert actions[0]["data"]["collections"] == ["ROOT"]
+    row = report["classifications"][0]
+    assert row["workpackages"] == []
+    assert row["author_suggestions"] == {
+        "WP3": [{"author": "Jane Doe", "confirmed_items": 2}]
+    }
 
 
 def test_later_classification_preserves_existing_memberships(config, collections):
