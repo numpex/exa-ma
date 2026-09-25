@@ -1,0 +1,107 @@
+= Exa-MA 2027 General Assembly — Bordeaux
+:page-tags: resource,news2027
+:page-parent: news.adoc
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-users
+:description: Join the next Exa-MA General Assembly in Bordeaux, 18–20 January 2027. Discover the first draft programme.
+:sectnums!:
+:toc: macro
+:toclevels: 2
+include::partial$theses/attributes.adoc[]
+
+[.lead]
+The next *Exa-MA General Assembly* will take place in *Bordeaux from Monday 18 to Wednesday 20 January 2027*, at the Inria research centre in Talence.
+The three-day meeting will bring together the consortium for scientific progress reviews, PhD and postdoctoral presentations, poster sessions, and discussions on the project's roadmap.
+
+== Event details
+
+* *Dates*: 18–20 January 2027, beginning with a welcome lunch on Monday at 12:00 and ending with a packed lunch on Wednesday at 12:45.
+* *Venue*: Centre de recherche Inria, 200 avenue de la Vieille Tour, 33400 Talence, France (Bordeaux).
+
+[NOTE]
+====
+This is the *first draft programme*, based on the agenda available on 25 September 2026.
+Sessions, speakers, and times remain provisional. All times below are local to Bordeaux (CET).
+Room assignments and videoconference details are to be confirmed.
+For doctoral presentations, the linked thesis titles provide research context; talk titles remain to be confirmed.
+====
+
+toc::[]
+
+== Monday 18 January — WP1–WP3 and round-table discussions
+
+[.striped,cols="1,3,2",options="header"]
+|===
+|Time (CET) |Session |Speakers / participants
+
+|12:00–13:30 |Welcome lunch |All participants
+|13:30–13:40 |Introductory words |Hélène Barucq, Christophe Prud'homme
+|13:40–13:50 |WP1 — Discretization: progress and scientific highlights |Pierre Alliez, Isabelle Ramière
+|13:50–14:05 |PhD presentation — WP1 +
+Thesis: {thesis-antoine-simon} |Antoine Simon
+|14:05–14:20 |PhD presentation — WP1 +
+Thesis: {thesis-pierre-dubois} |Pierre Dubois
+|14:20–14:30 |WP2 — Model order, surrogate, and scientific ML methods: progress and scientific highlights |Stéphane Lanteri, Emmanuel Franck
+|14:30–14:45 |PhD presentation — WP2 +
+Thesis: {thesis-hassan-ballout} |Hassan Ballout
+|14:45–15:00 |PhD presentation — WP2 +
+Thesis: {thesis-daria-hrebenshchykova} |Daria Hrebenshchykova
+|15:00–15:10 |WP3 — Solvers for linear algebra and multiphysics: progress and scientific highlights |Vincent Faucher, Luc Giraud, Frédéric Nataf
+|15:10–15:25 |PhD presentation — WP3 +
+Thesis: {thesis-brieuc-antoine-dit-urban} |Brieuc Antoine
+|15:40–15:55 |Postdoctoral presentation — WP3 |Lukas Spies
+|15:55–16:30 |Poster presentations and coffee break |All participants
+|16:30–18:00 |Round-table discussions — session 1 |All participants
+|19:30 onwards |Dinner |All participants
+|===
+
+The 15:25–15:40 slot is not assigned in the current Monday agenda.
+
+== Tuesday 19 January — WP4–WP7 and intra-WP meetings
+
+[.striped,cols="1,3,2",options="header"]
+|===
+|Time (CET) |Session |Speakers / participants
+
+|08:30–09:00 |Welcome coffee |All participants
+|09:00–10:00 |Presentations by members of the board or scientific committee on specific subjects |Speakers and topics to be confirmed
+|10:00–10:30 |Poster presentations and coffee break |All participants
+|10:30–10:40 |WP4 — Combining data and models, inverse problems: progress and scientific highlights |Mark Asch, Arthur Vidard
+|10:40–10:55 |PhD presentation — WP4 +
+Thesis: {thesis-helene-henon} |Hélène Hénon
+|10:55–11:05 |WP5 — Optimization: progress and scientific highlights |El Ghazali Talbi
+|11:05–11:20 |PhD presentation — WP5 +
+Thesis: {thesis-amaury-belieres} |Amaury Belières
+|11:20–11:35 |PhD presentation — WP5 +
+Thesis: {thesis-mahmoud-el-mehdi-el-khadiri} |Mahmoud El Mehdi El Khadiri
+|11:35–11:45 |WP6 — Uncertainty quantification: progress and scientific highlights |Josselin Garnier, Clément Gauchy
+|11:45–12:00 |PhD presentation — WP6 +
+Thesis: {thesis-mahamat-nassouradine} |Mahamat Nassouradine
+|12:00–12:15 |WP7 — Showroom, benchmarking, and co-design coordination: progress and scientific highlights |Christophe Prud'homme, Ansar Caloo
+|12:15–12:30 |Research engineering presentation — HPDDM (WP7) |Erik Fabrizzi
+|12:30–13:30 |Lunch break |All participants
+|13:30–15:30 |Intra-WP meetings |All participants
+|15:30–16:00 |Poster presentations and coffee break |All participants
+|16:00–18:00 |Scientific board meeting |Board members, PC leaders, and WP leaders
+|19:30 onwards |Dinner |All participants
+|===
+
+== Wednesday 20 January — Round-table discussions and roadmap
+
+[.striped,cols="1,3,2",options="header"]
+|===
+|Time (CET) |Session |Speakers / participants
+
+|08:30–09:00 |Welcome coffee |All participants
+|09:00–10:30 |Round-table discussions — session 2 |All participants
+|10:30–11:00 |Poster presentations and coffee break |All participants
+|11:00–12:30 |Feedback from intra-WP meetings: points to address and roadmap |WP leaders
+|12:30–12:45 |Closing remarks |Hélène Barucq, Christophe Prud'homme
+|12:45 onwards |Packed lunch |All participants
+|===
+
+== Programme updates
+
+This page will be updated with presentation titles and round-table topics as the programme is finalised.
+
+xref:news.adoc[Back to News and Events]

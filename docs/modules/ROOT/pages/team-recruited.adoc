@@ -128,6 +128,13 @@ _Note: Some personnel contribute to multiple work packages._
 
 include::ROOT:partial$recruited-personnel.adoc[]
 
+== PhD Thesis Topics
+
+The following titles are matched to doctoral researchers in the current personnel sheet using their names and supervisors.
+Doctoral institutions may differ from the employers listed in the personnel directory.
+
+include::partial$theses/directory.adoc[]
+
 ---
 
 For information about joining Exa-MA or current openings, please visit our xref:contact.adoc[contact page].

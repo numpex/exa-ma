@@ -1,0 +1,22 @@
+# Identity exceptions only; thesis titles always come from the theses.fr API.
+# Evidence must establish the alias/supervisor, not merely a similar research topic.
+agenda_people:
+  # Appears in the assembly programme and live personnel sheet, not Exa-MA-funded.
+  - helene-henon
+
+people:
+  amaury-belieres:
+    author_names:
+      - Amaury Belieres Frendo
+    evidence:
+      - https://theses.fr/s376581
+      # Same first name, extended surname, Strasbourg, 2023, and Christophe Prud'homme.
+      - https://docs.google.com/spreadsheets/d/1-QuexB1IiP2O1ebNhp1OrQb6hOx8BXA5/edit
+  mahamat-nassouradine:
+    author_names:
+      - Mahamat Hamdan Nassouradine
+    additional_supervisors:
+      - Sébastien Da Veiga
+    evidence:
+      - https://numpex.org/wp-content/uploads/sites/6/2025/03/3-New-recruit-Mahamat-Nassouradine.pdf
+      - https://ensai.fr/journee-des-doctorants/

@@ -1,3 +1,16 @@
-// Events: 0 upcoming
+// Events: 1 upcoming
 
-_No upcoming events scheduled._
+[.grid.grid-2.gap-2.items-start]
+--
+[.card]
+====
+icon:users[size=2x,role=text-primary] *General Assembly 2027 — Bordeaux*
+
+*Jan 18-20, 2027* | Inria, Talence (Bordeaux)
+
+The next Exa-MA General Assembly will take place in Bordeaux from 18 to 20 January 2027. A first draft programme is available, with WP1–WP7 progress reviews, PhD and postdoctoral presentations, posters, round-table discussions, intra-WP meetings, and a scientific board meeting.
+
+xref:news/2027/20270118-20-ag.adoc[View the first draft programme →]
+====
+
+--

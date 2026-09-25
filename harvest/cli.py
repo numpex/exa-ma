@@ -415,6 +415,18 @@ def harvest_all(args: argparse.Namespace) -> int:
         print(f"Error harvesting team data: {e}")
         errors += 1
 
+    # Thesis titles are shared by the personnel page and assembly agenda.
+    from .theses import harvest_theses
+
+    try:
+        harvest_theses(refresh=True, partials_dir=output_dir,
+                       team_config=exama_config_path or DEFAULT_EXAMA_CONFIG)
+    except Exception as e:
+        print(f"Error refreshing theses.fr metadata (previous snapshot retained): {e}")
+        errors += 1
+        if (output_dir / "theses/data.json").exists():
+            harvest_theses(partials_dir=output_dir)
+
     # External Partners
     print("\n[4/7] Harvesting external partners...")
     print("-" * 40)
@@ -560,6 +572,11 @@ Legacy individual commands (deprecated, use subcommands above):
     )
 
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
+
+    theses_parser = subparsers.add_parser("theses", help="Generate doctoral thesis metadata")
+    theses_parser.add_argument("--refresh", action="store_true", help="Refresh from the team sheet and theses.fr")
+    theses_parser.add_argument("--theses-config", type=Path, default=Path(__file__).parent.parent / "theses.yaml")
+    theses_parser.add_argument("--partials-dir", type=Path, default=DEFAULT_PARTIALS_DIR)
 
     # HAL subcommand
     hal_parser = subparsers.add_parser("hal", help="Harvest publications from HAL")
@@ -789,7 +806,13 @@ Legacy individual commands (deprecated, use subcommands above):
         parser.print_help()
         return 0
 
-    if args.command == "hal":
+    if args.command == "theses":
+        from .theses import harvest_theses
+
+        harvest_theses(refresh=args.refresh, config_path=args.theses_config,
+                       partials_dir=args.partials_dir, team_config=args.config)
+        return 0
+    elif args.command == "hal":
         return harvest_hal(args)
     elif args.command == "releases":
         return harvest_releases(args)

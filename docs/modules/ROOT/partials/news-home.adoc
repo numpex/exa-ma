@@ -1,7 +1,13 @@
-// Events: homepage selection from 25 configured events
+// Events: homepage selection from 26 configured events
 
 [.grid.grid-2.gap-2]
 ====
+[.text-center]
+____
+icon:users[size=2x,role=text-primary] *Jan 18-20, 2027* | Inria, Talence (Bordeaux) +
+xref:news/2027/20270118-20-ag.adoc[General Assembly 2027 — Bordeaux] - Save the date for the next Exa-MA General Assembly in Bordeaux. Explore the first draft programme of WP updates, early-career research presentations, and discussions.
+____
+
 [.text-center]
 ____
 icon:th-large[size=2x,role=text-warning] *Jun 26, 2026* | Online (Zoom) +
@@ -18,12 +24,6 @@ ____
 ____
 icon:industry[size=2x,role=text-warning] *Jun 23, 2026* | Online (Zoom) +
 xref:news/2026/20260623-trust-framework-webinar.adoc[TRUST Framework Webinar] - CEA TRUST framework discussion on GPU porting with Kokkos, PETSc/HYPRE/AMGX solver strategies, structured multigrid, HPDDM comparisons, mixed precision, TRUST-Uranie links, and MI300 access.
-____
-
-[.text-center]
-____
-icon:network-wired[size=2x,role=text-warning] *Jun 22, 2026* | Online (Zoom) +
-xref:news/2026/20260622-hpddm-petsc-framework-webinar.adoc[HPDDM / PETSc Framework Webinar] - HPDDM and PETSc framework session on GPU-enabled domain decomposition, PCHPDDM integration in PETSc, GENEO requirements, CPU/GPU benchmarking, AMD/HIP portability, and Exa-MA mini-app candidates.
 ____
 
 ====

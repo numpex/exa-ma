@@ -1,0 +1,380 @@
+{
+  "source": "https://theses.fr/api/v1/theses/recherche/",
+  "checked_on": "2026-09-25",
+  "people": {
+    "alexandre-tabouret": {
+      "name": "Alexandre Tabouret",
+      "work_packages": [
+        "WP3"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s421858",
+        "url": "https://theses.fr/s421858",
+        "title": "Résolution de systèmes linéaires creux avec des méthodes de Krylov modulaires et adaptatives en précision mixte",
+        "title_en": "Solving sparse linear systems with modular and adaptive mixed precision krylov methods",
+        "authors": [
+          "Alexandre Tabouret"
+        ],
+        "supervisors": [
+          "Pierre Jolivet"
+        ],
+        "institution": "Sorbonne université",
+        "status": "enCours",
+        "enrolled_on": "01/10/2025",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      }
+    },
+    "amaury-belieres": {
+      "name": "Amaury Belieres",
+      "work_packages": [
+        "WP2",
+        "WP5"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s376581",
+        "url": "https://theses.fr/s376581",
+        "title": "Optimisation de forme par apprentissage",
+        "title_en": null,
+        "authors": [
+          "Amaury Belieres frendo"
+        ],
+        "supervisors": [
+          "Christophe Prud'homme"
+        ],
+        "institution": "Strasbourg",
+        "status": "enCours",
+        "enrolled_on": "19/11/2023",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      },
+      "identity_evidence": [
+        "https://theses.fr/s376581",
+        "https://docs.google.com/spreadsheets/d/1-QuexB1IiP2O1ebNhp1OrQb6hOx8BXA5/edit"
+      ]
+    },
+    "antoine-simon": {
+      "name": "Antoine Simon",
+      "work_packages": [
+        "WP1",
+        "WP3"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s408792",
+        "url": "https://theses.fr/s408792",
+        "title": "Couplage temporel adaptatif d'ordre élevé pour des simulations multiphysiques",
+        "title_en": "High-order time adaptive coupling for multiphysics simulations",
+        "authors": [
+          "Antoine Simon"
+        ],
+        "supervisors": [
+          "Marc Massot",
+          "Laurent FRANçOIS"
+        ],
+        "institution": "Institut polytechnique de Paris",
+        "status": "enCours",
+        "enrolled_on": "12/11/2024",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      }
+    },
+    "brieuc-antoine-dit-urban": {
+      "name": "Brieuc Antoine dit Urban",
+      "work_packages": [
+        "WP3"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s400062",
+        "url": "https://theses.fr/s400062",
+        "title": "Préconditioneurs et solveur basés sur de réseaux de neurones pour les systèmes linéaires creux.",
+        "title_en": "Neural Solvers and Preconditioners for general sparse matrices",
+        "authors": [
+          "Brieuc Antoine dit urban"
+        ],
+        "supervisors": [
+          "Frederic Nataf"
+        ],
+        "institution": "Sorbonne université",
+        "status": "enCours",
+        "enrolled_on": "01/10/2024",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      }
+    },
+    "bruno-latre": {
+      "name": "Bruno Latre",
+      "work_packages": [
+        "WP4"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "not_verified"
+    },
+    "daria-hrebenshchykova": {
+      "name": "Daria Hrebenshchykova",
+      "work_packages": [
+        "WP2"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s402717",
+        "url": "https://theses.fr/s402717",
+        "title": "Construction de modèles de substitution multiniveaux basés sur la physique à partir de réseaux neuronaux. Application à la propagation des ondes électromagnétiques",
+        "title_en": "Building physics-based multilevel surrogate models from neural networks. Application to electromagnetic wave propagation",
+        "authors": [
+          "Daria Hrebenshchykova"
+        ],
+        "supervisors": [
+          "Stéphane Lanteri",
+          "Victor Michel-dansac"
+        ],
+        "institution": "Université Côte d'Azur",
+        "status": "enCours",
+        "enrolled_on": "01/11/2024",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      }
+    },
+    "hassan-ballout": {
+      "name": "Hassan Ballout",
+      "work_packages": [
+        "WP2"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s402028",
+        "url": "https://theses.fr/s402028",
+        "title": "Méthodes de Base Réduite Non Linéaire Compressive pour les φquations Paramétrées de Navier-Stokes Incompressibles  en Régime de Turbulence.",
+        "title_en": null,
+        "authors": [
+          "Hassan Ballout"
+        ],
+        "supervisors": [
+          "Christophe Prud'homme"
+        ],
+        "institution": "Strasbourg",
+        "status": "enCours",
+        "enrolled_on": "11/10/2024",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      }
+    },
+    "helene-henon": {
+      "name": "Hélène Hénon",
+      "work_packages": [
+        "WP4"
+      ],
+      "funded_by_exama": false,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s371978",
+        "url": "https://theses.fr/s371978",
+        "title": "Assimilation de données variationnelles multi-fidélité pour les prévisions océaniques",
+        "title_en": "Multi-fidelity variational data assimilation for ocean forecasting",
+        "authors": [
+          "Hélène Hénon"
+        ],
+        "supervisors": [
+          "Arthur Vidard"
+        ],
+        "institution": "Université Grenoble Alpes",
+        "status": "enCours",
+        "enrolled_on": "01/11/2023",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      }
+    },
+    "mael-olivier": {
+      "name": "Maël Olivier",
+      "work_packages": [
+        "WP3"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "not_verified"
+    },
+    "mahamat-nassouradine": {
+      "name": "Mahamat Nassouradine",
+      "work_packages": [
+        "WP6"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s430084",
+        "url": "https://theses.fr/s430084",
+        "title": "Quantification de l’incertitude pour le tenseur de Reynolds en mécanique des fluides par apprentissage statistique informé par la physique",
+        "title_en": null,
+        "authors": [
+          "Mahamat Hamdan Nassouradine"
+        ],
+        "supervisors": [
+          "Sébastien Da Veiga"
+        ],
+        "institution": "Rennes, École Nationale de la Statistique et de l'Analyse de l'Information",
+        "status": "enCours",
+        "enrolled_on": "25/11/2024",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      },
+      "identity_evidence": [
+        "https://numpex.org/wp-content/uploads/sites/6/2025/03/3-New-recruit-Mahamat-Nassouradine.pdf",
+        "https://ensai.fr/journee-des-doctorants/"
+      ]
+    },
+    "mahmoud-el-mehdi-el-khadiri": {
+      "name": "Mahmoud El Mehdi El Khadiri",
+      "work_packages": [
+        "WP5"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "not_verified"
+    },
+    "mohamed-doumbouya": {
+      "name": "Mohamed Doumbouya",
+      "work_packages": [
+        "WP4"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s420025",
+        "url": "https://theses.fr/s420025",
+        "title": "Placement optimal bayésien de capteurs pour les modèles océaniques : une stratégie de majoration puis optimisation",
+        "title_en": "Computational Bayesian optimal sensor placement for ocean models: a majorize-then-optimize strategy",
+        "authors": [
+          "Mohamed Doumbouya"
+        ],
+        "supervisors": [
+          "Arthur Vidard"
+        ],
+        "institution": "Université Grenoble Alpes",
+        "status": "enCours",
+        "enrolled_on": "01/10/2025",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      }
+    },
+    "pierre-dubois": {
+      "name": "Pierre Dubois",
+      "work_packages": [
+        "WP1"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s405665",
+        "url": "https://theses.fr/s405665",
+        "title": "Algorithme de couplages multiphysiques pour solveurs en boîte noire dans un environnement HPC",
+        "title_en": "Multiphysics coupling algorithm for black-box solvers in an HPC environment",
+        "authors": [
+          "Pierre Dubois"
+        ],
+        "supervisors": [
+          "Helene Barucq",
+          "Isabelle RAMIèRE"
+        ],
+        "institution": "Pau",
+        "status": "enCours",
+        "enrolled_on": "04/11/2024",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      }
+    },
+    "quentin-bergez": {
+      "name": "Quentin Bergez",
+      "work_packages": [
+        "WP1",
+        "WP2"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "not_verified"
+    },
+    "tom-caruso": {
+      "name": "Tom Caruso",
+      "work_packages": [
+        "WP3"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s405194",
+        "url": "https://theses.fr/s405194",
+        "title": "Solution de grands systèmes linéaires creux par des méthodes de décomposition de domaine à précision mixte",
+        "title_en": "Solution of large sparse linear systems by mixed-precisiondomain decomposition methods",
+        "authors": [
+          "Tom Caruso"
+        ],
+        "supervisors": [
+          "Frederic Nataf",
+          "Pierre Jolivet"
+        ],
+        "institution": "Sorbonne université",
+        "status": "enCours",
+        "enrolled_on": "01/11/2024",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      }
+    },
+    "vincent-italiano": {
+      "name": "Vincent Italiano",
+      "work_packages": [
+        "WP2"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s423444",
+        "url": "https://theses.fr/s423444",
+        "title": "Opérateurs neuronaux pour les problèmes directs et inverses de propagation d’ondes",
+        "title_en": null,
+        "authors": [
+          "Vincent Italiano"
+        ],
+        "supervisors": [
+          "Laurent Navoret",
+          "Antoine Deleforge"
+        ],
+        "institution": "Strasbourg",
+        "status": "enCours",
+        "enrolled_on": "03/10/2025",
+        "defended_on": null,
+        "verified_on": "2026-09-25"
+      }
+    },
+    "erik-fabrizzi": {
+      "name": "Erik Fabrizzi",
+      "work_packages": [
+        "WP3"
+      ],
+      "funded_by_exama": true,
+      "checked_on": "2026-09-25",
+      "match_status": "not_verified",
+      "in_current_roster": false
+    }
+  }
+}
