@@ -3,7 +3,7 @@
 :page-parent: news.adoc
 :parent-catalogs: exama-home
 :page-illustration: fa-solid fa-users
-:description: Join the next Exa-MA General Assembly in Bordeaux, 18–20 January 2027. Discover the first draft programme.
+:description: Join the next Exa-MA General Assembly in Bordeaux, 18–20 January 2027. Explore the programme.
 :sectnums!:
 :toc: macro
 :toclevels: 2
@@ -17,14 +17,6 @@ The three-day meeting will bring together the consortium for scientific progress
 
 * *Dates*: 18–20 January 2027, beginning with a welcome lunch on Monday at 12:00 and ending with a packed lunch on Wednesday at 12:45.
 * *Venue*: Centre de recherche Inria, 200 avenue de la Vieille Tour, 33400 Talence, France (Bordeaux).
-
-[NOTE]
-====
-This is the *first draft programme*, based on the agenda available on 25 September 2026.
-Sessions, speakers, and times remain provisional. All times below are local to Bordeaux (CET).
-Room assignments and videoconference details are to be confirmed.
-For doctoral presentations, the linked thesis titles provide research context; talk titles remain to be confirmed.
-====
 
 toc::[]
 
