@@ -94,7 +94,10 @@ def harvest_hal(args: argparse.Namespace) -> int:
     if args.format == "json":
         hal_json(publications, args.output)
     else:
-        hal_asciidoc(publications, args.output)
+        from .zotero import fetch_confirmed_workpackages
+
+        assignments = fetch_confirmed_workpackages(publications)
+        hal_asciidoc(publications, args.output, wp_assignments=assignments)
 
     return 0
 
@@ -367,8 +370,15 @@ def harvest_all(args: argparse.Namespace) -> int:
 
     if publications:
         print(f"Found {len(publications)} publications")
-        hal_output = output_dir / "publications-hal.adoc"
-        hal_asciidoc(publications, hal_output, partial=True)
+        try:
+            from .zotero import fetch_confirmed_workpackages
+
+            assignments = fetch_confirmed_workpackages(publications)
+            hal_output = output_dir / "publications-hal.adoc"
+            hal_asciidoc(publications, hal_output, partial=True, wp_assignments=assignments)
+        except Exception as error:
+            print(f"Error retrieving Zotero WP assignments: {error}", file=sys.stderr)
+            errors += 1
     else:
         print("No publications found!")
         errors += 1
@@ -560,6 +570,15 @@ Legacy individual commands (deprecated, use subcommands above):
     )
 
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
+
+    zotero_parser = subparsers.add_parser(
+        "zotero-sync", help="Synchronize HAL into Zotero WP collections"
+    )
+    zotero_parser.add_argument(
+        "--zotero-config", type=Path, default=Path(__file__).parent.parent / "zotero.yaml"
+    )
+    zotero_parser.add_argument("--apply", action="store_true", help="Write changes (default: dry run)")
+    zotero_parser.add_argument("--report", type=Path, default=Path("zotero-sync-report.json"))
 
     # HAL subcommand
     hal_parser = subparsers.add_parser("hal", help="Harvest publications from HAL")
@@ -789,7 +808,11 @@ Legacy individual commands (deprecated, use subcommands above):
         parser.print_help()
         return 0
 
-    if args.command == "hal":
+    if args.command == "zotero-sync":
+        from .zotero import run
+
+        return run(args)
+    elif args.command == "hal":
         return harvest_hal(args)
     elif args.command == "releases":
         return harvest_releases(args)

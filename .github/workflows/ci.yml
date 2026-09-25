@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  schedule:
+    - cron: '17 6 * * *' # Refresh WP labels after the daily Zotero sync
   push:
     branches:
       - '**' # Push events on all branches
@@ -28,6 +30,8 @@ jobs:
     - name: Install uv
       uses: astral-sh/setup-uv@v4
     - name: Harvest content
+      env:
+        ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
       run: |
         uv venv .venv
         source .venv/bin/activate

@@ -1,0 +1,45 @@
+name: Synchronize HAL publications to Zotero
+
+on:
+  schedule:
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Write changes to Zotero (otherwise dry run)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: zotero-sync
+  cancel-in-progress: false
+
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Test synchronization
+        run: uv run --python 3.11 --with pytest python -m pytest tests/test_zotero.py tests/test_hal.py -q
+      - name: Synchronize publications
+        env:
+          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+          APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+        run: |
+          test -n "$ZOTERO_API_KEY" || { echo "Missing ZOTERO_API_KEY secret"; exit 1; }
+          args=()
+          if [ "$APPLY" = "true" ]; then args+=(--apply); fi
+          uv run --python 3.11 exa-ma-harvest zotero-sync "${args[@]}" --report zotero-sync-report.json
+      - name: Upload synchronization report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zotero-sync-report
+          path: zotero-sync-report.json
+          if-no-files-found: warn
+          retention-days: 30
