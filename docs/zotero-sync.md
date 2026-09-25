@@ -41,18 +41,27 @@ the similarly named collections under External Publications.
    Examples: domain decomposition → WP3; inverse problems → WP4; shape optimization
    → WP5. Case, punctuation, hyphens and accents are normalized. Matching uses word
    boundaries, not arbitrary substrings. Inflection variants are explicit rules.
-3. Abstract matches are reported as suggestions only. A title match contributes
-   3, a HAL-keyword match 4, and an abstract match at most 1 per WP. The assignment
-   threshold is 3. These are transparent rule weights, **not probabilities**.
+3. A title match contributes 3, a HAL-keyword match 4, and distinct abstract
+   phrase matches contribute at most 2 per WP. Confirmed author history adds
+   only 1 point. The assignment threshold is 3, so an author alone or with one
+   abstract phrase cannot assign a WP. These are transparent rule weights,
+   **not probabilities**.
 4. Multiple WPs may match, placing one Zotero item in several collections.
    The report also suggests WPs for authors who already have at least two distinct
-   Zotero publications in exactly one WP. These author hints never add collections:
-   names are ambiguous, and contributors can publish across several WPs. Confirm
-   an author-based suggestion by adding the HAL ID to `assignments` after review.
+   Zotero publications in exactly one WP. This history can tip two abstract
+   purpose phrases over the threshold, but never files a paper by itself. Names
+   are ambiguous, and contributors can publish across several WPs. Confirm an
+   uncertain author-based suggestion by adding the HAL ID to `assignments` after review.
    Generic words such as simulation, HPC and performance are deliberately insufficient.
 5. References without a clear WP match go directly in `Our Publications`, with
    no WP collection or WP tag added. Abstract suggestions remain in the report
    only. Existing memberships are preserved if a WP is assigned later.
+
+Gaussian processes (GPs) are a method, not a WP signal on their own. A GP paper
+about Bayesian optimization points to WP5; a paper about uncertainty
+quantification points to WP6. If both purposes are explicit, both WPs can be
+assigned. An author who works in both WPs does not settle an otherwise unclear
+paper's assignment.
 
 Papers, posters, and theses are filed under `WPx/Articles`; HAL reports under
 `WPx/Technical Notes`; software and datasets under their corresponding category.

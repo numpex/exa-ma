@@ -123,6 +123,38 @@ def test_fractal_decomposition_optimization_phrase_is_wp5():
     assert classify(pub, {"WP5": ["fractal based decomposition optimization"]})[0] == ["WP5"]
 
 
+def test_gaussian_processes_are_classified_by_purpose():
+    rules = {
+        "WP5": ["bayesian optimization"],
+        "WP6": ["uncertainty quantification"],
+    }
+    assert classify(publication(title_s=["Gaussian processes"]), rules)[0] == []
+    cases = (
+        ("Gaussian processes for Bayesian optimization", ["WP5"]),
+        ("Gaussian processes for uncertainty quantification", ["WP6"]),
+        (
+            "Bayesian optimization and uncertainty quantification with Gaussian processes",
+            ["WP5", "WP6"],
+        ),
+    )
+    for title, expected in cases:
+        assert classify(publication(title_s=[title]), rules)[0] == expected
+
+
+def test_author_history_has_weak_weight_and_needs_two_abstract_purpose_phrases():
+    rules = {"WP5": ["bayesian optimization", "shape optimization"]}
+    pub = publication(
+        title_s=["Gaussian processes"],
+        abstract_s=["Bayesian optimization and shape optimization"],
+    )
+    assert classify(pub, rules)[0] == []
+    hint = {"WP5": [{"author": "Jane Doe", "confirmed_items": 2}]}
+    wps, evidence = classify(pub, rules, hint)
+    assert wps == ["WP5"]
+    assert evidence["WP5"]["score"] == 3
+    assert classify(publication(title_s=["Gaussian processes"]), rules, hint)[0] == []
+
+
 def test_existing_assignment_and_metadata_win(config, collections):
     item = existing()
     untouched = copy.deepcopy(item)

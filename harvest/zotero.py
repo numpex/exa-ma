@@ -207,11 +207,12 @@ def words(value):
     return " ".join(re.findall(r"[^\W_]+", value.casefold()))
 
 
-def classify(pub, rules):
-    """Specific title/HAL-keyword phrases assign WPs; abstracts only suggest them.
+def classify(pub, rules, author_evidence=None):
+    """Specific topic phrases dominate; confirmed author history adds one point.
 
     Scores are rule weights, not probabilities. A single title (3) or keyword
-    (4) match suffices; abstract matches are capped at 1 per WP.
+    (4) match suffices; abstract matches are capped at 2 per WP. An author
+    alone, or an author plus one abstract phrase, cannot assign a WP.
     """
     fields = {
         "title": words(_first_str(pub.get("title_s"))),
@@ -234,7 +235,10 @@ def classify(pub, rules):
             ]
             if found:
                 matches.append({"field": field, "phrases": found})
-                score += weight
+                score += min(2, len(found)) if field == "abstract" else weight
+        if author_evidence and wp in author_evidence:
+            matches.append({"field": "author", "authors": author_evidence[wp]})
+            score += 1
         if matches:
             evidence[wp] = {"score": score, "matches": matches}
     return sorted(wp for wp, info in evidence.items() if info["score"] >= 3), evidence
@@ -557,7 +561,8 @@ def build_plan(publications, items, collections, config, client):
             data["extra"] = (data.get("extra", "").rstrip() + "\nHAL ID: " + hid).lstrip()
         existing = list(data.get("collections", []))
         existing_wps = tree.workpackages(existing)
-        inferred, evidence = classify(pub, rules)
+        author_evidence = author_suggestions(pub, items, tree)
+        inferred, evidence = classify(pub, rules, author_evidence)
         if hid in assignments:
             wps = existing_wps | set(assignments[hid])
             basis = "manual mapping"
@@ -566,7 +571,18 @@ def build_plan(publications, items, collections, config, client):
             basis = "existing Zotero membership"
         else:
             wps = set(inferred)
-            basis = "title/HAL keywords" if wps else "unassigned"
+            if not wps:
+                basis = "unassigned"
+            elif any(
+                not any(
+                    match["field"] in ("title", "keywords")
+                    for match in evidence[wp]["matches"]
+                )
+                for wp in wps
+            ):
+                basis = "weighted topic/author evidence"
+            else:
+                basis = "title/HAL keywords"
         classifications.append(
             {
                 "hal_id": hid,
@@ -574,7 +590,7 @@ def build_plan(publications, items, collections, config, client):
                 "workpackages": sorted(wps),
                 "basis": basis,
                 "keyword_evidence": evidence,
-                "author_suggestions": author_suggestions(pub, items, tree),
+                "author_suggestions": author_evidence,
             }
         )
         if wps:
