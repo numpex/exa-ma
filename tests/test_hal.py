@@ -10,6 +10,7 @@ from harvest.hal import (
     DEFAULT_QUERY,
     DEFAULT_DOMAINS,
     DEFAULT_YEARS,
+    output_asciidoc,
 )
 
 
@@ -185,3 +186,30 @@ class TestBuildQueryParams:
 
         assert params["start"] == "100"
         assert params["rows"] == "50"
+
+    def test_explicit_empty_filters_harvest_all_project_records(self):
+        params = build_query_params(years=[], domains=[])
+        assert params["fq"] == []
+        assert params["q"] == DEFAULT_QUERY
+
+
+def test_publication_table_links_multiple_wps_in_one_row():
+    record = {
+        "halId_s": "hal-12345",
+        "uri_s": "https://hal.science/hal-12345",
+        "title_s": ["A publication"],
+        "authFullName_s": ["Jane Doe"],
+        "docType_s": "ART",
+        "publicationDateY_i": 2025,
+        "producedDate_s": "2025-01-01",
+    }
+    content = output_asciidoc(
+        [record], partial=True, wp_assignments={"hal-12345": ["WP2", "WP6"]}
+    )
+    assert "|Title |Authors |Type |WPs |Links" in content
+    assert "|xref:workpackages/wp2.adoc[WP2], xref:workpackages/wp6.adoc[WP6]" in content
+    assert content.count("|*A publication*") == 1
+
+    without_wp = output_asciidoc([record], partial=True, wp_assignments={"hal-12345": []})
+    assert "|xref:workpackages/" not in without_wp
+    assert without_wp.count("|*A publication*") == 1

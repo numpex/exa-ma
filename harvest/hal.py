@@ -49,6 +49,14 @@ FIELDS = [
     "doiId_s",
     "title_s",
     "authFullName_s",
+    "authFirstName_s",
+    "authLastName_s",
+    "publicationDate_s",
+    "volume_s",
+    "issue_s",
+    "page_s",
+    "publisher_s",
+    "language_s",
     "producedDate_s",
     "publicationDateY_i",
     "docType_s",
@@ -228,14 +236,13 @@ def build_query_params(
 
     params = {
         "q": query,
-        "fq": [
-            f"level0_domain_s:({domain_filter})",
-            f"publicationDateY_i:({year_filter})",
-        ],
+        # An explicit empty list disables a filter (used for Zotero ingestion).
+        "fq": ([f"level0_domain_s:({domain_filter})"] if domains else [])
+        + ([f"publicationDateY_i:({year_filter})"] if years else []),
         "fl": ",".join(FIELDS),
         "rows": str(rows),
         "start": str(start),
-        "sort": "producedDate_s desc",
+        "sort": "producedDate_s desc,docid asc",
         "wt": "json",
     }
 
@@ -267,11 +274,7 @@ def fetch_publications(
             start=start,
         )
 
-        # Build URL with multiple fq parameters
-        base_params = {k: v for k, v in params.items() if k != "fq"}
-        url = HAL_API_URL + "?" + urlencode(base_params)
-        for fq in params["fq"]:
-            url += "&fq=" + fq.replace(" ", "+")
+        url = HAL_API_URL + "?" + urlencode(params, doseq=True)
 
         try:
             request = Request(url, headers={"Accept": "application/json"})
@@ -287,14 +290,18 @@ def fetch_publications(
             print(f"JSON decode error: {e}", file=sys.stderr)
             sys.exit(1)
 
-        response_data = data.get("response", {})
+        response_data = data["response"]
         if total is None:
-            total = response_data.get("numFound", 0)
+            total = response_data["numFound"]
             if verbose:
                 print(f"Found {total} publications")
 
-        docs = response_data.get("docs", [])
+        if response_data["numFound"] != total:
+            raise RuntimeError("HAL results changed during pagination; retry the harvest")
+        docs = response_data["docs"]
         if not docs:
+            if start < total:
+                raise RuntimeError("Incomplete HAL response; refusing partial harvest")
             break
 
         all_publications.extend(docs)
@@ -552,7 +559,8 @@ def _format_statistics_asciidoc(stats: dict) -> list[str]:
 
 
 def output_asciidoc(
-    publications: list[dict], output_file: str | Path | None = None, partial: bool = False
+    publications: list[dict], output_file: str | Path | None = None, partial: bool = False,
+    wp_assignments: dict[str, list[str]] | None = None,
 ) -> str:
     """Output publications as AsciiDoc with tables grouped by year.
 
@@ -560,6 +568,7 @@ def output_asciidoc(
         publications: List of publication records from HAL
         output_file: Optional file path to write output
         partial: If True, output only the tables (for Antora partials)
+        wp_assignments: Confirmed Zotero WP memberships keyed by HAL ID.
     """
     formatted = [format_publication(p) for p in publications]
 
@@ -616,9 +625,9 @@ def output_asciidoc(
             lines.append(f"_{type_summary}_")
             lines.append("")
         
-        lines.append('[.striped.publications,cols="4,2,2,1",options="header"]')
+        lines.append('[.striped.publications,cols="4,2,2,1,1",options="header"]')
         lines.append("|===")
-        lines.append("|Title |Authors |Type |Links")
+        lines.append("|Title |Authors |Type |WPs |Links")
         lines.append("")
 
         for pub in pubs:
@@ -640,6 +649,12 @@ def output_asciidoc(
             )
             pub_type = str(pub_type).replace("|", "\\|")
 
+            # One publication row can link to several work packages.
+            workpackages = (wp_assignments or {}).get(pub["hal_id"], [])
+            wp_links = ", ".join(
+                f"xref:workpackages/wp{wp[2:]}.adoc[{wp}]" for wp in workpackages
+            )
+
             # Build links
             links = []
             links.append(f"link:{pub['url']}[icon:external-link-alt[title=HAL]]")
@@ -649,6 +664,7 @@ def output_asciidoc(
             lines.append(f"|*{title}*")
             lines.append(f"|{author_str}")
             lines.append(f"|{pub_type}")
+            lines.append(f"|{wp_links}")
             lines.append(f"|{' '.join(links)}")
             lines.append("")
 

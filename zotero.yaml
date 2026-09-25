@@ -1,0 +1,92 @@
+# Collection IDs refer to group 5582837, Our Publications (not External Publications).
+group_id: 5582837
+parent_collection: CKUXUSP4
+wp_collections:
+  WP1: 4H4KXC2A
+  WP2: GWAG6WI5
+  WP3: B3H3W2C2
+  WP4: 2I46SUQI
+  WP5: EUIW977I
+  WP6: QSKVRIQS
+  WP7: S9SQT5R7
+# References without a clear WP assignment go directly in parent_collection.
+
+# Confirmed assignments, keyed by version-independent HAL ID.
+# Existing Zotero WP memberships are always preserved and reused.
+# Example syntax (replace the example ID with a real HAL ID):
+# assignments:
+#   hal-00000000: [WP2, WP5]
+assignments: {}
+
+# Specific phrases, normalized for case and punctuation. Multiple WPs may match.
+# Title and HAL keywords drive automatic filing; abstracts supply suggestions only.
+# Generic terms (HPC, simulation, performance, learning) are deliberately excluded.
+keyword_rules:
+  WP1:
+    - adaptive mesh refinement
+    - mesh generation
+    - mesh adaptation
+    - discontinuous galerkin
+    - hybridizable discontinuous
+    - nonconforming methods
+    - time integration
+    - maillage adaptatif
+    - elements finis discontinus
+  WP2:
+    - model order reduction
+    - reduced order model
+    - reduced order modeling
+    - reduced basis
+    - surrogate modeling
+    - surrogate model
+    - neural operator
+    - neural operators
+    - physics informed neural networks
+    - scientific machine learning
+    - proper orthogonal decomposition
+    - reduction de modele
+  WP3:
+    - domain decomposition
+    - preconditioner
+    - preconditioners
+    - preconditioning
+    - krylov
+    - gmres
+    - mixed precision
+    - multiple precision
+    - sparse linear solver
+    - sparse direct solver
+    - low rank approximation
+    - decomposition de domaine
+  WP4:
+    - inverse problem
+    - inverse problems
+    - data assimilation
+    - kalman filter
+    - bayesian inversion
+    - parameter identification
+    - assimilation de donnees
+    - problemes inverses
+  WP5:
+    - shape optimization
+    - bayesian optimization
+    - combinatorial optimization
+    - continuous optimization
+    - hyperparameter optimization
+    - surrogate based optimization
+    - topology optimization
+    - optimisation de forme
+  WP6:
+    - uncertainty quantification
+    - sensitivity analysis
+    - sobol indices
+    - polynomial chaos
+    - uncertainty propagation
+    - quantification des incertitudes
+    - analyse de sensibilite
+  WP7:
+    - benchmarking framework
+    - benchmark suite
+    - co design
+    - reproducible benchmarking
+    - performance portability benchmark

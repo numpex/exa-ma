@@ -9,6 +9,10 @@ Documentation site for the **Exa-MA** (Methods and Algorithms for Exascale Compu
 
 ## Overview
 
+HAL publications can be synchronized daily into Zotero's WP collections; see
+[Zotero synchronization](docs/zotero-sync.md) for setup, classification rules,
+dry-run commands, and the division of responsibilities with D7.1.
+
 Exa-MA develops advanced numerical methods and software for exascale computing across seven scientific work packages:
 
 - **WP1** - Discretization (meshing, adaptivity, high-order schemes)
