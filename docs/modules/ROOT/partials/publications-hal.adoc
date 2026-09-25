@@ -267,17 +267,17 @@ _9 Article in journal, 5 Preprint / unpublished, 5 Conference paper, 2 Poster, 1
 |===
 |Title |Authors |Type |WPs |Links
 
-|*Two-way Coupling of Fluid-Structure Interaction for Elastic Magneto-Swimmers: A Finite Element ALE Approach*
-|Christophe Prud'Homme, Vincent Chabannes, Laetitia Giraldi et al.
-|Preprint / unpublished
-|
-|link:https://inria.hal.science/hal-05482283v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-05482283/document[icon:file-pdf[title=PDF]]
-
 |*3D Modeling of Solar Oscillations with Hybridizable Discontinuous Galerkin Method*
 |Florian Faucher, Ha Pham, Damien Fournier et al.
 |Article in journal
 |xref:workpackages/wp1.adoc[WP1]
 |link:https://hal.science/hal-05393820v1[icon:external-link-alt[title=HAL]]
+
+|*Two-way Coupling of Fluid-Structure Interaction for Elastic Magneto-Swimmers: A Finite Element ALE Approach*
+|Christophe Prud'Homme, Vincent Chabannes, Laetitia Giraldi et al.
+|Preprint / unpublished
+|
+|link:https://inria.hal.science/hal-05482283v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-05482283/document[icon:file-pdf[title=PDF]]
 
 |*PROMISE: Floating-point Autotuning with Customized Precisions*
 |Xinye Chen, Thibault Hilaire, Fabienne Jézéquel
