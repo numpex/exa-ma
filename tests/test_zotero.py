@@ -12,6 +12,7 @@ from harvest.zotero import (
     build_plan,
     classify,
     confirmed_workpackages,
+    fetch_workpackage_preview,
     new_item,
 )
 
@@ -237,6 +238,26 @@ def test_author_history_is_advisory_and_cross_wp_authors_are_excluded(config, co
     assert row["author_suggestions"] == {
         "WP3": [{"author": "Jane Doe", "confirmed_items": 2}]
     }
+
+
+def test_site_preview_proposes_wps_without_writing(config, collections, tmp_path):
+    import yaml
+
+    class ReadOnlyClient(FakeClient):
+        def list_all(self, resource):
+            return collections if resource == "collections" else []
+
+    client = ReadOnlyClient()
+    path = tmp_path / "zotero.yaml"
+    path.write_text(yaml.safe_dump(config))
+    with patch("harvest.zotero.ZoteroClient", return_value=client):
+        confirmed, proposed, conflicts = fetch_workpackage_preview(
+            [publication()], config_path=path
+        )
+    assert confirmed == {"hal-12345678": []}
+    assert proposed == {"hal-12345678": ["WP3"]}
+    assert conflicts == set()
+    assert client.calls == []
 
 
 def test_later_classification_preserves_existing_memberships(config, collections):

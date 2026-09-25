@@ -29,7 +29,7 @@ jobs:
       - name: Synchronize publications
         env:
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
-          APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+          APPLY: ${{ inputs.apply || false }}
         run: |
           test -n "$ZOTERO_API_KEY" || { echo "Missing ZOTERO_API_KEY secret"; exit 1; }
           args=()

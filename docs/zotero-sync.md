@@ -5,14 +5,14 @@ identifier and files them in group **5582837**, under **Our Publications**.
 `exa-ma-d7.1` separately retrieves Zotero's bibliography. This command is separate
 from `exa-ma-harvest all`, so normal website builds never modify Zotero.
 
-The Exa-MA publications page reads the current `Our Publications/WP1`–`WP7`
-memberships from Zotero when `exa-ma-harvest all` generates its HAL partial.
-It shows one row per HAL record with links to every confirmed WP; records without
-a confirmed Zotero WP assignment have an empty WP cell. Keyword suggestions in
-this tool's dry-run report do not appear on the site until the Zotero item is
-actually placed in a WP collection. Site generation needs Zotero read access;
-the CI workflow uses the `ZOTERO_API_KEY` secret.
-The site workflow refreshes at **06:17 UTC**, after the 04:17 UTC Zotero sync.
+The Exa-MA publications page shows confirmed Zotero WP memberships alongside
+clearly marked proposals from a read-only classification preview. Its summary
+counts confirmed and proposed WP links separately; one item may count in several
+WPs. Duplicate conflicts are marked for review. Site generation needs Zotero
+read access; the CI workflow uses the `ZOTERO_API_KEY` secret. The site workflow
+refreshes at **06:17 UTC**. The 04:17 UTC Zotero job remains a dry run while the
+distribution is reviewed; a manually dispatched run with `apply=true` can upload
+the changes after approval.
 
 ## Run locally
 

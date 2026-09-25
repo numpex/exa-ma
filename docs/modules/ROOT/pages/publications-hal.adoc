@@ -7,8 +7,9 @@
 
 [.lead]
 Publications acknowledging the Exa-MA project (ANR-22-EXNU-0002), harvested from HAL.
-WP links reflect current assignments in the Zotero `Our Publications` collections.
-A publication can be linked to several WPs; an empty WP cell means it has not
-been assigned to a WP in Zotero.
+WP links without a qualifier are confirmed Zotero collection memberships.
+Links marked `(proposed)` come from a read-only classification preview and have
+not been uploaded to Zotero. A publication can belong to several WPs. An empty
+WP cell means the preview found no clear assignment.
 
 include::partial$publications-hal.adoc[]

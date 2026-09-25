@@ -332,6 +332,22 @@ def fetch_confirmed_workpackages(publications, config_path=None):
     return confirmed_workpackages(publications, items, collections, config)
 
 
+def fetch_workpackage_preview(publications, config_path=None):
+    """Read Zotero and preview classifications without writing any items."""
+    path = config_path or Path(__file__).parent.parent / "zotero.yaml"
+    config = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    client = ZoteroClient(config["group_id"], os.environ.get("ZOTERO_API_KEY"))
+    collections = client.list_all("collections")
+    items = client.list_all("items/top")
+    confirmed = confirmed_workpackages(publications, items, collections, config)
+    _, _, report = build_plan(publications, items, collections, config, client)
+    proposed = {
+        row["hal_id"]: row["workpackages"] for row in report["classifications"]
+    }
+    conflicts = {row["hal_id"] for row in report["conflicts"]}
+    return confirmed, proposed, conflicts
+
+
 def new_item(pub, client):
     code = _first_str(pub.get("docType_s"))
     item_type = TYPES.get(code, "document")
