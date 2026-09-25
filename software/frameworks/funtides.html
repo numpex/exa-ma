@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Arcane :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
-    <link rel="canonical" href="https://numpex.github.io/exa-ma/software/frameworks/arcane.html">
-    <meta name="description" content="Arcane - Exa-MA Framework...">
+    <title>FUnTiDES :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/software/frameworks/funtides.html">
+    <meta name="description" content="FUnTiDES - FUnTiDES (Fast Unstructured Time Dynamic Equation Solver) is a high-performance library and collection of proxy applications for 2D/3D acoustic and el...">
     <meta name="generator" content="Antora 3.1.14">
 <link rel="stylesheet" href="../../_/css/site.css">
 
@@ -272,7 +272,7 @@ MathJax.Hub.Config({
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../frameworks.html"><span class="icon"><i class="fa fa-cubes"></i></span> Frameworks</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="arcane.html">Arcane</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -287,7 +287,7 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="freefempp.html">Freefem++</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="funtides.html">FUnTiDES</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -412,12 +412,12 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="../../index.html">Exa-MA</a></li>
     <li><a href="../frameworks.html"><span class="icon"><i class="fa fa-cubes"></i></span> Frameworks</a></li>
-    <li><a href="arcane.html">Arcane</a></li>
+    <li><a href="funtides.html">FUnTiDES</a></li>
   </ul>
 </nav>
 
   
-    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/software/pages/frameworks/arcane.adoc">Edit this Page</a></div>
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/software/pages/frameworks/funtides.adoc">Edit this Page</a></div>
   
   <div class="page-downloads">
   <span class="label">Download as</span>
@@ -437,11 +437,11 @@ MathJax.Hub.Config({
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Arcane</h1>
+<h1 class="page">FUnTiDES</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Arcane is a framework used in the Exa-MA project.</p>
+<p>FUnTiDES (Fast Unstructured Time Dynamic Equation Solver) is a high-performance library and collection of proxy applications for 2D/3D acoustic and elastic wave propagation using high-order spectral element methods (SEM) and Discontinuous Galerkin (DG, only for acoustics for now). Its C17 backend uses Kokkos for CPU/GPU portability, with MPI support and Python bindings via pybind11. It provides unit tests, analytical validation cases, and C/Python performance benchmarks.</p>
 </div>
 <div class="openblock section-gray">
 <div class="content">
@@ -454,7 +454,7 @@ MathJax.Hub.Config({
 <p><span class="icon text-primary"><i class="fa fa-code-branch fa-2x"></i></span> <strong>Repository</strong></p>
 </div>
 <div class="paragraph">
-<p><a href="https://github.com/arcaneframework/framework" class="bare">github.com/arcaneframework/framework</a></p>
+<p><a href="https://github.com/FUnTiDES-sim/FUnTiDES" class="bare">github.com/FUnTiDES-sim/FUnTiDES</a></p>
 </div>
 </blockquote>
 </div>
@@ -464,7 +464,7 @@ MathJax.Hub.Config({
 <p><span class="icon text-success"><i class="fa fa-file-contract fa-2x"></i></span> <strong>License</strong></p>
 </div>
 <div class="paragraph">
-<p>OSS: apache-2</p>
+<p>OSS: Cecill-*</p>
 </div>
 </blockquote>
 </div>
@@ -474,7 +474,7 @@ MathJax.Hub.Config({
 <p><span class="icon text-info"><i class="fa fa-book fa-2x"></i></span> <strong>Documentation</strong></p>
 </div>
 <div class="paragraph">
-<p><em>Not yet available</em></p>
+<p><a href="https://github.com/FUnTiDES-sim/FUnTiDES#readme" class="bare">github.com/FUnTiDES-sim/FUnTiDES#readme</a></p>
 </div>
 </blockquote>
 </div>
@@ -483,8 +483,12 @@ MathJax.Hub.Config({
 <div class="paragraph">
 <p><span class="icon text-warning"><i class="fa fa-comments fa-2x"></i></span> <strong>Discussion</strong></p>
 </div>
-<div class="paragraph">
-<p><em>Not yet available</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/FUnTiDES-sim/FUnTiDES/issues" class="bare">github.com/FUnTiDES-sim/FUnTiDES/issues</a></p>
+</li>
+</ul>
 </div>
 </blockquote>
 </div>
@@ -498,7 +502,7 @@ MathJax.Hub.Config({
 <h2 id="_exascale_bottlenecks_addressed"><a class="anchor" href="#_exascale_bottlenecks_addressed"></a>1. Exascale Bottlenecks Addressed</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>B6</code> Data management <code>B7</code> Exascale algorithms <code>B9</code> Resilience, robustness and accuracy <code>B10</code> Scientific productivity <code>B11</code> Reproducibility and replicability</p>
+<p><code>B7</code> Exascale algorithms</p>
 </div>
 </div>
 </div>
@@ -522,19 +526,10 @@ MathJax.Hub.Config({
 <p><i class="fa fa-square-o"></i> Available in Guix-HPC</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Docker image available</p>
+<p><i class="fa fa-check-square-o"></i> Docker image available</p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Apptainer/Singularity available</p>
-</li>
-<li>
-<p>Spack: URL</p>
-</li>
-<li>
-<p>Guix: URL</p>
-</li>
-<li>
-<p>Docker: URL</p>
 </li>
 </ul>
 </div>
@@ -574,7 +569,7 @@ MathJax.Hub.Config({
 </ul>
 </div>
 <div class="paragraph">
-<p>Repository: <a href="https://github.com/arcaneframework/framework" class="bare">github.com/arcaneframework/framework</a></p>
+<p>Repository: <a href="https://github.com/FUnTiDES-sim/FUnTiDES" class="bare">github.com/FUnTiDES-sim/FUnTiDES</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -597,7 +592,7 @@ MathJax.Hub.Config({
 <p><i class="fa fa-square-o"></i> REUSE compliant</p>
 </li>
 <li>
-<p>OSS: apache-2</p>
+<p>OSS: Cecill-*</p>
 </li>
 </ul>
 </div>
@@ -607,12 +602,15 @@ MathJax.Hub.Config({
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-square-o"></i> Documentation exists</p>
+<p><i class="fa fa-check-square-o"></i> Documentation exists</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Easily browsable online</p>
+<p><i class="fa fa-check-square-o"></i> Easily browsable online</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Documentation: <a href="https://github.com/FUnTiDES-sim/FUnTiDES#readme" class="bare">github.com/FUnTiDES-sim/FUnTiDES#readme</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -642,21 +640,13 @@ MathJax.Hub.Config({
 <div class="sect2">
 <h3 id="_wp1"><a class="anchor" href="#_wp1"></a>3.1. WP1</h3>
 <div class="paragraph">
-<p>Topics: unstructured mesh, mesh adaptation, AMR, finite element, multiphysics coupling</p>
+<p>Topics: finite element, spectral element, unstructured mesh, dG/hdG</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_wp3"><a class="anchor" href="#_wp3"></a>3.2. WP3 <span class="icon text-success"><i class="fa fa-check-circle"></i></span></h3>
+<h3 id="_wp7"><a class="anchor" href="#_wp7"></a>3.2. WP7</h3>
 <div class="paragraph">
-<p>Topics: multiphysics coupling
-<em>Benchmarked in this WP</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_wp7"><a class="anchor" href="#_wp7"></a>3.3. WP7 <span class="icon text-success"><i class="fa fa-check-circle"></i></span></h3>
-<div class="paragraph">
-<p>Topics: Environment, Energy, Physics
-<em>Benchmarked in this WP</em></p>
+<p>Topics: Geophysics, proxy-apps</p>
 </div>
 </div>
 </div>
@@ -665,16 +655,13 @@ MathJax.Hub.Config({
 <h2 id="_technical_details"><a class="anchor" href="#_technical_details"></a>4. Technical Details</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Languages:</strong> C++, C#</p>
+<p><strong>Languages:</strong> C++17, Python</p>
 </div>
 <div class="paragraph">
-<p><strong>Parallelism:</strong> Multithread, MPI, GPU</p>
+<p><strong>Parallelism:</strong> MPI, Multithread - OpenMP, GPU - Cuda, Kokkos</p>
 </div>
 <div class="paragraph">
-<p><strong>Data Formats:</strong> XML, HDF5, Json, Ensight</p>
-</div>
-<div class="paragraph">
-<p><strong>Resilience:</strong> Checkpoint restart</p>
+<p><strong>Data Formats:</strong> Adios, Json, YAML, ASCII</p>
 </div>
 </div>
 </div>
@@ -682,10 +669,7 @@ MathJax.Hub.Config({
 <h2 id="_partners"><a class="anchor" href="#_partners"></a>5. Partners</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Lead Partner:</strong> CEA</p>
-</div>
-<div class="paragraph">
-<p><strong>Consortium:</strong> CEA, IFPEN</p>
+<p><strong>Lead Partner:</strong> Inria BXSO</p>
 </div>
 </div>
 </div>

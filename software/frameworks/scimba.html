@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Scimba :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
     <link rel="canonical" href="https://numpex.github.io/exa-ma/software/frameworks/scimba.html">
-    <meta name="description" content="Scimba - Exa-MA Framework...">
+    <meta name="description" content="Scimba - Scimba is a Python library that implements several Scientific Machine Learning (SciML) methods for PDE problems, as well as tools for hybrid numerical...">
     <meta name="generator" content="Antora 3.1.14">
 <link rel="stylesheet" href="../../_/css/site.css">
 
@@ -288,6 +288,9 @@ MathJax.Hub.Config({
     <a class="nav-link" href="freefempp.html">Freefem++</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="funtides.html">FUnTiDES</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="hawen.html">Hawen</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -371,6 +374,15 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../applications/app-petsc-mixed-precision.html">Impact of mixed-precision on PETSc solvers and preconditioners</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../applications/app-feelpp-mi300a-fem.html">MI300A high-order finite-element kernels and HiFiMagnet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../applications/app-feelpp-hifimagnet-inverse.html">HiFiMagnet thermo-electric parameter inversion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../applications/app-feelpp-hifimagnet-optcontrol.html">HiFiMagnet robust optimal operation and control</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -429,7 +441,7 @@ MathJax.Hub.Config({
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Scimba is a framework used in the Exa-MA project.</p>
+<p>Scimba is a Python library that implements several Scientific Machine Learning (SciML) methods for PDE problems, as well as tools for hybrid numerical methods.</p>
 </div>
 <div class="openblock section-gray">
 <div class="content">
@@ -626,10 +638,34 @@ MathJax.Hub.Config({
 <p>This framework is involved in the following work packages:</p>
 </div>
 <div class="sect2">
-<h3 id="_wp2"><a class="anchor" href="#_wp2"></a>3.1. WP2 <span class="icon text-success"><i class="fa fa-check-circle"></i></span></h3>
+<h3 id="_wp1"><a class="anchor" href="#_wp1"></a>3.1. WP1</h3>
+<div class="paragraph">
+<p>Topics: finite element, unstructured mesh, finite volume</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wp2"><a class="anchor" href="#_wp2"></a>3.2. WP2 <span class="icon text-success"><i class="fa fa-check-circle"></i></span></h3>
 <div class="paragraph">
 <p>Topics: NN/Autoencoder, PINN
 <em>Benchmarked in this WP</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wp3"><a class="anchor" href="#_wp3"></a>3.3. WP3</h3>
+<div class="paragraph">
+<p>Topics: krylov solver</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wp4"><a class="anchor" href="#_wp4"></a>3.4. WP4</h3>
+<div class="paragraph">
+<p>Topics: deterministic inverse problem</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wp7"><a class="anchor" href="#_wp7"></a>3.5. WP7</h3>
+<div class="paragraph">
+<p>Topics: Energy, Physics</p>
 </div>
 </div>
 </div>
@@ -681,7 +717,17 @@ MathJax.Hub.Config({
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../applications/app-scimba-shape-opt-nn.html" class="xref page">Shape Opt NN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Planned</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../applications/app-scimba-plasma.html" class="xref page">Plasma NN</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Planned</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../applications/app-scimba-hybrid.html" class="xref page">Hybrid  numerics</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Planned</p></td>
 </tr>
 </tbody>
