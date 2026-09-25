@@ -439,9 +439,14 @@ def harvest_all(args: argparse.Namespace) -> int:
                        team_config=exama_config_path or DEFAULT_EXAMA_CONFIG)
     except Exception as e:
         print(f"Error refreshing theses.fr metadata (previous snapshot retained): {e}")
-        errors += 1
         if (output_dir / "theses/data.json").exists():
-            harvest_theses(partials_dir=output_dir)
+            try:
+                harvest_theses(partials_dir=output_dir)
+            except Exception as fallback_error:
+                print(f"Error using saved thesis metadata: {fallback_error}")
+                errors += 1
+        else:
+            errors += 1
 
     # External Partners
     print("\n[4/7] Harvesting external partners...")
