@@ -3,7 +3,7 @@
 Registered thesis titles are reproduced in their original language and linked to theses.fr.
 A missing match does not mean that the person is not enrolled in a PhD.
 
-Last lookup: 2026-09-25.
+Last lookup: 2026-09-26.
 
 [.striped,cols="2,1,5,2",options="header"]
 |===

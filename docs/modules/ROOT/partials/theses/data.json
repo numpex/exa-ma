@@ -1,6 +1,6 @@
 {
   "source": "https://theses.fr/api/v1/theses/recherche/",
-  "checked_on": "2026-09-25",
+  "checked_on": "2026-09-26",
   "people": {
     "alexandre-tabouret": {
       "name": "Alexandre Tabouret",
@@ -8,7 +8,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s421858",
@@ -25,7 +25,7 @@
         "status": "enCours",
         "enrolled_on": "01/10/2025",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       }
     },
     "amaury-belieres": {
@@ -35,7 +35,7 @@
         "WP5"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s376581",
@@ -52,7 +52,7 @@
         "status": "enCours",
         "enrolled_on": "19/11/2023",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       },
       "identity_evidence": [
         "https://theses.fr/s376581",
@@ -66,7 +66,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s408792",
@@ -84,7 +84,7 @@
         "status": "enCours",
         "enrolled_on": "12/11/2024",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       }
     },
     "brieuc-antoine-dit-urban": {
@@ -93,7 +93,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s400062",
@@ -110,7 +110,7 @@
         "status": "enCours",
         "enrolled_on": "01/10/2024",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       }
     },
     "bruno-latre": {
@@ -119,7 +119,7 @@
         "WP4"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "not_verified"
     },
     "daria-hrebenshchykova": {
@@ -128,7 +128,7 @@
         "WP2"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s402717",
@@ -146,7 +146,7 @@
         "status": "enCours",
         "enrolled_on": "01/11/2024",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       }
     },
     "hassan-ballout": {
@@ -155,7 +155,7 @@
         "WP2"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s402028",
@@ -172,7 +172,7 @@
         "status": "enCours",
         "enrolled_on": "11/10/2024",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       }
     },
     "helene-henon": {
@@ -181,7 +181,7 @@
         "WP4"
       ],
       "funded_by_exama": false,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s371978",
@@ -198,7 +198,7 @@
         "status": "enCours",
         "enrolled_on": "01/11/2023",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       }
     },
     "mael-olivier": {
@@ -207,7 +207,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "not_verified"
     },
     "mahamat-nassouradine": {
@@ -216,7 +216,7 @@
         "WP6"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s430084",
@@ -233,7 +233,7 @@
         "status": "enCours",
         "enrolled_on": "25/11/2024",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       },
       "identity_evidence": [
         "https://numpex.org/wp-content/uploads/sites/6/2025/03/3-New-recruit-Mahamat-Nassouradine.pdf",
@@ -246,7 +246,7 @@
         "WP5"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "not_verified"
     },
     "mohamed-doumbouya": {
@@ -255,7 +255,7 @@
         "WP4"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s420025",
@@ -272,7 +272,7 @@
         "status": "enCours",
         "enrolled_on": "01/10/2025",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       }
     },
     "pierre-dubois": {
@@ -281,7 +281,7 @@
         "WP1"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s405665",
@@ -299,7 +299,7 @@
         "status": "enCours",
         "enrolled_on": "04/11/2024",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       }
     },
     "quentin-bergez": {
@@ -309,7 +309,7 @@
         "WP2"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "not_verified"
     },
     "tom-caruso": {
@@ -318,7 +318,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s405194",
@@ -336,7 +336,7 @@
         "status": "enCours",
         "enrolled_on": "01/11/2024",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       }
     },
     "vincent-italiano": {
@@ -345,7 +345,7 @@
         "WP2"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-09-25",
+      "checked_on": "2026-09-26",
       "match_status": "matched",
       "thesis": {
         "id": "s423444",
@@ -363,7 +363,7 @@
         "status": "enCours",
         "enrolled_on": "03/10/2025",
         "defended_on": null,
-        "verified_on": "2026-09-25"
+        "verified_on": "2026-09-26"
       }
     },
     "erik-fabrizzi": {

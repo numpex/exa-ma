@@ -1,40 +1,40 @@
-// Total publications: 61
+// Total publications: 63
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *61*
+icon:list-ol[] Total publications: *63*
 
 [.grid.grid-2.gap-2]
 ====
 ____
 icon:newspaper[size=2x,role=text-primary] *24* Article in journal
 
-_39.3% of total_
+_38.1% of total_
 ____
 
 ____
-icon:file-alt[size=2x,role=text-primary] *20* Preprint / unpublished
+icon:file-alt[size=2x,role=text-primary] *21* Preprint / unpublished
 
-_32.8% of total_
+_33.3% of total_
 ____
 
 ____
-icon:users[size=2x,role=text-primary] *12* Conference paper
+icon:users[size=2x,role=text-primary] *13* Conference paper
 
-_19.7% of total_
+_20.6% of total_
 ____
 
 ____
 icon:file-text[size=2x,role=text-primary] *2* Report
 
-_3.3% of total_
+_3.2% of total_
 ____
 
 ____
 icon:image[size=2x,role=text-primary] *2* Poster
 
-_3.3% of total_
+_3.2% of total_
 ____
 
 ____
@@ -47,13 +47,13 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *22* (36.1%)
-* icon:file-pdf[] Publications with PDF: *53* (86.9%)
-* icon:lock-open[] Open Access: *59* (96.7%)
+* icon:fingerprint[] Publications with DOI: *23* (36.5%)
+* icon:file-pdf[] Publications with PDF: *53* (84.1%)
+* icon:lock-open[] Open Access: *60* (95.2%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *74*
+* icon:atom[] 0.info: *76*
 * icon:atom[] 0.math: *47*
 * icon:atom[] 1.math.math-na: *21*
 * icon:atom[] 1.info.info-na: *12*
@@ -63,7 +63,7 @@ ____
 
 Counts include proposed assignments from a read-only HAL/Zotero dry run. A publication may appear in several WPs; no proposal changes Zotero.
 
-*24* publications have no WP assignment or proposal; *4* records need duplicate review.
+*26* publications have no WP assignment or proposal; *4* records need duplicate review.
 
 [cols="1,1,1",options="header"]
 |===
@@ -79,9 +79,9 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 
 == 2026
 
-_28 publications_
+_30 publications_
 
-_13 Preprint / unpublished, 11 Article in journal, 3 Conference paper, 1 Report_
+_14 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
@@ -248,6 +248,18 @@ _13 Preprint / unpublished, 11 Article in journal, 3 Conference paper, 1 Report_
 |Article in journal
 |xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-05641535v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05641535/document[icon:file-pdf[title=PDF]]
+
+|*Multi-Objective Structured Pruning of LLMs for Latency and Model Size Optimization*
+|Muhammad Junaid Ali, Smail Niar, El-Ghazali Talbi
+|Preprint / unpublished
+|
+|link:https://hal.science/hal-05763694v1[icon:external-link-alt[title=HAL]]
+
+|*SONATA: Self-adaptive Evolutionary Framework for Hardware-aware Neural Architecture Search*
+|Halima Bouzidi, Smail Niar, Hamza Ouarnoughi et al.
+|Conference paper
+|
+|link:https://hal.science/hal-05763710v1[icon:external-link-alt[title=HAL]]
 
 |*Bayesian and Partition-Based Optimization for Hyperparameter Optimization of LLM Fine-Tuning*
 |Nathan Davouse, El-Ghazali Talbi
