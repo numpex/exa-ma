@@ -205,7 +205,7 @@ _14 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 |Luc Giraud, Carola Kruse, Paul Mycek et al.
 |Report
 |xref:workpackages/wp3.adoc[WP3]
-|link:https://hal.science/hal-05157038v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05157038/document[icon:file-pdf[title=PDF]]
+|link:https://hal.science/hal-05157038v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05157038/document[icon:file-pdf[title=PDF]]
 
 |*Nonlinear compressive reduced basis approximation : when Taylor meets Kolmogorov*
 |Joubine Aghili, Hassan Ballout, Yvon Maday et al.
