@@ -1,40 +1,40 @@
-// Total publications: 63
+// Total publications: 64
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *63*
+icon:list-ol[] Total publications: *64*
 
 [.grid.grid-2.gap-2]
 ====
 ____
 icon:newspaper[size=2x,role=text-primary] *24* Article in journal
 
-_38.1% of total_
+_37.5% of total_
 ____
 
 ____
-icon:file-alt[size=2x,role=text-primary] *21* Preprint / unpublished
+icon:file-alt[size=2x,role=text-primary] *22* Preprint / unpublished
 
-_33.3% of total_
+_34.4% of total_
 ____
 
 ____
 icon:users[size=2x,role=text-primary] *13* Conference paper
 
-_20.6% of total_
+_20.3% of total_
 ____
 
 ____
 icon:file-text[size=2x,role=text-primary] *2* Report
 
-_3.2% of total_
+_3.1% of total_
 ____
 
 ____
 icon:image[size=2x,role=text-primary] *2* Poster
 
-_3.2% of total_
+_3.1% of total_
 ____
 
 ____
@@ -47,13 +47,13 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *23* (36.5%)
-* icon:file-pdf[] Publications with PDF: *53* (84.1%)
-* icon:lock-open[] Open Access: *60* (95.2%)
+* icon:fingerprint[] Publications with DOI: *23* (35.9%)
+* icon:file-pdf[] Publications with PDF: *54* (84.4%)
+* icon:lock-open[] Open Access: *61* (95.3%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *76*
+* icon:atom[] 0.info: *77*
 * icon:atom[] 0.math: *47*
 * icon:atom[] 1.math.math-na: *21*
 * icon:atom[] 1.info.info-na: *12*
@@ -63,7 +63,7 @@ ____
 
 Counts include proposed assignments from a read-only HAL/Zotero dry run. A publication may appear in several WPs; no proposal changes Zotero.
 
-*26* publications have no WP assignment or proposal; *4* records need duplicate review.
+*27* publications have no WP assignment or proposal; *4* records need duplicate review.
 
 [cols="1,1,1",options="header"]
 |===
@@ -79,9 +79,9 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 
 == 2026
 
-_30 publications_
+_31 publications_
 
-_14 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
+_15 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
@@ -92,6 +92,12 @@ _14 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 |Article in journal
 |xref:workpackages/wp2.adoc[WP2], xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-05547894v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05547894/document[icon:file-pdf[title=PDF]]
+
+|*Certified Bayesian optimal experimental design: from Expected Information Gain to Signal-to-Noise Ratio*
+|Mohamed Doumbouya, Arthur Vidard, Olivier Zahm
+|Preprint / unpublished
+|
+|link:https://hal.science/hal-05768497v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05768497/document[icon:file-pdf[title=PDF]]
 
 |*Mixed precision accumulation for neural network inference guided by componentwise forward error analysis*
 |El-Mehdi El Arar, Silviu-Ioan Filip, Theo Mary et al.
