@@ -8,7 +8,7 @@
 :thesis-amaury-belieres: https://theses.fr/s376581[Optimisation de forme par apprentissage]
 :thesis-alexandre-tabouret: https://theses.fr/s421858[Résolution de systèmes linéaires creux avec des méthodes de Krylov modulaires et adaptatives en précision mixte]
 :thesis-brieuc-antoine-dit-urban: https://theses.fr/s400062[Préconditioneurs et solveur basés sur de réseaux de neurones pour les systèmes linéaires creux.]
-:thesis-erik-fabrizzi: Title not yet verified on theses.fr
+:thesis-erik-fabrizzi: https://theses.fr/s441580[Développement de préconditionneurs scalables pour des problèmes de point-selle non symétriques issus de la mécanique des solides et des fluides]
 :thesis-mael-olivier: Title not yet verified on theses.fr
 :thesis-tom-caruso: https://theses.fr/s405194[Solution de grands systèmes linéaires creux par des méthodes de décomposition de domaine à précision mixte]
 :thesis-bruno-latre: Title not yet verified on theses.fr
