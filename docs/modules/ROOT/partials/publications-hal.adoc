@@ -1,28 +1,28 @@
-// Total publications: 64
+// Total publications: 65
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *64*
+icon:list-ol[] Total publications: *65*
 
 [.grid.grid-2.gap-2]
 ====
 ____
 icon:newspaper[size=2x,role=text-primary] *24* Article in journal
 
-_37.5% of total_
+_36.9% of total_
 ____
 
 ____
-icon:file-alt[size=2x,role=text-primary] *22* Preprint / unpublished
+icon:file-alt[size=2x,role=text-primary] *23* Preprint / unpublished
 
-_34.4% of total_
+_35.4% of total_
 ____
 
 ____
 icon:users[size=2x,role=text-primary] *13* Conference paper
 
-_20.3% of total_
+_20.0% of total_
 ____
 
 ____
@@ -40,24 +40,24 @@ ____
 ____
 icon:user-graduate[size=2x,role=text-primary] *1* HDR
 
-_1.6% of total_
+_1.5% of total_
 ____
 
 ====
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *23* (35.9%)
-* icon:file-pdf[] Publications with PDF: *54* (84.4%)
-* icon:lock-open[] Open Access: *61* (95.3%)
+* icon:fingerprint[] Publications with DOI: *23* (35.4%)
+* icon:file-pdf[] Publications with PDF: *54* (83.1%)
+* icon:lock-open[] Open Access: *62* (95.4%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *77*
+* icon:atom[] 0.info: *78*
 * icon:atom[] 0.math: *47*
 * icon:atom[] 1.math.math-na: *21*
 * icon:atom[] 1.info.info-na: *12*
-* icon:atom[] 1.math.math-ap: *9*
+* icon:atom[] 1.info.info-ao: *9*
 
 == Proposed WP distribution
 
@@ -70,18 +70,18 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 |WP |Confirmed |Proposed
 |xref:workpackages/wp1.adoc[WP1] |5 |0
 |xref:workpackages/wp2.adoc[WP2] |6 |0
-|xref:workpackages/wp3.adoc[WP3] |22 |0
+|xref:workpackages/wp3.adoc[WP3] |22 |1
 |xref:workpackages/wp4.adoc[WP4] |0 |0
 |xref:workpackages/wp5.adoc[WP5] |4 |1
 |xref:workpackages/wp6.adoc[WP6] |0 |0
-|xref:workpackages/wp7.adoc[WP7] |0 |0
+|xref:workpackages/wp7.adoc[WP7] |0 |1
 |===
 
 == 2026
 
-_31 publications_
+_32 publications_
 
-_15 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
+_16 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
@@ -92,6 +92,12 @@ _15 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 |Article in journal
 |xref:workpackages/wp2.adoc[WP2], xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-05547894v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05547894/document[icon:file-pdf[title=PDF]]
+
+|*Mixed-Precision Computing for Scientific Discovery: Formats, Co-Design, and Responsible Approximation*
+|Emmanuel Agullo, Hartwig Anzt, Daniel Bauer et al.
+|Preprint / unpublished
+|xref:workpackages/wp3.adoc[WP3] (proposed), xref:workpackages/wp7.adoc[WP7] (proposed)
+|link:https://hal.science/hal-05775914v1[icon:external-link-alt[title=HAL]]
 
 |*Certified Bayesian optimal experimental design: from Expected Information Gain to Signal-to-Noise Ratio*
 |Mohamed Doumbouya, Arthur Vidard, Olivier Zahm
@@ -349,7 +355,7 @@ _9 Article in journal, 5 Preprint / unpublished, 5 Conference paper, 2 Poster, 1
 |Victorita Dolean, Daria Hrebenshchykova, Stéphane Lanteri et al.
 |Conference paper
 |xref:workpackages/wp3.adoc[WP3]
-|link:https://hal.science/hal-05373220v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05373220/document[icon:file-pdf[title=PDF]]
+|link:https://hal.science/hal-05373220v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05373220/document[icon:file-pdf[title=PDF]]
 
 |*Error analysis of the Gram low-rank approximation (and why it is not as unstable as one may think)*
 |Theo Mary
