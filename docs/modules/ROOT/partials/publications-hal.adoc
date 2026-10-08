@@ -1,40 +1,40 @@
-// Total publications: 65
+// Total publications: 66
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *65*
+icon:list-ol[] Total publications: *66*
 
 [.grid.grid-2.gap-2]
 ====
 ____
 icon:newspaper[size=2x,role=text-primary] *24* Article in journal
 
-_36.9% of total_
+_36.4% of total_
 ____
 
 ____
 icon:file-alt[size=2x,role=text-primary] *23* Preprint / unpublished
 
-_35.4% of total_
+_34.8% of total_
 ____
 
 ____
-icon:users[size=2x,role=text-primary] *13* Conference paper
+icon:users[size=2x,role=text-primary] *14* Conference paper
 
-_20.0% of total_
+_21.2% of total_
 ____
 
 ____
 icon:file-text[size=2x,role=text-primary] *2* Report
 
-_3.1% of total_
+_3.0% of total_
 ____
 
 ____
 icon:image[size=2x,role=text-primary] *2* Poster
 
-_3.1% of total_
+_3.0% of total_
 ____
 
 ____
@@ -47,13 +47,13 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *23* (35.4%)
-* icon:file-pdf[] Publications with PDF: *54* (83.1%)
-* icon:lock-open[] Open Access: *62* (95.4%)
+* icon:fingerprint[] Publications with DOI: *24* (36.4%)
+* icon:file-pdf[] Publications with PDF: *54* (81.8%)
+* icon:lock-open[] Open Access: *62* (93.9%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *78*
+* icon:atom[] 0.info: *79*
 * icon:atom[] 0.math: *47*
 * icon:atom[] 1.math.math-na: *21*
 * icon:atom[] 1.info.info-na: *12*
@@ -63,7 +63,7 @@ ____
 
 Counts include proposed assignments from a read-only HAL/Zotero dry run. A publication may appear in several WPs; no proposal changes Zotero.
 
-*27* publications have no WP assignment or proposal; *4* records need duplicate review.
+*28* publications have no WP assignment or proposal; *4* records need duplicate review.
 
 [cols="1,1,1",options="header"]
 |===
@@ -283,9 +283,9 @@ _16 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 
 == 2025
 
-_23 publications_
+_24 publications_
 
-_9 Article in journal, 5 Preprint / unpublished, 5 Conference paper, 2 Poster, 1 HDR, 1 Report_
+_9 Article in journal, 6 Conference paper, 5 Preprint / unpublished, 2 Poster, 1 HDR, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
@@ -356,6 +356,12 @@ _9 Article in journal, 5 Preprint / unpublished, 5 Conference paper, 2 Poster, 1
 |Conference paper
 |xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-05373220v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05373220/document[icon:file-pdf[title=PDF]]
+
+|*Parallel Fractal Decomposition Optimization Algorithms on Heterogeneous Architectures*
+|Mahmoud El Mehdi El Khadiri, El Ghazali Talbi
+|Conference paper
+|
+|link:https://hal.science/hal-05780801v1[icon:external-link-alt[title=HAL]]
 
 |*Error analysis of the Gram low-rank approximation (and why it is not as unstable as one may think)*
 |Theo Mary
