@@ -312,6 +312,9 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="frameworks/uranie.html">Uranie</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="frameworks/zellij.html">Zellij</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
@@ -376,6 +379,9 @@ MathJax.Hub.Config({
     <a class="nav-link" href="applications/app-petsc-mixed-precision.html">Impact of mixed-precision on PETSc solvers and preconditioners</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-feelpp-thermoelectric-1.html">Thermoelectric Coupling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="applications/app-feelpp-mi300a-fem.html">MI300A high-order finite-element kernels and HiFiMagnet</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -383,6 +389,21 @@ MathJax.Hub.Config({
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="applications/app-feelpp-hifimagnet-optcontrol.html">HiFiMagnet robust optimal operation and control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-samurai-burgers-2d.html">Adaptive Burgers 2D, weak scaling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-samurai-euler-dmr.html">Double Mach reflection, strong scaling and scaled-resolution series</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-samurai-cwipi.html">high-order multistep coupling for solid&#8201;&#8212;&#8201;fluid conjugate heat transfer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-kinetic-moment-closure.html">Learned closure of the five-moment kinetic system</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-parabolic-terminal-constraint.html">Exact terminal constraint for parabolic PDEs</a>
   </li>
 </ul>
   </li>
@@ -431,17 +452,17 @@ MathJax.Hub.Config({
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-rocket fa-2x"></i></span> <strong>23 Applications</strong></p>
+<p><span class="icon text-primary"><i class="fa fa-rocket fa-2x"></i></span> <strong>29 Applications</strong></p>
 </div>
 <div class="paragraph">
-<p>6 ready for benchmarking</p>
+<p>9 ready for benchmarking</p>
 </div>
 </blockquote>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-info"><i class="fa fa-cube fa-2x"></i></span> <strong>10 Mini-Apps</strong></p>
+<p><span class="icon text-info"><i class="fa fa-cube fa-2x"></i></span> <strong>13 Mini-Apps</strong></p>
 </div>
 <div class="paragraph">
 <p>Focused benchmarks testing specific algorithms</p>
@@ -461,7 +482,7 @@ MathJax.Hub.Config({
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-warning"><i class="fa fa-desktop fa-2x"></i></span> <strong>6 Demonstrators</strong></p>
+<p><span class="icon text-warning"><i class="fa fa-desktop fa-2x"></i></span> <strong>9 Demonstrators</strong></p>
 </div>
 <div class="paragraph">
 <p>Full-scale application showcases</p>
@@ -595,14 +616,14 @@ MathJax.Hub.Config({
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Feel++, CGAL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check-circle" title="Benchmark Ready"></i></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-cgal-autorefine.html" class="xref page">Mesh autorefinement</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CGAL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check-circle" title="Benchmark Ready"></i></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
 </tr>
 <tr>
@@ -627,6 +648,13 @@ MathJax.Hub.Config({
 <td class="tableblock halign-left valign-top"><p class="tableblock">WP3</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-thermoelectric-1.html" class="xref page">Thermoelectric Coupling</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check-circle" title="Benchmark Ready"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-mi300a-fem.html" class="xref page">MI300A high-order finite-element kernels and HiFiMagnet</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extended Mini App</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Feel++, PETSc&#8230;&#8203;</p></td>
@@ -646,6 +674,41 @@ MathJax.Hub.Config({
 <td class="tableblock halign-left valign-top"><p class="tableblock">Feel++, PETSc/TAO&#8230;&#8203;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WP1, WP2, WP3, WP5, WP6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-samurai-burgers-2d.html" class="xref page">Adaptive Burgers 2D, weak scaling</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Samurai</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-samurai-euler-dmr.html" class="xref page">Double Mach reflection, strong scaling and scaled-resolution series</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Samurai</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-samurai-cwipi.html" class="xref page">high-order multistep coupling for solid&#8201;&#8212;&#8201;fluid conjugate heat transfer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PETSc, Samurai</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-kinetic-moment-closure.html" class="xref page">Learned closure of the five-moment kinetic system</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PyTorch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-parabolic-terminal-constraint.html" class="xref page">Exact terminal constraint for parabolic PDEs</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PyTorch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP2</p></td>
 </tr>
 </tbody>
 </table>
@@ -703,6 +766,24 @@ MathJax.Hub.Config({
 <td class="tableblock halign-left valign-top"><p class="tableblock">Freefem++, MMG/ParMMG&#8230;&#8203;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">strong-scalability, weak-scalability&#8230;&#8203;</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-ktirio-geom.html" class="xref page"><strong>Terrain Generation</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrate the creation of a city mesh including elevation, roads, water bodies and land markers.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++, CGAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">strong-scalability, weak-scalability&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-cgal-autorefine.html" class="xref page"><strong>Mesh autorefinement</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test the parallel performance of triangle mesh autorefinement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CGAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">strong-scalability, weak-scalability&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-thermoelectric-1.html" class="xref page"><strong>Thermoelectric Coupling</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrate thermoelectric coupling in a hight field resistive magnet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">time-to-solution, strong-scalability</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -731,7 +812,16 @@ MathJax.Hub.Config({
 <p><a href="applications/app-feelpp-thermomeca-1.html" class="xref page">thermomeca</a> — Feel++</p>
 </li>
 <li>
-<p><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a> — Feel++, CGAL</p>
+<p><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a> <span class="icon text-success"><i class="fa fa-check-circle" title="Ready"></i></span> — Feel++, CGAL</p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-thermoelectric-1.html" class="xref page">Thermoelectric Coupling</a> <span class="icon text-success"><i class="fa fa-check-circle" title="Ready"></i></span> — Feel++</p>
+</li>
+<li>
+<p><a href="applications/app-kinetic-moment-closure.html" class="xref page">Learned closure of the five-moment kinetic system</a> — PyTorch</p>
+</li>
+<li>
+<p><a href="applications/app-parabolic-terminal-constraint.html" class="xref page">Exact terminal constraint for parabolic PDEs</a> — PyTorch</p>
 </li>
 </ul>
 </div>
@@ -784,7 +874,7 @@ MathJax.Hub.Config({
 <p><a href="applications/app-scimba-plasma.html" class="xref page">Plasma NN</a> — Scimba</p>
 </li>
 <li>
-<p><a href="applications/app-cgal-autorefine.html" class="xref page">Mesh autorefinement</a> — CGAL</p>
+<p><a href="applications/app-cgal-autorefine.html" class="xref page">Mesh autorefinement</a> <span class="icon text-success"><i class="fa fa-check-circle" title="Ready"></i></span> — CGAL</p>
 </li>
 <li>
 <p><a href="applications/app-cgal-cdt2.html" class="xref page">Constrained Delaunay Triangulation 2D</a> — CGAL</p>
@@ -794,6 +884,15 @@ MathJax.Hub.Config({
 </li>
 <li>
 <p><a href="applications/app-petsc-mixed-precision.html" class="xref page">Impact of mixed-precision on PETSc solvers and preconditioners</a> — PETSc, HPDDM</p>
+</li>
+<li>
+<p><a href="applications/app-samurai-burgers-2d.html" class="xref page">Adaptive Burgers 2D, weak scaling</a> — Samurai</p>
+</li>
+<li>
+<p><a href="applications/app-samurai-euler-dmr.html" class="xref page">Double Mach reflection, strong scaling and scaled-resolution series</a> — Samurai</p>
+</li>
+<li>
+<p><a href="applications/app-samurai-cwipi.html" class="xref page">high-order multistep coupling for solid&#8201;&#8212;&#8201;fluid conjugate heat transfer</a> — PETSc, Samurai</p>
 </li>
 </ul>
 </div>
@@ -808,10 +907,10 @@ MathJax.Hub.Config({
 <div class="ulist">
 <ul>
 <li>
-<p><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a> (Demonstrator)</p>
+<p><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a> (Demonstrator) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
 </li>
 <li>
-<p><a href="applications/app-cgal-autorefine.html" class="xref page">Mesh autorefinement</a> (Mini App)</p>
+<p><a href="applications/app-cgal-autorefine.html" class="xref page">Mesh autorefinement</a> (Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
 </li>
 <li>
 <p><a href="applications/app-cgal-cdt2.html" class="xref page">Constrained Delaunay Triangulation 2D</a> (Mini App)</p>
@@ -845,7 +944,10 @@ MathJax.Hub.Config({
 <p><a href="applications/app-feelpp-thermomeca-1.html" class="xref page">thermomeca</a> (Demonstrator)</p>
 </li>
 <li>
-<p><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a> (Demonstrator)</p>
+<p><a href="applications/app-feelpp-ktirio-geom.html" class="xref page">Terrain Generation</a> (Demonstrator) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-thermoelectric-1.html" class="xref page">Thermoelectric Coupling</a> (Demonstrator) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
 </li>
 <li>
 <p><a href="applications/app-feelpp-mi300a-fem.html" class="xref page">MI300A high-order finite-element kernels and HiFiMagnet</a> (Extended Mini App)</p>
@@ -952,6 +1054,9 @@ MathJax.Hub.Config({
 <li>
 <p><a href="applications/app-feelpp-mi300a-fem.html" class="xref page">MI300A high-order finite-element kernels and HiFiMagnet</a> (Extended Mini App)</p>
 </li>
+<li>
+<p><a href="applications/app-samurai-cwipi.html" class="xref page">high-order multistep coupling for solid&#8201;&#8212;&#8201;fluid conjugate heat transfer</a> (Mini App)</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -978,12 +1083,41 @@ MathJax.Hub.Config({
 </ul>
 </div>
 <div class="paragraph">
+<p><strong>PyTorch</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-kinetic-moment-closure.html" class="xref page">Learned closure of the five-moment kinetic system</a> (Demonstrator)</p>
+</li>
+<li>
+<p><a href="applications/app-parabolic-terminal-constraint.html" class="xref page">Exact terminal constraint for parabolic PDEs</a> (Demonstrator)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p><strong>Sage-HPC</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><a href="applications/app-feelpp-hifimagnet-optcontrol.html" class="xref page">HiFiMagnet robust optimal operation and control</a> (Extended Mini App)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Samurai</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-samurai-burgers-2d.html" class="xref page">Adaptive Burgers 2D, weak scaling</a> (Mini App)</p>
+</li>
+<li>
+<p><a href="applications/app-samurai-euler-dmr.html" class="xref page">Double Mach reflection, strong scaling and scaled-resolution series</a> (Mini App)</p>
+</li>
+<li>
+<p><a href="applications/app-samurai-cwipi.html" class="xref page">high-order multistep coupling for solid&#8201;&#8212;&#8201;fluid conjugate heat transfer</a> (Mini App)</p>
 </li>
 </ul>
 </div>
@@ -1024,6 +1158,16 @@ MathJax.Hub.Config({
                       <h2 class="cards-group-title">Application Catalog</h2>
                     
                       <div class="applications">
+                            <div class="application"><a class="page-card application" href="applications/app-samurai-burgers-2d.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Adaptive Burgers 2D, weak scaling</h4>
+    <p class="page-card-description">Adaptive Burgers 2D, weak scaling - Weak scalability of the distributed multiresolution mesh adaptation on a load-balanced nonlinear transport problem....</p>
+  </div>
+</a>
+</div>
                             <div class="application"><a class="page-card application" href="applications/app-cgal-ccdt3.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
@@ -1064,6 +1208,16 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
+                            <div class="application"><a class="page-card application" href="applications/app-samurai-euler-dmr.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Double Mach reflection, strong scaling and scaled-resolution series</h4>
+    <p class="page-card-description">Double Mach reflection, strong scaling and scaled-resolution series - Strong scalability, and throughput at a resolution growing with the number of processes, of an adaptive finite volume solver for the compressible Eule...</p>
+  </div>
+</a>
+</div>
                             <div class="application"><a class="page-card application" href="applications/app-eki.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-cube"></i>
@@ -1071,6 +1225,16 @@ MathJax.Hub.Config({
   <div class="page-card-body">
     <h4>EKI</h4>
     <p class="page-card-description">EKI - Demonstrate feasibility of ensemble Kalman filter based inversion of a simplified wave equation...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-parabolic-terminal-constraint.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-desktop"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Exact terminal constraint for parabolic PDEs</h4>
+    <p class="page-card-description">Exact terminal constraint for parabolic PDEs - Approximate solutions of parabolic terminal-value problems by neural networks in which the terminal condition holds exactly, and assess the effect of ...</p>
   </div>
 </a>
 </div>
@@ -1104,6 +1268,16 @@ MathJax.Hub.Config({
   </div>
 </a>
 </div>
+                            <div class="application"><a class="page-card application" href="applications/app-samurai-cwipi.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>high-order multistep coupling for solid&amp;#8201;&amp;#8212;&amp;#8201;fluid conjugate heat transfer</h4>
+    <p class="page-card-description">high-order multistep coupling for solid -- fluid conjugate heat transfer - The cwipi-samurai mini-app couples two independent Samurai/PETSc solvers (a solid and a differentially heated fluid cavity) through ONERA's Cwipi libr...</p>
+  </div>
+</a>
+</div>
                             <div class="application"><a class="page-card application" href="applications/app-scimba-hybrid.html">
   <div class="page-card-illustration">
         <i class="fa-solid fa-desktop"></i>
@@ -1121,6 +1295,16 @@ MathJax.Hub.Config({
   <div class="page-card-body">
     <h4>Impact of mixed-precision on PETSc solvers and preconditioners</h4>
     <p class="page-card-description">Impact of mixed-precision on PETSc solvers and preconditioners - Provide a benchmark framework to study the effects of mixed precision on PETSc Krylov solvers and preconditioners in terms of performance, convergence...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-kinetic-moment-closure.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-desktop"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Learned closure of the five-moment kinetic system</h4>
+    <p class="page-card-description">Learned closure of the five-moment kinetic system - Learn a state-dependent regularisation of the five-moment closure of the 1D BGK equation from kinetic data, and compare the closed moment system with ...</p>
   </div>
 </a>
 </div>
@@ -1221,6 +1405,16 @@ MathJax.Hub.Config({
   <div class="page-card-body">
     <h4>Test Feel++ toolboxes at scale</h4>
     <p class="page-card-description">Test Feel++ toolboxes at scale - test heat(eye2brain,thermalbridge), elasticity(nafems LE-10), thermoelectric(hifimagnet) and fluid (fda)...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-feelpp-thermoelectric-1.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-desktop"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Thermoelectric Coupling</h4>
+    <p class="page-card-description">Thermoelectric Coupling - Demonstrate thermoelectric coupling in a hight field resistive magnet....</p>
   </div>
 </a>
 </div>
