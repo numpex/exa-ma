@@ -136,11 +136,11 @@ The following Exa-MA applications use CGAL:
 
 | xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
 | Demonstrator
-| Planned
+| Benchmark Ready
 
 | xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement]
 | Mini App
-| Planned
+| Benchmark Ready
 
 | xref:applications/app-cgal-cdt2.adoc[Constrained Delaunay Triangulation 2D]
 | Mini App

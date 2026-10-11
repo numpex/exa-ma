@@ -1,0 +1,110 @@
+= Double Mach reflection, strong scaling and scaled-resolution series
+:page-layout: default
+:page-tags: application, mini-app, app-samurai-euler-dmr
+:page-illustration: fa-solid fa-cube
+:description: Double Mach reflection, strong scaling and scaled-resolution series - Strong scalability, and throughput at a resolution growing with the number of processes, of an adaptive finite volume solver for the compressible Eule...
+:icons: font
+:page-status: planned
+:page-work-packages: WP1
+
+[.lead]
+Strong scalability, and throughput at a resolution growing with the number of processes, of an adaptive finite volume solver for the compressible Euler equations with strong shocks, and comparison of the dynamic load balancing strategies of samurai
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Samurai
+____
+====
+--
+
+
+
+== Overview
+
+Strong scalability, and throughput at a resolution growing with the number of processes, of an adaptive finite volume solver for the compressible Euler equations with strong shocks, and comparison of the dynamic load balancing strategies of samurai
+
+=== Repository
+
+icon:code-branch[] https://github.com/hpc-maths/samurai-euler
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Samurai**
+
+=== Parallel Frameworks
+
+* MPI
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* mesh adaptation
+* multiresolution analysis
+* finite volume
+* dynamic load balancing
+
+
+
+
+
+
+
+== Benchmarking
+
+=== Metrics
+
+* Regression Test Pass
+* Strong Scalability
+* Time To Solution
+
+=== Benchmark Scope
+
+* Multi Node
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* IPP
+
+*Responsible:* L. Gouarin
+
+

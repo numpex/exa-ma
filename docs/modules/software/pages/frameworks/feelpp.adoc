@@ -190,7 +190,11 @@ The following Exa-MA applications use Feel++:
 
 | xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
 | Demonstrator
-| Planned
+| Benchmark Ready
+
+| xref:applications/app-feelpp-thermoelectric-1.adoc[Thermoelectric Coupling]
+| Demonstrator
+| Benchmark Ready
 
 | xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet]
 | Extended Mini App

@@ -1,0 +1,109 @@
+= Adaptive Burgers 2D, weak scaling
+:page-layout: default
+:page-tags: application, mini-app, app-samurai-burgers-2d
+:page-illustration: fa-solid fa-cube
+:description: Adaptive Burgers 2D, weak scaling - Weak scalability of the distributed multiresolution mesh adaptation on a load-balanced nonlinear transport problem....
+:icons: font
+:page-status: planned
+:page-work-packages: WP1
+
+[.lead]
+Weak scalability of the distributed multiresolution mesh adaptation on a load-balanced nonlinear transport problem.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Samurai
+____
+====
+--
+
+
+
+== Overview
+
+Weak scalability of the distributed multiresolution mesh adaptation on a load-balanced nonlinear transport problem.
+
+=== Repository
+
+icon:code-branch[] https://github.com/hpc-maths/samurai
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Samurai**
+
+=== Parallel Frameworks
+
+* MPI
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* multiresolution analysis
+* finite volume
+* mesh adaptation
+
+
+
+
+
+
+
+== Benchmarking
+
+=== Metrics
+
+* Weak Scalability
+* Time To Solution
+* Regression Test Pass
+
+=== Benchmark Scope
+
+* Multi Node
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* IPP
+
+*Responsible:* L. Gouarin
+
+

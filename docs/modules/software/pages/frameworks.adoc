@@ -22,7 +22,7 @@ Exa-MA frameworks are production-ready software libraries and tools that serve a
 ____
 icon:cubes[size=2x,role=text-primary] *45 Frameworks*
 
-13 eligible for production use in Exa-MA benchmarks.
+14 eligible for production use in Exa-MA benchmarks.
 ____
 
 ____
@@ -106,6 +106,10 @@ ____
 | _Exa-MA Framework_
 | N/A
 | icon:check[role=text-success]| icon:check[role=text-success]| 2,5,6
+| xref:frameworks/zellij.adoc[*Zellij*]
+| _Exa-MA Framework_
+| xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
+| icon:check[role=text-success]| icon:times[role=text-muted]| 5
 |===
 --
 
@@ -157,6 +161,7 @@ ____
 * xref:frameworks/hawen.adoc[Hawen]
 * xref:frameworks/mahyco.adoc[MaHyCo]
 * xref:frameworks/uranie.adoc[Uranie] icon:check-circle[role=text-success,title=Benchmarked]
+* xref:frameworks/zellij.adoc[Zellij] icon:check-circle[role=text-success,title=Benchmarked]
 
 *WP6*
 
@@ -192,6 +197,7 @@ These frameworks power the following Exa-MA applications:
 ** xref:applications/app-freefem-parmmg.adoc[Fichera corner]
 ** xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
 ** xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
+** xref:applications/app-feelpp-thermoelectric-1.adoc[Thermoelectric Coupling]
 ** xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet]
 ** xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion]
 ** xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control]
@@ -217,6 +223,11 @@ These frameworks power the following Exa-MA applications:
 ** xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement]
 ** xref:applications/app-cgal-cdt2.adoc[Constrained Delaunay Triangulation 2D]
 ** xref:applications/app-cgal-ccdt3.adoc[Conforming Constrained Delaunay Triangulation 3D]
+
+* xref:frameworks/samurai.adoc[Samurai]
+** xref:applications/app-samurai-burgers-2d.adoc[Adaptive Burgers 2D, weak scaling]
+** xref:applications/app-samurai-euler-dmr.adoc[Double Mach reflection, strong scaling and scaled-resolution series]
+** xref:applications/app-samurai-cwipi.adoc[high-order multistep coupling for solid -- fluid conjugate heat transfer]
 
 --
 

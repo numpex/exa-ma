@@ -20,13 +20,13 @@ Exa-MA applications are benchmarks and demonstrators that exercise the capabilit
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:rocket[size=2x,role=text-primary] *23 Applications*
+icon:rocket[size=2x,role=text-primary] *29 Applications*
 
-6 ready for benchmarking
+9 ready for benchmarking
 ____
 
 ____
-icon:cube[size=2x,role=text-info] *10 Mini-Apps*
+icon:cube[size=2x,role=text-info] *13 Mini-Apps*
 
 Focused benchmarks testing specific algorithms
 ____
@@ -38,7 +38,7 @@ Multi-WP benchmarks with broader scope
 ____
 
 ____
-icon:desktop[size=2x,role=text-warning] *6 Demonstrators*
+icon:desktop[size=2x,role=text-warning] *9 Demonstrators*
 
 Full-scale application showcases
 ____
@@ -112,11 +112,11 @@ ____
 
 | xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
 | Demonstrator
-| Feel++, CGAL| icon:clock[role=text-warning,title=planned]| WP1
+| Feel++, CGAL| icon:check-circle[role=text-success,title=Benchmark Ready]| WP1
 
 | xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement]
 | Mini App
-| CGAL| icon:clock[role=text-warning,title=planned]| WP1
+| CGAL| icon:check-circle[role=text-success,title=Benchmark Ready]| WP1
 
 | xref:applications/app-cgal-cdt2.adoc[Constrained Delaunay Triangulation 2D]
 | Mini App
@@ -130,6 +130,10 @@ ____
 | Mini App
 | PETSc, HPDDM...| icon:clock[role=text-warning,title=planned]| WP3
 
+| xref:applications/app-feelpp-thermoelectric-1.adoc[Thermoelectric Coupling]
+| Demonstrator
+| Feel++| icon:check-circle[role=text-success,title=Benchmark Ready]| WP1
+
 | xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet]
 | Extended Mini App
 | Feel++, PETSc...| icon:clock[role=text-warning,title=planned]| WP1, WP3, WP7
@@ -141,6 +145,26 @@ ____
 | xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control]
 | Extended Mini App
 | Feel++, PETSc/TAO...| icon:clock[role=text-warning,title=planned]| WP1, WP2, WP3, WP5, WP6
+
+| xref:applications/app-samurai-burgers-2d.adoc[Adaptive Burgers 2D, weak scaling]
+| Mini App
+| Samurai| icon:clock[role=text-warning,title=planned]| WP1
+
+| xref:applications/app-samurai-euler-dmr.adoc[Double Mach reflection, strong scaling and scaled-resolution series]
+| Mini App
+| Samurai| icon:clock[role=text-warning,title=planned]| WP1
+
+| xref:applications/app-samurai-cwipi.adoc[high-order multistep coupling for solid -- fluid conjugate heat transfer]
+| Mini App
+| PETSc, Samurai| icon:clock[role=text-warning,title=planned]| WP1
+
+| xref:applications/app-kinetic-moment-closure.adoc[Learned closure of the five-moment kinetic system]
+| Demonstrator
+| PyTorch| icon:clock[role=text-warning,title=planned]| WP2
+
+| xref:applications/app-parabolic-terminal-constraint.adoc[Exact terminal constraint for parabolic PDEs]
+| Demonstrator
+| PyTorch| icon:clock[role=text-warning,title=planned]| WP2
 
 |===
 --
@@ -166,6 +190,12 @@ These applications are ready for performance evaluation on HPC systems:
 | Test numerical and algorithm performance of PETSc preconditioners| HPDDM, PETSc...| strong-scalability, weak-scalability...
 | xref:applications/app-freefem-parmmg.adoc[*Fichera corner*] icon:check-circle[role=text-success]
 | Test ParMmg performance for distributed anisotropic mesh adaptation| Freefem++, MMG/ParMMG...| strong-scalability, weak-scalability...
+| xref:applications/app-feelpp-ktirio-geom.adoc[*Terrain Generation*] icon:check-circle[role=text-success]
+| Demonstrate the creation of a city mesh including elevation, roads, water bodies and land markers.| Feel++, CGAL| strong-scalability, weak-scalability...
+| xref:applications/app-cgal-autorefine.adoc[*Mesh autorefinement*] icon:check-circle[role=text-success]
+| Test the parallel performance of triangle mesh autorefinement| CGAL| strong-scalability, weak-scalability...
+| xref:applications/app-feelpp-thermoelectric-1.adoc[*Thermoelectric Coupling*] icon:check-circle[role=text-success]
+| Demonstrate thermoelectric coupling in a hight field resistive magnet.| Feel++| time-to-solution, strong-scalability
 |===
 --
 
@@ -186,7 +216,13 @@ icon:desktop[role=text-warning] *Demonstrators*
 
 * xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca] — Feel++
 
-* xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation] — Feel++, CGAL
+* xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation] icon:check-circle[role=text-success,title=Ready] — Feel++, CGAL
+
+* xref:applications/app-feelpp-thermoelectric-1.adoc[Thermoelectric Coupling] icon:check-circle[role=text-success,title=Ready] — Feel++
+
+* xref:applications/app-kinetic-moment-closure.adoc[Learned closure of the five-moment kinetic system] — PyTorch
+
+* xref:applications/app-parabolic-terminal-constraint.adoc[Exact terminal constraint for parabolic PDEs] — PyTorch
 
 
 icon:cubes[role=text-success] *Extended Mini Apps*
@@ -218,13 +254,19 @@ icon:cube[role=text-info] *Mini Apps*
 
 * xref:applications/app-scimba-plasma.adoc[Plasma NN] — Scimba
 
-* xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement] — CGAL
+* xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement] icon:check-circle[role=text-success,title=Ready] — CGAL
 
 * xref:applications/app-cgal-cdt2.adoc[Constrained Delaunay Triangulation 2D] — CGAL
 
 * xref:applications/app-cgal-ccdt3.adoc[Conforming Constrained Delaunay Triangulation 3D] — CGAL
 
 * xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners] — PETSc, HPDDM
+
+* xref:applications/app-samurai-burgers-2d.adoc[Adaptive Burgers 2D, weak scaling] — Samurai
+
+* xref:applications/app-samurai-euler-dmr.adoc[Double Mach reflection, strong scaling and scaled-resolution series] — Samurai
+
+* xref:applications/app-samurai-cwipi.adoc[high-order multistep coupling for solid -- fluid conjugate heat transfer] — PETSc, Samurai
 
 
 --
@@ -236,8 +278,8 @@ icon:cube[role=text-info] *Mini Apps*
 
 *CGAL*
 
-* xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation] (Demonstrator)
-* xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement] (Mini App)
+* xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation] (Demonstrator) icon:check-circle[role=text-success]
+* xref:applications/app-cgal-autorefine.adoc[Mesh autorefinement] (Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-cgal-cdt2.adoc[Constrained Delaunay Triangulation 2D] (Mini App)
 * xref:applications/app-cgal-ccdt3.adoc[Conforming Constrained Delaunay Triangulation 3D] (Mini App)
 
@@ -249,7 +291,8 @@ icon:cube[role=text-info] *Mini Apps*
 * xref:applications/app-feelpp-rb.adoc[Reduced Basis] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca] (Demonstrator)
-* xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation] (Demonstrator)
+* xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation] (Demonstrator) icon:check-circle[role=text-success]
+* xref:applications/app-feelpp-thermoelectric-1.adoc[Thermoelectric Coupling] (Demonstrator) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet] (Extended Mini App)
 * xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion] (Extended Mini App)
 * xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control] (Extended Mini App)
@@ -289,6 +332,7 @@ icon:cube[role=text-info] *Mini Apps*
 * xref:applications/app-eki.adoc[EKI] (Mini App)
 * xref:applications/app-petsc-mixed-precision.adoc[Impact of mixed-precision on PETSc solvers and preconditioners] (Mini App)
 * xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet] (Extended Mini App)
+* xref:applications/app-samurai-cwipi.adoc[high-order multistep coupling for solid -- fluid conjugate heat transfer] (Mini App)
 
 *PETSc/TAO*
 
@@ -299,9 +343,20 @@ icon:cube[role=text-info] *Mini Apps*
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] (Mini App) icon:check-circle[role=text-success]
 
+*PyTorch*
+
+* xref:applications/app-kinetic-moment-closure.adoc[Learned closure of the five-moment kinetic system] (Demonstrator)
+* xref:applications/app-parabolic-terminal-constraint.adoc[Exact terminal constraint for parabolic PDEs] (Demonstrator)
+
 *Sage-HPC*
 
 * xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control] (Extended Mini App)
+
+*Samurai*
+
+* xref:applications/app-samurai-burgers-2d.adoc[Adaptive Burgers 2D, weak scaling] (Mini App)
+* xref:applications/app-samurai-euler-dmr.adoc[Double Mach reflection, strong scaling and scaled-resolution series] (Mini App)
+* xref:applications/app-samurai-cwipi.adoc[high-order multistep coupling for solid -- fluid conjugate heat transfer] (Mini App)
 
 *Scimba*
 

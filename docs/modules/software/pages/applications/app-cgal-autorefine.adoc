@@ -4,7 +4,7 @@
 :page-illustration: fa-solid fa-cube
 :description: Mesh autorefinement - Test the parallel performance of triangle mesh autorefinement...
 :icons: font
-:page-status: planned
+:page-status: benchmark-ready
 :page-work-packages: WP1
 
 [.lead]
@@ -24,9 +24,9 @@ Mini App
 ____
 
 ____
-icon:clock[size=2x,role=text-warning] *Status*
+icon:check-circle[size=2x,role=text-success] *Status*
 
-Planned
+Benchmark Ready
 ____
 
 ____
@@ -44,6 +44,10 @@ ____
 --
 
 
+[NOTE]
+====
+icon:check-circle[role=text-success] This application is **benchmark-ready** and can be used for performance evaluation.
+====
 
 == Overview
 

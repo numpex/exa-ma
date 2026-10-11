@@ -1,0 +1,119 @@
+= Exact terminal constraint for parabolic PDEs
+:page-layout: default
+:page-tags: application, demonstrator, app-parabolic-terminal-constraint
+:page-illustration: fa-solid fa-desktop
+:description: Exact terminal constraint for parabolic PDEs - Approximate solutions of parabolic terminal-value problems by neural networks in which the terminal condition holds exactly, and assess the effect of ...
+:icons: font
+:page-status: planned
+:page-work-packages: WP2
+
+[.lead]
+Approximate solutions of parabolic terminal-value problems by neural networks in which the terminal condition holds exactly, and assess the effect of the extension of the terminal datum
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Demonstrator
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP2
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+PyTorch
+____
+====
+--
+
+
+
+== Overview
+
+Approximate solutions of parabolic terminal-value problems by neural networks in which the terminal condition holds exactly, and assess the effect of the extension of the terminal datum
+
+=== Repository
+
+icon:code-branch[] access on request (remy.hosseinkhan@polytechnique.edu)
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **PyTorch**
+
+=== Parallel Frameworks
+
+* GPU
+
+== Methods & Algorithms
+
+
+=== WP2: Model Order Reduction & SciML
+
+* physics-informed NN with exact terminal constraint
+
+
+
+
+
+== Data Flow
+
+=== Inputs
+
+* in-house
+
+=== Outputs
+
+* JSON reports
+* PyTorch checkpoints
+
+== Benchmarking
+
+=== Metrics
+
+* Analytical Solution Match
+* Time To Solution
+
+=== Benchmark Scope
+
+* Single Node
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* IPP
+
+*Responsible:* C.-A. Lehalle
+
+
+== Notes
+
+Contributors: R. Hosseinkhan-Boucher, C.-A. Lehalle, N. Baradel. Validation: error against closed-form solutions for constant coefficients. Planned: wall-clock time per solve.

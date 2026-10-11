@@ -126,3 +126,24 @@ IPP
 
 *Consortium:* IP Paris
 
+== Used by Applications
+
+The following Exa-MA applications use Samurai:
+
+[cols="2,2,1",options="header"]
+|===
+| Application | Type | Status
+
+| xref:applications/app-samurai-burgers-2d.adoc[Adaptive Burgers 2D, weak scaling]
+| Mini App
+| Planned
+
+| xref:applications/app-samurai-euler-dmr.adoc[Double Mach reflection, strong scaling and scaled-resolution series]
+| Mini App
+| Planned
+
+| xref:applications/app-samurai-cwipi.adoc[high-order multistep coupling for solid -- fluid conjugate heat transfer]
+| Mini App
+| Planned
+
+|===

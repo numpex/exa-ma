@@ -1,0 +1,117 @@
+= Thermoelectric Coupling
+:page-layout: default
+:page-tags: application, demonstrator, app-feelpp-thermoelectric-1
+:page-illustration: fa-solid fa-desktop
+:description: Thermoelectric Coupling - Demonstrate thermoelectric coupling in a hight field resistive magnet....
+:icons: font
+:page-status: benchmark-ready
+:page-work-packages: WP1
+
+[.lead]
+Demonstrate thermoelectric coupling in a hight field resistive magnet.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Demonstrator
+____
+
+____
+icon:check-circle[size=2x,role=text-success] *Status*
+
+Benchmark Ready
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Feel++
+____
+====
+--
+
+
+[NOTE]
+====
+icon:check-circle[role=text-success] This application is **benchmark-ready** and can be used for performance evaluation.
+====
+
+== Overview
+
+Demonstrate thermoelectric coupling in a hight field resistive magnet.
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+
+=== Parallel Frameworks
+
+* MPI
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* unstructured mesh
+* finite volume
+* multiphysics coupling
+
+
+
+
+
+
+== Data Flow
+
+
+=== Outputs
+
+* HDF5 fields
+* CSV predictions
+
+== Benchmarking
+
+=== Metrics
+
+* Time To Solution
+* Strong Scalability
+
+=== Benchmark Scope
+
+* Multi Node
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra
+
+*Responsible:* C. Prud'homme; V. Chabannes
+
+*WP7 Engineer:* Javier Cladellas (UNISTRA)
+

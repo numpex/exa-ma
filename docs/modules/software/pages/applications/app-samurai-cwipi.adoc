@@ -1,0 +1,105 @@
+= high-order multistep coupling for solid -- fluid conjugate heat transfer
+:page-layout: default
+:page-tags: application, mini-app, app-samurai-cwipi
+:page-illustration: fa-solid fa-cube
+:description: high-order multistep coupling for solid -- fluid conjugate heat transfer - The cwipi-samurai mini-app couples two independent Samurai/PETSc solvers (a solid and a differentially heated fluid cavity) through ONERA's Cwipi libr...
+:icons: font
+:page-status: planned
+:page-work-packages: WP1
+
+[.lead]
+The cwipi-samurai mini-app couples two independent Samurai/PETSc solvers (a solid and a differentially heated fluid cavity) through ONERA's Cwipi library to simulate unsteady, nonlinear solid-fluid conjugate heat transfer. It serves as a reference case for validating the high-order multistep coupling scheme in Cwipi, showing temporal order k+1 up to order 4, before it is used in an HPC context.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+PETSc, Samurai
+____
+====
+--
+
+
+
+== Overview
+
+The cwipi-samurai mini-app couples two independent Samurai/PETSc solvers (a solid and a differentially heated fluid cavity) through ONERA's Cwipi library to simulate unsteady, nonlinear solid-fluid conjugate heat transfer. It serves as a reference case for validating the high-order multistep coupling scheme in Cwipi, showing temporal order k+1 up to order 4, before it is used in an HPC context.
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **PETSc**
+* **Samurai**
+
+=== Parallel Frameworks
+
+* Sequential
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* multiphysics coupling
+* finite volume
+
+
+=== WP3: Solvers
+
+* multiphysics coupling
+* krylov solver
+
+
+
+
+
+== Benchmarking
+
+
+=== Benchmark Scope
+
+* Method Verification
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* IPP, ONERA
+
+*Responsible:* L. Gouarin
+
+
