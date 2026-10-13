@@ -1,28 +1,28 @@
-// Total publications: 66
+// Total publications: 67
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *66*
+icon:list-ol[] Total publications: *67*
 
 [.grid.grid-2.gap-2]
 ====
 ____
 icon:newspaper[size=2x,role=text-primary] *24* Article in journal
 
-_36.4% of total_
+_35.8% of total_
 ____
 
 ____
-icon:file-alt[size=2x,role=text-primary] *23* Preprint / unpublished
+icon:file-alt[size=2x,role=text-primary] *24* Preprint / unpublished
 
-_34.8% of total_
+_35.8% of total_
 ____
 
 ____
 icon:users[size=2x,role=text-primary] *14* Conference paper
 
-_21.2% of total_
+_20.9% of total_
 ____
 
 ____
@@ -47,17 +47,17 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *24* (36.4%)
-* icon:file-pdf[] Publications with PDF: *54* (81.8%)
-* icon:lock-open[] Open Access: *62* (93.9%)
+* icon:fingerprint[] Publications with DOI: *24* (35.8%)
+* icon:file-pdf[] Publications with PDF: *55* (82.1%)
+* icon:lock-open[] Open Access: *63* (94.0%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *79*
-* icon:atom[] 0.math: *47*
-* icon:atom[] 1.math.math-na: *21*
-* icon:atom[] 1.info.info-na: *12*
-* icon:atom[] 1.info.info-ao: *9*
+* icon:atom[] 0.info: *83*
+* icon:atom[] 0.math: *48*
+* icon:atom[] 1.math.math-na: *22*
+* icon:atom[] 1.info.info-na: *13*
+* icon:atom[] 1.info.info-ms: *9*
 
 == Proposed WP distribution
 
@@ -70,7 +70,7 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 |WP |Confirmed |Proposed
 |xref:workpackages/wp1.adoc[WP1] |5 |0
 |xref:workpackages/wp2.adoc[WP2] |6 |0
-|xref:workpackages/wp3.adoc[WP3] |22 |1
+|xref:workpackages/wp3.adoc[WP3] |22 |2
 |xref:workpackages/wp4.adoc[WP4] |0 |0
 |xref:workpackages/wp5.adoc[WP5] |4 |1
 |xref:workpackages/wp6.adoc[WP6] |0 |0
@@ -79,9 +79,9 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 
 == 2026
 
-_32 publications_
+_33 publications_
 
-_16 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
+_17 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
@@ -92,6 +92,12 @@ _16 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 |Article in journal
 |xref:workpackages/wp2.adoc[WP2], xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-05547894v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05547894/document[icon:file-pdf[title=PDF]]
+
+|*Right Precision, Right Place: Runtime Adaptations for Mixed-Precision Cholesky Factorization*
+|Qinglei Cao, Theo Mary, Rabab Alomairy et al.
+|Preprint / unpublished
+|xref:workpackages/wp3.adoc[WP3] (proposed)
+|link:https://hal.science/hal-05793453v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05793453/document[icon:file-pdf[title=PDF]]
 
 |*Mixed-Precision Computing for Scientific Discovery: Formats, Co-Design, and Responsible Approximation*
 |Emmanuel Agullo, Hartwig Anzt, Daniel Bauer et al.
