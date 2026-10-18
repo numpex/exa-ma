@@ -405,6 +405,12 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="applications/app-parabolic-terminal-constraint.html">Exact terminal constraint for parabolic PDEs</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-composyx-diffusion.html">Diffusion, 3D, weak scaling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="applications/app-feelpp-parmmg.html">Parallel remeshing with ParMmg</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -452,17 +458,17 @@ MathJax.Hub.Config({
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-primary"><i class="fa fa-rocket fa-2x"></i></span> <strong>29 Applications</strong></p>
+<p><span class="icon text-primary"><i class="fa fa-rocket fa-2x"></i></span> <strong>31 Applications</strong></p>
 </div>
 <div class="paragraph">
-<p>9 ready for benchmarking</p>
+<p>11 ready for benchmarking</p>
 </div>
 </blockquote>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-info"><i class="fa fa-cube fa-2x"></i></span> <strong>13 Mini-Apps</strong></p>
+<p><span class="icon text-info"><i class="fa fa-cube fa-2x"></i></span> <strong>14 Mini-Apps</strong></p>
 </div>
 <div class="paragraph">
 <p>Focused benchmarks testing specific algorithms</p>
@@ -482,7 +488,7 @@ MathJax.Hub.Config({
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p><span class="icon text-warning"><i class="fa fa-desktop fa-2x"></i></span> <strong>9 Demonstrators</strong></p>
+<p><span class="icon text-warning"><i class="fa fa-desktop fa-2x"></i></span> <strong>10 Demonstrators</strong></p>
 </div>
 <div class="paragraph">
 <p>Full-scale application showcases</p>
@@ -545,8 +551,8 @@ MathJax.Hub.Config({
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-toolbox.html" class="xref page">Test Feel++ toolboxes at scale</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check-circle" title="Benchmark Ready"></i></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WP1, WP3</p></td>
 </tr>
 <tr>
@@ -566,7 +572,7 @@ MathJax.Hub.Config({
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-zellij.html" class="xref page">Zellij</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zellij</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WP5</p></td>
 </tr>
@@ -710,6 +716,20 @@ MathJax.Hub.Config({
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WP2</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-composyx-diffusion.html" class="xref page">Diffusion, 3D, weak scaling</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Composyx</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-success"><i class="fa fa-check-circle" title="Benchmark Ready"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-parmmg.html" class="xref page">Parallel remeshing with ParMmg</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++, MMG/ParMMG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon text-warning"><i class="fa fa-clock" title="planned"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WP1</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -755,6 +775,12 @@ MathJax.Hub.Config({
 <td class="tableblock halign-left valign-top"><p class="tableblock">benchmark-verification, offline-cost&#8230;&#8203;</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-feelpp-toolbox.html" class="xref page"><strong>Test Feel++ toolboxes at scale</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">test heat(eye2brain,thermalbridge), elasticity(nafems LE-10), thermoelectric(hifimagnet) and fluid (&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feel++</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">time-to-solution, benchmark-verification</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-hpddm-dfn.html" class="xref page"><strong>Preconditioning systems arising from discrete fracture networks</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Test numerical and algorithm performance of PETSc preconditioners</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HPDDM, PETSc&#8230;&#8203;</p></td>
@@ -784,6 +810,13 @@ MathJax.Hub.Config({
 <td class="tableblock halign-left valign-top"><p class="tableblock">Feel++</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">time-to-solution, strong-scalability</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="applications/app-composyx-diffusion.html" class="xref page"><strong>Diffusion, 3D, weak scaling</strong></a> <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weak scalability of an unstructued FEM heterogeneous diffusion equation in a
+3D stratified medium.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Composyx</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">weak-scalability, gpu-acceleration</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -797,7 +830,7 @@ MathJax.Hub.Config({
 <div class="ulist">
 <ul>
 <li>
-<p><a href="applications/app-feelpp-toolbox.html" class="xref page">Test Feel++ toolboxes at scale</a> — N/A</p>
+<p>xref:applications/app-feelpp-toolbox.adoc[Test Feel toolboxes at scale] icon:check-circle[role=text-success,title=Ready] — Feel</p>
 </li>
 <li>
 <p><a href="applications/app-freefem-shape-opt-fem.html" class="xref page">Shape Opt FEM</a> — Freefem++</p>
@@ -822,6 +855,9 @@ MathJax.Hub.Config({
 </li>
 <li>
 <p><a href="applications/app-parabolic-terminal-constraint.html" class="xref page">Exact terminal constraint for parabolic PDEs</a> — PyTorch</p>
+</li>
+<li>
+<p><a href="applications/app-composyx-diffusion.html" class="xref page">Diffusion, 3D, weak scaling</a> <span class="icon text-success"><i class="fa fa-check-circle" title="Ready"></i></span> — Composyx</p>
 </li>
 </ul>
 </div>
@@ -865,7 +901,7 @@ MathJax.Hub.Config({
 <p><a href="applications/app-hpddm-dfn.html" class="xref page">Preconditioning systems arising from discrete fracture networks</a> <span class="icon text-success"><i class="fa fa-check-circle" title="Ready"></i></span> — HPDDM, PETSc</p>
 </li>
 <li>
-<p><a href="applications/app-zellij.html" class="xref page">Zellij</a> — N/A</p>
+<p><a href="applications/app-zellij.html" class="xref page">Zellij</a> — Zellij</p>
 </li>
 <li>
 <p><a href="applications/app-eki.html" class="xref page">EKI</a> — PETSc, GeoS</p>
@@ -894,6 +930,9 @@ MathJax.Hub.Config({
 <li>
 <p><a href="applications/app-samurai-cwipi.html" class="xref page">high-order multistep coupling for solid&#8201;&#8212;&#8201;fluid conjugate heat transfer</a> — PETSc, Samurai</p>
 </li>
+<li>
+<p><a href="applications/app-feelpp-parmmg.html" class="xref page">Parallel remeshing with ParMmg</a> — Feel++, MMG/ParMMG</p>
+</li>
 </ul>
 </div>
 </div>
@@ -921,6 +960,16 @@ MathJax.Hub.Config({
 </ul>
 </div>
 <div class="paragraph">
+<p><strong>Composyx</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-composyx-diffusion.html" class="xref page">Diffusion, 3D, weak scaling</a> (Demonstrator) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p><strong>Feel++</strong></p>
 </div>
 <div class="ulist">
@@ -938,7 +987,7 @@ MathJax.Hub.Config({
 <p><a href="applications/app-feelpp-rb.html" class="xref page">Reduced Basis</a> (Extended Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
 </li>
 <li>
-<p><a href="applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a> (Extended Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+<p><a href="applications/app-feelpp-toolbox.html" class="xref page">Test Feel++ toolboxes at scale</a> (Demonstrator) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
 </li>
 <li>
 <p><a href="applications/app-feelpp-thermomeca-1.html" class="xref page">thermomeca</a> (Demonstrator)</p>
@@ -957,6 +1006,9 @@ MathJax.Hub.Config({
 </li>
 <li>
 <p><a href="applications/app-feelpp-hifimagnet-optcontrol.html" class="xref page">HiFiMagnet robust optimal operation and control</a> (Extended Mini App)</p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-parmmg.html" class="xref page">Parallel remeshing with ParMmg</a> (Mini App)</p>
 </li>
 </ul>
 </div>
@@ -1012,6 +1064,9 @@ MathJax.Hub.Config({
 <ul>
 <li>
 <p><a href="applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a> (Extended Mini App) <span class="icon text-success"><i class="fa fa-check-circle"></i></span></p>
+</li>
+<li>
+<p><a href="applications/app-feelpp-parmmg.html" class="xref page">Parallel remeshing with ParMmg</a> (Mini App)</p>
 </li>
 </ul>
 </div>
@@ -1138,6 +1193,16 @@ MathJax.Hub.Config({
 </ul>
 </div>
 <div class="paragraph">
+<p><strong>Zellij</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="applications/app-zellij.html" class="xref page">Zellij</a> (Mini App)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p><strong>pytorch</strong></p>
 </div>
 <div class="ulist">
@@ -1185,6 +1250,16 @@ MathJax.Hub.Config({
   <div class="page-card-body">
     <h4>Constrained Delaunay Triangulation 2D</h4>
     <p class="page-card-description">Constrained Delaunay Triangulation 2D - Demonstrate the weak and strong scalability of the constrained delaunay triangulation algorithm...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-composyx-diffusion.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-desktop"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Diffusion, 3D, weak scaling</h4>
+    <p class="page-card-description">Diffusion, 3D, weak scaling - Weak scalability of an unstructued FEM heterogeneous diffusion equation in a</p>
   </div>
 </a>
 </div>
@@ -1335,6 +1410,16 @@ MathJax.Hub.Config({
   <div class="page-card-body">
     <h4>Nonlinear Compressive Reduced Basis</h4>
     <p class="page-card-description">Nonlinear Compressive Reduced Basis - Test nonlinear compressive reduced basis methods...</p>
+  </div>
+</a>
+</div>
+                            <div class="application"><a class="page-card application" href="applications/app-feelpp-parmmg.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-cube"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Parallel remeshing with ParMmg</h4>
+    <p class="page-card-description">Parallel remeshing with ParMmg - Evaluate Feel++/ParMmg parallel mesh adaptation; case definition and benchmark evidence pending....</p>
   </div>
 </a>
 </div>

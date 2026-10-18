@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Feel++ :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
     <link rel="canonical" href="https://numpex.github.io/exa-ma/software/frameworks/feelpp.html">
-    <meta name="description" content="Feel++ - Feel++ is an open-source, high-performance C++ framework for solving complex PDE and ODE-based mathematical models using advanced Galerkin methods (fi...">
+    <meta name="description" content="Feel++ - Feel++ is an open-source, high-performance C++23 framework for solving complex PDE and ODE-based mathematical models using advanced Galerkin methods (...">
     <meta name="generator" content="Antora 3.1.14">
 <link rel="stylesheet" href="../../_/css/site.css">
 
@@ -404,6 +404,12 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../applications/app-parabolic-terminal-constraint.html">Exact terminal constraint for parabolic PDEs</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../applications/app-composyx-diffusion.html">Diffusion, 3D, weak scaling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../applications/app-feelpp-parmmg.html">Parallel remeshing with ParMmg</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -462,7 +468,7 @@ MathJax.Hub.Config({
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Feel is an open-source, high-performance C framework for solving complex PDE and ODE-based mathematical models using advanced Galerkin methods (finite element, discontinuous Galerkin, and spectral methods) and efficient reduced-order modeling (ROM) techniques, including Reduced Basis (RB), Proper Orthogonal Decomposition (POD), and Empirical Interpolation Methods (EIM). It features specialized application toolboxes (CFD, CSM, FSI, thermoelectric, Maxwell), modern parallel computing with seamless Python integration (Pybind11), and extensive DevOps support (CI/CD, benchmarking, and containers). Feel++ is used in academia and industry for multiphysics simulations, inverse problems, uncertainty quantification, data assimilation, and machine learning applications.</p>
+<p>Feel is an open-source, high-performance C23 framework for solving complex PDE and ODE-based mathematical models using advanced Galerkin methods (finite element, discontinuous Galerkin, and spectral methods) and efficient reduced-order modeling (ROM) techniques, including Reduced Basis (RB), Proper Orthogonal Decomposition (POD), and Empirical Interpolation Methods (EIM). It features specialized application toolboxes (CFD, CSM, FSI, thermoelectric, Maxwell), modern parallel computing with seamless Python integration (Pybind11), and extensive DevOps support (CI/CD, benchmarking, and containers). Feel++ is used in academia and industry for multiphysics simulations, inverse problems, uncertainty quantification, data assimilation, and machine learning applications.</p>
 </div>
 <div class="openblock section-gray">
 <div class="content">
@@ -736,7 +742,7 @@ MathJax.Hub.Config({
 <h2 id="_technical_details"><a class="anchor" href="#_technical_details"></a>4. Technical Details</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Languages:</strong> C17, Python, C20, C++</p>
+<p><strong>Languages:</strong> C, C23, Python</p>
 </div>
 <div class="paragraph">
 <p><strong>Parallelism:</strong> MPI, Parallelism - C17 and after, Task based - C</p>
@@ -754,7 +760,6 @@ MathJax.Hub.Config({
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Lead Partner:</strong> Unistra,
-Inria Grenoble,
 CNRS</p>
 </div>
 <div class="paragraph">
@@ -803,8 +808,8 @@ CNRS</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Benchmark Ready</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../applications/app-freefem-parmmg.html" class="xref page">Fichera corner</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../applications/app-feelpp-toolbox.html" class="xref page">Test Feel++ toolboxes at scale</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstrator</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Benchmark Ready</p></td>
 </tr>
 <tr>
@@ -835,6 +840,11 @@ CNRS</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../applications/app-feelpp-hifimagnet-optcontrol.html" class="xref page">HiFiMagnet robust optimal operation and control</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extended Mini App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Planned</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../applications/app-feelpp-parmmg.html" class="xref page">Parallel remeshing with ParMmg</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mini App</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Planned</p></td>
 </tr>
 </tbody>
