@@ -124,3 +124,16 @@ _Benchmarked in this WP_
 *Lead Partner:* Inria BXSO
 
 
+== Used by Applications
+
+The following Exa-MA applications use Composyx:
+
+[cols="2,2,1",options="header"]
+|===
+| Application | Type | Status
+
+| xref:applications/app-composyx-diffusion.adoc[Diffusion, 3D, weak scaling]
+| Demonstrator
+| Benchmark Ready
+
+|===

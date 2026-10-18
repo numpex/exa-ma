@@ -1,0 +1,118 @@
+= Diffusion, 3D, weak scaling
+:page-layout: default
+:page-tags: application, demonstrator, app-composyx-diffusion
+:page-illustration: fa-solid fa-desktop
+:description: Diffusion, 3D, weak scaling - Weak scalability of an unstructued FEM heterogeneous diffusion equation in a
+3D stratified medium....
+:icons: font
+:page-status: benchmark-ready
+:page-work-packages: WP3
+
+[.lead]
+Weak scalability of an unstructued FEM heterogeneous diffusion equation in a
+3D stratified medium.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Demonstrator
+____
+
+____
+icon:check-circle[size=2x,role=text-success] *Status*
+
+Benchmark Ready
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP3
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Composyx
+____
+====
+--
+
+
+[NOTE]
+====
+icon:check-circle[role=text-success] This application is **benchmark-ready** and can be used for performance evaluation.
+====
+
+== Overview
+
+Weak scalability of an unstructued FEM heterogeneous diffusion equation in a
+3D stratified medium.
+
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Composyx**
+
+=== Parallel Frameworks
+
+* MPI
+* Multithread
+* GPU - Cuda
+* GPU - ROCm
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* finite element
+
+
+=== WP3: Solvers
+
+* domain decomposition methods
+
+
+
+
+
+== Benchmarking
+
+=== Metrics
+
+* Weak Scalability
+* Gpu Acceleration
+
+=== Benchmark Scope
+
+* Solver Scaling
+* Multi Node
+* Multi Gpu
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Inria BXSO
+
+*Responsible:* G. Marait
+
+

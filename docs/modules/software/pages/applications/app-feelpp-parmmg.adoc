@@ -1,0 +1,102 @@
+= Parallel remeshing with ParMmg
+:page-layout: default
+:page-tags: application, mini-app, app-feelpp-parmmg
+:page-illustration: fa-solid fa-cube
+:description: Parallel remeshing with ParMmg - Evaluate Feel++/ParMmg parallel mesh adaptation; case definition and benchmark evidence pending....
+:icons: font
+:page-status: planned
+:page-work-packages: WP1
+
+[.lead]
+Evaluate Feel++/ParMmg parallel mesh adaptation; case definition and benchmark evidence pending.
+
+[.section-gray]
+--
+[discrete]
+== Quick Facts
+
+[.grid.grid-2.gap-2]
+====
+____
+icon:tag[size=2x,role=text-primary] *Type*
+
+Mini App
+____
+
+____
+icon:clock[size=2x,role=text-warning] *Status*
+
+Planned
+____
+
+____
+icon:layer-group[size=2x,role=text-info] *Work Packages*
+
+WP1
+____
+
+____
+icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
+
+Feel++, MMG/ParMMG
+____
+====
+--
+
+
+
+== Overview
+
+Evaluate Feel++/ParMmg parallel mesh adaptation; case definition and benchmark evidence pending.
+
+=== Repository
+
+icon:code-branch[] https://github.com/feelpp/feelpp
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+* **MMG/ParMMG**
+
+=== Parallel Frameworks
+
+* MPI
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* mesh adaptation
+* unstructured mesh
+
+
+
+
+
+
+
+
+== Timeline
+
+[cols="1,2",options="header"]
+|===
+| Milestone | Date
+
+| Specification Due | N/A
+
+| Prototype Due | N/A
+|===
+
+== Team
+
+*Partners:* Unistra
+
+*Responsible:* C Prud'homme; V Chabannes
+
+*WP7 Engineer:* Vincent Chabannes (UNISTRA)
+
+== Notes
+
+Separate Feel++ application, distinct from app-freefem-parmmg. Upstream Feel++ supplies the implementation context; application configuration, contributors, verification protocol and benchmark evidence remain to be supplied.

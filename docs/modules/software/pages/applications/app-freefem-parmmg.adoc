@@ -38,7 +38,7 @@ ____
 ____
 icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
 
-Freefem++, MMG/ParMMG, PETSc, Feel++
+Freefem++, MMG/ParMMG, PETSc
 ____
 ====
 --
@@ -61,7 +61,6 @@ Test ParMmg performance for distributed anisotropic mesh adaptation
 * **Freefem++**
 * **MMG/ParMMG**
 * **PETSc**
-* **Feel++**
 
 === Parallel Frameworks
 

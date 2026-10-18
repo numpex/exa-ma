@@ -4,7 +4,7 @@
 :page-illustration: fa-solid fa-desktop
 :description: Test Feel++ toolboxes at scale - test heat(eye2brain,thermalbridge), elasticity(nafems LE-10), thermoelectric(hifimagnet) and fluid (fda)...
 :icons: font
-:page-status: planned
+:page-status: benchmark-ready
 :page-work-packages: WP1, WP3
 
 [.lead]
@@ -24,9 +24,9 @@ Demonstrator
 ____
 
 ____
-icon:clock[size=2x,role=text-warning] *Status*
+icon:check-circle[size=2x,role=text-success] *Status*
 
-Planned
+Benchmark Ready
 ____
 
 ____
@@ -38,21 +38,74 @@ ____
 ____
 icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
 
-N/A
+Feel++
 ____
 ====
 --
 
 
+[NOTE]
+====
+icon:check-circle[role=text-success] This application is **benchmark-ready** and can be used for performance evaluation.
+====
 
 == Overview
 
 test heat(eye2brain,thermalbridge), elasticity(nafems LE-10), thermoelectric(hifimagnet) and fluid (fda)
 
 
+== Technical Stack
+
+=== Frameworks Used
+
+* **Feel++**
+
+=== Parallel Frameworks
+
+* MPI
+
+== Methods & Algorithms
+
+=== WP1: Discretization
+
+* unstructured mesh
+* mesh adaptation
+* multiphysics coupling
+* finite element
+
+
+=== WP3: Solvers
+
+* domain decomposition methods
+* multiphysics coupling
+* algebraic multiphysics coupling
+* preconditioning
 
 
 
+
+== Data Flow
+
+=== Inputs
+
+* Gmsh
+* JSON workflow
+
+=== Outputs
+
+* HDF5 fields
+* JSON small-data
+
+== Benchmarking
+
+=== Metrics
+
+* Time To Solution
+* Benchmark Verification
+
+=== Benchmark Scope
+
+* Multi Node
 
 == Timeline
 

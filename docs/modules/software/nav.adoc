@@ -46,3 +46,5 @@
 ** xref:applications/app-samurai-cwipi.adoc[high-order multistep coupling for solid -- fluid conjugate heat transfer]
 ** xref:applications/app-kinetic-moment-closure.adoc[Learned closure of the five-moment kinetic system]
 ** xref:applications/app-parabolic-terminal-constraint.adoc[Exact terminal constraint for parabolic PDEs]
+** xref:applications/app-composyx-diffusion.adoc[Diffusion, 3D, weak scaling]
+** xref:applications/app-feelpp-parmmg.adoc[Parallel remeshing with ParMmg]

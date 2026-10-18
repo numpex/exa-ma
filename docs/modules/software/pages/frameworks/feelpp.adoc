@@ -2,12 +2,12 @@
 :page-layout: default
 :page-tags: framework, software, feelpp
 :page-illustration: fa-solid fa-cube
-:description: Feel++ - Feel++ is an open-source, high-performance C++ framework for solving complex PDE and ODE-based mathematical models using advanced Galerkin methods (fi...
+:description: Feel++ - Feel++ is an open-source, high-performance C++23 framework for solving complex PDE and ODE-based mathematical models using advanced Galerkin methods (...
 :icons: font
 :page-work-packages: WP1, WP2, WP3, WP4, WP5, WP6, WP7
 
 [.lead]
-Feel++ is an open-source, high-performance C++ framework for solving complex PDE and ODE-based mathematical models using advanced Galerkin methods (finite element, discontinuous Galerkin, and spectral methods) and efficient reduced-order modeling (ROM) techniques, including Reduced Basis (RB), Proper Orthogonal Decomposition (POD), and Empirical Interpolation Methods (EIM). It features specialized application toolboxes (CFD, CSM, FSI, thermoelectric, Maxwell), modern parallel computing with seamless Python integration (Pybind11), and extensive DevOps support (CI/CD, benchmarking, and containers). Feel++ is used in academia and industry for multiphysics simulations, inverse problems, uncertainty quantification, data assimilation, and machine learning applications.
+Feel++ is an open-source, high-performance C++23 framework for solving complex PDE and ODE-based mathematical models using advanced Galerkin methods (finite element, discontinuous Galerkin, and spectral methods) and efficient reduced-order modeling (ROM) techniques, including Reduced Basis (RB), Proper Orthogonal Decomposition (POD), and Empirical Interpolation Methods (EIM). It features specialized application toolboxes (CFD, CSM, FSI, thermoelectric, Maxwell), modern parallel computing with seamless Python integration (Pybind11), and extensive DevOps support (CI/CD, benchmarking, and containers). Feel++ is used in academia and industry for multiphysics simulations, inverse problems, uncertainty quantification, data assimilation, and machine learning applications.
 
 [.section-gray]
 --
@@ -140,7 +140,7 @@ _Benchmarked in this WP_
 
 == Technical Details
 
-*Languages:* C++17, Python, C++20, C++
+*Languages:* C++, C++23, Python
 
 *Parallelism:* MPI, Parallelism - C++17 and after, Task based - C++
 
@@ -151,7 +151,6 @@ _Benchmarked in this WP_
 == Partners
 
 *Lead Partner:* Unistra,
-Inria Grenoble,
 CNRS
 
 *Consortium:* Feel++ Consortium
@@ -180,8 +179,8 @@ The following Exa-MA applications use Feel++:
 | Extended Mini App
 | Benchmark Ready
 
-| xref:applications/app-freefem-parmmg.adoc[Fichera corner]
-| Extended Mini App
+| xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale]
+| Demonstrator
 | Benchmark Ready
 
 | xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
@@ -206,6 +205,10 @@ The following Exa-MA applications use Feel++:
 
 | xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control]
 | Extended Mini App
+| Planned
+
+| xref:applications/app-feelpp-parmmg.adoc[Parallel remeshing with ParMmg]
+| Mini App
 | Planned
 
 |===

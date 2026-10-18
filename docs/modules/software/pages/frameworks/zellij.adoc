@@ -124,3 +124,16 @@ _Benchmarked in this WP_
 
 *Consortium:* Université de Lille
 
+== Used by Applications
+
+The following Exa-MA applications use Zellij:
+
+[cols="2,2,1",options="header"]
+|===
+| Application | Type | Status
+
+| xref:applications/app-zellij.adoc[Zellij]
+| Mini App
+| Planned
+
+|===

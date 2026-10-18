@@ -67,7 +67,7 @@ ____
 | xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability]
 | icon:check[role=text-success]| icon:check[role=text-success]| 3
 | xref:frameworks/feelpp.adoc[*Feel++*]
-| Feel++ is an open-source, high-performance C++ framework for solving complex PDE...
+| Feel++ is an open-source, high-performance C++23 framework for solving complex P...
 | xref:ROOT:bottlenecks.adoc#b7[`B7` Exascale algorithms] xref:ROOT:bottlenecks.adoc#b2[`B2` Interconnect technology] xref:ROOT:bottlenecks.adoc#b11[`B11` Reproducibility and replicability] xref:ROOT:bottlenecks.adoc#b10[`B10` Scientific productivity] xref:ROOT:bottlenecks.adoc#b6[`B6` Data management] xref:ROOT:bottlenecks.adoc#b12[`B12` Pre/post processing] xref:ROOT:bottlenecks.adoc#b9[`B9` Resilience, robustness and accuracy]
 | icon:check[role=text-success]| icon:check[role=text-success]| 1,2,3,4,5,6,7
 | xref:frameworks/freefempp.adoc[*Freefem++*]
@@ -194,13 +194,14 @@ These frameworks power the following Exa-MA applications:
 ** xref:applications/app-feelpp-distance.adoc[Distance]
 ** xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis]
 ** xref:applications/app-feelpp-rb.adoc[Reduced Basis]
-** xref:applications/app-freefem-parmmg.adoc[Fichera corner]
+** xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale]
 ** xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca]
 ** xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation]
 ** xref:applications/app-feelpp-thermoelectric-1.adoc[Thermoelectric Coupling]
 ** xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet]
 ** xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion]
 ** xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control]
+** xref:applications/app-feelpp-parmmg.adoc[Parallel remeshing with ParMmg]
 
 * xref:frameworks/hpddm.adoc[HPDDM]
 ** xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
@@ -212,6 +213,9 @@ These frameworks power the following Exa-MA applications:
 * xref:frameworks/freefempp.adoc[Freefem++]
 ** xref:applications/app-freefem-parmmg.adoc[Fichera corner]
 ** xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM]
+
+* xref:frameworks/zellij.adoc[Zellij]
+** xref:applications/app-zellij.adoc[Zellij]
 
 * xref:frameworks/scimba.adoc[Scimba]
 ** xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN]
@@ -228,6 +232,9 @@ These frameworks power the following Exa-MA applications:
 ** xref:applications/app-samurai-burgers-2d.adoc[Adaptive Burgers 2D, weak scaling]
 ** xref:applications/app-samurai-euler-dmr.adoc[Double Mach reflection, strong scaling and scaled-resolution series]
 ** xref:applications/app-samurai-cwipi.adoc[high-order multistep coupling for solid -- fluid conjugate heat transfer]
+
+* xref:frameworks/composyx.adoc[Composyx]
+** xref:applications/app-composyx-diffusion.adoc[Diffusion, 3D, weak scaling]
 
 --
 

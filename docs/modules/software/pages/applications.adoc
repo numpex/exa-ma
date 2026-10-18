@@ -20,13 +20,13 @@ Exa-MA applications are benchmarks and demonstrators that exercise the capabilit
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:rocket[size=2x,role=text-primary] *29 Applications*
+icon:rocket[size=2x,role=text-primary] *31 Applications*
 
-9 ready for benchmarking
+11 ready for benchmarking
 ____
 
 ____
-icon:cube[size=2x,role=text-info] *13 Mini-Apps*
+icon:cube[size=2x,role=text-info] *14 Mini-Apps*
 
 Focused benchmarks testing specific algorithms
 ____
@@ -38,7 +38,7 @@ Multi-WP benchmarks with broader scope
 ____
 
 ____
-icon:desktop[size=2x,role=text-warning] *9 Demonstrators*
+icon:desktop[size=2x,role=text-warning] *10 Demonstrators*
 
 Full-scale application showcases
 ____
@@ -72,7 +72,7 @@ ____
 
 | xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale]
 | Demonstrator
-| | icon:clock[role=text-warning,title=planned]| WP1, WP3
+| Feel++| icon:check-circle[role=text-success,title=Benchmark Ready]| WP1, WP3
 
 | xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks]
 | Mini App
@@ -84,7 +84,7 @@ ____
 
 | xref:applications/app-zellij.adoc[Zellij]
 | Mini App
-| | icon:clock[role=text-warning,title=planned]| WP5
+| Zellij| icon:clock[role=text-warning,title=planned]| WP5
 
 | xref:applications/app-eki.adoc[EKI]
 | Mini App
@@ -166,6 +166,14 @@ ____
 | Demonstrator
 | PyTorch| icon:clock[role=text-warning,title=planned]| WP2
 
+| xref:applications/app-composyx-diffusion.adoc[Diffusion, 3D, weak scaling]
+| Demonstrator
+| Composyx| icon:check-circle[role=text-success,title=Benchmark Ready]| WP3
+
+| xref:applications/app-feelpp-parmmg.adoc[Parallel remeshing with ParMmg]
+| Mini App
+| Feel++, MMG/ParMMG| icon:clock[role=text-warning,title=planned]| WP1
+
 |===
 --
 
@@ -186,6 +194,8 @@ These applications are ready for performance evaluation on HPC systems:
 | Compute distance to a range of entities using FMM or BVH| Feel++| analytical-solution-match, strong-scalability...
 | xref:applications/app-feelpp-rb.adoc[*Reduced Basis*] icon:check-circle[role=text-success]
 | Test reduced basis methods and empirical interpolation| Feel++| benchmark-verification, offline-cost...
+| xref:applications/app-feelpp-toolbox.adoc[*Test Feel++ toolboxes at scale*] icon:check-circle[role=text-success]
+| test heat(eye2brain,thermalbridge), elasticity(nafems LE-10), thermoelectric(hifimagnet) and fluid (...| Feel++| time-to-solution, benchmark-verification
 | xref:applications/app-hpddm-dfn.adoc[*Preconditioning systems arising from discrete fracture networks*] icon:check-circle[role=text-success]
 | Test numerical and algorithm performance of PETSc preconditioners| HPDDM, PETSc...| strong-scalability, weak-scalability...
 | xref:applications/app-freefem-parmmg.adoc[*Fichera corner*] icon:check-circle[role=text-success]
@@ -196,6 +206,9 @@ These applications are ready for performance evaluation on HPC systems:
 | Test the parallel performance of triangle mesh autorefinement| CGAL| strong-scalability, weak-scalability...
 | xref:applications/app-feelpp-thermoelectric-1.adoc[*Thermoelectric Coupling*] icon:check-circle[role=text-success]
 | Demonstrate thermoelectric coupling in a hight field resistive magnet.| Feel++| time-to-solution, strong-scalability
+| xref:applications/app-composyx-diffusion.adoc[*Diffusion, 3D, weak scaling*] icon:check-circle[role=text-success]
+| Weak scalability of an unstructued FEM heterogeneous diffusion equation in a
+3D stratified medium.| Composyx| weak-scalability, gpu-acceleration
 |===
 --
 
@@ -206,7 +219,7 @@ These applications are ready for performance evaluation on HPC systems:
 
 icon:desktop[role=text-warning] *Demonstrators*
 
-* xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale] — N/A
+* xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale] icon:check-circle[role=text-success,title=Ready] — Feel++
 
 * xref:applications/app-freefem-shape-opt-fem.adoc[Shape Opt FEM] — Freefem++
 
@@ -223,6 +236,8 @@ icon:desktop[role=text-warning] *Demonstrators*
 * xref:applications/app-kinetic-moment-closure.adoc[Learned closure of the five-moment kinetic system] — PyTorch
 
 * xref:applications/app-parabolic-terminal-constraint.adoc[Exact terminal constraint for parabolic PDEs] — PyTorch
+
+* xref:applications/app-composyx-diffusion.adoc[Diffusion, 3D, weak scaling] icon:check-circle[role=text-success,title=Ready] — Composyx
 
 
 icon:cubes[role=text-success] *Extended Mini Apps*
@@ -248,7 +263,7 @@ icon:cube[role=text-info] *Mini Apps*
 
 * xref:applications/app-hpddm-dfn.adoc[Preconditioning systems arising from discrete fracture networks] icon:check-circle[role=text-success,title=Ready] — HPDDM, PETSc
 
-* xref:applications/app-zellij.adoc[Zellij] — N/A
+* xref:applications/app-zellij.adoc[Zellij] — Zellij
 
 * xref:applications/app-eki.adoc[EKI] — PETSc, GeoS
 
@@ -268,6 +283,8 @@ icon:cube[role=text-info] *Mini Apps*
 
 * xref:applications/app-samurai-cwipi.adoc[high-order multistep coupling for solid -- fluid conjugate heat transfer] — PETSc, Samurai
 
+* xref:applications/app-feelpp-parmmg.adoc[Parallel remeshing with ParMmg] — Feel++, MMG/ParMMG
+
 
 --
 
@@ -283,19 +300,24 @@ icon:cube[role=text-info] *Mini Apps*
 * xref:applications/app-cgal-cdt2.adoc[Constrained Delaunay Triangulation 2D] (Mini App)
 * xref:applications/app-cgal-ccdt3.adoc[Conforming Constrained Delaunay Triangulation 3D] (Mini App)
 
+*Composyx*
+
+* xref:applications/app-composyx-diffusion.adoc[Diffusion, 3D, weak scaling] (Demonstrator) icon:check-circle[role=text-success]
+
 *Feel++*
 
 * xref:applications/app-feelpp-discr-1.adoc[Discretization] (Extended Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-distance.adoc[Distance] (Mini App) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-nlcrb.adoc[Nonlinear Compressive Reduced Basis] (Extended Mini App)
 * xref:applications/app-feelpp-rb.adoc[Reduced Basis] (Extended Mini App) icon:check-circle[role=text-success]
-* xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-feelpp-toolbox.adoc[Test Feel++ toolboxes at scale] (Demonstrator) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-thermomeca-1.adoc[thermomeca] (Demonstrator)
 * xref:applications/app-feelpp-ktirio-geom.adoc[Terrain Generation] (Demonstrator) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-thermoelectric-1.adoc[Thermoelectric Coupling] (Demonstrator) icon:check-circle[role=text-success]
 * xref:applications/app-feelpp-mi300a-fem.adoc[MI300A high-order finite-element kernels and HiFiMagnet] (Extended Mini App)
 * xref:applications/app-feelpp-hifimagnet-inverse.adoc[HiFiMagnet thermo-electric parameter inversion] (Extended Mini App)
 * xref:applications/app-feelpp-hifimagnet-optcontrol.adoc[HiFiMagnet robust optimal operation and control] (Extended Mini App)
+* xref:applications/app-feelpp-parmmg.adoc[Parallel remeshing with ParMmg] (Mini App)
 
 *Freefem++*
 
@@ -317,6 +339,7 @@ icon:cube[role=text-info] *Mini Apps*
 *MMG/ParMMG*
 
 * xref:applications/app-freefem-parmmg.adoc[Fichera corner] (Extended Mini App) icon:check-circle[role=text-success]
+* xref:applications/app-feelpp-parmmg.adoc[Parallel remeshing with ParMmg] (Mini App)
 
 *MUMPS*
 
@@ -363,6 +386,10 @@ icon:cube[role=text-info] *Mini Apps*
 * xref:applications/app-scimba-shape-opt-nn.adoc[Shape Opt NN] (Demonstrator)
 * xref:applications/app-scimba-plasma.adoc[Plasma NN] (Mini App)
 * xref:applications/app-scimba-hybrid.adoc[Hybrid  numerics] (Demonstrator)
+
+*Zellij*
+
+* xref:applications/app-zellij.adoc[Zellij] (Mini App)
 
 *pytorch*
 

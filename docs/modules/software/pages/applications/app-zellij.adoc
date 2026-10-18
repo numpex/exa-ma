@@ -38,7 +38,7 @@ ____
 ____
 icon:boxes-stacked[size=2x,role=text-purple] *Frameworks*
 
-N/A
+Zellij
 ____
 ====
 --
@@ -49,6 +49,12 @@ ____
 
 Solveur de problèmes d'optimisation continue
 
+
+== Technical Stack
+
+=== Frameworks Used
+
+* **Zellij**
 
 
 
