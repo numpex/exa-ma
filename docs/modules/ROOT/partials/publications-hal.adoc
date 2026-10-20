@@ -1,63 +1,63 @@
-// Total publications: 67
+// Total publications: 70
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *67*
+icon:list-ol[] Total publications: *70*
 
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:newspaper[size=2x,role=text-primary] *24* Article in journal
+icon:newspaper[size=2x,role=text-primary] *25* Article in journal
 
-_35.8% of total_
+_35.7% of total_
 ____
 
 ____
 icon:file-alt[size=2x,role=text-primary] *24* Preprint / unpublished
 
-_35.8% of total_
+_34.3% of total_
 ____
 
 ____
-icon:users[size=2x,role=text-primary] *14* Conference paper
+icon:users[size=2x,role=text-primary] *16* Conference paper
 
-_20.9% of total_
+_22.9% of total_
 ____
 
 ____
 icon:file-text[size=2x,role=text-primary] *2* Report
 
-_3.0% of total_
+_2.9% of total_
 ____
 
 ____
 icon:image[size=2x,role=text-primary] *2* Poster
 
-_3.0% of total_
+_2.9% of total_
 ____
 
 ____
 icon:user-graduate[size=2x,role=text-primary] *1* HDR
 
-_1.5% of total_
+_1.4% of total_
 ____
 
 ====
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *24* (35.8%)
-* icon:file-pdf[] Publications with PDF: *55* (82.1%)
-* icon:lock-open[] Open Access: *63* (94.0%)
+* icon:fingerprint[] Publications with DOI: *24* (34.3%)
+* icon:file-pdf[] Publications with PDF: *56* (80.0%)
+* icon:lock-open[] Open Access: *64* (91.4%)
 
 === icon:flask[] By Scientific Domain
 
 * icon:atom[] 0.info: *83*
-* icon:atom[] 0.math: *48*
+* icon:atom[] 0.math: *51*
 * icon:atom[] 1.math.math-na: *22*
 * icon:atom[] 1.info.info-na: *13*
-* icon:atom[] 1.info.info-ms: *9*
+* icon:atom[] 1.math.math-ap: *11*
 
 == Proposed WP distribution
 
@@ -68,10 +68,10 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 [cols="1,1,1",options="header"]
 |===
 |WP |Confirmed |Proposed
-|xref:workpackages/wp1.adoc[WP1] |5 |0
-|xref:workpackages/wp2.adoc[WP2] |6 |0
+|xref:workpackages/wp1.adoc[WP1] |5 |2
+|xref:workpackages/wp2.adoc[WP2] |6 |1
 |xref:workpackages/wp3.adoc[WP3] |22 |2
-|xref:workpackages/wp4.adoc[WP4] |0 |0
+|xref:workpackages/wp4.adoc[WP4] |0 |1
 |xref:workpackages/wp5.adoc[WP5] |4 |1
 |xref:workpackages/wp6.adoc[WP6] |0 |0
 |xref:workpackages/wp7.adoc[WP7] |0 |1
@@ -79,9 +79,9 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 
 == 2026
 
-_33 publications_
+_37 publications_
 
-_17 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
+_17 Preprint / unpublished, 13 Article in journal, 6 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
@@ -92,6 +92,12 @@ _17 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 |Article in journal
 |xref:workpackages/wp2.adoc[WP2], xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-05547894v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05547894/document[icon:file-pdf[title=PDF]]
+
+|*Model order reduction of HDG discretizations for harmonic wave propagation*
+|Hélène Barucq, Florian Faucher, Ha Pham et al.
+|Preprint / unpublished
+|xref:workpackages/wp1.adoc[WP1] (proposed), xref:workpackages/wp2.adoc[WP2] (proposed)
+|link:https://inria.hal.science/hal-05805324v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-05805324/document[icon:file-pdf[title=PDF]]
 
 |*Right Precision, Right Place: Runtime Adaptations for Mixed-Precision Cholesky Factorization*
 |Qinglei Cao, Theo Mary, Rabab Alomairy et al.
@@ -110,6 +116,12 @@ _17 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 |Preprint / unpublished
 |
 |link:https://hal.science/hal-05768497v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05768497/document[icon:file-pdf[title=PDF]]
+
+|*Quantitative inverse wave problem in passive imaging: towards applications to helioseismology*
+|Florian Faucher
+|Conference paper
+|xref:workpackages/wp1.adoc[WP1] (proposed)
+|link:https://inria.hal.science/hal-05805428v1[icon:external-link-alt[title=HAL]]
 
 |*Mixed precision accumulation for neural network inference guided by componentwise forward error analysis*
 |El-Mehdi El Arar, Silviu-Ioan Filip, Theo Mary et al.
@@ -159,11 +171,11 @@ _17 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 |xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-05658479v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05658479/document[icon:file-pdf[title=PDF]]
 
-|*Mixed Precision Compression of Tucker Decomposition*
-|Grey Ballard, Theo Mary, Bhisham Dev Verma
-|Preprint / unpublished
-|xref:workpackages/wp3.adoc[WP3]
-|link:https://hal.science/hal-05640503v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05640503/document[icon:file-pdf[title=PDF]]
+|*Quantitative passive imaging using cross-correlation data for helioseismology*
+|Florian Faucher
+|Conference paper
+|xref:workpackages/wp4.adoc[WP4] (proposed)
+|link:https://inria.hal.science/hal-05805332v1[icon:external-link-alt[title=HAL]]
 
 |*Doubly adaptive precision restarted GMRES*
 |Emmanuel Agullo, Luc Giraud, Pierre Jolivet et al.
@@ -249,6 +261,12 @@ _17 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 |xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-04525918v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04525918/document[icon:file-pdf[title=PDF]]
 
+|*3D Modeling of Solar Oscillations with Hybridizable Discontinuous Galerkin Method*
+|Florian Faucher, Ha Pham, Damien Fournier et al.
+|Article in journal
+|xref:workpackages/wp1.adoc[WP1]
+|link:https://hal.science/hal-05393820v1[icon:external-link-alt[title=HAL]]
+
 |*BLAS-based Mixed Precision Block Memory Accessor with Applications to Sparse Direct Solvers*
 |Patrick Amestoy, Antoine Jego, Jean-Yves L'Excellent et al.
 |Article in journal
@@ -279,6 +297,12 @@ _17 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 |
 |link:https://hal.science/hal-05763710v1[icon:external-link-alt[title=HAL]]
 
+|*Mixed Precision Compression of Tucker Decomposition*
+|Grey Ballard, Theo Mary, Bhisham Dev Verma
+|Article in journal
+|xref:workpackages/wp3.adoc[WP3]
+|link:https://hal.science/hal-05640503v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05640503/document[icon:file-pdf[title=PDF]]
+
 |*Bayesian and Partition-Based Optimization for Hyperparameter Optimization of LLM Fine-Tuning*
 |Nathan Davouse, El-Ghazali Talbi
 |Conference paper
@@ -289,19 +313,13 @@ _17 Preprint / unpublished, 11 Article in journal, 4 Conference paper, 1 Report_
 
 == 2025
 
-_24 publications_
+_23 publications_
 
-_9 Article in journal, 6 Conference paper, 5 Preprint / unpublished, 2 Poster, 1 HDR, 1 Report_
+_8 Article in journal, 6 Conference paper, 5 Preprint / unpublished, 2 Poster, 1 HDR, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
 |Title |Authors |Type |WPs |Links
-
-|*3D Modeling of Solar Oscillations with Hybridizable Discontinuous Galerkin Method*
-|Florian Faucher, Ha Pham, Damien Fournier et al.
-|Article in journal
-|xref:workpackages/wp1.adoc[WP1]
-|link:https://hal.science/hal-05393820v1[icon:external-link-alt[title=HAL]]
 
 |*Two-way Coupling of Fluid-Structure Interaction for Elastic Magneto-Swimmers: A Finite Element ALE Approach*
 |Christophe Prud'Homme, Vincent Chabannes, Laetitia Giraldi et al.
