@@ -1,40 +1,40 @@
-// Total publications: 70
+// Total publications: 72
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *70*
+icon:list-ol[] Total publications: *72*
 
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:newspaper[size=2x,role=text-primary] *25* Article in journal
+icon:newspaper[size=2x,role=text-primary] *26* Article in journal
 
-_35.7% of total_
+_36.1% of total_
 ____
 
 ____
 icon:file-alt[size=2x,role=text-primary] *24* Preprint / unpublished
 
-_34.3% of total_
+_33.3% of total_
 ____
 
 ____
-icon:users[size=2x,role=text-primary] *16* Conference paper
+icon:users[size=2x,role=text-primary] *17* Conference paper
 
-_22.9% of total_
+_23.6% of total_
 ____
 
 ____
 icon:file-text[size=2x,role=text-primary] *2* Report
 
-_2.9% of total_
+_2.8% of total_
 ____
 
 ____
 icon:image[size=2x,role=text-primary] *2* Poster
 
-_2.9% of total_
+_2.8% of total_
 ____
 
 ____
@@ -47,14 +47,14 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *24* (34.3%)
-* icon:file-pdf[] Publications with PDF: *56* (80.0%)
-* icon:lock-open[] Open Access: *64* (91.4%)
+* icon:fingerprint[] Publications with DOI: *25* (34.7%)
+* icon:file-pdf[] Publications with PDF: *58* (80.6%)
+* icon:lock-open[] Open Access: *66* (91.7%)
 
 === icon:flask[] By Scientific Domain
 
 * icon:atom[] 0.info: *83*
-* icon:atom[] 0.math: *51*
+* icon:atom[] 0.math: *53*
 * icon:atom[] 1.math.math-na: *22*
 * icon:atom[] 1.info.info-na: *13*
 * icon:atom[] 1.math.math-ap: *11*
@@ -63,7 +63,7 @@ ____
 
 Counts include proposed assignments from a read-only HAL/Zotero dry run. A publication may appear in several WPs; no proposal changes Zotero.
 
-*28* publications have no WP assignment or proposal; *4* records need duplicate review.
+*30* publications have no WP assignment or proposal; *4* records need duplicate review.
 
 [cols="1,1,1",options="header"]
 |===
@@ -79,9 +79,9 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 
 == 2026
 
-_37 publications_
+_39 publications_
 
-_17 Preprint / unpublished, 13 Article in journal, 6 Conference paper, 1 Report_
+_17 Preprint / unpublished, 14 Article in journal, 7 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
@@ -165,6 +165,12 @@ _17 Preprint / unpublished, 13 Article in journal, 6 Conference paper, 1 Report_
 |xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-05677812v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05677812/document[icon:file-pdf[title=PDF]]
 
+|*Comparison of numerical coupling strategies in time-harmonic elasto-acoustic simulations*
+|Pierre Dubois, Hélène Barucq, Florian Faucher et al.
+|Conference paper
+|
+|link:https://inria.hal.science/hal-05828305v1[icon:external-link-alt[title=HAL]] link:https://inria.hal.science/hal-05828305/document[icon:file-pdf[title=PDF]]
+
 |*Sharper Bounds on the Required Fixed-Point Precision for Emulating Floating-Point Matrix Multiplication*
 |Massimiliano Fasi, Theo Mary, Mantas Mikaitis
 |Preprint / unpublished
@@ -200,6 +206,12 @@ _17 Preprint / unpublished, 13 Article in journal, 6 Conference paper, 1 Report_
 |Conference paper
 |
 |link:https://hal.science/hal-05691573v1[icon:external-link-alt[title=HAL]]
+
+|*Linearized absorbing boundary conditions for Helmholtz eigenvalue problems*
+|Augustin Leclerc, Hélène Barucq, Marc Duruflé et al.
+|Article in journal
+|
+|link:https://hal.science/hal-05550756v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05550756/document[icon:file-pdf[title=PDF]]
 
 |*Floating-point autotuning with customized precisions: benchmarking and analysis*
 |Xinye Chen, Thibault Hilaire, Fabienne Jézéquel
