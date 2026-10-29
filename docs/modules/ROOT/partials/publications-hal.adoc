@@ -1,40 +1,40 @@
-// Total publications: 72
+// Total publications: 73
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *72*
+icon:list-ol[] Total publications: *73*
 
 [.grid.grid-2.gap-2]
 ====
 ____
-icon:newspaper[size=2x,role=text-primary] *26* Article in journal
+icon:newspaper[size=2x,role=text-primary] *27* Article in journal
 
-_36.1% of total_
+_37.0% of total_
 ____
 
 ____
 icon:file-alt[size=2x,role=text-primary] *24* Preprint / unpublished
 
-_33.3% of total_
+_32.9% of total_
 ____
 
 ____
 icon:users[size=2x,role=text-primary] *17* Conference paper
 
-_23.6% of total_
+_23.3% of total_
 ____
 
 ____
 icon:file-text[size=2x,role=text-primary] *2* Report
 
-_2.8% of total_
+_2.7% of total_
 ____
 
 ____
 icon:image[size=2x,role=text-primary] *2* Poster
 
-_2.8% of total_
+_2.7% of total_
 ____
 
 ____
@@ -47,15 +47,15 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *25* (34.7%)
-* icon:file-pdf[] Publications with PDF: *58* (80.6%)
-* icon:lock-open[] Open Access: *66* (91.7%)
+* icon:fingerprint[] Publications with DOI: *25* (34.2%)
+* icon:file-pdf[] Publications with PDF: *59* (80.8%)
+* icon:lock-open[] Open Access: *67* (91.8%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *83*
-* icon:atom[] 0.math: *53*
-* icon:atom[] 1.math.math-na: *22*
+* icon:atom[] 0.info: *84*
+* icon:atom[] 0.math: *54*
+* icon:atom[] 1.math.math-na: *23*
 * icon:atom[] 1.info.info-na: *13*
 * icon:atom[] 1.math.math-ap: *11*
 
@@ -70,18 +70,18 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 |WP |Confirmed |Proposed
 |xref:workpackages/wp1.adoc[WP1] |5 |2
 |xref:workpackages/wp2.adoc[WP2] |6 |1
-|xref:workpackages/wp3.adoc[WP3] |22 |2
+|xref:workpackages/wp3.adoc[WP3] |22 |3
 |xref:workpackages/wp4.adoc[WP4] |0 |1
 |xref:workpackages/wp5.adoc[WP5] |4 |1
 |xref:workpackages/wp6.adoc[WP6] |0 |0
-|xref:workpackages/wp7.adoc[WP7] |0 |1
+|xref:workpackages/wp7.adoc[WP7] |0 |2
 |===
 
 == 2026
 
-_39 publications_
+_40 publications_
 
-_17 Preprint / unpublished, 14 Article in journal, 7 Conference paper, 1 Report_
+_17 Preprint / unpublished, 15 Article in journal, 7 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
@@ -314,6 +314,12 @@ _17 Preprint / unpublished, 14 Article in journal, 7 Conference paper, 1 Report_
 |Article in journal
 |xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-05640503v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05640503/document[icon:file-pdf[title=PDF]]
+
+|*Floating-point autotuning with customized precisions*
+|Xinye Chen, Fabienne Jézéquel, Thibault Hilaire
+|Article in journal
+|xref:workpackages/wp3.adoc[WP3] (proposed), xref:workpackages/wp7.adoc[WP7] (proposed)
+|link:https://hal.science/hal-05651002v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05651002/document[icon:file-pdf[title=PDF]]
 
 |*Bayesian and Partition-Based Optimization for Hyperparameter Optimization of LLM Fine-Tuning*
 |Nathan Davouse, El-Ghazali Talbi
