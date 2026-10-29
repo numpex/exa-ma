@@ -1,0 +1,22 @@
+= Mathematics and digital technologies: skills, careers and sovereignty
+:page-tags: resource,news2026
+:page-parent: news.adoc
+:parent-catalogs: exama-home
+:page-illustration: fa-solid fa-comments
+:description: At FEM 2026, a round table on HPC–AI transformations, mathematical expertise, sovereignty and career prospects.
+:sectnums!:
+
+.Official Forum Entreprises & Mathématiques visual — https://forum-entreprises-maths.fr/public/pages/index.html[FEM]
+image::2026/fem/fem-2026.png[Forum Entreprises & Mathématiques,width=720,align=center]
+
+The convergence of high-performance computing (HPC), numerical simulation, artificial intelligence and agentic AI is changing scientific computing and the roles within it. Preserving and developing expertise in this rapidly evolving landscape is a matter of scientific and technological sovereignty. Mathematics plays a critical role in designing, understanding and validating scientific tools, and in retaining the ability to assess their capabilities and limitations.
+
+Organised as part of the *PEPR NumPEx programme’s* participation in the *Forum Entreprises & Mathématiques 2026*, the *“Mathématiques et numérique”* round table will bring together research and industry perspectives. It offers an opportunity to connect these transformations with evolving skills, responsibilities and the place of mathematicians in HPC–AI projects, while exploring career prospects for students, doctoral researchers and recent graduates.
+
+*Practical details —* Tuesday 17 November 2026, 10:00–11:00 CET · Farabeuf Amphitheatre, Campus des Cordeliers, Paris.
+
+*Moderator —* Christophe Prud’homme, Université de Strasbourg, Director of Cemosis and Exa-MA co-lead.
+
+*Speakers —* Emmanuel Franck (Inria) · Marianne Clausel (Université de Lorraine) · Augustin Parret-Freaud (Safran) · Raphaëlle Achach (GENCI / AI Factory France).
+
+https://forum-entreprises-maths.fr/public/pages/index.html[Event and registration information] · xref:news.adoc[News and events]

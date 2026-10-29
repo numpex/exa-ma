@@ -5,6 +5,25 @@
 events:
   # Upcoming events (displayed as cards)
 
+  - id: fem-2026-mathematics-digital
+    type: external
+    status: upcoming
+    title: "FEM 2026 — Mathematics and digital technologies: skills, careers and sovereignty"
+    date: "2026-11-17"
+    location: "Campus des Cordeliers, Paris — Farabeuf amphitheatre"
+    icon: "comments"
+    description: >
+      On 17 November, 10:00–11:00 CET, the “Mathématiques et numérique” round table
+      will connect HPC, numerical simulation, AI and agentic AI with mathematical
+      expertise, sovereignty, evolving responsibilities and career prospects.
+      Moderated by Christophe Prud’homme, with Emmanuel Franck, Marianne Clausel,
+      Augustin Parret-Freaud and Raphaëlle Achach, as part of NumPEx’s participation in FEM.
+    summary: >
+      Mathematics, HPC, simulation, AI and agentic AI: a round table on skills,
+      sovereignty, professional roles and career prospects at FEM in Paris.
+    page: "news/2026/20261117-fem.adoc"
+    link_text: "Round-table details and practical information →"
+
   - id: ga-2027
     type: assembly
     status: upcoming

@@ -1,11 +1,17 @@
-// Events: homepage selection from 26 configured events
+// Events: homepage selection from 27 configured events
 
 [.grid.grid-2.gap-2]
 ====
 [.text-center]
 ____
+icon:comments[size=2x,role=text-info] *Nov 17, 2026* | Campus des Cordeliers, Paris — Farabeuf amphitheatre +
+xref:news/2026/20261117-fem.adoc[FEM 2026 — Mathematics and digital technologies: skills, careers and sovereignty] - Mathematics, HPC, simulation, AI and agentic AI: a round table on skills, sovereignty, professional roles and career prospects at FEM in Paris.
+____
+
+[.text-center]
+____
 icon:users[size=2x,role=text-primary] *Jan 18-20, 2027* | Inria, Talence (Bordeaux) +
-xref:news/2027/20270118-20-ag.adoc[General Assembly 2027 — Bordeaux] - The next Exa-MA General Assembly will take place in Bordeaux from 18 to 20 January 2027. A first draft programme is available, with WP1–WP7 progress reviews, PhD and postdoctoral presentations, posters, round-table discussions, intra-WP...
+xref:news/2027/20270118-20-ag.adoc[General Assembly 2027 — Bordeaux] - Save the date for the next Exa-MA General Assembly in Bordeaux. Explore the first draft programme of WP updates, early-career research presentations, and discussions.
 ____
 
 [.text-center]
@@ -18,12 +24,6 @@ ____
 ____
 icon:code[size=2x,role=text-warning] *Jun 25, 2026* | Online (Zoom) +
 xref:news/2026/20260625-freefem-framework-webinar.adoc[FreeFEM{plus}{plus} Framework Webinar] - Framework webinar on FreeFEM{plus}{plus} as a high-level domain-specific language for finite-element multiphysics simulations, covering its software ecosystem, parallel capabilities, solver interfaces, and Exa-MA use cases.
-____
-
-[.text-center]
-____
-icon:industry[size=2x,role=text-warning] *Jun 23, 2026* | Online (Zoom) +
-xref:news/2026/20260623-trust-framework-webinar.adoc[TRUST Framework Webinar] - CEA TRUST framework discussion on GPU porting with Kokkos, PETSc/HYPRE/AMGX solver strategies, structured multigrid, HPDDM comparisons, mixed precision, TRUST-Uranie links, and MI300 access.
 ____
 
 ====
