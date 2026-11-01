@@ -1,28 +1,28 @@
-// Total publications: 73
+// Total publications: 74
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *73*
+icon:list-ol[] Total publications: *74*
 
 [.grid.grid-2.gap-2]
 ====
 ____
 icon:newspaper[size=2x,role=text-primary] *27* Article in journal
 
-_37.0% of total_
+_36.5% of total_
 ____
 
 ____
-icon:file-alt[size=2x,role=text-primary] *24* Preprint / unpublished
+icon:file-alt[size=2x,role=text-primary] *25* Preprint / unpublished
 
-_32.9% of total_
+_33.8% of total_
 ____
 
 ____
 icon:users[size=2x,role=text-primary] *17* Conference paper
 
-_23.3% of total_
+_23.0% of total_
 ____
 
 ____
@@ -47,13 +47,13 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *25* (34.2%)
-* icon:file-pdf[] Publications with PDF: *59* (80.8%)
-* icon:lock-open[] Open Access: *67* (91.8%)
+* icon:fingerprint[] Publications with DOI: *25* (33.8%)
+* icon:file-pdf[] Publications with PDF: *60* (81.1%)
+* icon:lock-open[] Open Access: *68* (91.9%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *84*
+* icon:atom[] 0.info: *85*
 * icon:atom[] 0.math: *54*
 * icon:atom[] 1.math.math-na: *23*
 * icon:atom[] 1.info.info-na: *13*
@@ -63,7 +63,7 @@ ____
 
 Counts include proposed assignments from a read-only HAL/Zotero dry run. A publication may appear in several WPs; no proposal changes Zotero.
 
-*30* publications have no WP assignment or proposal; *4* records need duplicate review.
+*31* publications have no WP assignment or proposal; *4* records need duplicate review.
 
 [cols="1,1,1",options="header"]
 |===
@@ -79,9 +79,9 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 
 == 2026
 
-_40 publications_
+_41 publications_
 
-_17 Preprint / unpublished, 15 Article in journal, 7 Conference paper, 1 Report_
+_18 Preprint / unpublished, 15 Article in journal, 7 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
@@ -194,6 +194,12 @@ _17 Preprint / unpublished, 15 Article in journal, 7 Conference paper, 1 Report_
 |Preprint / unpublished
 |xref:workpackages/wp3.adoc[WP3]
 |link:https://hal.science/hal-05640144v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05640144/document[icon:file-pdf[title=PDF]]
+
+|*Layered Reproducibility for High-Performance Computing Applications: The Feel++ and Ktirio Urban Buildings Case Study*
+|Javier Cladellas, Vincent Chabannes, Christophe Prud'Homme
+|Preprint / unpublished
+|
+|link:https://hal.science/hal-05845796v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05845796/document[icon:file-pdf[title=PDF]]
 
 |*Mixed Precision Perturbation Analysis of Two-Level Domain Decomposition Preconditioners*
 |Tom Caruso, Pierre Jolivet, Theo Mary et al.
