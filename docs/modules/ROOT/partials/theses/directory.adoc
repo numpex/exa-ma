@@ -3,7 +3,7 @@
 Registered thesis titles are reproduced in their original language and linked to theses.fr.
 A missing match does not mean that the person is not enrolled in a PhD.
 
-Last lookup: 2026-11-01.
+Last lookup: 2026-11-04.
 
 [.striped,cols="2,1,5,2",options="header"]
 |===
@@ -16,8 +16,8 @@ Last lookup: 2026-11-01.
 
 |Quentin Bergez
 |WP1, WP2
-|Title not yet verified on theses.fr
-|—
+|https://theses.fr/s445193[Accélération de l'inversion élastique par apprentissage de modèles réduits.]
+|Pau
 
 |Antoine Simon
 |WP1, WP3
