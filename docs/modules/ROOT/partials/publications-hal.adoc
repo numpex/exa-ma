@@ -157,7 +157,7 @@ _19 Preprint / unpublished, 16 Article in journal, 7 Conference paper, 1 Report_
 |Xinye Chen
 |Preprint / unpublished
 |
-|link:https://hal.science/hal-05705668v2[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05705668/document[icon:file-pdf[title=PDF]]
+|link:https://hal.science/hal-05705668v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05705668/document[icon:file-pdf[title=PDF]]
 
 |*A fixed-accuracy randomized interpolative decomposition based on pivoted QR*
 |Alfredo Buttari, Karmijn Hoogveld, Theo Mary
