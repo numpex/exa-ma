@@ -1,40 +1,40 @@
-// Total publications: 75
+// Total publications: 76
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *75*
+icon:list-ol[] Total publications: *76*
 
 [.grid.grid-2.gap-2]
 ====
 ____
+icon:file-alt[size=2x,role=text-primary] *27* Preprint / unpublished
+
+_35.5% of total_
+____
+
+____
 icon:newspaper[size=2x,role=text-primary] *27* Article in journal
 
-_36.0% of total_
-____
-
-____
-icon:file-alt[size=2x,role=text-primary] *26* Preprint / unpublished
-
-_34.7% of total_
+_35.5% of total_
 ____
 
 ____
 icon:users[size=2x,role=text-primary] *17* Conference paper
 
-_22.7% of total_
+_22.4% of total_
 ____
 
 ____
 icon:file-text[size=2x,role=text-primary] *2* Report
 
-_2.7% of total_
+_2.6% of total_
 ____
 
 ____
 icon:image[size=2x,role=text-primary] *2* Poster
 
-_2.7% of total_
+_2.6% of total_
 ____
 
 ____
@@ -47,23 +47,23 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *26* (34.7%)
-* icon:file-pdf[] Publications with PDF: *61* (81.3%)
-* icon:lock-open[] Open Access: *69* (92.0%)
+* icon:fingerprint[] Publications with DOI: *26* (34.2%)
+* icon:file-pdf[] Publications with PDF: *62* (81.6%)
+* icon:lock-open[] Open Access: *70* (92.1%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *85*
+* icon:atom[] 0.info: *87*
 * icon:atom[] 0.math: *55*
 * icon:atom[] 1.math.math-na: *24*
-* icon:atom[] 1.info.info-na: *13*
+* icon:atom[] 1.info.info-na: *14*
 * icon:atom[] 1.math.math-ap: *11*
 
 == Proposed WP distribution
 
 Counts include proposed assignments from a read-only HAL/Zotero dry run. A publication may appear in several WPs; no proposal changes Zotero.
 
-*31* publications have no WP assignment or proposal; *4* records need duplicate review.
+*32* publications have no WP assignment or proposal; *4* records need duplicate review.
 
 [cols="1,1,1",options="header"]
 |===
@@ -79,13 +79,19 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 
 == 2026
 
-_43 publications_
+_44 publications_
 
-_19 Preprint / unpublished, 16 Article in journal, 7 Conference paper, 1 Report_
+_20 Preprint / unpublished, 16 Article in journal, 7 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
 |Title |Authors |Type |WPs |Links
+
+|*Lord of the Precision, the Two Floats: Double-Word Arithmetic for Complex Numbers*
+|František Stloukal, Fabienne Jézéquel
+|Preprint / unpublished
+|
+|link:https://hal.science/hal-05854138v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05854138/document[icon:file-pdf[title=PDF]]
 
 |*Efficient Fine-Scale Simulation of Nonlinear Hyperelastic Lattice Structures*
 |Clément Guillet, Thibaut Hirschler, Pierre Jolivet et al.
