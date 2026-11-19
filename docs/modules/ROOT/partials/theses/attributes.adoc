@@ -11,7 +11,7 @@
 :thesis-erik-fabrizzi: https://theses.fr/s441580[Développement de préconditionneurs scalables pour des problèmes de point-selle non symétriques issus de la mécanique des solides et des fluides]
 :thesis-mael-olivier: Title not yet verified on theses.fr
 :thesis-tom-caruso: https://theses.fr/s405194[Solution de grands systèmes linéaires creux par des méthodes de décomposition de domaine à précision mixte]
-:thesis-bruno-latre: Title not yet verified on theses.fr
+:thesis-bruno-latre: https://theses.fr/s446600[Problèmes inverses bayésiens pour la propagation des ondes à l'échelle exascale et au-delà]
 :thesis-helene-henon: https://theses.fr/s371978[Assimilation de données variationnelles multi-fidélité pour les prévisions océaniques]
 :thesis-mohamed-doumbouya: https://theses.fr/s420025[Placement optimal bayésien de capteurs pour les modèles océaniques : une stratégie de majoration puis optimisation]
 :thesis-mahmoud-el-mehdi-el-khadiri: Title not yet verified on theses.fr
