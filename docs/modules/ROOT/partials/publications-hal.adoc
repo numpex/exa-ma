@@ -1,28 +1,28 @@
-// Total publications: 76
+// Total publications: 77
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *76*
+icon:list-ol[] Total publications: *77*
 
 [.grid.grid-2.gap-2]
 ====
 ____
 icon:newspaper[size=2x,role=text-primary] *28* Article in journal
 
-_36.8% of total_
+_36.4% of total_
 ____
 
 ____
-icon:file-alt[size=2x,role=text-primary] *26* Preprint / unpublished
+icon:file-alt[size=2x,role=text-primary] *27* Preprint / unpublished
 
-_34.2% of total_
+_35.1% of total_
 ____
 
 ____
 icon:users[size=2x,role=text-primary] *17* Conference paper
 
-_22.4% of total_
+_22.1% of total_
 ____
 
 ____
@@ -47,14 +47,14 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *27* (35.5%)
-* icon:file-pdf[] Publications with PDF: *62* (81.6%)
-* icon:lock-open[] Open Access: *70* (92.1%)
+* icon:fingerprint[] Publications with DOI: *27* (35.1%)
+* icon:file-pdf[] Publications with PDF: *63* (81.8%)
+* icon:lock-open[] Open Access: *71* (92.2%)
 
 === icon:flask[] By Scientific Domain
 
 * icon:atom[] 0.info: *87*
-* icon:atom[] 0.math: *55*
+* icon:atom[] 0.math: *56*
 * icon:atom[] 1.math.math-na: *24*
 * icon:atom[] 1.info.info-na: *14*
 * icon:atom[] 1.math.math-ap: *11*
@@ -70,8 +70,8 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 |WP |Confirmed |Proposed
 |xref:workpackages/wp1.adoc[WP1] |5 |3
 |xref:workpackages/wp2.adoc[WP2] |6 |1
-|xref:workpackages/wp3.adoc[WP3] |22 |3
-|xref:workpackages/wp4.adoc[WP4] |0 |1
+|xref:workpackages/wp3.adoc[WP3] |22 |4
+|xref:workpackages/wp4.adoc[WP4] |0 |2
 |xref:workpackages/wp5.adoc[WP5] |4 |1
 |xref:workpackages/wp6.adoc[WP6] |0 |0
 |xref:workpackages/wp7.adoc[WP7] |0 |2
@@ -79,13 +79,19 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 
 == 2026
 
-_44 publications_
+_45 publications_
 
-_19 Preprint / unpublished, 17 Article in journal, 7 Conference paper, 1 Report_
+_20 Preprint / unpublished, 17 Article in journal, 7 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
 |Title |Authors |Type |WPs |Links
+
+|*Multi-Fidelity Spectral Limited Memory Preconditioner for Variational Data Assimilation*
+|Hélène Hénon, Arthur Vidard
+|Preprint / unpublished
+|xref:workpackages/wp3.adoc[WP3] (proposed), xref:workpackages/wp4.adoc[WP4] (proposed)
+|link:https://hal.science/hal-05874752v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05874752/document[icon:file-pdf[title=PDF]]
 
 |*Lord of the Precision, the Two Floats: Double-Word Arithmetic for Complex Numbers*
 |František Stloukal, Fabienne Jézéquel
