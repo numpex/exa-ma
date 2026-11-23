@@ -1,28 +1,28 @@
-// Total publications: 77
+// Total publications: 78
 :sectnums!:
 
 == icon:chart-pie[] Overview
 
-icon:list-ol[] Total publications: *77*
+icon:list-ol[] Total publications: *78*
 
 [.grid.grid-2.gap-2]
 ====
 ____
+icon:file-alt[size=2x,role=text-primary] *28* Preprint / unpublished
+
+_35.9% of total_
+____
+
+____
 icon:newspaper[size=2x,role=text-primary] *28* Article in journal
 
-_36.4% of total_
-____
-
-____
-icon:file-alt[size=2x,role=text-primary] *27* Preprint / unpublished
-
-_35.1% of total_
+_35.9% of total_
 ____
 
 ____
 icon:users[size=2x,role=text-primary] *17* Conference paper
 
-_22.1% of total_
+_21.8% of total_
 ____
 
 ____
@@ -47,17 +47,17 @@ ____
 
 === icon:unlock[] Access & Availability
 
-* icon:fingerprint[] Publications with DOI: *27* (35.1%)
-* icon:file-pdf[] Publications with PDF: *63* (81.8%)
-* icon:lock-open[] Open Access: *71* (92.2%)
+* icon:fingerprint[] Publications with DOI: *27* (34.6%)
+* icon:file-pdf[] Publications with PDF: *64* (82.1%)
+* icon:lock-open[] Open Access: *72* (92.3%)
 
 === icon:flask[] By Scientific Domain
 
-* icon:atom[] 0.info: *87*
-* icon:atom[] 0.math: *56*
-* icon:atom[] 1.math.math-na: *24*
-* icon:atom[] 1.info.info-na: *14*
-* icon:atom[] 1.math.math-ap: *11*
+* icon:atom[] 0.info: *91*
+* icon:atom[] 0.math: *58*
+* icon:atom[] 1.math.math-na: *25*
+* icon:atom[] 1.info.info-na: *15*
+* icon:atom[] 1.info.info-ms: *11*
 
 == Proposed WP distribution
 
@@ -70,7 +70,7 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 |WP |Confirmed |Proposed
 |xref:workpackages/wp1.adoc[WP1] |5 |3
 |xref:workpackages/wp2.adoc[WP2] |6 |1
-|xref:workpackages/wp3.adoc[WP3] |22 |4
+|xref:workpackages/wp3.adoc[WP3] |22 |5
 |xref:workpackages/wp4.adoc[WP4] |0 |2
 |xref:workpackages/wp5.adoc[WP5] |4 |1
 |xref:workpackages/wp6.adoc[WP6] |0 |0
@@ -79,13 +79,19 @@ Counts include proposed assignments from a read-only HAL/Zotero dry run. A publi
 
 == 2026
 
-_45 publications_
+_46 publications_
 
-_20 Preprint / unpublished, 17 Article in journal, 7 Conference paper, 1 Report_
+_21 Preprint / unpublished, 17 Article in journal, 7 Conference paper, 1 Report_
 
 [.striped.publications,cols="4,2,2,1,1",options="header"]
 |===
 |Title |Authors |Type |WPs |Links
+
+|*Adaptive Precision Incomplete Matrix Factorization*
+|Andrew Lister, Theo Mary, Jennifer Scott
+|Preprint / unpublished
+|xref:workpackages/wp3.adoc[WP3] (proposed)
+|link:https://hal.science/hal-05874606v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05874606/document[icon:file-pdf[title=PDF]]
 
 |*Multi-Fidelity Spectral Limited Memory Preconditioner for Variational Data Assimilation*
 |Hélène Hénon, Arthur Vidard
