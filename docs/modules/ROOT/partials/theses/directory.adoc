@@ -3,7 +3,7 @@
 Registered thesis titles are reproduced in their original language and linked to theses.fr.
 A missing match does not mean that the person is not enrolled in a PhD.
 
-Last lookup: 2026-10-28.
+Last lookup: 2026-11-22.
 
 [.striped,cols="2,1,5,2",options="header"]
 |===
@@ -16,8 +16,8 @@ Last lookup: 2026-10-28.
 
 |Quentin Bergez
 |WP1, WP2
-|Title not yet verified on theses.fr
-|—
+|https://theses.fr/s445193[Accélération de l'inversion élastique par apprentissage de modèles réduits.]
+|Pau
 
 |Antoine Simon
 |WP1, WP3
@@ -71,8 +71,8 @@ Last lookup: 2026-10-28.
 
 |Bruno Latre
 |WP4
-|Title not yet verified on theses.fr
-|—
+|https://theses.fr/s446600[Problèmes inverses bayésiens pour la propagation des ondes à l'échelle exascale et au-delà]
+|Pau
 
 |Mohamed Doumbouya
 |WP4

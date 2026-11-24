@@ -1,6 +1,6 @@
 {
   "source": "https://theses.fr/api/v1/theses/recherche/",
-  "checked_on": "2026-10-28",
+  "checked_on": "2026-11-22",
   "people": {
     "alexandre-tabouret": {
       "name": "Alexandre Tabouret",
@@ -8,7 +8,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s421858",
@@ -25,7 +25,7 @@
         "status": "enCours",
         "enrolled_on": "01/10/2025",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     },
     "amaury-belieres": {
@@ -35,7 +35,7 @@
         "WP5"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s376581",
@@ -52,7 +52,7 @@
         "status": "enCours",
         "enrolled_on": "19/11/2023",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       },
       "identity_evidence": [
         "https://theses.fr/s376581",
@@ -66,7 +66,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s408792",
@@ -84,7 +84,7 @@
         "status": "enCours",
         "enrolled_on": "12/11/2024",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     },
     "brieuc-antoine-dit-urban": {
@@ -93,7 +93,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s400062",
@@ -110,7 +110,7 @@
         "status": "enCours",
         "enrolled_on": "01/10/2024",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     },
     "bruno-latre": {
@@ -119,8 +119,26 @@
         "WP4"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
-      "match_status": "not_verified"
+      "checked_on": "2026-11-22",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s446600",
+        "url": "https://theses.fr/s446600",
+        "title": "Problèmes inverses bayésiens pour la propagation des ondes à l'échelle exascale et au-delà",
+        "title_en": "Bayesian inverse problems for wave propagation at exascale and beyond",
+        "authors": [
+          "Bruno Latre"
+        ],
+        "supervisors": [
+          "Helene Barucq",
+          "Sébastien Tordeux"
+        ],
+        "institution": "Pau",
+        "status": "enCours",
+        "enrolled_on": "01/11/2026",
+        "defended_on": null,
+        "verified_on": "2026-11-22"
+      }
     },
     "daria-hrebenshchykova": {
       "name": "Daria Hrebenshchykova",
@@ -128,7 +146,7 @@
         "WP2"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s402717",
@@ -146,7 +164,7 @@
         "status": "enCours",
         "enrolled_on": "01/11/2024",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     },
     "erik-fabrizzi": {
@@ -155,7 +173,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s441580",
@@ -172,7 +190,7 @@
         "status": "enCours",
         "enrolled_on": "01/11/2026",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     },
     "hassan-ballout": {
@@ -181,7 +199,7 @@
         "WP2"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s402028",
@@ -198,7 +216,7 @@
         "status": "enCours",
         "enrolled_on": "11/10/2024",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     },
     "helene-henon": {
@@ -207,7 +225,7 @@
         "WP4"
       ],
       "funded_by_exama": false,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s371978",
@@ -224,7 +242,7 @@
         "status": "enCours",
         "enrolled_on": "01/11/2023",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     },
     "mael-olivier": {
@@ -233,7 +251,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "not_verified"
     },
     "mahamat-nassouradine": {
@@ -242,7 +260,7 @@
         "WP6"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s430084",
@@ -259,7 +277,7 @@
         "status": "enCours",
         "enrolled_on": "25/11/2024",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       },
       "identity_evidence": [
         "https://numpex.org/wp-content/uploads/sites/6/2025/03/3-New-recruit-Mahamat-Nassouradine.pdf",
@@ -272,7 +290,7 @@
         "WP5"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "not_verified"
     },
     "mohamed-doumbouya": {
@@ -281,7 +299,7 @@
         "WP4"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s420025",
@@ -298,7 +316,7 @@
         "status": "enCours",
         "enrolled_on": "01/10/2025",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     },
     "pierre-dubois": {
@@ -307,7 +325,7 @@
         "WP1"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s405665",
@@ -325,7 +343,7 @@
         "status": "enCours",
         "enrolled_on": "04/11/2024",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     },
     "quentin-bergez": {
@@ -335,8 +353,25 @@
         "WP2"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
-      "match_status": "not_verified"
+      "checked_on": "2026-11-22",
+      "match_status": "matched",
+      "thesis": {
+        "id": "s445193",
+        "url": "https://theses.fr/s445193",
+        "title": "Accélération de l'inversion élastique par apprentissage de modèles réduits.",
+        "title_en": "Accelerating elastic inversion through reduced-order model learning.",
+        "authors": [
+          "Quentin Bergez"
+        ],
+        "supervisors": [
+          "Helene Barucq"
+        ],
+        "institution": "Pau",
+        "status": "enCours",
+        "enrolled_on": "01/11/2026",
+        "defended_on": null,
+        "verified_on": "2026-11-22"
+      }
     },
     "tom-caruso": {
       "name": "Tom Caruso",
@@ -344,7 +379,7 @@
         "WP3"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s405194",
@@ -363,7 +398,7 @@
         "status": "enCours",
         "enrolled_on": "01/11/2024",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     },
     "vincent-italiano": {
@@ -372,7 +407,7 @@
         "WP2"
       ],
       "funded_by_exama": true,
-      "checked_on": "2026-10-28",
+      "checked_on": "2026-11-22",
       "match_status": "matched",
       "thesis": {
         "id": "s423444",
@@ -390,7 +425,7 @@
         "status": "enCours",
         "enrolled_on": "03/10/2025",
         "defended_on": null,
-        "verified_on": "2026-10-28"
+        "verified_on": "2026-11-22"
       }
     }
   }

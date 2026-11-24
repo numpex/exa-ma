@@ -5,7 +5,7 @@
 [.text-center]
 ____
 icon:comments[size=2x,role=text-info] *Nov 17, 2026* | Campus des Cordeliers, Paris — Farabeuf amphitheatre +
-xref:news/2026/20261117-fem.adoc[FEM 2026 — Mathematics and digital technologies: skills, careers and sovereignty] - Mathematics, HPC, simulation, AI and agentic AI: a round table on skills, sovereignty, professional roles and career prospects at FEM in Paris.
+xref:news/2026/20261117-fem.adoc[FEM 2026 — Mathematics and digital technologies: skills, careers and sovereignty] - On 17 November, 10:00–11:00 CET, the “Mathématiques et numérique” round table will connect HPC, numerical simulation, AI and agentic AI with mathematical expertise, sovereignty, evolving responsibilities and career prospects. Moderated by...
 ____
 
 [.text-center]
