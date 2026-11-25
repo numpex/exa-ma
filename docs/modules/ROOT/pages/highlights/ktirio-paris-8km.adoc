@@ -14,7 +14,9 @@ It traced *471,821,112 solar rays* and took *14 min 55 s* of wall time on Discov
 
 == The Paris 8 km domain
 
-The case covers an *8 km radius* around Notre-Dame. The flyover illustrates the study domain and shows buildings alongside the Seine, parks and streets.
+The case covers an *8 km radius* around Notre-Dame.
+The videos and images on this page are ParaView visualisations of the computational mesh.
+In the flyover and the city views below, the mesh is coloured by land use. The legend identifies categories such as water, roads and parks.
 
 [subs=attributes]
 ++++
@@ -23,7 +25,7 @@ The case covers an *8 km radius* around Notre-Dame. The flyover illustrates the 
     <source src="{imagesdir}/ktirio-paris-8km/paris-8km.mp4" type="video/mp4">
     <a href="{imagesdir}/ktirio-paris-8km/paris-8km.mp4">Download the video</a>
   </video>
-  <figcaption>The camera descends towards the Louvre, follows the Seine past Pont Neuf to Notre-Dame, then climbs back to a view of the Paris 8 km domain.</figcaption>
+  <figcaption>This ParaView flyover shows the computational mesh coloured by land use. The camera descends towards the Louvre, follows the Seine past Pont Neuf to Notre-Dame, then climbs back to a view of the Paris 8 km domain.</figcaption>
 </figure>
 ++++
 
@@ -104,7 +106,7 @@ Watch the shadows move across roofs and facades while the Seine and green spaces
     <source src="{imagesdir}/ktirio-paris-8km/solar-day.mp4" type="video/mp4">
     <a href="{imagesdir}/ktirio-paris-8km/solar-day.mp4">Download the solar shading video</a>
   </video>
-  <figcaption>Land use and cast shadows near Notre-Dame. Building colours show the fraction of direct-sun rays blocked, using the scale above.</figcaption>
+  <figcaption>Near Notre-Dame, the ground mesh is coloured by land use. On buildings, the colours show the fraction of direct-sun rays blocked, using the scale above.</figcaption>
 </figure>
 ++++
 
