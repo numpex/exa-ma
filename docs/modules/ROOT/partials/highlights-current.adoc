@@ -31,4 +31,13 @@ icon:city[size=3x,role=text-warning]
 Cemosis ran the Paris 8 km case on the EuroHPC Discoverer supercomputer
 ____
 
+[.text-center]
+____
+icon:cubes[size=3x,role=text-primary]
+
+*xref:highlights/hyperelastic-lattice-structures.adoc[Faster simulations of how lattice materials deform]*
+
+Guillet et al. simulated the compression of a 3D lattice with 864 cells about five times faster and with roughly half the memory.
+____
+
 ====

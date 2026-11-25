@@ -37,6 +37,16 @@ highlights:
     summary: "Cemosis ran the Paris 8 km case on the EuroHPC Discoverer supercomputer"
     page: "highlights/ktirio-paris-8km.adoc"
 
+  - id: hyperelastic-lattice-structures
+    year: 2026
+    status: current
+    frozen: false
+    title: "Faster simulations of how lattice materials deform"
+    icon: "cubes"
+    role: "text-primary"
+    summary: "Guillet et al. simulated the compression of a 3D lattice with 864 cells about five times faster and with roughly half the memory."
+    page: "highlights/hyperelastic-lattice-structures.adoc"
+
   - id: geneo-speedup
     year: 2025
     status: archived
