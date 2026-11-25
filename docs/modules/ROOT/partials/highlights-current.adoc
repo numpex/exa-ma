@@ -40,4 +40,13 @@ icon:cubes[size=3x,role=text-primary]
 Guillet et al. simulated the compression of a 3D lattice with 864 cells about five times faster and with roughly half the memory.
 ____
 
+[.text-center]
+____
+icon:wave-square[size=3x,role=text-info]
+
+*xref:highlights/concace-mixed-precision.adoc[Mixed-precision solvers for acoustic simulations]*
+
+CONCACE reached its accuracy target in fewer than 20 iterations on 100 acoustic test cases and benchmarked Composyx on up to 512 GPUs.
+____
+
 ====

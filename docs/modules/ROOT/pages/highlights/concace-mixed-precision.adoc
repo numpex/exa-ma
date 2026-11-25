@@ -1,0 +1,34 @@
+= Mixed-precision solvers for acoustic simulations
+:page-layout: default
+:page-tags: highlight
+:parent-catalogs: highlights-2026
+:page-illustration: fa-solid fa-wave-square
+:description: CONCACE combines a 32-bit neural preconditioner with a 64-bit acoustic solver and benchmarks Composyx on up to 512 GPUs.
+:sectnums!:
+
+[.lead]
+CONCACE, the joint team between Inria, Airbus Central R&T and Cerfacs, combined a neural preconditioner applied in 32-bit arithmetic with a 64-bit iterative solver for acoustic wave propagation.
+On 100 two-dimensional Helmholtz test cases, the solver reached a backward error of 10^-10^ in *fewer than 20 iterations*.
+
+== A neural preconditioner for acoustic wave propagation
+
+The team trained the neural network using the residual of the discretised equation. The same trained network served as a preconditioner across the test cases.
+For those cases, GMRES without a preconditioner was still above the same error threshold after 1,024 iterations.
+The results connect Exa-MA's work on xref:workpackages/wp2.adoc[scientific machine learning in WP2] and xref:workpackages/wp3.adoc[iterative solvers in WP3].
+
+Luc Giraud, Carola Kruse, Paul Mycek, Maksym Shpakovych and Yanfei Xiang, _Neural Network Preconditioning: A Case Study for the Solution of the Parametric Helmholtz Equation_, Numerical Linear Algebra with Applications 33 (2026), e70123. https://doi.org/10.1002/nla.70123[Journal article] · https://arxiv.org/html/2610.16542v1#S4.F7[Convergence curves in Figure 7]
+
+== Composyx on AMD and NVIDIA GPUs
+
+In a separate benchmark, the CONCACE team used Composyx 1.7.1 with an additive Schwarz preconditioner for heterogeneous diffusion in three dimensions.
+The benchmark measured weak scaling by growing the problem with the number of GPUs while keeping the number of subdomains per node fixed.
+
+* *Adastra (HIP).* 89% weak-scaling efficiency on 128 nodes with 512 AMD MI250X GPUs and 217.5 million degrees of freedom.
+* *Jean Zay (CUDA).* 88% weak-scaling efficiency on 32 nodes with 128 NVIDIA V100 GPUs.
+
+.Composyx timings by solver phase on Adastra. The additive Schwarz results are marked AS.
+image::concace-mixed-precision/composyx-adastra-weak-scaling.png[Stacked timings across seven preconditioner configurations and increasing subdomain counts on Adastra,1200,link=self]
+
+Figure from the Exa-MA Consortium's https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-wp7.pdf#page=83[D7.1 application fiche on the Composyx diffusion benchmark] (v2.98.1, Figure 4.6), licensed under https://creativecommons.org/licenses/by/4.0/[CC BY 4.0].
+
+xref:results.adoc#highlights-current[Back to Results and Impact]
