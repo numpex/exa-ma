@@ -40,6 +40,7 @@ jobs:
         # Harvests: HAL publications, GitHub releases, team data, and news/events
         exa-ma-harvest all
     - name: Commit updated partials
+      if: github.ref == 'refs/heads/main'
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -57,6 +58,7 @@ jobs:
         rm -rf cache/ui
         npm run antora
     - name: Deploy
+      if: github.ref == 'refs/heads/main'
       uses: JamesIves/github-pages-deploy-action@v4
       with:
           token: ${{ secrets.GITHUB_TOKEN }}
