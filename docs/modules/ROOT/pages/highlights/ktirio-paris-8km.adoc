@@ -7,7 +7,9 @@
 :sectnums!:
 
 [.lead]
-Cemosis at the University of Strasbourg ran Ktirio Urban Building on *32,768 MPI ranks* on the EuroHPC Discoverer supercomputer for the Paris 8 km case.
+Cemosis ran Ktirio Urban Building on *32,768 MPI ranks* on the EuroHPC Discoverer supercomputer for the Paris 8 km case.
+
+*Benchmark team.* Cemosis at IRMA (Université de Strasbourg and CNRS).
 
 The run simulated *207,624 buildings* on a detailed mesh of *68,207,038 triangles*, split into *32,768 partitions*.
 It traced *471,821,112 solar rays* and took *14 min 55 s* of wall time on Discoverer, with field output disabled.

@@ -7,8 +7,10 @@
 :sectnums!:
 
 [.lead]
-CONCACE, the joint team between Inria, Airbus Central R&T and Cerfacs, combined a neural preconditioner applied in 32-bit arithmetic with a 64-bit iterative solver for acoustic wave propagation.
+The CONCACE team combined a neural preconditioner applied in 32-bit arithmetic with a 64-bit iterative solver for acoustic wave propagation.
 On 100 two-dimensional Helmholtz test cases, the solver reached a backward error of 10^-10^ in *fewer than 20 iterations*.
+
+*Team partners.* Inria, Airbus Central R&T and Cerfacs. https://concace.gitlabpages.inria.fr/[CONCACE project team]
 
 == A neural preconditioner for acoustic wave propagation
 
