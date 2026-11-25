@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Paris 8 km on Discoverer: Ktirio Urban Building at 32,768 MPI ranks :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
+    <link rel="canonical" href="https://numpex.github.io/exa-ma/highlights/ktirio-paris-8km.html">
+    <meta name="description" content="Cemosis at the University of Strasbourg ran the Paris 8 km urban energy modelling case on 32,768 MPI ranks on Discoverer.">
+    <meta name="generator" content="Antora 3.1.14">
+<link rel="stylesheet" href="../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- Custom badge styles for external partners -->
+<style>
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+.badge-cofunding {
+    background-color: #dc3545;
+    color: white;
+}
+.badge-funded {
+    background-color: #28a745;
+    color: white;
+}
+</style>
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+<script src="../_/js/vendor/tabs-block-extension.js"></script>
+<script src="../_/js/vendor/tabs-block-behavior.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      bold: ["{\\bf #1}",1],
+      calTh: "{\\mathcal{T}_h}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      card: ["{\\operatorname{card}(#1)}",1],
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      diam: "{\\operatorname{diam}}",
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      disp: ["{\\mathbf{#1}}",1],
+      domain: "{\\Omega}",
+      ds: "",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      F:"{\\mathcal{F}}",
+      geo: "{\\mathrm{geo}}",
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      Id: "{\\mathcal{I}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      n:"{\\mathbf{n}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Next: "{\\mathrm{n}}",
+      nf: "{n_f}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      NN: "{\\mathbb N}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Nso: "{N_{\\mathrm{so}}}",
+      opdim: "{\\operatorname{dim}}",
+      p: "{\\mathrm{p}}",
+      P:"{\\mathcal{P}}",
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      poly: ["{\\mathbb{#1}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      q:"{\\mathbf{q}}",
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      RR: "{\\mathbb R}",
+      set: ["{\\left\\{#1\\right\\}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      T:"{\\mathcal{T}}",
+      tr: "{\\operatorname{tr}}",
+      v:"{\\mathbf{v}}",
+      vertiii: ["\\left\\vert\\kern-0.25ex\\left\\vert\\kern-0.25ex\\left\\vert #1 \\right\\vert\\kern-0.25ex\\right\\vert\\kern-0.25ex\\right\\vert",1]
+  },
+  extensions: ["mhchem.js"] 
+  }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML'></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+<script>var uiRootPath = '../_'</script>
+
+  </head>
+  <body class="article alternating-sections">
+<header class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-template-project" style="border-top: 4px solid #9E9E9E">
+        <div class="navbar-brand">
+            <div class="navbar-item feelpp-logo">
+                <a href="https://numpex.github.io/exa-ma">Exa-MA -- Methods and Algorithms for Exascale Computing</a>
+            </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <!--<div class="navbar-item">
+                    <a href="https://docs.feelpp.org/">Documentation Reference</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a class="navbar-brand"  href="https://www.economie.gouv.fr/france-2030">
+                        <img class="cemosis-logo" style="height: 50px; max-height: none !important; width: auto;" src="../_/img/Logotype-rouge-bleu.png" alt="France2030 logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<a href="#" class="menu-expand-toggle"></a>
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Exa-MA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html"><span class="icon"><i class="fa fa-home"></i></span> Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../overview.html"><span class="icon"><i class="fa fa-mountain-sun"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text"><span class="icon"><i class="fa fa-info-circle"></i></span> About Exa-MA</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../bottlenecks.html"><span class="icon"><i class="fa fa-triangle-exclamation"></i></span> Exascale Bottlenecks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../team.html"><span class="icon"><i class="fa fa-users"></i></span> WP Leaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../team-recruited.html"><span class="icon"><i class="fa fa-user-graduate"></i></span> Recruited Personnel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../consortium.html"><span class="icon"><i class="fa fa-building"></i></span> Consortium</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../external-partners.html"><span class="icon"><i class="fa fa-handshake"></i></span> External Partners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../sab.html"><span class="icon"><i class="fa fa-clipboard-list"></i></span> Scientific Advisory Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../collaborative-projects.html"><span class="icon"><i class="fa fa-project-diagram"></i></span> Collaborative Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../contact.html"><span class="icon"><i class="fa fa-envelope"></i></span> Contact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../workpackages.html"><span class="icon"><i class="fa fa-cubes"></i></span> Work Packages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages.html"><span class="icon"><i class="fa fa-list"></i></span> Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp0.html"><span class="icon"><i class="fa fa-tasks"></i></span> WP0: Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp1.html"><span class="icon"><i class="fa fa-th"></i></span> WP1: Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp2.html"><span class="icon"><i class="fa fa-brain"></i></span> WP2: MOR &amp; SciML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp3.html"><span class="icon"><i class="fa fa-calculator"></i></span> WP3: Solvers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp4.html"><span class="icon"><i class="fa fa-chart-line"></i></span> WP4: Inverse Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp5.html"><span class="icon"><i class="fa fa-bullseye"></i></span> WP5: Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp6.html"><span class="icon"><i class="fa fa-random"></i></span> WP6: UQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../workpackages/wp7.html"><span class="icon"><i class="fa fa-rocket"></i></span> WP7: Software &amp; Benchmarking</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../results.html"><span class="icon"><i class="fa fa-trophy"></i></span> Results and Impact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../deliverables.html"><span class="icon"><i class="fa fa-book"></i></span> Deliverables and Publications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../publications-hal.html"><span class="icon"><i class="fa fa-file-alt"></i></span> Publications (HAL)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../training.html"><span class="icon"><i class="fa fa-graduation-cap"></i></span> Training</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../news.html"><span class="icon"><i class="fa fa-newspaper"></i></span> News and Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../news/archive.html"><span class="icon"><i class="fa fa-archive"></i></span> Archive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workgroups.html"><span class="icon"><i class="fa fa-network-wired"></i></span> NumPEx Work Groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../software/index.html"><span class="icon"><i class="fa fa-laptop-code"></i></span> WP7: Software &amp; Benchmarking</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/concepts.html">Concepts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../software/frameworks.html"><span class="icon"><i class="fa fa-cubes"></i></span> Frameworks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/arcane.html">Arcane</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/cgal.html">CGAL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/composyx.html">Composyx</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/feelpp.html">Feel++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/freefempp.html">Freefem++</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/funtides.html">FUnTiDES</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/hawen.html">Hawen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/hpddm.html">HPDDM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/mahyco.html">MaHyCo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/samurai.html">Samurai</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/scimba.html">Scimba</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/trust_platform.html">TRUST Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/uranie.html">Uranie</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/frameworks/zellij.html">Zellij</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../software/applications.html"><span class="icon"><i class="fa fa-rocket"></i></span> Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-discr-1.html">Discretization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-distance.html">Distance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-nlcrb.html">Nonlinear Compressive Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-rb.html">Reduced Basis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-toolbox.html">Test Feel++ toolboxes at scale</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-hpddm-dfn.html">Preconditioning systems arising from discrete fracture networks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-freefem-parmmg.html">Fichera corner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-zellij.html">Zellij</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-eki.html">EKI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-freefem-shape-opt-fem.html">Shape Opt FEM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-scimba-shape-opt-nn.html">Shape Opt NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-scimba-plasma.html">Plasma NN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-scimba-hybrid.html">Hybrid  numerics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-thermomeca-1.html">thermomeca</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-ktirio-geom.html">Terrain Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-cgal-autorefine.html">Mesh autorefinement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-cgal-cdt2.html">Constrained Delaunay Triangulation 2D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-cgal-ccdt3.html">Conforming Constrained Delaunay Triangulation 3D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-petsc-mixed-precision.html">Impact of mixed-precision on PETSc solvers and preconditioners</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-thermoelectric-1.html">Thermoelectric Coupling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-mi300a-fem.html">MI300A high-order finite-element kernels and HiFiMagnet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-hifimagnet-inverse.html">HiFiMagnet thermo-electric parameter inversion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-hifimagnet-optcontrol.html">HiFiMagnet robust optimal operation and control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-samurai-burgers-2d.html">Adaptive Burgers 2D, weak scaling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-samurai-euler-dmr.html">Double Mach reflection, strong scaling and scaled-resolution series</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-samurai-cwipi.html">high-order multistep coupling for solid&#8201;&#8212;&#8201;fluid conjugate heat transfer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-kinetic-moment-closure.html">Learned closure of the five-moment kinetic system</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-parabolic-terminal-constraint.html">Exact terminal constraint for parabolic PDEs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-composyx-diffusion.html">Diffusion, 3D, weak scaling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../software/applications/app-feelpp-parmmg.html">Parallel remeshing with ParMmg</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Exa-MA</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+      <li class="component is-current">
+        <a class="title" href="../index.html">Exa-MA</a>
+      </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+    <a href="../index.html" class="home-link"></a>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Exa-MA</a></li>
+    <li><a href="ktirio-paris-8km.html">Paris 8 km on Discoverer: Ktirio Urban Building at 32,768 MPI ranks</a></li>
+  </ul>
+</nav>
+
+  
+    <div class="edit-this-page"><a href="https://github.com/numpex/exa-ma/edit/main/docs/modules/ROOT/pages/highlights/ktirio-paris-8km.adoc">Edit this Page</a></div>
+  
+  <div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="../_/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Paris 8 km on Discoverer: Ktirio Urban Building at 32,768 MPI ranks</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Cemosis at the University of Strasbourg ran Ktirio Urban Building on <strong>32,768 MPI ranks</strong> on the EuroHPC Discoverer supercomputer for the Paris 8 km case.</p>
+</div>
+<div class="paragraph">
+<p>The run simulated <strong>207,624 buildings</strong> on a detailed mesh of <strong>68,207,038 triangles</strong>, split into <strong>32,768 partitions</strong>.
+It traced <strong>471,821,112 solar rays</strong> and took <strong>14 min 55 s</strong> of wall time on Discoverer, with field output disabled.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_paris_8_km_domain"><a class="anchor" href="#_the_paris_8_km_domain"></a>1. The Paris 8 km domain</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The case covers an <strong>8 km radius</strong> around Notre-Dame. The flyover illustrates the study domain and shows buildings alongside the Seine, parks and streets.</p>
+</div>
+<figure style="margin:1rem 1rem 0">
+  <video width="1920" height="1080" controls playsinline preload="none" style="display:block;width:100%;height:auto" poster="../_images/ktirio-paris-8km/paris-8km.webp" aria-label="Paris flyover zooming in on the Louvre, Pont Neuf and Notre-Dame">
+    <source src="../_images/ktirio-paris-8km/paris-8km.mp4" type="video/mp4">
+    <a href="../_images/ktirio-paris-8km/paris-8km.mp4">Download the video</a>
+  </video>
+  <figcaption>The camera descends towards the Louvre, follows the Seine past Pont Neuf to Notre-Dame, then climbs back to a view of the Paris 8 km domain.</figcaption>
+</figure>
+<p><strong>Map legend</strong></p>
+<ul aria-label="Map legend" style="list-style:none;padding-left:0;margin:0 0 1.4em;display:flex;flex-wrap:wrap;gap:0.35em 1.1em;font-size:0.92em">
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#e0d8c9"></span>Buildings</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#3d86b0"></span>Water</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#939196"></span>Roads</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#dacfc0"></span>Unclassified ground</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#669b59"></span>Parks</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#9ab56f"></span>Grass</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#487c50"></span>Woodland</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#819d6e"></span>Scrub</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#979f5a"></span>Agriculture</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#3a6741"></span>Trees (close-ups)</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#5db295"></span>Sports pitches</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#8fa479"></span>Cemeteries</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#d9b26e"></span>Schools</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#c88489"></span>Hospitals</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#ba8f99"></span>Commercial areas</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#9d97a6"></span>Industrial areas</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#a0978e"></span>Parking</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#e0bc84"></span>Sand</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#948677"></span>Rock</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#a69f79"></span>Multiple uses</li>
+</ul>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/ktirio-paris-8km/notre-dame.png" alt="The mesh of Notre-Dame and Île de la Cité between two branches of the Seine" width="1200">
+</div>
+<div class="title">Figure 1. The Île de la Cité and the streets around Notre-Dame.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/ktirio-paris-8km/louvre.png" alt="The Louvre and the surrounding mesh beside the Seine and the Tuileries Gardens" width="1200">
+</div>
+<div class="title">Figure 2. The Louvre and the edge of the Tuileries Gardens along the Seine.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/ktirio-paris-8km/arc-de-triomphe.png" alt="The Arc de Triomphe surrounded by avenues radiating from Place Charles de Gaulle" width="1200">
+</div>
+<div class="title">Figure 3. The Arc de Triomphe and its radiating avenues.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/ktirio-paris-8km/vers-la-defense.png" alt="The two branches of the Seine around Île de Puteaux and Pont de Neuilly" width="1200">
+</div>
+<div class="title">Figure 4. Towards La Défense at the western side of the domain. The view reaches Pont de Neuilly, while the Grande Arche lies beyond the disk.</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_solar_masks_matter_at_city_scale"><a class="anchor" href="#_why_solar_masks_matter_at_city_scale"></a>2. Why solar masks matter at city scale</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A solar mask uses ray intersections to estimate how much of a surface can receive direct sunlight.
+Evaluating more points on each face increases the number of queries, and an occluding building can belong to a different part of the distributed mesh.
+This is one reason mesh partitioning and communication matter for the Ktirio workflow.</p>
+</div>
+<div class="paragraph">
+<p>Both views show the area around Notre-Dame on <strong>15 July 2025 at 09:00 in Paris (UTC+2)</strong>.
+The sun is almost due east, <strong>86.7° clockwise from north</strong> and <strong>26.5° above the horizon</strong>.
+The camera looks towards Notre-Dame from the southeast. The <strong>N</strong> arrow points north and the <strong>☀</strong> arrow points towards the sun in the plane of the map.</p>
+</div>
+<div class="paragraph">
+<p>The reference ignores obstructions, so yellow shows surfaces whose angle allows them to receive direct sun.
+In the view with cast shadows, yellow indicates that all seven sample rays reach the sun, while dark purple indicates that buildings block all seven.
+Blue-grey marks surfaces whose angle prevents them from receiving direct sun at this time. It has the same meaning in both views.
+The calculation uses ray tracing on the Paris 8 km LoD1 mesh. Only building surfaces can block rays in this example.</p>
+</div>
+<p><strong>Fraction of direct-sun rays blocked</strong><br />0 % <span style="display:inline-flex;border:1px solid #697077"><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#ffce5b"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#f9a93f"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#ec8440"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#d5605c"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#b1437a"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#8a3887"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#613576"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#322c57"></span></span> 100 %</p>
+<p><span aria-hidden="true" style="display:inline-block;width:0.85em;height:0.85em;margin-right:0.35em;border:1px solid #697077;background:#758ba2"></span>Surface angle prevents direct sun<br /><span aria-hidden="true" style="display:inline-block;width:0.85em;height:0.85em;margin-right:0.35em;border:1px solid #697077;background:#d3d4d9"></span>Mesh orientation undetermined</p>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="../_images/ktirio-paris-8km/solar-without.png"><img src="../_images/ktirio-paris-8km/solar-without.png" alt="Reference near Notre-Dame with surfaces that could receive sunlight in yellow and the north and sun arrows" width="1200"></a>
+</div>
+<div class="title">Figure 5. Reference without cast shadows. Yellow marks surfaces whose angle allows direct sun.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="../_images/ktirio-paris-8km/solar-with.png"><img src="../_images/ktirio-paris-8km/solar-with.png" alt="Cast shadows near Notre-Dame with yellow for clear paths to the sun and purple for blocked paths" width="1200"></a>
+</div>
+<div class="title">Figure 6. With cast shadows. Dark purple marks surfaces where buildings block all seven rays.</div>
+</div>
+<div class="sect2">
+<h3 id="_from_morning_to_afternoon_above_notre_dame"><a class="anchor" href="#_from_morning_to_afternoon_above_notre_dame"></a>2.1. From morning to afternoon above Notre-Dame</h3>
+<div class="paragraph">
+<p>The camera and the land-use colours stay fixed. The animation uses <strong>17 independently calculated states</strong> at 30-minute intervals, from <strong>09:00 to 17:00 Paris time</strong> on 15 July 2025.
+Each frame shows the time, the direction of the sun and its elevation.
+Watch the shadows move across roofs and facades while the Seine and green spaces stay visible.</p>
+</div>
+<figure style="margin:1rem 1rem 0">
+  <video width="1920" height="1080" controls playsinline preload="none" style="display:block;width:100%;height:auto" poster="../_images/ktirio-paris-8km/solar-day.webp" aria-label="Building shadows from 09:00 to 17:00 above Notre-Dame, with land-use colours">
+    <source src="../_images/ktirio-paris-8km/solar-day.mp4" type="video/mp4">
+    <a href="../_images/ktirio-paris-8km/solar-day.mp4">Download the solar shading video</a>
+  </video>
+  <figcaption>Land use and cast shadows near Notre-Dame. Building colours show the fraction of direct-sun rays blocked, using the scale above.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_distributed_ray_intersections"><a class="anchor" href="#_distributed_ray_intersections"></a>3. Distributed ray intersections</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://github.com/feelpp/feelpp/releases/tag/v0.112.0">Feel&#43;&#43; 0.112.0</a> adds top-level (TLAS) and bottom-level (BLAS) acceleration structures for fast ray intersections across many MPI ranks.
+The top level identifies the mesh partitions a ray may hit, and the bottom level tests it against triangles on those ranks.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_collaboration_and_sources"><a class="anchor" href="#_collaboration_and_sources"></a>4. Collaboration and sources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ktirio Urban Building is developed by Cemosis at the University of Strasbourg as the Urban Building pilot of the European HiDALGO2 Centre of Excellence.
+It is also a demonstrator for NumPEx.
+This case builds on the topic introduced in Exa-MA’s earlier <a href="urban-meshing.html" class="xref page">urban meshing highlight</a>, which documents contributions from Cemosis, Inria and GeometryFactory to reconstruction with Ktirio and CGAL.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.eurohpc-ju.europa.eu/supercomputers/our-supercomputers_en">Discoverer at EuroHPC JU</a></p>
+</li>
+<li>
+<p><a href="https://girder.math.unistra.fr/#item/6af53b552db54981c18bb927">Paris 8 km v1.2.0 geographic data and meshes</a></p>
+</li>
+<li>
+<p><a href="https://www.hidalgo2.eu/urban-building-model/">HiDALGO2 Urban Building pilot</a> and <a href="https://www.hidalgo2.eu/advancements-and-internships-in-urban-building-energy-simulation/">its role as a NumPEx demonstrator</a></p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2407.14535">Ktirio Urban Building for city energy simulation, PPAM 2024</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Building data include contributions from OpenStreetMap (© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>) and Microsoft ML Buildings.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acknowledgements"><a class="anchor" href="#_acknowledgements"></a>5. Acknowledgements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We acknowledge the EuroHPC Joint Undertaking for awarding us access to Discoverer at Sofia Tech Park, Bulgaria (allocation <code>ehpc-dev-2026d08-036</code>).</p>
+</div>
+<div class="paragraph">
+<p><a href="../results.html" class="xref page">Back to Results and Impact</a></p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer" style="border-top: 2px solid #e9e9e9; background-color: #fafafa; padding-bottom: 2em; padding-top: 2em;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+        <div>
+            <a href="https://www.economie.gouv.fr/france-2030">
+                <img src="../_/img/Logotype-rouge-bleu.png" alt="France 2030 logo" height="50">
+            </a>
+        </div>
+        <span style="font-size: 0.8rem; color: #9e9e9e">© 2026 <a href="https://www.cemosis.fr" style="text-decoration: underline;">Cemosis</a>, Université de Strasbourg</span>
+        <div style="font-size: 0.75rem; color: #757575; margin-top: 0.5em;">
+            <a href="../privacy.html" style="color: #757575; text-decoration: none; margin-right: 1.5em;">Privacy Notice</a>
+            <a href="../legal-notice.html" style="color: #757575; text-decoration: none;">Legal Notice</a>
+        </div>
+    </div>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+
+
+<!-- Font Awesome JS removed to use webfont icons only -->
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="../_/js/vendor/lunr.js"></script>
+
+<script type="text/javascript">
+function toggleFullScreen() {
+   var doc = window.document;
+   var docEl = doc.documentElement;
+
+   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+       requestFullScreen.call(docEl);
+   }
+   else {
+       cancelFullScreen.call(doc);
+   }
+}
+</script>
+  </body>
+</html>
