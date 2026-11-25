@@ -17,7 +17,6 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Any
-from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -249,6 +248,10 @@ def build_query_params(
     return params
 
 
+class HALFetchError(RuntimeError):
+    """HAL did not return a complete publication result."""
+
+
 def fetch_publications(
     query: str = DEFAULT_QUERY,
     domains: list[str] | None = None,
@@ -280,15 +283,8 @@ def fetch_publications(
             request = Request(url, headers={"Accept": "application/json"})
             with urlopen(request, timeout=30) as response:
                 data = json.loads(response.read().decode("utf-8"))
-        except HTTPError as e:
-            print(f"HTTP Error {e.code}: {e.reason}", file=sys.stderr)
-            sys.exit(1)
-        except URLError as e:
-            print(f"URL Error: {e.reason}", file=sys.stderr)
-            sys.exit(1)
-        except json.JSONDecodeError as e:
-            print(f"JSON decode error: {e}", file=sys.stderr)
-            sys.exit(1)
+        except (OSError, json.JSONDecodeError) as error:
+            raise HALFetchError(f"HAL request failed: {error}") from error
 
         response_data = data["response"]
         if total is None:
@@ -297,11 +293,11 @@ def fetch_publications(
                 print(f"Found {total} publications")
 
         if response_data["numFound"] != total:
-            raise RuntimeError("HAL results changed during pagination; retry the harvest")
+            raise HALFetchError("HAL results changed during pagination; retry the harvest")
         docs = response_data["docs"]
         if not docs:
             if start < total:
-                raise RuntimeError("Incomplete HAL response; refusing partial harvest")
+                raise HALFetchError("Incomplete HAL response; refusing partial harvest")
             break
 
         all_publications.extend(docs)
@@ -775,7 +771,7 @@ def output_bibtex(publications: list[dict], output_file: str | Path | None = Non
     return content
 
 
-def main():
+def main() -> int:
     """Main entry point for HAL harvesting."""
     parser = argparse.ArgumentParser(description="Harvest Exa-MA publications from HAL archive")
     parser.add_argument("-o", "--output", help="Output file path (prints to stdout if not specified)")
@@ -851,15 +847,15 @@ def main():
     if args.domains:
         domains = [d.strip() for d in args.domains.split(",")]
 
-    publications = fetch_publications(
-        query=query,
-        domains=domains,
-        years=years,
-    )
+    try:
+        publications = fetch_publications(query=query, domains=domains, years=years)
+    except HALFetchError as error:
+        print(error, file=sys.stderr)
+        return 1
 
     if not publications:
         print("No publications found.")
-        return
+        return 0
 
     print(f"\nTotal publications retrieved: {len(publications)}")
 
@@ -877,6 +873,8 @@ def main():
         }
         output_funcs[args.format](publications, args.output)
 
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
