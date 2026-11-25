@@ -47,6 +47,16 @@ highlights:
     summary: "Guillet et al. simulated the compression of a 3D lattice with 864 cells about five times faster and with roughly half the memory."
     page: "highlights/hyperelastic-lattice-structures.adoc"
 
+  - id: concace-mixed-precision
+    year: 2026
+    status: current
+    frozen: false
+    title: "Mixed-precision solvers for acoustic simulations"
+    icon: "wave-square"
+    role: "text-info"
+    summary: "CONCACE reached its accuracy target in fewer than 20 iterations on 100 acoustic test cases and benchmarked Composyx on up to 512 GPUs."
+    page: "highlights/concace-mixed-precision.adoc"
+
   - id: geneo-speedup
     year: 2025
     status: archived
