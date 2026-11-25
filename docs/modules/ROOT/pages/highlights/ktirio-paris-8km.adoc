@@ -128,6 +128,9 @@ Building data include contributions from OpenStreetMap (© https://www.openstree
 
 == Acknowledgements
 
+This work received funding through the HiDALGO2 Centre of Excellence from the EuroHPC Joint Undertaking and Poland, Germany, Spain, Hungary, France and Greece under grant agreement 101093457.
+France 2030 also supported the work through the NumPEx projects Exa-MA (ANR-22-EXNU-0002) and Exa-DI (ANR-22-EXNU-0006).
+
 We acknowledge the EuroHPC Joint Undertaking for awarding us access to Discoverer at Sofia Tech Park, Bulgaria (allocation `ehpc-dev-2026d08-036`).
 
 xref:results.adoc[Back to Results and Impact]
