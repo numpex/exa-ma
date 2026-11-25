@@ -10,7 +10,22 @@ _Mega-deliverable consolidating Dx.1 reports from WP1 to WP7_
 |===
 |Version |Release |Date |Downloads
 
-|*v2.96.0* icon:star[role=text-warning,title=Latest]
+|*v2.98.1* icon:star[role=text-warning,title=Latest]
+|Release v2.98.1
+|2026-11-24
+|link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v2.98.1[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-d02.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-deliverables-v2.98.1.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-deliverables.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-wp1.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-wp2.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-wp3.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-wp4.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-wp5.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-wp6.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-wp7.pdf[icon:file-pdf[title=PDF,role=text-danger]]
+
+|*v2.98.0*
+|Release v2.98.0
+|2026-11-24
+|link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v2.98.0[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.0/exa-ma-d02.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.0/exa-ma-deliverables-v2.98.0.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.0/exa-ma-deliverables.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.0/exa-ma-wp1.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.0/exa-ma-wp2.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.0/exa-ma-wp3.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.0/exa-ma-wp4.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.0/exa-ma-wp5.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.0/exa-ma-wp6.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.0/exa-ma-wp7.pdf[icon:file-pdf[title=PDF,role=text-danger]]
+
+|*v2.97.0*
+|Release v2.97.0
+|2026-11-24
+|link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v2.97.0[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.97.0/exa-ma-d02.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.97.0/exa-ma-deliverables-v2.97.0.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.97.0/exa-ma-deliverables.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.97.0/exa-ma-wp1.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.97.0/exa-ma-wp2.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.97.0/exa-ma-wp3.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.97.0/exa-ma-wp4.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.97.0/exa-ma-wp5.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.97.0/exa-ma-wp6.pdf[icon:file-pdf[title=PDF,role=text-danger]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.97.0/exa-ma-wp7.pdf[icon:file-pdf[title=PDF,role=text-danger]]
+
+|*v2.96.0*
 |Release v2.96.0
 |2026-10-16
 |link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v2.96.0[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.96.0/exa-ma-deliverables-v2.96.0.pdf[icon:file-pdf[title=PDF,role=text-danger]]
@@ -24,16 +39,6 @@ _Mega-deliverable consolidating Dx.1 reports from WP1 to WP7_
 |Release v2.0.0
 |2025-11-12
 |link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v2.0.0[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v2.0.0/exa-ma-d7.1-v2.0.0.pdf[icon:file-pdf[title=PDF,role=text-danger]]
-
-|*v1.93.0*
-|Release v1.93.0
-|2025-10-23
-|link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v1.93.0[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v1.93.0/exa-ma-d7.1-v1.93.0.pdf[icon:file-pdf[title=PDF,role=text-danger]]
-
-|*v1.92.0*
-|Release v1.92.0
-|2025-10-22
-|link:https://github.com/numpex/exa-ma-d7.1/releases/tag/v1.92.0[icon:tag[title=Release]] link:https://github.com/numpex/exa-ma-d7.1/releases/download/v1.92.0/exa-ma-d7.1-v1.92.0.pdf[icon:file-pdf[title=PDF,role=text-danger]]
 
 |*v1.1.1* icon:bookmark[role=text-info,title=ANR Submission]
 |Release v1.1.1
