@@ -22,4 +22,13 @@ Black-box optimization for chemistry workloads, validated on LUMI from 3 to 560 
 `B7` Exascale algorithms `B8` Discovery, design, and decision algorithms `B10` Scientific productivity
 ____
 
+[.text-center]
+____
+icon:city[size=3x,role=text-warning]
+
+*xref:highlights/ktirio-paris-8km.adoc[Ktirio Urban Building at 32,768 MPI ranks]*
+
+Cemosis ran the Paris 8 km case on the EuroHPC Discoverer supercomputer
+____
+
 ====
