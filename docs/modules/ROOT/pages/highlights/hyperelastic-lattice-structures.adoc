@@ -10,6 +10,13 @@
 Clément Guillet and colleagues developed a solver that speeds up detailed simulations of how lattice materials deform under load.
 In a 3D compression test with 864 cells, it ran about *five times faster* and used roughly *half the memory* of the standard solver.
 
+*Author affiliations*
+
+* *Clément Guillet and Pierre Jolivet.* LIP6 (Sorbonne Université and CNRS). Guillet also lists CONCACE at the Inria Centre at the University of Bordeaux.
+* *Thibaut Hirschler.* ICB (Université Marie et Louis Pasteur, UTBM and CNRS).
+* *Pablo Antolin.* EPFL (Institute of Mathematics).
+* *Robin Bouclier.* ICA (Université de Toulouse, INSA Toulouse, IMT Mines Albi, ISAE-SUPAERO and CNRS), IMT (Université de Toulouse, INSA Toulouse and CNRS), and Institut universitaire de France.
+
 == How the solver uses repeating cells
 
 Lattice materials are built from many similar cells. Under large deformations, those cells can respond differently depending on their location in the structure.
