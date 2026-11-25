@@ -45,10 +45,9 @@ ____
 ====
 --
 
-[[highlights-current]]
 [[highlights-2026]]
 [discrete]
-== Latest Highlights: 2026
+== anchor:highlights-current[]Latest Highlights: 2026
 
 include::partial$highlights-current.adoc[]
 

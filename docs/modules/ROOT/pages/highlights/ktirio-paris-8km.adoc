@@ -1,0 +1,133 @@
+= Paris 8 km on Discoverer: Ktirio Urban Building at 32,768 MPI ranks
+:page-layout: default
+:page-tags: highlight
+:parent-catalogs: highlights-2026
+:page-illustration: fa-solid fa-city
+:description: Cemosis at the University of Strasbourg ran the Paris 8 km urban energy modelling case on 32,768 MPI ranks on Discoverer.
+:sectnums!:
+
+[.lead]
+Cemosis at the University of Strasbourg ran Ktirio Urban Building on *32,768 MPI ranks* on the EuroHPC Discoverer supercomputer for the Paris 8 km case.
+
+The run simulated *207,624 buildings* on a detailed mesh of *68,207,038 triangles*, split into *32,768 partitions*.
+It traced *471,821,112 solar rays* and took *14 min 55 s* of wall time on Discoverer, with field output disabled.
+
+== The Paris 8 km domain
+
+The case covers an *8 km radius* around Notre-Dame. The flyover illustrates the study domain and shows buildings alongside the Seine, parks and streets.
+
+[subs=attributes]
+++++
+<figure style="margin:1rem 1rem 0">
+  <video width="1920" height="1080" controls playsinline preload="none" style="display:block;width:100%;height:auto" poster="{imagesdir}/ktirio-paris-8km/paris-8km.webp" aria-label="Paris flyover zooming in on the Louvre, Pont Neuf and Notre-Dame">
+    <source src="{imagesdir}/ktirio-paris-8km/paris-8km.mp4" type="video/mp4">
+    <a href="{imagesdir}/ktirio-paris-8km/paris-8km.mp4">Download the video</a>
+  </video>
+  <figcaption>The camera descends towards the Louvre, follows the Seine past Pont Neuf to Notre-Dame, then climbs back to a view of the Paris 8 km domain.</figcaption>
+</figure>
+++++
+
+++++
+<p><strong>Map legend</strong></p>
+<ul aria-label="Map legend" style="list-style:none;padding-left:0;margin:0 0 1.4em;display:flex;flex-wrap:wrap;gap:0.35em 1.1em;font-size:0.92em">
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#e0d8c9"></span>Buildings</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#3d86b0"></span>Water</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#939196"></span>Roads</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#dacfc0"></span>Unclassified ground</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#669b59"></span>Parks</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#9ab56f"></span>Grass</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#487c50"></span>Woodland</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#819d6e"></span>Scrub</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#979f5a"></span>Agriculture</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#3a6741"></span>Trees (close-ups)</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#5db295"></span>Sports pitches</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#8fa479"></span>Cemeteries</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#d9b26e"></span>Schools</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#c88489"></span>Hospitals</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#ba8f99"></span>Commercial areas</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#9d97a6"></span>Industrial areas</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#a0978e"></span>Parking</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#e0bc84"></span>Sand</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#948677"></span>Rock</li>
+  <li style="margin:0"><span aria-hidden="true" style="display:inline-block;width:0.9em;height:0.9em;margin-right:0.35em;border:1px solid #697077;vertical-align:-0.06em;background:#a69f79"></span>Multiple uses</li>
+</ul>
+++++
+
+.The Île de la Cité and the streets around Notre-Dame.
+image::ktirio-paris-8km/notre-dame.png[The mesh of Notre-Dame and Île de la Cité between two branches of the Seine,1200]
+
+.The Louvre and the edge of the Tuileries Gardens along the Seine.
+image::ktirio-paris-8km/louvre.png[The Louvre and the surrounding mesh beside the Seine and the Tuileries Gardens,1200]
+
+.The Arc de Triomphe and its radiating avenues.
+image::ktirio-paris-8km/arc-de-triomphe.png[The Arc de Triomphe surrounded by avenues radiating from Place Charles de Gaulle,1200]
+
+.Towards La Défense at the western side of the domain. The view reaches Pont de Neuilly, while the Grande Arche lies beyond the disk.
+image::ktirio-paris-8km/vers-la-defense.png[The two branches of the Seine around Île de Puteaux and Pont de Neuilly,1200]
+
+== Why solar masks matter at city scale
+
+A solar mask uses ray intersections to estimate how much of a surface can receive direct sunlight.
+Evaluating more points on each face increases the number of queries, and an occluding building can belong to a different part of the distributed mesh.
+This is one reason mesh partitioning and communication matter for the Ktirio workflow.
+
+Both views show the area around Notre-Dame on *15 July 2025 at 09:00 in Paris (UTC+2)*.
+The sun is almost due east, *86.7° clockwise from north* and *26.5° above the horizon*.
+The camera looks towards Notre-Dame from the southeast. The *N* arrow points north and the *☀* arrow points towards the sun in the plane of the map.
+
+The reference ignores obstructions, so yellow shows surfaces whose angle allows them to receive direct sun.
+In the view with cast shadows, yellow indicates that all seven sample rays reach the sun, while dark purple indicates that buildings block all seven.
+Blue-grey marks surfaces whose angle prevents them from receiving direct sun at this time. It has the same meaning in both views.
+The calculation uses ray tracing on the Paris 8 km LoD1 mesh. Only building surfaces can block rays in this example.
+
+++++
+<p><strong>Fraction of direct-sun rays blocked</strong><br />0 % <span style="display:inline-flex;border:1px solid #697077"><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#ffce5b"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#f9a93f"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#ec8440"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#d5605c"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#b1437a"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#8a3887"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#613576"></span><span aria-hidden="true" style="width:0.95em;height:0.85em;background:#322c57"></span></span> 100 %</p>
+<p><span aria-hidden="true" style="display:inline-block;width:0.85em;height:0.85em;margin-right:0.35em;border:1px solid #697077;background:#758ba2"></span>Surface angle prevents direct sun<br /><span aria-hidden="true" style="display:inline-block;width:0.85em;height:0.85em;margin-right:0.35em;border:1px solid #697077;background:#d3d4d9"></span>Mesh orientation undetermined</p>
+++++
+
+.Reference without cast shadows. Yellow marks surfaces whose angle allows direct sun.
+image::ktirio-paris-8km/solar-without.png[Reference near Notre-Dame with surfaces that could receive sunlight in yellow and the north and sun arrows,1200,link=self]
+
+.With cast shadows. Dark purple marks surfaces where buildings block all seven rays.
+image::ktirio-paris-8km/solar-with.png[Cast shadows near Notre-Dame with yellow for clear paths to the sun and purple for blocked paths,1200,link=self]
+
+=== From morning to afternoon above Notre-Dame
+
+The camera and the land-use colours stay fixed. The animation uses *17 independently calculated states* at 30-minute intervals, from *09:00 to 17:00 Paris time* on 15 July 2025.
+Each frame shows the time, the direction of the sun and its elevation.
+Watch the shadows move across roofs and facades while the Seine and green spaces stay visible.
+
+[subs=attributes]
+++++
+<figure style="margin:1rem 1rem 0">
+  <video width="1920" height="1080" controls playsinline preload="none" style="display:block;width:100%;height:auto" poster="{imagesdir}/ktirio-paris-8km/solar-day.webp" aria-label="Building shadows from 09:00 to 17:00 above Notre-Dame, with land-use colours">
+    <source src="{imagesdir}/ktirio-paris-8km/solar-day.mp4" type="video/mp4">
+    <a href="{imagesdir}/ktirio-paris-8km/solar-day.mp4">Download the solar shading video</a>
+  </video>
+  <figcaption>Land use and cast shadows near Notre-Dame. Building colours show the fraction of direct-sun rays blocked, using the scale above.</figcaption>
+</figure>
+++++
+
+== Distributed ray intersections
+
+https://github.com/feelpp/feelpp/releases/tag/v0.112.0[Feel{plus}{plus} 0.112.0] adds top-level (TLAS) and bottom-level (BLAS) acceleration structures for fast ray intersections across many MPI ranks.
+The top level identifies the mesh partitions a ray may hit, and the bottom level tests it against triangles on those ranks.
+
+== Collaboration and sources
+
+Ktirio Urban Building is developed by Cemosis at the University of Strasbourg as the Urban Building pilot of the European HiDALGO2 Centre of Excellence.
+It is also a demonstrator for NumPEx.
+This case builds on the topic introduced in Exa-MA’s earlier xref:highlights/urban-meshing.adoc[urban meshing highlight], which documents contributions from Cemosis, Inria and GeometryFactory to reconstruction with Ktirio and CGAL.
+
+* https://www.eurohpc-ju.europa.eu/supercomputers/our-supercomputers_en[Discoverer at EuroHPC JU]
+* https://girder.math.unistra.fr/#item/6af53b552db54981c18bb927[Paris 8 km v1.2.0 geographic data and meshes]
+* https://www.hidalgo2.eu/urban-building-model/[HiDALGO2 Urban Building pilot] and https://www.hidalgo2.eu/advancements-and-internships-in-urban-building-energy-simulation/[its role as a NumPEx demonstrator]
+* https://arxiv.org/abs/2407.14535[Ktirio Urban Building for city energy simulation, PPAM 2024]
+
+Building data include contributions from OpenStreetMap (© https://www.openstreetmap.org/copyright[OpenStreetMap contributors]) and Microsoft ML Buildings.
+
+== Acknowledgements
+
+We acknowledge the EuroHPC Joint Undertaking for awarding us access to Discoverer at Sofia Tech Park, Bulgaria (allocation `ehpc-dev-2026d08-036`).
+
+xref:results.adoc[Back to Results and Impact]

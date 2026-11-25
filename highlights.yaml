@@ -27,6 +27,16 @@ highlights:
     page: "highlights/pfda-bs-vqe-lumi.adoc"
     attachment: "highlights/2026/pfda-bs-vqe-lumi.pdf"
 
+  - id: ktirio-paris-8km
+    year: 2026
+    status: current
+    frozen: false
+    title: "Ktirio Urban Building at 32,768 MPI ranks"
+    icon: "city"
+    role: "text-warning"
+    summary: "Cemosis ran the Paris 8 km case on the EuroHPC Discoverer supercomputer"
+    page: "highlights/ktirio-paris-8km.adoc"
+
   - id: geneo-speedup
     year: 2025
     status: archived
