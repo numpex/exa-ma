@@ -13,7 +13,9 @@ from pathlib import Path
 
 from . import __version__
 from .config import load_config as load_exama_config, ExaMAConfig
-from .hal import fetch_publications, output_asciidoc as hal_asciidoc, output_json as hal_json
+from .hal import HALFetchError, fetch_publications
+from .hal import output_asciidoc as hal_asciidoc
+from .hal import output_json as hal_json
 from .releases import (
     DEFAULT_CONFIG,
     fetch_all_deliverables,
@@ -79,11 +81,11 @@ def harvest_hal(args: argparse.Namespace) -> int:
     if args.domains:
         domains = [d.strip() for d in args.domains.split(",")]
 
-    publications = fetch_publications(
-        query=args.query,
-        domains=domains,
-        years=years,
-    )
+    try:
+        publications = fetch_publications(query=args.query, domains=domains, years=years)
+    except HALFetchError as error:
+        print(error, file=sys.stderr)
+        return 1
 
     if not publications:
         print("No publications found.")
@@ -369,7 +371,12 @@ def harvest_all(args: argparse.Namespace) -> int:
         years = [int(y.strip()) for y in args.years.split(",")]
         domains = [d.strip() for d in args.domains.split(",")] if args.domains else None
 
-    publications = fetch_publications(years=years, domains=domains)
+    hal_output = output_dir / "publications-hal.adoc"
+    try:
+        publications = fetch_publications(years=years, domains=domains)
+    except HALFetchError as error:
+        print(f"Warning: {error}", file=sys.stderr)
+        publications = []
 
     if publications:
         print(f"Found {len(publications)} publications")
@@ -377,7 +384,6 @@ def harvest_all(args: argparse.Namespace) -> int:
             from .zotero import fetch_workpackage_preview
 
             confirmed, proposed, conflicts = fetch_workpackage_preview(publications)
-            hal_output = output_dir / "publications-hal.adoc"
             hal_asciidoc(
                 publications, hal_output, partial=True, wp_assignments=confirmed,
                 proposed_wp_assignments=proposed, wp_conflicts=conflicts,
@@ -385,8 +391,10 @@ def harvest_all(args: argparse.Namespace) -> int:
         except Exception as error:
             print(f"Error retrieving Zotero WP assignments: {error}", file=sys.stderr)
             errors += 1
+    elif hal_output.is_file() and hal_output.stat().st_size > 0:
+        print(f"Warning: No fresh HAL publications. Using saved partial {hal_output}", file=sys.stderr)
     else:
-        print("No publications found!")
+        print(f"Error: No HAL publications and no saved partial at {hal_output}", file=sys.stderr)
         errors += 1
 
     # GitHub Releases
