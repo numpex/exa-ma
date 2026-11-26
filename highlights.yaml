@@ -54,7 +54,7 @@ highlights:
     title: "Mixed-precision solvers for acoustic simulations"
     icon: "wave-square"
     role: "text-info"
-    summary: "CONCACE reached its accuracy target in fewer than 20 iterations on 100 acoustic test cases and benchmarked Composyx on up to 512 GPUs."
+    summary: "CONCACE reached its accuracy target in fewer than 20 iterations on 100 acoustic test cases and extended the Composyx campaign to EuroHPC systems, reaching 4,096 GPUs."
     page: "highlights/concace-mixed-precision.adoc"
 
   - id: geneo-speedup

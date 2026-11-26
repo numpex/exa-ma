@@ -10,13 +10,6 @@
 Clément Guillet and colleagues developed a solver that speeds up detailed simulations of how lattice materials deform under load.
 In a 3D compression test with 864 cells, it ran about *five times faster* and used roughly *half the memory* of the standard solver.
 
-*Author affiliations*
-
-* *Clément Guillet and Pierre Jolivet.* LIP6 (Sorbonne Université and CNRS). Guillet also lists CONCACE at the Inria Centre at the University of Bordeaux.
-* *Thibaut Hirschler.* ICB (Université Marie et Louis Pasteur, UTBM and CNRS).
-* *Pablo Antolin.* EPFL (Institute of Mathematics).
-* *Robin Bouclier.* ICA (Université de Toulouse, INSA Toulouse, IMT Mines Albi, ISAE-SUPAERO and CNRS), IMT (Université de Toulouse, INSA Toulouse and CNRS), and Institut universitaire de France.
-
 == How the solver uses repeating cells
 
 Lattice materials are built from many similar cells. Under large deformations, those cells can respond differently depending on their location in the structure.
@@ -40,6 +33,16 @@ The reported execution times sum assembly and solve for the standard solver and 
 Clément Guillet, Thibaut Hirschler, Pierre Jolivet, Pablo Antolin and Robin Bouclier.
 _Efficient Fine-Scale Simulation of Nonlinear Hyperelastic Lattice Structures_, Computer Methods in Applied Mechanics and Engineering, 461 (2026), 119202. https://doi.org/10.1016/j.cma.2026.119202[Journal article]
 
-The research received support from Exa-MA through the NumPEx programme (ANR-22-EXNU-0002).
+== Acknowledgements
+
+The French National Research Agency (ANR) supported this work through AVATAR (ANR-22-CE46-0007) and the France 2030 grant for Exa-MA within NumPEx (ANR-22-EXNU-0002).
+The Swiss National Science Foundation supported Pablo Antolin through the FLAS~h~ project (grant 200021_214987).
+
+*Author affiliations*
+
+* *Clément Guillet and Pierre Jolivet.* LIP6 (Sorbonne Université and CNRS). Guillet also lists CONCACE at the Inria Centre at the University of Bordeaux.
+* *Thibaut Hirschler.* ICB (Université Marie et Louis Pasteur, UTBM and CNRS).
+* *Pablo Antolin.* EPFL (Institute of Mathematics).
+* *Robin Bouclier.* ICA (Université de Toulouse, INSA Toulouse, IMT Mines Albi, ISAE-SUPAERO and CNRS), IMT (Université de Toulouse, INSA Toulouse and CNRS), and Institut universitaire de France.
 
 xref:results.adoc#highlights-current[Back to Results and Impact]
