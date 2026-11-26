@@ -87,6 +87,12 @@ _21 Preprint / unpublished, 17 Article in journal, 7 Conference paper, 1 Report_
 |===
 |Title |Authors |Type |WPs |Links
 
+|*Multiword matrix multiplication over large finite fields in floating-point arithmetic*
+|Jérémy Berthomieu, Stef Graillat, Dimitri Lesnoff et al.
+|Preprint / unpublished
+|
+|link:https://hal.science/hal-04917201v4[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04917201/document[icon:file-pdf[title=PDF]]
+
 |*Adaptive Precision Incomplete Matrix Factorization*
 |Andrew Lister, Theo Mary, Jennifer Scott
 |Preprint / unpublished
@@ -272,12 +278,6 @@ _21 Preprint / unpublished, 17 Article in journal, 7 Conference paper, 1 Report_
 |Preprint / unpublished
 |
 |link:https://hal.science/hal-05501527v1[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-05501527/document[icon:file-pdf[title=PDF]]
-
-|*Multiword matrix multiplication over large finite fields in floating-point arithmetic*
-|Jérémy Berthomieu, Stef Graillat, Dimitri Lesnoff et al.
-|Preprint / unpublished
-|
-|link:https://hal.science/hal-04917201v3[icon:external-link-alt[title=HAL]] link:https://hal.science/hal-04917201/document[icon:file-pdf[title=PDF]]
 
 |*Neural network preconditioning: a case study for the solution of the parametric Helmholtz equation*
 |Luc Giraud, Carola Kruse, Paul Mycek et al.
