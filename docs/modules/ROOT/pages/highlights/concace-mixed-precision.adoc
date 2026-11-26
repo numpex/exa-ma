@@ -3,14 +3,12 @@
 :page-tags: highlight
 :parent-catalogs: highlights-2026
 :page-illustration: fa-solid fa-wave-square
-:description: CONCACE combines a 32-bit neural preconditioner with a 64-bit acoustic solver and benchmarks Composyx on up to 512 GPUs.
+:description: CONCACE combines a 32-bit neural preconditioner with a 64-bit acoustic solver and reports Composyx runs on up to 4,096 GPUs.
 :sectnums!:
 
 [.lead]
 The CONCACE team combined a neural preconditioner applied in 32-bit arithmetic with a 64-bit iterative solver for acoustic wave propagation.
 On 100 two-dimensional Helmholtz test cases, the solver reached a backward error of 10^-10^ in *fewer than 20 iterations*.
-
-*Team partners.* Inria, Airbus Central R&T and Cerfacs. https://concace.gitlabpages.inria.fr/[CONCACE project team]
 
 == A neural preconditioner for acoustic wave propagation
 
@@ -32,5 +30,18 @@ The benchmark measured weak scaling by growing the problem with the number of GP
 image::concace-mixed-precision/composyx-adastra-weak-scaling.png[Stacked timings across seven preconditioner configurations and increasing subdomain counts on Adastra,1200,link=self]
 
 Figure from the Exa-MA Consortium's https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-wp7.pdf#page=83[D7.1 application fiche on the Composyx diffusion benchmark] (v2.98.1, Figure 4.6), licensed under https://creativecommons.org/licenses/by/4.0/[CC BY 4.0].
+
+== From French systems to EuroHPC
+
+The CONCACE team extended its Composyx GPU campaign to JUPITER (NVIDIA) in Germany and LUMI (AMD) in Finland, with runs reaching *4,096 GPUs*.
+On LUMI, the team reports that Composyx solved a linear system with *more than one billion unknowns in 90 seconds*.
+The campaign is part of the team's preparation for Alice Recoque.
+
+== Acknowledgements
+
+CONCACE is a joint project team of Inria, Airbus Central R&T and Cerfacs.
+The work contributes to WP2 and WP3 of the France 2030 project Exa-MA within NumPEx (ANR-22-EXNU-0002). https://concace.gitlabpages.inria.fr/[CONCACE team and collaborations]
+
+The Composyx benchmarks used Adastra and Jean Zay in France and the EuroHPC systems JUPITER and LUMI.
 
 xref:results.adoc#highlights-current[Back to Results and Impact]

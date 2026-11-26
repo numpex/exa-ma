@@ -46,7 +46,7 @@ icon:wave-square[size=3x,role=text-info]
 
 *xref:highlights/concace-mixed-precision.adoc[Mixed-precision solvers for acoustic simulations]*
 
-CONCACE reached its accuracy target in fewer than 20 iterations on 100 acoustic test cases and benchmarked Composyx on up to 512 GPUs.
+CONCACE reached its accuracy target in fewer than 20 iterations on 100 acoustic test cases and extended the Composyx campaign to EuroHPC systems, reaching 4,096 GPUs.
 ____
 
 ====
