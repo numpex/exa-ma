@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Mixed-precision solvers for acoustic simulations :: Exa-MA -- Methods and Algorithms for Exascale Computing</title>
     <link rel="canonical" href="https://numpex.github.io/exa-ma/highlights/concace-mixed-precision.html">
-    <meta name="description" content="CONCACE combines a 32-bit neural preconditioner with a 64-bit acoustic solver and benchmarks Composyx on up to 512 GPUs.">
+    <meta name="description" content="CONCACE combines a 32-bit neural preconditioner with a 64-bit acoustic solver and reports Composyx runs on up to 4,096 GPUs.">
     <meta name="generator" content="Antora 3.1.14">
 <link rel="stylesheet" href="../_/css/site.css">
 
@@ -470,9 +470,6 @@ MathJax.Hub.Config({
 <p>The CONCACE team combined a neural preconditioner applied in 32-bit arithmetic with a 64-bit iterative solver for acoustic wave propagation.
 On 100 two-dimensional Helmholtz test cases, the solver reached a backward error of 10<sup>-10</sup> in <strong>fewer than 20 iterations</strong>.</p>
 </div>
-<div class="paragraph">
-<p><strong>Team partners.</strong> Inria, Airbus Central R&amp;T and Cerfacs. <a href="https://concace.gitlabpages.inria.fr/">CONCACE project team</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -513,6 +510,28 @@ The benchmark measured weak scaling by growing the problem with the number of GP
 </div>
 <div class="paragraph">
 <p>Figure from the Exa-MA Consortium&#8217;s <a href="https://github.com/numpex/exa-ma-d7.1/releases/download/v2.98.1/exa-ma-wp7.pdf#page=83">D7.1 application fiche on the Composyx diffusion benchmark</a> (v2.98.1, Figure 4.6), licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_french_systems_to_eurohpc"><a class="anchor" href="#_from_french_systems_to_eurohpc"></a>3. From French systems to EuroHPC</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The CONCACE team extended its Composyx GPU campaign to JUPITER (NVIDIA) in Germany and LUMI (AMD) in Finland, with runs reaching <strong>4,096 GPUs</strong>.
+On LUMI, the team reports that Composyx solved a linear system with <strong>more than one billion unknowns in 90 seconds</strong>.
+The campaign is part of the team&#8217;s preparation for Alice Recoque.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acknowledgements"><a class="anchor" href="#_acknowledgements"></a>4. Acknowledgements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>CONCACE is a joint project team of Inria, Airbus Central R&amp;T and Cerfacs.
+The work contributes to WP2 and WP3 of the France 2030 project Exa-MA within NumPEx (ANR-22-EXNU-0002). <a href="https://concace.gitlabpages.inria.fr/">CONCACE team and collaborations</a></p>
+</div>
+<div class="paragraph">
+<p>The Composyx benchmarks used Adastra and Jean Zay in France and the EuroHPC systems JUPITER and LUMI.</p>
 </div>
 <div class="paragraph">
 <p><a href="../results.html#highlights-current" class="xref page">Back to Results and Impact</a></p>
